@@ -8,6 +8,45 @@ import { useToast } from "@/hooks/use-toast";
 import { Music, Mic, Monitor, Play, Upload } from "lucide-react";
 import { useState } from "react";
 
+async function safeJson(res: Response) {
+  const text = await res.text();
+  if (!text) return { __empty: true };
+  try {
+    return JSON.parse(text);
+  } catch {
+    return { __notJson: true, raw: text.slice(0, 500) };
+  }
+}
+
+async function uploadPdf(file: File) {
+  const form = new FormData();
+  form.append("pdf", file); // IMPORTANT: must match backend field name
+
+  const res = await fetch("/api/upload-pdf", {
+    method: "POST",
+    body: form,
+  });
+
+  const data = await safeJson(res);
+
+  if (!res.ok) {
+    const msg =
+      (data && (data.error || data.message)) ||
+      (data?.__notJson ? `Server returned non-JSON: ${data.raw}` : null) ||
+      (data?.__empty ? "Server returned empty response (likely crashed)." : null) ||
+      `Upload failed (HTTP ${res.status})`;
+
+    throw new Error(msg);
+  }
+
+  // expected shape: { ok: true, pdf: { pdfId, path, originalName, numPages? } }
+  if (!data?.ok || !data?.pdf?.path) {
+    throw new Error("Upload succeeded but response shape was unexpected.");
+  }
+
+  return data.pdf;
+}
+
 export default function Home() {
   const store = useStore();
   const { toast } = useToast();
@@ -25,26 +64,14 @@ export default function Home() {
     if (!file) return;
 
     setUploading(true);
-    const formData = new FormData();
-    formData.append('pdf', file);
 
     try {
-      const response = await fetch('/api/upload/pdf', {
-        method: 'POST',
-        body: formData,
+      const pdf = await uploadPdf(file);
+      store.setPdfFromServer(pdf.path, pdf.pdfId || null);
+      toast({
+        title: "PDF Uploaded",
+        description: `${pdf.originalName} has been saved and loaded for projection.`,
       });
-
-      const data = await response.json();
-
-      if (data.success) {
-        store.setDisplayConfig('pdf', data.file.path, data.file.pdfId || null);
-        toast({
-          title: "PDF Uploaded",
-          description: `${data.file.originalName} has been saved and loaded for projection.`,
-        });
-      } else {
-        throw new Error(data.error || 'Upload failed');
-      }
     } catch (error) {
       toast({
         title: "Upload Failed",

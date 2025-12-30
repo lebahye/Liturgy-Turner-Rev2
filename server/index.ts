@@ -3,12 +3,17 @@ import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
 import path from "path";
+import { uploadPdfRouter } from "./routes/uploadPdf";
 
 const app = express();
 const httpServer = createServer(app);
 
 // Serve uploaded files statically (works in both dev and prod)
 app.use('/uploads', express.static(path.join(process.cwd(), 'client/public/uploads')));
+app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
+
+// Mount the PDF upload router
+app.use('/api', uploadPdfRouter);
 
 declare module "http" {
   interface IncomingMessage {
