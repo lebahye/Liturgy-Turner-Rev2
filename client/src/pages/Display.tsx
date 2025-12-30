@@ -1,104 +1,102 @@
 import { useStore } from "@/lib/store";
-import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
-import { Document, Page, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Document, Page, pdfjs } from "react-pdf";
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
 
-// Set up the worker for PDF.js
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+// Bundle worker locally (no CDN)
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url
+).toString();
 
 export default function Display() {
   const store = useStore();
-  const [animate, setAnimate] = useState(false);
-  const [prevPage, setPrevPage] = useState(store.currentPage);
-  const [numPages, setNumPages] = useState<number | null>(null);
 
-  const currentPageData = store.pages.find(p => p.page_number === store.currentPage);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [box, setBox] = useState({ w: 0, h: 0 });
 
+  // Track container size so we can fit the PDF page exactly on screen
   useEffect(() => {
-    if (store.currentPage !== prevPage) {
-      setAnimate(true);
-      const timer = setTimeout(() => setAnimate(false), 500);
-      setPrevPage(store.currentPage);
-      return () => clearTimeout(timer);
-    }
-  }, [store.currentPage, prevPage]);
+    const update = () => {
+      const el = containerRef.current;
+      if (!el) return;
+      setBox({ w: el.clientWidth, h: el.clientHeight });
+    };
+    update();
 
-  // Listen for key presses even in display mode
+    const ro = new ResizeObserver(update);
+    if (containerRef.current) ro.observe(containerRef.current);
+
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("resize", update);
+      ro.disconnect();
+    };
+  }, []);
+
+  // Always use the PDF exactly as uploaded (no conversion)
+  const pdfSrc = useMemo(() => {
+    if (!store.pdfFile) return null;
+    if (store.pdfFile.startsWith("blob:")) return store.pdfFile;
+    if (store.pdfFile.startsWith("/")) return store.pdfFile;
+    return `/${store.pdfFile}`;
+  }, [store.pdfFile]);
+
+  // Space = next page, B = back
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.code === 'Space') {
+      if (e.code === "Space") {
         e.preventDefault();
         store.nextPage();
-      } else if (e.code === 'KeyB') {
+      } else if (e.code === "KeyB") {
         store.prevPage();
       }
     };
-    
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [store]);
 
-  const pdfSrc = store.pdfFile?.startsWith('blob:') 
-    ? store.pdfFile 
-    : store.pdfFile?.startsWith('/') 
-      ? store.pdfFile 
-      : `/${store.pdfFile}`;
-
   function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
-    setNumPages(numPages);
+    // CRITICAL: the PDF decides how many pages exist
+    store.setTotalPagesFromPdf(numPages);
   }
 
   return (
-    <div className="flex h-screen w-screen items-center justify-center overflow-hidden bg-black text-white">
-      {store.displayMode === 'pdf' ? (
-        <div className="flex h-full w-full items-center justify-center">
-           {store.pdfFile ? (
-             <Document
-               file={pdfSrc}
-               onLoadSuccess={onDocumentLoadSuccess}
-               onLoadError={(error) => console.error('PDF load error:', error)}
-               className="flex h-full w-full items-center justify-center"
-               loading={<div className="text-2xl text-white">Loading PDF...</div>}
-               error={<div className="text-2xl text-red-500">Failed to load PDF file.</div>}
-             >
-               <Page 
-                 pageNumber={store.currentPage} 
-                 renderTextLayer={false}
-                 renderAnnotationLayer={false}
-                 height={window.innerHeight}
-                 className="flex justify-center"
-               />
-             </Document>
-           ) : (
-             <div className="text-center">
-               <div className="text-4xl text-gray-400 mb-4">No PDF Uploaded</div>
-               <div className="text-xl text-gray-500">Upload a Badarak PDF from the Home page to begin.</div>
-             </div>
-           )}
+    <div ref={containerRef} className="flex h-screen w-screen items-center justify-center bg-black">
+      {!pdfSrc ? (
+        <div className="text-center text-white">
+          <div className="text-4xl text-gray-300 mb-4">No PDF Uploaded</div>
+          <div className="text-xl text-gray-400">Upload a Badarak PDF from the Home page to begin.</div>
         </div>
       ) : (
-        <div className={cn(
-          "w-[90%] max-w-7xl p-12 text-center transition-all duration-500",
-          animate ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
-        )}>
-           <div className="absolute top-8 right-12 text-4xl font-bold text-blue-500">
-             Page {store.currentPage}
-           </div>
+        <div className="relative h-full w-full overflow-hidden">
+          <div className="absolute top-3 right-4 z-10 rounded-full bg-black/70 px-4 py-2 text-white text-sm font-semibold">
+            Page {store.currentPage} / {store.totalPages}
+          </div>
 
-           {currentPageData ? (
-             <>
-               <div className="armenian-text mb-12 mt-16 text-7xl font-semibold leading-relaxed text-green-500 md:text-8xl">
-                 {currentPageData.armenian_text}
-               </div>
-               <div className="text-5xl leading-relaxed text-white md:text-6xl">
-                 {currentPageData.english_text}
-               </div>
-             </>
-           ) : (
-             <div className="text-4xl text-gray-500">Waiting for content...</div>
-           )}
+          <Document
+            file={pdfSrc}
+            onLoadSuccess={onDocumentLoadSuccess}
+            onLoadError={(err) => console.error("PDF load error:", err)}
+            loading={<div className="flex h-full w-full items-center justify-center text-white text-2xl">Loading PDF...</div>}
+            error={<div className="flex h-full w-full items-center justify-center text-red-400 text-2xl">Failed to load PDF.</div>}
+            className="flex h-full w-full items-center justify-center"
+          >
+            {/* Fit page into available box while preserving exact PDF rendering */}
+            {box.w > 0 && box.h > 0 && (
+              <Page
+                pageNumber={store.currentPage}
+                // Render the PDF appearance exactly. Text/annotations off avoids overlay artifacts.
+                renderTextLayer={false}
+                renderAnnotationLayer={false}
+                // Fit to screen: width-based scaling tends to be most stable.
+                // If your PDF is tall, it may letterbox—this is correct and preserves the page.
+                width={Math.floor(box.w)}
+                className="flex items-center justify-center"
+              />
+            )}
+          </Document>
         </div>
       )}
     </div>
