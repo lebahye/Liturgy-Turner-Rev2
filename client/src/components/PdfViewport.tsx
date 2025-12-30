@@ -71,7 +71,10 @@ export function PdfViewport({
       )}
       <Document
         file={pdfSrc}
-        onLoadSuccess={onLoadSuccess}
+        onLoadSuccess={(data) => {
+          onLoadSuccess?.(data);
+          useStore.getState().setTotalPagesFromPdf(data.numPages);
+        }}
         onLoadError={(error) => console.error('PDF load error:', error)}
         className="flex items-center justify-center"
         loading={<div className="flex items-center justify-center p-8 text-white">Loading PDF...</div>}
