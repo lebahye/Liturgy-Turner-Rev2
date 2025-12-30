@@ -404,7 +404,7 @@ const file = await storage.createUploadedFile({
       const results: any[] = [];
 
       for (const marker of markers) {
-        const existing = session.pdfId && marker.pageId ? await storage.getAggregatedFingerprintByPageId(session.pdfId, marker.pageId) : await storage.getAggregatedFingerprint(session.pdfPath, marker.pageNumber);
+        const existing = session.pdfId && marker.pageId ? await storage.getAggregatedFingerprintByPageId(marker.pageId) : await storage.getAggregatedFingerprint(session.pdfPath, marker.pageNumber);
         
         if (existing) {
           // Merge with existing fingerprint
