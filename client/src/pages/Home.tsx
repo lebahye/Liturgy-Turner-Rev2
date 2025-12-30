@@ -67,17 +67,10 @@ export default function Home() {
 
     try {
       const pdf = await uploadPdf(file);
-      store.setPdfFromServer(pdf.path, pdf.pdfId || null);
-      toast({
-        title: "PDF Uploaded",
-        description: `${pdf.originalName} has been saved and loaded for projection.`,
-      });
-    } catch (error) {
-      toast({
-        title: "Upload Failed",
-        description: error instanceof Error ? error.message : "Failed to upload PDF",
-        variant: "destructive",
-      });
+      useStore.getState().setPdfFromServer(pdf.path, pdf.pdfId);
+      toast({ title: "Upload complete", description: pdf.originalName });
+    } catch (e: any) {
+      toast({ variant: "destructive", title: "Upload Failed", description: e.message || "Unknown error" });
     } finally {
       setUploading(false);
       // Reset input
