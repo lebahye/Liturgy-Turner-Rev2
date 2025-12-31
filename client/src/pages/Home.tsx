@@ -47,6 +47,17 @@ async function uploadPdf(file: File) {
   return data.pdf;
 }
 
+async function fetchPdfPages(pdfPath: string) {
+  const res = await fetch(`/api/pdf-text?path=${encodeURIComponent(pdfPath)}`);
+  const data = await res.json();
+  if (!res.ok || !data.ok) throw new Error(data?.error || "Failed to load PDF text");
+  return data as {
+    ok: true;
+    pdf: { pdfId: string; path: string; numPages: number };
+    pages: { pageNumber: number; pageId: string; norm: string }[];
+  };
+}
+
 export default function Home() {
   const store = useStore();
   const { toast } = useToast();
