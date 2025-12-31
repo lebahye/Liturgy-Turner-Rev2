@@ -1,0 +1,90 @@
+export type PdfPageText = {
+  pageNumber: number;
+  norm: string; // normalized full-page text
+};
+
+function normalizeText(s: string) {
+  return (s || "")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function tokenize(s: string) {
+  return normalizeText(s)
+    .split(" ")
+    .map(t => t.trim())
+    .filter(Boolean);
+}
+
+// Simple rarity-weighting: common tokens contribute less
+function buildIdf(pages: PdfPageText[]) {
+  const df = new Map<string, number>();
+  const N = Math.max(1, pages.length);
+
+  for (const p of pages) {
+    const seen = new Set(tokenize(p.norm));
+    for (const t of seen) df.set(t, (df.get(t) || 0) + 1);
+  }
+
+  const idf = new Map<string, number>();
+  for (const [t, d] of df.entries()) {
+    // IDF: log((N+1)/(d+1)) + 1  (bounded, safe)
+    idf.set(t, Math.log((N + 1) / (d + 1)) + 1);
+  }
+  return idf;
+}
+
+function weightedOverlapScore(pageNorm: string, transcriptNorm: string, idf: Map<string, number>) {
+  const pageTokens = new Set(tokenize(pageNorm));
+  const tTokens = tokenize(transcriptNorm);
+  if (pageTokens.size === 0 || tTokens.length === 0) return 0;
+
+  let hit = 0;
+  let total = 0;
+
+  for (const t of tTokens) {
+    const w = idf.get(t) ?? 1;
+    total += w;
+    if (pageTokens.has(t)) hit += w;
+  }
+
+  // Require some minimum evidence so tiny transcripts don't cause flips
+  const minWords = 6;
+  if (tTokens.length < minWords) return 0;
+
+  return hit / Math.max(1e-9, total);
+}
+
+export function createPageMatcher(pages: PdfPageText[]) {
+  const idf = buildIdf(pages);
+
+  return function choosePage(
+    transcriptWindow: string,
+    currentPage: number,
+    lookAheadPages = 2
+  ): { page: number; score: number } {
+    const tNorm = normalizeText(transcriptWindow);
+    if (!tNorm) return { page: currentPage, score: 0 };
+
+    const min = currentPage;
+    const max = Math.min(currentPage + lookAheadPages, pages.length);
+
+    let bestPage = currentPage;
+    let bestScore = 0;
+
+    for (let p = min; p <= max; p++) {
+      const page = pages[p - 1];
+      if (!page) continue;
+
+      const score = weightedOverlapScore(page.norm, tNorm, idf);
+      if (score > bestScore) {
+        bestScore = score;
+        bestPage = p;
+      }
+    }
+
+    return { page: bestPage, score: bestScore };
+  };
+}
