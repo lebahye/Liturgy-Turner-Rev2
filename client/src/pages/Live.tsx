@@ -136,6 +136,46 @@ export default function Live() {
     return String(text);
   }
 
+  function feedTranscriptChunk(chunkText: string) {
+    const matcher = matcherRef.current;
+    if (!matcher || pdfPages.length === 0) return;
+
+    const now = Date.now();
+    transcriptBufferRef.current.push({ t: now, text: chunkText });
+
+    const cutoff = now - WINDOW_SECONDS * 1000;
+    transcriptBufferRef.current = transcriptBufferRef.current.filter(x => x.t >= cutoff);
+
+    const windowText = transcriptBufferRef.current.map(x => x.text).join(" ");
+
+    const { page, score } = matcher(windowText, store.currentPage, LOOKAHEAD);
+
+    if (page <= store.currentPage) {
+      pendingPageRef.current = null;
+      pendingHitsRef.current = 0;
+      return;
+    }
+
+    if (score >= TURN_THRESHOLD) {
+      if (pendingPageRef.current === page) {
+        pendingHitsRef.current += 1;
+      } else {
+        pendingPageRef.current = page;
+        pendingHitsRef.current = 1;
+      }
+
+      if (pendingHitsRef.current >= CONFIRM_HITS) {
+        store.setPage(page);
+        pendingPageRef.current = null;
+        pendingHitsRef.current = 0;
+        transcriptBufferRef.current = [];
+      }
+    } else {
+      pendingPageRef.current = null;
+      pendingHitsRef.current = 0;
+    }
+  }
+
   function stopAll() {
     try {
       mediaRecorderRef.current?.stop();
@@ -167,7 +207,10 @@ export default function Live() {
       if (!e.data || e.data.size === 0) return;
       try {
         const t = await postToTranscribe(e.data);
-        if (t.trim()) setLastTranscript(t);
+        if (t.trim()) {
+          setLastTranscript(t);
+          feedTranscriptChunk(t);
+        }
       } catch (err: any) {
         setErrorMsg(err?.message || "Transcribe error");
       }
@@ -205,7 +248,10 @@ export default function Live() {
       if (!e.data || e.data.size === 0) return;
       try {
         const t = await postToTranscribe(e.data);
-        if (t.trim()) setLastTranscript(t);
+        if (t.trim()) {
+          setLastTranscript(t);
+          feedTranscriptChunk(t);
+        }
       } catch (err: any) {
         setErrorMsg(err?.message || "Transcribe error");
       }
