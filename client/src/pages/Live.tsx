@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useStore } from "@/lib/store";
 import { Document, Page, pdfjs } from "react-pdf";
+import { createPageMatcher, PdfPageText } from "@/lib/pageMatching";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
@@ -10,6 +11,11 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 type AudioSource = "mic" | "file";
+
+const WINDOW_SECONDS = 12;
+const LOOKAHEAD = 2;
+const TURN_THRESHOLD = 0.22;
+const CONFIRM_HITS = 2;
 
 async function safeJson(res: Response) {
   const text = await res.text();
@@ -36,6 +42,13 @@ export default function Live() {
   const [status, setStatus] = useState<"stopped" | "running">("stopped");
   const [lastTranscript, setLastTranscript] = useState<string>("");
   const [errorMsg, setErrorMsg] = useState<string>("");
+
+  const [pdfPages, setPdfPages] = useState<PdfPageText[]>([]);
+  const matcherRef = useRef<ReturnType<typeof createPageMatcher> | null>(null);
+
+  const transcriptBufferRef = useRef<{ t: number; text: string }[]>([]);
+  const pendingPageRef = useRef<number | null>(null);
+  const pendingHitsRef = useRef<number>(0);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const [w, setW] = useState(900);
