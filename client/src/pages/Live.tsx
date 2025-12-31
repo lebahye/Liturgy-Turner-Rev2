@@ -90,6 +90,34 @@ export default function Live() {
     return () => URL.revokeObjectURL(url);
   }, [audioFile]);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        setErrorMsg("");
+        if (!store.pdfFile || !store.pdfFile.startsWith("/uploads/")) return;
+
+        const res = await fetch(`/api/pdf-text?path=${encodeURIComponent(store.pdfFile)}`);
+        const data = await res.json();
+
+        if (!res.ok || !data.ok || !Array.isArray(data.pages)) {
+          throw new Error(data?.error || "Failed to load PDF text for matching");
+        }
+
+        const pages: PdfPageText[] = data.pages.map((p: any) => ({
+          pageNumber: Number(p.pageNumber),
+          norm: String(p.norm || ""),
+        }));
+
+        setPdfPages(pages);
+        matcherRef.current = createPageMatcher(pages);
+      } catch (e: any) {
+        setErrorMsg(e?.message || "Failed to load PDF matching data");
+        setPdfPages([]);
+        matcherRef.current = null;
+      }
+    })();
+  }, [store.pdfFile]);
+
   async function postToTranscribe(blob: Blob) {
     const form = new FormData();
     form.append("audio", blob, "chunk.webm");
