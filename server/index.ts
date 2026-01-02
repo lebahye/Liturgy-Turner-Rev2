@@ -5,6 +5,7 @@ import { createServer } from "http";
 import path from "path";
 import { uploadPdfRouter } from "./routes/uploadPdf";
 import { pdfTextRouter } from "./routes/pdfText";
+import { transcribeRouter } from "./routes/transcribe";
 
 const app = express();
 const httpServer = createServer(app);
@@ -13,9 +14,10 @@ const httpServer = createServer(app);
 app.use('/uploads', express.static(path.join(process.cwd(), 'client/public/uploads')));
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 
-// Mount PDF routers
+// Mount API routers
 app.use('/api', uploadPdfRouter);
 app.use('/api', pdfTextRouter);
+app.use('/api', transcribeRouter);
 
 declare module "http" {
   interface IncomingMessage {
