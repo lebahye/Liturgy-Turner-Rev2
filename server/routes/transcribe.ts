@@ -1,9 +1,14 @@
 import express from "express";
 import multer from "multer";
+import OpenAI from "openai";
 
 export const transcribeRouter = express.Router();
 
 const upload = multer({ limits: { fileSize: 20 * 1024 * 1024 } });
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
 function dataUrlOrBase64ToBuffer(b64: string) {
   const comma = b64.indexOf(",");
@@ -33,11 +38,16 @@ transcribeRouter.post("/transcribe", upload.single("audio"), async (req, res) =>
       return res.status(400).json({ error: "audioBase64 or audio file is required" });
     }
 
-    // TODO: Add real transcription logic here (e.g., Whisper API, Google Speech-to-Text)
-    // For now, return empty text to indicate the endpoint works
-    const text = "";
-    return res.json({ text });
+    const file = new File([audioBuffer], "audio.webm", { type: mimeType });
+
+    const transcription = await openai.audio.transcriptions.create({
+      file: file,
+      model: "whisper-1",
+    });
+
+    return res.json({ text: transcription.text });
   } catch (e: any) {
+    console.error("Transcription error:", e);
     return res.status(500).json({ error: e?.message || "Transcription failed" });
   }
 });
