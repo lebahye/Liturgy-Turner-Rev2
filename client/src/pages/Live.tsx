@@ -154,6 +154,7 @@ export default function Live() {
 
     const { page, score } = matcher(windowText, store.currentPage, LOOKAHEAD);
     setMatchInfo({ page, score });
+    console.log(`[Match] transcript: "${windowText.slice(0, 50)}..." → page ${page}, score ${(score * 100).toFixed(1)}%`);
 
     if (page <= store.currentPage) {
       pendingPageRef.current = null;
@@ -468,8 +469,18 @@ export default function Live() {
                 </button>
               </div>
 
-              <div className="mt-3 text-xs text-gray-500">
-                Auto page turning will be added by plugging the tracker into the transcript callback.
+              <div className="mt-3 rounded-lg bg-gray-50 p-2 text-xs">
+                <div className="font-medium text-gray-700">System Status:</div>
+                <div className="mt-1 space-y-1">
+                  <div className={pdfPages.length > 0 ? "text-green-600" : "text-red-600"}>
+                    {pdfPages.length > 0 
+                      ? `PDF loaded: ${pdfPages.length} pages with text`
+                      : "PDF text not loaded - upload a PDF first"}
+                  </div>
+                  <div className={matcherRef.current ? "text-green-600" : "text-red-600"}>
+                    {matcherRef.current ? "Matcher ready" : "Matcher not initialized"}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
