@@ -38,6 +38,9 @@ export default function Live() {
   const audioCtxRef = useRef<AudioContext | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const micStreamRef = useRef<MediaStream | null>(null);
+  const chunksRef = useRef<Blob[]>([]);
+  const recordingIntervalRef = useRef<number | null>(null);
+  const streamForRecordingRef = useRef<MediaStream | null>(null);
 
   const [status, setStatus] = useState<"stopped" | "running">("stopped");
   const [lastTranscript, setLastTranscript] = useState<string>("");
@@ -177,11 +180,18 @@ export default function Live() {
   }
 
   function stopAll() {
+    if (recordingIntervalRef.current) {
+      clearInterval(recordingIntervalRef.current);
+      recordingIntervalRef.current = null;
+    }
+
     try {
       mediaRecorderRef.current?.stop();
     } catch {}
 
     mediaRecorderRef.current = null;
+    chunksRef.current = [];
+    streamForRecordingRef.current = null;
 
     if (micStreamRef.current) {
       micStreamRef.current.getTracks().forEach((t) => t.stop());
@@ -196,17 +206,23 @@ export default function Live() {
     setStatus("stopped");
   }
 
-  async function startMicRecorder() {
-    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    micStreamRef.current = stream;
-
+  function createRecorderForStream(stream: MediaStream) {
+    chunksRef.current = [];
     const rec = new MediaRecorder(stream, { mimeType: "audio/webm" });
-    mediaRecorderRef.current = rec;
+    
+    rec.ondataavailable = (e) => {
+      if (e.data && e.data.size > 0) {
+        chunksRef.current.push(e.data);
+      }
+    };
 
-    rec.ondataavailable = async (e) => {
-      if (!e.data || e.data.size === 0) return;
+    rec.onstop = async () => {
+      if (chunksRef.current.length === 0) return;
+      const blob = new Blob(chunksRef.current, { type: "audio/webm" });
+      chunksRef.current = [];
+      
       try {
-        const t = await postToTranscribe(e.data);
+        const t = await postToTranscribe(blob);
         if (t.trim()) {
           setLastTranscript(t);
           feedTranscriptChunk(t);
@@ -216,7 +232,33 @@ export default function Live() {
       }
     };
 
-    rec.start(6000);
+    return rec;
+  }
+
+  function startRecordingCycle(stream: MediaStream) {
+    streamForRecordingRef.current = stream;
+    
+    const startNewRecording = () => {
+      if (!streamForRecordingRef.current) return;
+      const rec = createRecorderForStream(streamForRecordingRef.current);
+      mediaRecorderRef.current = rec;
+      rec.start();
+    };
+
+    startNewRecording();
+
+    recordingIntervalRef.current = window.setInterval(() => {
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state === "recording") {
+        mediaRecorderRef.current.stop();
+      }
+      startNewRecording();
+    }, 6000);
+  }
+
+  async function startMicRecorder() {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    micStreamRef.current = stream;
+    startRecordingCycle(stream);
     setStatus("running");
   }
 
@@ -241,23 +283,7 @@ export default function Live() {
     sourceNode.connect(ctx.destination);
     sourceNode.connect(dest);
 
-    const rec = new MediaRecorder(dest.stream, { mimeType: "audio/webm" });
-    mediaRecorderRef.current = rec;
-
-    rec.ondataavailable = async (e) => {
-      if (!e.data || e.data.size === 0) return;
-      try {
-        const t = await postToTranscribe(e.data);
-        if (t.trim()) {
-          setLastTranscript(t);
-          feedTranscriptChunk(t);
-        }
-      } catch (err: any) {
-        setErrorMsg(err?.message || "Transcribe error");
-      }
-    };
-
-    rec.start(6000);
+    startRecordingCycle(dest.stream);
 
     await ctx.resume();
     await audioElRef.current.play();

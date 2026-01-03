@@ -1,0 +1,33 @@
+> rest-express@1.0.0 dev
+11:20:06 PM [express] serving on port 5000
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Transcription error: Error: ffmpeg exited with code 183:   7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+[matroska,webm @ 0x2b83b7c0] Format matroska,webm detected only with low score of 1, misdetection possible!
+[matroska,webm @ 0x2b83b7c0] EBML header parsing failed
+[in#0 @ 0x2b83b6c0] Error opening input: Invalid data found when processing input
+Error opening input file /tmp/input_da856708-7f86-40f0-9751-2efc004656f4.webm.
+Error opening input files: Invalid data found when processing input
+
+    at ChildProcess.<anonymous> (/home/runner/workspace/server/routes/transcribe.ts:56:18)
+Transcription error: Error: ffmpeg exited with code 183:      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+[matroska,webm @ 0xa8847c0] Format matroska,webm detected only with low score of 1, misdetection possible!
+[matroska,webm @ 0xa8847c0] EBML header parsing failed
+[in#0 @ 0xa8846c0] Error opening input: Invalid data found when processing input
+Error opening input file /tmp/input_0120074f-f264-4654-acbd-6cd060b2787d.webm.
+Error opening input files: Invalid data found when processing input
+
+    at ChildProcess.<anonymous> (/home/runner/workspace/server/routes/transcribe.ts:56:18)
+Transcription error: Error: ffmpeg exited with code 183:   7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+[matroska,webm @ 0x2d8447c0] Format matroska,webm detected only with low score of 1, misdetection possible!
+[matroska,webm @ 0x2d8447c0] EBML header parsing failed
+[in#0 @ 0x2d8446c0] Error opening input: Invalid data found when processing input
+Error opening input file /tmp/input_2e6e2924-9816-4226-89a4-a6e67fb9aad5.webm.
+Error opening input files: Invalid data found when processing input
+
+    at ChildProcess.<anonymous> (/home/runner/workspace/server/routes/transcribe.ts:56:18)
