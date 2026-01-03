@@ -45,6 +45,7 @@ export default function Live() {
   const [status, setStatus] = useState<"stopped" | "running">("stopped");
   const [lastTranscript, setLastTranscript] = useState<string>("");
   const [errorMsg, setErrorMsg] = useState<string>("");
+  const [matchInfo, setMatchInfo] = useState<{ page: number; score: number } | null>(null);
 
   const [pdfPages, setPdfPages] = useState<PdfPageText[]>([]);
   const matcherRef = useRef<ReturnType<typeof createPageMatcher> | null>(null);
@@ -152,6 +153,7 @@ export default function Live() {
     const windowText = transcriptBufferRef.current.map(x => x.text).join(" ");
 
     const { page, score } = matcher(windowText, store.currentPage, LOOKAHEAD);
+    setMatchInfo({ page, score });
 
     if (page <= store.currentPage) {
       pendingPageRef.current = null;
@@ -423,6 +425,28 @@ export default function Live() {
                   {lastTranscript || "—"}
                 </div>
               </div>
+
+              {matchInfo && (
+                <div className="mt-3 rounded-lg bg-blue-50 p-3">
+                  <div className="text-xs font-medium text-blue-800">Match Confidence</div>
+                  <div className="mt-1 flex items-center gap-3">
+                    <div className="flex-1">
+                      <div className="h-2 rounded-full bg-blue-200">
+                        <div
+                          className="h-2 rounded-full bg-blue-600 transition-all"
+                          style={{ width: `${Math.min(100, matchInfo.score * 100)}%` }}
+                        />
+                      </div>
+                    </div>
+                    <div data-testid="text-confidence" className="text-sm font-bold text-blue-700">
+                      {(matchInfo.score * 100).toFixed(1)}%
+                    </div>
+                  </div>
+                  <div className="mt-1 text-xs text-blue-600">
+                    Best match: Page {matchInfo.page} (threshold: {TURN_THRESHOLD * 100}%)
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="rounded-xl bg-white p-4 shadow">
