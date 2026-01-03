@@ -78,6 +78,29 @@ export const pageTranscripts = pgTable("page_transcripts", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
+// Word dictionary for Armenian ↔ Phonetic mapping
+export const wordDictionary = pgTable("word_dictionary", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  pdfId: text("pdf_id").notNull(),
+  armenian: text("armenian").notNull(),
+  phonetic: text("phonetic").notNull(),
+  pageNumber: integer("page_number"),
+  occurrences: integer("occurrences").notNull().default(1),
+  confidence: real("confidence").default(1.0),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+// Page sections - stores Armenian, Phonetic, English separately per page
+export const pageSections = pgTable("page_sections", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  pdfId: text("pdf_id").notNull(),
+  pageNumber: integer("page_number").notNull(),
+  armenianText: text("armenian_text"),
+  phoneticText: text("phonetic_text"),
+  englishText: text("english_text"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
 // Stores each learning attempt separately for comparison
 export const learningAttempts = pgTable("learning_attempts", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
@@ -105,6 +128,16 @@ export const learningAttemptPages = pgTable("learning_attempt_pages", {
 export const insertPageTranscriptSchema = createInsertSchema(pageTranscripts).omit({
   id: true,
   updatedAt: true,
+});
+
+export const insertWordDictionarySchema = createInsertSchema(wordDictionary).omit({
+  id: true,
+  createdAt: true,
+});
+
+export const insertPageSectionsSchema = createInsertSchema(pageSections).omit({
+  id: true,
+  createdAt: true,
 });
 
 export const insertLearningAttemptSchema = createInsertSchema(learningAttempts).omit({
@@ -159,5 +192,9 @@ export type LearningAttempt = typeof learningAttempts.$inferSelect;
 export type InsertLearningAttempt = z.infer<typeof insertLearningAttemptSchema>;
 export type LearningAttemptPage = typeof learningAttemptPages.$inferSelect;
 export type InsertLearningAttemptPage = z.infer<typeof insertLearningAttemptPageSchema>;
+export type WordDictionary = typeof wordDictionary.$inferSelect;
+export type InsertWordDictionary = z.infer<typeof insertWordDictionarySchema>;
+export type PageSections = typeof pageSections.$inferSelect;
+export type InsertPageSections = z.infer<typeof insertPageSectionsSchema>;
 
 export * from "./models/chat";
