@@ -216,7 +216,7 @@ export default function Live() {
       }
     };
 
-    rec.start(3000);
+    rec.start(6000);
     setStatus("running");
   }
 
@@ -257,7 +257,7 @@ export default function Live() {
       }
     };
 
-    rec.start(3000);
+    rec.start(6000);
 
     await ctx.resume();
     await audioElRef.current.play();

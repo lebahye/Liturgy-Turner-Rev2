@@ -1,6 +1,8 @@
 import express from "express";
 import multer from "multer";
 import OpenAI from "openai";
+import { spawn } from "child_process";
+import { Readable } from "stream";
 
 export const transcribeRouter = express.Router();
 
@@ -16,33 +18,64 @@ function dataUrlOrBase64ToBuffer(b64: string) {
   return Buffer.from(raw, "base64");
 }
 
+async function convertToWav(inputBuffer: Buffer): Promise<Buffer> {
+  return new Promise((resolve, reject) => {
+    const chunks: Buffer[] = [];
+
+    const ffmpeg = spawn("ffmpeg", [
+      "-f", "webm",
+      "-i", "pipe:0",
+      "-ac", "1",
+      "-ar", "16000",
+      "-f", "wav",
+      "pipe:1"
+    ]);
+
+    ffmpeg.stdout.on("data", (chunk: Buffer) => chunks.push(chunk));
+    ffmpeg.stderr.on("data", () => {});
+
+    ffmpeg.on("close", (code) => {
+      if (code === 0) {
+        resolve(Buffer.concat(chunks));
+      } else {
+        reject(new Error(`ffmpeg exited with code ${code}`));
+      }
+    });
+
+    ffmpeg.on("error", reject);
+
+    const readable = Readable.from(inputBuffer);
+    readable.pipe(ffmpeg.stdin);
+  });
+}
+
 transcribeRouter.post("/transcribe", upload.single("audio"), async (req, res) => {
   try {
     let audioBuffer: Buffer | null = null;
-    let mimeType: string = "audio/webm";
 
     if (req.is("application/json")) {
-      const { audioBase64, mimeType: mt } = req.body || {};
+      const { audioBase64 } = req.body || {};
       if (audioBase64) {
         audioBuffer = dataUrlOrBase64ToBuffer(String(audioBase64));
-        if (mt) mimeType = String(mt);
       }
     }
 
     if (!audioBuffer && req.file) {
       audioBuffer = req.file.buffer;
-      if (req.file.mimetype) mimeType = req.file.mimetype;
     }
 
     if (!audioBuffer) {
-      return res.status(400).json({ error: "audioBase64 or audio file is required" });
+      return res.status(400).json({ error: "audio file is required" });
     }
 
-    const file = new File([audioBuffer], "audio.webm", { type: mimeType });
+    const wavBuffer = await convertToWav(audioBuffer);
+
+    const file = new File([wavBuffer], "audio.wav", { type: "audio/wav" });
 
     const transcription = await openai.audio.transcriptions.create({
       file: file,
       model: "whisper-1",
+      language: "hy",
     });
 
     return res.json({ text: transcription.text });
