@@ -252,7 +252,7 @@ export default function Live() {
         mediaRecorderRef.current.stop();
       }
       startNewRecording();
-    }, 6000);
+    }, 2000);
   }
 
   async function startMicRecorder() {
