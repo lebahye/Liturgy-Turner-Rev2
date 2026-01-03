@@ -2,7 +2,7 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 import crypto from "crypto";
-import * as pdfParse from "pdf-parse";
+import { PDFParse } from "pdf-parse";
 
 export const pdfTextRouter = express.Router();
 
@@ -21,9 +21,12 @@ function normalize(s: string): string {
 }
 
 async function extractPages(pdfPathAbs: string) {
-  const parse = (pdfParse as any).default || pdfParse;
-  const data = await parse(fs.readFileSync(pdfPathAbs));
-  const raw = data.text || "";
+  const dataBuffer = fs.readFileSync(pdfPathAbs);
+  const parser = new PDFParse({ data: dataBuffer });
+  const result = await parser.getText();
+  await parser.destroy();
+  
+  const raw = result.text || "";
   const parts = raw.split("\f");
   const pages = parts.length > 1 ? parts : [raw];
 

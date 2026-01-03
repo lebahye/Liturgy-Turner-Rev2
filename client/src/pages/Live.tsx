@@ -98,7 +98,15 @@ export default function Live() {
     (async () => {
       try {
         setErrorMsg("");
-        if (!store.pdfFile || !store.pdfFile.startsWith("/uploads/")) return;
+        console.log("[Live] store.pdfFile =", store.pdfFile);
+        if (!store.pdfFile) {
+          console.log("[Live] No PDF file set");
+          return;
+        }
+        if (!store.pdfFile.startsWith("/uploads/")) {
+          console.log("[Live] PDF path doesn't start with /uploads/, skipping text extraction");
+          return;
+        }
 
         const res = await fetch(`/api/pdf-text?path=${encodeURIComponent(store.pdfFile)}`);
         const data = await res.json();
