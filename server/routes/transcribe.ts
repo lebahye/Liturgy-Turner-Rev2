@@ -2,7 +2,10 @@ import express from "express";
 import multer from "multer";
 import OpenAI from "openai";
 import { spawn } from "child_process";
-import { Readable } from "stream";
+import { writeFile, unlink, readFile } from "fs/promises";
+import { randomUUID } from "crypto";
+import path from "path";
+import os from "os";
 
 export const transcribeRouter = express.Router();
 
@@ -19,33 +22,49 @@ function dataUrlOrBase64ToBuffer(b64: string) {
 }
 
 async function convertToWav(inputBuffer: Buffer): Promise<Buffer> {
-  return new Promise((resolve, reject) => {
-    const chunks: Buffer[] = [];
+  const tempDir = os.tmpdir();
+  const inputPath = path.join(tempDir, `input_${randomUUID()}.webm`);
+  const outputPath = path.join(tempDir, `output_${randomUUID()}.wav`);
 
+  await writeFile(inputPath, inputBuffer);
+
+  return new Promise((resolve, reject) => {
     const ffmpeg = spawn("ffmpeg", [
-      "-f", "webm",
-      "-i", "pipe:0",
+      "-y",
+      "-i", inputPath,
       "-ac", "1",
       "-ar", "16000",
       "-f", "wav",
-      "pipe:1"
+      outputPath
     ]);
 
-    ffmpeg.stdout.on("data", (chunk: Buffer) => chunks.push(chunk));
-    ffmpeg.stderr.on("data", () => {});
+    let stderrData = "";
+    ffmpeg.stderr.on("data", (chunk) => {
+      stderrData += chunk.toString();
+    });
 
-    ffmpeg.on("close", (code) => {
-      if (code === 0) {
-        resolve(Buffer.concat(chunks));
-      } else {
-        reject(new Error(`ffmpeg exited with code ${code}`));
+    ffmpeg.on("close", async (code) => {
+      try {
+        await unlink(inputPath).catch(() => {});
+        
+        if (code === 0) {
+          const wavBuffer = await readFile(outputPath);
+          await unlink(outputPath).catch(() => {});
+          resolve(wavBuffer);
+        } else {
+          await unlink(outputPath).catch(() => {});
+          reject(new Error(`ffmpeg exited with code ${code}: ${stderrData.slice(-500)}`));
+        }
+      } catch (err) {
+        reject(err);
       }
     });
 
-    ffmpeg.on("error", reject);
-
-    const readable = Readable.from(inputBuffer);
-    readable.pipe(ffmpeg.stdin);
+    ffmpeg.on("error", async (err) => {
+      await unlink(inputPath).catch(() => {});
+      await unlink(outputPath).catch(() => {});
+      reject(err);
+    });
   });
 }
 
