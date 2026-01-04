@@ -6,18 +6,10 @@ import path from "path";
 import { uploadPdfRouter } from "./routes/uploadPdf";
 import { pdfTextRouter } from "./routes/pdfText";
 import { transcribeRouter } from "./routes/transcribe";
+import { extractDictionaryRouter } from "./routes/extractDictionary";
 
 const app = express();
 const httpServer = createServer(app);
-
-// Serve uploaded files statically (works in both dev and prod)
-app.use('/uploads', express.static(path.join(process.cwd(), 'client/public/uploads')));
-app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
-
-// Mount API routers
-app.use('/api', uploadPdfRouter);
-app.use('/api', pdfTextRouter);
-app.use('/api', transcribeRouter);
 
 declare module "http" {
   interface IncomingMessage {
@@ -34,6 +26,16 @@ app.use(
 );
 
 app.use(express.urlencoded({ extended: false }));
+
+// Serve uploaded files statically (works in both dev and prod)
+app.use('/uploads', express.static(path.join(process.cwd(), 'client/public/uploads')));
+app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
+
+// Mount API routers
+app.use('/api', uploadPdfRouter);
+app.use('/api', pdfTextRouter);
+app.use('/api', transcribeRouter);
+app.use('/api', extractDictionaryRouter);
 
 export function log(message: string, source = "express") {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
