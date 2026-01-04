@@ -2,10 +2,18 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 import crypto from "crypto";
-import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
 import { db } from "../db";
 import { wordDictionary, pageSections } from "@shared/schema";
 import { eq, and } from "drizzle-orm";
+
+let pdfjsLib: any = null;
+
+async function getPdfLib() {
+  if (!pdfjsLib) {
+    pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.mjs");
+  }
+  return pdfjsLib;
+}
 
 export const extractDictionaryRouter = express.Router();
 
@@ -91,9 +99,10 @@ extractDictionaryRouter.post("/extract-dictionary", async (req, res) => {
     await db.delete(wordDictionary).where(eq(wordDictionary.pdfId, pdfId));
     await db.delete(pageSections).where(eq(pageSections.pdfId, pdfId));
     
+    const pdfLib = await getPdfLib();
     const dataBuffer = fs.readFileSync(abs);
     const data = new Uint8Array(dataBuffer);
-    const pdfDoc = await pdfjsLib.getDocument({ data }).promise;
+    const pdfDoc = await pdfLib.getDocument({ data }).promise;
     const numPages = pdfDoc.numPages;
     
     let totalWords = 0;
@@ -208,5 +217,34 @@ extractDictionaryRouter.get("/page-sections/:pdfId", async (req, res) => {
     });
   } catch (e: any) {
     return res.status(500).json({ ok: false, error: e?.message || "Failed to get page sections" });
+  }
+});
+
+extractDictionaryRouter.get("/check-pdf-sections", async (req, res) => {
+  try {
+    const pdfPath = req.query.path as string;
+    
+    if (!pdfPath || !pdfPath.startsWith("/uploads/")) {
+      return res.status(400).json({ ok: false, error: "Invalid PDF path" });
+    }
+    
+    const abs = path.join(process.cwd(), pdfPath);
+    if (!fs.existsSync(abs)) {
+      return res.status(404).json({ ok: false, error: "PDF not found", pageCount: 0 });
+    }
+    
+    const pdfId = crypto.createHash("sha256").update(fs.readFileSync(abs)).digest("hex").slice(0, 16);
+    
+    const sections = await db.select()
+      .from(pageSections)
+      .where(eq(pageSections.pdfId, pdfId));
+    
+    return res.json({
+      ok: true,
+      pdfId,
+      pageCount: sections.length,
+    });
+  } catch (e: any) {
+    return res.status(500).json({ ok: false, error: e?.message || "Failed to check sections", pageCount: 0 });
   }
 });

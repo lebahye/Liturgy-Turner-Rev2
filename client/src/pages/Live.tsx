@@ -94,6 +94,53 @@ export default function Live() {
     return () => URL.revokeObjectURL(url);
   }, [audioFile]);
 
+  const [dictionaryStatus, setDictionaryStatus] = useState<"none" | "loading" | "ready">("none");
+  const [pdfIdState, setPdfIdState] = useState<string | null>(null);
+
+  async function loadPagesFromSections(pdfId: string): Promise<boolean> {
+    try {
+      const sectionsRes = await fetch(`/api/page-sections/${pdfId}`);
+      const sectionsData = await sectionsRes.json();
+      
+      if (sectionsRes.ok && sectionsData.ok && Array.isArray(sectionsData.pages) && sectionsData.pages.length > 0) {
+        const pages: PdfPageText[] = sectionsData.pages.map((p: any) => ({
+          pageNumber: Number(p.pageNumber),
+          norm: String(p.combined || `${p.armenian || ""} ${p.phonetic || ""}`).toLowerCase(),
+        }));
+        
+        setPdfPages(pages);
+        matcherRef.current = createPageMatcher(pages);
+        setPdfIdState(pdfId);
+        setDictionaryStatus("ready");
+        console.log(`[Live] Loaded ${pages.length} pages from page sections`);
+        return true;
+      }
+    } catch (e) {
+      console.warn("[Live] Failed to load page sections:", e);
+    }
+    return false;
+  }
+
+  async function triggerExtraction(): Promise<string | null> {
+    setDictionaryStatus("loading");
+    try {
+      const extractRes = await fetch("/api/extract-dictionary", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pdfPath: store.pdfFile }),
+      });
+      const extractData = await extractRes.json();
+      if (extractRes.ok && extractData.ok && extractData.pdfId) {
+        console.log(`[Live] Dictionary extracted: ${extractData.totalPages} pages`);
+        return extractData.pdfId;
+      }
+    } catch (e) {
+      console.warn("[Live] Extraction failed:", e);
+    }
+    setDictionaryStatus("none");
+    return null;
+  }
+
   useEffect(() => {
     (async () => {
       try {
@@ -108,6 +155,25 @@ export default function Live() {
           return;
         }
 
+        console.log("[Live] Checking for existing page sections...");
+        
+        const checkRes = await fetch(`/api/check-pdf-sections?path=${encodeURIComponent(store.pdfFile)}`);
+        const checkData = await checkRes.json();
+        
+        if (checkRes.ok && checkData.ok && checkData.pdfId && checkData.pageCount > 0) {
+          console.log(`[Live] Found existing sections for pdfId=${checkData.pdfId} (${checkData.pageCount} pages)`);
+          if (await loadPagesFromSections(checkData.pdfId)) {
+            return;
+          }
+        }
+        
+        console.log("[Live] No cached sections, triggering extraction...");
+        const pdfId = await triggerExtraction();
+        if (pdfId && await loadPagesFromSections(pdfId)) {
+          return;
+        }
+
+        console.log("[Live] Falling back to pdf-text endpoint");
         const res = await fetch(`/api/pdf-text?path=${encodeURIComponent(store.pdfFile)}`);
         const data = await res.json();
 
