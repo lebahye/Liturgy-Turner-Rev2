@@ -78,8 +78,17 @@ export function createPageMatcher(
   ): { page: number; score: number; matchedNgrams: number; totalNgrams: number } {
     let transcriptTokens = tokenize(transcript);
     
+    const originalTokens = [...transcriptTokens];
     if (dictMap.size > 0) {
       transcriptTokens = armenianToPhonetic(transcriptTokens, dictMap);
+    }
+    
+    const translated = transcriptTokens.filter((t, i) => t !== originalTokens[i]).length;
+    if (originalTokens.length > 0 && translated === 0) {
+      console.log(`[Matcher] No translations found. Sample tokens: ${originalTokens.slice(0, 5).join(", ")}`);
+      console.log(`[Matcher] Sample dict keys: ${Array.from(dictMap.keys()).slice(0, 5).join(", ")}`);
+    } else if (translated > 0) {
+      console.log(`[Matcher] Translated ${translated}/${originalTokens.length} tokens`);
     }
     
     const transcriptNgrams = extractNgrams(transcriptTokens, config.ngramSize);
