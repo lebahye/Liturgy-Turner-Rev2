@@ -220,6 +220,87 @@ extractDictionaryRouter.get("/page-sections/:pdfId", async (req, res) => {
   }
 });
 
+extractDictionaryRouter.post("/import-dictionary-csv", async (req, res) => {
+  try {
+    const { csvPath, pdfId: customPdfId } = req.body;
+    
+    if (!csvPath) {
+      return res.status(400).json({ ok: false, error: "CSV path required" });
+    }
+    
+    const abs = path.join(process.cwd(), csvPath);
+    if (!fs.existsSync(abs)) {
+      return res.status(404).json({ ok: false, error: "CSV file not found" });
+    }
+    
+    const pdfId = customPdfId || "manual_dictionary";
+    
+    await db.delete(wordDictionary).where(eq(wordDictionary.pdfId, pdfId));
+    
+    const csvContent = fs.readFileSync(abs, "utf-8");
+    const lines = csvContent.split("\n").slice(1);
+    
+    let imported = 0;
+    const seen = new Set<string>();
+    
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed) continue;
+      
+      const commaIdx = trimmed.indexOf(",");
+      if (commaIdx === -1) continue;
+      
+      const armenian = trimmed.slice(0, commaIdx).trim().toLowerCase();
+      const phonetic = trimmed.slice(commaIdx + 1).trim().toLowerCase();
+      
+      if (!armenian || !phonetic) continue;
+      
+      const key = `${armenian}|${phonetic}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      
+      await db.insert(wordDictionary).values({
+        pdfId,
+        armenian,
+        phonetic,
+        pageNumber: null,
+        occurrences: 1,
+        confidence: 1.0,
+      });
+      imported++;
+    }
+    
+    return res.json({
+      ok: true,
+      pdfId,
+      imported,
+      message: `Imported ${imported} word pairs`,
+    });
+  } catch (e: any) {
+    console.error("CSV import error:", e);
+    return res.status(500).json({ ok: false, error: e?.message || "Import failed" });
+  }
+});
+
+extractDictionaryRouter.get("/dictionary-words", async (req, res) => {
+  try {
+    const pdfId = (req.query.pdfId as string) || "manual_dictionary";
+    
+    const words = await db.select()
+      .from(wordDictionary)
+      .where(eq(wordDictionary.pdfId, pdfId));
+    
+    return res.json({
+      ok: true,
+      pdfId,
+      count: words.length,
+      words,
+    });
+  } catch (e: any) {
+    return res.status(500).json({ ok: false, error: e?.message || "Failed to get dictionary" });
+  }
+});
+
 extractDictionaryRouter.get("/check-pdf-sections", async (req, res) => {
   try {
     const pdfPath = req.query.path as string;
