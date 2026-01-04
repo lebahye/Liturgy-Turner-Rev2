@@ -51,6 +51,19 @@ export default function Live() {
   const pendingPageRef = useRef<number | null>(null);
   const pendingHitsRef = useRef<number>(0);
 
+  function handleManualPageTurn(direction: "prev" | "next") {
+    pendingPageRef.current = null;
+    pendingHitsRef.current = 0;
+    transcriptBufferRef.current = [];
+    setMatchInfo(null);
+    if (direction === "prev") {
+      store.prevPage();
+    } else {
+      store.nextPage();
+    }
+    console.log(`[Manual] Page turned ${direction}, reset tracking to page ${store.currentPage + (direction === "next" ? 1 : -1)}`);
+  }
+
   const containerRef = useRef<HTMLDivElement>(null);
   const [w, setW] = useState(900);
 
@@ -416,11 +429,12 @@ export default function Live() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
       if (e.code === "Space") {
         e.preventDefault();
-        store.nextPage();
+        handleManualPageTurn("next");
       } else if (e.code === "KeyB") {
-        store.prevPage();
+        handleManualPageTurn("prev");
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -555,14 +569,14 @@ export default function Live() {
                 <button
                   data-testid="button-prev-page"
                   className="w-full rounded-lg bg-gray-100 px-4 py-2"
-                  onClick={() => store.prevPage()}
+                  onClick={() => handleManualPageTurn("prev")}
                 >
                   Previous (B)
                 </button>
                 <button
                   data-testid="button-next-page"
                   className="w-full rounded-lg bg-gray-100 px-4 py-2"
-                  onClick={() => store.nextPage()}
+                  onClick={() => handleManualPageTurn("next")}
                 >
                   Next (Space)
                 </button>
