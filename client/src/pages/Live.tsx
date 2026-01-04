@@ -12,7 +12,7 @@ type AudioSource = "mic" | "file";
 const MATCHER_CONFIG: MatcherConfig = {
   ngramSize: 2,
   minNgramMatches: 1,
-  usePhonetic: true,
+  matchMode: "armenian",
 };
 
 const WINDOW_SECONDS = 6;
@@ -156,6 +156,7 @@ export default function Live() {
           pageNumber: Number(p.pageNumber),
           norm: String(p.combined || `${p.armenian || ""} ${p.phonetic || ""}`).toLowerCase(),
           phoneticNorm: String(p.phonetic || "").toLowerCase(),
+          armenianNorm: String(p.armenian || "").toLowerCase(),
         }));
         
         setPdfPages(pages);

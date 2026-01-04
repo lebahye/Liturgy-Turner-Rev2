@@ -2,6 +2,7 @@ export type PdfPageText = {
   pageNumber: number;
   norm: string;
   phoneticNorm?: string;
+  armenianNorm?: string;
 };
 
 export type DictEntry = {
@@ -12,13 +13,13 @@ export type DictEntry = {
 export type MatcherConfig = {
   ngramSize: number;
   minNgramMatches: number;
-  usePhonetic: boolean;
+  matchMode: "armenian" | "phonetic" | "combined";
 };
 
 export const DEFAULT_CONFIG: MatcherConfig = {
   ngramSize: 2,
   minNgramMatches: 1,
-  usePhonetic: true,
+  matchMode: "armenian",
 };
 
 function normalizeText(s: string): string {
@@ -48,27 +49,27 @@ function armenianToPhonetic(tokens: string[], dict: Map<string, string>): string
 
 export function createPageMatcher(
   pages: PdfPageText[],
-  dictionary?: DictEntry[],
+  _dictionary?: DictEntry[],
   config: MatcherConfig = DEFAULT_CONFIG
 ) {
-  const dictMap = new Map<string, string>();
-  if (dictionary) {
-    for (const entry of dictionary) {
-      const key = normalizeText(entry.armenian);
-      const val = normalizeText(entry.phonetic);
-      if (key && val) dictMap.set(key, val);
-    }
-  }
-
   const pageNgrams: Map<number, Set<string>> = new Map();
   
   for (const page of pages) {
-    const text = config.usePhonetic && page.phoneticNorm 
-      ? page.phoneticNorm 
-      : page.norm;
+    let text: string;
+    if (config.matchMode === "armenian" && page.armenianNorm) {
+      text = page.armenianNorm;
+    } else if (config.matchMode === "phonetic" && page.phoneticNorm) {
+      text = page.phoneticNorm;
+    } else {
+      text = page.norm;
+    }
     const tokens = tokenize(text);
     const ngrams = extractNgrams(tokens, config.ngramSize);
     pageNgrams.set(page.pageNumber, new Set(ngrams));
+    
+    if (page.pageNumber <= 5) {
+      console.log(`[Matcher] Page ${page.pageNumber} sample ngrams: ${ngrams.slice(0, 3).join(" | ")}`);
+    }
   }
 
   return function matchPage(
@@ -76,21 +77,7 @@ export function createPageMatcher(
     currentPage: number,
     lookAhead: number = 1
   ): { page: number; score: number; matchedNgrams: number; totalNgrams: number } {
-    let transcriptTokens = tokenize(transcript);
-    
-    const originalTokens = [...transcriptTokens];
-    if (dictMap.size > 0) {
-      transcriptTokens = armenianToPhonetic(transcriptTokens, dictMap);
-    }
-    
-    const translated = transcriptTokens.filter((t, i) => t !== originalTokens[i]).length;
-    if (originalTokens.length > 0 && translated === 0) {
-      console.log(`[Matcher] No translations found. Sample tokens: ${originalTokens.slice(0, 5).join(", ")}`);
-      console.log(`[Matcher] Sample dict keys: ${Array.from(dictMap.keys()).slice(0, 5).join(", ")}`);
-    } else if (translated > 0) {
-      console.log(`[Matcher] Translated ${translated}/${originalTokens.length} tokens`);
-    }
-    
+    const transcriptTokens = tokenize(transcript);
     const transcriptNgrams = extractNgrams(transcriptTokens, config.ngramSize);
     const transcriptNgramSet = new Set(transcriptNgrams);
     
