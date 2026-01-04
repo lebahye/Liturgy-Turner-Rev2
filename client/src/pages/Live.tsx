@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useStore } from "@/lib/store";
 import { Document, Page, pdfjs } from "react-pdf";
-import { createPageMatcher, PdfPageText, DictEntry } from "@/lib/pageMatching";
+import { createPageMatcher, PdfPageText, DictEntry, MatcherConfig } from "@/lib/pageMatching";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
@@ -9,9 +9,13 @@ pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.vers
 
 type AudioSource = "mic" | "file";
 
-const WINDOW_SECONDS = 8;
-const LOOKAHEAD = 5;
-const TURN_THRESHOLD = 0.15;
+const MATCHER_CONFIG: MatcherConfig = {
+  ngramSize: 2,
+  minNgramMatches: 1,
+  usePhonetic: true,
+};
+
+const WINDOW_SECONDS = 6;
 const CONFIRM_HITS = 2;
 
 async function safeJson(res: Response) {
@@ -42,7 +46,7 @@ export default function Live() {
   const [status, setStatus] = useState<"stopped" | "running">("stopped");
   const [lastTranscript, setLastTranscript] = useState<string>("");
   const [errorMsg, setErrorMsg] = useState<string>("");
-  const [matchInfo, setMatchInfo] = useState<{ page: number; score: number } | null>(null);
+  const [matchInfo, setMatchInfo] = useState<{ page: number; score: number; matchedNgrams: number; totalNgrams: number; currentPageMatches?: number } | null>(null);
 
   const [pdfPages, setPdfPages] = useState<PdfPageText[]>([]);
   const [dictionary, setDictionary] = useState<DictEntry[]>([]);
@@ -156,7 +160,7 @@ export default function Live() {
         
         setPdfPages(pages);
         setDictionary(dict);
-        matcherRef.current = createPageMatcher(pages, dict);
+        matcherRef.current = createPageMatcher(pages, dict, MATCHER_CONFIG);
         setPdfIdState(pdfId);
         setDictionaryStatus("ready");
         setDictionaryMessage(`Ready: ${pages.length} pages, ${dict.length} words`);
@@ -257,7 +261,7 @@ export default function Live() {
         }));
 
         setPdfPages(pages);
-        matcherRef.current = createPageMatcher(pages);
+        matcherRef.current = createPageMatcher(pages, undefined, MATCHER_CONFIG);
         setDictionaryStatus("ready");
         setDictionaryMessage(`Fallback ready: ${pages.length} pages`);
       } catch (e: any) {
@@ -301,19 +305,19 @@ export default function Live() {
     const windowText = transcriptBufferRef.current.map(x => x.text).join(" ");
 
     const currentPage = currentPageRef.current;
-    
-    const { page: bestPage, score: bestScore } = matcher(windowText, currentPage, LOOKAHEAD);
-    setMatchInfo({ page: bestPage, score: bestScore });
-    
     const nextPage = currentPage + 1;
-    const { score: nextPageScore } = matcher(windowText, currentPage, 1);
     
-    const shouldAdvance = nextPageScore >= TURN_THRESHOLD || 
-      (bestPage > nextPage && bestScore >= TURN_THRESHOLD);
+    const currentResult = matcher(windowText, currentPage, 0);
+    const nextResult = matcher(windowText, nextPage, 0);
     
-    const advanceScore = Math.max(nextPageScore, shouldAdvance ? bestScore : 0);
+    const currMatches = currentResult.matchedNgrams;
+    const nextMatches = nextResult.matchedNgrams;
     
-    console.log(`[Match] page ${currentPage}: next=${nextPage} (${(nextPageScore * 100).toFixed(1)}%), best=${bestPage} (${(bestScore * 100).toFixed(1)}%), advance=${shouldAdvance}`);
+    setMatchInfo({ ...nextResult, currentPageMatches: currMatches });
+    
+    const shouldAdvance = nextMatches >= MATCHER_CONFIG.minNgramMatches && nextMatches > currMatches;
+    
+    console.log(`[Match] p${currentPage}:${currMatches}ng, p${nextPage}:${nextMatches}ng, total:${currentResult.totalNgrams}ng, advance=${shouldAdvance}`);
 
     if (shouldAdvance) {
       if (pendingPageRef.current === nextPage) {
@@ -585,7 +589,7 @@ export default function Live() {
 
               {matchInfo && (
                 <div className="mt-3 rounded-lg bg-blue-50 p-3">
-                  <div className="text-xs font-medium text-blue-800">Match Confidence</div>
+                  <div className="text-xs font-medium text-blue-800">N-gram Matching</div>
                   <div className="mt-1 flex items-center gap-3">
                     <div className="flex-1">
                       <div className="h-2 rounded-full bg-blue-200">
@@ -596,11 +600,11 @@ export default function Live() {
                       </div>
                     </div>
                     <div data-testid="text-confidence" className="text-sm font-bold text-blue-700">
-                      {(matchInfo.score * 100).toFixed(1)}%
+                      {matchInfo.matchedNgrams}/{matchInfo.totalNgrams}
                     </div>
                   </div>
                   <div className="mt-1 text-xs text-blue-600">
-                    Best match: Page {matchInfo.page} (threshold: {TURN_THRESHOLD * 100}%)
+                    Current: {matchInfo.currentPageMatches ?? 0} | Next: {matchInfo.matchedNgrams} (need {MATCHER_CONFIG.minNgramMatches}+ and more than current)
                   </div>
                 </div>
               )}

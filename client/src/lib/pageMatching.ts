@@ -9,164 +9,140 @@ export type DictEntry = {
   phonetic: string;
 };
 
-function normalizeText(s: string) {
+export type MatcherConfig = {
+  ngramSize: number;
+  minNgramMatches: number;
+  usePhonetic: boolean;
+};
+
+export const DEFAULT_CONFIG: MatcherConfig = {
+  ngramSize: 2,
+  minNgramMatches: 1,
+  usePhonetic: true,
+};
+
+function normalizeText(s: string): string {
   return (s || "")
     .toLowerCase()
-    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/[^a-zA-Z0-9\u0530-\u058F\u0561-\u0587\s]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
 
-function tokenize(s: string) {
-  return normalizeText(s)
-    .split(" ")
-    .map(t => t.trim())
-    .filter(Boolean);
+function tokenize(s: string): string[] {
+  return normalizeText(s).split(" ").filter(Boolean);
 }
 
-function armenianToPhonetic(text: string, dict: Map<string, string>): string {
-  const tokens = tokenize(text);
-  const converted: string[] = [];
-  
-  for (const token of tokens) {
-    const phonetic = dict.get(token);
-    if (phonetic) {
-      converted.push(phonetic);
-    } else {
-      converted.push(token);
-    }
+function extractNgrams(tokens: string[], n: number): string[] {
+  if (tokens.length < n) return tokens.length > 0 ? [tokens.join(" ")] : [];
+  const ngrams: string[] = [];
+  for (let i = 0; i <= tokens.length - n; i++) {
+    ngrams.push(tokens.slice(i, i + n).join(" "));
   }
-  
-  return converted.join(" ");
+  return ngrams;
 }
 
-function trigramSimilarity(a: string, b: string): number {
-  if (a === b) return 1;
-  if (a.length < 3 || b.length < 3) {
-    return a === b ? 1 : (a.includes(b) || b.includes(a)) ? 0.5 : 0;
-  }
-  
-  const trigramsA = new Set<string>();
-  const trigramsB = new Set<string>();
-  
-  for (let i = 0; i <= a.length - 3; i++) {
-    trigramsA.add(a.slice(i, i + 3));
-  }
-  for (let i = 0; i <= b.length - 3; i++) {
-    trigramsB.add(b.slice(i, i + 3));
-  }
-  
-  let overlap = 0;
-  Array.from(trigramsA).forEach(t => {
-    if (trigramsB.has(t)) overlap++;
-  });
-  
-  const union = trigramsA.size + trigramsB.size - overlap;
-  return union > 0 ? overlap / union : 0;
-}
-
-function buildIdf(pages: PdfPageText[], usePhonetic = true) {
-  const df = new Map<string, number>();
-  const N = Math.max(1, pages.length);
-
-  for (const p of pages) {
-    const text = usePhonetic && p.phoneticNorm ? p.phoneticNorm : p.norm;
-    const seen = new Set(tokenize(text));
-    Array.from(seen).forEach(t => df.set(t, (df.get(t) || 0) + 1));
-  }
-
-  const idf = new Map<string, number>();
-  Array.from(df.entries()).forEach(([t, d]) => {
-    idf.set(t, Math.log((N + 1) / (d + 1)) + 1);
-  });
-  return idf;
-}
-
-function fuzzyMatchScore(
-  pageTokens: Set<string>,
-  transcriptTokens: string[],
-  idf: Map<string, number>
-): number {
-  if (pageTokens.size === 0 || transcriptTokens.length === 0) return 0;
-
-  let hit = 0;
-  let total = 0;
-  const pageTokensArr = Array.from(pageTokens);
-
-  for (const tToken of transcriptTokens) {
-    const w = idf.get(tToken) ?? 1;
-    total += w;
-    
-    if (pageTokens.has(tToken)) {
-      hit += w;
-    } else {
-      let bestSim = 0;
-      for (const pToken of pageTokensArr) {
-        if (tToken.length >= 4 && pToken.length >= 4) {
-          const sim = trigramSimilarity(tToken, pToken);
-          if (sim > bestSim) bestSim = sim;
-        }
-      }
-      if (bestSim > 0.4) {
-        hit += w * bestSim;
-      }
-    }
-  }
-
-  const minWords = 3;
-  if (transcriptTokens.length < minWords) return 0;
-
-  return hit / Math.max(1e-9, total);
+function armenianToPhonetic(tokens: string[], dict: Map<string, string>): string[] {
+  return tokens.map(token => dict.get(token) || token);
 }
 
 export function createPageMatcher(
   pages: PdfPageText[],
-  dictionary?: DictEntry[]
+  dictionary?: DictEntry[],
+  config: MatcherConfig = DEFAULT_CONFIG
 ) {
   const dictMap = new Map<string, string>();
   if (dictionary) {
     for (const entry of dictionary) {
-      dictMap.set(normalizeText(entry.armenian), normalizeText(entry.phonetic));
+      const key = normalizeText(entry.armenian);
+      const val = normalizeText(entry.phonetic);
+      if (key && val) dictMap.set(key, val);
     }
   }
 
-  const idf = buildIdf(pages, true);
+  const pageNgrams: Map<number, Set<string>> = new Map();
+  
+  for (const page of pages) {
+    const text = config.usePhonetic && page.phoneticNorm 
+      ? page.phoneticNorm 
+      : page.norm;
+    const tokens = tokenize(text);
+    const ngrams = extractNgrams(tokens, config.ngramSize);
+    pageNgrams.set(page.pageNumber, new Set(ngrams));
+  }
 
-  return function choosePage(
-    transcriptWindow: string,
+  return function matchPage(
+    transcript: string,
     currentPage: number,
-    lookAheadPages = 3
-  ): { page: number; score: number } {
-    let tNorm = normalizeText(transcriptWindow);
-    if (!tNorm) return { page: currentPage, score: 0 };
-
+    lookAhead: number = 1
+  ): { page: number; score: number; matchedNgrams: number; totalNgrams: number } {
+    let transcriptTokens = tokenize(transcript);
+    
     if (dictMap.size > 0) {
-      tNorm = armenianToPhonetic(tNorm, dictMap);
+      transcriptTokens = armenianToPhonetic(transcriptTokens, dictMap);
+    }
+    
+    const transcriptNgrams = extractNgrams(transcriptTokens, config.ngramSize);
+    const transcriptNgramSet = new Set(transcriptNgrams);
+    
+    if (transcriptNgrams.length === 0) {
+      return { page: currentPage, score: 0, matchedNgrams: 0, totalNgrams: 0 };
     }
 
-    const tTokens = tokenize(tNorm);
-    if (tTokens.length === 0) return { page: currentPage, score: 0 };
-
-    const min = currentPage;
-    const max = Math.min(currentPage + lookAheadPages, pages.length);
-
     let bestPage = currentPage;
-    let bestScore = 0;
-
-    for (let p = min; p <= max; p++) {
-      const page = pages[p - 1];
-      if (!page) continue;
-
-      const pageText = page.phoneticNorm || page.norm;
-      const pageTokens = new Set(tokenize(pageText));
-
-      const score = fuzzyMatchScore(pageTokens, tTokens, idf);
-      if (score > bestScore) {
-        bestScore = score;
+    let bestMatches = 0;
+    
+    const maxPage = Math.min(currentPage + lookAhead, pages.length);
+    
+    for (let p = currentPage; p <= maxPage; p++) {
+      const pageNgramSet = pageNgrams.get(p);
+      if (!pageNgramSet) continue;
+      
+      let matches = 0;
+      for (const ng of transcriptNgramSet) {
+        if (pageNgramSet.has(ng)) matches++;
+      }
+      
+      if (matches > bestMatches) {
+        bestMatches = matches;
         bestPage = p;
       }
     }
 
-    return { page: bestPage, score: bestScore };
+    const score = transcriptNgrams.length > 0 
+      ? bestMatches / transcriptNgrams.length 
+      : 0;
+
+    return { 
+      page: bestPage, 
+      score, 
+      matchedNgrams: bestMatches, 
+      totalNgrams: transcriptNgrams.length 
+    };
   };
+}
+
+export function checkPageHasContent(
+  transcript: string,
+  pageText: string,
+  ngramSize: number = 2,
+  dict?: Map<string, string>
+): { matches: number; total: number } {
+  let transcriptTokens = tokenize(transcript);
+  
+  if (dict && dict.size > 0) {
+    transcriptTokens = armenianToPhonetic(transcriptTokens, dict);
+  }
+  
+  const pageTokens = tokenize(pageText);
+  
+  const transcriptNgrams = extractNgrams(transcriptTokens, ngramSize);
+  const pageNgramSet = new Set(extractNgrams(pageTokens, ngramSize));
+  
+  let matches = 0;
+  transcriptNgrams.forEach(ng => {
+    if (pageNgramSet.has(ng)) matches++;
+  });
+  
+  return { matches, total: transcriptNgrams.length };
 }
