@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useStore } from "@/lib/store";
 import { Document, Page, pdfjs } from "react-pdf";
-import { createPageMatcher, PdfPageText } from "@/lib/pageMatching";
+import { createPageMatcher, PdfPageText, DictEntry } from "@/lib/pageMatching";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
@@ -45,6 +45,7 @@ export default function Live() {
   const [matchInfo, setMatchInfo] = useState<{ page: number; score: number } | null>(null);
 
   const [pdfPages, setPdfPages] = useState<PdfPageText[]>([]);
+  const [dictionary, setDictionary] = useState<DictEntry[]>([]);
   const matcherRef = useRef<ReturnType<typeof createPageMatcher> | null>(null);
 
   const transcriptBufferRef = useRef<{ t: number; text: string }[]>([]);
@@ -108,23 +109,46 @@ export default function Live() {
   const [pdfIdState, setPdfIdState] = useState<string | null>(null);
   const [dictionaryMessage, setDictionaryMessage] = useState<string>("");
 
+  async function loadDictionary(): Promise<DictEntry[]> {
+    try {
+      const res = await fetch("/api/dictionary-words?pdfId=global_dictionary");
+      const data = await res.json();
+      if (res.ok && data.ok && Array.isArray(data.words)) {
+        const entries: DictEntry[] = data.words.map((w: any) => ({
+          armenian: String(w.armenian || ""),
+          phonetic: String(w.phonetic || ""),
+        }));
+        console.log(`[Live] Loaded ${entries.length} dictionary entries`);
+        return entries;
+      }
+    } catch (e) {
+      console.warn("[Live] Failed to load dictionary:", e);
+    }
+    return [];
+  }
+
   async function loadPagesFromSections(pdfId: string): Promise<boolean> {
     try {
-      const sectionsRes = await fetch(`/api/page-sections/${pdfId}`);
+      const [sectionsRes, dict] = await Promise.all([
+        fetch(`/api/page-sections/${pdfId}`),
+        loadDictionary(),
+      ]);
       const sectionsData = await sectionsRes.json();
       
       if (sectionsRes.ok && sectionsData.ok && Array.isArray(sectionsData.pages) && sectionsData.pages.length > 0) {
         const pages: PdfPageText[] = sectionsData.pages.map((p: any) => ({
           pageNumber: Number(p.pageNumber),
           norm: String(p.combined || `${p.armenian || ""} ${p.phonetic || ""}`).toLowerCase(),
+          phoneticNorm: String(p.phonetic || "").toLowerCase(),
         }));
         
         setPdfPages(pages);
-        matcherRef.current = createPageMatcher(pages);
+        setDictionary(dict);
+        matcherRef.current = createPageMatcher(pages, dict);
         setPdfIdState(pdfId);
         setDictionaryStatus("ready");
-        setDictionaryMessage(`Matcher ready: ${pages.length} pages loaded`);
-        console.log(`[Live] Loaded ${pages.length} pages from page sections`);
+        setDictionaryMessage(`Ready: ${pages.length} pages, ${dict.length} words`);
+        console.log(`[Live] Loaded ${pages.length} pages + ${dict.length} dictionary words`);
         return true;
       }
     } catch (e) {
