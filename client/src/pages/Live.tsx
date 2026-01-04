@@ -9,9 +9,9 @@ pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.vers
 
 type AudioSource = "mic" | "file";
 
-const WINDOW_SECONDS = 12;
-const LOOKAHEAD = 2;
-const TURN_THRESHOLD = 0.22;
+const WINDOW_SECONDS = 8;
+const LOOKAHEAD = 5;
+const TURN_THRESHOLD = 0.15;
 const CONFIRM_HITS = 2;
 
 async function safeJson(res: Response) {
@@ -51,18 +51,30 @@ export default function Live() {
   const transcriptBufferRef = useRef<{ t: number; text: string }[]>([]);
   const pendingPageRef = useRef<number | null>(null);
   const pendingHitsRef = useRef<number>(0);
+  const currentPageRef = useRef<number>(store.currentPage);
+
+  useEffect(() => {
+    currentPageRef.current = store.currentPage;
+  }, [store.currentPage]);
 
   function handleManualPageTurn(direction: "prev" | "next") {
     pendingPageRef.current = null;
     pendingHitsRef.current = 0;
     transcriptBufferRef.current = [];
     setMatchInfo(null);
+    
+    const newPage = direction === "prev" 
+      ? Math.max(1, store.currentPage - 1)
+      : Math.min(store.totalPages, store.currentPage + 1);
+    
+    currentPageRef.current = newPage;
+    
     if (direction === "prev") {
       store.prevPage();
     } else {
       store.nextPage();
     }
-    console.log(`[Manual] Page turned ${direction}, reset tracking to page ${store.currentPage + (direction === "next" ? 1 : -1)}`);
+    console.log(`[Manual] Page turned ${direction}, now tracking from page ${newPage}`);
   }
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -288,11 +300,12 @@ export default function Live() {
 
     const windowText = transcriptBufferRef.current.map(x => x.text).join(" ");
 
-    const { page, score } = matcher(windowText, store.currentPage, LOOKAHEAD);
+    const currentPage = currentPageRef.current;
+    const { page, score } = matcher(windowText, currentPage, LOOKAHEAD);
     setMatchInfo({ page, score });
-    console.log(`[Match] transcript: "${windowText.slice(0, 50)}..." → page ${page}, score ${(score * 100).toFixed(1)}%`);
+    console.log(`[Match] from page ${currentPage}: "${windowText.slice(0, 40)}..." → best ${page}, score ${(score * 100).toFixed(1)}%`);
 
-    if (page <= store.currentPage) {
+    if (page <= currentPage) {
       pendingPageRef.current = null;
       pendingHitsRef.current = 0;
       return;
@@ -308,9 +321,11 @@ export default function Live() {
 
       if (pendingHitsRef.current >= CONFIRM_HITS) {
         store.setPage(page);
+        currentPageRef.current = page;
         pendingPageRef.current = null;
         pendingHitsRef.current = 0;
         transcriptBufferRef.current = [];
+        console.log(`[Auto] Page turned to ${page}`);
       }
     } else {
       pendingPageRef.current = null;
