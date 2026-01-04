@@ -308,9 +308,14 @@ export default function Live() {
     const nextPage = currentPage + 1;
     const { score: nextPageScore } = matcher(windowText, currentPage, 1);
     
-    console.log(`[Match] page ${currentPage}: next=${nextPage} (${(nextPageScore * 100).toFixed(1)}%), best=${bestPage} (${(bestScore * 100).toFixed(1)}%)`);
+    const shouldAdvance = nextPageScore >= TURN_THRESHOLD || 
+      (bestPage > nextPage && bestScore >= TURN_THRESHOLD);
+    
+    const advanceScore = Math.max(nextPageScore, shouldAdvance ? bestScore : 0);
+    
+    console.log(`[Match] page ${currentPage}: next=${nextPage} (${(nextPageScore * 100).toFixed(1)}%), best=${bestPage} (${(bestScore * 100).toFixed(1)}%), advance=${shouldAdvance}`);
 
-    if (nextPageScore >= TURN_THRESHOLD) {
+    if (shouldAdvance) {
       if (pendingPageRef.current === nextPage) {
         pendingHitsRef.current += 1;
       } else {
