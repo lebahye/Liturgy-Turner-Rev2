@@ -2,7 +2,7 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 import crypto from "crypto";
-import { PDFParse } from "pdf-parse";
+import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
 import { db } from "../db";
 import { wordDictionary, pageSections } from "@shared/schema";
 import { eq, and } from "drizzle-orm";
@@ -66,6 +66,13 @@ function buildWordPairs(armenianWords: string[], phoneticWords: string[]): { arm
   return pairs;
 }
 
+async function extractTextFromPage(pdfDoc: any, pageNum: number): Promise<string> {
+  const page = await pdfDoc.getPage(pageNum);
+  const textContent = await page.getTextContent();
+  const items = textContent.items as Array<{ str: string }>;
+  return items.map(item => item.str).join(" ");
+}
+
 extractDictionaryRouter.post("/extract-dictionary", async (req, res) => {
   try {
     const { pdfPath } = req.body;
@@ -85,58 +92,55 @@ extractDictionaryRouter.post("/extract-dictionary", async (req, res) => {
     await db.delete(pageSections).where(eq(pageSections.pdfId, pdfId));
     
     const dataBuffer = fs.readFileSync(abs);
-    const parser = new PDFParse({ data: dataBuffer });
-    const result = await parser.getText();
-    await parser.destroy();
-    
-    const raw = result.text || "";
-    const pageTexts = raw.split("\f");
+    const data = new Uint8Array(dataBuffer);
+    const pdfDoc = await pdfjsLib.getDocument({ data }).promise;
+    const numPages = pdfDoc.numPages;
     
     let totalWords = 0;
     let totalPages = 0;
+    const allPairs: { armenian: string; phonetic: string; pageNumber: number }[] = [];
     
-    for (let i = 0; i < pageTexts.length; i++) {
-      const pageText = pageTexts[i];
-      const pageNumber = i + 1;
+    for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+      const pageText = await extractTextFromPage(pdfDoc, pageNum);
       
       const { armenian, phonetic, english } = extractTextSections(pageText);
       
       await db.insert(pageSections).values({
         pdfId,
-        pageNumber,
+        pageNumber: pageNum,
         armenianText: armenian.join(" "),
         phoneticText: phonetic.join(" "),
         englishText: english.join(" "),
       });
       
       const pairs = buildWordPairs(armenian, phonetic);
-      
       for (const pair of pairs) {
-        const existing = await db.select()
-          .from(wordDictionary)
-          .where(and(
-            eq(wordDictionary.pdfId, pdfId),
-            eq(wordDictionary.armenian, pair.armenian),
-            eq(wordDictionary.phonetic, pair.phonetic)
-          ))
-          .limit(1);
-        
-        if (existing.length > 0) {
-          await db.update(wordDictionary)
-            .set({ occurrences: (existing[0].occurrences || 1) + 1 })
-            .where(eq(wordDictionary.id, existing[0].id));
-        } else {
-          await db.insert(wordDictionary).values({
-            pdfId,
-            armenian: pair.armenian,
-            phonetic: pair.phonetic,
-            pageNumber,
-          });
-          totalWords++;
-        }
+        allPairs.push({ ...pair, pageNumber: pageNum });
       }
       
       totalPages++;
+    }
+    
+    const uniquePairs = new Map<string, { armenian: string; phonetic: string; pageNumber: number; occurrences: number }>();
+    for (const pair of allPairs) {
+      const key = `${pair.armenian}|${pair.phonetic}`;
+      if (uniquePairs.has(key)) {
+        uniquePairs.get(key)!.occurrences++;
+      } else {
+        uniquePairs.set(key, { ...pair, occurrences: 1 });
+      }
+    }
+    
+    const pairsToInsert = Array.from(uniquePairs.values());
+    for (const pair of pairsToInsert) {
+      await db.insert(wordDictionary).values({
+        pdfId,
+        armenian: pair.armenian,
+        phonetic: pair.phonetic,
+        pageNumber: pair.pageNumber,
+        occurrences: pair.occurrences,
+      });
+      totalWords++;
     }
     
     return res.json({
