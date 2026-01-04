@@ -94,8 +94,9 @@ export default function Live() {
     return () => URL.revokeObjectURL(url);
   }, [audioFile]);
 
-  const [dictionaryStatus, setDictionaryStatus] = useState<"none" | "loading" | "ready">("none");
+  const [dictionaryStatus, setDictionaryStatus] = useState<"checking" | "cached" | "extracting" | "ready" | "error">("checking");
   const [pdfIdState, setPdfIdState] = useState<string | null>(null);
+  const [dictionaryMessage, setDictionaryMessage] = useState<string>("");
 
   async function loadPagesFromSections(pdfId: string): Promise<boolean> {
     try {
@@ -112,6 +113,7 @@ export default function Live() {
         matcherRef.current = createPageMatcher(pages);
         setPdfIdState(pdfId);
         setDictionaryStatus("ready");
+        setDictionaryMessage(`Matcher ready: ${pages.length} pages loaded`);
         console.log(`[Live] Loaded ${pages.length} pages from page sections`);
         return true;
       }
@@ -122,7 +124,8 @@ export default function Live() {
   }
 
   async function triggerExtraction(): Promise<string | null> {
-    setDictionaryStatus("loading");
+    setDictionaryStatus("extracting");
+    setDictionaryMessage("Extracting text from PDF...");
     try {
       const extractRes = await fetch("/api/extract-dictionary", {
         method: "POST",
@@ -132,26 +135,44 @@ export default function Live() {
       const extractData = await extractRes.json();
       if (extractRes.ok && extractData.ok && extractData.pdfId) {
         console.log(`[Live] Dictionary extracted: ${extractData.totalPages} pages`);
+        setDictionaryMessage(`Extracted ${extractData.totalPages} pages`);
         return extractData.pdfId;
       }
     } catch (e) {
       console.warn("[Live] Extraction failed:", e);
     }
-    setDictionaryStatus("none");
+    setDictionaryStatus("error");
+    setDictionaryMessage("Failed to extract dictionary");
     return null;
+  }
+  
+  async function rebuildDictionary() {
+    if (!store.pdfFile) return;
+    setDictionaryStatus("extracting");
+    setDictionaryMessage("Rebuilding dictionary...");
+    const pdfId = await triggerExtraction();
+    if (pdfId) {
+      await loadPagesFromSections(pdfId);
+    }
   }
 
   useEffect(() => {
     (async () => {
       try {
         setErrorMsg("");
+        setDictionaryStatus("checking");
+        setDictionaryMessage("Checking for cached data...");
         console.log("[Live] store.pdfFile =", store.pdfFile);
         if (!store.pdfFile) {
           console.log("[Live] No PDF file set");
+          setDictionaryStatus("error");
+          setDictionaryMessage("No PDF loaded");
           return;
         }
         if (!store.pdfFile.startsWith("/uploads/")) {
           console.log("[Live] PDF path doesn't start with /uploads/, skipping text extraction");
+          setDictionaryStatus("error");
+          setDictionaryMessage("Invalid PDF path");
           return;
         }
 
@@ -162,6 +183,8 @@ export default function Live() {
         
         if (checkRes.ok && checkData.ok && checkData.pdfId && checkData.pageCount > 0) {
           console.log(`[Live] Found existing sections for pdfId=${checkData.pdfId} (${checkData.pageCount} pages)`);
+          setDictionaryStatus("cached");
+          setDictionaryMessage(`Found cached data: ${checkData.pageCount} pages`);
           if (await loadPagesFromSections(checkData.pdfId)) {
             return;
           }
@@ -174,6 +197,7 @@ export default function Live() {
         }
 
         console.log("[Live] Falling back to pdf-text endpoint");
+        setDictionaryMessage("Using fallback text extraction...");
         const res = await fetch(`/api/pdf-text?path=${encodeURIComponent(store.pdfFile)}`);
         const data = await res.json();
 
@@ -188,8 +212,12 @@ export default function Live() {
 
         setPdfPages(pages);
         matcherRef.current = createPageMatcher(pages);
+        setDictionaryStatus("ready");
+        setDictionaryMessage(`Fallback ready: ${pages.length} pages`);
       } catch (e: any) {
         setErrorMsg(e?.message || "Failed to load PDF matching data");
+        setDictionaryStatus("error");
+        setDictionaryMessage(e?.message || "Failed to load");
         setPdfPages([]);
         matcherRef.current = null;
       }
@@ -471,7 +499,7 @@ export default function Live() {
                   data-testid="button-start"
                   className="rounded-lg bg-green-500 px-4 py-2 text-white disabled:opacity-50"
                   onClick={start}
-                  disabled={status === "running"}
+                  disabled={status === "running" || dictionaryStatus !== "ready"}
                 >
                   Start
                 </button>
@@ -544,17 +572,40 @@ export default function Live() {
               </div>
 
               <div className="mt-3 rounded-lg bg-gray-50 p-2 text-xs">
-                <div className="font-medium text-gray-700">System Status:</div>
+                <div className="font-medium text-gray-700">Dictionary Status:</div>
                 <div className="mt-1 space-y-1">
+                  <div className="flex items-center gap-2">
+                    {dictionaryStatus === "checking" && (
+                      <span className="text-yellow-600">Checking...</span>
+                    )}
+                    {dictionaryStatus === "cached" && (
+                      <span className="text-blue-600">Using cached data</span>
+                    )}
+                    {dictionaryStatus === "extracting" && (
+                      <span className="text-yellow-600">Extracting...</span>
+                    )}
+                    {dictionaryStatus === "ready" && (
+                      <span className="text-green-600">Ready</span>
+                    )}
+                    {dictionaryStatus === "error" && (
+                      <span className="text-red-600">Error</span>
+                    )}
+                  </div>
+                  <div className="text-gray-600">{dictionaryMessage}</div>
                   <div className={pdfPages.length > 0 ? "text-green-600" : "text-red-600"}>
                     {pdfPages.length > 0 
-                      ? `PDF loaded: ${pdfPages.length} pages with text`
-                      : "PDF text not loaded - upload a PDF first"}
-                  </div>
-                  <div className={matcherRef.current ? "text-green-600" : "text-red-600"}>
-                    {matcherRef.current ? "Matcher ready" : "Matcher not initialized"}
+                      ? `Pages loaded: ${pdfPages.length}`
+                      : "No pages loaded"}
                   </div>
                 </div>
+                <button
+                  data-testid="button-rebuild-dictionary"
+                  className="mt-2 w-full rounded bg-gray-200 px-2 py-1 text-xs hover:bg-gray-300 disabled:opacity-50"
+                  onClick={rebuildDictionary}
+                  disabled={dictionaryStatus === "extracting" || dictionaryStatus === "checking" || !store.pdfFile}
+                >
+                  Rebuild Dictionary
+                </button>
               </div>
             </div>
           </div>
