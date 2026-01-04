@@ -301,31 +301,30 @@ export default function Live() {
     const windowText = transcriptBufferRef.current.map(x => x.text).join(" ");
 
     const currentPage = currentPageRef.current;
-    const { page, score } = matcher(windowText, currentPage, LOOKAHEAD);
-    setMatchInfo({ page, score });
-    console.log(`[Match] from page ${currentPage}: "${windowText.slice(0, 40)}..." → best ${page}, score ${(score * 100).toFixed(1)}%`);
+    
+    const { page: bestPage, score: bestScore } = matcher(windowText, currentPage, LOOKAHEAD);
+    setMatchInfo({ page: bestPage, score: bestScore });
+    
+    const nextPage = currentPage + 1;
+    const { score: nextPageScore } = matcher(windowText, currentPage, 1);
+    
+    console.log(`[Match] page ${currentPage}: next=${nextPage} (${(nextPageScore * 100).toFixed(1)}%), best=${bestPage} (${(bestScore * 100).toFixed(1)}%)`);
 
-    if (page <= currentPage) {
-      pendingPageRef.current = null;
-      pendingHitsRef.current = 0;
-      return;
-    }
-
-    if (score >= TURN_THRESHOLD) {
-      if (pendingPageRef.current === page) {
+    if (nextPageScore >= TURN_THRESHOLD) {
+      if (pendingPageRef.current === nextPage) {
         pendingHitsRef.current += 1;
       } else {
-        pendingPageRef.current = page;
+        pendingPageRef.current = nextPage;
         pendingHitsRef.current = 1;
       }
 
       if (pendingHitsRef.current >= CONFIRM_HITS) {
-        store.setPage(page);
-        currentPageRef.current = page;
+        store.setPage(nextPage);
+        currentPageRef.current = nextPage;
         pendingPageRef.current = null;
         pendingHitsRef.current = 0;
         transcriptBufferRef.current = [];
-        console.log(`[Auto] Page turned to ${page}`);
+        console.log(`[Auto] Advanced to page ${nextPage}`);
       }
     } else {
       pendingPageRef.current = null;
