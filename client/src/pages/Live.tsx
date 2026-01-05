@@ -10,8 +10,8 @@ pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.vers
 type AudioSource = "mic" | "file";
 
 const MATCHER_CONFIG: MatcherConfig = {
-  ngramSize: 1,
-  minNgramMatches: 3,
+  ngramSize: 2,
+  minNgramMatches: 1,
   matchMode: "armenian",
 };
 
