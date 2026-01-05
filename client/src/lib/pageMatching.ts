@@ -22,12 +22,23 @@ export const DEFAULT_CONFIG: MatcherConfig = {
   matchMode: "armenian",
 };
 
+function normalizeArmenianOrthography(s: string): string {
+  return s
+    .replace(/\uFB14/g, "\u0574\u0565")
+    .replace(/\uFB15/g, "\u0574\u056B")
+    .replace(/\uFB17/g, "\u0574\u056D")
+    .replace(/\uFB13/g, "\u0574\u0576")
+    .replace(/\uFB16/g, "\u057E\u0576");
+}
+
 function normalizeText(s: string): string {
-  return (s || "")
-    .toLowerCase()
-    .replace(/[^a-zA-Z0-9\u0530-\u058F\u0561-\u0587\s]/g, " ")
+  let text = (s || "").toLowerCase();
+  text = normalizeArmenianOrthography(text);
+  text = text
+    .replace(/[^a-zA-Z0-9\u0530-\u058F\s]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+  return text;
 }
 
 function tokenize(s: string): string[] {
@@ -80,6 +91,15 @@ export function createPageMatcher(
     const transcriptTokens = tokenize(transcript);
     const transcriptNgrams = extractNgrams(transcriptTokens, config.ngramSize);
     const transcriptNgramSet = new Set(transcriptNgrams);
+    
+    if (transcriptNgrams.length > 0 && transcriptNgrams.length <= 10) {
+      console.log(`[Matcher] Transcript tokens: ${transcriptTokens.slice(0, 5).join(", ")}`);
+      const pageSet = pageNgrams.get(currentPage);
+      if (pageSet) {
+        const pageArr = Array.from(pageSet);
+        console.log(`[Matcher] Page ${currentPage} tokens: ${pageArr.slice(0, 5).join(", ")}`);
+      }
+    }
     
     if (transcriptNgrams.length === 0) {
       return { page: currentPage, score: 0, matchedNgrams: 0, totalNgrams: 0 };
