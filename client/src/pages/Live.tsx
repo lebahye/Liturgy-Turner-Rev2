@@ -536,18 +536,41 @@ export default function Live() {
   }
 
   async function startMicRecorder() {
-    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    // Request mic with noise suppression enabled to filter fan noise
+    const stream = await navigator.mediaDevices.getUserMedia({ 
+      audio: {
+        noiseSuppression: true,
+        echoCancellation: true,
+        autoGainControl: false, // Don't auto-boost quiet sounds (like fan)
+      }
+    });
     micStreamRef.current = stream;
     
-    // Set up AudioContext and AnalyserNode for VAD
+    // Set up AudioContext with high-pass filter to cut low-frequency fan noise
     const ctx = new AudioContext();
     audioCtxRef.current = ctx;
     
     const source = ctx.createMediaStreamSource(stream);
+    
+    // High-pass filter at 150Hz to remove low-frequency fan hum
+    const highPassFilter = ctx.createBiquadFilter();
+    highPassFilter.type = "highpass";
+    highPassFilter.frequency.value = 150;
+    highPassFilter.Q.value = 0.7;
+    
+    source.connect(highPassFilter);
+    
+    // Create filtered stream for recording
+    const dest = ctx.createMediaStreamDestination();
+    highPassFilter.connect(dest);
+    
+    // Use filtered stream for recording
+    const filteredStream = dest.stream;
+    
     const analyser = ctx.createAnalyser();
     analyser.fftSize = 256;
     analyser.smoothingTimeConstant = 0.3;
-    source.connect(analyser);
+    highPassFilter.connect(analyser);
     analyserRef.current = analyser;
     
     // Start VAD monitoring
@@ -579,7 +602,8 @@ export default function Live() {
       }
     }, VAD_CHECK_INTERVAL);
     
-    startRecordingCycle(stream);
+    // Use the filtered stream (with high-pass filter applied) for recording
+    startRecordingCycle(filteredStream);
     setStatus("running");
   }
 
