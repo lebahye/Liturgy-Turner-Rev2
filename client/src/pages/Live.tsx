@@ -12,7 +12,7 @@ type AudioSource = "mic" | "file";
 const MATCHER_CONFIG: MatcherConfig = {
   ngramSize: 2,
   minNgramMatches: 1,
-  matchMode: "armenian",
+  matchMode: "phonetic", // Match against phonetic text on pages
 };
 
 const WINDOW_SECONDS = 6;
@@ -58,6 +58,9 @@ export default function Live() {
   
   // Set of valid Armenian words for filtering garbage transcriptions
   const validArmenianWordsRef = useRef<Set<string>>(new Set());
+  
+  // Armenian → Phonetic lookup map for translation
+  const armenianToPhoneticRef = useRef<Map<string, string>>(new Map());
 
   const transcriptBufferRef = useRef<{ t: number; text: string }[]>([]);
   const pendingPageRef = useRef<number | null>(null);
@@ -149,16 +152,22 @@ export default function Live() {
           phonetic: String(w.phonetic || ""),
         }));
         
-        // Build set of valid Armenian words for filtering
+        // Build set of valid Armenian words and Armenian→Phonetic map
         const validWords = new Set<string>();
+        const armenianToPhonetic = new Map<string, string>();
         for (const entry of entries) {
           if (entry.armenian) {
-            validWords.add(entry.armenian.toLowerCase());
+            const armLower = entry.armenian.toLowerCase();
+            validWords.add(armLower);
+            if (entry.phonetic) {
+              armenianToPhonetic.set(armLower, entry.phonetic.toLowerCase());
+            }
           }
         }
         validArmenianWordsRef.current = validWords;
+        armenianToPhoneticRef.current = armenianToPhonetic;
         
-        console.log(`[Live] Loaded ${entries.length} dictionary entries (${validWords.size} valid words)`);
+        console.log(`[Live] Loaded ${entries.length} dictionary entries (${armenianToPhonetic.size} translations)`);
         return entries;
       }
     } catch (e) {
@@ -317,38 +326,52 @@ export default function Live() {
     return String(text);
   }
 
-  // Filter transcript to only keep valid Armenian words from dictionary
-  function filterTranscript(text: string): string {
+  // Filter transcript and translate Armenian → Phonetic using dictionary
+  function filterAndTranslate(text: string): string {
     const validWords = validArmenianWordsRef.current;
+    const armenianToPhonetic = armenianToPhoneticRef.current;
+    
     if (validWords.size === 0) return text; // No filtering if dictionary not loaded
     
     const words = text.toLowerCase().split(/\s+/).filter(w => w.length > 0);
-    const filtered = words.filter(word => {
+    const translated: string[] = [];
+    
+    for (const word of words) {
       // Remove punctuation for matching
       const clean = word.replace(/[^\u0530-\u058F\u0561-\u0587]/g, '');
-      return clean.length > 0 && validWords.has(clean);
-    });
-    
-    if (filtered.length !== words.length) {
-      console.log(`[Filter] Kept ${filtered.length}/${words.length} words: ${filtered.join(', ')}`);
+      if (clean.length === 0) continue;
+      
+      if (validWords.has(clean)) {
+        // Translate to phonetic if available
+        const phonetic = armenianToPhonetic.get(clean);
+        if (phonetic) {
+          translated.push(phonetic);
+        } else {
+          translated.push(clean); // Keep Armenian if no phonetic available
+        }
+      }
     }
     
-    return filtered.join(' ');
+    if (translated.length > 0) {
+      console.log(`[Translate] ${words.length} → ${translated.length} phonetic: ${translated.join(', ')}`);
+    }
+    
+    return translated.join(' ');
   }
 
   function feedTranscriptChunk(chunkText: string) {
     const matcher = matcherRef.current;
     if (!matcher || pdfPages.length === 0) return;
 
-    // Filter out garbage words not in dictionary
-    const filteredText = filterTranscript(chunkText);
-    if (!filteredText.trim()) {
-      console.log("[Filter] All words filtered out - skipping");
+    // Filter garbage and translate Armenian → Phonetic
+    const phoneticText = filterAndTranslate(chunkText);
+    if (!phoneticText.trim()) {
+      console.log("[Translate] No valid words found - skipping");
       return;
     }
 
     const now = Date.now();
-    transcriptBufferRef.current.push({ t: now, text: filteredText });
+    transcriptBufferRef.current.push({ t: now, text: phoneticText });
 
     const cutoff = now - WINDOW_SECONDS * 1000;
     transcriptBufferRef.current = transcriptBufferRef.current.filter(x => x.t >= cutoff);
