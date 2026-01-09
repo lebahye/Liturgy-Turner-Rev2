@@ -19,7 +19,7 @@ const WINDOW_SECONDS = 6;
 const CONFIRM_HITS = 2;
 
 // Voice Activity Detection settings
-const VAD_THRESHOLD = 0.10; // Minimum volume level to consider as speech (10% - filters out background noise)
+const VAD_THRESHOLD_DEFAULT = 0.10; // Default minimum volume level (10%)
 const VAD_CHECK_INTERVAL = 50; // How often to check volume (ms)
 
 async function safeJson(res: Response) {
@@ -73,6 +73,13 @@ export default function Live() {
   const isSpeechActiveRef = useRef<boolean>(false);
   const [currentVolume, setCurrentVolume] = useState<number>(0);
   const [isSpeechActive, setIsSpeechActive] = useState<boolean>(false);
+  const [vadThreshold, setVadThreshold] = useState<number>(VAD_THRESHOLD_DEFAULT);
+  const vadThresholdRef = useRef<number>(VAD_THRESHOLD_DEFAULT);
+  
+  // Keep ref in sync with state for use in interval callback
+  useEffect(() => {
+    vadThresholdRef.current = vadThreshold;
+  }, [vadThreshold]);
 
   useEffect(() => {
     currentPageRef.current = store.currentPage;
@@ -559,8 +566,8 @@ export default function Live() {
       const rms = Math.sqrt(sum / dataArray.length);
       setCurrentVolume(rms);
       
-      // Check if volume exceeds threshold
-      const hasSpeech = rms > VAD_THRESHOLD;
+      // Check if volume exceeds threshold (use ref to get latest value)
+      const hasSpeech = rms > vadThresholdRef.current;
       if (hasSpeech) {
         // Mark that speech was detected in this chunk (persists until chunk ends)
         if (!speechDetectedInChunkRef.current) {
@@ -743,13 +750,31 @@ export default function Live() {
                   </div>
                   <div className="h-3 rounded-full bg-gray-200 overflow-hidden">
                     <div
-                      className={`h-3 transition-all duration-100 ${currentVolume > VAD_THRESHOLD ? "bg-green-500" : "bg-gray-400"}`}
+                      className={`h-3 transition-all duration-100 ${currentVolume > vadThreshold ? "bg-green-500" : "bg-gray-400"}`}
                       style={{ width: `${Math.min(100, currentVolume * 500)}%` }}
                     />
                   </div>
                   <div className="mt-1 flex justify-between text-xs text-gray-500">
                     <span>Volume: {(currentVolume * 100).toFixed(1)}%</span>
-                    <span>Threshold: {(VAD_THRESHOLD * 100).toFixed(0)}%</span>
+                    <span>Threshold: {(vadThreshold * 100).toFixed(0)}%</span>
+                  </div>
+                  <div className="mt-3">
+                    <label className="text-xs font-medium text-gray-700 block mb-1">
+                      Mic Sensitivity (lower = more sensitive)
+                    </label>
+                    <input
+                      data-testid="slider-mic-threshold"
+                      type="range"
+                      min="1"
+                      max="50"
+                      value={vadThreshold * 100}
+                      onChange={(e) => setVadThreshold(Number(e.target.value) / 100)}
+                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                    />
+                    <div className="flex justify-between text-xs text-gray-400 mt-1">
+                      <span>1%</span>
+                      <span>50%</span>
+                    </div>
                   </div>
                 </div>
               )}
