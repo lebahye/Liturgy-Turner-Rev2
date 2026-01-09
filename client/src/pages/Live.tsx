@@ -333,8 +333,35 @@ export default function Live() {
     return String(text);
   }
 
+  // Detect if text is a hallucination (same word/phrase repeated many times)
+  function isHallucination(text: string): boolean {
+    const words = text.toLowerCase().split(/\s+/).filter(w => w.length > 0);
+    if (words.length < 3) return false;
+    
+    // Count word frequencies
+    const freq = new Map<string, number>();
+    for (const w of words) {
+      freq.set(w, (freq.get(w) || 0) + 1);
+    }
+    
+    // If any single word appears more than 50% of the time, it's likely a hallucination
+    for (const [word, count] of freq) {
+      if (count / words.length > 0.5) {
+        console.log(`[Hallucination] Detected repeated word "${word}" (${count}/${words.length})`);
+        return true;
+      }
+    }
+    return false;
+  }
+
   // Filter transcript and translate Armenian → Phonetic using dictionary
   function filterAndTranslate(text: string): string {
+    // First check for hallucinations (repeated words)
+    if (isHallucination(text)) {
+      console.log(`[Filter] Skipping hallucinated text: "${text.slice(0, 50)}..."`);
+      return '';
+    }
+    
     const validWords = validArmenianWordsRef.current;
     const armenianToPhonetic = armenianToPhoneticRef.current;
     
@@ -362,14 +389,22 @@ export default function Live() {
       }
     }
     
+    // Deduplicate consecutive repeated words in output (another hallucination pattern)
+    const deduped: string[] = [];
+    for (const word of translated) {
+      if (deduped.length === 0 || deduped[deduped.length - 1] !== word) {
+        deduped.push(word);
+      }
+    }
+    
     // Debug: show raw Whisper output vs what survived dictionary filter
     console.log(`[Whisper] Raw: "${text}"`);
-    console.log(`[Filter] Kept ${translated.length}/${words.length}: ${translated.join(', ')}`);
+    console.log(`[Filter] Kept ${deduped.length}/${words.length}: ${deduped.join(', ')}`);
     if (dropped.length > 0) {
       console.log(`[Filter] Dropped ${dropped.length}: ${dropped.join(', ')}`);
     }
     
-    return translated.join(' ');
+    return deduped.join(' ');
   }
 
   function feedTranscriptChunk(chunkText: string) {
