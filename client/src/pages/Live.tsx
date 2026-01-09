@@ -55,6 +55,9 @@ export default function Live() {
   const [pdfPages, setPdfPages] = useState<PdfPageText[]>([]);
   const [dictionary, setDictionary] = useState<DictEntry[]>([]);
   const matcherRef = useRef<ReturnType<typeof createPageMatcher> | null>(null);
+  
+  // Set of valid Armenian words for filtering garbage transcriptions
+  const validArmenianWordsRef = useRef<Set<string>>(new Set());
 
   const transcriptBufferRef = useRef<{ t: number; text: string }[]>([]);
   const pendingPageRef = useRef<number | null>(null);
@@ -145,7 +148,17 @@ export default function Live() {
           armenian: String(w.armenian || ""),
           phonetic: String(w.phonetic || ""),
         }));
-        console.log(`[Live] Loaded ${entries.length} dictionary entries`);
+        
+        // Build set of valid Armenian words for filtering
+        const validWords = new Set<string>();
+        for (const entry of entries) {
+          if (entry.armenian) {
+            validWords.add(entry.armenian.toLowerCase());
+          }
+        }
+        validArmenianWordsRef.current = validWords;
+        
+        console.log(`[Live] Loaded ${entries.length} dictionary entries (${validWords.size} valid words)`);
         return entries;
       }
     } catch (e) {
@@ -304,12 +317,38 @@ export default function Live() {
     return String(text);
   }
 
+  // Filter transcript to only keep valid Armenian words from dictionary
+  function filterTranscript(text: string): string {
+    const validWords = validArmenianWordsRef.current;
+    if (validWords.size === 0) return text; // No filtering if dictionary not loaded
+    
+    const words = text.toLowerCase().split(/\s+/).filter(w => w.length > 0);
+    const filtered = words.filter(word => {
+      // Remove punctuation for matching
+      const clean = word.replace(/[^\u0530-\u058F\u0561-\u0587]/g, '');
+      return clean.length > 0 && validWords.has(clean);
+    });
+    
+    if (filtered.length !== words.length) {
+      console.log(`[Filter] Kept ${filtered.length}/${words.length} words: ${filtered.join(', ')}`);
+    }
+    
+    return filtered.join(' ');
+  }
+
   function feedTranscriptChunk(chunkText: string) {
     const matcher = matcherRef.current;
     if (!matcher || pdfPages.length === 0) return;
 
+    // Filter out garbage words not in dictionary
+    const filteredText = filterTranscript(chunkText);
+    if (!filteredText.trim()) {
+      console.log("[Filter] All words filtered out - skipping");
+      return;
+    }
+
     const now = Date.now();
-    transcriptBufferRef.current.push({ t: now, text: chunkText });
+    transcriptBufferRef.current.push({ t: now, text: filteredText });
 
     const cutoff = now - WINDOW_SECONDS * 1000;
     transcriptBufferRef.current = transcriptBufferRef.current.filter(x => x.t >= cutoff);
