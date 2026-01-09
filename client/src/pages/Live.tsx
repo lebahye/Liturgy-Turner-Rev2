@@ -463,7 +463,7 @@ export default function Live() {
         mediaRecorderRef.current.stop();
       }
       startNewRecording();
-    }, 2000);
+    }, 1000); // 1 second chunks for faster transcription
   }
 
   async function startMicRecorder() {
