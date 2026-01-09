@@ -96,7 +96,6 @@ transcribeRouter.post("/transcribe", upload.single("audio"), async (req, res) =>
       model: "whisper-1",
       language: "hy",
       temperature: 0,
-      prompt: "Հdelays delays delays delays delays delays delays delays Աdelays delays delays delays delays:", // Western Armenian liturgy context
     });
 
     return res.json({ text: transcription.text });
