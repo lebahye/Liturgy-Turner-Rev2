@@ -31,9 +31,21 @@ function normalizeArmenianOrthography(s: string): string {
     .replace(/\uFB16/g, "\u057E\u0576");
 }
 
+function normalizePhoneticAccents(s: string): string {
+  return s
+    .replace(/[ûùüú]/g, "oo")
+    .replace(/[éèëê]/g, "e")
+    .replace(/[áàäâ]/g, "a")
+    .replace(/[óòöô]/g, "o")
+    .replace(/[íìïî]/g, "i")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
 function normalizeText(s: string): string {
   let text = (s || "").toLowerCase();
   text = normalizeArmenianOrthography(text);
+  text = normalizePhoneticAccents(text);
   text = text
     .replace(/[^a-zA-Z0-9\u0530-\u058F\s]/g, " ")
     .replace(/\s+/g, " ")
