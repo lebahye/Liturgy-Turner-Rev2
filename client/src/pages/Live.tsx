@@ -19,8 +19,8 @@ const WINDOW_SECONDS = 6;
 const CONFIRM_HITS = 2;
 
 // Voice Activity Detection settings
-const VAD_THRESHOLD = 0.005; // Minimum volume level to consider as speech (0-1 scale, lowered for sensitivity)
-const VAD_CHECK_INTERVAL = 100; // How often to check volume (ms)
+const VAD_THRESHOLD = 0.10; // Minimum volume level to consider as speech (10% - filters out background noise)
+const VAD_CHECK_INTERVAL = 50; // How often to check volume (ms)
 
 async function safeJson(res: Response) {
   const text = await res.text();
@@ -463,7 +463,7 @@ export default function Live() {
         mediaRecorderRef.current.stop();
       }
       startNewRecording();
-    }, 1000); // 1 second chunks for faster transcription
+    }, 500); // 500ms chunks for sub-second transcription
   }
 
   async function startMicRecorder() {
