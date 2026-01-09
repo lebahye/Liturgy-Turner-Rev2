@@ -71,16 +71,25 @@ async function convertToWav(inputBuffer: Buffer): Promise<Buffer> {
 transcribeRouter.post("/transcribe", upload.single("audio"), async (req, res) => {
   try {
     let audioBuffer: Buffer | null = null;
+    let pageContext: string | undefined;
 
     if (req.is("application/json")) {
-      const { audioBase64 } = req.body || {};
+      const { audioBase64, context } = req.body || {};
       if (audioBase64) {
         audioBuffer = dataUrlOrBase64ToBuffer(String(audioBase64));
+      }
+      if (context) {
+        pageContext = String(context);
       }
     }
 
     if (!audioBuffer && req.file) {
       audioBuffer = req.file.buffer;
+    }
+    
+    // Get context from form data if present
+    if (!pageContext && req.body?.context) {
+      pageContext = String(req.body.context);
     }
 
     if (!audioBuffer) {
@@ -91,11 +100,13 @@ transcribeRouter.post("/transcribe", upload.single("audio"), async (req, res) =>
 
     const file = new File([wavBuffer], "audio.wav", { type: "audio/wav" });
 
+    // Use page context as Whisper prompt to guide Western Armenian recognition
     const transcription = await openai.audio.transcriptions.create({
       file: file,
       model: "whisper-1",
       language: "hy",
       temperature: 0,
+      prompt: pageContext || undefined,
     });
 
     return res.json({ text: transcription.text });

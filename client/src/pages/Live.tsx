@@ -315,9 +315,39 @@ export default function Live() {
     })();
   }, [store.pdfFile]);
 
+  // Get Armenian text context from current and next pages to guide Whisper
+  function getPageContext(): string {
+    const currentPage = currentPageRef.current;
+    const pages = pdfPages;
+    
+    // Get Armenian text from current and next 2 pages
+    const contextPages = [currentPage, currentPage + 1, currentPage + 2];
+    const contextTexts: string[] = [];
+    
+    for (const pageNum of contextPages) {
+      const page = pages.find(p => p.pageNumber === pageNum);
+      if (page) {
+        // Use Armenian text if available, otherwise use norm
+        const text = (page as any).armenianNorm || page.norm || "";
+        if (text) {
+          // Take first 100 chars of each page for context
+          contextTexts.push(text.slice(0, 100));
+        }
+      }
+    }
+    
+    return contextTexts.join(" ");
+  }
+
   async function postToTranscribe(blob: Blob) {
     const form = new FormData();
     form.append("audio", blob, "chunk.webm");
+    
+    // Send page context to guide Whisper recognition
+    const context = getPageContext();
+    if (context) {
+      form.append("context", context);
+    }
 
     const res = await fetch("/api/transcribe", {
       method: "POST",
