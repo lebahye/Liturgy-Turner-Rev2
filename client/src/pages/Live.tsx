@@ -19,7 +19,7 @@ const WINDOW_SECONDS = 6;
 const CONFIRM_HITS = 2;
 
 // Voice Activity Detection settings
-const VAD_THRESHOLD = 0.02; // Minimum volume level to consider as speech (0-1 scale)
+const VAD_THRESHOLD = 0.005; // Minimum volume level to consider as speech (0-1 scale, lowered for sensitivity)
 const VAD_CHECK_INTERVAL = 100; // How often to check volume (ms)
 
 async function safeJson(res: Response) {
@@ -493,6 +493,9 @@ export default function Live() {
       const hasSpeech = rms > VAD_THRESHOLD;
       if (hasSpeech) {
         // Mark that speech was detected in this chunk (persists until chunk ends)
+        if (!speechDetectedInChunkRef.current) {
+          console.log(`[VAD] Speech detected! Volume: ${(rms * 100).toFixed(2)}%`);
+        }
         speechDetectedInChunkRef.current = true;
         isSpeechActiveRef.current = true;
         setIsSpeechActive(true);
