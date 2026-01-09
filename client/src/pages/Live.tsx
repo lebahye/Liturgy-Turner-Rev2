@@ -366,6 +366,7 @@ export default function Live() {
     }
     analyserRef.current = null;
     isSpeechActiveRef.current = false;
+    speechDetectedInChunkRef.current = false;
     setIsSpeechActive(false);
     setCurrentVolume(0);
 
@@ -390,6 +391,9 @@ export default function Live() {
     setStatus("stopped");
   }
 
+  // Track if speech was detected during the current recording chunk
+  const speechDetectedInChunkRef = useRef<boolean>(false);
+
   function createRecorderForStream(stream: MediaStream, checkVAD: boolean = true) {
     chunksRef.current = [];
     const rec = new MediaRecorder(stream, { mimeType: "audio/webm" });
@@ -403,8 +407,11 @@ export default function Live() {
     rec.onstop = async () => {
       if (chunksRef.current.length === 0) return;
       
+      // Capture speech state before it gets reset
+      const hadSpeech = speechDetectedInChunkRef.current;
+      
       // Skip transcription if VAD is enabled and no speech was detected during this chunk
-      if (checkVAD && !isSpeechActiveRef.current) {
+      if (checkVAD && !hadSpeech) {
         console.log("[VAD] Skipping transcription - no speech detected");
         chunksRef.current = [];
         return;
@@ -433,7 +440,9 @@ export default function Live() {
     const startNewRecording = () => {
       if (!streamForRecordingRef.current) return;
       // Reset speech detection for the new chunk
+      speechDetectedInChunkRef.current = false;
       isSpeechActiveRef.current = false;
+      setIsSpeechActive(false);
       const rec = createRecorderForStream(streamForRecordingRef.current, useVAD);
       mediaRecorderRef.current = rec;
       rec.start();
@@ -466,7 +475,6 @@ export default function Live() {
     
     // Start VAD monitoring
     const dataArray = new Uint8Array(analyser.frequencyBinCount);
-    let speechDetectedInChunk = false;
     
     vadIntervalRef.current = window.setInterval(() => {
       if (!analyserRef.current) return;
@@ -484,15 +492,11 @@ export default function Live() {
       // Check if volume exceeds threshold
       const hasSpeech = rms > VAD_THRESHOLD;
       if (hasSpeech) {
-        speechDetectedInChunk = true;
+        // Mark that speech was detected in this chunk (persists until chunk ends)
+        speechDetectedInChunkRef.current = true;
+        isSpeechActiveRef.current = true;
+        setIsSpeechActive(true);
       }
-      
-      // Update speech active state
-      isSpeechActiveRef.current = speechDetectedInChunk;
-      setIsSpeechActive(speechDetectedInChunk);
-      
-      // Reset speech detection flag at the end of each recording cycle
-      // This will be handled by the recording cycle resetting it
     }, VAD_CHECK_INTERVAL);
     
     startRecordingCycle(stream);
