@@ -96,7 +96,6 @@ transcribeRouter.post("/transcribe", upload.single("audio"), async (req, res) =>
       model: "whisper-1",
       language: "hy",
       temperature: 0, // Reduce hallucinations by using greedy decoding
-      prompt: "Սdelays պdelays delays delays խdelays delays բdelays delays delays delays տdelays", // Armenian liturgy context
     });
 
     return res.json({ text: transcription.text });

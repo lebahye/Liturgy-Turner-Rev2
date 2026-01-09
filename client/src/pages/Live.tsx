@@ -342,6 +342,7 @@ export default function Live() {
     
     const words = text.toLowerCase().split(/\s+/).filter(w => w.length > 0);
     const translated: string[] = [];
+    const dropped: string[] = [];
     
     for (const word of words) {
       // Remove punctuation for matching
@@ -356,11 +357,16 @@ export default function Live() {
         } else {
           translated.push(clean); // Keep Armenian if no phonetic available
         }
+      } else {
+        dropped.push(clean);
       }
     }
     
-    if (translated.length > 0) {
-      console.log(`[Translate] ${words.length} → ${translated.length} phonetic: ${translated.join(', ')}`);
+    // Debug: show raw Whisper output vs what survived dictionary filter
+    console.log(`[Whisper] Raw: "${text}"`);
+    console.log(`[Filter] Kept ${translated.length}/${words.length}: ${translated.join(', ')}`);
+    if (dropped.length > 0) {
+      console.log(`[Filter] Dropped ${dropped.length}: ${dropped.join(', ')}`);
     }
     
     return translated.join(' ');
