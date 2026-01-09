@@ -407,8 +407,8 @@ export default function Live() {
     rec.onstop = async () => {
       if (chunksRef.current.length === 0) return;
       
-      // Capture speech state before it gets reset
-      const hadSpeech = speechDetectedInChunkRef.current;
+      // Use the captured speech state (captured before stop was called)
+      const hadSpeech = chunkHadSpeechRef.current;
       
       // Skip transcription if VAD is enabled and no speech was detected during this chunk
       if (checkVAD && !hadSpeech) {
@@ -416,6 +416,8 @@ export default function Live() {
         chunksRef.current = [];
         return;
       }
+      
+      console.log("[VAD] Sending audio for transcription - speech was detected");
       
       const blob = new Blob(chunksRef.current, { type: "audio/webm" });
       chunksRef.current = [];
@@ -434,12 +436,15 @@ export default function Live() {
     return rec;
   }
 
+  // Store the speech state for the current chunk before stopping
+  const chunkHadSpeechRef = useRef<boolean>(false);
+
   function startRecordingCycle(stream: MediaStream, useVAD: boolean = true) {
     streamForRecordingRef.current = stream;
     
     const startNewRecording = () => {
       if (!streamForRecordingRef.current) return;
-      // Reset speech detection for the new chunk
+      // Reset speech detection for the NEW chunk (not affecting the one being processed)
       speechDetectedInChunkRef.current = false;
       isSpeechActiveRef.current = false;
       setIsSpeechActive(false);
@@ -451,6 +456,9 @@ export default function Live() {
     startNewRecording();
 
     recordingIntervalRef.current = window.setInterval(() => {
+      // IMPORTANT: Capture speech state BEFORE stopping (stop is async)
+      chunkHadSpeechRef.current = speechDetectedInChunkRef.current;
+      
       if (mediaRecorderRef.current && mediaRecorderRef.current.state === "recording") {
         mediaRecorderRef.current.stop();
       }
