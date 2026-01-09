@@ -18,6 +18,10 @@ const MATCHER_CONFIG: MatcherConfig = {
 const WINDOW_SECONDS = 6;
 const CONFIRM_HITS = 2;
 
+// Voice Activity Detection settings
+const VAD_THRESHOLD = 0.02; // Minimum volume level to consider as speech (0-1 scale)
+const VAD_CHECK_INTERVAL = 100; // How often to check volume (ms)
+
 async function safeJson(res: Response) {
   const text = await res.text();
   if (!text) return { __empty: true };
@@ -56,6 +60,13 @@ export default function Live() {
   const pendingPageRef = useRef<number | null>(null);
   const pendingHitsRef = useRef<number>(0);
   const currentPageRef = useRef<number>(store.currentPage);
+
+  // Voice Activity Detection refs
+  const analyserRef = useRef<AnalyserNode | null>(null);
+  const vadIntervalRef = useRef<number | null>(null);
+  const isSpeechActiveRef = useRef<boolean>(false);
+  const [currentVolume, setCurrentVolume] = useState<number>(0);
+  const [isSpeechActive, setIsSpeechActive] = useState<boolean>(false);
 
   useEffect(() => {
     currentPageRef.current = store.currentPage;
@@ -348,6 +359,16 @@ export default function Live() {
       recordingIntervalRef.current = null;
     }
 
+    // Clean up VAD
+    if (vadIntervalRef.current) {
+      clearInterval(vadIntervalRef.current);
+      vadIntervalRef.current = null;
+    }
+    analyserRef.current = null;
+    isSpeechActiveRef.current = false;
+    setIsSpeechActive(false);
+    setCurrentVolume(0);
+
     try {
       mediaRecorderRef.current?.stop();
     } catch {}
@@ -369,7 +390,7 @@ export default function Live() {
     setStatus("stopped");
   }
 
-  function createRecorderForStream(stream: MediaStream) {
+  function createRecorderForStream(stream: MediaStream, checkVAD: boolean = true) {
     chunksRef.current = [];
     const rec = new MediaRecorder(stream, { mimeType: "audio/webm" });
     
@@ -381,6 +402,14 @@ export default function Live() {
 
     rec.onstop = async () => {
       if (chunksRef.current.length === 0) return;
+      
+      // Skip transcription if VAD is enabled and no speech was detected during this chunk
+      if (checkVAD && !isSpeechActiveRef.current) {
+        console.log("[VAD] Skipping transcription - no speech detected");
+        chunksRef.current = [];
+        return;
+      }
+      
       const blob = new Blob(chunksRef.current, { type: "audio/webm" });
       chunksRef.current = [];
       
@@ -398,12 +427,14 @@ export default function Live() {
     return rec;
   }
 
-  function startRecordingCycle(stream: MediaStream) {
+  function startRecordingCycle(stream: MediaStream, useVAD: boolean = true) {
     streamForRecordingRef.current = stream;
     
     const startNewRecording = () => {
       if (!streamForRecordingRef.current) return;
-      const rec = createRecorderForStream(streamForRecordingRef.current);
+      // Reset speech detection for the new chunk
+      isSpeechActiveRef.current = false;
+      const rec = createRecorderForStream(streamForRecordingRef.current, useVAD);
       mediaRecorderRef.current = rec;
       rec.start();
     };
@@ -421,6 +452,49 @@ export default function Live() {
   async function startMicRecorder() {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     micStreamRef.current = stream;
+    
+    // Set up AudioContext and AnalyserNode for VAD
+    const ctx = new AudioContext();
+    audioCtxRef.current = ctx;
+    
+    const source = ctx.createMediaStreamSource(stream);
+    const analyser = ctx.createAnalyser();
+    analyser.fftSize = 256;
+    analyser.smoothingTimeConstant = 0.3;
+    source.connect(analyser);
+    analyserRef.current = analyser;
+    
+    // Start VAD monitoring
+    const dataArray = new Uint8Array(analyser.frequencyBinCount);
+    let speechDetectedInChunk = false;
+    
+    vadIntervalRef.current = window.setInterval(() => {
+      if (!analyserRef.current) return;
+      
+      analyserRef.current.getByteFrequencyData(dataArray);
+      
+      // Calculate RMS volume (0-1 scale)
+      let sum = 0;
+      for (let i = 0; i < dataArray.length; i++) {
+        sum += (dataArray[i] / 255) ** 2;
+      }
+      const rms = Math.sqrt(sum / dataArray.length);
+      setCurrentVolume(rms);
+      
+      // Check if volume exceeds threshold
+      const hasSpeech = rms > VAD_THRESHOLD;
+      if (hasSpeech) {
+        speechDetectedInChunk = true;
+      }
+      
+      // Update speech active state
+      isSpeechActiveRef.current = speechDetectedInChunk;
+      setIsSpeechActive(speechDetectedInChunk);
+      
+      // Reset speech detection flag at the end of each recording cycle
+      // This will be handled by the recording cycle resetting it
+    }, VAD_CHECK_INTERVAL);
+    
     startRecordingCycle(stream);
     setStatus("running");
   }
@@ -446,7 +520,8 @@ export default function Live() {
     sourceNode.connect(ctx.destination);
     sourceNode.connect(dest);
 
-    startRecordingCycle(dest.stream);
+    // For audio files, disable VAD since we want to process all audio
+    startRecordingCycle(dest.stream, false);
 
     await ctx.resume();
     await audioElRef.current.play();
@@ -578,6 +653,27 @@ export default function Live() {
               {errorMsg && (
                 <div data-testid="text-error" className="mt-3 rounded-lg bg-red-50 p-2 text-sm text-red-700">
                   {errorMsg}
+                </div>
+              )}
+
+              {status === "running" && audioSource === "mic" && (
+                <div className="mt-3 rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-xs font-medium text-gray-700">Voice Detection</span>
+                    <span className={`text-xs font-bold ${isSpeechActive ? "text-green-600" : "text-gray-400"}`}>
+                      {isSpeechActive ? "Speech Detected" : "Waiting for speech..."}
+                    </span>
+                  </div>
+                  <div className="h-3 rounded-full bg-gray-200 overflow-hidden">
+                    <div
+                      className={`h-3 transition-all duration-100 ${currentVolume > VAD_THRESHOLD ? "bg-green-500" : "bg-gray-400"}`}
+                      style={{ width: `${Math.min(100, currentVolume * 500)}%` }}
+                    />
+                  </div>
+                  <div className="mt-1 flex justify-between text-xs text-gray-500">
+                    <span>Volume: {(currentVolume * 100).toFixed(1)}%</span>
+                    <span>Threshold: {(VAD_THRESHOLD * 100).toFixed(0)}%</span>
+                  </div>
                 </div>
               )}
 
