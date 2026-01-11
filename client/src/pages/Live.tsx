@@ -3,6 +3,7 @@ import { useStore } from "@/lib/store";
 import { Document, Page, pdfjs } from "react-pdf";
 import { createPageMatcher, PdfPageText, DictEntry, MatcherConfig } from "@/lib/pageMatching";
 import { createAudioAnalyzer, AudioFeatures, compareFeatures, MeydaAnalyzer } from "@/lib/audio-features";
+import { PageMatchCoordinator, CoordinatorDecision } from "@/lib/pageMatchCoordinator";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
@@ -87,6 +88,10 @@ export default function Live() {
   const [matchingMode, setMatchingMode] = useState<"fingerprint" | "whisper">("fingerprint");
   const matchCooldownRef = useRef<number>(0);
   
+  // Coordinator for combining fingerprint and n-gram matching
+  const coordinatorRef = useRef<PageMatchCoordinator>(new PageMatchCoordinator());
+  const [coordinatorDecision, setCoordinatorDecision] = useState<CoordinatorDecision | null>(null);
+  
   // Keep ref in sync with state for use in interval callback
   useEffect(() => {
     vadThresholdRef.current = vadThreshold;
@@ -101,12 +106,14 @@ export default function Live() {
     pendingHitsRef.current = 0;
     transcriptBufferRef.current = [];
     setMatchInfo(null);
+    setCoordinatorDecision(null);
     
     const newPage = direction === "prev" 
       ? Math.max(1, store.currentPage - 1)
       : Math.min(store.totalPages, store.currentPage + 1);
     
     currentPageRef.current = newPage;
+    coordinatorRef.current.setCurrentPage(newPage);
     
     if (direction === "prev") {
       store.prevPage();
@@ -176,9 +183,11 @@ export default function Live() {
           }));
           setTrainedMarkers(markers);
           setFingerprintStatus("ready");
+          coordinatorRef.current.setHasFingerprintData(true);
           console.log(`[Live] Loaded ${markers.length} trained fingerprints for pages ${markers.map(m => m.pageNumber).join(', ')}`);
         } else {
           setFingerprintStatus("none");
+          coordinatorRef.current.setHasFingerprintData(false);
         }
       } catch (e) {
         console.error("[Live] Failed to load fingerprints:", e);
@@ -509,30 +518,17 @@ export default function Live() {
     const nextMatches = nextResult.matchedNgrams;
     
     setMatchInfo({ ...nextResult, currentPageMatches: currMatches });
-    
-    const shouldAdvance = nextMatches >= MATCHER_CONFIG.minNgramMatches && nextMatches > currMatches;
-    
-    console.log(`[Match] p${currentPage}:${currMatches}ng, p${nextPage}:${nextMatches}ng, total:${currentResult.totalNgrams}ng, advance=${shouldAdvance}`);
 
-    if (shouldAdvance) {
-      if (pendingPageRef.current === nextPage) {
-        pendingHitsRef.current += 1;
-      } else {
-        pendingPageRef.current = nextPage;
-        pendingHitsRef.current = 1;
-      }
-
-      if (pendingHitsRef.current >= CONFIRM_HITS) {
-        store.setPage(nextPage);
-        currentPageRef.current = nextPage;
-        pendingPageRef.current = null;
-        pendingHitsRef.current = 0;
-        transcriptBufferRef.current = [];
-        console.log(`[Auto] Advanced to page ${nextPage}`);
-      }
-    } else {
-      pendingPageRef.current = null;
-      pendingHitsRef.current = 0;
+    // Report to coordinator instead of turning pages directly
+    const decision = coordinatorRef.current.reportNgramMatch(currMatches, nextMatches, currentResult.totalNgrams);
+    setCoordinatorDecision(decision);
+    
+    if (decision.action === "turn" && decision.targetPage) {
+      store.setPage(decision.targetPage);
+      currentPageRef.current = decision.targetPage;
+      coordinatorRef.current.setCurrentPage(decision.targetPage);
+      transcriptBufferRef.current = [];
+      console.log(`[Coordinator] Auto-advanced to page ${decision.targetPage} (${decision.reason})`);
     }
   }
 
@@ -551,6 +547,10 @@ export default function Live() {
     }
     featureBufferRef.current = [];
     setFingerprintScore(0);
+    
+    // Reset coordinator
+    coordinatorRef.current.reset();
+    setCoordinatorDecision(null);
 
     // Clean up VAD
     if (vadIntervalRef.current) {
@@ -797,14 +797,15 @@ export default function Live() {
           
           setFingerprintScore(bestNextScore);
           
-          // Turn page if next page match is significantly better than current
-          const TURN_THRESHOLD = 65; // Match score threshold (0-100)
-          const ADVANTAGE_THRESHOLD = 10; // Next page must be this much better
+          // Report to coordinator instead of turning pages directly
+          const decision = coordinatorRef.current.reportFingerprintMatch(bestCurrentScore, bestNextScore);
+          setCoordinatorDecision(decision);
           
-          if (bestNextScore > TURN_THRESHOLD && bestNextScore > bestCurrentScore + ADVANTAGE_THRESHOLD) {
-            console.log(`[Fingerprint] Page turn! Next=${bestNextScore.toFixed(1)}, Current=${bestCurrentScore.toFixed(1)}`);
-            store.nextPage();
-            currentPageRef.current = nextPage;
+          if (decision.action === "turn" && decision.targetPage) {
+            console.log(`[Coordinator] Fingerprint triggered page turn to ${decision.targetPage} (${decision.reason})`);
+            store.setPage(decision.targetPage);
+            currentPageRef.current = decision.targetPage;
+            coordinatorRef.current.setCurrentPage(decision.targetPage);
             featureBufferRef.current = []; // Clear buffer after turn
             matchCooldownRef.current = now + 3000; // 3 second cooldown
           }
@@ -1081,6 +1082,37 @@ export default function Live() {
                   </div>
                   <div className="mt-1 text-xs text-blue-600">
                     Current: {matchInfo.currentPageMatches ?? 0} | Next: {matchInfo.matchedNgrams} (need {MATCHER_CONFIG.minNgramMatches}+ and more than current)
+                  </div>
+                </div>
+              )}
+
+              {/* Coordinator Decision Display */}
+              {status === "running" && coordinatorDecision && (
+                <div className={`mt-3 rounded-lg p-3 ${
+                  coordinatorDecision.action === "turn" ? "bg-green-50" : 
+                  coordinatorDecision.agreement ? "bg-yellow-50" : "bg-gray-50"
+                }`}>
+                  <div className="flex items-center justify-between">
+                    <div className="text-xs font-medium text-gray-800">Coordinator Decision</div>
+                    <span className={`text-xs px-2 py-0.5 rounded font-bold ${
+                      coordinatorDecision.action === "turn" ? "bg-green-200 text-green-800" : 
+                      coordinatorDecision.agreement ? "bg-yellow-200 text-yellow-800" : "bg-gray-200 text-gray-700"
+                    }`}>
+                      {coordinatorDecision.action.toUpperCase()}
+                    </span>
+                  </div>
+                  <div className="mt-2 grid grid-cols-2 gap-2 text-xs">
+                    <div className="bg-white/50 rounded p-1">
+                      <div className="text-gray-500">Fingerprint</div>
+                      <div className="font-bold text-purple-700">{coordinatorDecision.fingerprintConfidence.toFixed(0)}%</div>
+                    </div>
+                    <div className="bg-white/50 rounded p-1">
+                      <div className="text-gray-500">N-gram</div>
+                      <div className="font-bold text-blue-700">{coordinatorDecision.ngramConfidence.toFixed(0)}%</div>
+                    </div>
+                  </div>
+                  <div className="mt-1 text-xs text-gray-600">
+                    Reason: {coordinatorDecision.reason.replace(/_/g, ' ')}
                   </div>
                 </div>
               )}
