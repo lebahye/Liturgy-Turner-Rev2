@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useStore } from "@/lib/store";
 import { Document, Page, pdfjs } from "react-pdf";
 import { createPageMatcher, PdfPageText, DictEntry, MatcherConfig } from "@/lib/pageMatching";
+import { createAudioAnalyzer, AudioFeatures, compareFeatures, MeydaAnalyzer } from "@/lib/audio-features";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
@@ -76,6 +77,16 @@ export default function Live() {
   const [vadThreshold, setVadThreshold] = useState<number>(VAD_THRESHOLD_DEFAULT);
   const vadThresholdRef = useRef<number>(VAD_THRESHOLD_DEFAULT);
   
+  // Audio fingerprint matching state
+  type PageMarker = { pageNumber: number; timestampMs: number; audioFeatures: AudioFeatures | null };
+  const [trainedMarkers, setTrainedMarkers] = useState<PageMarker[]>([]);
+  const [fingerprintStatus, setFingerprintStatus] = useState<"loading" | "ready" | "error" | "none">("loading");
+  const meydaAnalyzerRef = useRef<MeydaAnalyzer | null>(null);
+  const featureBufferRef = useRef<{ features: AudioFeatures; timestamp: number }[]>([]);
+  const [fingerprintScore, setFingerprintScore] = useState<number>(0);
+  const [matchingMode, setMatchingMode] = useState<"fingerprint" | "whisper">("fingerprint");
+  const matchCooldownRef = useRef<number>(0);
+  
   // Keep ref in sync with state for use in interval callback
   useEffect(() => {
     vadThresholdRef.current = vadThreshold;
@@ -144,6 +155,38 @@ export default function Live() {
     setAudioUrl(url);
     return () => URL.revokeObjectURL(url);
   }, [audioFile]);
+
+  // Load trained audio fingerprints on mount
+  useEffect(() => {
+    async function loadFingerprints() {
+      try {
+        setFingerprintStatus("loading");
+        const res = await fetch("/api/training-sessions/active/latest");
+        if (!res.ok) {
+          console.log("[Live] No trained session available");
+          setFingerprintStatus("none");
+          return;
+        }
+        const data = await res.json();
+        if (data.markers && data.markers.length > 0) {
+          const markers: PageMarker[] = data.markers.map((m: any) => ({
+            pageNumber: m.pageNumber,
+            timestampMs: m.timestampMs,
+            audioFeatures: m.audioFeatures || null,
+          }));
+          setTrainedMarkers(markers);
+          setFingerprintStatus("ready");
+          console.log(`[Live] Loaded ${markers.length} trained fingerprints for pages ${markers.map(m => m.pageNumber).join(', ')}`);
+        } else {
+          setFingerprintStatus("none");
+        }
+      } catch (e) {
+        console.error("[Live] Failed to load fingerprints:", e);
+        setFingerprintStatus("error");
+      }
+    }
+    loadFingerprints();
+  }, []);
 
   const [dictionaryStatus, setDictionaryStatus] = useState<"checking" | "cached" | "extracting" | "ready" | "error">("checking");
   const [pdfIdState, setPdfIdState] = useState<string | null>(null);
@@ -499,6 +542,16 @@ export default function Live() {
       recordingIntervalRef.current = null;
     }
 
+    // Clean up Meyda analyzer
+    if (meydaAnalyzerRef.current) {
+      try {
+        meydaAnalyzerRef.current.stop();
+      } catch {}
+      meydaAnalyzerRef.current = null;
+    }
+    featureBufferRef.current = [];
+    setFingerprintScore(0);
+
     // Clean up VAD
     if (vadIntervalRef.current) {
       clearInterval(vadIntervalRef.current);
@@ -672,6 +725,98 @@ export default function Live() {
         setIsSpeechActive(true);
       }
     }, VAD_CHECK_INTERVAL);
+    
+    // Start Meyda audio feature extraction for fingerprint matching
+    if (trainedMarkers.length > 0 && matchingMode === "fingerprint") {
+      try {
+        const meydaAnalyzer = createAudioAnalyzer(ctx, source, (features: AudioFeatures) => {
+          // Add to buffer for averaging
+          featureBufferRef.current.push({ features, timestamp: Date.now() });
+          
+          // Keep only last 1 second of features
+          const now = Date.now();
+          featureBufferRef.current = featureBufferRef.current.filter(f => now - f.timestamp < 1000);
+          
+          // Need at least a few samples for reliable matching
+          if (featureBufferRef.current.length < 3) return;
+          
+          // Cooldown to prevent rapid page turns
+          if (now < matchCooldownRef.current) return;
+          
+          // Find best matching page
+          const currentPage = currentPageRef.current;
+          const nextPage = currentPage + 1;
+          
+          // Get markers for current and next page
+          const currentMarkers = trainedMarkers.filter(m => m.pageNumber === currentPage && m.audioFeatures);
+          const nextMarkers = trainedMarkers.filter(m => m.pageNumber === nextPage && m.audioFeatures);
+          
+          if (nextMarkers.length === 0) return; // No fingerprint for next page
+          
+          // Average the recent features for more stable matching
+          const avgFeatures: AudioFeatures = {
+            rms: 0,
+            zcr: 0,
+            spectralCentroid: 0,
+            spectralRolloff: 0,
+            mfcc: new Array(13).fill(0),
+          };
+          
+          for (const { features: f } of featureBufferRef.current) {
+            avgFeatures.rms += f.rms;
+            avgFeatures.zcr += f.zcr;
+            avgFeatures.spectralCentroid += f.spectralCentroid;
+            avgFeatures.spectralRolloff += f.spectralRolloff;
+            for (let i = 0; i < Math.min(f.mfcc.length, 13); i++) {
+              avgFeatures.mfcc[i] += f.mfcc[i];
+            }
+          }
+          
+          const count = featureBufferRef.current.length;
+          avgFeatures.rms /= count;
+          avgFeatures.zcr /= count;
+          avgFeatures.spectralCentroid /= count;
+          avgFeatures.spectralRolloff /= count;
+          avgFeatures.mfcc = avgFeatures.mfcc.map(v => v / count);
+          
+          // Compare with next page fingerprints
+          let bestNextScore = 0;
+          for (const marker of nextMarkers) {
+            if (!marker.audioFeatures) continue;
+            const score = compareFeatures(avgFeatures, marker.audioFeatures as AudioFeatures);
+            if (score > bestNextScore) bestNextScore = score;
+          }
+          
+          // Compare with current page fingerprints
+          let bestCurrentScore = 0;
+          for (const marker of currentMarkers) {
+            if (!marker.audioFeatures) continue;
+            const score = compareFeatures(avgFeatures, marker.audioFeatures as AudioFeatures);
+            if (score > bestCurrentScore) bestCurrentScore = score;
+          }
+          
+          setFingerprintScore(bestNextScore);
+          
+          // Turn page if next page match is significantly better than current
+          const TURN_THRESHOLD = 65; // Match score threshold (0-100)
+          const ADVANTAGE_THRESHOLD = 10; // Next page must be this much better
+          
+          if (bestNextScore > TURN_THRESHOLD && bestNextScore > bestCurrentScore + ADVANTAGE_THRESHOLD) {
+            console.log(`[Fingerprint] Page turn! Next=${bestNextScore.toFixed(1)}, Current=${bestCurrentScore.toFixed(1)}`);
+            store.nextPage();
+            currentPageRef.current = nextPage;
+            featureBufferRef.current = []; // Clear buffer after turn
+            matchCooldownRef.current = now + 3000; // 3 second cooldown
+          }
+        });
+        
+        meydaAnalyzer.start();
+        meydaAnalyzerRef.current = meydaAnalyzer;
+        console.log("[Live] Meyda fingerprint analyzer started");
+      } catch (e) {
+        console.error("[Live] Failed to start Meyda analyzer:", e);
+      }
+    }
     
     // Use the filtered stream (with high-pass filter applied) for recording
     startRecordingCycle(filteredStream);
@@ -881,9 +1026,46 @@ export default function Live() {
                 </div>
               </div>
 
+              {/* Fingerprint matching status */}
+              {fingerprintStatus !== "none" && (
+                <div className="mt-3 rounded-lg bg-purple-50 p-3">
+                  <div className="flex items-center justify-between">
+                    <div className="text-xs font-medium text-purple-800">Audio Fingerprint Matching</div>
+                    <span className={`text-xs px-2 py-0.5 rounded ${
+                      fingerprintStatus === "ready" ? "bg-green-100 text-green-700" :
+                      fingerprintStatus === "loading" ? "bg-yellow-100 text-yellow-700" :
+                      "bg-red-100 text-red-700"
+                    }`}>
+                      {fingerprintStatus === "ready" ? `${trainedMarkers.length} fingerprints` :
+                       fingerprintStatus === "loading" ? "Loading..." : "Error"}
+                    </span>
+                  </div>
+                  {status === "running" && fingerprintStatus === "ready" && (
+                    <div className="mt-2">
+                      <div className="flex items-center gap-3">
+                        <div className="flex-1">
+                          <div className="h-2 rounded-full bg-purple-200">
+                            <div
+                              className="h-2 rounded-full bg-purple-600 transition-all"
+                              style={{ width: `${Math.min(100, fingerprintScore)}%` }}
+                            />
+                          </div>
+                        </div>
+                        <div className="text-sm font-bold text-purple-700">
+                          {fingerprintScore.toFixed(0)}%
+                        </div>
+                      </div>
+                      <div className="mt-1 text-xs text-purple-600">
+                        Comparing live audio to page {store.currentPage + 1} fingerprint (threshold: 65%)
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
               {matchInfo && (
                 <div className="mt-3 rounded-lg bg-blue-50 p-3">
-                  <div className="text-xs font-medium text-blue-800">N-gram Matching</div>
+                  <div className="text-xs font-medium text-blue-800">N-gram Matching (Whisper)</div>
                   <div className="mt-1 flex items-center gap-3">
                     <div className="flex-1">
                       <div className="h-2 rounded-full bg-blue-200">
