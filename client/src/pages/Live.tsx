@@ -99,6 +99,7 @@ export default function Live() {
 
   useEffect(() => {
     currentPageRef.current = store.currentPage;
+    coordinatorRef.current.setCurrentPage(store.currentPage);
   }, [store.currentPage]);
 
   function handleManualPageTurn(direction: "prev" | "next") {

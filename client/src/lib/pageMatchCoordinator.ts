@@ -133,9 +133,8 @@ export class PageMatchCoordinator {
 
     const bothAgree = fpSuggests === nextPage && ngSuggests === nextPage;
     const bothHold = fpSuggests === null && ngSuggests === null;
-    const disagree = (fpSuggests !== null && ngSuggests !== null && fpSuggests !== ngSuggests) ||
-                     (fpSuggests === nextPage && ngSuggests === null && ngConfidence > 10) ||
-                     (ngSuggests === nextPage && fpSuggests === null && fpConfidence > 30);
+    // Only disagree if both actively suggest DIFFERENT pages (not just one is null)
+    const disagree = (fpSuggests !== null && ngSuggests !== null && fpSuggests !== ngSuggests);
 
     if (bothAgree) {
       if (this.lastAgreedPage === nextPage) {
