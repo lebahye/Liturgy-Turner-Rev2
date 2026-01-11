@@ -45,6 +45,9 @@ export const pageMarkers = pgTable("page_markers", {
   pageNumber: integer("page_number").notNull(),
   timestampMs: integer("timestamp_ms").notNull(),
   audioFeatures: jsonb("audio_features"),
+  // Trigger words: phonetic words spoken just before this page turn
+  triggerTokens: text("trigger_tokens").array(),
+  triggerConfidence: real("trigger_confidence"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
