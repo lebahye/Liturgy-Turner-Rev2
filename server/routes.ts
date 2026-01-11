@@ -255,6 +255,8 @@ const file = await storage.createUploadedFile({
             pageNumber,
             timestampMs: ts,
             audioFeatures: m.audioFeatures || null,
+            triggerTokens: m.triggerTokens || null,
+            triggerConfidence: m.triggerConfidence || null,
           };
         }));
         createdMarkers = await storage.createPageMarkers(markerData);

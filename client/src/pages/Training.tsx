@@ -18,6 +18,8 @@ interface LocalMarker {
   page: number;
   time: number;
   audioFeatures: AudioFeatures | null;
+  triggerTokens?: string[];
+  triggerConfidence?: number;
 }
 
 export default function Training() {
@@ -71,6 +73,9 @@ export default function Training() {
   const sourceNodeRef = useRef<MediaStreamAudioSourceNode | null>(null);
   const learningAbortRef = useRef<AbortController | null>(null);
   const insightsPollingRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const audioChunksRef = useRef<{blob: Blob; timestamp: number}[]>([]);
+  const mediaStreamRef = useRef<MediaStream | null>(null);
 
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
@@ -306,6 +311,7 @@ export default function Training() {
     }
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaStreamRef.current = stream;
       
       audioContextRef.current = new AudioContext();
       sourceNodeRef.current = audioContextRef.current.createMediaStreamSource(stream);
@@ -326,6 +332,27 @@ export default function Training() {
         }
       );
       meydaAnalyzerRef.current.start();
+      
+      // Set up MediaRecorder for capturing audio chunks (for trigger word extraction)
+      audioChunksRef.current = [];
+      const mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm' });
+      mediaRecorderRef.current = mediaRecorder;
+      
+      mediaRecorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+          audioChunksRef.current.push({
+            blob: event.data,
+            timestamp: Date.now()
+          });
+          // Keep only last 10 seconds of chunks (at 500ms each = 20 chunks)
+          if (audioChunksRef.current.length > 20) {
+            audioChunksRef.current.shift();
+          }
+        }
+      };
+      
+      // Record in 500ms chunks for fine-grained buffer extraction
+      mediaRecorder.start(500);
       
       await audioHandler.startRecording();
       setAnalyser(audioHandler.getAnalyser());
@@ -349,26 +376,96 @@ export default function Training() {
       meydaAnalyzerRef.current.stop();
       meydaAnalyzerRef.current = null;
     }
+    if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+      mediaRecorderRef.current.stop();
+      mediaRecorderRef.current = null;
+    }
+    if (mediaStreamRef.current) {
+      mediaStreamRef.current.getTracks().forEach(track => track.stop());
+      mediaStreamRef.current = null;
+    }
+    audioChunksRef.current = [];
     audioHandler.stopRecording();
     setIsRecording(false);
     toast({
       title: "Recording Complete",
-      description: `Captured ${markers.length} page markers with audio features. Don't forget to save!`,
+      description: `Captured ${markers.length} page markers with audio features and trigger words. Don't forget to save!`,
     });
   };
 
-  const markPageTurn = () => {
+  const markPageTurn = async () => {
     const time = (Date.now() - startTime) / 1000;
     
     const features = recentFeaturesRef.current.length > 0 
       ? averageFeatures(recentFeaturesRef.current.slice(-10))
       : null;
     
-    setMarkers([...markers, { page: store.currentPage, time, audioFeatures: features }]);
+    // Extract last 3 seconds of audio for trigger word transcription
+    const now = Date.now();
+    const threeSecondsAgo = now - 3000;
+    const recentChunks = audioChunksRef.current.filter(c => c.timestamp >= threeSecondsAgo);
+    
+    // Create the marker immediately with pending trigger status
+    const newMarker: LocalMarker = { 
+      page: store.currentPage, 
+      time, 
+      audioFeatures: features,
+      triggerTokens: undefined,
+      triggerConfidence: undefined
+    };
+    
+    const markerIndex = markers.length;
+    setMarkers(prev => [...prev, newMarker]);
     store.nextPage();
     
     if (features) {
       console.log('Captured audio features at marker:', features.rms.toFixed(4), features.spectralCentroid.toFixed(0));
+    }
+    
+    // Transcribe audio in background to get trigger words
+    if (recentChunks.length > 0) {
+      try {
+        const audioBlob = new Blob(recentChunks.map(c => c.blob), { type: 'audio/webm' });
+        const arrayBuffer = await audioBlob.arrayBuffer();
+        const base64 = btoa(
+          new Uint8Array(arrayBuffer).reduce((data, byte) => data + String.fromCharCode(byte), '')
+        );
+        
+        const response = await fetch('/api/transcribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            audioBase64: base64,
+            mimeType: 'audio/webm'
+          })
+        });
+        
+        const data = await response.json();
+        const transcript = data.transcript || '';
+        
+        if (transcript && transcript !== '[silence]' && transcript !== '[error]') {
+          // Extract last 5 words as trigger tokens
+          const words = transcript.toLowerCase().split(/\s+/).filter((w: string) => w.length > 0);
+          const triggerTokens = words.slice(-5);
+          
+          // Update the marker with trigger words
+          setMarkers(prev => {
+            const updated = [...prev];
+            if (updated[markerIndex]) {
+              updated[markerIndex] = {
+                ...updated[markerIndex],
+                triggerTokens,
+                triggerConfidence: 0.8 // Default confidence for new triggers
+              };
+            }
+            return updated;
+          });
+          
+          console.log('Captured trigger words:', triggerTokens.join(', '));
+        }
+      } catch (error) {
+        console.error('Failed to transcribe trigger audio:', error);
+      }
     }
   };
 
@@ -410,6 +507,8 @@ export default function Training() {
             pageNumber: m.page,
             timestampMs: Math.round(m.time * 1000),
             audioFeatures: m.audioFeatures,
+            triggerTokens: m.triggerTokens,
+            triggerConfidence: m.triggerConfidence,
           })),
         }),
       });
@@ -569,16 +668,26 @@ export default function Training() {
                   Press "Mark Turn" when page changes.
                 </p>
               ) : (
-                <div className="max-h-32 overflow-y-auto space-y-1">
+                <div className="max-h-48 overflow-y-auto space-y-1">
                   {markers.map((m, i) => (
-                    <div key={i} className="flex items-center justify-between rounded border bg-white p-2 text-sm dark:bg-gray-800" data-testid={`marker-${i}`}>
-                      <span className="font-medium text-primary">P{m.page}→{m.page + 1}</span>
-                      <div className="flex items-center gap-2">
-                        {m.audioFeatures && (
-                          <span className="text-xs text-emerald-600">audio</span>
-                        )}
-                        <span className="font-mono text-xs text-gray-500">{formatTime(m.time)}</span>
+                    <div key={i} className="rounded border bg-white p-2 text-sm dark:bg-gray-800" data-testid={`marker-${i}`}>
+                      <div className="flex items-center justify-between">
+                        <span className="font-medium text-primary">P{m.page}→{m.page + 1}</span>
+                        <div className="flex items-center gap-2">
+                          {m.audioFeatures && (
+                            <span className="text-xs text-emerald-600">audio</span>
+                          )}
+                          {m.triggerTokens && m.triggerTokens.length > 0 && (
+                            <span className="text-xs text-purple-600">triggers</span>
+                          )}
+                          <span className="font-mono text-xs text-gray-500">{formatTime(m.time)}</span>
+                        </div>
                       </div>
+                      {m.triggerTokens && m.triggerTokens.length > 0 && (
+                        <div className="mt-1 text-xs text-muted-foreground italic truncate">
+                          "{m.triggerTokens.join(' ')}"
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

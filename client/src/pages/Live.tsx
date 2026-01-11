@@ -3,7 +3,7 @@ import { useStore } from "@/lib/store";
 import { Document, Page, pdfjs } from "react-pdf";
 import { createPageMatcher, PdfPageText, DictEntry, MatcherConfig } from "@/lib/pageMatching";
 import { createAudioAnalyzer, AudioFeatures, compareFeatures, MeydaAnalyzer } from "@/lib/audio-features";
-import { PageMatchCoordinator, CoordinatorDecision } from "@/lib/pageMatchCoordinator";
+import { PageMatchCoordinator, CoordinatorDecision, TriggerData } from "@/lib/pageMatchCoordinator";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
@@ -185,6 +185,21 @@ export default function Live() {
           setTrainedMarkers(markers);
           setFingerprintStatus("ready");
           coordinatorRef.current.setHasFingerprintData(true);
+          
+          // Extract trigger words from markers
+          const triggers: TriggerData[] = data.markers
+            .filter((m: any) => m.triggerTokens && m.triggerTokens.length > 0)
+            .map((m: any) => ({
+              pageNumber: m.pageNumber,
+              tokens: m.triggerTokens,
+              confidence: m.triggerConfidence || 0.8,
+            }));
+          
+          if (triggers.length > 0) {
+            coordinatorRef.current.setTriggers(triggers);
+            console.log(`[Live] Loaded ${triggers.length} page triggers`);
+          }
+          
           console.log(`[Live] Loaded ${markers.length} trained fingerprints for pages ${markers.map(m => m.pageNumber).join(', ')}`);
         } else {
           setFingerprintStatus("none");
@@ -519,6 +534,10 @@ export default function Live() {
     const nextMatches = nextResult.matchedNgrams;
     
     setMatchInfo({ ...nextResult, currentPageMatches: currMatches });
+
+    // Update coordinator with recent transcript tokens for trigger word detection
+    const recentTokens = windowText.split(/\s+/).filter(t => t.length > 0);
+    coordinatorRef.current.updateRecentTranscript(recentTokens);
 
     // Report to coordinator instead of turning pages directly
     const decision = coordinatorRef.current.reportNgramMatch(currMatches, nextMatches, currentResult.totalNgrams);
@@ -1102,7 +1121,7 @@ export default function Live() {
                       {coordinatorDecision.action.toUpperCase()}
                     </span>
                   </div>
-                  <div className="mt-2 grid grid-cols-2 gap-2 text-xs">
+                  <div className="mt-2 grid grid-cols-3 gap-2 text-xs">
                     <div className="bg-white/50 rounded p-1">
                       <div className="text-gray-500">Fingerprint</div>
                       <div className="font-bold text-purple-700">{coordinatorDecision.fingerprintConfidence.toFixed(0)}%</div>
@@ -1110,6 +1129,10 @@ export default function Live() {
                     <div className="bg-white/50 rounded p-1">
                       <div className="text-gray-500">N-gram</div>
                       <div className="font-bold text-blue-700">{coordinatorDecision.ngramConfidence.toFixed(0)}%</div>
+                    </div>
+                    <div className="bg-white/50 rounded p-1">
+                      <div className="text-gray-500">Trigger</div>
+                      <div className="font-bold text-amber-700">{coordinatorDecision.triggerConfidence.toFixed(0)}%</div>
                     </div>
                   </div>
                   <div className="mt-1 text-xs text-gray-600">

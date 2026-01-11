@@ -1,4 +1,4 @@
-export type MatchSource = "fingerprint" | "ngram";
+export type MatchSource = "fingerprint" | "ngram" | "trigger";
 
 export type MatchSignal = {
   source: MatchSource;
@@ -8,18 +8,26 @@ export type MatchSignal = {
   confidence: number;
 };
 
+export type TriggerData = {
+  pageNumber: number;
+  tokens: string[];
+  confidence: number;
+};
+
 export type CoordinatorDecision = {
   action: "turn" | "hold";
   targetPage: number | null;
   reason: string;
   fingerprintConfidence: number;
   ngramConfidence: number;
+  triggerConfidence: number;
   agreement: boolean;
 };
 
 export type CoordinatorConfig = {
   fingerprintThreshold: number;
   ngramThreshold: number;
+  triggerMatchThreshold: number;
   agreementBonus: number;
   disagreementPenalty: number;
   requiredConsecutiveAgreements: number;
@@ -28,6 +36,7 @@ export type CoordinatorConfig = {
 const DEFAULT_CONFIG: CoordinatorConfig = {
   fingerprintThreshold: 60,
   ngramThreshold: 2,
+  triggerMatchThreshold: 3,
   agreementBonus: 20,
   disagreementPenalty: 30,
   requiredConsecutiveAgreements: 2,
@@ -42,6 +51,10 @@ export class PageMatchCoordinator {
   
   private latestFingerprint: MatchSignal | null = null;
   private latestNgram: MatchSignal | null = null;
+  private latestTrigger: MatchSignal | null = null;
+  
+  private triggersByPage: Map<number, TriggerData> = new Map();
+  private recentTranscriptTokens: string[] = [];
 
   constructor(config: Partial<CoordinatorConfig> = {}) {
     this.config = { ...DEFAULT_CONFIG, ...config };
@@ -53,11 +66,62 @@ export class PageMatchCoordinator {
     this.lastAgreedPage = null;
     this.latestFingerprint = null;
     this.latestNgram = null;
+    this.latestTrigger = null;
+    this.recentTranscriptTokens = [];
     console.log(`[Coordinator] Page set to ${page}, buffers reset`);
   }
 
   setHasFingerprintData(hasData: boolean) {
     this.hasFingerprintData = hasData;
+  }
+  
+  setTriggers(triggers: TriggerData[]) {
+    this.triggersByPage.clear();
+    for (const t of triggers) {
+      this.triggersByPage.set(t.pageNumber, t);
+    }
+    console.log(`[Coordinator] Loaded ${triggers.length} page triggers`);
+  }
+  
+  updateRecentTranscript(tokens: string[]) {
+    this.recentTranscriptTokens = tokens.slice(-10);
+    this.checkTriggerMatch();
+  }
+  
+  private checkTriggerMatch() {
+    const nextPage = this.currentPage + 1;
+    const triggerForCurrentPage = this.triggersByPage.get(this.currentPage);
+    
+    if (!triggerForCurrentPage || triggerForCurrentPage.tokens.length === 0) {
+      this.latestTrigger = null;
+      return;
+    }
+    
+    const triggerTokens = triggerForCurrentPage.tokens.map(t => t.toLowerCase());
+    const transcriptLower = this.recentTranscriptTokens.map(t => t.toLowerCase());
+    
+    let matchCount = 0;
+    for (const trigger of triggerTokens) {
+      if (transcriptLower.some(t => t.includes(trigger) || trigger.includes(t))) {
+        matchCount++;
+      }
+    }
+    
+    const matchRatio = triggerTokens.length > 0 ? matchCount / triggerTokens.length : 0;
+    const confidence = matchRatio * 100;
+    const suggestedPage = matchCount >= this.config.triggerMatchThreshold || matchRatio >= 0.6 ? nextPage : null;
+    
+    this.latestTrigger = {
+      source: "trigger",
+      currentPageScore: matchCount,
+      nextPageScore: matchCount,
+      suggestedPage,
+      confidence,
+    };
+    
+    if (matchCount > 0) {
+      console.log(`[Coordinator] Trigger: ${matchCount}/${triggerTokens.length} matches (${confidence.toFixed(1)}%), suggests=${suggestedPage || 'hold'}`);
+    }
   }
 
   reportFingerprintMatch(currentScore: number, nextScore: number) {
@@ -98,12 +162,15 @@ export class PageMatchCoordinator {
   private evaluate(): CoordinatorDecision {
     const fp = this.latestFingerprint;
     const ng = this.latestNgram;
+    const tr = this.latestTrigger;
     const nextPage = this.currentPage + 1;
     
     const fpConfidence = fp?.confidence ?? 0;
     const ngConfidence = ng?.confidence ?? 0;
+    const trConfidence = tr?.confidence ?? 0;
     const fpSuggests = fp?.suggestedPage;
     const ngSuggests = ng?.suggestedPage;
+    const trSuggests = tr?.suggestedPage;
     
     let decision: CoordinatorDecision = {
       action: "hold",
@@ -111,8 +178,24 @@ export class PageMatchCoordinator {
       reason: "insufficient_data",
       fingerprintConfidence: fpConfidence,
       ngramConfidence: ngConfidence,
+      triggerConfidence: trConfidence,
       agreement: false,
     };
+
+    // Check for trigger word match first - strong trigger signal can confirm page turn
+    if (trSuggests === nextPage && trConfidence >= 60) {
+      decision = {
+        action: "turn",
+        targetPage: nextPage,
+        reason: "trigger_match",
+        fingerprintConfidence: fpConfidence,
+        ngramConfidence: ngConfidence,
+        triggerConfidence: trConfidence,
+        agreement: false,
+      };
+      console.log(`[Coordinator] Decision: ${decision.action} (${decision.reason}) trigger=${trConfidence.toFixed(1)}%`);
+      return decision;
+    }
 
     if (!this.hasFingerprintData) {
       if (ngSuggests === nextPage && ngConfidence >= 20) {
@@ -122,6 +205,7 @@ export class PageMatchCoordinator {
           reason: "ngram_only_mode",
           fingerprintConfidence: 0,
           ngramConfidence: ngConfidence,
+          triggerConfidence: trConfidence,
           agreement: false,
         };
       } else {
@@ -133,10 +217,22 @@ export class PageMatchCoordinator {
 
     const bothAgree = fpSuggests === nextPage && ngSuggests === nextPage;
     const bothHold = fpSuggests === null && ngSuggests === null;
-    // Only disagree if both actively suggest DIFFERENT pages (not just one is null)
     const disagree = (fpSuggests !== null && ngSuggests !== null && fpSuggests !== ngSuggests);
+    
+    // If trigger matches and either fp or ng agrees, that's strong confirmation
+    const triggerPlusOne = trSuggests === nextPage && (fpSuggests === nextPage || ngSuggests === nextPage);
 
-    if (bothAgree) {
+    if (triggerPlusOne) {
+      decision = {
+        action: "turn",
+        targetPage: nextPage,
+        reason: "trigger_confirmed",
+        fingerprintConfidence: fpConfidence,
+        ngramConfidence: ngConfidence,
+        triggerConfidence: trConfidence,
+        agreement: true,
+      };
+    } else if (bothAgree) {
       if (this.lastAgreedPage === nextPage) {
         this.consecutiveAgreements++;
       } else {
@@ -151,6 +247,7 @@ export class PageMatchCoordinator {
           reason: "both_agree",
           fingerprintConfidence: fpConfidence,
           ngramConfidence: ngConfidence,
+          triggerConfidence: trConfidence,
           agreement: true,
         };
       } else {
@@ -160,6 +257,7 @@ export class PageMatchCoordinator {
           reason: `agreement_pending_${this.consecutiveAgreements}/${this.config.requiredConsecutiveAgreements}`,
           fingerprintConfidence: fpConfidence,
           ngramConfidence: ngConfidence,
+          triggerConfidence: trConfidence,
           agreement: true,
         };
       }
@@ -172,6 +270,7 @@ export class PageMatchCoordinator {
         reason: "disagreement",
         fingerprintConfidence: fpConfidence,
         ngramConfidence: ngConfidence,
+        triggerConfidence: trConfidence,
         agreement: false,
       };
     } else if (fpSuggests === nextPage && fpConfidence >= this.config.fingerprintThreshold) {
@@ -181,6 +280,7 @@ export class PageMatchCoordinator {
         reason: "fingerprint_strong",
         fingerprintConfidence: fpConfidence,
         ngramConfidence: ngConfidence,
+        triggerConfidence: trConfidence,
         agreement: false,
       };
     } else if (ngSuggests === nextPage && ng && ng.nextPageScore >= this.config.ngramThreshold * 2) {
@@ -190,6 +290,7 @@ export class PageMatchCoordinator {
         reason: "ngram_strong",
         fingerprintConfidence: fpConfidence,
         ngramConfidence: ngConfidence,
+        triggerConfidence: trConfidence,
         agreement: false,
       };
     } else if (bothHold) {
@@ -201,6 +302,7 @@ export class PageMatchCoordinator {
         reason: "both_hold",
         fingerprintConfidence: fpConfidence,
         ngramConfidence: ngConfidence,
+        triggerConfidence: trConfidence,
         agreement: true,
       };
     } else {
@@ -210,11 +312,12 @@ export class PageMatchCoordinator {
         reason: "uncertain",
         fingerprintConfidence: fpConfidence,
         ngramConfidence: ngConfidence,
+        triggerConfidence: trConfidence,
         agreement: false,
       };
     }
 
-    console.log(`[Coordinator] Decision: ${decision.action} (${decision.reason}) fp=${fpConfidence.toFixed(1)}% ng=${ngConfidence.toFixed(1)}%`);
+    console.log(`[Coordinator] Decision: ${decision.action} (${decision.reason}) fp=${fpConfidence.toFixed(1)}% ng=${ngConfidence.toFixed(1)}% tr=${trConfidence.toFixed(1)}%`);
     return decision;
   }
 
@@ -223,6 +326,8 @@ export class PageMatchCoordinator {
     this.lastAgreedPage = null;
     this.latestFingerprint = null;
     this.latestNgram = null;
+    this.latestTrigger = null;
+    this.recentTranscriptTokens = [];
     console.log(`[Coordinator] Reset`);
   }
 }
