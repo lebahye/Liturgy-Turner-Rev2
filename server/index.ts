@@ -5,7 +5,8 @@ import { createServer } from "http";
 import path from "path";
 import { uploadPdfRouter } from "./routes/uploadPdf";
 import { pdfTextRouter } from "./routes/pdfText";
-import { transcribeRouter } from "./routes/transcribe";
+// Legacy transcribe router removed - using Gemini-based transcription in routes.ts instead
+// import { transcribeRouter } from "./routes/transcribe";
 import { extractDictionaryRouter } from "./routes/extractDictionary";
 
 const app = express();
@@ -34,7 +35,7 @@ app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 // Mount API routers
 app.use('/api', uploadPdfRouter);
 app.use('/api', pdfTextRouter);
-app.use('/api', transcribeRouter);
+// transcribeRouter removed - Gemini-based transcription in routes.ts handles /api/transcribe
 app.use('/api', extractDictionaryRouter);
 
 export function log(message: string, source = "express") {
