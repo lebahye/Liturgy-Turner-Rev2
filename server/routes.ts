@@ -5,7 +5,7 @@ import multer from "multer";
 import path from "path";
 import fs from "fs/promises";
 import crypto from "crypto";
-import { GoogleGenAI } from "@google/genai";
+import OpenAI from "openai";
 
 // Configure multer for file uploads
 const pdfStorage = multer.diskStorage({
@@ -503,15 +503,11 @@ const file = await storage.createUploadedFile({
 
   // ============ Transcription API ============
 
-  const ai = new GoogleGenAI({
-    apiKey: process.env.AI_INTEGRATIONS_GEMINI_API_KEY,
-    httpOptions: {
-      apiVersion: "",
-      baseUrl: process.env.AI_INTEGRATIONS_GEMINI_BASE_URL,
-    },
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
   });
 
-  // Transcribe audio chunk (for live mode)
+  // Transcribe audio chunk (for live mode) using OpenAI Whisper
   app.post('/api/transcribe', async (req, res) => {
     try {
       const { audioBase64, mimeType = 'audio/webm' } = req.body;
@@ -520,32 +516,32 @@ const file = await storage.createUploadedFile({
         return res.status(400).json({ error: 'audioBase64 is required' });
       }
 
-      const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
-        contents: [{
-          role: "user",
-          parts: [
-            {
-              inlineData: {
-                mimeType,
-                data: audioBase64
-              }
-            },
-            {
-              text: `Transcribe this Armenian liturgical chanting audio using phonetic romanization (Latin letters).
+      // Convert base64 to buffer and create a File object for Whisper
+      const audioBuffer = Buffer.from(audioBase64, 'base64');
+      
+      // Determine file extension from mime type
+      const extMap: Record<string, string> = {
+        'audio/webm': 'webm',
+        'audio/mp3': 'mp3',
+        'audio/mpeg': 'mp3',
+        'audio/wav': 'wav',
+        'audio/ogg': 'ogg',
+        'audio/m4a': 'm4a',
+      };
+      const ext = extMap[mimeType] || 'webm';
+      
+      // Create a File object from the buffer
+      const audioFile = new File([audioBuffer], `audio.${ext}`, { type: mimeType });
 
-Rules:
-- Write Armenian words using English/Latin letters (e.g., "Der voghormya", "Surp Asdvadz")
-- Spell words phonetically as they sound when sung
-- If you cannot hear clear speech, respond with [silence]
-- Return only the romanized text, no Armenian script or translations`
-            }
-          ]
-        }],
+      const transcription = await openai.audio.transcriptions.create({
+        file: audioFile,
+        model: "whisper-1",
+        language: "hy", // Armenian language code
+        response_format: "text",
       });
 
-      const transcript = response?.candidates?.[0]?.content?.parts?.[0]?.text || "[silence]";
-      res.json({ transcript: transcript.trim() });
+      const transcript = transcription?.trim() || "[silence]";
+      res.json({ transcript: transcript.length > 0 ? transcript : "[silence]" });
     } catch (error) {
       console.error('Transcription error:', error);
       res.status(500).json({ error: 'Failed to transcribe audio', transcript: "[error]" });
@@ -707,33 +703,20 @@ Rules:
                        ext === '.wav' ? 'audio/wav' : 
                        ext === '.ogg' ? 'audio/ogg' : 'audio/webm';
 
-      // Transcribe the entire audio
+      // Transcribe the entire audio using OpenAI Whisper
       console.log(`Transcribing training audio: ${session.audioPath}`);
       
-      const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
-        contents: [{
-          role: "user",
-          parts: [
-            {
-              inlineData: {
-                mimeType,
-                data: audioBase64
-              }
-            },
-            {
-              text: `This is Armenian liturgical chanting audio with page markers at these timestamps (in milliseconds): ${markers.map(m => `Page ${m.pageNumber} at ${m.timestampMs}ms`).join(', ')}. 
-
-Please transcribe the Armenian text, dividing it by the page markers provided. Format your response as JSON with this structure:
-{"pages": [{"pageNumber": N, "transcript": "Armenian text for that page section"}]}
-
-Focus on accuracy of the Armenian text. Only include pages that have audible content.`
-            }
-          ]
-        }],
+      // Create a File object for Whisper
+      const audioFile = new File([audioBuffer], `audio${ext}`, { type: mimeType });
+      
+      const transcription = await openai.audio.transcriptions.create({
+        file: audioFile,
+        model: "whisper-1",
+        language: "hy", // Armenian
+        response_format: "text",
       });
 
-      const responseText = response?.candidates?.[0]?.content?.parts?.[0]?.text || "";
+      const responseText = transcription || "";
       
       // Try to parse JSON from response
       let pageTranscripts: { pageNumber: number; transcript: string }[] = [];
@@ -1036,27 +1019,18 @@ Focus on accuracy of the Armenian text. Only include pages that have audible con
           ], { timeout: 30000 });
           
           const audioBuffer = await fs.readFile(outputFile);
-          const audioBase64 = audioBuffer.toString('base64');
           
-          // Transcribe chunk
-          const response = await ai.models.generateContent({
-            model: "gemini-2.5-flash",
-            contents: [{
-              role: "user",
-              parts: [
-                { inlineData: { mimeType: 'audio/wav', data: audioBase64 } },
-                { text: `Transcribe this Armenian liturgical chanting using phonetic romanization (Latin letters).
-Rules:
-- Write Armenian words using English/Latin letters (e.g., "Der voghormya", "Surp Asdvadz")
-- Spell words phonetically as they sound when sung
-- If repeated, write once
-- Skip unclear sections
-- Return only romanized text` }
-              ]
-            }],
+          // Transcribe chunk using OpenAI Whisper
+          const audioFile = new File([audioBuffer], 'chunk.wav', { type: 'audio/wav' });
+          
+          const transcription = await openai.audio.transcriptions.create({
+            file: audioFile,
+            model: "whisper-1",
+            language: "hy", // Armenian
+            response_format: "text",
           });
 
-          let transcript = response?.candidates?.[0]?.content?.parts?.[0]?.text || "";
+          let transcript = transcription || "";
           transcript = cleanupTranscript(transcript.trim());
           
           if (!transcript || transcript.length < 5 || transcript.startsWith('[')) {
