@@ -62,8 +62,8 @@ export default function Display() {
     <div ref={containerRef} className="flex h-screen w-screen items-center justify-center bg-black">
       {!pdfSrc ? (
         <div className="text-center text-white">
-          <div className="text-4xl text-gray-300 mb-4">No PDF Uploaded</div>
-          <div className="text-xl text-gray-400">Upload a Badarak PDF from the Home page to begin.</div>
+          <div className="text-4xl text-gray-300 mb-4">Waiting for PDF</div>
+          <div className="text-xl text-gray-400">The laptop will select a PDF shortly. This screen will update automatically.</div>
         </div>
       ) : (
         <div className="relative h-full w-full overflow-hidden">
