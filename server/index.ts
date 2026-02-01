@@ -8,6 +8,7 @@ import { pdfTextRouter } from "./routes/pdfText";
 // Legacy transcribe router removed - using Gemini-based transcription in routes.ts instead
 // import { transcribeRouter } from "./routes/transcribe";
 import { extractDictionaryRouter } from "./routes/extractDictionary";
+import { initDisplayBus } from './displayBus';
 
 const app = express();
 const httpServer = createServer(app);
@@ -77,6 +78,9 @@ app.use((req, res, next) => {
 
 (async () => {
   await registerRoutes(httpServer, app);
+
+  // Initialize WS display sync bus (Smart TV viewer)
+  initDisplayBus(httpServer);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
