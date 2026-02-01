@@ -34,6 +34,8 @@ async function safeJson(res: Response) {
   }
 }
 
+// Display sync bus: broadcast current PDF/page so remote Displays (TVs) stay in sync.
+// Best-effort only; Live/Training UX must work even if the bus is offline.
 async function publishPdfToBus(pdfPath: string, pdfId: string | null, totalPages?: number) {
   try {
     await fetch('/api/control/pdf/set', {
