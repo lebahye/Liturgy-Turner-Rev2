@@ -34,6 +34,28 @@ async function safeJson(res: Response) {
   }
 }
 
+// Display sync bus: broadcast current PDF/page so remote Displays (TVs) stay in sync.
+// Best-effort only; Live/Training UX must work even if the bus is offline.
+async function publishPdfToBus(pdfPath: string, pdfId: string | null, totalPages?: number) {
+  try {
+    await fetch('/api/control/pdf/set', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ pdfPath, pdfId, totalPages }),
+    });
+  } catch {}
+}
+
+async function publishPageToBus(page: number, reason?: string, confidence?: number) {
+  try {
+    await fetch('/api/control/page/set', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ page, reason, confidence }),
+    });
+  } catch {}
+}
+
 export default function Live() {
   const store = useStore();
 
@@ -121,6 +143,7 @@ export default function Live() {
     } else {
       store.nextPage();
     }
+    publishPageToBus(newPage, 'manual_' + direction, 1.0);
     console.log(`[Manual] Page turned ${direction}, now tracking from page ${newPage}`);
   }
 
@@ -152,6 +175,9 @@ export default function Live() {
 
   function onPdfLoaded({ numPages }: { numPages: number }) {
     store.setTotalPagesFromPdf(numPages);
+    if (store.pdfFile && store.pdfFile.startsWith('/uploads/')) {
+      publishPdfToBus(store.pdfFile, store.pdfId ?? null, numPages);
+    }
   }
 
   useEffect(() => {
@@ -545,6 +571,7 @@ export default function Live() {
     
     if (decision.action === "turn" && decision.targetPage) {
       store.setPage(decision.targetPage);
+      publishPageToBus(decision.targetPage, decision.reason, decision.ngramConfidence / 100);
       currentPageRef.current = decision.targetPage;
       coordinatorRef.current.setCurrentPage(decision.targetPage);
       transcriptBufferRef.current = [];
@@ -824,6 +851,7 @@ export default function Live() {
           if (decision.action === "turn" && decision.targetPage) {
             console.log(`[Coordinator] Fingerprint triggered page turn to ${decision.targetPage} (${decision.reason})`);
             store.setPage(decision.targetPage);
+            publishPageToBus(decision.targetPage, decision.reason, decision.fingerprintConfidence / 100);
             currentPageRef.current = decision.targetPage;
             coordinatorRef.current.setCurrentPage(decision.targetPage);
             featureBufferRef.current = []; // Clear buffer after turn

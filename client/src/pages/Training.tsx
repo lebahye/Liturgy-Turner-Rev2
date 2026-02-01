@@ -22,6 +22,29 @@ interface LocalMarker {
   triggerConfidence?: number;
 }
 
+
+// Display sync bus: broadcast current PDF/page so remote Displays (TVs) stay in sync.
+// Best-effort only; Live/Training UX must work even if the bus is offline.
+async function publishPdfToBus(pdfPath: string, pdfId: string | null, totalPages?: number) {
+  try {
+    await fetch('/api/control/pdf/set', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ pdfPath, pdfId, totalPages }),
+    });
+  } catch {}
+}
+
+async function publishPageToBus(page: number, reason?: string, confidence?: number) {
+  try {
+    await fetch('/api/control/page/set', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ page, reason, confidence }),
+    });
+  } catch {}
+}
+
 export default function Training() {
   const store = useStore();
   const { toast } = useToast();
@@ -361,6 +384,7 @@ export default function Training() {
       setMarkers([]);
       setSaved(false);
       store.setPage(1);
+      publishPageToBus(1, 'training_start', 1.0);
     } catch (e) {
       console.error(e);
       toast({
@@ -417,7 +441,8 @@ export default function Training() {
     const markerIndex = markers.length;
     setMarkers(prev => [...prev, newMarker]);
     store.nextPage();
-    
+    publishPageToBus(store.currentPage + 1, 'training_mark', 1.0);
+
     if (features) {
       console.log('Captured audio features at marker:', features.rms.toFixed(4), features.spectralCentroid.toFixed(0));
     }
@@ -472,6 +497,10 @@ export default function Training() {
   const handlePdfLoad = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
     store.setPage(1);
+    if (store.pdfFile) {
+      publishPdfToBus(store.pdfFile, store.pdfId ?? null, numPages);
+      publishPageToBus(1, 'training_pdf_loaded', 1.0);
+    }
   };
 
   const saveTrainingSession = async () => {
@@ -582,7 +611,7 @@ export default function Training() {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    onClick={() => store.prevPage()}
+                    onClick={() => { store.prevPage(); publishPageToBus(store.currentPage - 1, 'training_prev', 1.0); }}
                     disabled={store.currentPage <= 1}
                     data-testid="button-prev-page"
                   >
@@ -594,7 +623,7 @@ export default function Training() {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    onClick={() => store.nextPage()}
+                    onClick={() => { store.nextPage(); publishPageToBus(store.currentPage + 1, 'training_next', 1.0); }}
                     disabled={numPages > 0 && store.currentPage >= numPages}
                     data-testid="button-next-page"
                   >

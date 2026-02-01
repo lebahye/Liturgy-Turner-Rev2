@@ -79,6 +79,14 @@ export default function Home() {
     try {
       const pdf = await uploadPdf(file);
       useStore.getState().setPdfFromServer(pdf.path, pdf.pdfId);
+      // Publish to display sync bus so TVs update immediately
+      try {
+        await fetch('/api/control/pdf/set', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ pdfPath: pdf.path, pdfId: pdf.pdfId ?? null }),
+        });
+      } catch {}
       toast({ title: "Upload complete", description: pdf.originalName });
     } catch (e: any) {
       toast({ variant: "destructive", title: "Upload Failed", description: e.message || "Unknown error" });
