@@ -6,6 +6,7 @@ import path from "path";
 import fs from "fs/promises";
 import crypto from "crypto";
 import OpenAI from "openai";
+import { getDisplayState, nextPage, prevPage, setPageState, setPdfState } from "./displayBus";
 
 // Configure multer for file uploads
 const pdfStorage = multer.diskStorage({
@@ -85,7 +86,43 @@ export async function registerRoutes(
   app: Express
 ): Promise<Server> {
   
-  // Upload PDF endpoint
+  
+  // ============ Display Sync Bus (TV Viewer) ============
+
+  app.get('/api/control/state', async (_req, res) => {
+    res.json({ state: getDisplayState() });
+  });
+
+  app.post('/api/control/pdf/set', async (req, res) => {
+    const { pdfPath, pdfId = null, totalPages } = req.body || {};
+    if (!pdfPath || typeof pdfPath !== 'string') {
+      return res.status(400).json({ error: 'pdfPath is required' });
+    }
+    setPdfState({ pdfPath, pdfId, totalPages });
+    return res.json({ success: true, state: getDisplayState() });
+  });
+
+  app.post('/api/control/page/set', async (req, res) => {
+    const { page, reason, confidence } = req.body || {};
+    const n = Number(page);
+    if (!Number.isFinite(n)) return res.status(400).json({ error: 'page must be a number' });
+    setPageState({ page: n, reason, confidence });
+    return res.json({ success: true, state: getDisplayState() });
+  });
+
+  app.post('/api/control/page/next', async (req, res) => {
+    const { reason, confidence } = req.body || {};
+    nextPage(reason, confidence);
+    return res.json({ success: true, state: getDisplayState() });
+  });
+
+  app.post('/api/control/page/prev', async (req, res) => {
+    const { reason, confidence } = req.body || {};
+    prevPage(reason, confidence);
+    return res.json({ success: true, state: getDisplayState() });
+  });
+
+// Upload PDF endpoint
   app.post('/api/upload/pdf', uploadPdf.single('pdf'), async (req, res) => {
     try {
       if (!req.file) {
