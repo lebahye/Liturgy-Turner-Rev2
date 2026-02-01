@@ -1,0 +1,32 @@
+// Project-local Clawdbot config (example)
+//
+// This is intentionally minimal; it boots an embedded agent that can be used
+// for local automations (cron, evaluation jobs, etc.) without connecting to
+// any messaging channels.
+//
+// IMPORTANT: copy to agent/clawdbot.json5 and customize as needed.
+
+{
+  agents: {
+    defaults: {
+      // Keep the agent's workspace constrained to this repo.
+      workspace: "./",
+      // Optional identity (safe defaults)
+      identity: {
+        name: "Liturgy Agent",
+        emoji: "📖",
+      },
+    },
+  },
+
+  // No channels by default.
+  channels: {},
+
+  // Keep cron store inside the project state dir.
+  cron: {
+    enabled: true,
+    store: {
+      path: "$CLAWDBOT_STATE_DIR/cron-store.json",
+    },
+  },
+}
