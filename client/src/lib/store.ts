@@ -54,7 +54,7 @@ export const useStore = create<AppState>()(
       totalPages: 1, // IMPORTANT: don’t guess; let PDF tell us
       matchThreshold: 0.85,
       displayMode: "pdf",
-      pdfFile: null,
+      pdfFile: "/uploads/pdfs/7ad0d220e9292f359b6cb0949e923a03.pdf",
       pdfId: null,
       pages: DEFAULT_PAGES,
 
