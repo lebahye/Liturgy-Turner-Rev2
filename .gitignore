@@ -4,3 +4,11 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+
+# Local env
+.env
+
+# Local runtime state (do not commit)
+data/
+agent/.clawdbot-state/
+agent/memory/

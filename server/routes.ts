@@ -539,10 +539,14 @@ const file = await storage.createUploadedFile({
   });
 
   // ============ Transcription API ============
+  // Local-first: the app should boot even when no AI keys are configured.
+  // These endpoints will return a helpful error until OPENAI_API_KEY is set.
 
-  const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-  });
+  function getOpenAIClient() {
+    const apiKey = process.env.OPENAI_API_KEY?.trim();
+    if (!apiKey) return null;
+    return new OpenAI({ apiKey });
+  }
 
   // Transcribe audio chunk (for live mode) using OpenAI Whisper
   app.post('/api/transcribe', async (req, res) => {
@@ -569,6 +573,14 @@ const file = await storage.createUploadedFile({
       
       // Create a File object from the buffer
       const audioFile = new File([audioBuffer], `audio.${ext}`, { type: mimeType });
+
+      const openai = getOpenAIClient();
+      if (!openai) {
+        return res.status(501).json({
+          error: "Transcription is not configured (missing OPENAI_API_KEY)",
+          transcript: "[no-api-key]",
+        });
+      }
 
       const transcription = await openai.audio.transcriptions.create({
         file: audioFile,
@@ -745,6 +757,11 @@ const file = await storage.createUploadedFile({
       
       // Create a File object for Whisper
       const audioFile = new File([audioBuffer], `audio${ext}`, { type: mimeType });
+
+      const openai = getOpenAIClient();
+      if (!openai) {
+        return res.status(501).json({ error: "Transcription is not configured (missing OPENAI_API_KEY)" });
+      }
       
       const transcription = await openai.audio.transcriptions.create({
         file: audioFile,
@@ -1059,6 +1076,11 @@ const file = await storage.createUploadedFile({
           
           // Transcribe chunk using OpenAI Whisper
           const audioFile = new File([audioBuffer], 'chunk.wav', { type: 'audio/wav' });
+
+          const openai = getOpenAIClient();
+          if (!openai) {
+            return res.status(501).json({ error: "Transcription is not configured (missing OPENAI_API_KEY)" });
+          }
           
           const transcription = await openai.audio.transcriptions.create({
             file: audioFile,
