@@ -22,6 +22,9 @@
     defaults: {
       // Keep the agent's workspace constrained to this repo.
       workspace: "./",
+      // Pick a provider that is likely to be available on a fresh install.
+      // (You can override later in production deployments.)
+      model: { primary: "openai-codex/gpt-5.2" },
     },
     list: [
       {
