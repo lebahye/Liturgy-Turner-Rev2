@@ -11,8 +11,10 @@
     "check": "tsc",
     "db:push": "drizzle-kit push",
     "db:migrate": "mkdir -p data && drizzle-kit push",
-    "local:up": "node -e \"console.log(\\\"Run in two terminals: npm run dev and npm run agent:start\\\")\"",
-    "agent:start": "bash agent/run-gateway.sh"
+    "local:up": "concurrently -k -n db,app,agent -c yellow,cyan,magenta \"npm run db:migrate\" \"npm run dev\" \"npm run agent:start\"",
+    "agent:start": "bash agent/run-gateway.sh",
+    "dev:lan": "HOST=0.0.0.0 PORT=${PORT:-5000} NODE_ENV=development tsx server/index.ts",
+    "tunnel:quick": "cloudflared tunnel --url http://localhost:${PORT:-5000}"
   },
   "dependencies": {
     "@google/genai": "^1.34.0",
@@ -106,6 +108,7 @@
     "@types/ws": "^8.5.13",
     "@vitejs/plugin-react": "^5.0.4",
     "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.1",
     "drizzle-kit": "^0.31.4",
     "esbuild": "^0.25.0",
     "postcss": "^8.5.6",

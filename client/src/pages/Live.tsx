@@ -190,17 +190,44 @@ export default function Live() {
     return () => URL.revokeObjectURL(url);
   }, [audioFile]);
 
-  // Load trained audio fingerprints on mount
+  // Load trained audio fingerprints on mount (prefer aggregated fingerprints for the currently-loaded PDF)
   useEffect(() => {
     async function loadFingerprints() {
       try {
         setFingerprintStatus("loading");
+
+        // If we know the current PDF, prefer the aggregated fingerprints (multi-session learning)
+        if (store.pdfId || store.pdfFile) {
+          const qs = store.pdfId
+            ? `pdfId=${encodeURIComponent(store.pdfId)}`
+            : `pdfPath=${encodeURIComponent(store.pdfFile!)}`;
+
+          const aggRes = await fetch(`/api/aggregated-fingerprints?${qs}`);
+          if (aggRes.ok) {
+            const agg = await aggRes.json();
+            if (agg.fingerprints && agg.fingerprints.length > 0) {
+              const markers: PageMarker[] = agg.fingerprints.map((f: any) => ({
+                pageNumber: f.pageNumber,
+                timestampMs: f.averageTimestampMs,
+                audioFeatures: f.averagedFeatures || null,
+              }));
+              setTrainedMarkers(markers);
+              setFingerprintStatus("ready");
+              coordinatorRef.current.setHasFingerprintData(true);
+              console.log(`[Live] Loaded ${markers.length} aggregated fingerprints`);
+              return;
+            }
+          }
+        }
+
+        // Fallback: last ready training session (single-session)
         const res = await fetch("/api/training-sessions/active/latest");
         if (!res.ok) {
           console.log("[Live] No trained session available");
           setFingerprintStatus("none");
           return;
         }
+
         const data = await res.json();
         if (data.markers && data.markers.length > 0) {
           const markers: PageMarker[] = data.markers.map((m: any) => ({
@@ -211,7 +238,7 @@ export default function Live() {
           setTrainedMarkers(markers);
           setFingerprintStatus("ready");
           coordinatorRef.current.setHasFingerprintData(true);
-          
+
           // Extract trigger words from markers
           const triggers: TriggerData[] = data.markers
             .filter((m: any) => m.triggerTokens && m.triggerTokens.length > 0)
@@ -220,13 +247,13 @@ export default function Live() {
               tokens: m.triggerTokens,
               confidence: m.triggerConfidence || 0.8,
             }));
-          
+
           if (triggers.length > 0) {
             coordinatorRef.current.setTriggers(triggers);
             console.log(`[Live] Loaded ${triggers.length} page triggers`);
           }
-          
-          console.log(`[Live] Loaded ${markers.length} trained fingerprints for pages ${markers.map(m => m.pageNumber).join(', ')}`);
+
+          console.log(`[Live] Loaded ${markers.length} trained fingerprints for pages ${markers.map((m) => m.pageNumber).join(', ')}`);
         } else {
           setFingerprintStatus("none");
           coordinatorRef.current.setHasFingerprintData(false);
@@ -236,8 +263,9 @@ export default function Live() {
         setFingerprintStatus("error");
       }
     }
+
     loadFingerprints();
-  }, []);
+  }, [store.pdfId, store.pdfFile]);
 
   const [dictionaryStatus, setDictionaryStatus] = useState<"checking" | "cached" | "extracting" | "ready" | "error">("checking");
   const [pdfIdState, setPdfIdState] = useState<string | null>(null);

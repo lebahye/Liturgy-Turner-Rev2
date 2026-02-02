@@ -1281,9 +1281,12 @@ const file = await storage.createUploadedFile({
   app.get('/api/audio-files', async (req, res) => {
     try {
       const audioDir = path.join(process.cwd(), 'client/public/uploads/audio');
+      await fs.mkdir(audioDir, { recursive: true });
+
       const files = await fs.readdir(audioDir);
       const audioFiles = await Promise.all(
-        files.filter(f => f.endsWith('.wav') || f.endsWith('.webm') || f.endsWith('.mp3'))
+        files
+          .filter((f) => f.endsWith('.wav') || f.endsWith('.webm') || f.endsWith('.mp3') || f.endsWith('.m4a') || f.endsWith('.ogg'))
           .map(async (f) => {
             const stats = await fs.stat(path.join(audioDir, f));
             return {
@@ -1291,9 +1294,9 @@ const file = await storage.createUploadedFile({
               path: `/uploads/audio/${f}`,
               size: stats.size,
               sizeFormatted: `${(stats.size / (1024 * 1024)).toFixed(1)} MB`,
-              createdAt: stats.birthtime
+              createdAt: stats.birthtime,
             };
-          })
+          }),
       );
       res.json({ audioFiles });
     } catch (error) {
