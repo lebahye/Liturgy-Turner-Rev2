@@ -6,6 +6,9 @@ cd "$(dirname "$0")/.."
 export CLAWDBOT_STATE_DIR="$(pwd)/agent/.clawdbot-state"
 export CLAWDBOT_CONFIG_PATH="$(pwd)/agent/clawdbot.json5"
 
+# Dedicated gateway port for this project (avoid conflicts with any other Clawdbot instance)
+export CLAWDBOT_GATEWAY_PORT="28789"
+
 mkdir -p "$CLAWDBOT_STATE_DIR"
 
 if [ ! -f "$CLAWDBOT_CONFIG_PATH" ]; then
@@ -16,4 +19,4 @@ if [ ! -f "$CLAWDBOT_CONFIG_PATH" ]; then
 fi
 
 # Runs the gateway in the foreground (WSL-friendly; no systemd required).
-clawdbot gateway run
+clawdbot gateway run --port "$CLAWDBOT_GATEWAY_PORT" --bind loopback --allow-unconfigured
