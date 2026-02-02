@@ -44,8 +44,8 @@ In another WSL terminal:
 bash script/smoke.sh
 ```
 
-## 5) Optional: project-local Clawdbot instance
-This project can run its own dedicated Clawdbot gateway (local-only).
+## 5) Optional: project-local Clawdbot instance (for remote control + automation)
+This project can run its own **dedicated** Clawdbot gateway (local-only) on port **28789**.
 
 ```bash
 cp agent/clawdbot.json5.example agent/clawdbot.json5
@@ -54,10 +54,14 @@ npm run agent:start
 
 > Note: This uses your system-installed `clawdbot` binary.
 > Install in WSL (example):
-> 
+>
 > ```bash
 > npm install -g clawdbot
 > ```
+
+If you already have another Clawdbot instance running on the default port (18789),
+this project will not conflict because it uses a different port.
+
 
 ## iOS microphone note
 Safari on iOS often requires **HTTPS** for microphone access.
