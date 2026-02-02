@@ -12,3 +12,6 @@ vite.config.ts.*
 data/
 agent/.clawdbot-state/
 agent/memory/
+
+# Ignore local tmp artifacts
+/tmp/
