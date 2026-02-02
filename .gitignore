@@ -15,3 +15,6 @@ agent/memory/
 
 # Ignore local tmp artifacts
 /tmp/
+
+# Project-local Clawdbot config (copy from example)
+agent/clawdbot.json5
