@@ -13,6 +13,7 @@
     "db:migrate": "mkdir -p data && drizzle-kit push",
     "local:up": "concurrently -k -n db,app,agent -c yellow,cyan,magenta \"npm run db:migrate\" \"npm run dev\" \"npm run agent:start\"",
     "agent:start": "bash agent/run-gateway.sh",
+    "clawdbot:setup": "bash script/setup-clawdbot-from-zip.sh",
     "dev:lan": "HOST=0.0.0.0 PORT=${PORT:-5000} NODE_ENV=development tsx server/index.ts",
     "tunnel:quick": "cloudflared tunnel --url http://localhost:${PORT:-5000}",
     "smoke": "bash script/smoke.sh"

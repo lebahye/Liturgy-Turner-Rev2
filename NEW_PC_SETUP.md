@@ -52,12 +52,16 @@ cp agent/clawdbot.json5.example agent/clawdbot.json5
 npm run agent:start
 ```
 
-> Note: This uses your system-installed `clawdbot` binary.
-> Install in WSL (example):
+> Note: This project is configured to use the **pinned Clawdbot version shipped in this repo** (`clawdbot-main.zip`).
+>
+> Build it in WSL:
 >
 > ```bash
-> npm install -g clawdbot
+> bash script/setup-clawdbot-from-zip.sh
 > ```
+>
+> This produces:
+> - `./vendor/clawdbot-main/dist/entry.js`
 
 Remote control setup:
 - See `REMOTE_CONTROL_SETUP.md` for Telegram + WhatsApp.
