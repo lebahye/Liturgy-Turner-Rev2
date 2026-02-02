@@ -32,6 +32,13 @@ bash agent/run-gateway.sh
 > If you want a pinned version, add it to this repo as a devDependency and replace
 > `clawdbot` with `npx clawdbot`.
 
+## Next steps (now)
+
+- Project skill: `liturgy-controller`
+  - Calls the app's local control API to set/next/prev page.
+  - Located at `agent/skills/liturgy-controller/`.
+  - Enabled in `agent/clawdbot.json5` via `skills.load.extraDirs`.
+
 ## Next steps (planned)
 
 - Add a small HTTP bridge (`server/routes/agent.ts`) so the project agent can:

@@ -19,7 +19,21 @@
     },
   },
 
-  // No channels by default.
+  // Skills
+  // - Bundled skills come from your installed clawdbot package.
+  // - Project-specific skills live in ./agent/skills (this repo).
+  skills: {
+    load: {
+      extraDirs: ["./agent/skills"],
+      watch: true,
+      watchDebounceMs: 250,
+    },
+    entries: {
+      "liturgy-controller": { enabled: true },
+    },
+  },
+
+  // No channels by default (enable Telegram/WhatsApp later for remote control).
   channels: {},
 
   // Keep cron store inside the project state dir.
@@ -28,5 +42,11 @@
     store: {
       path: "$CLAWDBOT_STATE_DIR/cron-store.json",
     },
+  },
+
+  // Convenience: inject base URL for the Liturgy server.
+  // You can also set this in your shell environment.
+  env: {
+    LITURGY_BASE_URL: "http://localhost:5000",
   },
 }
