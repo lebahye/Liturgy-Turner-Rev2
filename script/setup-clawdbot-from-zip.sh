@@ -20,23 +20,28 @@ rm -rf "$DEST"
 
 echo "==> Extracting $ZIP -> $DEST"
 ZIP="$ZIP" DEST="$DEST" python3 - <<'PY'
-import zipfile, os, shutil
+import zipfile, os, shutil, tempfile
 zip_path=os.environ['ZIP']
 dest=os.environ['DEST']
 parent=os.path.dirname(dest)
 
-with zipfile.ZipFile(zip_path) as z:
-    z.extractall(parent)
+# Extract into a temp dir to avoid clobbering dest (and to handle same-name top folder)
+tmpdir=tempfile.mkdtemp(prefix='clawdbot_extract_', dir=parent)
+try:
+    with zipfile.ZipFile(zip_path) as z:
+        z.extractall(tmpdir)
 
-# Zip contains clawdbot-main/ at top level
-src=os.path.join(parent,'clawdbot-main')
-if not os.path.isdir(src):
-    raise SystemExit(f"Expected folder not found after extract: {src}")
+    src=os.path.join(tmpdir, 'clawdbot-main')
+    if not os.path.isdir(src):
+        # fall back: first top-level dir
+        entries=[e for e in os.listdir(tmpdir) if os.path.isdir(os.path.join(tmpdir,e))]
+        raise SystemExit(f"Expected clawdbot-main/ not found in zip extract. Top dirs: {entries}")
 
-# Ensure destination is clean
-shutil.rmtree(dest, ignore_errors=True)
-os.rename(src, dest)
-print('Extracted to', dest)
+    shutil.rmtree(dest, ignore_errors=True)
+    os.rename(src, dest)
+    print('Extracted to', dest)
+finally:
+    shutil.rmtree(tmpdir, ignore_errors=True)
 PY
 
 echo "==> Installing clawdbot deps (this may take a bit)"
