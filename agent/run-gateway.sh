@@ -15,6 +15,5 @@ if [ ! -f "$CLAWDBOT_CONFIG_PATH" ]; then
   exit 1
 fi
 
-# Runs the gateway in the foreground.
-# For production, run under systemd/tmux.
-clawdbot gateway start
+# Runs the gateway in the foreground (WSL-friendly; no systemd required).
+clawdbot gateway run
