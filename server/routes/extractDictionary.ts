@@ -2,9 +2,10 @@ import express from "express";
 import fs from "fs";
 import path from "path";
 import crypto from "crypto";
+import multer from "multer";
 import { db } from "../db";
 import { wordDictionary, pageSections } from "@shared/schema";
-import { eq, and } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 
 let pdfjsLib: any = null;
 
@@ -16,6 +17,10 @@ async function getPdfLib() {
 }
 
 export const extractDictionaryRouter = express.Router();
+
+const upload = multer({
+  limits: { fileSize: 30 * 1024 * 1024 }, // CSV/XLSX dictionaries can be a bit big
+});
 
 function isArmenian(char: string): boolean {
   const code = char.charCodeAt(0);
@@ -220,56 +225,81 @@ extractDictionaryRouter.get("/page-sections/:pdfId", async (req, res) => {
   }
 });
 
+function parseDictionaryCsv(csvContent: string) {
+  // Accept both 2-column CSV (armenian,phonetic) and 3-column (armenian,english,phonetic)
+  // We keep (armenian, phonetic) only.
+  const lines = csvContent.split(/\r?\n/);
+  const out: Array<{ armenian: string; phonetic: string }> = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+
+    // Skip header-ish rows
+    if (i === 0 && /armenian/i.test(line) && /phonetic/i.test(line)) continue;
+
+    // Naive CSV split; acceptable for our expected dictionary files.
+    const cols = line.split(",").map((c) => c.trim());
+    if (cols.length < 2) continue;
+
+    const armenian = (cols[0] || "").toLowerCase();
+    const phonetic = (cols.length >= 3 ? cols[2] : cols[1] || "").toLowerCase();
+
+    if (!armenian || !phonetic) continue;
+    out.push({ armenian, phonetic });
+  }
+
+  return out;
+}
+
+async function importWordPairs(pdfId: string, pairs: Array<{ armenian: string; phonetic: string }>) {
+  await db.delete(wordDictionary).where(eq(wordDictionary.pdfId, pdfId));
+
+  let imported = 0;
+  const seen = new Set<string>();
+
+  for (const pair of pairs) {
+    const armenian = pair.armenian.trim().toLowerCase();
+    const phonetic = pair.phonetic.trim().toLowerCase();
+    if (!armenian || !phonetic) continue;
+
+    const key = `${armenian}|${phonetic}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+
+    await db.insert(wordDictionary).values({
+      pdfId,
+      armenian,
+      phonetic,
+      pageNumber: null,
+      occurrences: 1,
+      confidence: 1.0,
+    });
+    imported++;
+  }
+
+  return imported;
+}
+
+// Back-compat: import dictionary from a server-local CSV path
 extractDictionaryRouter.post("/import-dictionary-csv", async (req, res) => {
   try {
     const { csvPath, pdfId: customPdfId } = req.body;
-    
+
     if (!csvPath) {
       return res.status(400).json({ ok: false, error: "CSV path required" });
     }
-    
+
     const abs = path.join(process.cwd(), csvPath);
     if (!fs.existsSync(abs)) {
       return res.status(404).json({ ok: false, error: "CSV file not found" });
     }
-    
+
     const pdfId = customPdfId || "manual_dictionary";
-    
-    await db.delete(wordDictionary).where(eq(wordDictionary.pdfId, pdfId));
-    
     const csvContent = fs.readFileSync(abs, "utf-8");
-    const lines = csvContent.split("\n").slice(1);
-    
-    let imported = 0;
-    const seen = new Set<string>();
-    
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (!trimmed) continue;
-      
-      const commaIdx = trimmed.indexOf(",");
-      if (commaIdx === -1) continue;
-      
-      const armenian = trimmed.slice(0, commaIdx).trim().toLowerCase();
-      const phonetic = trimmed.slice(commaIdx + 1).trim().toLowerCase();
-      
-      if (!armenian || !phonetic) continue;
-      
-      const key = `${armenian}|${phonetic}`;
-      if (seen.has(key)) continue;
-      seen.add(key);
-      
-      await db.insert(wordDictionary).values({
-        pdfId,
-        armenian,
-        phonetic,
-        pageNumber: null,
-        occurrences: 1,
-        confidence: 1.0,
-      });
-      imported++;
-    }
-    
+    const pairs = parseDictionaryCsv(csvContent);
+    const imported = await importWordPairs(pdfId, pairs);
+
     return res.json({
       ok: true,
       pdfId,
@@ -278,6 +308,63 @@ extractDictionaryRouter.post("/import-dictionary-csv", async (req, res) => {
     });
   } catch (e: any) {
     console.error("CSV import error:", e);
+    return res.status(500).json({ ok: false, error: e?.message || "Import failed" });
+  }
+});
+
+// Preferred: upload a CSV or XLSX dictionary file
+extractDictionaryRouter.post("/import-dictionary", upload.single("file"), async (req, res) => {
+  try {
+    const pdfId = String(req.body?.pdfId || "manual_dictionary");
+
+    if (!req.file) {
+      return res.status(400).json({ ok: false, error: "file is required" });
+    }
+
+    const original = req.file.originalname.toLowerCase();
+    const buf = req.file.buffer;
+
+    let pairs: Array<{ armenian: string; phonetic: string }> = [];
+
+    if (original.endsWith('.csv') || req.file.mimetype.includes('csv')) {
+      const csvContent = buf.toString('utf-8');
+      pairs = parseDictionaryCsv(csvContent);
+    } else if (original.endsWith('.xlsx') || original.endsWith('.xls')) {
+      const xlsx = await import('xlsx');
+      const wb = xlsx.read(buf, { type: 'buffer' });
+      const sheet = wb.Sheets[wb.SheetNames[0]];
+      const rows = xlsx.utils.sheet_to_json<any[]>(sheet, { header: 1, raw: false }) as any[];
+
+      for (const row of rows) {
+        if (!row) continue;
+        const a = String(row[0] ?? '').trim();
+        const b = String(row[1] ?? '').trim();
+        const c = String(row[2] ?? '').trim();
+
+        // Try common layouts:
+        // [armenian, phonetic]
+        // [armenian, english, phonetic]
+        const armenian = a.toLowerCase();
+        const phonetic = (c || b).toLowerCase();
+        if (!armenian || !phonetic) continue;
+        // Skip header rows
+        if (/armenian/i.test(armenian) && /phonetic/i.test(phonetic)) continue;
+        pairs.push({ armenian, phonetic });
+      }
+    } else {
+      return res.status(400).json({ ok: false, error: "Unsupported file type. Upload .csv or .xlsx" });
+    }
+
+    const imported = await importWordPairs(pdfId, pairs);
+
+    return res.json({
+      ok: true,
+      pdfId,
+      imported,
+      message: `Imported ${imported} word pairs from ${req.file.originalname}`,
+    });
+  } catch (e: any) {
+    console.error("Dictionary import error:", e);
     return res.status(500).json({ ok: false, error: e?.message || "Import failed" });
   }
 });
