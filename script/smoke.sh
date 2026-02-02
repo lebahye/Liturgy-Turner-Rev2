@@ -19,7 +19,16 @@ say "DB migrate"
 npm run -s db:migrate
 
 say "Check server is reachable (${BASE})"
-if ! curl -fsS "${BASE}/api/control/state" >/dev/null; then
+# Retry for a few seconds because the dev server may be starting/reloading.
+OK=0
+for i in $(seq 1 20); do
+  if curl -fsS "${BASE}/api/control/state" >/dev/null 2>&1; then
+    OK=1
+    break
+  fi
+  sleep 0.25
+done
+if [ "$OK" -ne 1 ]; then
   echo "Server not reachable at ${BASE}. Start it first:" >&2
   echo "  npm run dev:lan" >&2
   exit 1
