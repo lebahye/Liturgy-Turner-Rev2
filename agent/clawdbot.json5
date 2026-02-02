@@ -14,7 +14,8 @@
   gateway: {
     mode: "local",
     bind: "loopback",
-    // port: 18789,
+    // Use a non-default port so this project can run alongside any other Clawdbot instance.
+    port: 28789,
   },
 
   agents: {
