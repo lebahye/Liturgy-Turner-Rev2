@@ -52,6 +52,9 @@ cp agent/clawdbot.json5.example agent/clawdbot.json5
 npm run agent:start
 ```
 
+The agent start script will auto-generate a local Gateway token and store it at:
+- `agent/.clawdbot-state/gateway-token`
+
 > Note: This project is configured to use the **pinned Clawdbot version shipped in this repo** (`clawdbot-main.zip`).
 >
 > Build it in WSL:
