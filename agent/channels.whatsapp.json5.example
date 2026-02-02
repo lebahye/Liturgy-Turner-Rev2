@@ -1,0 +1,15 @@
+{
+  // WhatsApp runs via the gateway web channel (Baileys).
+  enabled: true,
+
+  // DM policy:
+  // - pairing (default): unknown senders get a pairing code; you approve
+  // - allowlist: only allowFrom can control
+  dmPolicy: "pairing",
+
+  // If you choose allowlist:
+  // allowFrom: ["+15555550123"],
+
+  // Disable groups by default.
+  groupPolicy: "disabled",
+}

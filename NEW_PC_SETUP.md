@@ -59,6 +59,9 @@ npm run agent:start
 > npm install -g clawdbot
 > ```
 
+Remote control setup:
+- See `REMOTE_CONTROL_SETUP.md` for Telegram + WhatsApp.
+
 If you already have another Clawdbot instance running on the default port (18789),
 this project will not conflict because it uses a different port.
 

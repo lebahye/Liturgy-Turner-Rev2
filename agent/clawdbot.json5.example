@@ -54,7 +54,11 @@
   },
 
   // No channels by default (enable Telegram/WhatsApp later for remote control).
-  channels: {},
+  // See REMOTE_CONTROL_SETUP.md.
+  channels: {
+    // telegram: { "$include": "./agent/channels.telegram.json5" },
+    // whatsapp: { "$include": "./agent/channels.whatsapp.json5" },
+  },
 
   // Cron scheduler (optional; useful later for check-ins / automation).
   cron: { enabled: true },
