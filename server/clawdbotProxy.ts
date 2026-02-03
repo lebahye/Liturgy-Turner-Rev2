@@ -17,8 +17,9 @@ export function attachClawdbotProxy(app: Express, httpServer: HttpServer) {
     target,
     changeOrigin: true,
     ws: true,
-    // We mount at /clawdbot and the gateway UI is also served under /clawdbot
-    // (gateway.controlUi.basePath). So no rewrite needed.
+    // We mount the gateway at /clawdbot in the main app, but the gateway itself
+    // serves its UI at / (default). Rewrite /clawdbot/* -> /* on the target.
+    pathRewrite: { "^/clawdbot": "" },
     on: {
       error(err, req, res) {
         // If the proxy fails, DO NOT fall through to the SPA fallback (which
