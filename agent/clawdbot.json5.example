@@ -41,8 +41,10 @@
         default: true,
         workspace: "./",
         identity: {
-          name: "Liturgy Agent",
-          emoji: "📖",
+          name: "Liturgy Bot",
+          emoji: "✝️",
+          // Control UI avatar (path is relative to this repo)
+          avatar: "agent/assets/armenian-cross.svg",
         },
       },
     ],

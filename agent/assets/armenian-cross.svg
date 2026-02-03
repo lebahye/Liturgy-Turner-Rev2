@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>Armenian Cross (stylized)</title>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d4af37"/>
+      <stop offset="1" stop-color="#b8860b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background (transparent) -->
+
+  <!-- cross core -->
+  <path fill="url(#gold)" d="M110 18h36v64h64v36h-64v120h-36V118H46V82h64z"/>
+
+  <!-- decorative Armenian-style flares -->
+  <path fill="#8a6b0a" opacity="0.9" d="M46 82h32c-6 10-16 18-32 22z"/>
+  <path fill="#8a6b0a" opacity="0.9" d="M210 82h-32c6 10 16 18 32 22z"/>
+  <path fill="#8a6b0a" opacity="0.9" d="M110 18v32c-10-6-18-16-22-32z"/>
+  <path fill="#8a6b0a" opacity="0.9" d="M146 18v32c10-6 18-16 22-32z"/>
+
+  <!-- small inner cut to give relief -->
+  <path fill="#000" opacity="0.08" d="M120 28h16v60h60v16h-60v124h-16V104H60V88h60z"/>
+</svg>

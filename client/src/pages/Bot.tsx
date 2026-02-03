@@ -6,9 +6,9 @@ export default function Bot() {
   return (
     <div className="h-[calc(100vh-4rem)] w-full">
       <div className="mb-2">
-        <h1 className="text-xl font-semibold">Bot Control</h1>
+        <h1 className="text-xl font-semibold">Liturgy Bot</h1>
         <p className="text-sm text-muted-foreground">
-          This is the embedded Clawdbot Control UI. Use it to control page turns during live audio.
+          Embedded control UI for the Liturgy Bot (page turns, state, and commands).
         </p>
       </div>
       <iframe
