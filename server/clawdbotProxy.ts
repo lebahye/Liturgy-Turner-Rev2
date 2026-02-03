@@ -19,6 +19,28 @@ export function attachClawdbotProxy(app: Express, httpServer: HttpServer) {
     ws: true,
     // We mount at /clawdbot and the gateway UI is also served under /clawdbot
     // (gateway.controlUi.basePath). So no rewrite needed.
+    on: {
+      error(err, req, res) {
+        // If the proxy fails, DO NOT fall through to the SPA fallback (which
+        // looks like a "404 Not Found" in the iframe). Return a clear 502.
+        console.error("[clawdbot-proxy] error", {
+          message: (err as any)?.message,
+          code: (err as any)?.code,
+          target,
+          url: (req as any)?.url,
+        });
+        const r = res as any;
+        if (!r.headersSent) {
+          r.statusCode = 502;
+          r.setHeader("content-type", "text/plain; charset=utf-8");
+        }
+        r.end("Clawdbot proxy error (502). Is the gateway running on " + target + " ?\n");
+      },
+      proxyReq(proxyReq, req) {
+        // Helpful when debugging what URL is actually being proxied.
+        console.log("[clawdbot-proxy]", req.method, (req as any).originalUrl || req.url);
+      },
+    },
   });
 
   app.use("/clawdbot", proxy);
