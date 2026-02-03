@@ -25,9 +25,14 @@ export default function Bot() {
           We can't reliably modify the Control UI's internal DOM, so we overlay.
         */}
         <div
-          className="pointer-events-none absolute left-[10px] top-[10px] z-10 h-[44px] w-[220px] rounded-md bg-background"
+          className="pointer-events-none absolute left-[10px] top-[10px] z-10 flex h-[44px] w-[340px] items-center gap-2 rounded-md bg-background px-3"
           aria-hidden="true"
-        />
+        >
+          <img src="/agent/assets/armenian-cross.svg" alt="" className="h-6 w-6" />
+          <span className="text-sm font-semibold text-foreground">
+            Liturgy Turner Bot Dashboard
+          </span>
+        </div>
 
         <iframe
           title="Liturgy Agent Control"
