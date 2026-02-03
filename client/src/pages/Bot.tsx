@@ -33,7 +33,7 @@ export default function Bot() {
     // Reliability > purity: connect the embedded Control UI directly to the
     // gateway UI origin. This avoids proxy WebSocket edge-cases that can cause
     // 1006 handshake timeouts.
-    const base = `http://127.0.0.1:29789/chat?session=agent%3Aliturgy%3Amain`;
+    const base = `http://127.0.0.1:29789/chat?session=agent%3Aliturgy%3Amain&gatewayUrl=${encodeURIComponent("ws://127.0.0.1:29789")}`;
     return token ? `${base}&token=${encodeURIComponent(token)}` : base;
   }, [token]);
 
