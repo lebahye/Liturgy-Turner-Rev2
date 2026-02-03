@@ -22,19 +22,36 @@ export function attachClawdbotProxy(app: Express, httpServer: HttpServer) {
     on: {
       error(err, req, res) {
         // If the proxy fails, DO NOT fall through to the SPA fallback (which
-        // looks like a "404 Not Found" in the iframe). Return a clear 502.
+        // looks like a "404 Not Found" in the iframe).
+        //
+        // Note: For WS upgrades, `res` can be a net.Socket (no setHeader/end).
         console.error("[clawdbot-proxy] error", {
           message: (err as any)?.message,
           code: (err as any)?.code,
           target,
           url: (req as any)?.url,
         });
-        const r = res as any;
+
+        const r: any = res as any;
+
+        // If this is a websocket/upgrade error, just destroy the socket.
+        if (typeof r?.writeHead !== "function" && typeof r?.setHeader !== "function") {
+          try {
+            r?.destroy?.();
+          } catch {}
+          return;
+        }
+
         if (!r.headersSent) {
           r.statusCode = 502;
-          r.setHeader("content-type", "text/plain; charset=utf-8");
+          if (typeof r.setHeader === "function") {
+            r.setHeader("content-type", "text/plain; charset=utf-8");
+          }
         }
-        r.end("Clawdbot proxy error (502). Is the gateway running on " + target + " ?\n");
+
+        if (typeof r.end === "function") {
+          r.end("Clawdbot proxy error (502). Is the gateway running on " + target + " ?\n");
+        }
       },
       proxyReq(proxyReq, req) {
         // Helpful when debugging what URL is actually being proxied.
