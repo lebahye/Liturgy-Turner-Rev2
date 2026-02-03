@@ -30,10 +30,10 @@ export default function Bot() {
   }, []);
 
   const url = useMemo(() => {
-    const wsProto = typeof window !== "undefined" && window.location.protocol === "https:" ? "wss" : "ws";
-    const gatewayUrl = typeof window !== "undefined" ? `${wsProto}://${window.location.host}/clawdbot` : "";
-
-    const base = `/clawdbot/chat?session=agent%3Aliturgy%3Amain&gatewayUrl=${encodeURIComponent(gatewayUrl)}`;
+    // Reliability > purity: connect the embedded Control UI directly to the
+    // gateway UI origin. This avoids proxy WebSocket edge-cases that can cause
+    // 1006 handshake timeouts.
+    const base = `http://127.0.0.1:29789/chat?session=agent%3Aliturgy%3Amain`;
     return token ? `${base}&token=${encodeURIComponent(token)}` : base;
   }, [token]);
 
