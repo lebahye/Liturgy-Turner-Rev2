@@ -5,9 +5,19 @@ This project is designed to run locally (Windows PC + WSL2). Remote control mean
 - The **project-local Clawdbot** receives them
 - Clawdbot calls the Liturgy app local control API to turn pages
 
+## One-App Bot Embed (recommended)
+
+When everything is running:
+- Main app: http://127.0.0.1:5000/
+- Embedded bot page: http://127.0.0.1:5000/bot
+- Proxied control UI root: http://127.0.0.1:5000/clawdbot/
+
+The iframe on `/bot` loads:
+- `/clawdbot/chat?session=agent%3Aliturgy%3Amain`
+
 ## Prereqs
 - Liturgy server running: `npm run dev:lan` (port 5000)
-- Project-local Clawdbot running: `npm run agent:start` (gateway port 28789)
+- Project-local Clawdbot running: `npm run agent:start` (gateway port 29789)
 
 ## Command style
 Send simple messages:

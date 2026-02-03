@@ -15,7 +15,16 @@
     mode: "local",
     bind: "loopback",
     // Use a non-default port so this project can run alongside any other Clawdbot instance.
-    port: 28789,
+    port: 29789,
+
+    // Serve the browser Control UI under /clawdbot so it can be reverse-proxied
+    // through the main app (port 5000) and embedded as a single site.
+    controlUi: {
+      basePath: "/clawdbot",
+      // We're typically running on plain HTTP locally; allow token auth without
+      // WebCrypto/device identity.
+      allowInsecureAuth: true,
+    },
   },
 
   agents: {

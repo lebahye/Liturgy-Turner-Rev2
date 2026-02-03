@@ -44,8 +44,12 @@ In another WSL terminal:
 bash script/smoke.sh
 ```
 
-## 5) Optional: project-local Clawdbot instance (for remote control + automation)
-This project can run its own **dedicated** Clawdbot gateway (local-only) on port **28789**.
+## 5) Optional: project-local Clawdbot instance (for bot control + remote control)
+This project can run its own **dedicated** Clawdbot gateway (local-only) on port **29789**.
+
+When it’s running, the main app reverse-proxies and embeds the bot UI:
+- Embedded bot page: `http://localhost:5000/bot`
+- Proxied control UI root: `http://localhost:5000/clawdbot/`
 
 ```bash
 cp agent/clawdbot.json5.example agent/clawdbot.json5
@@ -70,7 +74,7 @@ Remote control setup:
 - See `REMOTE_CONTROL_SETUP.md` for Telegram + WhatsApp.
 
 If you already have another Clawdbot instance running on the default port (18789),
-this project will not conflict because it uses a different port.
+this project will not conflict because it uses a different port (29789).
 
 
 ## iOS microphone note

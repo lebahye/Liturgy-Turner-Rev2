@@ -9,6 +9,7 @@ import { pdfTextRouter } from "./routes/pdfText";
 // import { transcribeRouter } from "./routes/transcribe";
 import { extractDictionaryRouter } from "./routes/extractDictionary";
 import { initDisplayBus } from './displayBus';
+import { attachClawdbotProxy } from "./clawdbotProxy";
 
 const app = express();
 const httpServer = createServer(app);
@@ -32,6 +33,10 @@ app.use(express.urlencoded({ extended: false }));
 // Serve uploaded files statically (works in both dev and prod)
 app.use('/uploads', express.static(path.join(process.cwd(), 'client/public/uploads')));
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
+
+// Proxy Clawdbot Control UI through this server so the project is a single origin.
+// Requires the gateway to run on http://127.0.0.1:29789 with basePath /clawdbot.
+attachClawdbotProxy(app, httpServer);
 
 // Mount API routers
 app.use('/api', uploadPdfRouter);

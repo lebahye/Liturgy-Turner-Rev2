@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { useToast } from "@/hooks/use-toast";
-import { Music, Mic, Monitor, Play, Upload } from "lucide-react";
+import { Bot, Music, Mic, Monitor, Play, Upload } from "lucide-react";
 import { useState } from "react";
 
 async function safeJson(res: Response) {
@@ -182,6 +182,12 @@ export default function Home() {
               <Button className="h-24 w-full flex-col gap-2 bg-blue-500 hover:bg-blue-600" variant="default">
                 <Monitor className="h-8 w-8" />
                 Projection
+              </Button>
+            </Link>
+            <Link href="/bot">
+              <Button className="h-24 w-full flex-col gap-2 bg-slate-700 hover:bg-slate-800" variant="default">
+                <Bot className="h-8 w-8" />
+                Bot Control
               </Button>
             </Link>
           </CardContent>

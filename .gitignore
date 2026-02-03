@@ -21,3 +21,12 @@ agent/clawdbot.json5
 
 # Local vendor build outputs
 /vendor/
+
+# Clawdbot workspace/persona files (not part of the liturgy app)
+AGENTS.md
+BOOTSTRAP.md
+HEARTBEAT.md
+IDENTITY.md
+SOUL.md
+TOOLS.md
+USER.md

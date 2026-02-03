@@ -9,6 +9,7 @@ import Live from "@/pages/Live";
 import Training from "@/pages/Training";
 import Display from "@/pages/Display";
 import Playback from "@/pages/Playback";
+import Bot from "@/pages/Bot";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/training" component={Training} />
       <Route path="/display" component={Display} />
       <Route path="/playback" component={Playback} />
+      <Route path="/bot" component={Bot} />
       <Route component={NotFound} />
     </Switch>
   );
