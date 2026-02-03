@@ -1,14 +1,41 @@
+import { useEffect, useMemo, useState } from "react";
+
 export default function Bot() {
   // This route is served by the main app (port 5000) and reverse-proxies the
   // Clawdbot Control UI (port 29789) under /clawdbot.
   //
-  // IMPORTANT: Force the Control UI to use the *proxied* WebSocket URL.
-  // Otherwise it may try to connect directly to ws://127.0.0.1:29789 (cross-origin)
-  // and get stuck in handshake timeouts / 1006 disconnects.
-  const wsProto = typeof window !== "undefined" && window.location.protocol === "https:" ? "wss" : "ws";
-  const gatewayUrl = typeof window !== "undefined" ? `${wsProto}://${window.location.host}/clawdbot` : "";
+  // IMPORTANT: Force the Control UI to use the *proxied* WebSocket URL AND
+  // pre-inject the gateway token.
+  //
+  // Without this, the UI often connects but fails to authenticate (token is
+  // stored per-origin), causing gateway handshake timeouts and UI "1006".
+  const [token, setToken] = useState<string | null>(null);
 
-  const url = `/clawdbot/chat?session=agent%3Aliturgy%3Amain&gatewayUrl=${encodeURIComponent(gatewayUrl)}`;
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch("/api/clawdbot/token");
+        const data = await res.json();
+        if (!cancelled && data?.ok && typeof data.token === "string") {
+          setToken(data.token);
+        }
+      } catch {
+        // ignore
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const url = useMemo(() => {
+    const wsProto = typeof window !== "undefined" && window.location.protocol === "https:" ? "wss" : "ws";
+    const gatewayUrl = typeof window !== "undefined" ? `${wsProto}://${window.location.host}/clawdbot` : "";
+
+    const base = `/clawdbot/chat?session=agent%3Aliturgy%3Amain&gatewayUrl=${encodeURIComponent(gatewayUrl)}`;
+    return token ? `${base}&token=${encodeURIComponent(token)}` : base;
+  }, [token]);
 
   return (
     <div className="h-[calc(100vh-4rem)] w-full">

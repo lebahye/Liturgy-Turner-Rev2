@@ -7,6 +7,7 @@ import fs from "fs/promises";
 import crypto from "crypto";
 import OpenAI from "openai";
 import { getDisplayState, nextPage, prevPage, setPageState, setPdfState } from "./displayBus";
+import { clawdbotTokenHandler } from "./routes/clawdbotToken";
 
 // Configure multer for file uploads
 const pdfStorage = multer.diskStorage({
@@ -88,6 +89,10 @@ export async function registerRoutes(
   
   
   // ============ Display Sync Bus (TV Viewer) ============
+
+  // Clawdbot helper (local-only): allow the embedded /bot page to fetch the
+  // gateway token so the Control UI can authenticate and avoid 1006 timeouts.
+  app.get('/api/clawdbot/token', clawdbotTokenHandler);
 
   app.get('/api/control/state', async (_req, res) => {
     res.json({ state: getDisplayState() });
