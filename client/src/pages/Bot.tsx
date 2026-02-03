@@ -1,7 +1,14 @@
 export default function Bot() {
   // This route is served by the main app (port 5000) and reverse-proxies the
   // Clawdbot Control UI (port 29789) under /clawdbot.
-  const url = "/clawdbot/chat?session=agent%3Aliturgy%3Amain";
+  //
+  // IMPORTANT: Force the Control UI to use the *proxied* WebSocket URL.
+  // Otherwise it may try to connect directly to ws://127.0.0.1:29789 (cross-origin)
+  // and get stuck in handshake timeouts / 1006 disconnects.
+  const wsProto = typeof window !== "undefined" && window.location.protocol === "https:" ? "wss" : "ws";
+  const gatewayUrl = typeof window !== "undefined" ? `${wsProto}://${window.location.host}/clawdbot` : "";
+
+  const url = `/clawdbot/chat?session=agent%3Aliturgy%3Amain&gatewayUrl=${encodeURIComponent(gatewayUrl)}`;
 
   return (
     <div className="h-[calc(100vh-4rem)] w-full">
