@@ -18,12 +18,24 @@ export default function Bot() {
           Embedded control UI for the Liturgy Bot (page turns, state, and commands).
         </p>
       </div>
-      <iframe
-        title="Liturgy Agent Control"
-        src={url}
-        className="h-[calc(100%-3rem)] w-full rounded-md border"
-        allow="clipboard-read; clipboard-write"
-      />
+
+      <div className="relative h-[calc(100%-3rem)] w-full">
+        {/*
+          Hide the Control UI branding in the top-left corner.
+          We can't reliably modify the Control UI's internal DOM, so we overlay.
+        */}
+        <div
+          className="pointer-events-none absolute left-[10px] top-[10px] z-10 h-[44px] w-[220px] rounded-md bg-background"
+          aria-hidden="true"
+        />
+
+        <iframe
+          title="Liturgy Agent Control"
+          src={url}
+          className="h-full w-full rounded-md border"
+          allow="clipboard-read; clipboard-write"
+        />
+      </div>
     </div>
   );
 }
