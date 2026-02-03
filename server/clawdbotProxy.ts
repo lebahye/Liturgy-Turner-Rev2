@@ -64,5 +64,12 @@ export function attachClawdbotProxy(app: Express, httpServer: HttpServer) {
   app.use("/clawdbot", proxy);
 
   // WebSocket upgrade support for the Gateway WS (required for the Control UI).
-  httpServer.on("upgrade", proxy.upgrade);
+  // Important: only handle upgrades for our mounted path, otherwise we can
+  // interfere with Vite HMR and other dev-time upgrades.
+  httpServer.on("upgrade", (req, socket, head) => {
+    const url = req.url || "";
+    if (!url.startsWith("/clawdbot")) return;
+    // @ts-expect-error - http-proxy-middleware provides upgrade()
+    proxy.upgrade(req, socket, head);
+  });
 }
