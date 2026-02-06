@@ -45,7 +45,7 @@ bash script/smoke.sh
 ```
 
 ## 5) Optional: project-local Clawdbot instance (for bot control + remote control)
-This project can run its own **dedicated** Clawdbot gateway (local-only) on port **29789**.
+This project can run its own **dedicated** Clawdbot gateway (local-only) on port **29790**.
 
 When it’s running, the main app reverse-proxies and embeds the bot UI:
 - Embedded bot page: `http://localhost:5000/bot`
@@ -74,7 +74,7 @@ Remote control setup:
 - See `REMOTE_CONTROL_SETUP.md` for Telegram + WhatsApp.
 
 If you already have another Clawdbot instance running on the default port (18789),
-this project will not conflict because it uses a different port (29789).
+this project will not conflict because it uses a different port (29790).
 
 
 ## iOS microphone note

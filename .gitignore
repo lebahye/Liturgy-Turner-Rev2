@@ -1,26 +1,39 @@
+# Dependencies & common artifacts
 node_modules
 dist
 .DS_Store
-server/public
-vite.config.ts.*
+*.log
 *.tar.gz
+pnpm-lock.yaml
 
-# Local env
+# Build output
+server/public
+/client/dist
+/server/dist
+/client/.cache
+vite.config.ts.*
+/vendor/
+
+# Local environment files
 .env
+client/src/env.d.ts
 
 # Local runtime state (do not commit)
-data/
+/data/
 agent/.clawdbot-state/
 agent/memory/
-
-# Ignore local tmp artifacts
-/tmp/
+clawdbot.json
+memory/
 
 # Project-local Clawdbot config (copy from example)
 agent/clawdbot.json5
+agent/channels.telegram.json5
+agent/channels.whatsapp.json5
+agent/clawdbot.json5.bak
+agent/clawdbot.json5.bak.*
 
-# Local vendor build outputs
-/vendor/
+# Local tmp artifacts
+/tmp/
 
 # Clawdbot workspace/persona files (not part of the liturgy app)
 AGENTS.md
