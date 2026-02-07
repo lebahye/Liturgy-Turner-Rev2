@@ -8,6 +8,7 @@
 const mic = require('mic');
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 const axios = require('axios');
 const Fuse = require('fuse.js');
 
@@ -23,14 +24,25 @@ class LiturgyAudioController {
       ...config,
     };
 
-    this.isListening = false;
+    this.bytesPerSample = 2; // 16-bit PCM
+    this.channels = config.channels || 1;
+    this.audioBuffer = Buffer.alloc(0);
+    this.isProcessing = false;
+    this.updateTargetBytes();
+
     this.currentPage = null;
-    this.audioBuffer = [];
     this.trainingData = [];
+    this.lastObservation = null;
     this.liturgyDatabase = null;
     this.fuzzyMatcher = null;
+    this.dbPath = null;
 
     this.loadLiturgyDatabase();
+  }
+
+  updateTargetBytes() {
+    const bytesPerSecond = this.config.sampleRate * this.channels * this.bytesPerSample;
+    this.targetBytes = Math.max(1, Math.round(bytesPerSecond * (this.config.bufferDuration / 1000)));
   }
 
   /**
@@ -38,6 +50,7 @@ class LiturgyAudioController {
    */
   loadLiturgyDatabase() {
     const dbPath = path.join(__dirname, 'data', 'liturgy-database.json');
+    this.dbPath = dbPath;
 
     try {
       this.liturgyDatabase = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
@@ -71,25 +84,27 @@ class LiturgyAudioController {
 
     this.isListening = true;
     this.openai = openai;
+    this.audioBuffer = Buffer.alloc(0);
+    this.isProcessing = false;
+    this.lastObservation = null;
+    this.updateTargetBytes();
 
-    // Configure microphone
     const micInstance = mic({
       rate: this.config.sampleRate,
-      channels: 1,
+      channels: this.channels,
+      bitwidth: this.bytesPerSample * 8,
+      encoding: 'signed-integer',
+      endian: 'little',
+      fileType: 'raw',
       debug: false,
       exitOnSilence: 0,
     });
 
     const micInputStream = micInstance.getAudioStream();
 
-    micInputStream.on('data', async (data) => {
-      this.audioBuffer.push(data);
-
-      // Process buffer when it reaches configured duration
-      const bufferSize = (this.config.sampleRate * this.config.bufferDuration) / 1000;
-      if (this.audioBuffer.length >= bufferSize) {
-        await this.processAudioBuffer();
-      }
+    micInputStream.on('data', (data) => {
+      this.audioBuffer = Buffer.concat([this.audioBuffer, data]);
+      this.processPendingBuffer();
     });
 
     micInputStream.on('error', (error) => {
@@ -109,6 +124,31 @@ class LiturgyAudioController {
     };
   }
 
+  processPendingBuffer() {
+    if (this.isProcessing || this.audioBuffer.length < this.targetBytes) {
+      return;
+    }
+
+    this.isProcessing = true;
+
+    (async () => {
+      try {
+        while (this.audioBuffer.length >= this.targetBytes && this.isListening) {
+          const chunk = this.audioBuffer.slice(0, this.targetBytes);
+          this.audioBuffer = this.audioBuffer.slice(this.targetBytes);
+          await this.processAudioChunk(chunk);
+        }
+      } catch (error) {
+        console.error('[liturgy-audio] Error processing audio:', error.message);
+      } finally {
+        this.isProcessing = false;
+        if (this.audioBuffer.length >= this.targetBytes && this.isListening) {
+          this.processPendingBuffer();
+        }
+      }
+    })();
+  }
+
   /**
    * Stop listening to microphone
    */
@@ -123,7 +163,8 @@ class LiturgyAudioController {
     }
 
     this.isListening = false;
-    this.audioBuffer = [];
+    this.audioBuffer = Buffer.alloc(0);
+    this.isProcessing = false;
 
     console.log('[liturgy-audio] Stopped listening');
 
@@ -131,18 +172,15 @@ class LiturgyAudioController {
   }
 
   /**
-   * Process accumulated audio buffer
+   * Process a single PCM chunk
    */
-  async processAudioBuffer() {
-    if (this.audioBuffer.length === 0) return;
+  async processAudioChunk(rawAudio) {
+    if (!rawAudio || rawAudio.length === 0) {
+      return;
+    }
 
     try {
-      // Combine audio chunks into single buffer
-      const audioData = Buffer.concat(this.audioBuffer);
-      this.audioBuffer = [];
-
-      // Transcribe audio using Whisper
-      const transcription = await this.transcribeAudio(audioData);
+      const transcription = await this.transcribeAudio(rawAudio);
 
       if (!transcription || transcription.trim().length === 0) {
         return; // No speech detected
@@ -166,28 +204,40 @@ class LiturgyAudioController {
         );
       }
 
-      // Store for training if in training mode
+      this.lastObservation = {
+        transcription,
+        rawAudio,
+        timestamp: Date.now(),
+        match: match || null,
+      };
+
       if (this.config.trainingMode) {
         this.trainingData.push({
-          audio: audioData,
+          audio: rawAudio.toString('base64'),
           transcription,
           timestamp: Date.now(),
-          match: match,
+          match: match || null,
         });
       }
     } catch (error) {
-      console.error('[liturgy-audio] Error processing audio:', error.message);
+      console.error('[liturgy-audio] Error processing audio chunk:', error.message);
     }
   }
 
   /**
    * Transcribe audio using OpenAI Whisper
    */
-  async transcribeAudio(audioData) {
+  async transcribeAudio(rawAudio) {
+    if (!this.openai || !this.openai.audio || !this.openai.audio.transcriptions) {
+      console.error('[liturgy-audio] OpenAI client not available for transcription');
+      return null;
+    }
+
+    const tempFile = path.join(os.tmpdir(), `liturgy-${Date.now()}-${Math.random().toString(16).slice(2)}.wav`);
+
     try {
-      // Save audio to temp file (Whisper API requires file input)
-      const tempFile = path.join('/tmp', `liturgy-${Date.now()}.wav`);
-      fs.writeFileSync(tempFile, audioData);
+      const wavBuffer = this.encodeWavBuffer(rawAudio);
+      fs.writeFileSync(tempFile, wavBuffer);
 
       const transcription = await this.openai.audio.transcriptions.create({
         file: fs.createReadStream(tempFile),
@@ -196,14 +246,38 @@ class LiturgyAudioController {
         response_format: 'text',
       });
 
-      // Clean up temp file
-      fs.unlinkSync(tempFile);
-
       return transcription;
     } catch (error) {
       console.error('[liturgy-audio] Transcription error:', error.message);
       return null;
+    } finally {
+      if (fs.existsSync(tempFile)) {
+        fs.unlink(tempFile, () => {});
+      }
     }
+  }
+
+  encodeWavBuffer(rawAudio) {
+    const header = Buffer.alloc(44);
+    const dataLength = rawAudio.length;
+    const byteRate = this.config.sampleRate * this.channels * this.bytesPerSample;
+    const blockAlign = this.channels * this.bytesPerSample;
+
+    header.write('RIFF', 0);
+    header.writeUInt32LE(36 + dataLength, 4);
+    header.write('WAVE', 8);
+    header.write('fmt ', 12);
+    header.writeUInt32LE(16, 16); // PCM chunk size
+    header.writeUInt16LE(1, 20); // PCM format
+    header.writeUInt16LE(this.channels, 22);
+    header.writeUInt32LE(this.config.sampleRate, 24);
+    header.writeUInt32LE(byteRate, 28);
+    header.writeUInt16LE(blockAlign, 32);
+    header.writeUInt16LE(this.bytesPerSample * 8, 34);
+    header.write('data', 36);
+    header.writeUInt32LE(dataLength, 40);
+
+    return Buffer.concat([header, rawAudio]);
   }
 
   /**
@@ -260,7 +334,90 @@ class LiturgyAudioController {
    * Manually set page (for training/correction)
    */
   async manualSetPage(page) {
-    return this.setPage(page, 'manual override', 1.0);
+    const result = await this.setPage(page, 'manual override', 1.0);
+
+    if (this.config.trainingMode && this.lastObservation && this.lastObservation.transcription) {
+      this.learnFromFeedback(page, this.lastObservation);
+    }
+
+    return result;
+  }
+
+  learnFromFeedback(page, observation) {
+    if (!this.liturgyDatabase || !Array.isArray(this.liturgyDatabase.entries)) {
+      return;
+    }
+
+    const phrase = observation.transcription.trim();
+    if (!phrase) return;
+
+    const lowerPhrase = phrase.toLowerCase();
+    const existing = this.liturgyDatabase.entries.find(
+      (entry) => entry.page === page && entry.text && entry.text.toLowerCase() === lowerPhrase,
+    );
+
+    if (existing) {
+      existing.keywords = this.mergeKeywords(existing.keywords || [], phrase);
+      existing.updatedAt = new Date().toISOString();
+      this.persistLiturgyDatabase();
+      console.log(`[liturgy-audio] Reinforced existing phrase for page ${page}`);
+      return;
+    }
+
+    const keywords = this.extractKeywords(phrase);
+    const newEntry = {
+      page,
+      section: existingSectionForPage(this.liturgyDatabase.entries, page) || 'Training',
+      armenian: phrase,
+      transliteration: phrase,
+      text: phrase,
+      keywords,
+      source: 'training',
+      createdAt: new Date().toISOString(),
+    };
+
+    this.liturgyDatabase.entries.push(newEntry);
+    this.sortDatabase();
+    this.persistLiturgyDatabase();
+    this.fuzzyMatcher.setCollection(this.liturgyDatabase.entries);
+    console.log(`[liturgy-audio] Learned new phrase for page ${page}`);
+  }
+
+  extractKeywords(phrase) {
+    return Array.from(
+      new Set(
+        phrase
+          .toLowerCase()
+          .replace(/[^\p{L}\p{N}\s]+/gu, ' ')
+          .split(/\s+/)
+          .filter((token) => token.length > 2),
+      ),
+    ).slice(0, 12);
+  }
+
+  mergeKeywords(existingKeywords, phrase) {
+    const keywords = new Set(existingKeywords || []);
+    this.extractKeywords(phrase).forEach((word) => keywords.add(word));
+    return Array.from(keywords).slice(0, 12);
+  }
+
+  sortDatabase() {
+    this.liturgyDatabase.entries.sort((a, b) => {
+      if (a.page !== b.page) {
+        return a.page - b.page;
+      }
+      return (a.section || '').localeCompare(b.section || '');
+    });
+  }
+
+  persistLiturgyDatabase() {
+    if (!this.dbPath) return;
+
+    try {
+      fs.writeFileSync(this.dbPath, JSON.stringify(this.liturgyDatabase, null, 2));
+    } catch (error) {
+      console.error('[liturgy-audio] Failed to persist liturgy database:', error.message);
+    }
   }
 
   /**
@@ -271,6 +428,7 @@ class LiturgyAudioController {
       listening: this.isListening,
       currentPage: this.currentPage,
       config: this.config,
+      bufferSizeBytes: this.audioBuffer.length,
       databaseEntries: this.liturgyDatabase?.entries.length || 0,
       trainingDataCount: this.trainingData.length,
     };
@@ -280,6 +438,10 @@ class LiturgyAudioController {
    * Save training data
    */
   saveTrainingData() {
+    if (this.trainingData.length === 0) {
+      return { success: true, count: 0, file: null, message: 'No training samples collected' };
+    }
+
     const trainingFile = path.join(
       __dirname,
       'data',
@@ -296,6 +458,11 @@ class LiturgyAudioController {
 
     return { success: true, count, file: trainingFile };
   }
+}
+
+function existingSectionForPage(entries, page) {
+  const found = entries.find((entry) => entry.page === page);
+  return found ? found.section : null;
 }
 
 // Export skill definition for Clawdbot

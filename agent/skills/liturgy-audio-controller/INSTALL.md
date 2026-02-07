@@ -36,7 +36,7 @@ Edit `~/Liturgy-Turner-Rev2/agent/clawdbot.json5` and merge:
 Adjust values for your environment.
 
 ## 4. Ensure OpenAI Credentials
-The embedded gateway must have `OPENAI_API_KEY` configured so Whisper requests succeed. The skill will call `context.openai.audio.transcriptions.create(...)`.
+Set `OPENAI_API_KEY` in the environment the embedded gateway runs under (e.g. export it before `npm run agent:start`). The skill reads `process.env.OPENAI_API_KEY` via the config; the example config references `${OPENAI_API_KEY}`.
 
 ## 5. Restart Embedded Gateway
 Restart the project’s gateway (`npm run agent:start` or `npm run local:up`) so the new skill is loaded.
