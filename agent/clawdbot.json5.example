@@ -15,7 +15,7 @@
     mode: "local",
     bind: "loopback",
     // Use a non-default port so this project can run alongside any other Clawdbot instance.
-    port: 29789,
+    port: 29790,
 
     // Serve the browser Control UI at the default path (/).
     // The main app reverse-proxies it under /clawdbot.
@@ -61,6 +61,17 @@
     },
     entries: {
       "liturgy-controller": { enabled: true },
+      "liturgy-audio-controller": {
+        enabled: true,
+        config: {
+          apiEndpoint: "http://localhost:5000",
+          confidenceThreshold: 0.85,
+          language: "armenian",
+          sampleRate: 16000,
+          bufferDuration: 3000,
+          trainingMode: false,
+        },
+      },
     },
   },
 

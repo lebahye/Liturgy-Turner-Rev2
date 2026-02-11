@@ -17,7 +17,7 @@ The iframe on `/bot` loads:
 
 ## Prereqs
 - Liturgy server running: `npm run dev:lan` (port 5000)
-- Project-local Clawdbot running: `npm run agent:start` (gateway port 29789)
+- Project-local Clawdbot running: `npm run agent:start` (gateway port 29790)
 
 ## Command style
 Send simple messages:

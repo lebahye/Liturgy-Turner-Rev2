@@ -7,7 +7,7 @@ export CLAWDBOT_STATE_DIR="$(pwd)/agent/.clawdbot-state"
 export CLAWDBOT_CONFIG_PATH="$(pwd)/agent/clawdbot.json5"
 
 # Dedicated gateway port for this project (avoid conflicts with any other Clawdbot instance)
-export CLAWDBOT_GATEWAY_PORT="29789"
+export CLAWDBOT_GATEWAY_PORT="29790"
 
 mkdir -p "$CLAWDBOT_STATE_DIR"
 

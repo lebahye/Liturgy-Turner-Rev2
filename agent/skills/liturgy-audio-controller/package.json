@@ -1,0 +1,29 @@
+{
+  "name": "liturgy-audio-controller",
+  "version": "1.0.0",
+  "description": "Real-time audio processing for automatic Armenian liturgy page turning",
+  "main": "index.js",
+  "keywords": [
+    "liturgy",
+    "armenian",
+    "audio",
+    "clawdbot",
+    "skill",
+    "church",
+    "badarak"
+  ],
+  "author": "George Tavitian",
+  "license": "MIT",
+  "dependencies": {
+    "mic": "^2.1.2",
+    "node-record-lpcm16": "^1.0.1",
+    "axios": "^1.6.0",
+    "fuse.js": "^7.0.0"
+  },
+  "peerDependencies": {
+    "openai": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "liturgy": "Armenian Divine Liturgy (Badarak)",
+  "version": "1.0",
+  "entries": [
+    {
+      "page": 1,
+      "section": "Opening Blessing",
+      "armenian": "Օրհնեալ է Թագաւորութիւնն Հօր եւ Որդւոյ եւ Սուրբ Հոգւոյն, այժմ եւ միշտ եւ յաւիտեանս յաւիտենից:",
+      "transliteration": "Orhnyal e T'agavorut'yunn Hor yev Vordvoy yev Surb Hogvon, ayzham yev misht yev haviteants havitenit's",
+      "text": "Blessed is the Kingdom of the Father and of the Son and of the Holy Spirit, now and always and unto the ages of ages",
+      "keywords": ["blessed", "kingdom", "father", "son", "holy spirit"]
+    },
+    {
+      "page": 5,
+      "section": "Entrance Hymn",
+      "armenian": "Եկեք երկիր պագցուք եւ անկցուք առ Քրիստոս:",
+      "transliteration": "Yekek yerkir pagtsuyk yev anktsuyk ar K'ristos",
+      "text": "Come let us worship and bow down before Christ",
+      "keywords": ["worship", "bow down", "christ"]
+    },
+    {
+      "page": 8,
+      "section": "Trisagion",
+      "armenian": "Սուրբ Աստուած, Սուրբ եւ Հզօր, Սուրբ եւ Անմահ, որ խաչեցար վասն մեր, ողորմեա մեզ:",
+      "transliteration": "Surb Astvats, Surb yev Hzor, Surb yev Anmah, vor khachetsar vasn mer, voghormea mez",
+      "text": "Holy God, Holy and Mighty, Holy and Immortal, who was crucified for us, have mercy on us",
+      "keywords": ["holy god", "mighty", "immortal", "crucified", "mercy"]
+    },
+    {
+      "page": 12,
+      "section": "Epistle Reading",
+      "armenian": "Ընթերցուածք յԱռաքելոց",
+      "transliteration": "Ent'ertsvatsk' yArakelots'",
+      "text": "Reading from the Apostles",
+      "keywords": ["reading", "apostles", "epistle"]
+    },
+    {
+      "page": 15,
+      "section": "Gospel Reading",
+      "armenian": "Ընթերցուածք ի Սուրբ Աւետարանէ",
+      "transliteration": "Ent'ertsvatsk' i Surb Avetarane",
+      "text": "Reading from the Holy Gospel",
+      "keywords": ["gospel", "holy gospel", "reading"]
+    },
+    {
+      "page": 20,
+      "section": "Creed",
+      "armenian": "Հաւատամք ի մի Աստուած",
+      "transliteration": "Havatamk' i mi Astvats",
+      "text": "We believe in one God",
+      "keywords": ["believe", "one god", "creed"]
+    },
+    {
+      "page": 25,
+      "section": "Anaphora Beginning",
+      "armenian": "Վեր ի վեր սիրտք ձեր",
+      "transliteration": "Ver i ver sirtk' dzer",
+      "text": "Lift up your hearts",
+      "keywords": ["lift up", "hearts", "sursum corda"]
+    },
+    {
+      "page": 30,
+      "section": "Sanctus",
+      "armenian": "Սուրբ, Սուրբ, Սուրբ է Տէր Սաբաւովթ",
+      "transliteration": "Surb, Surb, Surb e Ter Sabavot'",
+      "text": "Holy, Holy, Holy is the Lord of Hosts",
+      "keywords": ["holy", "lord of hosts", "sanctus"]
+    },
+    {
+      "page": 35,
+      "section": "Institution Narrative",
+      "armenian": "Առեալ զհացս",
+      "transliteration": "Aryal zhats",
+      "text": "Taking the bread",
+      "keywords": ["taking", "bread", "institution"]
+    },
+    {
+      "page": 40,
+      "section": "Epiclesis",
+      "armenian": "Եւ արասցէ զհացս զայս մարմին",
+      "transliteration": "Yev arastse zhats zays marmin",
+      "text": "And make this bread the body",
+      "keywords": ["make", "bread", "body", "epiclesis"]
+    },
+    {
+      "page": 45,
+      "section": "Lord's Prayer",
+      "armenian": "Հայր մեր որ յերկինս ես",
+      "transliteration": "Hayr mer vor yerkings yes",
+      "text": "Our Father who art in heaven",
+      "keywords": ["our father", "heaven", "lords prayer"]
+    },
+    {
+      "page": 50,
+      "section": "Fraction",
+      "armenian": "Զայս մարմին փրկութեան եւ զայս արիւն քաւութեան",
+      "transliteration": "Zays marmin p'rkut'yan yev zays ariwn k'avut'yan",
+      "text": "This body of salvation and this blood of expiation",
+      "keywords": ["body", "salvation", "blood", "expiation"]
+    },
+    {
+      "page": 55,
+      "section": "Communion",
+      "armenian": "Մատիր անդ ի սուրբ եւ յերկնաւոր խորհուրդս քո",
+      "transliteration": "Matir and i surb yev yerknavor khorhurds k'o",
+      "text": "Bring us to your holy and heavenly mysteries",
+      "keywords": ["communion", "mysteries", "holy"]
+    },
+    {
+      "page": 60,
+      "section": "Post-Communion Prayer",
+      "armenian": "Գոհութիւն առնեմք քեզ",
+      "transliteration": "Gohut'yan arnemk' k'ez",
+      "text": "We give thanks to you",
+      "keywords": ["thanks", "thanksgiving", "post communion"]
+    },
+    {
+      "page": 65,
+      "section": "Final Blessing",
+      "armenian": "Օրհնութիւն եւ փառք",
+      "transliteration": "Orhnoot'yun yev p'ar'k",
+      "text": "Blessing and glory",
+      "keywords": ["blessing", "glory", "dismissal"]
+    }
+  ]
+}
