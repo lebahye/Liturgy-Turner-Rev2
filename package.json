@@ -11,7 +11,7 @@
     "check": "tsc",
     "db:push": "drizzle-kit push",
     "db:migrate": "mkdir -p data && drizzle-kit push",
-    "local:up": "concurrently -k -n db,app,agent -c yellow,cyan,magenta \"npm run db:migrate\" \"npm run dev\" \"npm run agent:start\"",
+    "local:up": "npm run db:migrate && concurrently -n app,agent -c cyan,magenta \"CLAWDBOT_GATEWAY_URL=http://127.0.0.1:29789 npm run dev\" \"npm run agent:start\"",
     "start:all": "concurrently -k -n db,app,agent -c yellow,cyan,magenta \"npm run db:migrate\" \"npm run dev:lan\" \"npm run agent:start\"",
     "first-run:smoke": "bash script/first-run-smoke.sh",
     "agent:start": "bash agent/run-gateway.sh",

@@ -1,0 +1,30 @@
+FROM node:20-slim
+
+# Install system dependencies + clawdbot
+RUN apt-get update && apt-get install -y \
+    bash \
+    curl \
+    && npm install -g clawdbot \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app/agent
+
+# Copy agent configuration
+COPY agent/ .
+
+# Create state directory
+RUN mkdir -p .clawdbot-state
+
+# Environment variables for agent
+ENV CLAWDBOT_STATE_DIR=/app/agent/.clawdbot-state
+ENV CLAWDBOT_CONFIG_PATH=/app/agent/clawdbot.json5
+
+# Expose Clawdbot gateway port
+EXPOSE 29789
+
+# Health check (check if gateway is running)
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:29789/status || exit 1
+
+# Start gateway
+CMD ["clawdbot", "gateway", "start", "--foreground"]

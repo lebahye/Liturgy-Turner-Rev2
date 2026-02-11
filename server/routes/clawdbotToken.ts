@@ -17,6 +17,35 @@ function readGatewayToken(): string | null {
   }
 }
 
+function normalizeIp(raw: string | undefined): string {
+  if (!raw) return "";
+  if (raw === "::1") return "127.0.0.1";
+  if (raw.startsWith("::ffff:")) return raw.slice(7);
+  return raw;
+}
+
+function isTrustedRemote(rawIp: string | undefined): boolean {
+  if (process.env.CLAWDBOT_TOKEN_ALLOW_ANY === "1") return true;
+
+  const ip = normalizeIp(rawIp);
+  if (!ip) return false;
+  if (ip === "127.0.0.1") return true;
+
+  if (ip.startsWith("10.")) return true;
+  if (ip.startsWith("192.168.")) return true;
+  if (ip.startsWith("172.")) {
+    const parts = ip.split(".");
+    if (parts.length >= 2) {
+      const second = Number(parts[1]);
+      if (!Number.isNaN(second) && second >= 16 && second <= 31) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
 /**
  * Local-only helper to let the embedded /bot page pass the gateway token into
  * the Control UI URL.
@@ -26,9 +55,8 @@ function readGatewayToken(): string | null {
  * token isn't yet stored in that origin's localStorage.
  */
 export function clawdbotTokenHandler(req: Request, res: Response) {
-  // Only allow loopback access.
-  const ip = req.socket.remoteAddress || "";
-  if (!(ip === "127.0.0.1" || ip === "::1" || ip.endsWith("::ffff:127.0.0.1"))) {
+  const rawIp = req.socket.remoteAddress;
+  if (!isTrustedRemote(rawIp)) {
     return res.status(403).json({ ok: false, error: "Forbidden" });
   }
 

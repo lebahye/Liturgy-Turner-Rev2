@@ -1,0 +1,42 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+dist/
+.next/
+out/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Agent state (managed by volume)
+agent/.clawdbot-state/
+
+# Data (managed by volume)
+data/
+uploads/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Other
+*.log
+tmp/
+.replit
+replit.nix
+clawdbot-main.zip
