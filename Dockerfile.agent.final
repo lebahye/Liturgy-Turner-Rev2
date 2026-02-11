@@ -1,0 +1,27 @@
+FROM node:22-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    bash \
+    curl \
+    openssl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy entire project structure (vendor + agent)
+COPY vendor ./vendor
+COPY agent ./agent
+
+# Ensure state directory exists
+RUN mkdir -p agent/.clawdbot-state
+
+ENV NODE_ENV=production
+ENV CLAWDBOT_STATE_DIR=/app/agent/.clawdbot-state
+ENV CLAWDBOT_CONFIG_PATH=/app/agent/clawdbot.json5
+ENV CLAWDBOT_GATEWAY_PORT=29789
+
+EXPOSE 29789
+
+# Start gateway with proper token handling
+CMD ["/bin/bash", "-c", "if [ ! -f agent/.clawdbot-state/gateway-token ]; then openssl rand -hex 24 > agent/.clawdbot-state/gateway-token; fi && export CLAWDBOT_GATEWAY_TOKEN=$(cat agent/.clawdbot-state/gateway-token) && node vendor/clawdbot-main/dist/entry.js gateway run --port 29789 --bind 0.0.0.0 --allow-unconfigured --token \"$CLAWDBOT_GATEWAY_TOKEN\""]

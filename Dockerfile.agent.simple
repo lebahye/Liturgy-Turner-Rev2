@@ -1,0 +1,28 @@
+FROM node:22-slim
+
+# Install system dependencies (including git for npm)
+RUN apt-get update && apt-get install -y \
+    curl \
+    git \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app/agent
+
+# Install clawdbot (simple approach)
+RUN npm install -g clawdbot
+
+# Copy agent configuration
+COPY agent/ .
+
+# Create state directory
+RUN mkdir -p .clawdbot-state
+
+ENV NODE_ENV=production
+ENV CLAWDBOT_STATE_DIR=/app/agent/.clawdbot-state
+ENV CLAWDBOT_CONFIG_PATH=/app/agent/clawdbot.json5
+
+EXPOSE 29789
+
+# Start gateway and keep container running
+CMD clawdbot gateway start && tail -f /dev/null

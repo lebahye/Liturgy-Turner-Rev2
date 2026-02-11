@@ -1,0 +1,35 @@
+FROM node:22-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    openssl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy vendored clawdbot
+COPY vendor/clawdbot-main ./vendor/clawdbot-main
+
+# Copy agent configuration
+COPY agent ./agent
+
+# Create state directory and generate token
+RUN mkdir -p agent/.clawdbot-state && \
+    openssl rand -hex 24 > agent/.clawdbot-state/gateway-token && \
+    chmod 600 agent/.clawdbot-state/gateway-token
+
+ENV NODE_ENV=production
+ENV CLAWDBOT_STATE_DIR=/app/agent/.clawdbot-state
+ENV CLAWDBOT_CONFIG_PATH=/app/agent/clawdbot.json5
+ENV CLAWDBOT_GATEWAY_PORT=29789
+
+EXPOSE 29789
+
+# Start gateway using vendored clawdbot
+CMD CLAWDBOT_GATEWAY_TOKEN=$(cat agent/.clawdbot-state/gateway-token) && \
+    node vendor/clawdbot-main/dist/entry.js gateway run \
+    --port ${CLAWDBOT_GATEWAY_PORT} \
+    --bind 0.0.0.0 \
+    --allow-unconfigured \
+    --token ${CLAWDBOT_GATEWAY_TOKEN}

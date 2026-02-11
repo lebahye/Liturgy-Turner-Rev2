@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: liturgy-postgres
+    environment:
+      POSTGRES_DB: liturgy_turner
+      POSTGRES_USER: liturgy_user
+      POSTGRES_PASSWORD: liturgy_secure_2024
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U liturgy_user -d liturgy_turner"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: liturgy-app
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://liturgy_user:liturgy_secure_2024@postgres:5432/liturgy_turner
+      PORT: 5000
+      HOST: 0.0.0.0
+      PUBLIC_BASE_URL: http://localhost:5000
+      CLAWDBOT_GATEWAY_URL: http://agent:29789
+    volumes:
+      - ./uploads:/app/uploads
+      - ./data:/app/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5000/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      start_period: 30s
+      retries: 3
+
+  agent:
+    build:
+      context: .
+      dockerfile: Dockerfile.agent.simple
+    container_name: liturgy-agent
+    ports:
+      - "29789:29789"
+    environment:
+      NODE_ENV: production
+      CLAWDBOT_STATE_DIR: /app/agent/.clawdbot-state
+      CLAWDBOT_CONFIG_PATH: /app/agent/clawdbot.json5
+      APP_BASE_URL: http://app:5000
+    volumes:
+      - ./agent:/app/agent
+      - agent-state:/app/agent/.clawdbot-state
+    depends_on:
+      app:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:29789/status || exit 1"]
+      interval: 30s
+      timeout: 10s
+      start_period: 90s
+      retries: 5
+
+volumes:
+  postgres-data:
+  agent-state:
+
+networks:
+  default:
+    name: liturgy-network

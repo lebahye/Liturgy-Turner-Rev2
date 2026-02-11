@@ -1,0 +1,37 @@
+FROM node:22-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    bash \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app/agent
+
+# Install clawdbot with retry and timeout handling
+RUN npm config set fetch-timeout 60000 && \
+    npm config set fetch-retry-mintimeout 20000 && \
+    npm config set fetch-retry-maxtimeout 120000 && \
+    npm install -g clawdbot --verbose || \
+    (echo "First install failed, retrying..." && sleep 5 && npm install -g clawdbot) || \
+    (echo "Second install failed, trying from GitHub..." && npm install -g github:clawdbot/clawdbot)
+
+# Copy agent configuration
+COPY agent/ .
+
+# Create state directory
+RUN mkdir -p .clawdbot-state
+
+# Environment variables for agent
+ENV CLAWDBOT_STATE_DIR=/app/agent/.clawdbot-state
+ENV CLAWDBOT_CONFIG_PATH=/app/agent/clawdbot.json5
+
+# Expose Clawdbot gateway port
+EXPOSE 29789
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:29789/status || exit 1
+
+# Start gateway
+CMD ["clawdbot", "gateway", "start", "--foreground"]

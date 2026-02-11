@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: liturgy-postgres
+    environment:
+      POSTGRES_DB: liturgy_turner
+      POSTGRES_USER: liturgy_user
+      POSTGRES_PASSWORD: liturgy_secure_2024
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U liturgy_user -d liturgy_turner"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: liturgy-app
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://liturgy_user:liturgy_secure_2024@postgres:5432/liturgy_turner
+      PORT: 5000
+      HOST: 0.0.0.0
+      PUBLIC_BASE_URL: http://localhost:5000
+      CLAWDBOT_GATEWAY_URL: http://agent:29789
+    volumes:
+      - ./uploads:/app/uploads
+      - ./data:/app/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  agent:
+    image: node:20-slim
+    container_name: liturgy-agent
+    working_dir: /workspace/agent
+    command: >
+      bash -c "
+      apt-get update && apt-get install -y curl bash &&
+      npm install -g clawdbot@latest &&
+      clawdbot gateway start --foreground
+      "
+    ports:
+      - "29789:29789"
+    environment:
+      CLAWDBOT_STATE_DIR: /workspace/agent/.clawdbot-state
+      CLAWDBOT_CONFIG_PATH: /workspace/agent/clawdbot.json5
+      APP_BASE_URL: http://app:5000
+    volumes:
+      - ./agent:/workspace/agent
+    depends_on:
+      - app
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+
+networks:
+  default:
+    name: liturgy-network
