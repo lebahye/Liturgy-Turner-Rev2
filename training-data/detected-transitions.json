@@ -1,0 +1,1402 @@
+[
+  {
+    "timestamp": 0.5,
+    "type": "silence",
+    "energyBefore": 0.0014204516478530634,
+    "energyAt": 0.0009005224010111172,
+    "energyAfter": 0.0009734713188647449
+  },
+  {
+    "timestamp": 8.9,
+    "type": "silence",
+    "energyBefore": 0.0010965306692313124,
+    "energyAt": 0.0009932845447995305,
+    "energyAfter": 0.0009744284478766639
+  },
+  {
+    "timestamp": 12.7,
+    "type": "silence",
+    "energyBefore": 0.0009831463881588873,
+    "energyAt": 0.0009801291858343155,
+    "energyAfter": 0.0011833812173439498
+  },
+  {
+    "timestamp": 16,
+    "type": "silence",
+    "energyBefore": 0.0009278584907561722,
+    "energyAt": 0.0009137591346969269,
+    "energyAfter": 0.0008253227554941588
+  },
+  {
+    "timestamp": 19.3,
+    "type": "silence",
+    "energyBefore": 0.0009380586147002639,
+    "energyAt": 0.0009548727414718514,
+    "energyAfter": 0.0009488432730932241
+  },
+  {
+    "timestamp": 24.3,
+    "type": "silence",
+    "energyBefore": 0.00095985814553496,
+    "energyAt": 0.0009975937538218272,
+    "energyAfter": 0.0007545075439936431
+  },
+  {
+    "timestamp": 29.8,
+    "type": "silence",
+    "energyBefore": 0.0011213068855030638,
+    "energyAt": 0.0009993586024607012,
+    "energyAfter": 0.0011725312951595276
+  },
+  {
+    "timestamp": 34.2,
+    "type": "silence",
+    "energyBefore": 0.0010776231204870123,
+    "energyAt": 0.0009957568800450821,
+    "energyAfter": 0.0009192118361248357
+  },
+  {
+    "timestamp": 37.4,
+    "type": "silence",
+    "energyBefore": 0.0010407198139142434,
+    "energyAt": 0.000939541789561224,
+    "energyAfter": 0.0008746225773833011
+  },
+  {
+    "timestamp": 69.1,
+    "type": "dip",
+    "energyBefore": 0.002719708573323539,
+    "energyAt": 0.0011113023319167528,
+    "energyAfter": 0.0017215770938617911
+  },
+  {
+    "timestamp": 80.8,
+    "type": "dip",
+    "energyBefore": 0.004248979021345974,
+    "energyAt": 0.001862760925184017,
+    "energyAfter": 0.004864992063586477
+  },
+  {
+    "timestamp": 88.8,
+    "type": "dip",
+    "energyBefore": 0.004553271571212805,
+    "energyAt": 0.0018497352733483079,
+    "energyAfter": 0.005823546654873031
+  },
+  {
+    "timestamp": 103.6,
+    "type": "dip",
+    "energyBefore": 0.0038668051102741913,
+    "energyAt": 0.0016169178464538348,
+    "energyAfter": 0.003050417147838754
+  },
+  {
+    "timestamp": 111.4,
+    "type": "dip",
+    "energyBefore": 0.004407133351525158,
+    "energyAt": 0.0017914396836636079,
+    "energyAfter": 0.0032177749907779754
+  },
+  {
+    "timestamp": 115.5,
+    "type": "dip",
+    "energyBefore": 0.003755905292633327,
+    "energyAt": 0.001795323674468342,
+    "energyAfter": 0.004276168232050258
+  },
+  {
+    "timestamp": 130.5,
+    "type": "dip",
+    "energyBefore": 0.004928490798179218,
+    "energyAt": 0.0018757126947103993,
+    "energyAfter": 0.004503781079609467
+  },
+  {
+    "timestamp": 133.9,
+    "type": "silence",
+    "energyBefore": 0.0014270132329237738,
+    "energyAt": 0.0008115062914558366,
+    "energyAfter": 0.0008064444211331449
+  },
+  {
+    "timestamp": 137.7,
+    "type": "dip",
+    "energyBefore": 0.004394535673986963,
+    "energyAt": 0.0016409380435311583,
+    "energyAfter": 0.003137093775742129
+  },
+  {
+    "timestamp": 146.4,
+    "type": "silence",
+    "energyBefore": 0.0011847443219577685,
+    "energyAt": 0.0009462718486368424,
+    "energyAfter": 0.001175070782706068
+  },
+  {
+    "timestamp": 150,
+    "type": "silence",
+    "energyBefore": 0.001246315700297346,
+    "energyAt": 0.000942060674117773,
+    "energyAfter": 0.0008133955814449011
+  },
+  {
+    "timestamp": 157.5,
+    "type": "silence",
+    "energyBefore": 0.001443930335005667,
+    "energyAt": 0.0009728397101572698,
+    "energyAfter": 0.0005833551337682821
+  },
+  {
+    "timestamp": 161.1,
+    "type": "dip",
+    "energyBefore": 0.0010676218619066389,
+    "energyAt": 0.0004893519265980423,
+    "energyAfter": 0.0010814596643506588
+  },
+  {
+    "timestamp": 164.2,
+    "type": "silence",
+    "energyBefore": 0.0012463126178437027,
+    "energyAt": 0.0008316934286677356,
+    "energyAfter": 0.0007182093084037955
+  },
+  {
+    "timestamp": 169.3,
+    "type": "silence",
+    "energyBefore": 0.0014448774226341996,
+    "energyAt": 0.0008805719239283912,
+    "energyAfter": 0.000686751265681847
+  },
+  {
+    "timestamp": 173,
+    "type": "silence",
+    "energyBefore": 0.0019765271926102416,
+    "energyAt": 0.0009200819528206462,
+    "energyAfter": 0.0010724637839185124
+  },
+  {
+    "timestamp": 176.1,
+    "type": "dip",
+    "energyBefore": 0.0015340783370835572,
+    "energyAt": 0.00028564375689800974,
+    "energyAfter": 0.003216255603749696
+  },
+  {
+    "timestamp": 179.5,
+    "type": "silence",
+    "energyBefore": 0.0015803157002421534,
+    "energyAt": 0.0008330035783467044,
+    "energyAfter": 0.0009492651165389931
+  },
+  {
+    "timestamp": 183,
+    "type": "silence",
+    "energyBefore": 0.001527670736465927,
+    "energyAt": 0.0009105184440491797,
+    "energyAfter": 0.000755933382377052
+  },
+  {
+    "timestamp": 186.5,
+    "type": "dip",
+    "energyBefore": 0.0012617107678732711,
+    "energyAt": 0.0005091433630774018,
+    "energyAfter": 0.003044299414858536
+  },
+  {
+    "timestamp": 189.6,
+    "type": "dip",
+    "energyBefore": 0.00166050480708391,
+    "energyAt": 0.0006436349134265625,
+    "energyAfter": 0.00366995822305834
+  },
+  {
+    "timestamp": 192.7,
+    "type": "dip",
+    "energyBefore": 0.003387911453135031,
+    "energyAt": 0.0014316283617322764,
+    "energyAfter": 0.0018800259820494604
+  },
+  {
+    "timestamp": 196.9,
+    "type": "silence",
+    "energyBefore": 0.0017847378882763663,
+    "energyAt": 0.0008648406055540304,
+    "energyAfter": 0.00047162507907995427
+  },
+  {
+    "timestamp": 201.2,
+    "type": "dip",
+    "energyBefore": 0.002473329387784325,
+    "energyAt": 0.0009956393381893012,
+    "energyAfter": 0.0014038971168139256
+  },
+  {
+    "timestamp": 204.6,
+    "type": "dip",
+    "energyBefore": 0.00174590755062966,
+    "energyAt": 0.0008690123516964691,
+    "energyAfter": 0.0011869666759084276
+  },
+  {
+    "timestamp": 207.9,
+    "type": "silence",
+    "energyBefore": 0.001314650088744505,
+    "energyAt": 0.000997469678679514,
+    "energyAfter": 0.0009903075967361155
+  },
+  {
+    "timestamp": 211.2,
+    "type": "dip",
+    "energyBefore": 0.001023217293567021,
+    "energyAt": 0.00048252342805187704,
+    "energyAfter": 0.0026929283136010625
+  },
+  {
+    "timestamp": 217.1,
+    "type": "dip",
+    "energyBefore": 0.003418427198182051,
+    "energyAt": 0.0009729060424551178,
+    "energyAfter": 0.003661270967513753
+  },
+  {
+    "timestamp": 220.5,
+    "type": "dip",
+    "energyBefore": 0.0021281632824323915,
+    "energyAt": 0.0009837941196367964,
+    "energyAfter": 0.0022225372961283698
+  },
+  {
+    "timestamp": 227.3,
+    "type": "dip",
+    "energyBefore": 0.0028285465574480672,
+    "energyAt": 0.001107188641467445,
+    "energyAfter": 0.0018020021222134338
+  },
+  {
+    "timestamp": 234.5,
+    "type": "dip",
+    "energyBefore": 0.0025280934140882055,
+    "energyAt": 0.0011576589616180914,
+    "energyAfter": 0.0037960077957320095
+  },
+  {
+    "timestamp": 237.6,
+    "type": "dip",
+    "energyBefore": 0.003494487577528692,
+    "energyAt": 0.00024324754446259004,
+    "energyAfter": 0.0008668305740750921
+  },
+  {
+    "timestamp": 240.7,
+    "type": "dip",
+    "energyBefore": 0.00395478198920788,
+    "energyAt": 0.0015300280807000893,
+    "energyAfter": 0.002473828472840874
+  },
+  {
+    "timestamp": 245.4,
+    "type": "dip",
+    "energyBefore": 0.0044855018722455686,
+    "energyAt": 0.0011119444563534532,
+    "energyAfter": 0.00174783658560003
+  },
+  {
+    "timestamp": 250.7,
+    "type": "dip",
+    "energyBefore": 0.0037489364257364335,
+    "energyAt": 0.0014964419631794726,
+    "energyAfter": 0.0018028635631049436
+  },
+  {
+    "timestamp": 253.9,
+    "type": "dip",
+    "energyBefore": 0.0040307785153592575,
+    "energyAt": 0.0019327737272731326,
+    "energyAfter": 0.0028251532776649587
+  },
+  {
+    "timestamp": 260.1,
+    "type": "dip",
+    "energyBefore": 0.004396029702546475,
+    "energyAt": 0.0016044050258977665,
+    "energyAfter": 0.002478697142881872
+  },
+  {
+    "timestamp": 264.8,
+    "type": "dip",
+    "energyBefore": 0.0031388362285823274,
+    "energyAt": 0.0013109673228554458,
+    "energyAfter": 0.001605067299796814
+  },
+  {
+    "timestamp": 268.4,
+    "type": "dip",
+    "energyBefore": 0.0029303289942962654,
+    "energyAt": 0.0013476292347158287,
+    "energyAfter": 0.002462132043530894
+  },
+  {
+    "timestamp": 271.5,
+    "type": "dip",
+    "energyBefore": 0.00518525776907288,
+    "energyAt": 0.0015819769622373511,
+    "energyAfter": 0.0022433105532877677
+  },
+  {
+    "timestamp": 275.5,
+    "type": "dip",
+    "energyBefore": 0.005359911788014781,
+    "energyAt": 0.0008572925140202662,
+    "energyAfter": 0.0017552291023929187
+  },
+  {
+    "timestamp": 279.1,
+    "type": "dip",
+    "energyBefore": 0.0030015878923131596,
+    "energyAt": 0.0014478808910737908,
+    "energyAfter": 0.003973382089417021
+  },
+  {
+    "timestamp": 283.1,
+    "type": "dip",
+    "energyBefore": 0.00305300336850786,
+    "energyAt": 0.001060613281496317,
+    "energyAfter": 0.0012735565115063962
+  },
+  {
+    "timestamp": 286.2,
+    "type": "silence",
+    "energyBefore": 0.0014154024276277096,
+    "energyAt": 0.0009882158330330505,
+    "energyAfter": 0.0008410363453310152
+  },
+  {
+    "timestamp": 291.3,
+    "type": "dip",
+    "energyBefore": 0.0026076418046315753,
+    "energyAt": 0.0012608632645898692,
+    "energyAfter": 0.0024033990567041033
+  },
+  {
+    "timestamp": 295.7,
+    "type": "silence",
+    "energyBefore": 0.0013192024302234664,
+    "energyAt": 0.0007393399520083531,
+    "energyAfter": 0.0007580369730766632
+  },
+  {
+    "timestamp": 299.1,
+    "type": "silence",
+    "energyBefore": 0.0012785091292269399,
+    "energyAt": 0.0009169205978555667,
+    "energyAfter": 0.0010391739857769156
+  },
+  {
+    "timestamp": 305,
+    "type": "dip",
+    "energyBefore": 0.002754706404317371,
+    "energyAt": 0.0010242981048075481,
+    "energyAfter": 0.0013042565131685334
+  },
+  {
+    "timestamp": 309.6,
+    "type": "dip",
+    "energyBefore": 0.002072721830418651,
+    "energyAt": 0.0005204131870607443,
+    "energyAfter": 0.004242942985010888
+  },
+  {
+    "timestamp": 316.5,
+    "type": "dip",
+    "energyBefore": 0.0025216286345512936,
+    "energyAt": 0.000993897168102949,
+    "energyAfter": 0.0024600440534124335
+  },
+  {
+    "timestamp": 321.8,
+    "type": "dip",
+    "energyBefore": 0.003297633008988732,
+    "energyAt": 0.0011671705821216397,
+    "energyAfter": 0.0017177160383411306
+  },
+  {
+    "timestamp": 327.2,
+    "type": "dip",
+    "energyBefore": 0.0029792742271245237,
+    "energyAt": 0.001358874256388953,
+    "energyAfter": 0.0028544085052401194
+  },
+  {
+    "timestamp": 334.7,
+    "type": "dip",
+    "energyBefore": 0.0036441982046160094,
+    "energyAt": 0.001425758801462085,
+    "energyAfter": 0.001978836301264371
+  },
+  {
+    "timestamp": 338.1,
+    "type": "silence",
+    "energyBefore": 0.0015315847273268486,
+    "energyAt": 0.0009348000657907294,
+    "energyAfter": 0.0007512700603223245
+  },
+  {
+    "timestamp": 342.6,
+    "type": "dip",
+    "energyBefore": 0.004602145570104298,
+    "energyAt": 0.0017160089854412928,
+    "energyAfter": 0.002109479235646251
+  },
+  {
+    "timestamp": 346.5,
+    "type": "dip",
+    "energyBefore": 0.002442340346296003,
+    "energyAt": 0.0009970660310753571,
+    "energyAfter": 0.0013882648189538704
+  },
+  {
+    "timestamp": 360.7,
+    "type": "silence",
+    "energyBefore": 0.0016978807315114863,
+    "energyAt": 0.0009724932568176076,
+    "energyAfter": 0.0012229068097432034
+  },
+  {
+    "timestamp": 368.8,
+    "type": "dip",
+    "energyBefore": 0.0024206356080565443,
+    "energyAt": 0.0006319919226092746,
+    "energyAfter": 0.0012850134648483146
+  },
+  {
+    "timestamp": 372.9,
+    "type": "silence",
+    "energyBefore": 0.0018146121550285082,
+    "energyAt": 0.0009741562165355545,
+    "energyAfter": 0.002031682341747598
+  },
+  {
+    "timestamp": 377.5,
+    "type": "silence",
+    "energyBefore": 0.0014473470043146269,
+    "energyAt": 0.0009893679279826494,
+    "energyAfter": 0.0005941301042050383
+  },
+  {
+    "timestamp": 384.8,
+    "type": "dip",
+    "energyBefore": 0.003228007398993905,
+    "energyAt": 0.0009619749440453502,
+    "energyAfter": 0.0014147578605688627
+  },
+  {
+    "timestamp": 390.6,
+    "type": "silence",
+    "energyBefore": 0.0022540189772287528,
+    "energyAt": 0.0009404759930413977,
+    "energyAfter": 0.0008888298547496619
+  },
+  {
+    "timestamp": 397.9,
+    "type": "dip",
+    "energyBefore": 0.002325817379482916,
+    "energyAt": 0.0010481961443058446,
+    "energyAfter": 0.0013462668982189886
+  },
+  {
+    "timestamp": 403.7,
+    "type": "silence",
+    "energyBefore": 0.0017323775486470213,
+    "energyAt": 0.00099530136701899,
+    "energyAfter": 0.000711282059511436
+  },
+  {
+    "timestamp": 407.4,
+    "type": "silence",
+    "energyBefore": 0.002583323758638556,
+    "energyAt": 0.0009571973095414141,
+    "energyAfter": 0.0007930825890490728
+  },
+  {
+    "timestamp": 413.1,
+    "type": "dip",
+    "energyBefore": 0.0034799897208192734,
+    "energyAt": 0.0014866642307731315,
+    "energyAfter": 0.003030875393050041
+  },
+  {
+    "timestamp": 416.8,
+    "type": "silence",
+    "energyBefore": 0.0023037126096973008,
+    "energyAt": 0.0007300863380592678,
+    "energyAfter": 0.0005983695755163926
+  },
+  {
+    "timestamp": 424.1,
+    "type": "silence",
+    "energyBefore": 0.0014509739695921357,
+    "energyAt": 0.0009930982927408769,
+    "energyAfter": 0.0006219402371366514
+  },
+  {
+    "timestamp": 460.5,
+    "type": "silence",
+    "energyBefore": 0.0017465612933540112,
+    "energyAt": 0.0009761488753788608,
+    "energyAfter": 0.0005947633793485033
+  },
+  {
+    "timestamp": 465.7,
+    "type": "silence",
+    "energyBefore": 0.0014275586793767493,
+    "energyAt": 0.0009934351384537925,
+    "energyAfter": 0.0010662903773697777
+  },
+  {
+    "timestamp": 485.6,
+    "type": "silence",
+    "energyBefore": 0.0012759921228917958,
+    "energyAt": 0.000982732138768535,
+    "energyAfter": 0.0011382544082406143
+  },
+  {
+    "timestamp": 489.4,
+    "type": "dip",
+    "energyBefore": 0.0031259861212257233,
+    "energyAt": 0.00140625454484682,
+    "energyAfter": 0.0018451786284178961
+  },
+  {
+    "timestamp": 499.4,
+    "type": "dip",
+    "energyBefore": 0.004301662392591767,
+    "energyAt": 0.0018553547343141516,
+    "energyAfter": 0.0024134154458223546
+  },
+  {
+    "timestamp": 517.6,
+    "type": "dip",
+    "energyBefore": 0.002308974520201851,
+    "energyAt": 0.0011537697187254828,
+    "energyAfter": 0.001489729051087173
+  },
+  {
+    "timestamp": 540.3,
+    "type": "silence",
+    "energyBefore": 0.0017550648080292422,
+    "energyAt": 0.00099813507695646,
+    "energyAfter": 0.0008352320911194984
+  },
+  {
+    "timestamp": 547.1,
+    "type": "dip",
+    "energyBefore": 0.0026422663816913932,
+    "energyAt": 0.001070888207683767,
+    "energyAfter": 0.0016184101863366892
+  },
+  {
+    "timestamp": 561.2,
+    "type": "dip",
+    "energyBefore": 0.004201565708552195,
+    "energyAt": 0.00204481614057196,
+    "energyAfter": 0.003554067690840706
+  },
+  {
+    "timestamp": 567.5,
+    "type": "silence",
+    "energyBefore": 0.0012546940796427416,
+    "energyAt": 0.0009212081352353237,
+    "energyAfter": 0.0013302538589258126
+  },
+  {
+    "timestamp": 604.1,
+    "type": "dip",
+    "energyBefore": 0.003773018296992816,
+    "energyAt": 0.0016644691329018562,
+    "energyAfter": 0.002311950956040939
+  },
+  {
+    "timestamp": 607.8,
+    "type": "dip",
+    "energyBefore": 0.0029102111377596333,
+    "energyAt": 0.0014458863304875214,
+    "energyAfter": 0.002068884041107387
+  },
+  {
+    "timestamp": 612.9,
+    "type": "silence",
+    "energyBefore": 0.0015727421357350866,
+    "energyAt": 0.000940238278228599,
+    "energyAfter": 0.0010746075728452291
+  },
+  {
+    "timestamp": 626.6,
+    "type": "dip",
+    "energyBefore": 0.0035017520430519816,
+    "energyAt": 0.0015440514594580019,
+    "energyAfter": 0.002231992828984013
+  },
+  {
+    "timestamp": 701.7,
+    "type": "dip",
+    "energyBefore": 0.0029380573941145413,
+    "energyAt": 0.0012686671776606967,
+    "energyAfter": 0.00233762902933083
+  },
+  {
+    "timestamp": 705.2,
+    "type": "silence",
+    "energyBefore": 0.0017243241372689234,
+    "energyAt": 0.0009712619977995634,
+    "energyAfter": 0.0015271241511083803
+  },
+  {
+    "timestamp": 709.4,
+    "type": "silence",
+    "energyBefore": 0.0015563514054695202,
+    "energyAt": 0.0009333495814358095,
+    "energyAfter": 0.001544808739784914
+  },
+  {
+    "timestamp": 715.4,
+    "type": "dip",
+    "energyBefore": 0.0061167825420024614,
+    "energyAt": 0.0026958053191306354,
+    "energyAfter": 0.004354803864231841
+  },
+  {
+    "timestamp": 729,
+    "type": "dip",
+    "energyBefore": 0.004670730976293303,
+    "energyAt": 0.0018379080204371863,
+    "energyAfter": 0.002241369302787938
+  },
+  {
+    "timestamp": 732.8,
+    "type": "dip",
+    "energyBefore": 0.003934145332565123,
+    "energyAt": 0.001773827315559726,
+    "energyAfter": 0.004655278020215925
+  },
+  {
+    "timestamp": 746.3,
+    "type": "dip",
+    "energyBefore": 0.004489144360473299,
+    "energyAt": 0.002151252760638436,
+    "energyAfter": 0.002981708000092313
+  },
+  {
+    "timestamp": 756.8,
+    "type": "silence",
+    "energyBefore": 0.0023768925477549645,
+    "energyAt": 0.00048800174342639407,
+    "energyAfter": 0.00009817363851441592
+  },
+  {
+    "timestamp": 761.2,
+    "type": "dip",
+    "energyBefore": 0.005100995450869087,
+    "energyAt": 0.0024127820382699432,
+    "energyAfter": 0.0032540493968389764
+  },
+  {
+    "timestamp": 805.3,
+    "type": "dip",
+    "energyBefore": 0.0033133322139695083,
+    "energyAt": 0.0016417685446872903,
+    "energyAfter": 0.0026890559823217466
+  },
+  {
+    "timestamp": 813.7,
+    "type": "dip",
+    "energyBefore": 0.003910572576025566,
+    "energyAt": 0.001715467157660081,
+    "energyAfter": 0.0025703259425333518
+  },
+  {
+    "timestamp": 825.1,
+    "type": "dip",
+    "energyBefore": 0.004779867356151094,
+    "energyAt": 0.0023165877524008423,
+    "energyAfter": 0.003678917849809261
+  },
+  {
+    "timestamp": 831.3,
+    "type": "dip",
+    "energyBefore": 0.004302123474048033,
+    "energyAt": 0.0020569275720445355,
+    "energyAfter": 0.0025648257247440722
+  },
+  {
+    "timestamp": 835,
+    "type": "dip",
+    "energyBefore": 0.004608149176925274,
+    "energyAt": 0.002287216142835765,
+    "energyAfter": 0.003241860116329961
+  },
+  {
+    "timestamp": 839.4,
+    "type": "dip",
+    "energyBefore": 0.004371819360006661,
+    "energyAt": 0.0016218855371941433,
+    "energyAfter": 0.0025362997429765354
+  },
+  {
+    "timestamp": 849.4,
+    "type": "dip",
+    "energyBefore": 0.004110645995897557,
+    "energyAt": 0.0019828386682923405,
+    "energyAfter": 0.002459660419799309
+  },
+  {
+    "timestamp": 854.5,
+    "type": "dip",
+    "energyBefore": 0.002279238459179849,
+    "energyAt": 0.0010832974581459856,
+    "energyAfter": 0.0028036058006584118
+  },
+  {
+    "timestamp": 868.4,
+    "type": "dip",
+    "energyBefore": 0.0028998515281522057,
+    "energyAt": 0.0012959102639897402,
+    "energyAfter": 0.0019084216443871814
+  },
+  {
+    "timestamp": 876.5,
+    "type": "dip",
+    "energyBefore": 0.002665597155906962,
+    "energyAt": 0.001034144470892803,
+    "energyAfter": 0.0012847839228468628
+  },
+  {
+    "timestamp": 880.2,
+    "type": "silence",
+    "energyBefore": 0.0015427910399608909,
+    "energyAt": 0.0009877698656448695,
+    "energyAfter": 0.0015950438400302073
+  },
+  {
+    "timestamp": 892.7,
+    "type": "dip",
+    "energyBefore": 0.004045661984810574,
+    "energyAt": 0.0017335999510495008,
+    "energyAfter": 0.0031914274397091716
+  },
+  {
+    "timestamp": 927.6,
+    "type": "dip",
+    "energyBefore": 0.004501429437352638,
+    "energyAt": 0.0019514331244966667,
+    "energyAfter": 0.0032854388892094317
+  },
+  {
+    "timestamp": 933,
+    "type": "dip",
+    "energyBefore": 0.0028457869323419327,
+    "energyAt": 0.0011881944515624366,
+    "energyAfter": 0.002694830705996962
+  },
+  {
+    "timestamp": 936.2,
+    "type": "dip",
+    "energyBefore": 0.006400001086345976,
+    "energyAt": 0.0026565644514026736,
+    "energyAfter": 0.0039738510524953054
+  },
+  {
+    "timestamp": 941,
+    "type": "dip",
+    "energyBefore": 0.003234354009066835,
+    "energyAt": 0.00129298102237605,
+    "energyAfter": 0.003321837058860693
+  },
+  {
+    "timestamp": 949.4,
+    "type": "dip",
+    "energyBefore": 0.0037974171757904915,
+    "energyAt": 0.001656931545536366,
+    "energyAfter": 0.002924893715649284
+  },
+  {
+    "timestamp": 953.1,
+    "type": "dip",
+    "energyBefore": 0.0022738975171328626,
+    "energyAt": 0.0011058911808499356,
+    "energyAfter": 0.0015090790282724623
+  },
+  {
+    "timestamp": 958,
+    "type": "silence",
+    "energyBefore": 0.0014636855182354595,
+    "energyAt": 0.0009924812859711991,
+    "energyAfter": 0.0017992331853502275
+  },
+  {
+    "timestamp": 973.7,
+    "type": "dip",
+    "energyBefore": 0.004750907664013426,
+    "energyAt": 0.001728668037796382,
+    "energyAfter": 0.0031663279066583257
+  },
+  {
+    "timestamp": 978.9,
+    "type": "dip",
+    "energyBefore": 0.004432426589940788,
+    "energyAt": 0.002146511985096774,
+    "energyAfter": 0.0029543750087296576
+  },
+  {
+    "timestamp": 997.1,
+    "type": "silence",
+    "energyBefore": 0.001094893821730505,
+    "energyAt": 0.0009884134287138835,
+    "energyAfter": 0.0003978612330551535
+  },
+  {
+    "timestamp": 1002.3,
+    "type": "silence",
+    "energyBefore": 0.0015028181541762806,
+    "energyAt": 0.0008654141189155137,
+    "energyAfter": 0.0016243878494007727
+  },
+  {
+    "timestamp": 1006.5,
+    "type": "silence",
+    "energyBefore": 0.0021683676044183336,
+    "energyAt": 0.0008578392506830777,
+    "energyAfter": 0.0004822635574256332
+  },
+  {
+    "timestamp": 1011.2,
+    "type": "silence",
+    "energyBefore": 0.0012790319087058815,
+    "energyAt": 0.0009594473297555623,
+    "energyAfter": 0.0010443759432375488
+  },
+  {
+    "timestamp": 1014.5,
+    "type": "silence",
+    "energyBefore": 0.0012732685538714677,
+    "energyAt": 0.000984062127126597,
+    "energyAfter": 0.0008129965292022492
+  },
+  {
+    "timestamp": 1018.2,
+    "type": "dip",
+    "energyBefore": 0.00104967417755916,
+    "energyAt": 0.0004650667641314391,
+    "energyAfter": 0.0014703479379525968
+  },
+  {
+    "timestamp": 1022.1,
+    "type": "silence",
+    "energyBefore": 0.00119071938695641,
+    "energyAt": 0.0009806557345003466,
+    "energyAfter": 0.0009518851829201944
+  },
+  {
+    "timestamp": 1025.7,
+    "type": "dip",
+    "energyBefore": 0.0010583920930448299,
+    "energyAt": 0.0003986876118001209,
+    "energyAfter": 0.0010730315822703067
+  },
+  {
+    "timestamp": 1029.5,
+    "type": "silence",
+    "energyBefore": 0.0012614251512159346,
+    "energyAt": 0.0006351839117886542,
+    "energyAfter": 0.0002195548340153834
+  },
+  {
+    "timestamp": 1032.8,
+    "type": "dip",
+    "energyBefore": 0.0019817825791469948,
+    "energyAt": 0.0006112128538567853,
+    "energyAfter": 0.0011852636373392354
+  },
+  {
+    "timestamp": 1037.9,
+    "type": "silence",
+    "energyBefore": 0.0010930635257856694,
+    "energyAt": 0.0008864871004681915,
+    "energyAfter": 0.001741571110383631
+  },
+  {
+    "timestamp": 1150,
+    "type": "dip",
+    "energyBefore": 0.003595469579963599,
+    "energyAt": 0.00169647933437835,
+    "energyAfter": 0.0030707679252324578
+  },
+  {
+    "timestamp": 1158.6,
+    "type": "silence",
+    "energyBefore": 0.001381857074872433,
+    "energyAt": 0.0008833253989541838,
+    "energyAfter": 0.0024761790945001315
+  },
+  {
+    "timestamp": 1165.9,
+    "type": "dip",
+    "energyBefore": 0.0070979341108303425,
+    "energyAt": 0.0020863920038394867,
+    "energyAfter": 0.003185632608397485
+  },
+  {
+    "timestamp": 1224,
+    "type": "dip",
+    "energyBefore": 0.002490274157860815,
+    "energyAt": 0.001155487371931501,
+    "energyAfter": 0.0023503202907785175
+  },
+  {
+    "timestamp": 1235.3,
+    "type": "dip",
+    "energyBefore": 0.0034559340383621445,
+    "energyAt": 0.00128857364319652,
+    "energyAfter": 0.004077998108948097
+  },
+  {
+    "timestamp": 1241.7,
+    "type": "dip",
+    "energyBefore": 0.00305595768895089,
+    "energyAt": 0.0014957129136498534,
+    "energyAfter": 0.0037679611868340493
+  },
+  {
+    "timestamp": 1249.7,
+    "type": "dip",
+    "energyBefore": 0.0039940344933179625,
+    "energyAt": 0.0016767816233624491,
+    "energyAfter": 0.0037471556317433007
+  },
+  {
+    "timestamp": 1253.1,
+    "type": "dip",
+    "energyBefore": 0.005005337985205284,
+    "energyAt": 0.0020981897315670373,
+    "energyAfter": 0.0029543349144987682
+  },
+  {
+    "timestamp": 1257.2,
+    "type": "dip",
+    "energyBefore": 0.001964267981702902,
+    "energyAt": 0.0009124764364827593,
+    "energyAfter": 0.002077104755887463
+  },
+  {
+    "timestamp": 1262.5,
+    "type": "dip",
+    "energyBefore": 0.0040687006530473885,
+    "energyAt": 0.0016930393512775699,
+    "energyAfter": 0.003269750369223621
+  },
+  {
+    "timestamp": 1269.8,
+    "type": "dip",
+    "energyBefore": 0.004684482913971035,
+    "energyAt": 0.0021619773783963948,
+    "energyAfter": 0.0028676174339643036
+  },
+  {
+    "timestamp": 1299.4,
+    "type": "dip",
+    "energyBefore": 0.0024671172439020427,
+    "energyAt": 0.000830359901959348,
+    "energyAfter": 0.0011676896709681504
+  },
+  {
+    "timestamp": 1305.7,
+    "type": "dip",
+    "energyBefore": 0.0025593058096389128,
+    "energyAt": 0.000955430796192506,
+    "energyAfter": 0.001453239158385602
+  },
+  {
+    "timestamp": 1308.9,
+    "type": "silence",
+    "energyBefore": 0.0012414935620850014,
+    "energyAt": 0.0007715728312696553,
+    "energyAfter": 0.0011663378426589063
+  },
+  {
+    "timestamp": 1314.1,
+    "type": "silence",
+    "energyBefore": 0.0017326100553466761,
+    "energyAt": 0.0008970908641018305,
+    "energyAfter": 0.0006627935962234689
+  },
+  {
+    "timestamp": 1319.3,
+    "type": "silence",
+    "energyBefore": 0.001118571513982873,
+    "energyAt": 0.000994359061120201,
+    "energyAfter": 0.00018274441195558055
+  },
+  {
+    "timestamp": 1323.1,
+    "type": "silence",
+    "energyBefore": 0.0013941245325192408,
+    "energyAt": 0.0008406238943072615,
+    "energyAfter": 0.001118463270753464
+  },
+  {
+    "timestamp": 1327.6,
+    "type": "silence",
+    "energyBefore": 0.0012677281823066469,
+    "energyAt": 0.0007888044251581094,
+    "energyAfter": 0.00048398740608152893
+  },
+  {
+    "timestamp": 1332,
+    "type": "silence",
+    "energyBefore": 0.001394364099542778,
+    "energyAt": 0.000721215049280344,
+    "energyAfter": 0.001332723476024814
+  },
+  {
+    "timestamp": 1335.9,
+    "type": "silence",
+    "energyBefore": 0.0013196905209283702,
+    "energyAt": 0.0009396300481361819,
+    "energyAfter": 0.0006239305600221993
+  },
+  {
+    "timestamp": 1339,
+    "type": "silence",
+    "energyBefore": 0.001109210363252601,
+    "energyAt": 0.0008446484503894297,
+    "energyAfter": 0.0009858188439548327
+  },
+  {
+    "timestamp": 1342.3,
+    "type": "dip",
+    "energyBefore": 0.001507226928472629,
+    "energyAt": 0.0006545358015206328,
+    "energyAfter": 0.0011147243922612668
+  },
+  {
+    "timestamp": 1345.6,
+    "type": "silence",
+    "energyBefore": 0.0013135797638511749,
+    "energyAt": 0.0007587059053981713,
+    "energyAfter": 0.0006328218605581517
+  },
+  {
+    "timestamp": 1349.4,
+    "type": "silence",
+    "energyBefore": 0.0018211942295206197,
+    "energyAt": 0.0009699551255992963,
+    "energyAfter": 0.0010044209022935923
+  },
+  {
+    "timestamp": 1352.5,
+    "type": "dip",
+    "energyBefore": 0.0016448560696538782,
+    "energyAt": 0.00037154148722755656,
+    "energyAfter": 0.0008262594357362111
+  },
+  {
+    "timestamp": 1355.6,
+    "type": "silence",
+    "energyBefore": 0.0011467996342012477,
+    "energyAt": 0.0007661840239232264,
+    "energyAfter": 0.000883305124701285
+  },
+  {
+    "timestamp": 1360.9,
+    "type": "silence",
+    "energyBefore": 0.00198068095444425,
+    "energyAt": 0.0009924237500041667,
+    "energyAfter": 0.0012268682088000414
+  },
+  {
+    "timestamp": 1366.5,
+    "type": "silence",
+    "energyBefore": 0.0009834335520390019,
+    "energyAt": 0.0009574042861554467,
+    "energyAfter": 0.0009842140924675908
+  },
+  {
+    "timestamp": 1370.4,
+    "type": "silence",
+    "energyBefore": 0.001179395426346879,
+    "energyAt": 0.0008879608193330942,
+    "energyAfter": 0.00125502009512894
+  },
+  {
+    "timestamp": 1374.9,
+    "type": "silence",
+    "energyBefore": 0.0015306011878310668,
+    "energyAt": 0.0008811794571367544,
+    "energyAfter": 0.00035315966511596846
+  },
+  {
+    "timestamp": 1378.2,
+    "type": "silence",
+    "energyBefore": 0.0014890608631250458,
+    "energyAt": 0.0007668420035924677,
+    "energyAfter": 0.000890367012554305
+  },
+  {
+    "timestamp": 1382.4,
+    "type": "silence",
+    "energyBefore": 0.0011826726220313904,
+    "energyAt": 0.0008109752593486216,
+    "energyAfter": 0.001199848190679967
+  },
+  {
+    "timestamp": 1387.4,
+    "type": "silence",
+    "energyBefore": 0.0011861455280213473,
+    "energyAt": 0.0008468736985796023,
+    "energyAfter": 0.0013265691144937089
+  },
+  {
+    "timestamp": 1391.7,
+    "type": "silence",
+    "energyBefore": 0.000992669725657624,
+    "energyAt": 0.0009631296406695377,
+    "energyAfter": 0.0014819627719166444
+  },
+  {
+    "timestamp": 1395.4,
+    "type": "silence",
+    "energyBefore": 0.0010065787252298614,
+    "energyAt": 0.0009584146916237036,
+    "energyAfter": 0.00030163934793739594
+  },
+  {
+    "timestamp": 1399.7,
+    "type": "silence",
+    "energyBefore": 0.0008633419840077154,
+    "energyAt": 0.0008129243806502603,
+    "energyAfter": 0.001126305837615781
+  },
+  {
+    "timestamp": 1402.8,
+    "type": "dip",
+    "energyBefore": 0.0011989022926204103,
+    "energyAt": 0.0004747619638714561,
+    "energyAfter": 0.0008705027716344279
+  },
+  {
+    "timestamp": 1406.5,
+    "type": "silence",
+    "energyBefore": 0.0009105199357022605,
+    "energyAt": 0.000935608653900397,
+    "energyAfter": 0.0008240648855982025
+  },
+  {
+    "timestamp": 1409.8,
+    "type": "silence",
+    "energyBefore": 0.0010110608042521992,
+    "energyAt": 0.0008144990956073556,
+    "energyAfter": 0.001193712469974802
+  },
+  {
+    "timestamp": 1413.3,
+    "type": "silence",
+    "energyBefore": 0.0008005390295184236,
+    "energyAt": 0.0008994993382721048,
+    "energyAfter": 0.000536287828176299
+  },
+  {
+    "timestamp": 1418,
+    "type": "dip",
+    "energyBefore": 0.0010546627490648,
+    "energyAt": 0.000440865384328553,
+    "energyAfter": 0.0009611794729533746
+  },
+  {
+    "timestamp": 1422.9,
+    "type": "silence",
+    "energyBefore": 0.0017543293408828617,
+    "energyAt": 0.0008982720084430223,
+    "energyAfter": 0.0006235351881138239
+  },
+  {
+    "timestamp": 1427.7,
+    "type": "silence",
+    "energyBefore": 0.001027173448965213,
+    "energyAt": 0.0006296612537185753,
+    "energyAfter": 0.0015593478574250788
+  },
+  {
+    "timestamp": 1430.8,
+    "type": "silence",
+    "energyBefore": 0.0018619190476733387,
+    "energyAt": 0.0006750599053723157,
+    "energyAfter": 0.0002956327540232252
+  },
+  {
+    "timestamp": 1434.6,
+    "type": "silence",
+    "energyBefore": 0.00187456876461441,
+    "energyAt": 0.0009486180864067743,
+    "energyAfter": 0.0018890477921293545
+  },
+  {
+    "timestamp": 1438.4,
+    "type": "silence",
+    "energyBefore": 0.0016659008822705408,
+    "energyAt": 0.0009735757533003738,
+    "energyAfter": 0.0005138276477991501
+  },
+  {
+    "timestamp": 1443.3,
+    "type": "silence",
+    "energyBefore": 0.0011700628097040249,
+    "energyAt": 0.0009549586282108892,
+    "energyAfter": 0.001373788771668125
+  },
+  {
+    "timestamp": 1446.5,
+    "type": "dip",
+    "energyBefore": 0.0010090370045856521,
+    "energyAt": 0.00047185980541300103,
+    "energyAfter": 0.001038568509989934
+  },
+  {
+    "timestamp": 1449.7,
+    "type": "dip",
+    "energyBefore": 0.0023463659704515143,
+    "energyAt": 0.0008422038135779822,
+    "energyAfter": 0.0011272297238220993
+  },
+  {
+    "timestamp": 1453.1,
+    "type": "silence",
+    "energyBefore": 0.0015727785534503068,
+    "energyAt": 0.0007615593189096885,
+    "energyAfter": 0.0006331639378529679
+  },
+  {
+    "timestamp": 1456.2,
+    "type": "silence",
+    "energyBefore": 0.0017797014014408936,
+    "energyAt": 0.0008584360209205679,
+    "energyAfter": 0.0010180262802412972
+  },
+  {
+    "timestamp": 1460.2,
+    "type": "silence",
+    "energyBefore": 0.0018098477944967228,
+    "energyAt": 0.0008825820422310028,
+    "energyAfter": 0.00021666164089565267
+  },
+  {
+    "timestamp": 1463.8,
+    "type": "silence",
+    "energyBefore": 0.0010688446642324208,
+    "energyAt": 0.0008845542963399716,
+    "energyAfter": 0.001132967382700573
+  },
+  {
+    "timestamp": 1468.9,
+    "type": "silence",
+    "energyBefore": 0.0016924705437690254,
+    "energyAt": 0.000667500112384511,
+    "energyAfter": 0.0004190133583425137
+  },
+  {
+    "timestamp": 1472.7,
+    "type": "silence",
+    "energyBefore": 0.002776213417207145,
+    "energyAt": 0.000850292534961519,
+    "energyAfter": 0.00013941418177915862
+  },
+  {
+    "timestamp": 1476.3,
+    "type": "silence",
+    "energyBefore": 0.0017937994721005815,
+    "energyAt": 0.0007348987765098933,
+    "energyAfter": 0.00031610519063748703
+  },
+  {
+    "timestamp": 1480.2,
+    "type": "silence",
+    "energyBefore": 0.0014051859774091367,
+    "energyAt": 0.000852032231308387,
+    "energyAfter": 0.0015613036865882416
+  },
+  {
+    "timestamp": 1483.3,
+    "type": "silence",
+    "energyBefore": 0.001793912468060812,
+    "energyAt": 0.000998993397705747,
+    "energyAfter": 0.0007931395898281292
+  },
+  {
+    "timestamp": 1486.5,
+    "type": "silence",
+    "energyBefore": 0.001928257154447683,
+    "energyAt": 0.0007100368889397999,
+    "energyAfter": 0.0003501839453828674
+  },
+  {
+    "timestamp": 1490.7,
+    "type": "silence",
+    "energyBefore": 0.0014763350499742967,
+    "energyAt": 0.000973161856099446,
+    "energyAfter": 0.001575305539125686
+  },
+  {
+    "timestamp": 1494.2,
+    "type": "silence",
+    "energyBefore": 0.0010832039247322548,
+    "energyAt": 0.0007866014540888612,
+    "energyAfter": 0.0008950309986809601
+  },
+  {
+    "timestamp": 1498,
+    "type": "silence",
+    "energyBefore": 0.0019303957807096709,
+    "energyAt": 0.0009567721901811141,
+    "energyAfter": 0.0006197780648042606
+  },
+  {
+    "timestamp": 1501.1,
+    "type": "silence",
+    "energyBefore": 0.002115383553285849,
+    "energyAt": 0.0005789457176330966,
+    "energyAfter": 0.0006054034890105163
+  },
+  {
+    "timestamp": 1505.1,
+    "type": "dip",
+    "energyBefore": 0.0023608411307661776,
+    "energyAt": 0.0007278282968839987,
+    "energyAfter": 0.0015862367969865726
+  },
+  {
+    "timestamp": 1509.7,
+    "type": "dip",
+    "energyBefore": 0.0018637013168450705,
+    "energyAt": 0.0006345491773866932,
+    "energyAfter": 0.001572952636244052
+  },
+  {
+    "timestamp": 1512.9,
+    "type": "dip",
+    "energyBefore": 0.0016568201803525149,
+    "energyAt": 0.0007653252745201879,
+    "energyAfter": 0.0013598860185732374
+  },
+  {
+    "timestamp": 1517,
+    "type": "silence",
+    "energyBefore": 0.0020579270439744514,
+    "energyAt": 0.0009654104321225426,
+    "energyAfter": 0.00020107259275727857
+  },
+  {
+    "timestamp": 1520.7,
+    "type": "dip",
+    "energyBefore": 0.0017316180362851622,
+    "energyAt": 0.0008601847359504944,
+    "energyAfter": 0.0021681888428508383
+  }
+]

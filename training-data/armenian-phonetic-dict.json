@@ -1,0 +1,1285 @@
+{
+  "Թագաւոր": {
+    "primary": "Heavenly",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "երկնաւոր": {
+    "primary": "King",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "զեկեղեցի": {
+    "primary": "preserve",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "քո": {
+    "primary": "your",
+    "alternatives": [
+      "God",
+      "you"
+    ],
+    "frequency": 1
+  },
+  "անշարժ": {
+    "primary": "Church",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "պահեա": {
+    "primary": "unshaken",
+    "alternatives": [
+      "God"
+    ],
+    "frequency": 1
+  },
+  "եւ": {
+    "primary": "and",
+    "alternatives": [
+      "the",
+      "mercy"
+    ],
+    "frequency": 3
+  },
+  "Եւ": {
+    "primary": "And",
+    "alternatives": [
+      "Let",
+      "Through"
+    ],
+    "frequency": 5
+  },
+  "վասն": {
+    "primary": "the",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "սրբուհւոյ": {
+    "primary": "intercession",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Աստուածածնին": {
+    "primary": "of",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "բարեխօսութեանն": {
+    "primary": "the",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Տէր": {
+    "primary": "Lord",
+    "alternatives": [
+      "O",
+      "mindful"
+    ],
+    "frequency": 6
+  },
+  "Յիշեսջիր": {
+    "primary": "Remember",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ըզ": {
+    "primary": "also",
+    "alternatives": [
+      "the"
+    ],
+    "frequency": 1
+  },
+  "զ": {
+    "primary": "us",
+    "alternatives": [
+      "before",
+      "abode"
+    ],
+    "frequency": 2
+  },
+  "առաջի": {
+    "primary": "the",
+    "alternatives": [
+      "be"
+    ],
+    "frequency": 1
+  },
+  "անմահ": {
+    "primary": "immortal",
+    "alternatives": [
+      "remembered"
+    ],
+    "frequency": 1
+  },
+  "Գառինն": {
+    "primary": "Lamb",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Աստուծոյ": {
+    "primary": "To",
+    "alternatives": [
+      "of",
+      "the"
+    ],
+    "frequency": 3
+  },
+  "Յիշեալ": {
+    "primary": "You",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "լիջիք": {
+    "primary": "shall",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Որդւոյն": {
+    "primary": "before",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Դատ": {
+    "primary": "For",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "արա": {
+    "primary": "you",
+    "alternatives": [
+      "whom"
+    ],
+    "frequency": 1
+  },
+  "ինձ": {
+    "primary": "are",
+    "alternatives": [
+      "I"
+    ],
+    "frequency": 1
+  },
+  "Աստուած": {
+    "primary": "the",
+    "alternatives": [
+      "you",
+      "with"
+    ],
+    "frequency": 1
+  },
+  "իրաւ": {
+    "primary": "in",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ի": {
+    "primary": "take",
+    "alternatives": [
+      "this",
+      "again"
+    ],
+    "frequency": 1
+  },
+  "դատաստանի": {
+    "primary": "refuge",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "իմում": {
+    "primary": "why",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Խոստովան": {
+    "primary": "And",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "եղէց": {
+    "primary": "I",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "քեզ": {
+    "primary": "will",
+    "alternatives": [
+      "attentive",
+      "kéz"
+    ],
+    "frequency": 1
+  },
+  "օրհնութեամբ": {
+    "primary": "praise",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "իմ": {
+    "primary": "the",
+    "alternatives": [
+      "O",
+      "my"
+    ],
+    "frequency": 1
+  },
+  "Արդ": {
+    "primary": "Why",
+    "alternatives": [
+      "O"
+    ],
+    "frequency": 1
+  },
+  "ընդէ՞ր": {
+    "primary": "are",
+    "alternatives": [
+      "soul"
+    ],
+    "frequency": 1
+  },
+  "տըրտում": {
+    "primary": "you",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ես": {
+    "primary": "cast",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "անձն": {
+    "primary": "down",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "կամ": {
+    "primary": "my",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "խըռովես": {
+    "primary": "and",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "զիս": {
+    "primary": "why",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "որ": {
+    "primary": "In",
+    "alternatives": [
+      "the"
+    ],
+    "frequency": 1
+  },
+  "արժանի": {
+    "primary": "this",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "արար": {
+    "primary": "holy",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "կալ": {
+    "primary": "in",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "տեղւոջս": {
+    "primary": "place",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "փառաբանութեան": {
+    "primary": "of",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "երգել": {
+    "primary": "in",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "զօրհնուԹիւն": {
+    "primary": "and",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "զփառս": {
+    "primary": "to",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ընդ": {
+    "primary": "us",
+    "alternatives": [
+      "you",
+      "Father"
+    ],
+    "frequency": 4
+  },
+  "Հօր": {
+    "primary": "with",
+    "alternatives": [
+      "beseech"
+    ],
+    "frequency": 1
+  },
+  "Հոգւոյդ": {
+    "primary": "and",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Սրբոյ": {
+    "primary": "the",
+    "alternatives": [
+      "Be"
+    ],
+    "frequency": 1
+  },
+  "այժմ": {
+    "primary": "Holy",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "շտ": {
+    "primary": "now",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Օրհնեա": {
+    "primary": "Blessed",
+    "alternatives": [
+      "May",
+      "And"
+    ],
+    "frequency": 1
+  },
+  "տէր": {
+    "primary": "is",
+    "alternatives": [
+      "the",
+      "with"
+    ],
+    "frequency": 1
+  },
+  "Մինըդ": {
+    "primary": "And",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Սըրբոյ": {
+    "primary": "for",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Երրորդութենէն": {
+    "primary": "peace",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "փառաւորակից": {
+    "primary": "let",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "հոգւոյդ": {
+    "primary": "bow",
+    "alternatives": [
+      "peace"
+    ],
+    "frequency": 3
+  },
+  "քում": {
+    "primary": "down",
+    "alternatives": [
+      "let"
+    ],
+    "frequency": 3
+  },
+  "երկիրպագեսցուք": {
+    "primary": "you",
+    "alternatives": [
+      "us"
+    ],
+    "frequency": 3
+  },
+  "Զի": {
+    "primary": "Holy",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "է": {
+    "primary": "holy",
+    "alternatives": [
+      "is",
+      "this"
+    ],
+    "frequency": 1
+  },
+  "կարողութիւն": {
+    "primary": "and",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "զօրութիւն": {
+    "primary": "holy",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "փառք": {
+    "primary": "immortal",
+    "alternatives": [
+      "befitting"
+    ],
+    "frequency": 1
+  },
+  "յաւիտեանս": {
+    "primary": "who",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Ամէն": {
+    "primary": "rose",
+    "alternatives": [
+      "And",
+      "Amen"
+    ],
+    "frequency": 1
+  },
+  "եւըս": {
+    "primary": "again",
+    "alternatives": [
+      "have"
+    ],
+    "frequency": 3
+  },
+  "խաղաղութեան": {
+    "primary": "for",
+    "alternatives": [
+      "mercy",
+      "having"
+    ],
+    "frequency": 2
+  },
+  "զՏէր": {
+    "primary": "peace",
+    "alternatives": [],
+    "frequency": 2
+  },
+  "աղաչեսցուք": {
+    "primary": "let",
+    "alternatives": [
+      "in"
+    ],
+    "frequency": 2
+  },
+  "ողոր": {
+    "primary": "have",
+    "alternatives": [
+      "Lord",
+      "and"
+    ],
+    "frequency": 6
+  },
+  "ա": {
+    "primary": "mercy",
+    "alternatives": [
+      "all",
+      "Lord"
+    ],
+    "frequency": 6
+  },
+  "Վասն": {
+    "primary": "For",
+    "alternatives": [],
+    "frequency": 2
+  },
+  "նայն": {
+    "primary": "the",
+    "alternatives": [
+      "holy",
+      "up"
+    ],
+    "frequency": 2
+  },
+  "սուրբ": {
+    "primary": "and",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ուղղափառ": {
+    "primary": "bishops",
+    "alternatives": [
+      "of"
+    ],
+    "frequency": 1
+  },
+  "եպիսկոպոսաց": {
+    "primary": "let",
+    "alternatives": [
+      "all"
+    ],
+    "frequency": 1
+  },
+  "ըզՏէր": {
+    "primary": "us",
+    "alternatives": [
+      "received",
+      "blessed"
+    ],
+    "frequency": 1
+  },
+  "Ալէլուիա": {
+    "primary": "Peace",
+    "alternatives": [
+      "And"
+    ],
+    "frequency": 1
+  },
+  "օրթի": {
+    "primary": "be",
+    "alternatives": [
+      "with"
+    ],
+    "frequency": 1
+  },
+  "Երկիւղածութեամբ": {
+    "primary": "To",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "լըւարուք": {
+    "primary": "the",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Փառք": {
+    "primary": "Be",
+    "alternatives": [
+      "Park"
+    ],
+    "frequency": 1
+  },
+  "Պռօսխումէ": {
+    "primary": "God",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ր": {
+    "primary": "mér",
+    "alternatives": [
+      "bold",
+      "your"
+    ],
+    "frequency": 1
+  },
+  "զի": {
+    "primary": "to",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "նասուրբ": {
+    "primary": "all",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Երրորդութեանդ": {
+    "primary": "holy",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "վայել": {
+    "primary": "Trinity",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Մի՝": {
+    "primary": "Let",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ոք": {
+    "primary": "none",
+    "alternatives": [
+      "catechumens",
+      "and"
+    ],
+    "frequency": 1
+  },
+  "յերախայից": {
+    "primary": "of",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "՝": {
+    "primary": "the",
+    "alternatives": [
+      "faith"
+    ],
+    "frequency": 1
+  },
+  "թերահաւատից": {
+    "primary": "with",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Սաղմոս": {
+    "primary": "O",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ասացէք": {
+    "primary": "you",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Տեառն": {
+    "primary": "choristers",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "րում": {
+    "primary": "psalms",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "դըպիրք": {
+    "primary": "to",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ձայնիւ": {
+    "primary": "the",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Ողջոյն": {
+    "primary": "Greet",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "տուք": {
+    "primary": "one",
+    "alternatives": [
+      "voice"
+    ],
+    "frequency": 1
+  },
+  "անց": {
+    "primary": "another",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "համբոյր": {
+    "primary": "a",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "սըրբութեան": {
+    "primary": "holy",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "որք": {
+    "primary": "and",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ոչ": {
+    "primary": "you",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "էք": {
+    "primary": "who",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "կարողք": {
+    "primary": "are",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "պաշտօնեայք": {
+    "primary": "ministers",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "բարձեալ": {
+    "primary": "raise",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ըզձայն": {
+    "primary": "your",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "զօրհնութիւն": {
+    "primary": "bless",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "բերան": {
+    "primary": "one",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Պատարագ": {
+    "primary": "Christ",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Քրիստոս": {
+    "primary": "the",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "մատչի": {
+    "primary": "immaculate",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "անարատ": {
+    "primary": "Lamb",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Գառն": {
+    "primary": "of",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Ողորմութիւն": {
+    "primary": "For",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "խաղաղութիւն": {
+    "primary": "is",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "պատարագ": {
+    "primary": "and",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "օրհնութեան": {
+    "primary": "peace",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Ըզդըրունս": {
+    "primary": "We",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ըզդըրունս": {
+    "primary": "lift",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "իմաստութեամբ": {
+    "primary": "to",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "գոհացարուք": {
+    "primary": "he",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ըզՏեառնէ": {
+    "primary": "granted",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "բոլորով": {
+    "primary": "us",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "սըրտիւ": {
+    "primary": "in",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Արբէք": {
+    "primary": "Drink",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "սմանէ": {
+    "primary": "this",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "նեքեան": {
+    "primary": "of",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "այս": {
+    "primary": "you",
+    "alternatives": [
+      "prelacy"
+    ],
+    "frequency": 1
+  },
+  "արիւն": {
+    "primary": "is",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "նորոյ": {
+    "primary": "blood",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ուխտի": {
+    "primary": "of",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "զքոյս": {
+    "primary": "all",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "քոյոց": {
+    "primary": "blessed",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "մատուցանեմք": {
+    "primary": "you",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ըստ": {
+    "primary": "O",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "նայնի": {
+    "primary": "We",
+    "alternatives": [
+      "the"
+    ],
+    "frequency": 1
+  },
+  "յաղագս": {
+    "primary": "you",
+    "alternatives": [
+      "of"
+    ],
+    "frequency": 1
+  },
+  "Որպէսզի": {
+    "primary": "So",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "եղիցի": {
+    "primary": "that",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "սա": {
+    "primary": "this",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "նեցուն": {
+    "primary": "be",
+    "alternatives": [
+      "great"
+    ],
+    "frequency": 1
+  },
+  "րձեցելոցս՝": {
+    "primary": "all",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Ընդ": {
+    "primary": "With",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "որս": {
+    "primary": "them",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "այց": {
+    "primary": "also",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "արասցես": {
+    "primary": "O",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "բարերար": {
+    "primary": "beneficent",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "աղաչեմք": {
+    "primary": "we",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Յիշեա": {
+    "primary": "Be",
+    "alternatives": [],
+    "frequency": 2
+  },
+  "Սովաւ": {
+    "primary": "Through",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "շնորհեա": {
+    "primary": "it",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ըզսէր": {
+    "primary": "grant",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "զհաստատութիւն": {
+    "primary": "love",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "զըղձալի": {
+    "primary": "and",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "եպիսկոպոսապետին": {
+    "primary": "of",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "վիճակիս": {
+    "primary": "to",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "բարեջան": {
+    "primary": "the",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "առ": {
+    "primary": "diligent",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "աջնորդին": {
+    "primary": "Prelate",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "րոյ": {
+    "primary": "of",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "տեառըն": {
+    "primary": "our",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "անուն": {
+    "primary": "His",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Ըստ": {
+    "primary": "And",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Ընկալ": {
+    "primary": "Remembering",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "կեցո": {
+    "primary": "the",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "քոյին": {
+    "primary": "Mary",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Քեզ": {
+    "primary": "have",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Տեառնըդ": {
+    "primary": "mercy",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "յանձն": {
+    "primary": "To",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "տուր": {
+    "primary": "grant",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "համարձակաձայն": {
+    "primary": "to",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "բարբառով": {
+    "primary": "address",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "բանալ": {
+    "primary": "you",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ըզբերանըս": {
+    "primary": "with",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Առաջի": {
+    "primary": "To",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Ի": {
+    "primary": "Jesus",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "սրբութիւն": {
+    "primary": "Christ",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "սրբոց": {
+    "primary": "you",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Օրհնեալ": {
+    "primary": "Blessed",
+    "alternatives": [
+      "q",
+      "Blessing"
+    ],
+    "frequency": 1
+  },
+  "Հայր": {
+    "primary": "are",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Սուրբ": {
+    "primary": "you",
+    "alternatives": [
+      "glory"
+    ],
+    "frequency": 1
+  },
+  "շմարիտ": {
+    "primary": "Son",
+    "alternatives": [
+      "to"
+    ],
+    "frequency": 1
+  },
+  "Հոգիդ": {
+    "primary": "and",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Օրհնութիւն": {
+    "primary": "q",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Հաս": {
+    "primary": "Through",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "յօգնութիւն": {
+    "primary": "this",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ծառայից": {
+    "primary": "holy",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "քոց": {
+    "primary": "and",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "լեր": {
+    "primary": "immortal",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "օգնական": {
+    "primary": "and",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ազգիս": {
+    "primary": "life",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Հայոց": {
+    "primary": "giving",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Յիսուս": {
+    "primary": "have",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "փրկիչ": {
+    "primary": "mercy",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Երկիւղիւ": {
+    "primary": "In",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "հաւատով": {
+    "primary": "and",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "յառաջ": {
+    "primary": "in",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "մատիք": {
+    "primary": "faith",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "սըրբութեամբ": {
+    "primary": "near",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "երեւեցաւ": {
+    "primary": "and",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "օրհնեալ": {
+    "primary": "your",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "եկեալ": {
+    "primary": "inheritance",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "անուամբ": {
+    "primary": "shepherd",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Աւետարանիս": {
+    "primary": "attentive",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Թող": {
+    "primary": "And",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ըզպարտիս": {
+    "primary": "us",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "որպէս": {
+    "primary": "into",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "ք": {
+    "primary": "but",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "թողումք": {
+    "primary": "deliver",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "րոց": {
+    "primary": "us",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "Օրհնեցից": {
+    "primary": "Be",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "յա": {
+    "primary": "by",
+    "alternatives": [
+      "of"
+    ],
+    "frequency": 1
+  },
+  "ժամ": {
+    "primary": "grace",
+    "alternatives": [
+      "Holy"
+    ],
+    "frequency": 1
+  },
+  "օրհնութիւն": {
+    "primary": "Spirit",
+    "alternatives": [],
+    "frequency": 1
+  },
+  "նորա": {
+    "primary": "depart",
+    "alternatives": [],
+    "frequency": 1
+  }
+}

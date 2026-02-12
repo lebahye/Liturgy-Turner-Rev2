@@ -43,3 +43,9 @@ IDENTITY.md
 SOUL.md
 TOOLS.md
 USER.md
+-e 
+# Large training files (too big for GitHub)
+*.wav
+liturgy.pdf
+agent/full_service.wav
+agent/liturgy.pdf
