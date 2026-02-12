@@ -23,5 +23,5 @@ ENV CLAWDBOT_GATEWAY_PORT=29789
 
 EXPOSE 29789
 
-# Start gateway with proper token handling
-CMD ["/bin/bash", "-c", "if [ ! -f agent/.clawdbot-state/gateway-token ]; then openssl rand -hex 24 > agent/.clawdbot-state/gateway-token; fi && export CLAWDBOT_GATEWAY_TOKEN=$(cat agent/.clawdbot-state/gateway-token) && node vendor/clawdbot-main/dist/entry.js gateway run --port 29789 --bind 0.0.0.0 --allow-unconfigured --token \"$CLAWDBOT_GATEWAY_TOKEN\""]
+# Start gateway - override bind address for Docker networking
+CMD ["/bin/bash", "-c", "if [ ! -f agent/.clawdbot-state/gateway-token ]; then openssl rand -hex 24 > agent/.clawdbot-state/gateway-token; fi && export CLAWDBOT_GATEWAY_TOKEN=$(cat agent/.clawdbot-state/gateway-token) && node vendor/clawdbot-main/dist/entry.js gateway run --port 29789 --bind 0.0.0.0 --token \"$CLAWDBOT_GATEWAY_TOKEN\""]
