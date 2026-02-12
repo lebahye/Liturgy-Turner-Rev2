@@ -24,5 +24,5 @@ ENV CLAWDBOT_CONFIG_PATH=/app/agent/clawdbot.json5
 
 EXPOSE 29789
 
-# Start gateway and keep container running
-CMD clawdbot gateway start && tail -f /dev/null
+# Start gateway in foreground mode (no systemctl needed)
+CMD ["clawdbot", "gateway", "run", "--bind", "0.0.0.0", "--port", "29789"]
