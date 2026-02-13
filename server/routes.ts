@@ -8,6 +8,7 @@ import crypto from "crypto";
 import OpenAI from "openai";
 import { getDisplayState, nextPage, prevPage, setPageState, setPdfState } from "./displayBus";
 import { clawdbotTokenHandler } from "./routes/clawdbotToken";
+import { LiturgyPageTracker } from "./liturgy-tracker";
 
 // Configure multer for file uploads
 const pdfStorage = multer.diskStorage({
@@ -1307,6 +1308,144 @@ const file = await storage.createUploadedFile({
     } catch (error) {
       console.error('List audio files error:', error);
       res.status(500).json({ error: 'Failed to list audio files' });
+    }
+  });
+
+  // ============ Liturgy Live Tracker ============
+  
+  // Initialize tracker (singleton for now)
+  let liturgyTracker: LiturgyPageTracker | null = null;
+  
+  try {
+    liturgyTracker = new LiturgyPageTracker();
+    console.log('✅ Liturgy tracker initialized');
+  } catch (error) {
+    console.error('⚠️ Liturgy tracker failed to initialize:', error);
+  }
+  
+  // Start liturgy tracking session
+  app.post('/api/liturgy/start', async (req, res) => {
+    try {
+      if (!liturgyTracker) {
+        return res.status(500).json({ error: 'Tracker not initialized' });
+      }
+      
+      liturgyTracker.reset();
+      
+      // Also update display bus to page 1
+      setPdfState({ 
+        pdfPath: '/uploads/pdfs/liturgy.pdf', 
+        pdfId: null, 
+        totalPages: 183 
+      });
+      setPageState({ page: 1, reason: 'liturgy_start', confidence: 1.0 });
+      
+      res.json({ 
+        status: 'started', 
+        currentPage: 1,
+        message: 'Liturgy tracking started - listening for page turns'
+      });
+    } catch (error: any) {
+      console.error('Liturgy start error:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+  
+  // Process live audio for page tracking
+  app.post('/api/liturgy/process', async (req, res) => {
+    try {
+      if (!liturgyTracker) {
+        return res.status(500).json({ error: 'Tracker not initialized' });
+      }
+      
+      const { audioData, timestamp } = req.body;
+      
+      if (!audioData || !Array.isArray(audioData)) {
+        return res.status(400).json({ error: 'Invalid audio data' });
+      }
+      
+      // Convert to Float32Array
+      const samples = new Float32Array(audioData);
+      
+      // Process through tracker
+      const result = liturgyTracker.processLiveAudio(samples, timestamp || Date.now());
+      
+      // If page changed, update display bus
+      if (result.changed) {
+        setPageState({ 
+          page: result.page, 
+          reason: result.reason || 'audio_match',
+          confidence: result.confidence || 0.75
+        });
+        
+        console.log(`📄 Page advanced: ${result.page} (${result.reason}, ${(result.confidence! * 100).toFixed(0)}%)`);
+      }
+      
+      res.json(result);
+    } catch (error: any) {
+      console.error('Liturgy process error:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+  
+  // Manual page override
+  app.post('/api/liturgy/goto-page', async (req, res) => {
+    try {
+      if (!liturgyTracker) {
+        return res.status(500).json({ error: 'Tracker not initialized' });
+      }
+      
+      const { page } = req.body;
+      
+      if (typeof page !== 'number' || page < 1 || page > 183) {
+        return res.status(400).json({ error: 'Invalid page number (must be 1-183)' });
+      }
+      
+      const success = liturgyTracker.setPage(page);
+      
+      if (success) {
+        setPageState({ page, reason: 'manual_override', confidence: 1.0 });
+        res.json({ page, changed: true, message: 'Page set manually' });
+      } else {
+        res.status(400).json({ error: 'Failed to set page' });
+      }
+    } catch (error: any) {
+      console.error('Liturgy goto-page error:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+  
+  // Get current liturgy tracking status
+  app.get('/api/liturgy/status', async (req, res) => {
+    try {
+      if (!liturgyTracker) {
+        return res.json({ 
+          initialized: false, 
+          error: 'Tracker not initialized' 
+        });
+      }
+      
+      res.json({
+        initialized: true,
+        currentPage: liturgyTracker.getCurrentPage(),
+        totalPages: 183
+      });
+    } catch (error: any) {
+      console.error('Liturgy status error:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+  
+  // Stop liturgy tracking
+  app.post('/api/liturgy/stop', async (req, res) => {
+    try {
+      if (liturgyTracker) {
+        liturgyTracker.reset();
+      }
+      res.json({ status: 'stopped', message: 'Liturgy tracking stopped' });
+    } catch (error: any) {
+      console.error('Liturgy stop error:', error);
+      res.status(500).json({ error: error.message });
     }
   });
 
