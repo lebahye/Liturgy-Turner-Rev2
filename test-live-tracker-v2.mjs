@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Test the Liturgy Live Tracker against the full recording
- * Simulates live audio processing and measures accuracy
+ * Test Live Tracker V2 - Improved matching strategy
+ * Use timestamp-based search window instead of fixed "next 3 pages"
  */
 
 import fs from 'fs';
@@ -15,80 +15,64 @@ const Meyda = require('meyda');
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const WAV_PATH = path.join(__dirname, 'full_service.wav');
-
-console.log('🧪 Testing Liturgy Live Tracker');
-console.log('================================\n');
-
-// Load symlinked WAV if exists, otherwise look for actual file
-let wavFile = WAV_PATH;
-if (!fs.existsSync(wavFile)) {
-  wavFile = path.join(__dirname, 'agent/full_service.wav');
-}
-
-if (!fs.existsSync(wavFile)) {
-  console.error('❌ WAV file not found at:', WAV_PATH);
-  console.error('   Or at:', path.join(__dirname, 'agent/full_service.wav'));
-  console.error('\n💡 Make sure full_service.wav is accessible');
-  process.exit(1);
-}
-
-console.log(`📂 Loading audio from: ${wavFile}`);
-
-// Simple mock of the LiturgyPageTracker class
-class MockLiturgyTracker {
+class ImprovedLiturgyTracker {
   constructor() {
-    this.currentPage = 1;
-    this.currentSpeaker = null;
-    this.lastTransitionTime = 0;
+    this.fingerprints = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'training-data/fingerprints.json'), 'utf8')
+    );
+    this.pageTimestamps = JSON.parse(
+      fs.readFileSync(path.join(__dirname, 'training-data/page-timestamps-mapped.json'), 'utf8')
+    ).pages;
     
-    // Load data
-    const dataDir = path.join(__dirname, 'training-data');
-    this.liveTrackerData = JSON.parse(fs.readFileSync(path.join(dataDir, 'live-tracker-data.json'), 'utf8'));
-    this.fingerprints = JSON.parse(fs.readFileSync(path.join(dataDir, 'fingerprints.json'), 'utf8'));
-    this.speakerModels = JSON.parse(fs.readFileSync(path.join(dataDir, 'speaker-models.json'), 'utf8'));
+    this.currentPage = 1;
+    this.currentTime = 0;
     
     console.log(`✅ Loaded ${this.fingerprints.length} fingerprints`);
-    console.log(`✅ Loaded ${this.liveTrackerData.pages.length} page signatures\n`);
+    console.log(`✅ Loaded ${this.pageTimestamps.length} page timestamps\n`);
   }
   
   processLiveAudio(audioBuffer, timestamp) {
+    this.currentTime = timestamp / 1000; // Convert to seconds
+    
     const features = this.extractFeatures(audioBuffer);
-    const detectedSpeaker = this.classifySpeaker(features);
     
-    // Check if enough time since last transition
-    if (timestamp - this.lastTransitionTime < 3000) {
-      return { page: this.currentPage, changed: false };
-    }
+    // Find candidates based on timestamp proximity
+    // Look 30 seconds before and after current time
+    const timeWindow = 30;
+    const candidates = this.pageTimestamps.filter(page => {
+      const pageTime = page.timestamp;
+      return pageTime >= (this.currentTime - timeWindow) &&
+             pageTime <= (this.currentTime + timeWindow) &&
+             page.pageNumber >= this.currentPage;
+    });
     
-    // Get candidates (next 3 pages)
-    const candidates = [];
-    for (let i = 1; i <= 3; i++) {
-      const pageNum = this.currentPage + i;
-      if (pageNum <= 183) candidates.push(pageNum);
-    }
+    if (candidates.length === 0) return { page: this.currentPage, changed: false };
     
     // Score each candidate
-    const scores = candidates.map(pageNum => ({
-      pageNumber: pageNum,
-      score: this.scorePage(pageNum, features, detectedSpeaker)
+    const scores = candidates.map(page => ({
+      pageNumber: page.pageNumber,
+      expectedTime: page.timestamp,
+      timeDiff: Math.abs(page.timestamp - this.currentTime),
+      score: this.matchFingerprint(features, page.pageNumber)
     }));
     
-    scores.sort((a, b) => b.score - a.score);
+    // Boost scores for pages close in time
+    scores.forEach(s => {
+      const timeBoost = Math.exp(-s.timeDiff / 10); // Closer in time = higher boost
+      s.combinedScore = (s.score * 0.7) + (timeBoost * 0.3);
+    });
+    
+    scores.sort((a, b) => b.combinedScore - a.combinedScore);
     const best = scores[0];
     
-    // Advance if confident (lowered threshold with better fingerprints)
-    if (best && best.score > 0.65 && best.pageNumber > this.currentPage) {
-      const previousPage = this.currentPage;
+    // Advance if confident
+    if (best && best.combinedScore > 0.5 && best.pageNumber > this.currentPage) {
       this.currentPage = best.pageNumber;
-      this.currentSpeaker = detectedSpeaker;
-      this.lastTransitionTime = timestamp;
-      
       return {
         page: this.currentPage,
         changed: true,
-        confidence: best.score,
-        jumped: best.pageNumber > previousPage + 1
+        confidence: best.combinedScore,
+        timeDiff: best.timeDiff
       };
     }
     
@@ -101,11 +85,8 @@ class MockLiturgyTracker {
     const numFrames = Math.floor((audioBuffer.length - windowSize) / hopSize);
     
     const features = {
-      mfcc: [], spectralCentroid: [], spectralFlux: [],
-      spectralRolloff: [], rms: [], zcr: []
+      mfcc: [], spectralCentroid: [], spectralRolloff: [], rms: [], zcr: []
     };
-    
-    let lastSpectrum = null;
     
     for (let frame = 0; frame < Math.min(numFrames, 50); frame++) {
       const start = frame * hopSize;
@@ -114,7 +95,7 @@ class MockLiturgyTracker {
       
       try {
         const extracted = Meyda.extract([
-          'mfcc', 'spectralCentroid', 'spectralRolloff', 'rms', 'zcr', 'powerSpectrum'
+          'mfcc', 'spectralCentroid', 'spectralRolloff', 'rms', 'zcr'
         ], frameData, {
           sampleRate: 48000,
           bufferSize: windowSize,
@@ -127,17 +108,6 @@ class MockLiturgyTracker {
           if (extracted.spectralRolloff) features.spectralRolloff.push(extracted.spectralRolloff);
           if (extracted.rms) features.rms.push(extracted.rms);
           if (extracted.zcr) features.zcr.push(extracted.zcr);
-          
-          if (extracted.powerSpectrum && lastSpectrum) {
-            let flux = 0;
-            for (let i = 0; i < Math.min(lastSpectrum.length, extracted.powerSpectrum.length); i++) {
-              const diff = extracted.powerSpectrum[i] - lastSpectrum[i];
-              flux += diff * diff;
-            }
-            features.spectralFlux.push(Math.sqrt(flux));
-          }
-          
-          if (extracted.powerSpectrum) lastSpectrum = extracted.powerSpectrum;
         }
       } catch (err) {}
     }
@@ -145,37 +115,10 @@ class MockLiturgyTracker {
     return {
       mfcc: this.averageArray2D(features.mfcc),
       spectralCentroid: this.average(features.spectralCentroid),
-      spectralFlux: features.spectralFlux,
       spectralRolloff: this.average(features.spectralRolloff),
       rms: this.average(features.rms),
       zcr: this.average(features.zcr)
     };
-  }
-  
-  classifySpeaker(features) {
-    const fluxVariance = this.calculateVariance(features.spectralFlux);
-    // Updated thresholds based on actual audio analysis
-    if (fluxVariance > 5.0) return 'choir';
-    if (fluxVariance > 1.5) return 'celebrant';
-    return 'deacon';
-  }
-  
-  scorePage(pageNumber, features, detectedSpeaker) {
-    let score = 0;
-    
-    const pageData = this.liveTrackerData.pages.find(p => p.pageNumber === pageNumber);
-    if (!pageData) return 0;
-    
-    // Speaker match (30%)
-    if (detectedSpeaker === pageData.speaker) {
-      score += 0.3;
-    }
-    
-    // Fingerprint match (70%)
-    const fingerprintScore = this.matchFingerprint(features, pageNumber);
-    score += fingerprintScore * 0.7;
-    
-    return score;
   }
   
   matchFingerprint(liveFeatures, pageNumber) {
@@ -204,13 +147,6 @@ class MockLiturgyTracker {
     return result.map(v => v / arr.length);
   }
   
-  calculateVariance(arr) {
-    if (!arr || arr.length === 0) return 0;
-    const avg = this.average(arr);
-    const squaredDiffs = arr.map(v => (v - avg) * (v - avg));
-    return this.average(squaredDiffs);
-  }
-  
   cosineSimilarity(a, b) {
     if (!a || !b || a.length !== b.length) return 0;
     let dotProduct = 0, magA = 0, magB = 0;
@@ -223,12 +159,6 @@ class MockLiturgyTracker {
     magB = Math.sqrt(magB);
     if (magA === 0 || magB === 0) return 0;
     return dotProduct / (magA * magB);
-  }
-  
-  reset() {
-    this.currentPage = 1;
-    this.currentSpeaker = null;
-    this.lastTransitionTime = 0;
   }
 }
 
@@ -276,7 +206,13 @@ function extractSamples(buffer, dataOffset, audioInfo, startTime, duration) {
 }
 
 // Run test
-console.log('🎬 Starting test simulation...\n');
+console.log('🎬 Test V2 - Time-based Matching\n');
+
+const WAV_PATH = path.join(__dirname, 'full_service.wav');
+let wavFile = WAV_PATH;
+if (!fs.existsSync(wavFile)) {
+  wavFile = path.join(__dirname, 'agent/full_service.wav');
+}
 
 const buffer = fs.readFileSync(wavFile);
 const { audioInfo, dataOffset } = parseWavHeader(buffer);
@@ -286,9 +222,11 @@ console.log(`📊 Audio: ${audioInfo.sampleRate}Hz, ${audioInfo.bitsPerSample}bi
 const durationSec = (buffer.length - dataOffset) / (audioInfo.sampleRate * (audioInfo.bitsPerSample / 8));
 console.log(`⏱️  Duration: ${Math.floor(durationSec / 60)}:${Math.floor(durationSec % 60).toString().padStart(2, '0')}\n`);
 
-const tracker = new MockLiturgyTracker();
+const tracker = new ImprovedLiturgyTracker();
+const pageTimestamps = tracker.pageTimestamps;
+
 const testInterval = 10; // Process every 10 seconds
-const windowSize = 2; // 2-second audio windows
+const windowSize = 5; // 5-second audio windows
 
 const results = [];
 let detectedPages = [];
@@ -300,25 +238,29 @@ for (let time = 0; time < durationSec; time += testInterval) {
   const result = tracker.processLiveAudio(samples, time * 1000);
   
   if (result.changed) {
-    const expectedPage = Math.min(183, Math.floor(time / 28.6) + 1);
-    const error = Math.abs(result.page - expectedPage);
+    // Find expected page at this time
+    const expectedPage = pageTimestamps.find(p => 
+      p.timestamp <= time && 
+      (!pageTimestamps[p.pageNumber] || pageTimestamps[p.pageNumber].timestamp > time)
+    );
+    const expectedPageNum = expectedPage ? expectedPage.pageNumber : 1;
+    const error = Math.abs(result.page - expectedPageNum);
     
     detectedPages.push(result.page);
     results.push({
       time,
       detectedPage: result.page,
-      expectedPage,
+      expectedPage: expectedPageNum,
       error,
       confidence: result.confidence,
-      jumped: result.jumped
+      timeDiff: result.timeDiff
     });
     
     const status = error === 0 ? '✅' : error <= 2 ? '⚠️' : '❌';
     const timeStr = `${Math.floor(time / 60)}:${(time % 60).toString().padStart(2, '0')}`;
-    console.log(`${status} ${timeStr} - Page ${result.page} (expected ~${expectedPage}, conf: ${(result.confidence * 100).toFixed(0)}%)`);
+    console.log(`${status} ${timeStr} - Page ${result.page} (expected ${expectedPageNum}, conf: ${(result.confidence * 100).toFixed(0)}%, Δt: ${result.timeDiff.toFixed(1)}s)`);
   }
   
-  // Progress indicator
   if (Math.floor(time / testInterval) % 10 === 0) {
     const progress = ((time / durationSec) * 100).toFixed(0);
     process.stdout.write(`\r   Progress: ${progress}%`);
@@ -342,20 +284,15 @@ if (results.length > 0) {
   console.log(`  Average error: ${avgError.toFixed(1)} pages`);
   console.log(`  Average confidence: ${(avgConfidence * 100).toFixed(1)}%`);
   
-  // Save detailed results
-  const logPath = path.join(__dirname, 'training-data/test-results.json');
+  const logPath = path.join(__dirname, 'training-data/test-results-v2.json');
   fs.writeFileSync(logPath, JSON.stringify(results, null, 2));
-  console.log(`\n💾 Saved detailed results to training-data/test-results.json`);
+  console.log(`\n💾 Saved to training-data/test-results-v2.json`);
   
   if (exact / results.length > 0.7) {
-    console.log('\n✅ System is working well!');
+    console.log('\n✅ System working well!');
   } else if (close / results.length > 0.75) {
-    console.log('\n⚠️ System needs tuning but shows promise');
+    console.log('\n⚠️ Needs tuning but shows promise');
   } else {
-    console.log('\n❌ System needs significant improvement');
+    console.log('\n❌ Needs significant improvement');
   }
-} else {
-  console.log('\n⚠️ No page transitions detected - check thresholds');
 }
-
-console.log('\n📌 Next: Run manual training session with real page turns');

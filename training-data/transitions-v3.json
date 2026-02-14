@@ -1,0 +1,4223 @@
+{
+  "totalDuration": 5234.04,
+  "scanInterval": 10,
+  "totalTransitions": 152,
+  "transitions": [
+    {
+      "time": 60,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 3.1161080779728483,
+      "rms": 0.0026397671757006974
+    },
+    {
+      "time": 70,
+      "from": "celebrant",
+      "to": "choir",
+      "variance": 5.0737765151353456,
+      "rms": 0.0015298179675887825
+    },
+    {
+      "time": 110,
+      "from": "choir",
+      "to": "celebrant",
+      "variance": 1.9829577122460058,
+      "rms": 0.0023126829350226144
+    },
+    {
+      "time": 130,
+      "from": "celebrant",
+      "to": "choir",
+      "variance": 29.643249859564047,
+      "rms": 0.002725505941433528
+    },
+    {
+      "time": 150,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.004835947868378458,
+      "rms": 0.0005067832182400335
+    },
+    {
+      "time": 190,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 5.239824138908753,
+      "rms": 0.0015936121459770632
+    },
+    {
+      "time": 200,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.5667445099293332,
+      "rms": 0.0014903214476112167
+    },
+    {
+      "time": 240,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 19.692865560697854,
+      "rms": 0.0022768488049062343
+    },
+    {
+      "time": 250,
+      "from": "choir",
+      "to": "celebrant",
+      "variance": 4.967596920384226,
+      "rms": 0.0015672293230528497
+    },
+    {
+      "time": 260,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.9663426372133089,
+      "rms": 0.0012393634592009857
+    },
+    {
+      "time": 280,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 16.116905554511803,
+      "rms": 0.002616670532283165
+    },
+    {
+      "time": 290,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.5658479109690773,
+      "rms": 0.0014821462019927643
+    },
+    {
+      "time": 310,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 6.665206849244914,
+      "rms": 0.002095745893044202
+    },
+    {
+      "time": 320,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.01234218882513062,
+      "rms": 0.0010222615501188808
+    },
+    {
+      "time": 350,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 5.587927050183321,
+      "rms": 0.0025723071237267704
+    },
+    {
+      "time": 360,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.051245024922368355,
+      "rms": 0.0011209308483910026
+    },
+    {
+      "time": 470,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.5921316208388048,
+      "rms": 0.001571263195629738
+    },
+    {
+      "time": 480,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.007656961441488387,
+      "rms": 0.0006193152611990295
+    },
+    {
+      "time": 560,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.5736401019145272,
+      "rms": 0.001402964319818413
+    },
+    {
+      "time": 580,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.4402153192075168,
+      "rms": 0.0012043292042421716
+    },
+    {
+      "time": 720,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 8.542700562473765,
+      "rms": 0.0032521840853902335
+    },
+    {
+      "time": 730,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.039559443127969586,
+      "rms": 0.0017197164922255965
+    },
+    {
+      "time": 780,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 5.27418589298056,
+      "rms": 0.002209224470771266
+    },
+    {
+      "time": 790,
+      "from": "choir",
+      "to": "celebrant",
+      "variance": 1.8714778557158471,
+      "rms": 0.0018086505934513386
+    },
+    {
+      "time": 820,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.052887490914826245,
+      "rms": 0.0013073808927195685
+    },
+    {
+      "time": 830,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.707061354748934,
+      "rms": 0.0018548512842075987
+    },
+    {
+      "time": 840,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.11400908528055209,
+      "rms": 0.0016484365044253393
+    },
+    {
+      "time": 870,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 4.187365851647848,
+      "rms": 0.0019662127485031915
+    },
+    {
+      "time": 880,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.016282341217423054,
+      "rms": 0.0007334952536172193
+    },
+    {
+      "time": 890,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 13.447695490504113,
+      "rms": 0.0031574662678708564
+    },
+    {
+      "time": 920,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.5743291992675102,
+      "rms": 0.0023309995034989776
+    },
+    {
+      "time": 930,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.3266267355484973,
+      "rms": 0.0026921924122101735
+    },
+    {
+      "time": 940,
+      "from": "celebrant",
+      "to": "choir",
+      "variance": 5.0536022772055835,
+      "rms": 0.0020315566735326896
+    },
+    {
+      "time": 950,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.9424169618284592,
+      "rms": 0.0019207083506358868
+    },
+    {
+      "time": 960,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.9605728330858017,
+      "rms": 0.0010179483619001185
+    },
+    {
+      "time": 970,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.44888522824081706,
+      "rms": 0.002081790980304275
+    },
+    {
+      "time": 1040,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 19.350545337571184,
+      "rms": 0.0037824299872399997
+    },
+    {
+      "time": 1050,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.6754554579403813,
+      "rms": 0.0019467266482457433
+    },
+    {
+      "time": 1060,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 6.549570086963907,
+      "rms": 0.00271377049769059
+    },
+    {
+      "time": 1070,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 1.2120797804594543,
+      "rms": 0.00232419634609484
+    },
+    {
+      "time": 1080,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 3.2294665881332665,
+      "rms": 0.0024713644806095697
+    },
+    {
+      "time": 1090,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.8348378049742058,
+      "rms": 0.002027011784088207
+    },
+    {
+      "time": 1110,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 3.109284284274708,
+      "rms": 0.0024699542274694212
+    },
+    {
+      "time": 1120,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.8173874720418716,
+      "rms": 0.002229160805034945
+    },
+    {
+      "time": 1130,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 6.799830901664083,
+      "rms": 0.003121577117215121
+    },
+    {
+      "time": 1140,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.16956778599050795,
+      "rms": 0.0017160233800003683
+    },
+    {
+      "time": 1160,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 28.920825348581264,
+      "rms": 0.004369506895757637
+    },
+    {
+      "time": 1170,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.8595712875263597,
+      "rms": 0.0019970626999991016
+    },
+    {
+      "time": 1240,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 42.29974447677338,
+      "rms": 0.0022922444880791692
+    },
+    {
+      "time": 1260,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 1.2341813917417526,
+      "rms": 0.0021816395876794927
+    },
+    {
+      "time": 1600,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 3.2946466348546717,
+      "rms": 0.0022190341344519586
+    },
+    {
+      "time": 1610,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.20288374714031243,
+      "rms": 0.0016079201928927572
+    },
+    {
+      "time": 1750,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.9841514867723102,
+      "rms": 0.001511459567501888
+    },
+    {
+      "time": 1760,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.02658452490706978,
+      "rms": 0.0005210540359667615
+    },
+    {
+      "time": 1790,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 4.321385135604549,
+      "rms": 0.0017462236412345835
+    },
+    {
+      "time": 1800,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.02219002859576736,
+      "rms": 0.0005445074636013039
+    },
+    {
+      "time": 1810,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.157620938289582,
+      "rms": 0.0010119741398030293
+    },
+    {
+      "time": 1820,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.028843655573524366,
+      "rms": 0.0010457271448446616
+    },
+    {
+      "time": 1920,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 6.949174659721859,
+      "rms": 0.00241487785450334
+    },
+    {
+      "time": 1930,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.732323765196599,
+      "rms": 0.0016931382752025143
+    },
+    {
+      "time": 1950,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.570783790417303,
+      "rms": 0.0015129911268784468
+    },
+    {
+      "time": 1960,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.07660885605387803,
+      "rms": 0.0009702327536167319
+    },
+    {
+      "time": 1990,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.917144953516987,
+      "rms": 0.0017922120712243082
+    },
+    {
+      "time": 2000,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.5025900798031916,
+      "rms": 0.0017059164563992943
+    },
+    {
+      "time": 2010,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.8170774636097797,
+      "rms": 0.00186473687426599
+    },
+    {
+      "time": 2020,
+      "from": "celebrant",
+      "to": "choir",
+      "variance": 6.380175208296198,
+      "rms": 0.002839146413478998
+    },
+    {
+      "time": 2040,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.7634263881723607,
+      "rms": 0.0017584393743693882
+    },
+    {
+      "time": 2050,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 7.595502384823316,
+      "rms": 0.002719589968998449
+    },
+    {
+      "time": 2060,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.3768465362256703,
+      "rms": 0.0019468905361358071
+    },
+    {
+      "time": 2070,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 8.967314626621516,
+      "rms": 0.002756899441848141
+    },
+    {
+      "time": 2080,
+      "from": "choir",
+      "to": "celebrant",
+      "variance": 2.210750391427263,
+      "rms": 0.002875007781338623
+    },
+    {
+      "time": 2110,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.16567633459543343,
+      "rms": 0.00110829719237673
+    },
+    {
+      "time": 2190,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 16.799354703218793,
+      "rms": 0.002952470177833128
+    },
+    {
+      "time": 2200,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.7639769102691405,
+      "rms": 0.0013598331773258623
+    },
+    {
+      "time": 2220,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 18.507903729539798,
+      "rms": 0.0025219080981031244
+    },
+    {
+      "time": 2230,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.15472546996321157,
+      "rms": 0.0015367567966239775
+    },
+    {
+      "time": 2250,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.5400194722864526,
+      "rms": 0.0018454141386414589
+    },
+    {
+      "time": 2260,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.1787574566665596,
+      "rms": 0.0013441965861430132
+    },
+    {
+      "time": 2320,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.105689422738214,
+      "rms": 0.0025412617697720898
+    },
+    {
+      "time": 2340,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.07458868115547806,
+      "rms": 0.0010827870297041558
+    },
+    {
+      "time": 2360,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 7.478177423964221,
+      "rms": 0.0026429606753528593
+    },
+    {
+      "time": 2370,
+      "from": "choir",
+      "to": "celebrant",
+      "variance": 1.992337434167259,
+      "rms": 0.0022982234956369
+    },
+    {
+      "time": 2390,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.22867550887010898,
+      "rms": 0.0015723468641442734
+    },
+    {
+      "time": 2400,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 9.240243634719493,
+      "rms": 0.0032749948125495375
+    },
+    {
+      "time": 2410,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.07251621518436764,
+      "rms": 0.0012335090010046198
+    },
+    {
+      "time": 2440,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 3.266673450994519,
+      "rms": 0.0027385596011498927
+    },
+    {
+      "time": 2450,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.023661759911907346,
+      "rms": 0.000948540554408401
+    },
+    {
+      "time": 2540,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 9.643938923305539,
+      "rms": 0.001761122267095812
+    },
+    {
+      "time": 2550,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.3127337220718621,
+      "rms": 0.00180394896359764
+    },
+    {
+      "time": 2590,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.825413472657313,
+      "rms": 0.0020406596451485195
+    },
+    {
+      "time": 2620,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.0755935309646796,
+      "rms": 0.0011108836224661123
+    },
+    {
+      "time": 2690,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.5205742991888833,
+      "rms": 0.00254456177339675
+    },
+    {
+      "time": 2700,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.23865122958499563,
+      "rms": 0.002001926802065462
+    },
+    {
+      "time": 2740,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.9812982349786403,
+      "rms": 0.0024068937000080184
+    },
+    {
+      "time": 2750,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.2730542461693343,
+      "rms": 0.0023408214846667463
+    },
+    {
+      "time": 2860,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.206763102975569,
+      "rms": 0.002276617840707714
+    },
+    {
+      "time": 2870,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.04650588731910167,
+      "rms": 0.0010496261547828676
+    },
+    {
+      "time": 2880,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 5.145022495508606,
+      "rms": 0.00296635229609217
+    },
+    {
+      "time": 2890,
+      "from": "choir",
+      "to": "celebrant",
+      "variance": 3.6191134649383425,
+      "rms": 0.0025719722070697195
+    },
+    {
+      "time": 2900,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.0027721989338429934,
+      "rms": 0.0006674226298068294
+    },
+    {
+      "time": 3060,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.7644617531790643,
+      "rms": 0.002378696538129449
+    },
+    {
+      "time": 3070,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.03082564966542765,
+      "rms": 0.001226551037109908
+    },
+    {
+      "time": 3090,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 4.997955423887612,
+      "rms": 0.001423306029039639
+    },
+    {
+      "time": 3100,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.033924237539562356,
+      "rms": 0.0005075475667149982
+    },
+    {
+      "time": 3170,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.667826973260143,
+      "rms": 0.002150752414929912
+    },
+    {
+      "time": 3180,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.0996431997492375,
+      "rms": 0.0016785425080413066
+    },
+    {
+      "time": 3190,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.2083726314585426,
+      "rms": 0.0026403766947097657
+    },
+    {
+      "time": 3200,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.060324687397657804,
+      "rms": 0.001366092544420289
+    },
+    {
+      "time": 3240,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.982027887832388,
+      "rms": 0.002058775409607901
+    },
+    {
+      "time": 3260,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.29418251562106695,
+      "rms": 0.0016891624274583967
+    },
+    {
+      "time": 3380,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.53839965601598,
+      "rms": 0.0021989746530005957
+    },
+    {
+      "time": 3400,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.11379423436032536,
+      "rms": 0.0016372470071142732
+    },
+    {
+      "time": 3470,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.028897467198294,
+      "rms": 0.0019071584183497877
+    },
+    {
+      "time": 3480,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.021986742162714557,
+      "rms": 0.0005945297886758184
+    },
+    {
+      "time": 3550,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 26.721391374382645,
+      "rms": 0.0031079212289271078
+    },
+    {
+      "time": 3560,
+      "from": "choir",
+      "to": "celebrant",
+      "variance": 2.4853476077526913,
+      "rms": 0.0019796059304112807
+    },
+    {
+      "time": 3570,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.04482259568501358,
+      "rms": 0.0009495128843138573
+    },
+    {
+      "time": 3580,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 3.3360618331574017,
+      "rms": 0.002424579785774075
+    },
+    {
+      "time": 3590,
+      "from": "celebrant",
+      "to": "choir",
+      "variance": 5.515919010480973,
+      "rms": 0.001942601625665148
+    },
+    {
+      "time": 3610,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.4173076275680425,
+      "rms": 0.001874599787528307
+    },
+    {
+      "time": 3620,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 4.395398644860782,
+      "rms": 0.00231173322790837
+    },
+    {
+      "time": 3630,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.013711815726894866,
+      "rms": 0.0008077570318787488
+    },
+    {
+      "time": 3640,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.8656918863047518,
+      "rms": 0.001353290449581932
+    },
+    {
+      "time": 3650,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.7367106984799506,
+      "rms": 0.001808881151003107
+    },
+    {
+      "time": 3660,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 3.9160087064311107,
+      "rms": 0.0013599937497860432
+    },
+    {
+      "time": 3670,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.116917873107886,
+      "rms": 0.0014880711211163256
+    },
+    {
+      "time": 3680,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.72543291245025,
+      "rms": 0.0018904468801758396
+    },
+    {
+      "time": 3690,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.01710789714235346,
+      "rms": 0.000729555747062853
+    },
+    {
+      "time": 3810,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 6.5052602835566145,
+      "rms": 0.0027049982762245733
+    },
+    {
+      "time": 3820,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.06728679685445255,
+      "rms": 0.0015803099918002658
+    },
+    {
+      "time": 3830,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 4.29361664852618,
+      "rms": 0.003044975724972213
+    },
+    {
+      "time": 3840,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.04221543341143904,
+      "rms": 0.0006485403538977505
+    },
+    {
+      "time": 3860,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 4.570077147329977,
+      "rms": 0.001796788090458043
+    },
+    {
+      "time": 3870,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.09150389643114713,
+      "rms": 0.0012318157775771752
+    },
+    {
+      "time": 3950,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 6.603325566747046,
+      "rms": 0.003359291264830202
+    },
+    {
+      "time": 3960,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.004230124136167169,
+      "rms": 0.0006035197806649364
+    },
+    {
+      "time": 3980,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.552485776490368,
+      "rms": 0.0021365495752484987
+    },
+    {
+      "time": 4000,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.03467629203892867,
+      "rms": 0.0011606193201646377
+    },
+    {
+      "time": 4040,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 41.419523621829974,
+      "rms": 0.003276088991827077
+    },
+    {
+      "time": 4050,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.21792354986736232,
+      "rms": 0.0016987719388222699
+    },
+    {
+      "time": 4060,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.7778566509006302,
+      "rms": 0.001987183809440795
+    },
+    {
+      "time": 4070,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.28422046722011063,
+      "rms": 0.001471949321086588
+    },
+    {
+      "time": 4080,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 7.622661819056628,
+      "rms": 0.0020449747006814085
+    },
+    {
+      "time": 4090,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.5718337012661765,
+      "rms": 0.0015319668473851816
+    },
+    {
+      "time": 4120,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.018700599665944,
+      "rms": 0.0015392700455525868
+    },
+    {
+      "time": 4130,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.20758446778212647,
+      "rms": 0.0014484415887440652
+    },
+    {
+      "time": 4340,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.533642693815465,
+      "rms": 0.0015601863490469008
+    },
+    {
+      "time": 4370,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.061231650678052044,
+      "rms": 0.000876196233617893
+    },
+    {
+      "time": 4940,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.645600475506883,
+      "rms": 0.001147229318610383
+    },
+    {
+      "time": 4980,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.3529130158709662,
+      "rms": 0.0009533339158128899
+    },
+    {
+      "time": 5010,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.9678355711930922,
+      "rms": 0.0014647223480047911
+    },
+    {
+      "time": 5040,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.03477528532742808,
+      "rms": 0.0007832401192589771
+    }
+  ],
+  "timeline": [
+    {
+      "time": 0,
+      "speaker": "deacon",
+      "variance": 0.054892188279017824,
+      "rms": 0.0008203688118612573
+    },
+    {
+      "time": 10,
+      "speaker": "deacon",
+      "variance": 0.0006431615105129831,
+      "rms": 0.0005698953741551002
+    },
+    {
+      "time": 20,
+      "speaker": "deacon",
+      "variance": 0.0016259932478725472,
+      "rms": 0.0006249048257954096
+    },
+    {
+      "time": 30,
+      "speaker": "deacon",
+      "variance": 0.0002696520899822167,
+      "rms": 0.0005843204265326707
+    },
+    {
+      "time": 40,
+      "speaker": "deacon",
+      "variance": 0.0012550588814548376,
+      "rms": 0.0006189928217843406
+    },
+    {
+      "time": 50,
+      "speaker": "deacon",
+      "variance": 0.2019861814923737,
+      "rms": 0.001051105908810937
+    },
+    {
+      "time": 60,
+      "speaker": "celebrant",
+      "variance": 3.1161080779728483,
+      "rms": 0.0026397671757006974
+    },
+    {
+      "time": 70,
+      "speaker": "choir",
+      "variance": 5.0737765151353456,
+      "rms": 0.0015298179675887825
+    },
+    {
+      "time": 80,
+      "speaker": "choir",
+      "variance": 5.376100200317233,
+      "rms": 0.0025042897291084206
+    },
+    {
+      "time": 90,
+      "speaker": "choir",
+      "variance": 13.233108376049888,
+      "rms": 0.002818675320529626
+    },
+    {
+      "time": 100,
+      "speaker": "choir",
+      "variance": 15.032442014490767,
+      "rms": 0.002848325789883841
+    },
+    {
+      "time": 110,
+      "speaker": "celebrant",
+      "variance": 1.9829577122460058,
+      "rms": 0.0023126829350226144
+    },
+    {
+      "time": 120,
+      "speaker": "celebrant",
+      "variance": 1.5567820721172654,
+      "rms": 0.0017621988892059337
+    },
+    {
+      "time": 130,
+      "speaker": "choir",
+      "variance": 29.643249859564047,
+      "rms": 0.002725505941433528
+    },
+    {
+      "time": 140,
+      "speaker": "choir",
+      "variance": 8.160988026663773,
+      "rms": 0.0014894527993973609
+    },
+    {
+      "time": 150,
+      "speaker": "deacon",
+      "variance": 0.004835947868378458,
+      "rms": 0.0005067832182400335
+    },
+    {
+      "time": 160,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0004886304059821757
+    },
+    {
+      "time": 170,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00034436841915888393
+    },
+    {
+      "time": 180,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0004911601432413001
+    },
+    {
+      "time": 190,
+      "speaker": "choir",
+      "variance": 5.239824138908753,
+      "rms": 0.0015936121459770632
+    },
+    {
+      "time": 200,
+      "speaker": "deacon",
+      "variance": 0.5667445099293332,
+      "rms": 0.0014903214476112167
+    },
+    {
+      "time": 210,
+      "speaker": "deacon",
+      "variance": 0.1412732939454715,
+      "rms": 0.0007196127520106263
+    },
+    {
+      "time": 220,
+      "speaker": "deacon",
+      "variance": 0.17419531541199568,
+      "rms": 0.0011983290027933987
+    },
+    {
+      "time": 230,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00036803483562929806
+    },
+    {
+      "time": 240,
+      "speaker": "choir",
+      "variance": 19.692865560697854,
+      "rms": 0.0022768488049062343
+    },
+    {
+      "time": 250,
+      "speaker": "celebrant",
+      "variance": 4.967596920384226,
+      "rms": 0.0015672293230528497
+    },
+    {
+      "time": 260,
+      "speaker": "deacon",
+      "variance": 0.9663426372133089,
+      "rms": 0.0012393634592009857
+    },
+    {
+      "time": 270,
+      "speaker": "deacon",
+      "variance": 0.0161854104247023,
+      "rms": 0.0008279621326463816
+    },
+    {
+      "time": 280,
+      "speaker": "choir",
+      "variance": 16.116905554511803,
+      "rms": 0.002616670532283165
+    },
+    {
+      "time": 290,
+      "speaker": "deacon",
+      "variance": 0.5658479109690773,
+      "rms": 0.0014821462019927643
+    },
+    {
+      "time": 300,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0003632449573541166
+    },
+    {
+      "time": 310,
+      "speaker": "choir",
+      "variance": 6.665206849244914,
+      "rms": 0.002095745893044202
+    },
+    {
+      "time": 320,
+      "speaker": "deacon",
+      "variance": 0.01234218882513062,
+      "rms": 0.0010222615501188808
+    },
+    {
+      "time": 330,
+      "speaker": "deacon",
+      "variance": 1.11792530246092,
+      "rms": 0.0012757909382981685
+    },
+    {
+      "time": 340,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00034744179724807673
+    },
+    {
+      "time": 350,
+      "speaker": "choir",
+      "variance": 5.587927050183321,
+      "rms": 0.0025723071237267704
+    },
+    {
+      "time": 360,
+      "speaker": "deacon",
+      "variance": 0.051245024922368355,
+      "rms": 0.0011209308483910026
+    },
+    {
+      "time": 370,
+      "speaker": "deacon",
+      "variance": 0.40719316334181616,
+      "rms": 0.0011194274153489225
+    },
+    {
+      "time": 380,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.000311279858285212
+    },
+    {
+      "time": 390,
+      "speaker": "deacon",
+      "variance": 0.04804676574422936,
+      "rms": 0.0013552437617957984
+    },
+    {
+      "time": 400,
+      "speaker": "deacon",
+      "variance": 1.1977441625467613,
+      "rms": 0.001660642024515273
+    },
+    {
+      "time": 410,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0003439856699498912
+    },
+    {
+      "time": 420,
+      "speaker": "deacon",
+      "variance": 0.012575217807798146,
+      "rms": 0.0010318700657927279
+    },
+    {
+      "time": 430,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0003193071658346538
+    },
+    {
+      "time": 440,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0002496294926377051
+    },
+    {
+      "time": 450,
+      "speaker": "deacon",
+      "variance": 1.16942710646962,
+      "rms": 0.0012041824533132268
+    },
+    {
+      "time": 460,
+      "speaker": "deacon",
+      "variance": 0.12436973533557082,
+      "rms": 0.0009931622287028346
+    },
+    {
+      "time": 470,
+      "speaker": "celebrant",
+      "variance": 1.5921316208388048,
+      "rms": 0.001571263195629738
+    },
+    {
+      "time": 480,
+      "speaker": "deacon",
+      "variance": 0.007656961441488387,
+      "rms": 0.0006193152611990295
+    },
+    {
+      "time": 490,
+      "speaker": "deacon",
+      "variance": 0.26856153091514223,
+      "rms": 0.0011144313661199626
+    },
+    {
+      "time": 500,
+      "speaker": "deacon",
+      "variance": 0.6593292631734846,
+      "rms": 0.0015417350209552996
+    },
+    {
+      "time": 510,
+      "speaker": "deacon",
+      "variance": 0.46998987086098887,
+      "rms": 0.0010812659505609564
+    },
+    {
+      "time": 520,
+      "speaker": "deacon",
+      "variance": 0.01937004675256662,
+      "rms": 0.0005295973771877293
+    },
+    {
+      "time": 530,
+      "speaker": "deacon",
+      "variance": 0.0005770039686198712,
+      "rms": 0.0006224306696799877
+    },
+    {
+      "time": 540,
+      "speaker": "deacon",
+      "variance": 0.043616764759226864,
+      "rms": 0.0008002549914142897
+    },
+    {
+      "time": 550,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00047128796207998575
+    },
+    {
+      "time": 560,
+      "speaker": "celebrant",
+      "variance": 1.5736401019145272,
+      "rms": 0.001402964319818413
+    },
+    {
+      "time": 570,
+      "speaker": "celebrant",
+      "variance": 2.6051061240569875,
+      "rms": 0.001911714339537106
+    },
+    {
+      "time": 580,
+      "speaker": "deacon",
+      "variance": 0.4402153192075168,
+      "rms": 0.0012043292042421716
+    },
+    {
+      "time": 590,
+      "speaker": "deacon",
+      "variance": 0.07286083284055722,
+      "rms": 0.001333599878655914
+    },
+    {
+      "time": 600,
+      "speaker": "deacon",
+      "variance": 1.1544524614636218,
+      "rms": 0.0015175488991036594
+    },
+    {
+      "time": 610,
+      "speaker": "deacon",
+      "variance": 0.19556112224645592,
+      "rms": 0.001533323717081523
+    },
+    {
+      "time": 620,
+      "speaker": "deacon",
+      "variance": 1.3165877503169783,
+      "rms": 0.0015290349417061689
+    },
+    {
+      "time": 630,
+      "speaker": "deacon",
+      "variance": 0.9676810591569303,
+      "rms": 0.0013680695548053407
+    },
+    {
+      "time": 640,
+      "speaker": "deacon",
+      "variance": 0.8877713429265324,
+      "rms": 0.0014222194206864516
+    },
+    {
+      "time": 650,
+      "speaker": "deacon",
+      "variance": 0.3457910609511801,
+      "rms": 0.0011279456182344916
+    },
+    {
+      "time": 660,
+      "speaker": "deacon",
+      "variance": 0.1600002142582432,
+      "rms": 0.0013397203864460219
+    },
+    {
+      "time": 670,
+      "speaker": "deacon",
+      "variance": 0.09235486415102148,
+      "rms": 0.0012124775092707664
+    },
+    {
+      "time": 680,
+      "speaker": "deacon",
+      "variance": 0.16183829581875447,
+      "rms": 0.0009659281486953395
+    },
+    {
+      "time": 690,
+      "speaker": "deacon",
+      "variance": 0.19204619575931944,
+      "rms": 0.0014466892329457839
+    },
+    {
+      "time": 700,
+      "speaker": "deacon",
+      "variance": 0.6039882312298711,
+      "rms": 0.0016271156541179986
+    },
+    {
+      "time": 710,
+      "speaker": "deacon",
+      "variance": 0.02325568670146883,
+      "rms": 0.0009476316066841617
+    },
+    {
+      "time": 720,
+      "speaker": "choir",
+      "variance": 8.542700562473765,
+      "rms": 0.0032521840853902335
+    },
+    {
+      "time": 730,
+      "speaker": "deacon",
+      "variance": 0.039559443127969586,
+      "rms": 0.0017197164922255965
+    },
+    {
+      "time": 740,
+      "speaker": "deacon",
+      "variance": 0.011283728221230355,
+      "rms": 0.0009072667485174606
+    },
+    {
+      "time": 750,
+      "speaker": "deacon",
+      "variance": 0.05647769490333116,
+      "rms": 0.001105900143809217
+    },
+    {
+      "time": 760,
+      "speaker": "deacon",
+      "variance": 0.05796647169728821,
+      "rms": 0.0012151272781448362
+    },
+    {
+      "time": 770,
+      "speaker": "deacon",
+      "variance": 0.23209361455675853,
+      "rms": 0.001900601603098642
+    },
+    {
+      "time": 780,
+      "speaker": "choir",
+      "variance": 5.27418589298056,
+      "rms": 0.002209224470771266
+    },
+    {
+      "time": 790,
+      "speaker": "celebrant",
+      "variance": 1.8714778557158471,
+      "rms": 0.0018086505934513386
+    },
+    {
+      "time": 800,
+      "speaker": "celebrant",
+      "variance": 1.623178641311665,
+      "rms": 0.0021300572000987395
+    },
+    {
+      "time": 810,
+      "speaker": "celebrant",
+      "variance": 3.6757472647701945,
+      "rms": 0.0020186740597043142
+    },
+    {
+      "time": 820,
+      "speaker": "deacon",
+      "variance": 0.052887490914826245,
+      "rms": 0.0013073808927195685
+    },
+    {
+      "time": 830,
+      "speaker": "celebrant",
+      "variance": 1.707061354748934,
+      "rms": 0.0018548512842075987
+    },
+    {
+      "time": 840,
+      "speaker": "deacon",
+      "variance": 0.11400908528055209,
+      "rms": 0.0016484365044253393
+    },
+    {
+      "time": 850,
+      "speaker": "deacon",
+      "variance": 0.3159412944657428,
+      "rms": 0.0015713607662651338
+    },
+    {
+      "time": 860,
+      "speaker": "deacon",
+      "variance": 0.035587434967838526,
+      "rms": 0.0010531047748594006
+    },
+    {
+      "time": 870,
+      "speaker": "celebrant",
+      "variance": 4.187365851647848,
+      "rms": 0.0019662127485031915
+    },
+    {
+      "time": 880,
+      "speaker": "deacon",
+      "variance": 0.016282341217423054,
+      "rms": 0.0007334952536172193
+    },
+    {
+      "time": 890,
+      "speaker": "choir",
+      "variance": 13.447695490504113,
+      "rms": 0.0031574662678708564
+    },
+    {
+      "time": 900,
+      "speaker": "choir",
+      "variance": 10.76782522946687,
+      "rms": 0.0034153547345767065
+    },
+    {
+      "time": 910,
+      "speaker": "choir",
+      "variance": 5.603995926248554,
+      "rms": 0.0025702415922093354
+    },
+    {
+      "time": 920,
+      "speaker": "deacon",
+      "variance": 0.5743291992675102,
+      "rms": 0.0023309995034989776
+    },
+    {
+      "time": 930,
+      "speaker": "celebrant",
+      "variance": 2.3266267355484973,
+      "rms": 0.0026921924122101735
+    },
+    {
+      "time": 940,
+      "speaker": "choir",
+      "variance": 5.0536022772055835,
+      "rms": 0.0020315566735326896
+    },
+    {
+      "time": 950,
+      "speaker": "deacon",
+      "variance": 0.9424169618284592,
+      "rms": 0.0019207083506358868
+    },
+    {
+      "time": 960,
+      "speaker": "celebrant",
+      "variance": 1.9605728330858017,
+      "rms": 0.0010179483619001185
+    },
+    {
+      "time": 970,
+      "speaker": "deacon",
+      "variance": 0.44888522824081706,
+      "rms": 0.002081790980304275
+    },
+    {
+      "time": 980,
+      "speaker": "deacon",
+      "variance": 1.4913625176316507,
+      "rms": 0.0015110792104255433
+    },
+    {
+      "time": 990,
+      "speaker": "deacon",
+      "variance": 0.033757958654123364,
+      "rms": 0.000919526838875735
+    },
+    {
+      "time": 1000,
+      "speaker": "deacon",
+      "variance": 0.035390172888063814,
+      "rms": 0.000881201205721963
+    },
+    {
+      "time": 1010,
+      "speaker": "deacon",
+      "variance": 0.48732532517236943,
+      "rms": 0.0008260193918638403
+    },
+    {
+      "time": 1020,
+      "speaker": "deacon",
+      "variance": 0.06577857452670463,
+      "rms": 0.0010489238687044066
+    },
+    {
+      "time": 1030,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00011163047736758422
+    },
+    {
+      "time": 1040,
+      "speaker": "choir",
+      "variance": 19.350545337571184,
+      "rms": 0.0037824299872399997
+    },
+    {
+      "time": 1050,
+      "speaker": "deacon",
+      "variance": 0.6754554579403813,
+      "rms": 0.0019467266482457433
+    },
+    {
+      "time": 1060,
+      "speaker": "choir",
+      "variance": 6.549570086963907,
+      "rms": 0.00271377049769059
+    },
+    {
+      "time": 1070,
+      "speaker": "deacon",
+      "variance": 1.2120797804594543,
+      "rms": 0.00232419634609484
+    },
+    {
+      "time": 1080,
+      "speaker": "celebrant",
+      "variance": 3.2294665881332665,
+      "rms": 0.0024713644806095697
+    },
+    {
+      "time": 1090,
+      "speaker": "deacon",
+      "variance": 0.8348378049742058,
+      "rms": 0.002027011784088207
+    },
+    {
+      "time": 1100,
+      "speaker": "deacon",
+      "variance": 0.28258224104829727,
+      "rms": 0.001895785600828058
+    },
+    {
+      "time": 1110,
+      "speaker": "celebrant",
+      "variance": 3.109284284274708,
+      "rms": 0.0024699542274694212
+    },
+    {
+      "time": 1120,
+      "speaker": "deacon",
+      "variance": 0.8173874720418716,
+      "rms": 0.002229160805034945
+    },
+    {
+      "time": 1130,
+      "speaker": "choir",
+      "variance": 6.799830901664083,
+      "rms": 0.003121577117215121
+    },
+    {
+      "time": 1140,
+      "speaker": "deacon",
+      "variance": 0.16956778599050795,
+      "rms": 0.0017160233800003683
+    },
+    {
+      "time": 1150,
+      "speaker": "deacon",
+      "variance": 0.23152238888299453,
+      "rms": 0.0010655925468608253
+    },
+    {
+      "time": 1160,
+      "speaker": "choir",
+      "variance": 28.920825348581264,
+      "rms": 0.004369506895757637
+    },
+    {
+      "time": 1170,
+      "speaker": "deacon",
+      "variance": 0.8595712875263597,
+      "rms": 0.0019970626999991016
+    },
+    {
+      "time": 1180,
+      "speaker": "deacon",
+      "variance": 0.06710977984483836,
+      "rms": 0.0016802486033887431
+    },
+    {
+      "time": 1190,
+      "speaker": "deacon",
+      "variance": 1.109707079793495,
+      "rms": 0.002556943689858018
+    },
+    {
+      "time": 1200,
+      "speaker": "deacon",
+      "variance": 1.1409740409855598,
+      "rms": 0.0017767326837067263
+    },
+    {
+      "time": 1210,
+      "speaker": "deacon",
+      "variance": 0.3541791047385935,
+      "rms": 0.0017797107811267782
+    },
+    {
+      "time": 1220,
+      "speaker": "deacon",
+      "variance": 0.5975193694107279,
+      "rms": 0.0018013058128180928
+    },
+    {
+      "time": 1230,
+      "speaker": "deacon",
+      "variance": 0.21087249068901323,
+      "rms": 0.0008362770549313875
+    },
+    {
+      "time": 1240,
+      "speaker": "choir",
+      "variance": 42.29974447677338,
+      "rms": 0.0022922444880791692
+    },
+    {
+      "time": 1250,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0004147507892729076
+    },
+    {
+      "time": 1260,
+      "speaker": "deacon",
+      "variance": 1.2341813917417526,
+      "rms": 0.0021816395876794927
+    },
+    {
+      "time": 1270,
+      "speaker": "deacon",
+      "variance": 0.08060998246762088,
+      "rms": 0.0006247411555405885
+    },
+    {
+      "time": 1280,
+      "speaker": "deacon",
+      "variance": 0.7429754847114368,
+      "rms": 0.001613714673185133
+    },
+    {
+      "time": 1290,
+      "speaker": "deacon",
+      "variance": 0.17397232294406756,
+      "rms": 0.0016909768851507522
+    },
+    {
+      "time": 1300,
+      "speaker": "deacon",
+      "variance": 0.06724516084573537,
+      "rms": 0.0008414275471610624
+    },
+    {
+      "time": 1310,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0003551895314236011
+    },
+    {
+      "time": 1320,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00006802949093676286
+    },
+    {
+      "time": 1330,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0002296336767374757
+    },
+    {
+      "time": 1340,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0004772534229807751
+    },
+    {
+      "time": 1350,
+      "speaker": "deacon",
+      "variance": 0.032066273478677985,
+      "rms": 0.000534577266251677
+    },
+    {
+      "time": 1360,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00023920680258962288
+    },
+    {
+      "time": 1370,
+      "speaker": "deacon",
+      "variance": 0.03270381582897804,
+      "rms": 0.0006184382794118481
+    },
+    {
+      "time": 1380,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00033902873004529587
+    },
+    {
+      "time": 1390,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00009213143135676284
+    },
+    {
+      "time": 1400,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0004608765008481329
+    },
+    {
+      "time": 1410,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00048562429052558654
+    },
+    {
+      "time": 1420,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0004945662780321569
+    },
+    {
+      "time": 1430,
+      "speaker": "deacon",
+      "variance": 0.25768634839842874,
+      "rms": 0.000767469658447516
+    },
+    {
+      "time": 1440,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0003865929499510375
+    },
+    {
+      "time": 1450,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.000373324546368104
+    },
+    {
+      "time": 1460,
+      "speaker": "deacon",
+      "variance": 0.08693693845729335,
+      "rms": 0.0008095964318066153
+    },
+    {
+      "time": 1470,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00037810465651935075
+    },
+    {
+      "time": 1480,
+      "speaker": "deacon",
+      "variance": 0.09628505170045085,
+      "rms": 0.0007046876194338771
+    },
+    {
+      "time": 1490,
+      "speaker": "deacon",
+      "variance": 0.21634349609239462,
+      "rms": 0.0005326858547167911
+    },
+    {
+      "time": 1500,
+      "speaker": "deacon",
+      "variance": 0.9772388201789644,
+      "rms": 0.001332331209725538
+    },
+    {
+      "time": 1510,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00028974909077054056
+    },
+    {
+      "time": 1520,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00047606813885663367
+    },
+    {
+      "time": 1530,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.000055116928717213057
+    },
+    {
+      "time": 1540,
+      "speaker": "deacon",
+      "variance": 0.236143044565005,
+      "rms": 0.0006532650272686834
+    },
+    {
+      "time": 1550,
+      "speaker": "deacon",
+      "variance": 0.3056050417762157,
+      "rms": 0.0006889829991784848
+    },
+    {
+      "time": 1560,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00039593698182498297
+    },
+    {
+      "time": 1570,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00025237178163041457
+    },
+    {
+      "time": 1580,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00023243398619140929
+    },
+    {
+      "time": 1590,
+      "speaker": "deacon",
+      "variance": 1.2001990431771183,
+      "rms": 0.0017205575411321226
+    },
+    {
+      "time": 1600,
+      "speaker": "celebrant",
+      "variance": 3.2946466348546717,
+      "rms": 0.0022190341344519586
+    },
+    {
+      "time": 1610,
+      "speaker": "deacon",
+      "variance": 0.20288374714031243,
+      "rms": 0.0016079201928927572
+    },
+    {
+      "time": 1620,
+      "speaker": "deacon",
+      "variance": 0.04285155621519673,
+      "rms": 0.0009142164646131163
+    },
+    {
+      "time": 1630,
+      "speaker": "deacon",
+      "variance": 0.7539966591043612,
+      "rms": 0.0024166128348413756
+    },
+    {
+      "time": 1640,
+      "speaker": "deacon",
+      "variance": 0.1591052169864502,
+      "rms": 0.0016592592792378708
+    },
+    {
+      "time": 1650,
+      "speaker": "deacon",
+      "variance": 0.20338066040383215,
+      "rms": 0.00128695583838974
+    },
+    {
+      "time": 1660,
+      "speaker": "deacon",
+      "variance": 0.9204933243039141,
+      "rms": 0.0016133466703858773
+    },
+    {
+      "time": 1670,
+      "speaker": "deacon",
+      "variance": 1.439342377688386,
+      "rms": 0.0015281322140791667
+    },
+    {
+      "time": 1680,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00007475310885669541
+    },
+    {
+      "time": 1690,
+      "speaker": "deacon",
+      "variance": 0.4492817883761759,
+      "rms": 0.0013135093322154629
+    },
+    {
+      "time": 1700,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00006512522410324276
+    },
+    {
+      "time": 1710,
+      "speaker": "deacon",
+      "variance": 0.05116395260633308,
+      "rms": 0.0007893291761215491
+    },
+    {
+      "time": 1720,
+      "speaker": "deacon",
+      "variance": 0.01851058891951647,
+      "rms": 0.0005597444474038542
+    },
+    {
+      "time": 1730,
+      "speaker": "deacon",
+      "variance": 0.2120374171122844,
+      "rms": 0.0010056263189249736
+    },
+    {
+      "time": 1740,
+      "speaker": "deacon",
+      "variance": 0.09244242550021013,
+      "rms": 0.0011074873876211527
+    },
+    {
+      "time": 1750,
+      "speaker": "celebrant",
+      "variance": 1.9841514867723102,
+      "rms": 0.001511459567501888
+    },
+    {
+      "time": 1760,
+      "speaker": "deacon",
+      "variance": 0.02658452490706978,
+      "rms": 0.0005210540359667615
+    },
+    {
+      "time": 1770,
+      "speaker": "deacon",
+      "variance": 0.9696312812413735,
+      "rms": 0.0015719195060586652
+    },
+    {
+      "time": 1780,
+      "speaker": "deacon",
+      "variance": 0.014765303676904554,
+      "rms": 0.0007296565953076879
+    },
+    {
+      "time": 1790,
+      "speaker": "celebrant",
+      "variance": 4.321385135604549,
+      "rms": 0.0017462236412345835
+    },
+    {
+      "time": 1800,
+      "speaker": "deacon",
+      "variance": 0.02219002859576736,
+      "rms": 0.0005445074636013039
+    },
+    {
+      "time": 1810,
+      "speaker": "celebrant",
+      "variance": 2.157620938289582,
+      "rms": 0.0010119741398030293
+    },
+    {
+      "time": 1820,
+      "speaker": "deacon",
+      "variance": 0.028843655573524366,
+      "rms": 0.0010457271448446616
+    },
+    {
+      "time": 1830,
+      "speaker": "deacon",
+      "variance": 1.0141393629788669,
+      "rms": 0.002781254833202601
+    },
+    {
+      "time": 1840,
+      "speaker": "deacon",
+      "variance": 0.7704774761533524,
+      "rms": 0.0013309462561853877
+    },
+    {
+      "time": 1850,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00030841809333848925
+    },
+    {
+      "time": 1860,
+      "speaker": "deacon",
+      "variance": 0.2524945676582152,
+      "rms": 0.0007674877676366281
+    },
+    {
+      "time": 1870,
+      "speaker": "deacon",
+      "variance": 0.5002029599453234,
+      "rms": 0.001573515164007479
+    },
+    {
+      "time": 1880,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00007836419237735498
+    },
+    {
+      "time": 1890,
+      "speaker": "deacon",
+      "variance": 0.7041743687492953,
+      "rms": 0.0013167541755899732
+    },
+    {
+      "time": 1900,
+      "speaker": "deacon",
+      "variance": 0.022559178596385884,
+      "rms": 0.0009689321874251358
+    },
+    {
+      "time": 1910,
+      "speaker": "deacon",
+      "variance": 0.0526732097594724,
+      "rms": 0.0009622158471560014
+    },
+    {
+      "time": 1920,
+      "speaker": "choir",
+      "variance": 6.949174659721859,
+      "rms": 0.00241487785450334
+    },
+    {
+      "time": 1930,
+      "speaker": "deacon",
+      "variance": 0.732323765196599,
+      "rms": 0.0016931382752025143
+    },
+    {
+      "time": 1940,
+      "speaker": "deacon",
+      "variance": 0.9232417997357879,
+      "rms": 0.0016756035543109137
+    },
+    {
+      "time": 1950,
+      "speaker": "celebrant",
+      "variance": 1.570783790417303,
+      "rms": 0.0015129911268784468
+    },
+    {
+      "time": 1960,
+      "speaker": "deacon",
+      "variance": 0.07660885605387803,
+      "rms": 0.0009702327536167319
+    },
+    {
+      "time": 1970,
+      "speaker": "deacon",
+      "variance": 0.9247372801369607,
+      "rms": 0.0018346498252444906
+    },
+    {
+      "time": 1980,
+      "speaker": "deacon",
+      "variance": 0.28732929664713946,
+      "rms": 0.001464500640284228
+    },
+    {
+      "time": 1990,
+      "speaker": "celebrant",
+      "variance": 2.917144953516987,
+      "rms": 0.0017922120712243082
+    },
+    {
+      "time": 2000,
+      "speaker": "deacon",
+      "variance": 0.5025900798031916,
+      "rms": 0.0017059164563992943
+    },
+    {
+      "time": 2010,
+      "speaker": "celebrant",
+      "variance": 1.8170774636097797,
+      "rms": 0.00186473687426599
+    },
+    {
+      "time": 2020,
+      "speaker": "choir",
+      "variance": 6.380175208296198,
+      "rms": 0.002839146413478998
+    },
+    {
+      "time": 2030,
+      "speaker": "choir",
+      "variance": 19.470830004453532,
+      "rms": 0.002820417751545376
+    },
+    {
+      "time": 2040,
+      "speaker": "deacon",
+      "variance": 0.7634263881723607,
+      "rms": 0.0017584393743693882
+    },
+    {
+      "time": 2050,
+      "speaker": "choir",
+      "variance": 7.595502384823316,
+      "rms": 0.002719589968998449
+    },
+    {
+      "time": 2060,
+      "speaker": "deacon",
+      "variance": 0.3768465362256703,
+      "rms": 0.0019468905361358071
+    },
+    {
+      "time": 2070,
+      "speaker": "choir",
+      "variance": 8.967314626621516,
+      "rms": 0.002756899441848141
+    },
+    {
+      "time": 2080,
+      "speaker": "celebrant",
+      "variance": 2.210750391427263,
+      "rms": 0.002875007781338623
+    },
+    {
+      "time": 2090,
+      "speaker": "celebrant",
+      "variance": 3.4551362751915455,
+      "rms": 0.002153420423827718
+    },
+    {
+      "time": 2100,
+      "speaker": "celebrant",
+      "variance": 3.0151091014606726,
+      "rms": 0.0020570508846880268
+    },
+    {
+      "time": 2110,
+      "speaker": "deacon",
+      "variance": 0.16567633459543343,
+      "rms": 0.00110829719237673
+    },
+    {
+      "time": 2120,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0004457908989760456
+    },
+    {
+      "time": 2130,
+      "speaker": "deacon",
+      "variance": 0.04520070131987201,
+      "rms": 0.0010209273948583034
+    },
+    {
+      "time": 2140,
+      "speaker": "deacon",
+      "variance": 0.07335401935807373,
+      "rms": 0.0008838403885031645
+    },
+    {
+      "time": 2150,
+      "speaker": "deacon",
+      "variance": 0.0020211113213057515,
+      "rms": 0.0005567831964761638
+    },
+    {
+      "time": 2160,
+      "speaker": "deacon",
+      "variance": 0.12619003532985154,
+      "rms": 0.0012279049403355238
+    },
+    {
+      "time": 2170,
+      "speaker": "deacon",
+      "variance": 0.5524146530474082,
+      "rms": 0.0019200189786889785
+    },
+    {
+      "time": 2180,
+      "speaker": "deacon",
+      "variance": 0.16922898808916775,
+      "rms": 0.0017476539756034958
+    },
+    {
+      "time": 2190,
+      "speaker": "choir",
+      "variance": 16.799354703218793,
+      "rms": 0.002952470177833128
+    },
+    {
+      "time": 2200,
+      "speaker": "deacon",
+      "variance": 0.7639769102691405,
+      "rms": 0.0013598331773258623
+    },
+    {
+      "time": 2210,
+      "speaker": "deacon",
+      "variance": 0.8154345127632441,
+      "rms": 0.0017856718618481304
+    },
+    {
+      "time": 2220,
+      "speaker": "choir",
+      "variance": 18.507903729539798,
+      "rms": 0.0025219080981031244
+    },
+    {
+      "time": 2230,
+      "speaker": "deacon",
+      "variance": 0.15472546996321157,
+      "rms": 0.0015367567966239775
+    },
+    {
+      "time": 2240,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00012073926309913102
+    },
+    {
+      "time": 2250,
+      "speaker": "celebrant",
+      "variance": 2.5400194722864526,
+      "rms": 0.0018454141386414589
+    },
+    {
+      "time": 2260,
+      "speaker": "deacon",
+      "variance": 0.1787574566665596,
+      "rms": 0.0013441965861430132
+    },
+    {
+      "time": 2270,
+      "speaker": "deacon",
+      "variance": 0.22109170492377772,
+      "rms": 0.0011380551233055732
+    },
+    {
+      "time": 2280,
+      "speaker": "deacon",
+      "variance": 0.0868472469224826,
+      "rms": 0.0011012673554599553
+    },
+    {
+      "time": 2290,
+      "speaker": "deacon",
+      "variance": 0.9179947515519472,
+      "rms": 0.00200194366791989
+    },
+    {
+      "time": 2300,
+      "speaker": "deacon",
+      "variance": 0.5399974317826928,
+      "rms": 0.0016169156054644384
+    },
+    {
+      "time": 2310,
+      "speaker": "deacon",
+      "variance": 0.16350912830540468,
+      "rms": 0.0022867335828780644
+    },
+    {
+      "time": 2320,
+      "speaker": "celebrant",
+      "variance": 2.105689422738214,
+      "rms": 0.0025412617697720898
+    },
+    {
+      "time": 2330,
+      "speaker": "celebrant",
+      "variance": 2.56190939143145,
+      "rms": 0.0029710294850980312
+    },
+    {
+      "time": 2340,
+      "speaker": "deacon",
+      "variance": 0.07458868115547806,
+      "rms": 0.0010827870297041558
+    },
+    {
+      "time": 2350,
+      "speaker": "deacon",
+      "variance": 0.8163847456377378,
+      "rms": 0.001758572766187092
+    },
+    {
+      "time": 2360,
+      "speaker": "choir",
+      "variance": 7.478177423964221,
+      "rms": 0.0026429606753528593
+    },
+    {
+      "time": 2370,
+      "speaker": "celebrant",
+      "variance": 1.992337434167259,
+      "rms": 0.0022982234956369
+    },
+    {
+      "time": 2380,
+      "speaker": "celebrant",
+      "variance": 2.3253390662557836,
+      "rms": 0.002230692382101731
+    },
+    {
+      "time": 2390,
+      "speaker": "deacon",
+      "variance": 0.22867550887010898,
+      "rms": 0.0015723468641442734
+    },
+    {
+      "time": 2400,
+      "speaker": "choir",
+      "variance": 9.240243634719493,
+      "rms": 0.0032749948125495375
+    },
+    {
+      "time": 2410,
+      "speaker": "deacon",
+      "variance": 0.07251621518436764,
+      "rms": 0.0012335090010046198
+    },
+    {
+      "time": 2420,
+      "speaker": "deacon",
+      "variance": 0.11570389328405978,
+      "rms": 0.0016122045709893035
+    },
+    {
+      "time": 2430,
+      "speaker": "deacon",
+      "variance": 0.9694268999661446,
+      "rms": 0.001694947364063093
+    },
+    {
+      "time": 2440,
+      "speaker": "celebrant",
+      "variance": 3.266673450994519,
+      "rms": 0.0027385596011498927
+    },
+    {
+      "time": 2450,
+      "speaker": "deacon",
+      "variance": 0.023661759911907346,
+      "rms": 0.000948540554408401
+    },
+    {
+      "time": 2460,
+      "speaker": "deacon",
+      "variance": 0.3209748077540236,
+      "rms": 0.0018042764025374186
+    },
+    {
+      "time": 2470,
+      "speaker": "deacon",
+      "variance": 0.05079625261510807,
+      "rms": 0.0006629711117527235
+    },
+    {
+      "time": 2480,
+      "speaker": "deacon",
+      "variance": 0.44676090783301836,
+      "rms": 0.0012420176508283786
+    },
+    {
+      "time": 2490,
+      "speaker": "deacon",
+      "variance": 0.8764534843256176,
+      "rms": 0.0022477276174287385
+    },
+    {
+      "time": 2500,
+      "speaker": "deacon",
+      "variance": 1.1260352992958182,
+      "rms": 0.0017698417861999316
+    },
+    {
+      "time": 2510,
+      "speaker": "deacon",
+      "variance": 0.3678244533971355,
+      "rms": 0.0014370371443450552
+    },
+    {
+      "time": 2520,
+      "speaker": "deacon",
+      "variance": 0.31837399672219335,
+      "rms": 0.0011496448407588514
+    },
+    {
+      "time": 2530,
+      "speaker": "deacon",
+      "variance": 0.5165517787637081,
+      "rms": 0.0013821448921563547
+    },
+    {
+      "time": 2540,
+      "speaker": "choir",
+      "variance": 9.643938923305539,
+      "rms": 0.001761122267095812
+    },
+    {
+      "time": 2550,
+      "speaker": "deacon",
+      "variance": 0.3127337220718621,
+      "rms": 0.00180394896359764
+    },
+    {
+      "time": 2560,
+      "speaker": "deacon",
+      "variance": 0.2648040435458126,
+      "rms": 0.0019415502140276986
+    },
+    {
+      "time": 2570,
+      "speaker": "deacon",
+      "variance": 0.3704647401423107,
+      "rms": 0.0017567339219967798
+    },
+    {
+      "time": 2580,
+      "speaker": "deacon",
+      "variance": 1.0274933666497155,
+      "rms": 0.002591261766193132
+    },
+    {
+      "time": 2590,
+      "speaker": "celebrant",
+      "variance": 2.825413472657313,
+      "rms": 0.0020406596451485195
+    },
+    {
+      "time": 2600,
+      "speaker": "celebrant",
+      "variance": 3.255045461956851,
+      "rms": 0.002101872432760653
+    },
+    {
+      "time": 2610,
+      "speaker": "celebrant",
+      "variance": 4.6070193042480545,
+      "rms": 0.0029456898635810557
+    },
+    {
+      "time": 2620,
+      "speaker": "deacon",
+      "variance": 0.0755935309646796,
+      "rms": 0.0011108836224661123
+    },
+    {
+      "time": 2630,
+      "speaker": "deacon",
+      "variance": 1.0624104379483834,
+      "rms": 0.001491167912083872
+    },
+    {
+      "time": 2640,
+      "speaker": "deacon",
+      "variance": 0.8328724129885254,
+      "rms": 0.0016385078897813098
+    },
+    {
+      "time": 2650,
+      "speaker": "deacon",
+      "variance": 0.48555873258908455,
+      "rms": 0.0010737384393522647
+    },
+    {
+      "time": 2660,
+      "speaker": "deacon",
+      "variance": 0.08766675648993728,
+      "rms": 0.0017739265909881533
+    },
+    {
+      "time": 2670,
+      "speaker": "deacon",
+      "variance": 0.8095213799312767,
+      "rms": 0.002473336273828676
+    },
+    {
+      "time": 2680,
+      "speaker": "deacon",
+      "variance": 0.8882268920146543,
+      "rms": 0.0014315383147674653
+    },
+    {
+      "time": 2690,
+      "speaker": "celebrant",
+      "variance": 2.5205742991888833,
+      "rms": 0.00254456177339675
+    },
+    {
+      "time": 2700,
+      "speaker": "deacon",
+      "variance": 0.23865122958499563,
+      "rms": 0.002001926802065462
+    },
+    {
+      "time": 2710,
+      "speaker": "deacon",
+      "variance": 0.041169750147557006,
+      "rms": 0.0015966983173460896
+    },
+    {
+      "time": 2720,
+      "speaker": "deacon",
+      "variance": 0.2596255962647676,
+      "rms": 0.0018910718609618062
+    },
+    {
+      "time": 2730,
+      "speaker": "deacon",
+      "variance": 0.6313699129218898,
+      "rms": 0.002140930599521788
+    },
+    {
+      "time": 2740,
+      "speaker": "celebrant",
+      "variance": 2.9812982349786403,
+      "rms": 0.0024068937000080184
+    },
+    {
+      "time": 2750,
+      "speaker": "deacon",
+      "variance": 0.2730542461693343,
+      "rms": 0.0023408214846667463
+    },
+    {
+      "time": 2760,
+      "speaker": "deacon",
+      "variance": 0.08524838053269945,
+      "rms": 0.0016550116014015818
+    },
+    {
+      "time": 2770,
+      "speaker": "deacon",
+      "variance": 0.19032161671241452,
+      "rms": 0.0010993857306655984
+    },
+    {
+      "time": 2780,
+      "speaker": "deacon",
+      "variance": 0.9238309770752375,
+      "rms": 0.0028039982411736056
+    },
+    {
+      "time": 2790,
+      "speaker": "deacon",
+      "variance": 0.07450897817030477,
+      "rms": 0.0011919714973673689
+    },
+    {
+      "time": 2800,
+      "speaker": "deacon",
+      "variance": 0.28432628352322353,
+      "rms": 0.001957133614036556
+    },
+    {
+      "time": 2810,
+      "speaker": "deacon",
+      "variance": 0.042778067900751296,
+      "rms": 0.0010909173448734745
+    },
+    {
+      "time": 2820,
+      "speaker": "deacon",
+      "variance": 0.030818226645645572,
+      "rms": 0.0006128869513864437
+    },
+    {
+      "time": 2830,
+      "speaker": "deacon",
+      "variance": 0.17841311417654562,
+      "rms": 0.001005555330913207
+    },
+    {
+      "time": 2840,
+      "speaker": "deacon",
+      "variance": 0.41957838544729187,
+      "rms": 0.0014397269898643744
+    },
+    {
+      "time": 2850,
+      "speaker": "deacon",
+      "variance": 0.3736763695093418,
+      "rms": 0.0018274758277620868
+    },
+    {
+      "time": 2860,
+      "speaker": "celebrant",
+      "variance": 2.206763102975569,
+      "rms": 0.002276617840707714
+    },
+    {
+      "time": 2870,
+      "speaker": "deacon",
+      "variance": 0.04650588731910167,
+      "rms": 0.0010496261547828676
+    },
+    {
+      "time": 2880,
+      "speaker": "choir",
+      "variance": 5.145022495508606,
+      "rms": 0.00296635229609217
+    },
+    {
+      "time": 2890,
+      "speaker": "celebrant",
+      "variance": 3.6191134649383425,
+      "rms": 0.0025719722070697195
+    },
+    {
+      "time": 2900,
+      "speaker": "deacon",
+      "variance": 0.0027721989338429934,
+      "rms": 0.0006674226298068294
+    },
+    {
+      "time": 2910,
+      "speaker": "deacon",
+      "variance": 0.06209093137016191,
+      "rms": 0.0014809536795319111
+    },
+    {
+      "time": 2920,
+      "speaker": "deacon",
+      "variance": 1.1285219517945262,
+      "rms": 0.002061129006312848
+    },
+    {
+      "time": 2930,
+      "speaker": "deacon",
+      "variance": 0.015465496772916842,
+      "rms": 0.0007512108804973022
+    },
+    {
+      "time": 2940,
+      "speaker": "deacon",
+      "variance": 0.005509720749040658,
+      "rms": 0.0006228437230551436
+    },
+    {
+      "time": 2950,
+      "speaker": "deacon",
+      "variance": 0.14461340382129675,
+      "rms": 0.0016540572263522093
+    },
+    {
+      "time": 2960,
+      "speaker": "deacon",
+      "variance": 0.09469969258398768,
+      "rms": 0.0011234928573325203
+    },
+    {
+      "time": 2970,
+      "speaker": "deacon",
+      "variance": 0.17079017373707914,
+      "rms": 0.0017389290213659409
+    },
+    {
+      "time": 2980,
+      "speaker": "deacon",
+      "variance": 0.40907576366780257,
+      "rms": 0.001976747694796938
+    },
+    {
+      "time": 2990,
+      "speaker": "deacon",
+      "variance": 0.24113132021893324,
+      "rms": 0.001782686603927472
+    },
+    {
+      "time": 3000,
+      "speaker": "deacon",
+      "variance": 0.15749119930170738,
+      "rms": 0.0020484902877105165
+    },
+    {
+      "time": 3010,
+      "speaker": "deacon",
+      "variance": 0.11318375230416967,
+      "rms": 0.0018155476996669483
+    },
+    {
+      "time": 3020,
+      "speaker": "deacon",
+      "variance": 0.19769974708414845,
+      "rms": 0.0017916616146975927
+    },
+    {
+      "time": 3030,
+      "speaker": "deacon",
+      "variance": 0.25926408653769056,
+      "rms": 0.0020262443457582896
+    },
+    {
+      "time": 3040,
+      "speaker": "deacon",
+      "variance": 0.3805461025348886,
+      "rms": 0.0021580003566332917
+    },
+    {
+      "time": 3050,
+      "speaker": "deacon",
+      "variance": 0.07979916429111318,
+      "rms": 0.0018854103508085843
+    },
+    {
+      "time": 3060,
+      "speaker": "celebrant",
+      "variance": 2.7644617531790643,
+      "rms": 0.002378696538129449
+    },
+    {
+      "time": 3070,
+      "speaker": "deacon",
+      "variance": 0.03082564966542765,
+      "rms": 0.001226551037109908
+    },
+    {
+      "time": 3080,
+      "speaker": "deacon",
+      "variance": 0.01731787439179378,
+      "rms": 0.0006436167314763747
+    },
+    {
+      "time": 3090,
+      "speaker": "celebrant",
+      "variance": 4.997955423887612,
+      "rms": 0.001423306029039639
+    },
+    {
+      "time": 3100,
+      "speaker": "deacon",
+      "variance": 0.033924237539562356,
+      "rms": 0.0005075475667149982
+    },
+    {
+      "time": 3110,
+      "speaker": "deacon",
+      "variance": 0.5236286360509768,
+      "rms": 0.002120812272310969
+    },
+    {
+      "time": 3120,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00022166182470293935
+    },
+    {
+      "time": 3130,
+      "speaker": "deacon",
+      "variance": 0.5597359275586546,
+      "rms": 0.0014228055570760713
+    },
+    {
+      "time": 3140,
+      "speaker": "deacon",
+      "variance": 0.008453248331252985,
+      "rms": 0.0005254648139225225
+    },
+    {
+      "time": 3150,
+      "speaker": "deacon",
+      "variance": 0.19295327344056618,
+      "rms": 0.0019516686578422981
+    },
+    {
+      "time": 3160,
+      "speaker": "deacon",
+      "variance": 0.19032431668588048,
+      "rms": 0.00194502871087549
+    },
+    {
+      "time": 3170,
+      "speaker": "celebrant",
+      "variance": 2.667826973260143,
+      "rms": 0.002150752414929912
+    },
+    {
+      "time": 3180,
+      "speaker": "deacon",
+      "variance": 0.0996431997492375,
+      "rms": 0.0016785425080413066
+    },
+    {
+      "time": 3190,
+      "speaker": "celebrant",
+      "variance": 2.2083726314585426,
+      "rms": 0.0026403766947097657
+    },
+    {
+      "time": 3200,
+      "speaker": "deacon",
+      "variance": 0.060324687397657804,
+      "rms": 0.001366092544420289
+    },
+    {
+      "time": 3210,
+      "speaker": "deacon",
+      "variance": 0.11481082016443363,
+      "rms": 0.0016691754323236024
+    },
+    {
+      "time": 3220,
+      "speaker": "deacon",
+      "variance": 0.15174293563773059,
+      "rms": 0.0015302432455538287
+    },
+    {
+      "time": 3230,
+      "speaker": "deacon",
+      "variance": 0.0005822008419436614,
+      "rms": 0.0005372073444210066
+    },
+    {
+      "time": 3240,
+      "speaker": "celebrant",
+      "variance": 2.982027887832388,
+      "rms": 0.002058775409607901
+    },
+    {
+      "time": 3250,
+      "speaker": "celebrant",
+      "variance": 2.032549756144821,
+      "rms": 0.0024383820703409225
+    },
+    {
+      "time": 3260,
+      "speaker": "deacon",
+      "variance": 0.29418251562106695,
+      "rms": 0.0016891624274583967
+    },
+    {
+      "time": 3270,
+      "speaker": "deacon",
+      "variance": 0.06400440017448304,
+      "rms": 0.0014335211821693108
+    },
+    {
+      "time": 3280,
+      "speaker": "deacon",
+      "variance": 0.10169836846384857,
+      "rms": 0.0015373110120964542
+    },
+    {
+      "time": 3290,
+      "speaker": "deacon",
+      "variance": 0.015299942876392863,
+      "rms": 0.0011664034896547463
+    },
+    {
+      "time": 3300,
+      "speaker": "deacon",
+      "variance": 0.000575670736174349,
+      "rms": 0.0006317370055486222
+    },
+    {
+      "time": 3310,
+      "speaker": "deacon",
+      "variance": 0.20838606016820166,
+      "rms": 0.0016731127135346591
+    },
+    {
+      "time": 3320,
+      "speaker": "deacon",
+      "variance": 0.5493623368884899,
+      "rms": 0.0019111022052521512
+    },
+    {
+      "time": 3330,
+      "speaker": "deacon",
+      "variance": 0.00897655443192608,
+      "rms": 0.0008812744057549569
+    },
+    {
+      "time": 3340,
+      "speaker": "deacon",
+      "variance": 0.19949864096094497,
+      "rms": 0.0015983158284153627
+    },
+    {
+      "time": 3350,
+      "speaker": "deacon",
+      "variance": 0.9573398734665295,
+      "rms": 0.002137965027547545
+    },
+    {
+      "time": 3360,
+      "speaker": "deacon",
+      "variance": 0.12730208788934663,
+      "rms": 0.0013217770217799419
+    },
+    {
+      "time": 3370,
+      "speaker": "deacon",
+      "variance": 0.662201744509593,
+      "rms": 0.0014047727243693675
+    },
+    {
+      "time": 3380,
+      "speaker": "celebrant",
+      "variance": 1.53839965601598,
+      "rms": 0.0021989746530005957
+    },
+    {
+      "time": 3390,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0004574250669418607
+    },
+    {
+      "time": 3400,
+      "speaker": "deacon",
+      "variance": 0.11379423436032536,
+      "rms": 0.0016372470071142732
+    },
+    {
+      "time": 3410,
+      "speaker": "deacon",
+      "variance": 0.23837498420945405,
+      "rms": 0.0016864902258803597
+    },
+    {
+      "time": 3420,
+      "speaker": "deacon",
+      "variance": 0.10510083545399938,
+      "rms": 0.001604395658204498
+    },
+    {
+      "time": 3430,
+      "speaker": "deacon",
+      "variance": 0.6145623643288742,
+      "rms": 0.002066236682530962
+    },
+    {
+      "time": 3440,
+      "speaker": "deacon",
+      "variance": 0.3111908217136175,
+      "rms": 0.0015840742802515394
+    },
+    {
+      "time": 3450,
+      "speaker": "deacon",
+      "variance": 0.04924260485786975,
+      "rms": 0.0015275382346625294
+    },
+    {
+      "time": 3460,
+      "speaker": "deacon",
+      "variance": 0.008107843953092757,
+      "rms": 0.0007865118414337498
+    },
+    {
+      "time": 3470,
+      "speaker": "celebrant",
+      "variance": 2.028897467198294,
+      "rms": 0.0019071584183497877
+    },
+    {
+      "time": 3480,
+      "speaker": "deacon",
+      "variance": 0.021986742162714557,
+      "rms": 0.0005945297886758184
+    },
+    {
+      "time": 3490,
+      "speaker": "deacon",
+      "variance": 0.45639529696493975,
+      "rms": 0.0008189365643262682
+    },
+    {
+      "time": 3500,
+      "speaker": "deacon",
+      "variance": 0.5287353505935397,
+      "rms": 0.0012684743997267926
+    },
+    {
+      "time": 3510,
+      "speaker": "deacon",
+      "variance": 0.1651587093598797,
+      "rms": 0.001707896548895858
+    },
+    {
+      "time": 3520,
+      "speaker": "deacon",
+      "variance": 0.3970789874182438,
+      "rms": 0.001081842324097105
+    },
+    {
+      "time": 3530,
+      "speaker": "deacon",
+      "variance": 0.12092602830605281,
+      "rms": 0.0010881389958201872
+    },
+    {
+      "time": 3540,
+      "speaker": "deacon",
+      "variance": 0.23334606065087166,
+      "rms": 0.0010243735298117724
+    },
+    {
+      "time": 3550,
+      "speaker": "choir",
+      "variance": 26.721391374382645,
+      "rms": 0.0031079212289271078
+    },
+    {
+      "time": 3560,
+      "speaker": "celebrant",
+      "variance": 2.4853476077526913,
+      "rms": 0.0019796059304112807
+    },
+    {
+      "time": 3570,
+      "speaker": "deacon",
+      "variance": 0.04482259568501358,
+      "rms": 0.0009495128843138573
+    },
+    {
+      "time": 3580,
+      "speaker": "celebrant",
+      "variance": 3.3360618331574017,
+      "rms": 0.002424579785774075
+    },
+    {
+      "time": 3590,
+      "speaker": "choir",
+      "variance": 5.515919010480973,
+      "rms": 0.001942601625665148
+    },
+    {
+      "time": 3600,
+      "speaker": "choir",
+      "variance": 16.994867296357487,
+      "rms": 0.0028454761302219955
+    },
+    {
+      "time": 3610,
+      "speaker": "deacon",
+      "variance": 0.4173076275680425,
+      "rms": 0.001874599787528307
+    },
+    {
+      "time": 3620,
+      "speaker": "celebrant",
+      "variance": 4.395398644860782,
+      "rms": 0.00231173322790837
+    },
+    {
+      "time": 3630,
+      "speaker": "deacon",
+      "variance": 0.013711815726894866,
+      "rms": 0.0008077570318787488
+    },
+    {
+      "time": 3640,
+      "speaker": "celebrant",
+      "variance": 1.8656918863047518,
+      "rms": 0.001353290449581932
+    },
+    {
+      "time": 3650,
+      "speaker": "deacon",
+      "variance": 0.7367106984799506,
+      "rms": 0.001808881151003107
+    },
+    {
+      "time": 3660,
+      "speaker": "celebrant",
+      "variance": 3.9160087064311107,
+      "rms": 0.0013599937497860432
+    },
+    {
+      "time": 3670,
+      "speaker": "deacon",
+      "variance": 0.116917873107886,
+      "rms": 0.0014880711211163256
+    },
+    {
+      "time": 3680,
+      "speaker": "celebrant",
+      "variance": 1.72543291245025,
+      "rms": 0.0018904468801758396
+    },
+    {
+      "time": 3690,
+      "speaker": "deacon",
+      "variance": 0.01710789714235346,
+      "rms": 0.000729555747062853
+    },
+    {
+      "time": 3700,
+      "speaker": "deacon",
+      "variance": 0.010536308472056813,
+      "rms": 0.0007054089663627773
+    },
+    {
+      "time": 3710,
+      "speaker": "deacon",
+      "variance": 0.07048497071280638,
+      "rms": 0.0009580360899720722
+    },
+    {
+      "time": 3720,
+      "speaker": "deacon",
+      "variance": 0.01626830233210196,
+      "rms": 0.001016828956760744
+    },
+    {
+      "time": 3730,
+      "speaker": "deacon",
+      "variance": 0.10533262106151023,
+      "rms": 0.0007263348967887975
+    },
+    {
+      "time": 3740,
+      "speaker": "deacon",
+      "variance": 0.3986230553734563,
+      "rms": 0.0015163282596292378
+    },
+    {
+      "time": 3750,
+      "speaker": "deacon",
+      "variance": 1.2385051731958598,
+      "rms": 0.0016555109914952793
+    },
+    {
+      "time": 3760,
+      "speaker": "deacon",
+      "variance": 0.547404946925121,
+      "rms": 0.0019223322810754098
+    },
+    {
+      "time": 3770,
+      "speaker": "deacon",
+      "variance": 0.5939745455969309,
+      "rms": 0.0018854665288092311
+    },
+    {
+      "time": 3780,
+      "speaker": "deacon",
+      "variance": 0.19757524730679318,
+      "rms": 0.0007734471228848715
+    },
+    {
+      "time": 3790,
+      "speaker": "deacon",
+      "variance": 0.4557878885010797,
+      "rms": 0.0011316118240384985
+    },
+    {
+      "time": 3800,
+      "speaker": "deacon",
+      "variance": 1.3401677680841788,
+      "rms": 0.002027998222766168
+    },
+    {
+      "time": 3810,
+      "speaker": "choir",
+      "variance": 6.5052602835566145,
+      "rms": 0.0027049982762245733
+    },
+    {
+      "time": 3820,
+      "speaker": "deacon",
+      "variance": 0.06728679685445255,
+      "rms": 0.0015803099918002658
+    },
+    {
+      "time": 3830,
+      "speaker": "celebrant",
+      "variance": 4.29361664852618,
+      "rms": 0.003044975724972213
+    },
+    {
+      "time": 3840,
+      "speaker": "deacon",
+      "variance": 0.04221543341143904,
+      "rms": 0.0006485403538977505
+    },
+    {
+      "time": 3850,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0004601666034866594
+    },
+    {
+      "time": 3860,
+      "speaker": "celebrant",
+      "variance": 4.570077147329977,
+      "rms": 0.001796788090458043
+    },
+    {
+      "time": 3870,
+      "speaker": "deacon",
+      "variance": 0.09150389643114713,
+      "rms": 0.0012318157775771752
+    },
+    {
+      "time": 3880,
+      "speaker": "deacon",
+      "variance": 0.4792407121692818,
+      "rms": 0.001955480014797129
+    },
+    {
+      "time": 3890,
+      "speaker": "deacon",
+      "variance": 0.12096818254105077,
+      "rms": 0.001115580641260072
+    },
+    {
+      "time": 3900,
+      "speaker": "deacon",
+      "variance": 0.08541263156994731,
+      "rms": 0.001011519745047326
+    },
+    {
+      "time": 3910,
+      "speaker": "deacon",
+      "variance": 0.23918987955720736,
+      "rms": 0.001293301946235764
+    },
+    {
+      "time": 3920,
+      "speaker": "deacon",
+      "variance": 0.14324429450052126,
+      "rms": 0.0013435409691723286
+    },
+    {
+      "time": 3930,
+      "speaker": "deacon",
+      "variance": 0.4116980359832119,
+      "rms": 0.0014447026797152957
+    },
+    {
+      "time": 3940,
+      "speaker": "deacon",
+      "variance": 0.4071370840739035,
+      "rms": 0.0012672809723286646
+    },
+    {
+      "time": 3950,
+      "speaker": "choir",
+      "variance": 6.603325566747046,
+      "rms": 0.003359291264830202
+    },
+    {
+      "time": 3960,
+      "speaker": "deacon",
+      "variance": 0.004230124136167169,
+      "rms": 0.0006035197806649364
+    },
+    {
+      "time": 3970,
+      "speaker": "deacon",
+      "variance": 0.0037108888202720645,
+      "rms": 0.0006539129981463498
+    },
+    {
+      "time": 3980,
+      "speaker": "celebrant",
+      "variance": 2.552485776490368,
+      "rms": 0.0021365495752484987
+    },
+    {
+      "time": 3990,
+      "speaker": "celebrant",
+      "variance": 1.5787358512970524,
+      "rms": 0.0019353908175448224
+    },
+    {
+      "time": 4000,
+      "speaker": "deacon",
+      "variance": 0.03467629203892867,
+      "rms": 0.0011606193201646377
+    },
+    {
+      "time": 4010,
+      "speaker": "deacon",
+      "variance": 0.0777874905272274,
+      "rms": 0.0010742861677953707
+    },
+    {
+      "time": 4020,
+      "speaker": "deacon",
+      "variance": 0.20537694143435367,
+      "rms": 0.0013561020442304276
+    },
+    {
+      "time": 4030,
+      "speaker": "deacon",
+      "variance": 0.010078620972185336,
+      "rms": 0.0010038827430176413
+    },
+    {
+      "time": 4040,
+      "speaker": "choir",
+      "variance": 41.419523621829974,
+      "rms": 0.003276088991827077
+    },
+    {
+      "time": 4050,
+      "speaker": "deacon",
+      "variance": 0.21792354986736232,
+      "rms": 0.0016987719388222699
+    },
+    {
+      "time": 4060,
+      "speaker": "celebrant",
+      "variance": 1.7778566509006302,
+      "rms": 0.001987183809440795
+    },
+    {
+      "time": 4070,
+      "speaker": "deacon",
+      "variance": 0.28422046722011063,
+      "rms": 0.001471949321086588
+    },
+    {
+      "time": 4080,
+      "speaker": "choir",
+      "variance": 7.622661819056628,
+      "rms": 0.0020449747006814085
+    },
+    {
+      "time": 4090,
+      "speaker": "deacon",
+      "variance": 0.5718337012661765,
+      "rms": 0.0015319668473851816
+    },
+    {
+      "time": 4100,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.000499233272327276
+    },
+    {
+      "time": 4110,
+      "speaker": "deacon",
+      "variance": 0.7014286944157402,
+      "rms": 0.0012478664624709713
+    },
+    {
+      "time": 4120,
+      "speaker": "celebrant",
+      "variance": 2.018700599665944,
+      "rms": 0.0015392700455525868
+    },
+    {
+      "time": 4130,
+      "speaker": "deacon",
+      "variance": 0.20758446778212647,
+      "rms": 0.0014484415887440652
+    },
+    {
+      "time": 4140,
+      "speaker": "deacon",
+      "variance": 0.40157855351009536,
+      "rms": 0.0017796178257866167
+    },
+    {
+      "time": 4150,
+      "speaker": "deacon",
+      "variance": 0.8156905832403728,
+      "rms": 0.0012918430198602183
+    },
+    {
+      "time": 4160,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.000490429171286357
+    },
+    {
+      "time": 4170,
+      "speaker": "deacon",
+      "variance": 0.03543815938950334,
+      "rms": 0.0008991726695715012
+    },
+    {
+      "time": 4180,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00008633585835955849
+    },
+    {
+      "time": 4190,
+      "speaker": "deacon",
+      "variance": 0.006367280099245079,
+      "rms": 0.00054725042392425
+    },
+    {
+      "time": 4200,
+      "speaker": "deacon",
+      "variance": 0.061013797707239185,
+      "rms": 0.0005394244455172838
+    },
+    {
+      "time": 4210,
+      "speaker": "deacon",
+      "variance": 0.032396444023088264,
+      "rms": 0.0005082924229699183
+    },
+    {
+      "time": 4220,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.000106926578880502
+    },
+    {
+      "time": 4230,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0003743761263335749
+    },
+    {
+      "time": 4240,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00023289553980152512
+    },
+    {
+      "time": 4250,
+      "speaker": "deacon",
+      "variance": 0.4023234916072037,
+      "rms": 0.0014747027829666746
+    },
+    {
+      "time": 4260,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0002635077170363113
+    },
+    {
+      "time": 4270,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0003152913265044318
+    },
+    {
+      "time": 4280,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0004496330639494702
+    },
+    {
+      "time": 4290,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00018302442533691397
+    },
+    {
+      "time": 4300,
+      "speaker": "deacon",
+      "variance": 0.06357768235259494,
+      "rms": 0.0009501167259276912
+    },
+    {
+      "time": 4310,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0004520680183169379
+    },
+    {
+      "time": 4320,
+      "speaker": "deacon",
+      "variance": 0.28457616677940195,
+      "rms": 0.0010217146810308699
+    },
+    {
+      "time": 4330,
+      "speaker": "deacon",
+      "variance": 0.6209058094235945,
+      "rms": 0.0010764798485196523
+    },
+    {
+      "time": 4340,
+      "speaker": "celebrant",
+      "variance": 1.533642693815465,
+      "rms": 0.0015601863490469008
+    },
+    {
+      "time": 4350,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.000365288958070898
+    },
+    {
+      "time": 4360,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00027769059941044145
+    },
+    {
+      "time": 4370,
+      "speaker": "deacon",
+      "variance": 0.061231650678052044,
+      "rms": 0.000876196233617893
+    },
+    {
+      "time": 4380,
+      "speaker": "deacon",
+      "variance": 0.006918746130877026,
+      "rms": 0.0005087982088975547
+    },
+    {
+      "time": 4390,
+      "speaker": "deacon",
+      "variance": 0.07388421360153108,
+      "rms": 0.0005564418998937053
+    },
+    {
+      "time": 4400,
+      "speaker": "deacon",
+      "variance": 0.07998793699389008,
+      "rms": 0.0008937661855878766
+    },
+    {
+      "time": 4410,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00022311564659377458
+    },
+    {
+      "time": 4420,
+      "speaker": "deacon",
+      "variance": 0.014378433459187507,
+      "rms": 0.0007530216363554535
+    },
+    {
+      "time": 4430,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00006499128234833976
+    },
+    {
+      "time": 4440,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00018731781008971888
+    },
+    {
+      "time": 4450,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00005597863750203732
+    },
+    {
+      "time": 4460,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0002290712428883563
+    },
+    {
+      "time": 4470,
+      "speaker": "deacon",
+      "variance": 0.024593880495156876,
+      "rms": 0.0005850252977724836
+    },
+    {
+      "time": 4480,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00036395362415771794
+    },
+    {
+      "time": 4490,
+      "speaker": "deacon",
+      "variance": 0.0028551813697229294,
+      "rms": 0.0006249801971664585
+    },
+    {
+      "time": 4500,
+      "speaker": "deacon",
+      "variance": 0.3177019724266214,
+      "rms": 0.0011843725279912971
+    },
+    {
+      "time": 4510,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00021742416177076212
+    },
+    {
+      "time": 4520,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00007265031014905607
+    },
+    {
+      "time": 4530,
+      "speaker": "deacon",
+      "variance": 0.10892797630601501,
+      "rms": 0.0010524298200725523
+    },
+    {
+      "time": 4540,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00012829712563113392
+    },
+    {
+      "time": 4550,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00047412564525287955
+    },
+    {
+      "time": 4560,
+      "speaker": "deacon",
+      "variance": 0.11185427108694532,
+      "rms": 0.0008966834493789204
+    },
+    {
+      "time": 4570,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0004282575689406585
+    },
+    {
+      "time": 4580,
+      "speaker": "deacon",
+      "variance": 0.01997781705845883,
+      "rms": 0.000511721569909357
+    },
+    {
+      "time": 4590,
+      "speaker": "deacon",
+      "variance": 0.047990191019322004,
+      "rms": 0.0005623529093880598
+    },
+    {
+      "time": 4600,
+      "speaker": "deacon",
+      "variance": 0.013204935716721041,
+      "rms": 0.0005904191412625876
+    },
+    {
+      "time": 4610,
+      "speaker": "deacon",
+      "variance": 0.47868486076621597,
+      "rms": 0.0011612443386358245
+    },
+    {
+      "time": 4620,
+      "speaker": "deacon",
+      "variance": 0.15392496231402378,
+      "rms": 0.0008154272394456269
+    },
+    {
+      "time": 4630,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00005316516790180554
+    },
+    {
+      "time": 4640,
+      "speaker": "deacon",
+      "variance": 0.030830255373459032,
+      "rms": 0.0007097813929031827
+    },
+    {
+      "time": 4650,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0003113024369192153
+    },
+    {
+      "time": 4660,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0001001862708424511
+    },
+    {
+      "time": 4670,
+      "speaker": "deacon",
+      "variance": 0.0708362602220538,
+      "rms": 0.0005072359612899415
+    },
+    {
+      "time": 4680,
+      "speaker": "deacon",
+      "variance": 1.2851479324932176,
+      "rms": 0.001236644928342306
+    },
+    {
+      "time": 4690,
+      "speaker": "deacon",
+      "variance": 0.011833029692413273,
+      "rms": 0.0006573111649962229
+    },
+    {
+      "time": 4700,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0002981024701195696
+    },
+    {
+      "time": 4710,
+      "speaker": "deacon",
+      "variance": 0.01611141578432873,
+      "rms": 0.0007946712212593172
+    },
+    {
+      "time": 4720,
+      "speaker": "deacon",
+      "variance": 0.07073101733376447,
+      "rms": 0.0005473807779521703
+    },
+    {
+      "time": 4730,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00008985512222856039
+    },
+    {
+      "time": 4740,
+      "speaker": "deacon",
+      "variance": 0.26961501441839986,
+      "rms": 0.0009442307445353825
+    },
+    {
+      "time": 4750,
+      "speaker": "deacon",
+      "variance": 0.03512324195389051,
+      "rms": 0.0009113312115945121
+    },
+    {
+      "time": 4760,
+      "speaker": "deacon",
+      "variance": 0.17487555021016876,
+      "rms": 0.0009586488924484257
+    },
+    {
+      "time": 4770,
+      "speaker": "deacon",
+      "variance": 0.010751672468188866,
+      "rms": 0.000577142943655027
+    },
+    {
+      "time": 4780,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00006625827906144401
+    },
+    {
+      "time": 4790,
+      "speaker": "deacon",
+      "variance": 0.7993992638614585,
+      "rms": 0.0007718160256933989
+    },
+    {
+      "time": 4800,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00010591882241015187
+    },
+    {
+      "time": 4810,
+      "speaker": "deacon",
+      "variance": 0.020082894329216967,
+      "rms": 0.0005153252826146916
+    },
+    {
+      "time": 4820,
+      "speaker": "deacon",
+      "variance": 0.02701903562815335,
+      "rms": 0.000619663095371544
+    },
+    {
+      "time": 4830,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00007370466429142776
+    },
+    {
+      "time": 4840,
+      "speaker": "deacon",
+      "variance": 0.28899374299080804,
+      "rms": 0.0006084506825224581
+    },
+    {
+      "time": 4850,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00022804718458101933
+    },
+    {
+      "time": 4860,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00008437873907041438
+    },
+    {
+      "time": 4870,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0004483642258691049
+    },
+    {
+      "time": 4880,
+      "speaker": "deacon",
+      "variance": 0.19010764514149373,
+      "rms": 0.0009723773480460879
+    },
+    {
+      "time": 4890,
+      "speaker": "deacon",
+      "variance": 0.10791579201077245,
+      "rms": 0.0011169516390072257
+    },
+    {
+      "time": 4900,
+      "speaker": "deacon",
+      "variance": 0.4596951763885681,
+      "rms": 0.0008653703783052233
+    },
+    {
+      "time": 4910,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00025531016718483674
+    },
+    {
+      "time": 4920,
+      "speaker": "deacon",
+      "variance": 0.3037714297583965,
+      "rms": 0.0008637195669405146
+    },
+    {
+      "time": 4930,
+      "speaker": "deacon",
+      "variance": 0.47695723015269226,
+      "rms": 0.0012634226716407965
+    },
+    {
+      "time": 4940,
+      "speaker": "celebrant",
+      "variance": 1.645600475506883,
+      "rms": 0.001147229318610383
+    },
+    {
+      "time": 4950,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00019901306717008818
+    },
+    {
+      "time": 4960,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00010610829027586627
+    },
+    {
+      "time": 4970,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00041695589684189295
+    },
+    {
+      "time": 4980,
+      "speaker": "deacon",
+      "variance": 0.3529130158709662,
+      "rms": 0.0009533339158128899
+    },
+    {
+      "time": 4990,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0002114402374540601
+    },
+    {
+      "time": 5000,
+      "speaker": "deacon",
+      "variance": 0.005940261449877804,
+      "rms": 0.0005469913889600517
+    },
+    {
+      "time": 5010,
+      "speaker": "celebrant",
+      "variance": 1.9678355711930922,
+      "rms": 0.0014647223480047911
+    },
+    {
+      "time": 5020,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0003006813917848937
+    },
+    {
+      "time": 5030,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00011392003289282598
+    },
+    {
+      "time": 5040,
+      "speaker": "deacon",
+      "variance": 0.03477528532742808,
+      "rms": 0.0007832401192589771
+    },
+    {
+      "time": 5050,
+      "speaker": "deacon",
+      "variance": 0.03380746348668148,
+      "rms": 0.0006310903626579323
+    },
+    {
+      "time": 5060,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00005079227463802404
+    },
+    {
+      "time": 5070,
+      "speaker": "deacon",
+      "variance": 0.10085705670475383,
+      "rms": 0.0006489561770506448
+    },
+    {
+      "time": 5080,
+      "speaker": "deacon",
+      "variance": 0.032420183546587225,
+      "rms": 0.0008564559631884079
+    },
+    {
+      "time": 5090,
+      "speaker": "deacon",
+      "variance": 0.0188490532457269,
+      "rms": 0.0006433559559670174
+    },
+    {
+      "time": 5100,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.000059836036592356337
+    },
+    {
+      "time": 5110,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.0004908980899804754
+    },
+    {
+      "time": 5120,
+      "speaker": "deacon",
+      "variance": 0.1994240527768843,
+      "rms": 0.0009007559475502232
+    },
+    {
+      "time": 5130,
+      "speaker": "deacon",
+      "variance": 0.04461934243600491,
+      "rms": 0.000720798937242791
+    },
+    {
+      "time": 5140,
+      "speaker": "deacon",
+      "variance": 0.3097945148278402,
+      "rms": 0.0011024096392423261
+    },
+    {
+      "time": 5150,
+      "speaker": "deacon",
+      "variance": 0.05905535884560307,
+      "rms": 0.0008511764813060977
+    },
+    {
+      "time": 5160,
+      "speaker": "deacon",
+      "variance": 0.0062774172852214415,
+      "rms": 0.0005860819901516408
+    },
+    {
+      "time": 5170,
+      "speaker": "deacon",
+      "variance": 0.09038991335474383,
+      "rms": 0.0010470704149090038
+    },
+    {
+      "time": 5180,
+      "speaker": "deacon",
+      "variance": 0.030168537594740683,
+      "rms": 0.0006210076043423647
+    },
+    {
+      "time": 5190,
+      "speaker": "deacon",
+      "variance": 0.004958669403936033,
+      "rms": 0.0005058234311375242
+    },
+    {
+      "time": 5200,
+      "speaker": "deacon",
+      "variance": 0.02263641096474852,
+      "rms": 0.0005630471593518785
+    },
+    {
+      "time": 5210,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00007951594346835117
+    },
+    {
+      "time": 5220,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00005464910450020576
+    },
+    {
+      "time": 5230,
+      "speaker": "silence",
+      "variance": 0,
+      "rms": 0.00005230400173865211
+    }
+  ],
+  "thresholds": {
+    "choir": ">5.0",
+    "celebrant": "1.5-5.0",
+    "deacon": "<1.5",
+    "silence_rms": "<0.0005"
+  }
+}
