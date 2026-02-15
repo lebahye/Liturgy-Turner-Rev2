@@ -274,3 +274,33 @@ export type Conversation = typeof conversations.$inferSelect;
 export type InsertConversation = z.infer<typeof insertConversationSchema>;
 export type Message = typeof messages.$inferSelect;
 export type InsertMessage = z.infer<typeof insertMessageSchema>;
+
+// Self-Improvement Metrics
+export const improvementMetrics = sqliteTable("improvement_metrics", {
+  id: text("id").primaryKey().default(idDefault),
+  testDate: text("test_date").notNull(),
+  testType: text("test_type").notNull(), // 'live_service' or 'self_test'
+  audioFile: text("audio_file"),
+  totalPages: integer("total_pages").notNull(),
+  correctTurns: integer("correct_turns").notNull(),
+  missedTurns: integer("missed_turns").notNull(),
+  falsePositives: integer("false_positives").notNull(),
+  accuracyPercentage: real("accuracy_percentage").notNull(),
+  averageLatencyMs: integer("average_latency_ms"),
+  averageConfidence: real("average_confidence"),
+  notes: text("notes"),
+  improvements: text("improvements", { mode: "json" }).$type<string[]>(),
+  issues: text("issues", { mode: "json" }).$type<string[]>(),
+  createdAt: integer("created_at", { mode: "timestamp" }).default(sql`(unixepoch())`).notNull(),
+});
+
+export const insertImprovementMetricSchema = createInsertSchema(improvementMetrics, {
+  improvements: z.any().optional(),
+  issues: z.any().optional(),
+}).omit({
+  id: true,
+  createdAt: true,
+});
+
+export type ImprovementMetric = typeof improvementMetrics.$inferSelect;
+export type InsertImprovementMetric = z.infer<typeof insertImprovementMetricSchema>;
