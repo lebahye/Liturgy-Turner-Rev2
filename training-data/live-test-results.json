@@ -1,0 +1,37 @@
+[
+  {
+    "time": 35,
+    "detectedPage": 6,
+    "expectedPage": 2,
+    "error": 4,
+    "confidence": 0.8
+  },
+  {
+    "time": 55,
+    "detectedPage": 16,
+    "expectedPage": 2,
+    "error": 14,
+    "confidence": 0.8
+  },
+  {
+    "time": 130,
+    "detectedPage": 19,
+    "expectedPage": 6,
+    "error": 13,
+    "confidence": 0.8
+  },
+  {
+    "time": 140,
+    "detectedPage": 20,
+    "expectedPage": 7,
+    "error": 13,
+    "confidence": 0.8
+  },
+  {
+    "time": 395,
+    "detectedPage": 21,
+    "expectedPage": 21,
+    "error": 0,
+    "confidence": 0.8
+  }
+]
