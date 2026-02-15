@@ -1,0 +1,103 @@
+{
+  "timestamp": "2026-02-15T17:10:53.593Z",
+  "overallScore": 83,
+  "maxScore": 200,
+  "percentage": 42,
+  "checks": [
+    {
+      "name": "Dictionary Size",
+      "passed": true,
+      "score": 22,
+      "maxScore": 30,
+      "details": "3755 total words (target: 5000+)"
+    },
+    {
+      "name": "Phonetic Coverage",
+      "passed": true,
+      "score": 18,
+      "maxScore": 20,
+      "details": "93.9% of words have phonetic entries"
+    },
+    {
+      "name": "Common Words",
+      "passed": true,
+      "score": 8,
+      "maxScore": 15,
+      "details": "11 words appear multiple times (target: 20+)"
+    },
+    {
+      "name": "Alternative Pronunciations",
+      "passed": true,
+      "score": 15,
+      "maxScore": 15,
+      "details": "55 words have alternatives (target: 30+)"
+    },
+    {
+      "name": "Phonetic Distribution",
+      "passed": true,
+      "score": 20,
+      "maxScore": 20,
+      "details": "29 different starting sounds (target: 20+)"
+    }
+  ],
+  "statistics": {
+    "armenianWords": 230,
+    "phoneticEntries": 3525,
+    "totalWords": 3755,
+    "commonWords": 11,
+    "wordsWithAlternatives": 55,
+    "phoneticLetters": 29
+  },
+  "topWords": [
+    {
+      "armenian": "Տէր",
+      "english": "Lord",
+      "frequency": 6
+    },
+    {
+      "armenian": "ողոր",
+      "english": "have",
+      "frequency": 6
+    },
+    {
+      "armenian": "ա",
+      "english": "mercy",
+      "frequency": 6
+    },
+    {
+      "armenian": "Եւ",
+      "english": "And",
+      "frequency": 5
+    },
+    {
+      "armenian": "ընդ",
+      "english": "us",
+      "frequency": 4
+    },
+    {
+      "armenian": "եւ",
+      "english": "and",
+      "frequency": 3
+    },
+    {
+      "armenian": "Աստուծոյ",
+      "english": "To",
+      "frequency": 3
+    },
+    {
+      "armenian": "հոգւոյդ",
+      "english": "bow",
+      "frequency": 3
+    },
+    {
+      "armenian": "քում",
+      "english": "down",
+      "frequency": 3
+    },
+    {
+      "armenian": "երկիրպագեսցուք",
+      "english": "you",
+      "frequency": 3
+    }
+  ]
+}
