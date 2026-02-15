@@ -1,0 +1,2528 @@
+[
+  {
+    "currentPage": 1,
+    "nextPage": 2,
+    "triggerWords": [
+      "BADRASDOOTYOON",
+      "THE",
+      "PREPARATION"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "unknown",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 2,
+    "nextPage": 3,
+    "triggerWords": [
+      "CHR",
+      "Khorhoort",
+      "khorin",
+      "anhas",
+      "anûsgizpn"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 3,
+    "nextPage": 4,
+    "triggerWords": [
+      "CHR",
+      "yérgnavor",
+      "zégéghétsi",
+      "ansharzh",
+      "bahya"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 4,
+    "nextPage": 5,
+    "triggerWords": [
+      "CLB",
+      "Yév",
+      "vasûn",
+      "sûrpoohvo",
+      "Asdvadzadznin"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 5,
+    "nextPage": 6,
+    "triggerWords": [
+      "DCN",
+      "Soorp",
+      "zAsdvadzadzinûn",
+      "yév",
+      "zaménayn"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 6,
+    "nextPage": 7,
+    "triggerWords": [
+      "CLB",
+      "ngal",
+      "Dér",
+      "zaghachanûs",
+      "mér"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 7,
+    "nextPage": 8,
+    "triggerWords": [
+      "CLB",
+      "Loor",
+      "méz",
+      "Dér",
+      "yév"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 8,
+    "nextPage": 9,
+    "triggerWords": [
+      "CLB",
+      "Méghootsyal",
+      "ém",
+      "Asdoodzo",
+      "Khosdovanim"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 9,
+    "nextPage": 10,
+    "triggerWords": [
+      "CLB",
+      "Kanzi",
+      "mégha",
+      "khorhûrtov",
+      "yév"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 10,
+    "nextPage": 11,
+    "triggerWords": [
+      "DCN",
+      "Art",
+      "yégayk",
+      "aménékyan",
+      "khonarhyal"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 11,
+    "nextPage": 12,
+    "triggerWords": [
+      "CLB",
+      "Azadéstsé",
+      "yév",
+      "ûztséz",
+      "martasérn"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 12,
+    "nextPage": 13,
+    "triggerWords": [
+      "CHR",
+      "Hishéschir",
+      "yév",
+      "ûzméz",
+      "arachi"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 13,
+    "nextPage": 14,
+    "triggerWords": [
+      "ACL",
+      "Aghaghagétsék",
+      "Dér",
+      "aménayn",
+      "yérgir"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 14,
+    "nextPage": 15,
+    "triggerWords": [
+      "ACL",
+      "ûzméz",
+      "yév",
+      "voch",
+      "mék"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 15,
+    "nextPage": 16,
+    "triggerWords": [
+      "ACL",
+      "Khosdovan",
+      "yéghérook",
+      "Dyarn",
+      "yév"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 16,
+    "nextPage": 17,
+    "triggerWords": [
+      "ACL",
+      "Park",
+      "yév",
+      "Vortvo",
+      "yév"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 17,
+    "nextPage": 18,
+    "triggerWords": [
+      "DCN",
+      "Soorp",
+      "yégéghétsyavs",
+      "aghachéstsook",
+      "ûzDér"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 18,
+    "nextPage": 19,
+    "triggerWords": [
+      "CLB",
+      "méch",
+      "yév",
+      "arachi",
+      "asdvadzûngal"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 19,
+    "nextPage": 20,
+    "triggerWords": [
+      "CLB",
+      "yév",
+      "kéz",
+      "madootsanémk",
+      "zorhnootyoon"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 20,
+    "nextPage": 21,
+    "triggerWords": [
+      "DCN",
+      "ints",
+      "Asdvadz",
+      "yév",
+      "ints"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 21,
+    "nextPage": 22,
+    "triggerWords": [
+      "CLB",
+      "Arakya",
+      "Dér",
+      "ûzlooys",
+      "yév"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 22,
+    "nextPage": 23,
+    "triggerWords": [
+      "CLB",
+      "Khosdovan",
+      "yéghéts",
+      "kéz",
+      "orhnootyamp"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 23,
+    "nextPage": 24,
+    "triggerWords": [
+      "DCN",
+      "hoosa",
+      "Asdvadz",
+      "khosdovanya",
+      "nûma"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 24,
+    "nextPage": 25,
+    "triggerWords": [
+      "DCN",
+      "Ayzhm",
+      "yév",
+      "mishd",
+      "yév"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 25,
+    "nextPage": 26,
+    "triggerWords": [
+      "DCN",
+      "arzhani",
+      "ûzméz",
+      "déghvochûs",
+      "parapanootyan"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 26,
+    "nextPage": 27,
+    "triggerWords": [
+      "CLB",
+      "arachi",
+      "asdvadzûngal",
+      "yév",
+      "baydzaratsyal"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 27,
+    "nextPage": 28,
+    "triggerWords": [
+      "CLB",
+      "zorhnootyoon",
+      "yév",
+      "ûzparûs",
+      "ûnt"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 28,
+    "nextPage": 29,
+    "triggerWords": [
+      "M",
+      "GH",
+      "TI",
+      "MELODY"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "unknown",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 29,
+    "nextPage": 30,
+    "triggerWords": [
+      "Stand",
+      "kérézman",
+      "harootsélooyn",
+      "anmahin",
+      "aysor"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "unknown",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 30,
+    "nextPage": 31,
+    "triggerWords": [
+      "BASHDON",
+      "JASHOO",
+      "THE"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "unknown",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 31,
+    "nextPage": 32,
+    "triggerWords": [
+      "Stand",
+      "CHR",
+      "Parékhosootyamp",
+      "yév",
+      "Goosi"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 32,
+    "nextPage": 33,
+    "triggerWords": [
+      "Stand",
+      "CHR",
+      "yév",
+      "ûsd",
+      "yérgnaynotsûn"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 33,
+    "nextPage": 34,
+    "triggerWords": [
+      "Stand",
+      "CHR",
+      "Aysor",
+      "zhoghovyal",
+      "task"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 34,
+    "nextPage": 35,
+    "triggerWords": [
+      "Stand",
+      "CHR",
+      "ngal",
+      "ménch",
+      "zkhûnganvér"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 35,
+    "nextPage": 36,
+    "triggerWords": [
+      "DCN",
+      "Orhnya",
+      "dér",
+      "CLB",
+      "Orhnyal"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 36,
+    "nextPage": 37,
+    "triggerWords": [
+      "CHR",
+      "Miyadzin",
+      "Vorti",
+      "yév",
+      "pant"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 37,
+    "nextPage": 38,
+    "triggerWords": [
+      "CHR",
+      "Minût",
+      "Sûrpo",
+      "Yérrortooténén",
+      "paravoragits"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 38,
+    "nextPage": 39,
+    "triggerWords": [
+      "CLB",
+      "Orhnootyoon",
+      "yév",
+      "park",
+      "yév"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 39,
+    "nextPage": 40,
+    "triggerWords": [
+      "CHR",
+      "Yév",
+      "ûnt",
+      "hokvooyt",
+      "koom"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 40,
+    "nextPage": 41,
+    "triggerWords": [
+      "CLB",
+      "Dér",
+      "Asdvadz",
+      "mér",
+      "garoghootyoonût"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 41,
+    "nextPage": 42,
+    "triggerWords": [
+      "CLB",
+      "dajarûs",
+      "ays",
+      "soorp",
+      "Yév"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 42,
+    "nextPage": 43,
+    "triggerWords": [
+      "SHARAGAN",
+      "JASHOO",
+      "MIDDAY",
+      "CHANT"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "unknown",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 43,
+    "nextPage": 44,
+    "triggerWords": [
+      "from",
+      "àô"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "unknown",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 44,
+    "nextPage": 45,
+    "triggerWords": [
+      "CLB",
+      "yé",
+      "garoghootyoon",
+      "yév",
+      "zorootyoon"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 45,
+    "nextPage": 46,
+    "triggerWords": [
+      "DCN",
+      "Yév",
+      "yévûs",
+      "khaghaghootyan",
+      "ûzDér"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 46,
+    "nextPage": 47,
+    "triggerWords": [
+      "DCN",
+      "Vasûn",
+      "khaghaghootyan",
+      "aménayn",
+      "ashkharhi"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 47,
+    "nextPage": 48,
+    "triggerWords": [
+      "DCN",
+      "Vasn",
+      "aménayn",
+      "soorp",
+      "yév"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 48,
+    "nextPage": 49,
+    "triggerWords": [
+      "DCN",
+      "Vasûn",
+      "hayrabédin",
+      "méro",
+      "dyarûn"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 49,
+    "nextPage": 50,
+    "triggerWords": [
+      "CLB",
+      "voghormadz",
+      "yév",
+      "martasér",
+      "és"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 50,
+    "nextPage": 51,
+    "triggerWords": [
+      "Yév",
+      "ûntérnoon",
+      "ûzjashoo",
+      "kirsûn",
+      "Reading"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "unknown",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 51,
+    "nextPage": 52,
+    "triggerWords": [
+      "CHR",
+      "Alélooya",
+      "alélooya",
+      "Haryav",
+      "Asdvadz"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 52,
+    "nextPage": 53,
+    "triggerWords": [
+      "DCN",
+      "Alélooya",
+      "orti",
+      "CLB",
+      "Khaghaghootyoon"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 53,
+    "nextPage": 54,
+    "triggerWords": [
+      "DCN",
+      "Yérgyooghadzootyamp",
+      "lûvarook",
+      "DCN",
+      "Sûrpo"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 54,
+    "nextPage": 55,
+    "triggerWords": [
+      "CHR",
+      "Park",
+      "kéz",
+      "Dér",
+      "Asdvadz"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 55,
+    "nextPage": 56,
+    "triggerWords": [
+      "DCN",
+      "ntérnoo",
+      "zAvédaranûn",
+      "ûsd",
+      "donatsootsi"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 56,
+    "nextPage": 57,
+    "triggerWords": [
+      "CHR",
+      "Park",
+      "kéz",
+      "Dér",
+      "Asdvadz"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 57,
+    "nextPage": 58,
+    "triggerWords": [
+      "HANKANAG",
+      "NIGYAGAN",
+      "Havadamk",
+      "Asdvadz",
+      "Hayrn"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "unknown",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 58,
+    "nextPage": 59,
+    "triggerWords": [
+      "Yév",
+      "Dér",
+      "Hisoos",
+      "Krisdos",
+      "hOrtin"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "unknown",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 59,
+    "nextPage": 60,
+    "triggerWords": [
+      "Nooyn",
+      "inkn",
+      "pnooténé",
+      "aménayn",
+      "inch"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "unknown",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 60,
+    "nextPage": 61,
+    "triggerWords": [
+      "martatsav",
+      "dzûnav",
+      "gadarélabés",
+      "Maryama",
+      "sûrpo"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "unknown",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 61,
+    "nextPage": 62,
+    "triggerWords": [
+      "yélyal",
+      "hérginûs",
+      "marmnovn",
+      "nûsdav",
+      "ûnt"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "unknown",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 62,
+    "nextPage": 63,
+    "triggerWords": [
+      "Havadamk",
+      "yév",
+      "Soorp",
+      "hanéghn",
+      "yév"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "unknown",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 63,
+    "nextPage": 64,
+    "triggerWords": [
+      "Havadamk",
+      "yév",
+      "miyayn",
+      "ûnthanragan",
+      "yév"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "unknown",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 64,
+    "nextPage": 65,
+    "triggerWords": [
+      "toghootyoon",
+      "méghats",
+      "harootyoon",
+      "mérélots",
+      "tadasdanûn"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "unknown",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 65,
+    "nextPage": 66,
+    "triggerWords": [
+      "DCN",
+      "Isg",
+      "vork",
+      "asénûn",
+      "ér"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 66,
+    "nextPage": 67,
+    "triggerWords": [
+      "CLB",
+      "Isg",
+      "mék",
+      "paravoréstsook",
+      "vorharach"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 67,
+    "nextPage": 68,
+    "triggerWords": [
+      "DCN",
+      "Yév",
+      "yévûs",
+      "khaghaghootyan",
+      "ûzDér"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 68,
+    "nextPage": 69,
+    "triggerWords": [
+      "CHR",
+      "Gétso",
+      "Dér",
+      "Shnorhya",
+      "Dér"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 69,
+    "nextPage": 70,
+    "triggerWords": [
+      "CLB",
+      "Vorbészi",
+      "arzhanavork",
+      "yéghitsook",
+      "kohootyamp"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 70,
+    "nextPage": 71,
+    "triggerWords": [
+      "CHR",
+      "Yév",
+      "ûnt",
+      "hokvooyt",
+      "koom"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 71,
+    "nextPage": 72,
+    "triggerWords": [
+      "CLB",
+      "Khaghaghootyamp",
+      "Krisdos",
+      "pûrgich",
+      "mér"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 72,
+    "nextPage": 73,
+    "triggerWords": [
+      "CLB",
+      "Vasûn",
+      "aménasoorp",
+      "Yérrortootyanût",
+      "vayélé"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 73,
+    "nextPage": 74,
+    "triggerWords": [
+      "DCN",
+      "Orhnya",
+      "dér",
+      "CLB",
+      "Dér"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 74,
+    "nextPage": 75,
+    "triggerWords": [
+      "HAVADATSELOTS",
+      "THE",
+      "HOLY",
+      "EUCHARIST"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "unknown",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 75,
+    "nextPage": 76,
+    "triggerWords": [
+      "DCN",
+      "hérakhayits",
+      "térahavadits",
+      "yév",
+      "habashkharoghats"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 76,
+    "nextPage": 77,
+    "triggerWords": [
+      "CHR",
+      "Marmin",
+      "déroonagan",
+      "yév",
+      "aryoon"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 77,
+    "nextPage": 78,
+    "triggerWords": [
+      "DCN",
+      "Saghmos",
+      "asatsék",
+      "Dyarn",
+      "Asdoodzo"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 78,
+    "nextPage": 79,
+    "triggerWords": [
+      "STAND",
+      "KNEEL",
+      "CHR",
+      "Hûréshdagayin",
+      "garkavorootyamp"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 79,
+    "nextPage": 80,
+    "triggerWords": [
+      "CHR",
+      "bashdén",
+      "ûzkéz",
+      "Dér",
+      "yév"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 80,
+    "nextPage": 81,
+    "triggerWords": [
+      "DCN",
+      "Yév",
+      "yévûs",
+      "khaghaghootyan",
+      "ûzDér"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 81,
+    "nextPage": 82,
+    "triggerWords": [
+      "DCN",
+      "Yév",
+      "yévûs",
+      "yév",
+      "sûrpootyamp"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 82,
+    "nextPage": 83,
+    "triggerWords": [
+      "CLB",
+      "Shnorhok",
+      "yév",
+      "martasirootyamp",
+      "Dyarûn"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 83,
+    "nextPage": 84,
+    "triggerWords": [
+      "CHR",
+      "Yév",
+      "ûnt",
+      "hokvooyt",
+      "koom"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 84,
+    "nextPage": 85,
+    "triggerWords": [
+      "DCN",
+      "Vogchooyn",
+      "dook",
+      "mimyants",
+      "hampooyr"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 85,
+    "nextPage": 86,
+    "triggerWords": [
+      "CHR",
+      "Krisdos",
+      "méch",
+      "mér",
+      "haydnétsav"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 86,
+    "nextPage": 87,
+    "triggerWords": [
+      "CHR",
+      "Art",
+      "bashdonyayk",
+      "partsyal",
+      "ûztsayn"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 87,
+    "nextPage": 88,
+    "triggerWords": [
+      "DCN",
+      "gatsook",
+      "yérgyooghiv",
+      "gatsook",
+      "parvok"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 88,
+    "nextPage": 89,
+    "triggerWords": [
+      "DCN",
+      "Krisdos",
+      "madchi",
+      "Karn",
+      "Asdoodzo"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 89,
+    "nextPage": 90,
+    "triggerWords": [
+      "CLB",
+      "Shnorhk",
+      "sér",
+      "yév",
+      "asdvadzayin"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 90,
+    "nextPage": 91,
+    "triggerWords": [
+      "CHR",
+      "Amén",
+      "Yév",
+      "ûnt",
+      "hokvooyt"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 91,
+    "nextPage": 92,
+    "triggerWords": [
+      "DCN",
+      "Yév",
+      "kohatsarook",
+      "ûzDyarné",
+      "sûrdiv"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 92,
+    "nextPage": 93,
+    "triggerWords": [
+      "CHR",
+      "Soorp",
+      "soorp",
+      "soorp",
+      "Dér"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 93,
+    "nextPage": 94,
+    "triggerWords": [
+      "CLB",
+      "Arék",
+      "gérék",
+      "ays",
+      "é"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 94,
+    "nextPage": 95,
+    "triggerWords": [
+      "CLB",
+      "Arpék",
+      "sûmané",
+      "aménékyan",
+      "ays"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 95,
+    "nextPage": 96,
+    "triggerWords": [
+      "CHR",
+      "Amén",
+      "Hayr",
+      "yérgnavor",
+      "zOrtit"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 96,
+    "nextPage": 97,
+    "triggerWords": [
+      "CLB",
+      "Yév",
+      "ûzkooys",
+      "koyots",
+      "kéz"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 97,
+    "nextPage": 98,
+    "triggerWords": [
+      "DCN",
+      "Orhnya",
+      "dér",
+      "CLB",
+      "Khaghaghootyoon"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 98,
+    "nextPage": 99,
+    "triggerWords": [
+      "CHR",
+      "Arachi",
+      "Dér",
+      "Vorti",
+      "Asdoodzo"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 99,
+    "nextPage": 100,
+    "triggerWords": [
+      "CLB",
+      "Vorbészi",
+      "yéghitsi",
+      "aménétsoon",
+      "méz"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 100,
+    "nextPage": 101,
+    "triggerWords": [
+      "CHR",
+      "Asdoodzo",
+      "zparagtsi",
+      "zkhorhoort",
+      "ichyal"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 101,
+    "nextPage": 102,
+    "triggerWords": [
+      "CLB",
+      "nt",
+      "vors",
+      "yév",
+      "méz"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 102,
+    "nextPage": 103,
+    "triggerWords": [
+      "CLB",
+      "Asdvadzadznin",
+      "sûrpo",
+      "goosin",
+      "Mariyamoo"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 103,
+    "nextPage": 104,
+    "triggerWords": [
+      "DCN",
+      "Arakélots",
+      "sûrpots",
+      "markaréyits",
+      "vartabédats"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 104,
+    "nextPage": 105,
+    "triggerWords": [
+      "DCN",
+      "Orhnyal",
+      "kovyal",
+      "yév",
+      "paravoryal"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 105,
+    "nextPage": 106,
+    "triggerWords": [
+      "DCN",
+      "Arachnortatsûn",
+      "mérots",
+      "yév",
+      "arachin"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 106,
+    "nextPage": 107,
+    "triggerWords": [
+      "DCN",
+      "Miyantsnatsélots",
+      "sûrpots",
+      "yéghitsi",
+      "hishadag"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 107,
+    "nextPage": 108,
+    "triggerWords": [
+      "DCN",
+      "Takavorats",
+      "havadatsélots",
+      "sûrpotsn",
+      "yéghitsi"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 108,
+    "nextPage": 109,
+    "triggerWords": [
+      "DCN",
+      "nthanoor",
+      "aménayn",
+      "havadatsélots",
+      "arants"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 109,
+    "nextPage": 110,
+    "triggerWords": [
+      "CLB",
+      "Yévûs",
+      "aravél",
+      "zébisgobosabédûn",
+      "mér"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 110,
+    "nextPage": 111,
+    "triggerWords": [
+      "DCN",
+      "Kohootyoon",
+      "yév",
+      "parapanootyoon",
+      "madootsanémk"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 111,
+    "nextPage": 112,
+    "triggerWords": [
+      "DCN",
+      "shnorhya",
+      "ûzsér",
+      "zhasdadootyoon",
+      "yév"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 112,
+    "nextPage": 113,
+    "triggerWords": [
+      "DCN",
+      "yév",
+      "aménayn",
+      "ooghapar",
+      "yébisgobosats"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 113,
+    "nextPage": 114,
+    "triggerWords": [
+      "DCN",
+      "yév",
+      "paréchan",
+      "arachnortin",
+      "méro"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 114,
+    "nextPage": 115,
+    "triggerWords": [
+      "CHR",
+      "sd",
+      "aménayni",
+      "yév",
+      "haghaks"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 115,
+    "nextPage": 116,
+    "triggerWords": [
+      "CHR",
+      "Amén",
+      "Yév",
+      "ûnt",
+      "hokvooyt"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 116,
+    "nextPage": 117,
+    "triggerWords": [
+      "DCN",
+      "Aménayn",
+      "sûrpovk",
+      "zorûs",
+      "hishadagétsak"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 117,
+    "nextPage": 118,
+    "triggerWords": [
+      "DCN",
+      "Vasûn",
+      "madootsyal",
+      "soorp",
+      "yév"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 118,
+    "nextPage": 119,
+    "triggerWords": [
+      "DCN",
+      "Vorbészi",
+      "Dér",
+      "Asdvadz",
+      "mér"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 119,
+    "nextPage": 120,
+    "triggerWords": [
+      "DCN",
+      "ngal",
+      "gétso",
+      "yév",
+      "voghormya"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 120,
+    "nextPage": 121,
+    "triggerWords": [
+      "CHR",
+      "Hishya",
+      "Dér",
+      "yév",
+      "voghormya"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 121,
+    "nextPage": 122,
+    "triggerWords": [
+      "SERMON"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "unknown",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 122,
+    "nextPage": 123,
+    "triggerWords": [
+      "CLB",
+      "Yév",
+      "door",
+      "méz",
+      "hamartsagatsayn"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 123,
+    "nextPage": 124,
+    "triggerWords": [
+      "CHR",
+      "Hayr",
+      "mér",
+      "hérgins",
+      "és"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 124,
+    "nextPage": 125,
+    "triggerWords": [
+      "CLB",
+      "yé",
+      "arkayootyoon",
+      "yév",
+      "zorootyoon"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 125,
+    "nextPage": 126,
+    "triggerWords": [
+      "DCN",
+      "Asdoodzo",
+      "yérgirbakéstsook",
+      "CHR",
+      "Arachi"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 126,
+    "nextPage": 127,
+    "triggerWords": [
+      "CLB",
+      "Krisdosiv",
+      "Hisoosiv",
+      "Déramp",
+      "mérov"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 127,
+    "nextPage": 128,
+    "triggerWords": [
+      "CLB",
+      "sûrpootyoon",
+      "sûrpots",
+      "CHR",
+      "Miyayn"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 128,
+    "nextPage": 129,
+    "triggerWords": [
+      "CLB",
+      "Orhnyal",
+      "Hayr",
+      "Soorp",
+      "Asdvadz"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 129,
+    "nextPage": 130,
+    "triggerWords": [
+      "CLB",
+      "Orhnyal",
+      "Soorp",
+      "Asdvadz",
+      "jûshmarid"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 130,
+    "nextPage": 131,
+    "triggerWords": [
+      "CHR",
+      "Amén",
+      "Hayr",
+      "Soorp",
+      "Vortit"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 131,
+    "nextPage": 132,
+    "triggerWords": [
+      "CLB",
+      "soorp",
+      "soorp",
+      "badvagan",
+      "marmno"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 132,
+    "nextPage": 133,
+    "triggerWords": [
+      "CLB",
+      "é",
+      "gyank",
+      "hooys",
+      "harootyoon"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 133,
+    "nextPage": 134,
+    "triggerWords": [
+      "CHR",
+      "Dér",
+      "voghormya",
+      "Dér",
+      "voghormya"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 134,
+    "nextPage": 135,
+    "triggerWords": [
+      "DCN",
+      "Yév",
+      "hivantats",
+      "pûzhûshgootyoon",
+      "nûnchétsélots"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 135,
+    "nextPage": 136,
+    "triggerWords": [
+      "DCN",
+      "hoknootyoon",
+      "dzarayits",
+      "kots",
+      "lér"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "deacon",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 136,
+    "nextPage": 137,
+    "triggerWords": [
+      "DCN",
+      "Saghmos",
+      "asatsék",
+      "Dyarn",
+      "Asdoodzo"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 137,
+    "nextPage": 138,
+    "triggerWords": [
+      "CHR",
+      "Orhnyal",
+      "é",
+      "Asdvadz",
+      "Krisdos"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 138,
+    "nextPage": 139,
+    "triggerWords": [
+      "CHR",
+      "Orhnétsék",
+      "ûzDér",
+      "hérgins",
+      "alélooya"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 139,
+    "nextPage": 140,
+    "triggerWords": [
+      "KHOSDOVANOOTYOON",
+      "CONFESSION",
+      "CONGREGATION",
+      "KNEEL"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "unknown",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 140,
+    "nextPage": 141,
+    "triggerWords": [
+      "TOGETHER",
+      "sinned",
+      "against",
+      "the",
+      "all"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 141,
+    "nextPage": 142,
+    "triggerWords": [
+      "TOGETHER",
+      "sinned",
+      "by",
+      "the",
+      "sevenfold"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 142,
+    "nextPage": 143,
+    "triggerWords": [
+      "TOGETHER",
+      "also",
+      "sinned",
+      "against",
+      "all"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "unknown",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 143,
+    "nextPage": 144,
+    "triggerWords": [
+      "TOGETHER",
+      "which",
+      "my",
+      "misdeeds",
+      "shall"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 144,
+    "nextPage": 145,
+    "triggerWords": [
+      "TOGETHER",
+      "Holy",
+      "father",
+      "hold",
+      "my"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "unknown",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 145,
+    "nextPage": 146,
+    "triggerWords": [
+      "PRS",
+      "Lord",
+      "mercy",
+      "Lord",
+      "mercy"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 146,
+    "nextPage": 147,
+    "triggerWords": [
+      "PRS",
+      "by",
+      "very",
+      "word",
+      "absolve"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 147,
+    "nextPage": 148,
+    "triggerWords": [
+      "àô",
+      "Mégha",
+      "aménasoorp",
+      "Yérrortootyanûn",
+      "yév"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "unknown",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 148,
+    "nextPage": 149,
+    "triggerWords": [
+      "àô",
+      "TOGETHER",
+      "sinned",
+      "by",
+      "the"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "unknown",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 149,
+    "nextPage": 150,
+    "triggerWords": [
+      "àô",
+      "TOGETHER",
+      "also",
+      "sinned",
+      "against"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "unknown",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 150,
+    "nextPage": 151,
+    "triggerWords": [
+      "àô",
+      "TOGETHER",
+      "Holy",
+      "father",
+      "hold"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "unknown",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 151,
+    "nextPage": 152,
+    "triggerWords": [
+      "àô",
+      "PRS",
+      "Lord",
+      "mercy",
+      "Lord"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "unknown",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 152,
+    "nextPage": 153,
+    "triggerWords": [
+      "DCN",
+      "Yérgyooghiv",
+      "yév",
+      "harach",
+      "yév"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 153,
+    "nextPage": 154,
+    "triggerWords": [
+      "KHOSDOVANOOTYOON",
+      "COMMUNION",
+      "CONGREGATION",
+      "KNEEL"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "unknown",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 154,
+    "nextPage": 155,
+    "triggerWords": [
+      "CHR",
+      "Asdvadz",
+      "mér",
+      "yév",
+      "Dér"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 155,
+    "nextPage": 156,
+    "triggerWords": [
+      "CHR",
+      "Lûtsak",
+      "parootyants",
+      "kots",
+      "Dér"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 156,
+    "nextPage": 157,
+    "triggerWords": [
+      "DCN",
+      "Yév",
+      "yévûs",
+      "khaghaghootyan",
+      "ûzDér"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 157,
+    "nextPage": 158,
+    "triggerWords": [
+      "CHR",
+      "Kohanamk",
+      "ûzkén",
+      "Dér",
+      "géragrétsér"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 158,
+    "nextPage": 159,
+    "triggerWords": [
+      "KHOSDOVANOOTYOON",
+      "DISMISSAL"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "unknown",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 159,
+    "nextPage": 160,
+    "triggerWords": [
+      "CLB",
+      "orhnés",
+      "zaynosig",
+      "vork",
+      "orhnén"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 160,
+    "nextPage": 161,
+    "triggerWords": [
+      "CLB",
+      "Gétso",
+      "ûzzhoghovoortûs",
+      "yév",
+      "orhnya"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 161,
+    "nextPage": 162,
+    "triggerWords": [
+      "CLB",
+      "zkhaghaghootyoon",
+      "barkévya",
+      "aménayn",
+      "ashkharhi"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 162,
+    "nextPage": 163,
+    "triggerWords": [
+      "CHR",
+      "Amén",
+      "CLB",
+      "aménayn",
+      "doork"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 163,
+    "nextPage": 164,
+    "triggerWords": [
+      "CHR",
+      "Amén",
+      "Yéghitsi",
+      "anoon",
+      "Dyarn"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 164,
+    "nextPage": 165,
+    "triggerWords": [
+      "CLB",
+      "Gadaroomn",
+      "orinats",
+      "yév",
+      "markaréyits"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 165,
+    "nextPage": 166,
+    "triggerWords": [
+      "KHOSDOVANOOTYOON",
+      "SERVICE"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "unknown",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 166,
+    "nextPage": 167,
+    "triggerWords": [
+      "DCN",
+      "Yév",
+      "yévûs",
+      "khaghaghootyan",
+      "ûzDér"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 167,
+    "nextPage": 168,
+    "triggerWords": [
+      "CHR",
+      "hanéyits",
+      "sdéghdzogh",
+      "koyits",
+      "ararchagits"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 168,
+    "nextPage": 169,
+    "triggerWords": [
+      "CHR",
+      "bûsagicht",
+      "és",
+      "kots",
+      "sûrpots"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 169,
+    "nextPage": 170,
+    "triggerWords": [
+      "CHR",
+      "Alélooya",
+      "alélooya",
+      "khorots",
+      "gartatsi"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 170,
+    "nextPage": 171,
+    "triggerWords": [
+      "DCN",
+      "Alélooya",
+      "orti",
+      "CLB",
+      "Khaghaghootyoon"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 171,
+    "nextPage": 172,
+    "triggerWords": [
+      "CLB",
+      "Sûrpo",
+      "Avédaranis",
+      "Hisoosi",
+      "Krisdosi"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 172,
+    "nextPage": 173,
+    "triggerWords": [
+      "CLB",
+      "Lord",
+      "Christ",
+      "says",
+      "Very"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 173,
+    "nextPage": 174,
+    "triggerWords": [
+      "CLB",
+      "Those",
+      "who",
+      "their",
+      "and"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 174,
+    "nextPage": 175,
+    "triggerWords": [
+      "CHR",
+      "Kahanayk",
+      "yév",
+      "zhoghovoortk",
+      "haytsémk"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 175,
+    "nextPage": 176,
+    "triggerWords": [
+      "CHR",
+      "vérin",
+      "Yéroosaghém",
+      "pnagaranûs",
+      "hréshdagats"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 176,
+    "nextPage": 177,
+    "triggerWords": [
+      "PRS",
+      "Hokvotsûn",
+      "hankootsélots",
+      "Krisdos",
+      "Asdvadz"
+    ],
+    "triggerSpeaker": "deacon",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 177,
+    "nextPage": 178,
+    "triggerWords": [
+      "DCN",
+      "Yév",
+      "yévûs",
+      "khaghaghootyan",
+      "ûzDér"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "deacon",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 178,
+    "nextPage": 179,
+    "triggerWords": [
+      "CLB",
+      "Dér",
+      "voghormya",
+      "Dér",
+      "voghormya"
+    ],
+    "triggerSpeaker": "celebrant",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 179,
+    "nextPage": 180,
+    "triggerWords": [
+      "CLB",
+      "Tasavoryal",
+      "baydzaratso",
+      "ûnt",
+      "soorpûs"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "celebrant",
+    "speakerChanges": true
+  },
+  {
+    "currentPage": 180,
+    "nextPage": 181,
+    "triggerWords": [
+      "PRS",
+      "Orhynal",
+      "Dér",
+      "mér",
+      "Hisoos"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 181,
+    "nextPage": 182,
+    "triggerWords": [
+      "CHR",
+      "Togh",
+      "méz",
+      "ûzbardis",
+      "mér"
+    ],
+    "triggerSpeaker": "choir",
+    "currentSpeaker": "choir",
+    "speakerChanges": false
+  },
+  {
+    "currentPage": 182,
+    "nextPage": 183,
+    "triggerWords": [
+      "CHR",
+      "Orhnétsits",
+      "ûzDér",
+      "haménayn",
+      "zham"
+    ],
+    "triggerSpeaker": "unknown",
+    "currentSpeaker": "choir",
+    "speakerChanges": true
+  }
+]

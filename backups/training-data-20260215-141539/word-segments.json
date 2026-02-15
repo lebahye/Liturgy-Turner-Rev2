@@ -1,0 +1,5448 @@
+{
+  "totalSegments": 308,
+  "processedPages": 30,
+  "wordSegments": [
+    {
+      "pageNumber": 1,
+      "segmentIndex": 0,
+      "startTime": 0,
+      "endTime": 0.12,
+      "duration": 0.12,
+      "likelyWord": "ՊԱՏՐԱՍՏՈՒԹԻՒՆ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 1,
+      "startTime": 0.16,
+      "endTime": 0.68,
+      "duration": 0.52,
+      "likelyWord": "ՊԱՏՐԱՍՏՈՒԹԻՒՆ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 2,
+      "startTime": 1.2,
+      "endTime": 1.46,
+      "duration": 0.26,
+      "likelyWord": "ՊԱՏՐԱՍՏՈՒԹԻՒՆ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 3,
+      "startTime": 8.08,
+      "endTime": 8.34,
+      "duration": 0.2599999999999998,
+      "likelyWord": "ՊԱՏՐԱՍՏՈՒԹԻՒՆ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 4,
+      "startTime": 8.5,
+      "endTime": 9.14,
+      "duration": 0.6400000000000006,
+      "likelyWord": "ՊԱՏՐԱՍՏՈՒԹԻՒՆ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 5,
+      "startTime": 9.64,
+      "endTime": 9.82,
+      "duration": 0.17999999999999972,
+      "likelyWord": "ՊԱՏՐԱՍՏՈՒԹԻՒՆ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 6,
+      "startTime": 10.36,
+      "endTime": 10.92,
+      "duration": 0.5600000000000005,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 7,
+      "startTime": 10.94,
+      "endTime": 11.24,
+      "duration": 0.3000000000000007,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 8,
+      "startTime": 12.54,
+      "endTime": 12.7,
+      "duration": 0.16000000000000014,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 9,
+      "startTime": 13.04,
+      "endTime": 14.14,
+      "duration": 1.1000000000000014,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 10,
+      "startTime": 14.58,
+      "endTime": 14.82,
+      "duration": 0.2400000000000002,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 11,
+      "startTime": 14.96,
+      "endTime": 15.12,
+      "duration": 0.15999999999999837,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 12,
+      "startTime": 15.92,
+      "endTime": 16.12,
+      "duration": 0.20000000000000107,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 13,
+      "startTime": 17.06,
+      "endTime": 17.46,
+      "duration": 0.40000000000000213,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 14,
+      "startTime": 19.16,
+      "endTime": 19.54,
+      "duration": 0.379999999999999,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 15,
+      "startTime": 20.14,
+      "endTime": 20.46,
+      "duration": 0.3200000000000003,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 16,
+      "startTime": 20.62,
+      "endTime": 20.82,
+      "duration": 0.1999999999999993,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 17,
+      "startTime": 21.38,
+      "endTime": 21.48,
+      "duration": 0.10000000000000142,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 18,
+      "startTime": 22.3,
+      "endTime": 22.42,
+      "duration": 0.120000000000001,
+      "likelyWord": "Էջ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 19,
+      "startTime": 23.3,
+      "endTime": 23.42,
+      "duration": 0.120000000000001,
+      "likelyWord": "Էջ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 20,
+      "startTime": 24.14,
+      "endTime": 24.64,
+      "duration": 0.5,
+      "likelyWord": "Էջ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 21,
+      "startTime": 26.62,
+      "endTime": 26.96,
+      "duration": 0.33999999999999986,
+      "likelyWord": "Էջ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 22,
+      "startTime": 28.42,
+      "endTime": 29.18,
+      "duration": 0.759999999999998,
+      "likelyWord": "Էջ"
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 23,
+      "startTime": 29.34,
+      "endTime": 29.94,
+      "duration": 0.6000000000000014,
+      "likelyWord": "Էջ"
+    },
+    {
+      "pageNumber": 2,
+      "segmentIndex": 0,
+      "startTime": 60,
+      "endTime": 64.86,
+      "duration": 4.86,
+      "likelyWord": "ԴՊՐ"
+    },
+    {
+      "pageNumber": 2,
+      "segmentIndex": 1,
+      "startTime": 64.92,
+      "endTime": 69.2,
+      "duration": 4.279999999999999,
+      "likelyWord": "զարդարեցեր"
+    },
+    {
+      "pageNumber": 2,
+      "segmentIndex": 2,
+      "startTime": 69.24,
+      "endTime": 69.38,
+      "duration": 0.14000000000000057,
+      "likelyWord": "գերապանծ"
+    },
+    {
+      "pageNumber": 3,
+      "segmentIndex": 0,
+      "startTime": 70,
+      "endTime": 72.88,
+      "duration": 2.88,
+      "likelyWord": "ԴՊՐ"
+    },
+    {
+      "pageNumber": 3,
+      "segmentIndex": 1,
+      "startTime": 89.1,
+      "endTime": 89.36,
+      "duration": 0.259999999999998,
+      "likelyWord": "զերկըրպագուս"
+    },
+    {
+      "pageNumber": 5,
+      "segmentIndex": 0,
+      "startTime": 120,
+      "endTime": 124.24,
+      "duration": 4.24,
+      "likelyWord": "ՍՐԿ"
+    },
+    {
+      "pageNumber": 5,
+      "segmentIndex": 1,
+      "startTime": 124.4,
+      "endTime": 124.96,
+      "duration": 0.5599999999999996,
+      "likelyWord": "նայն"
+    },
+    {
+      "pageNumber": 5,
+      "segmentIndex": 2,
+      "startTime": 125.08,
+      "endTime": 126.78,
+      "duration": 1.7000000000000002,
+      "likelyWord": "ի"
+    },
+    {
+      "pageNumber": 5,
+      "segmentIndex": 3,
+      "startTime": 126.88,
+      "endTime": 127.52,
+      "duration": 0.6399999999999997,
+      "likelyWord": "սցի"
+    },
+    {
+      "pageNumber": 5,
+      "segmentIndex": 4,
+      "startTime": 127.62,
+      "endTime": 127.86,
+      "duration": 0.2400000000000002,
+      "likelyWord": "ա"
+    },
+    {
+      "pageNumber": 5,
+      "segmentIndex": 5,
+      "startTime": 128.06,
+      "endTime": 128.26,
+      "duration": 0.1999999999999993,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 0,
+      "startTime": 130,
+      "endTime": 134.02,
+      "duration": 4.02,
+      "likelyWord": "ՔՀՆ"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 1,
+      "startTime": 134.76,
+      "endTime": 135.36,
+      "duration": 0.6000000000000005,
+      "likelyWord": "Ընկալ"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 2,
+      "startTime": 135.4,
+      "endTime": 136.4,
+      "duration": 1,
+      "likelyWord": "Տէր"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 3,
+      "startTime": 136.58,
+      "endTime": 137.98,
+      "duration": 1.4000000000000004,
+      "likelyWord": "ր"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 4,
+      "startTime": 138.18,
+      "endTime": 139.08,
+      "duration": 0.9000000000000004,
+      "likelyWord": "բարեխօսութեամբ"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 5,
+      "startTime": 139.22,
+      "endTime": 139.64,
+      "duration": 0.41999999999999993,
+      "likelyWord": "Աստուածա"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 6,
+      "startTime": 140.2,
+      "endTime": 143.78,
+      "duration": 3.58,
+      "likelyWord": "ծնին"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 7,
+      "startTime": 143.9,
+      "endTime": 145.14,
+      "duration": 1.2400000000000002,
+      "likelyWord": "ծնողի"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 8,
+      "startTime": 145.28,
+      "endTime": 145.58,
+      "duration": 0.3000000000000007,
+      "likelyWord": "ածնի"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 9,
+      "startTime": 145.64,
+      "endTime": 146,
+      "duration": 0.35999999999999943,
+      "likelyWord": "քո"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 10,
+      "startTime": 146.18,
+      "endTime": 146.32,
+      "duration": 0.14000000000000057,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 11,
+      "startTime": 146.64,
+      "endTime": 146.78,
+      "duration": 0.14000000000000057,
+      "likelyWord": "աղաչանօք"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 12,
+      "startTime": 147.06,
+      "endTime": 147.22,
+      "duration": 0.16000000000000014,
+      "likelyWord": "նայն"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 13,
+      "startTime": 147.52,
+      "endTime": 147.92000000000002,
+      "duration": 0.40000000000000213,
+      "likelyWord": "սրբոց"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 14,
+      "startTime": 148.04,
+      "endTime": 148.24,
+      "duration": 0.1999999999999993,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 15,
+      "startTime": 148.32,
+      "endTime": 148.62,
+      "duration": 0.3000000000000007,
+      "likelyWord": "աւուրս"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 16,
+      "startTime": 148.94,
+      "endTime": 149.07999999999998,
+      "duration": 0.13999999999999702,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 17,
+      "startTime": 149.42000000000002,
+      "endTime": 149.57999999999998,
+      "duration": 0.1599999999999966,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 0,
+      "startTime": 152.06,
+      "endTime": 152.2,
+      "duration": 0.14000000000000012,
+      "likelyWord": "ՔՀՆ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 1,
+      "startTime": 153.88,
+      "endTime": 154.4,
+      "duration": 0.5200000000000005,
+      "likelyWord": "ՔՀՆ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 2,
+      "startTime": 154.44,
+      "endTime": 155.36,
+      "duration": 0.9199999999999999,
+      "likelyWord": "Լուր"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 3,
+      "startTime": 155.54,
+      "endTime": 155.78,
+      "duration": 0.2400000000000002,
+      "likelyWord": "զ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 4,
+      "startTime": 155.96,
+      "endTime": 156.08,
+      "duration": 0.1200000000000001,
+      "likelyWord": "Տէր"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 5,
+      "startTime": 156.14,
+      "endTime": 156.6,
+      "duration": 0.45999999999999996,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 6,
+      "startTime": 156.94,
+      "endTime": 157.34,
+      "duration": 0.39999999999999947,
+      "likelyWord": "ողոր"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 7,
+      "startTime": 157.38,
+      "endTime": 157.54,
+      "duration": 0.16000000000000014,
+      "likelyWord": "ա"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 8,
+      "startTime": 157.66,
+      "endTime": 157.84,
+      "duration": 0.17999999999999972,
+      "likelyWord": "ներեա"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 9,
+      "startTime": 158.72,
+      "endTime": 158.84,
+      "duration": 0.11999999999999922,
+      "likelyWord": "քաւեա"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 10,
+      "startTime": 159.18,
+      "endTime": 159.32,
+      "duration": 0.14000000000000057,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 11,
+      "startTime": 159.52,
+      "endTime": 159.74,
+      "duration": 0.22000000000000064,
+      "likelyWord": "թող"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 12,
+      "startTime": 160.28,
+      "endTime": 160.4,
+      "duration": 0.120000000000001,
+      "likelyWord": "զ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 13,
+      "startTime": 160.66,
+      "endTime": 160.84,
+      "duration": 0.17999999999999972,
+      "likelyWord": "ղս"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 14,
+      "startTime": 161,
+      "endTime": 161.12,
+      "duration": 0.11999999999999922,
+      "likelyWord": "ր"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 15,
+      "startTime": 162,
+      "endTime": 162.24,
+      "duration": 0.2400000000000002,
+      "likelyWord": "Արժանաւորեա"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 16,
+      "startTime": 162.48,
+      "endTime": 162.6,
+      "duration": 0.11999999999999922,
+      "likelyWord": "գոհութեամբ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 17,
+      "startTime": 162.72,
+      "endTime": 162.88,
+      "duration": 0.16000000000000014,
+      "likelyWord": "առաւորել"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 18,
+      "startTime": 163.42,
+      "endTime": 163.56,
+      "duration": 0.14000000000000057,
+      "likelyWord": "զքեզ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 19,
+      "startTime": 164.04,
+      "endTime": 164.32,
+      "duration": 0.28000000000000114,
+      "likelyWord": "զքեզ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 20,
+      "startTime": 168.82,
+      "endTime": 169.04,
+      "duration": 0.21999999999999886,
+      "likelyWord": "ընդ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 21,
+      "startTime": 169.07999999999998,
+      "endTime": 169.3,
+      "duration": 0.22000000000000242,
+      "likelyWord": "Որդւոյ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 22,
+      "startTime": 169.48,
+      "endTime": 169.6,
+      "duration": 0.120000000000001,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 23,
+      "startTime": 170.82,
+      "endTime": 170.96,
+      "duration": 0.14000000000000057,
+      "likelyWord": "ընդ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 24,
+      "startTime": 172.22,
+      "endTime": 173,
+      "duration": 0.7800000000000011,
+      "likelyWord": "Սրբոյ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 25,
+      "startTime": 173.07999999999998,
+      "endTime": 173.22,
+      "duration": 0.14000000000000057,
+      "likelyWord": "Հոգւոյդ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 26,
+      "startTime": 173.62,
+      "endTime": 173.8,
+      "duration": 0.17999999999999972,
+      "likelyWord": "այժմ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 27,
+      "startTime": 174.98,
+      "endTime": 175.22,
+      "duration": 0.23999999999999844,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 28,
+      "startTime": 175.78,
+      "endTime": 176.02,
+      "duration": 0.23999999999999844,
+      "likelyWord": "շտ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 29,
+      "startTime": 176.6,
+      "endTime": 177.38,
+      "duration": 0.7799999999999976,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 30,
+      "startTime": 177.6,
+      "endTime": 177.82,
+      "duration": 0.21999999999999886,
+      "likelyWord": "յաւիտեանս"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 31,
+      "startTime": 177.9,
+      "endTime": 178.12,
+      "duration": 0.22000000000000242,
+      "likelyWord": "յաւիտենից"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 32,
+      "startTime": 178.16,
+      "endTime": 178.32,
+      "duration": 0.16000000000000014,
+      "likelyWord": "Ամէն"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 33,
+      "startTime": 178.62,
+      "endTime": 178.8,
+      "duration": 0.17999999999999972,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 34,
+      "startTime": 179.14,
+      "endTime": 179.3,
+      "duration": 0.16000000000000014,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 35,
+      "startTime": 179.38,
+      "endTime": 179.6,
+      "duration": 0.22000000000000242,
+      "likelyWord": "Էջ"
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 0,
+      "startTime": 190.2,
+      "endTime": 191.18,
+      "duration": 0.98,
+      "likelyWord": "ՔՀՆ"
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 1,
+      "startTime": 191.24,
+      "endTime": 192.56,
+      "duration": 1.32,
+      "likelyWord": "եմ"
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 2,
+      "startTime": 192.6,
+      "endTime": 192.86,
+      "duration": 0.2599999999999998,
+      "likelyWord": "Խոստովանիմ"
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 3,
+      "startTime": 193.4,
+      "endTime": 193.52,
+      "duration": 0.1200000000000001,
+      "likelyWord": "Աստուծոյ"
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 4,
+      "startTime": 193.54,
+      "endTime": 194.3,
+      "duration": 0.7599999999999998,
+      "likelyWord": "Աստուածածնին"
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 5,
+      "startTime": 194.72,
+      "endTime": 194.92,
+      "duration": 0.20000000000000018,
+      "likelyWord": "առաջի"
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 6,
+      "startTime": 195.2,
+      "endTime": 195.7,
+      "duration": 0.5,
+      "likelyWord": "նայն"
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 7,
+      "startTime": 195.78,
+      "endTime": 196.08,
+      "duration": 0.2999999999999998,
+      "likelyWord": "առաջի"
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 8,
+      "startTime": 196.24,
+      "endTime": 196.56,
+      "duration": 0.3199999999999994,
+      "likelyWord": "հարք"
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 9,
+      "startTime": 196.7,
+      "endTime": 197,
+      "duration": 0.2999999999999998,
+      "likelyWord": "եղբարք"
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 10,
+      "startTime": 198.3,
+      "endTime": 198.6,
+      "duration": 0.29999999999999893,
+      "likelyWord": "ղս"
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 11,
+      "startTime": 198.72,
+      "endTime": 199.12,
+      "duration": 0.3999999999999986,
+      "likelyWord": "գործեալ"
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 12,
+      "startTime": 199.3,
+      "endTime": 199.5,
+      "duration": 0.1999999999999993,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 0,
+      "startTime": 200,
+      "endTime": 200.3,
+      "duration": 0.3,
+      "likelyWord": "ՔՀՆ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 1,
+      "startTime": 200.38,
+      "endTime": 200.56,
+      "duration": 0.18000000000000005,
+      "likelyWord": "ՔՀՆ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 2,
+      "startTime": 200.62,
+      "endTime": 200.9,
+      "duration": 0.28,
+      "likelyWord": "քանզի"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 3,
+      "startTime": 200.96,
+      "endTime": 201.28,
+      "duration": 0.32000000000000006,
+      "likelyWord": "ղայ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 4,
+      "startTime": 202.04,
+      "endTime": 203.32,
+      "duration": 1.2799999999999998,
+      "likelyWord": "ղայ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 5,
+      "startTime": 203.6,
+      "endTime": 204.4,
+      "duration": 0.8000000000000003,
+      "likelyWord": "խորհըրդով"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 6,
+      "startTime": 204.52,
+      "endTime": 204.66,
+      "duration": 0.14000000000000057,
+      "likelyWord": "բանիւ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 7,
+      "startTime": 204.84,
+      "endTime": 204.94,
+      "duration": 0.10000000000000053,
+      "likelyWord": "բանիւ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 8,
+      "startTime": 205.5,
+      "endTime": 205.68,
+      "duration": 0.17999999999999972,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 9,
+      "startTime": 206.64,
+      "endTime": 207.66,
+      "duration": 1.0200000000000005,
+      "likelyWord": "գործով"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 10,
+      "startTime": 207.7,
+      "endTime": 207.84,
+      "duration": 0.13999999999999968,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 11,
+      "startTime": 208.02,
+      "endTime": 208.14,
+      "duration": 0.120000000000001,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 12,
+      "startTime": 208.84,
+      "endTime": 209.14,
+      "duration": 0.3000000000000007,
+      "likelyWord": "ա"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 13,
+      "startTime": 209.62,
+      "endTime": 210.22,
+      "duration": 0.6000000000000014,
+      "likelyWord": "նայն"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 14,
+      "startTime": 211.04,
+      "endTime": 211.2,
+      "duration": 0.16000000000000014,
+      "likelyWord": "նայն"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 15,
+      "startTime": 211.98,
+      "endTime": 212.58,
+      "duration": 0.5999999999999996,
+      "likelyWord": "ղօք"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 16,
+      "startTime": 212.7,
+      "endTime": 213.16,
+      "duration": 0.46000000000000085,
+      "likelyWord": "զոր"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 17,
+      "startTime": 213.3,
+      "endTime": 213.62,
+      "duration": 0.3199999999999985,
+      "likelyWord": "զոր"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 18,
+      "startTime": 213.7,
+      "endTime": 214.12,
+      "duration": 0.41999999999999993,
+      "likelyWord": "գործեն"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 19,
+      "startTime": 214.7,
+      "endTime": 214.94,
+      "duration": 0.2400000000000002,
+      "likelyWord": "մարդիկ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 20,
+      "startTime": 215.18,
+      "endTime": 215.4,
+      "duration": 0.22000000000000064,
+      "likelyWord": "ղայ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 21,
+      "startTime": 215.68,
+      "endTime": 215.86,
+      "duration": 0.17999999999999972,
+      "likelyWord": "ղայ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 22,
+      "startTime": 216.07999999999998,
+      "endTime": 217.2,
+      "duration": 1.120000000000001,
+      "likelyWord": "ղայ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 23,
+      "startTime": 217.56,
+      "endTime": 218.76,
+      "duration": 1.2000000000000028,
+      "likelyWord": "աղաչեմ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 24,
+      "startTime": 218.8,
+      "endTime": 219.02,
+      "duration": 0.21999999999999886,
+      "likelyWord": "աղաչեմ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 25,
+      "startTime": 219.06,
+      "endTime": 220.64,
+      "duration": 1.5800000000000018,
+      "likelyWord": "զձեզ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 26,
+      "startTime": 221.22,
+      "endTime": 221.82,
+      "duration": 0.6000000000000014,
+      "likelyWord": "խնդրեցէք"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 27,
+      "startTime": 221.88,
+      "endTime": 222.46,
+      "duration": 0.5800000000000018,
+      "likelyWord": "խնդրեցէք"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 28,
+      "startTime": 222.5,
+      "endTime": 222.9,
+      "duration": 0.3999999999999986,
+      "likelyWord": "վասն"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 29,
+      "startTime": 224.68,
+      "endTime": 225.5,
+      "duration": 0.8200000000000003,
+      "likelyWord": "իմ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 30,
+      "startTime": 225.57999999999998,
+      "endTime": 225.86,
+      "duration": 0.28000000000000114,
+      "likelyWord": "յԱստուծոյ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 31,
+      "startTime": 226.14,
+      "endTime": 227,
+      "duration": 0.8599999999999994,
+      "likelyWord": "յԱստուծոյ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 32,
+      "startTime": 227.07999999999998,
+      "endTime": 227.42000000000002,
+      "duration": 0.3400000000000034,
+      "likelyWord": "զթողութիւն"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 33,
+      "startTime": 227.46,
+      "endTime": 227.57999999999998,
+      "duration": 0.11999999999999744,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 34,
+      "startTime": 228,
+      "endTime": 228.44,
+      "duration": 0.4400000000000013,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 35,
+      "startTime": 228.8,
+      "endTime": 229.04,
+      "duration": 0.23999999999999844,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 9,
+      "segmentIndex": 36,
+      "startTime": 229.54,
+      "endTime": 229.74,
+      "duration": 0.1999999999999993,
+      "likelyWord": "Էջ"
+    },
+    {
+      "pageNumber": 10,
+      "segmentIndex": 0,
+      "startTime": 240.02,
+      "endTime": 240.96,
+      "duration": 0.94,
+      "likelyWord": "ՍՐԿ"
+    },
+    {
+      "pageNumber": 10,
+      "segmentIndex": 1,
+      "startTime": 241.18,
+      "endTime": 242.22,
+      "duration": 1.0400000000000003,
+      "likelyWord": "առաջի"
+    },
+    {
+      "pageNumber": 10,
+      "segmentIndex": 2,
+      "startTime": 242.34,
+      "endTime": 242.84,
+      "duration": 0.5,
+      "likelyWord": "իւրով"
+    },
+    {
+      "pageNumber": 11,
+      "segmentIndex": 0,
+      "startTime": 245,
+      "endTime": 245.48,
+      "duration": 0.48,
+      "likelyWord": "ՔՀՆ"
+    },
+    {
+      "pageNumber": 11,
+      "segmentIndex": 1,
+      "startTime": 245.7,
+      "endTime": 245.84,
+      "duration": 0.14,
+      "likelyWord": "մարդասէրն"
+    },
+    {
+      "pageNumber": 11,
+      "segmentIndex": 2,
+      "startTime": 245.92,
+      "endTime": 246.3,
+      "duration": 0.38,
+      "likelyWord": "զա"
+    },
+    {
+      "pageNumber": 11,
+      "segmentIndex": 3,
+      "startTime": 246.36,
+      "endTime": 246.5,
+      "duration": 0.1399999999999999,
+      "likelyWord": "տացէ"
+    },
+    {
+      "pageNumber": 11,
+      "segmentIndex": 4,
+      "startTime": 246.58,
+      "endTime": 246.8,
+      "duration": 0.21999999999999997,
+      "likelyWord": "գործելոյ"
+    },
+    {
+      "pageNumber": 11,
+      "segmentIndex": 5,
+      "startTime": 246.84,
+      "endTime": 247.16,
+      "duration": 0.32000000000000006,
+      "likelyWord": "զառաջակայ"
+    },
+    {
+      "pageNumber": 11,
+      "segmentIndex": 6,
+      "startTime": 247.3,
+      "endTime": 247.92,
+      "duration": 0.6200000000000001,
+      "likelyWord": "Սուրբ"
+    },
+    {
+      "pageNumber": 11,
+      "segmentIndex": 7,
+      "startTime": 248.32,
+      "endTime": 248.78,
+      "duration": 0.45999999999999996,
+      "likelyWord": "ողորմածն"
+    },
+    {
+      "pageNumber": 11,
+      "segmentIndex": 8,
+      "startTime": 248.88,
+      "endTime": 249.2,
+      "duration": 0.3200000000000003,
+      "likelyWord": "յաւիտեանս"
+    },
+    {
+      "pageNumber": 12,
+      "segmentIndex": 0,
+      "startTime": 250,
+      "endTime": 250.22,
+      "duration": 0.22,
+      "likelyWord": "ԴՊՐ"
+    },
+    {
+      "pageNumber": 12,
+      "segmentIndex": 1,
+      "startTime": 250.36,
+      "endTime": 251.14,
+      "duration": 0.7799999999999999,
+      "likelyWord": "Յիշեսջիր"
+    },
+    {
+      "pageNumber": 12,
+      "segmentIndex": 2,
+      "startTime": 251.42,
+      "endTime": 251.6,
+      "duration": 0.18000000000000016,
+      "likelyWord": "ըզ"
+    },
+    {
+      "pageNumber": 12,
+      "segmentIndex": 3,
+      "startTime": 251.76,
+      "endTime": 252.06,
+      "duration": 0.30000000000000004,
+      "likelyWord": "առաջի"
+    },
+    {
+      "pageNumber": 12,
+      "segmentIndex": 4,
+      "startTime": 252.2,
+      "endTime": 252.94,
+      "duration": 0.7399999999999998,
+      "likelyWord": "Գառինն"
+    },
+    {
+      "pageNumber": 12,
+      "segmentIndex": 5,
+      "startTime": 253.32,
+      "endTime": 254.24,
+      "duration": 0.9200000000000004,
+      "likelyWord": "ՔՀՆ"
+    },
+    {
+      "pageNumber": 12,
+      "segmentIndex": 6,
+      "startTime": 254.32,
+      "endTime": 254.7,
+      "duration": 0.3799999999999999,
+      "likelyWord": "լիջիք"
+    },
+    {
+      "pageNumber": 12,
+      "segmentIndex": 7,
+      "startTime": 254.72,
+      "endTime": 255.5,
+      "duration": 0.7800000000000002,
+      "likelyWord": "անմահ"
+    },
+    {
+      "pageNumber": 12,
+      "segmentIndex": 8,
+      "startTime": 255.7,
+      "endTime": 256.76,
+      "duration": 1.0599999999999996,
+      "likelyWord": "Աստուծոյ"
+    },
+    {
+      "pageNumber": 12,
+      "segmentIndex": 9,
+      "startTime": 257.14,
+      "endTime": 259,
+      "duration": 1.8600000000000003,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 0,
+      "startTime": 260,
+      "endTime": 260.44,
+      "duration": 0.44,
+      "likelyWord": "ԴՊՐ"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 1,
+      "startTime": 260.68,
+      "endTime": 261.34,
+      "duration": 0.66,
+      "likelyWord": "Աղաղակեցէք"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 2,
+      "startTime": 261.54,
+      "endTime": 261.74,
+      "duration": 0.19999999999999996,
+      "likelyWord": "առ"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 3,
+      "startTime": 262.12,
+      "endTime": 262.86,
+      "duration": 0.7399999999999998,
+      "likelyWord": "Տէր"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 4,
+      "startTime": 263.1,
+      "endTime": 264.3,
+      "duration": 1.1999999999999997,
+      "likelyWord": "ա"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 5,
+      "startTime": 264.34,
+      "endTime": 265,
+      "duration": 0.6600000000000001,
+      "likelyWord": "նայն"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 6,
+      "startTime": 265.44,
+      "endTime": 265.64,
+      "duration": 0.1999999999999993,
+      "likelyWord": "երկիր"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 7,
+      "startTime": 265.72,
+      "endTime": 267.28,
+      "duration": 1.5600000000000005,
+      "likelyWord": "Տեառն"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 8,
+      "startTime": 267.4,
+      "endTime": 268.66,
+      "duration": 1.2599999999999998,
+      "likelyWord": "ուրախութեամբ"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 9,
+      "startTime": 268.84,
+      "endTime": 269.86,
+      "duration": 1.0199999999999996,
+      "likelyWord": "Մըտէք"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 10,
+      "startTime": 269.94,
+      "endTime": 270.08,
+      "duration": 0.14000000000000057,
+      "likelyWord": "առաջի"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 11,
+      "startTime": 270.14,
+      "endTime": 270.48,
+      "duration": 0.33999999999999986,
+      "likelyWord": "նորա"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 12,
+      "startTime": 270.52,
+      "endTime": 271.92,
+      "duration": 1.4000000000000004,
+      "likelyWord": "ցընծութեամբ"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 13,
+      "startTime": 272.04,
+      "endTime": 272.68,
+      "duration": 0.6400000000000006,
+      "likelyWord": "ծաներուք"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 14,
+      "startTime": 272.84,
+      "endTime": 273.88,
+      "duration": 1.040000000000001,
+      "likelyWord": "նա"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 15,
+      "startTime": 274.04,
+      "endTime": 274.68,
+      "duration": 0.6400000000000006,
+      "likelyWord": "է"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 16,
+      "startTime": 274.72,
+      "endTime": 275.6,
+      "duration": 0.879999999999999,
+      "likelyWord": "Տէր"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 17,
+      "startTime": 276.02,
+      "endTime": 276.48,
+      "duration": 0.46000000000000085,
+      "likelyWord": "Աստուած"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 18,
+      "startTime": 276.8,
+      "endTime": 277.08,
+      "duration": 0.2799999999999976,
+      "likelyWord": "ր"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 19,
+      "startTime": 277.12,
+      "endTime": 277.96,
+      "duration": 0.8399999999999999,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 13,
+      "segmentIndex": 20,
+      "startTime": 278,
+      "endTime": 279.3,
+      "duration": 1.3000000000000007,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 14,
+      "segmentIndex": 0,
+      "startTime": 280,
+      "endTime": 283.16,
+      "duration": 3.16,
+      "likelyWord": "ԴՊՐ"
+    },
+    {
+      "pageNumber": 14,
+      "segmentIndex": 1,
+      "startTime": 283.66,
+      "endTime": 283.8,
+      "duration": 0.13999999999999968,
+      "likelyWord": "զ"
+    },
+    {
+      "pageNumber": 14,
+      "segmentIndex": 2,
+      "startTime": 283.9,
+      "endTime": 284.12,
+      "duration": 0.2200000000000002,
+      "likelyWord": "ք"
+    },
+    {
+      "pageNumber": 14,
+      "segmentIndex": 3,
+      "startTime": 284.6,
+      "endTime": 284.76,
+      "duration": 0.16000000000000014,
+      "likelyWord": "նորա"
+    },
+    {
+      "pageNumber": 14,
+      "segmentIndex": 4,
+      "startTime": 285.76,
+      "endTime": 286.02,
+      "duration": 0.2599999999999998,
+      "likelyWord": "նորա"
+    },
+    {
+      "pageNumber": 14,
+      "segmentIndex": 5,
+      "startTime": 286.36,
+      "endTime": 286.48,
+      "duration": 0.1200000000000001,
+      "likelyWord": "յարկըս"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 0,
+      "startTime": 290,
+      "endTime": 291.6,
+      "duration": 1.6,
+      "likelyWord": "ԴՊՐ"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 1,
+      "startTime": 291.86,
+      "endTime": 292.92,
+      "duration": 1.0599999999999998,
+      "likelyWord": "Խոստովան"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 2,
+      "startTime": 293.06,
+      "endTime": 293.24,
+      "duration": 0.18000000000000016,
+      "likelyWord": "եղերուք"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 3,
+      "startTime": 293.42,
+      "endTime": 293.56,
+      "duration": 0.14000000000000012,
+      "likelyWord": "Տեառն"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 4,
+      "startTime": 293.76,
+      "endTime": 293.86,
+      "duration": 0.10000000000000009,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 5,
+      "startTime": 294.52,
+      "endTime": 294.74,
+      "duration": 0.22000000000000064,
+      "likelyWord": "օրհնեցէք"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 6,
+      "startTime": 294.86,
+      "endTime": 295.14,
+      "duration": 0.27999999999999936,
+      "likelyWord": "զանուն"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 7,
+      "startTime": 295.24,
+      "endTime": 295.38,
+      "duration": 0.13999999999999968,
+      "likelyWord": "նորա"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 8,
+      "startTime": 295.56,
+      "endTime": 295.8,
+      "duration": 0.2400000000000002,
+      "likelyWord": "Քաղցըր"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 9,
+      "startTime": 296.66,
+      "endTime": 296.78,
+      "duration": 0.1200000000000001,
+      "likelyWord": "է"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 10,
+      "startTime": 298.62,
+      "endTime": 298.76,
+      "duration": 0.14000000000000057,
+      "likelyWord": "Տէր"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 11,
+      "startTime": 298.94,
+      "endTime": 299.1,
+      "duration": 0.16000000000000014,
+      "likelyWord": "է"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 12,
+      "startTime": 299.94,
+      "endTime": 300.06,
+      "duration": 0.120000000000001,
+      "likelyWord": "ողորմութիւն"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 13,
+      "startTime": 302.16,
+      "endTime": 302.36,
+      "duration": 0.1999999999999993,
+      "likelyWord": "նորա"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 14,
+      "startTime": 304.44,
+      "endTime": 305.14,
+      "duration": 0.7000000000000011,
+      "likelyWord": "ազգէ"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 15,
+      "startTime": 305.5,
+      "endTime": 305.72,
+      "duration": 0.22000000000000064,
+      "likelyWord": "նչեւ"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 16,
+      "startTime": 305.94,
+      "endTime": 306.14,
+      "duration": 0.20000000000000107,
+      "likelyWord": "յազգ"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 17,
+      "startTime": 306.4,
+      "endTime": 306.5,
+      "duration": 0.10000000000000142,
+      "likelyWord": "է"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 18,
+      "startTime": 307.78,
+      "endTime": 307.96,
+      "duration": 0.17999999999999972,
+      "likelyWord": "ճըշմարտութիւն"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 19,
+      "startTime": 308.44,
+      "endTime": 308.64,
+      "duration": 0.1999999999999993,
+      "likelyWord": "նորա"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 20,
+      "startTime": 308.88,
+      "endTime": 309.08,
+      "duration": 0.1999999999999993,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 15,
+      "segmentIndex": 21,
+      "startTime": 309.36,
+      "endTime": 309.66,
+      "duration": 0.3000000000000007,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 16,
+      "segmentIndex": 0,
+      "startTime": 310.12,
+      "endTime": 314.92,
+      "duration": 4.8,
+      "likelyWord": "ԴՊՐ"
+    },
+    {
+      "pageNumber": 17,
+      "segmentIndex": 0,
+      "startTime": 315,
+      "endTime": 315.52,
+      "duration": 0.52,
+      "likelyWord": "ՍՐԿ"
+    },
+    {
+      "pageNumber": 17,
+      "segmentIndex": 1,
+      "startTime": 315.64,
+      "endTime": 316.6,
+      "duration": 0.9600000000000001,
+      "likelyWord": "զի"
+    },
+    {
+      "pageNumber": 17,
+      "segmentIndex": 2,
+      "startTime": 316.94,
+      "endTime": 317.98,
+      "duration": 1.04,
+      "likelyWord": "ղաց"
+    },
+    {
+      "pageNumber": 17,
+      "segmentIndex": 3,
+      "startTime": 318.14,
+      "endTime": 318.4,
+      "duration": 0.2599999999999998,
+      "likelyWord": "Ա"
+    },
+    {
+      "pageNumber": 17,
+      "segmentIndex": 4,
+      "startTime": 318.52,
+      "endTime": 319.38,
+      "duration": 0.8599999999999999,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 0,
+      "startTime": 320,
+      "endTime": 320.76,
+      "duration": 0.76,
+      "likelyWord": "ՔՀՆ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 1,
+      "startTime": 320.88,
+      "endTime": 322.04,
+      "duration": 1.1600000000000001,
+      "likelyWord": "Ի"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 2,
+      "startTime": 322.3,
+      "endTime": 322.66,
+      "duration": 0.3600000000000003,
+      "likelyWord": "մէջ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 3,
+      "startTime": 322.7,
+      "endTime": 326.02,
+      "duration": 3.3199999999999994,
+      "likelyWord": "տա"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 4,
+      "startTime": 326.18,
+      "endTime": 326.78,
+      "duration": 0.6000000000000005,
+      "likelyWord": "արիս"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 5,
+      "startTime": 326.88,
+      "endTime": 327.36,
+      "duration": 0.4800000000000004,
+      "likelyWord": "առաջի"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 6,
+      "startTime": 327.6,
+      "endTime": 328.78,
+      "duration": 1.1799999999999997,
+      "likelyWord": "աստուածընկալ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 7,
+      "startTime": 328.84,
+      "endTime": 328.96,
+      "duration": 0.120000000000001,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 8,
+      "startTime": 329.1,
+      "endTime": 330.42,
+      "duration": 1.3200000000000003,
+      "likelyWord": "պայծառացեալ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 9,
+      "startTime": 330.48,
+      "endTime": 331.12,
+      "duration": 0.6399999999999988,
+      "likelyWord": "նշանացս"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 10,
+      "startTime": 331.22,
+      "endTime": 331.96,
+      "duration": 0.7400000000000002,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 11,
+      "startTime": 332.02,
+      "endTime": 334.86,
+      "duration": 2.84,
+      "likelyWord": "սուրբ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 12,
+      "startTime": 335.18,
+      "endTime": 336.42,
+      "duration": 1.240000000000002,
+      "likelyWord": "տեղւոյս"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 13,
+      "startTime": 336.56,
+      "endTime": 336.82,
+      "duration": 0.26000000000000156,
+      "likelyWord": "երկիւղիւ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 14,
+      "startTime": 337.26,
+      "endTime": 337.4,
+      "duration": 0.13999999999999702,
+      "likelyWord": "երկիրպագանեմք"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 15,
+      "startTime": 337.52,
+      "endTime": 337.62,
+      "duration": 0.10000000000000142,
+      "likelyWord": "Զսուրբ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 16,
+      "startTime": 337.66,
+      "endTime": 338.14,
+      "duration": 0.4800000000000004,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 17,
+      "startTime": 338.7,
+      "endTime": 338.82,
+      "duration": 0.120000000000001,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 18,
+      "startTime": 339.22,
+      "endTime": 339.38,
+      "duration": 0.16000000000000014,
+      "likelyWord": "զյաղթող"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 19,
+      "startTime": 340.6,
+      "endTime": 340.72,
+      "duration": 0.11999999999999744,
+      "likelyWord": "զյարութիւնդ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 20,
+      "startTime": 341.08,
+      "endTime": 342.78,
+      "duration": 1.7000000000000028,
+      "likelyWord": "քո"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 21,
+      "startTime": 342.86,
+      "endTime": 344.3,
+      "duration": 1.4400000000000013,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 22,
+      "startTime": 344.42,
+      "endTime": 345.96,
+      "duration": 1.5399999999999991,
+      "likelyWord": "փառաւորեմք"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 23,
+      "startTime": 346,
+      "endTime": 346.54,
+      "duration": 0.5399999999999991,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 18,
+      "segmentIndex": 24,
+      "startTime": 347.28,
+      "endTime": 347.5,
+      "duration": 0.21999999999999886,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 19,
+      "segmentIndex": 0,
+      "startTime": 350,
+      "endTime": 352.94,
+      "duration": 2.94,
+      "likelyWord": "ՔՀՆ"
+    },
+    {
+      "pageNumber": 19,
+      "segmentIndex": 1,
+      "startTime": 353.24,
+      "endTime": 353.5,
+      "duration": 0.2599999999999998,
+      "likelyWord": "Հոգւոյդ"
+    },
+    {
+      "pageNumber": 19,
+      "segmentIndex": 2,
+      "startTime": 353.82,
+      "endTime": 355.2,
+      "duration": 1.3800000000000003,
+      "likelyWord": "սեղանոյ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 0,
+      "startTime": 360,
+      "endTime": 360.76,
+      "duration": 0.76,
+      "likelyWord": "ՍՐԿ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 1,
+      "startTime": 361.24,
+      "endTime": 361.38,
+      "duration": 0.1399999999999999,
+      "likelyWord": "Դատ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 2,
+      "startTime": 361.7,
+      "endTime": 362.08,
+      "duration": 0.3800000000000001,
+      "likelyWord": "արա"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 3,
+      "startTime": 362.92,
+      "endTime": 363.08,
+      "duration": 0.16000000000000014,
+      "likelyWord": "ինձ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 4,
+      "startTime": 363.18,
+      "endTime": 363.32,
+      "duration": 0.13999999999999968,
+      "likelyWord": "Աստուած"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 5,
+      "startTime": 363.34,
+      "endTime": 363.48,
+      "duration": 0.14000000000000012,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 6,
+      "startTime": 363.54,
+      "endTime": 365.44,
+      "duration": 1.9000000000000004,
+      "likelyWord": "իրաւ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 7,
+      "startTime": 365.58,
+      "endTime": 365.7,
+      "duration": 0.1200000000000001,
+      "likelyWord": "ինձ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 8,
+      "startTime": 365.88,
+      "endTime": 366.38,
+      "duration": 0.5,
+      "likelyWord": "ի"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 9,
+      "startTime": 366.42,
+      "endTime": 367.72,
+      "duration": 1.2999999999999998,
+      "likelyWord": "դատաստանի"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 10,
+      "startTime": 367.76,
+      "endTime": 368.86,
+      "duration": 1.0999999999999996,
+      "likelyWord": "իմում"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 11,
+      "startTime": 369.34,
+      "endTime": 369.6,
+      "duration": 0.2599999999999998,
+      "likelyWord": "ՔՀՆ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 12,
+      "startTime": 369.68,
+      "endTime": 370.14,
+      "duration": 0.46000000000000085,
+      "likelyWord": "Յազգէ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 13,
+      "startTime": 370.28,
+      "endTime": 370.84,
+      "duration": 0.5600000000000005,
+      "likelyWord": "ոչ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 14,
+      "startTime": 370.98,
+      "endTime": 371.56,
+      "duration": 0.5800000000000001,
+      "likelyWord": "է"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 15,
+      "startTime": 371.6,
+      "endTime": 372.28,
+      "duration": 0.6799999999999997,
+      "likelyWord": "սուրբ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 16,
+      "startTime": 372.48,
+      "endTime": 372.62,
+      "duration": 0.1399999999999988,
+      "likelyWord": "ի"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 17,
+      "startTime": 372.66,
+      "endTime": 373.06,
+      "duration": 0.40000000000000036,
+      "likelyWord": "մարդոյ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 18,
+      "startTime": 373.62,
+      "endTime": 374.02,
+      "duration": 0.40000000000000036,
+      "likelyWord": "ղաւորէ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 19,
+      "startTime": 374.06,
+      "endTime": 374.3,
+      "duration": 0.2400000000000002,
+      "likelyWord": "փրկեա"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 20,
+      "startTime": 374.36,
+      "endTime": 375.62,
+      "duration": 1.2599999999999998,
+      "likelyWord": "զիս"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 21,
+      "startTime": 375.7,
+      "endTime": 376.6,
+      "duration": 0.9000000000000021,
+      "likelyWord": "ՍՐԿ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 22,
+      "startTime": 376.7,
+      "endTime": 377.2,
+      "duration": 0.5,
+      "likelyWord": "Դու"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 23,
+      "startTime": 377.26,
+      "endTime": 377.64,
+      "duration": 0.379999999999999,
+      "likelyWord": "Աստուած"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 24,
+      "startTime": 377.8,
+      "endTime": 377.92,
+      "duration": 0.120000000000001,
+      "likelyWord": "հըզօրիչ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 25,
+      "startTime": 380.44,
+      "endTime": 382.52,
+      "duration": 2.0799999999999983,
+      "likelyWord": "իմ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 26,
+      "startTime": 382.56,
+      "endTime": 382.78,
+      "duration": 0.22000000000000242,
+      "likelyWord": "ընդէ՞ր"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 27,
+      "startTime": 382.84,
+      "endTime": 383.24,
+      "duration": 0.3999999999999986,
+      "likelyWord": "մոռացար"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 28,
+      "startTime": 383.42,
+      "endTime": 383.96,
+      "duration": 0.5399999999999991,
+      "likelyWord": "զիս"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 29,
+      "startTime": 384.12,
+      "endTime": 384.86,
+      "duration": 0.7399999999999984,
+      "likelyWord": "ընդէ՞ր"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 30,
+      "startTime": 385.38,
+      "endTime": 385.84,
+      "duration": 0.46000000000000085,
+      "likelyWord": "տըրտում"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 31,
+      "startTime": 385.94,
+      "endTime": 386.06,
+      "duration": 0.11999999999999744,
+      "likelyWord": "գընամ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 32,
+      "startTime": 386.16,
+      "endTime": 386.48,
+      "duration": 0.3200000000000003,
+      "likelyWord": "ի"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 33,
+      "startTime": 386.5,
+      "endTime": 386.64,
+      "duration": 0.14000000000000057,
+      "likelyWord": "նեղել"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 34,
+      "startTime": 387.04,
+      "endTime": 387.42,
+      "duration": 0.38000000000000256,
+      "likelyWord": "թըշնամւոյ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 35,
+      "startTime": 387.6,
+      "endTime": 387.78,
+      "duration": 0.17999999999999972,
+      "likelyWord": "իմոյ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 36,
+      "startTime": 388.26,
+      "endTime": 389.5,
+      "duration": 1.2399999999999984,
+      "likelyWord": "ՈՏՔԻ"
+    },
+    {
+      "pageNumber": 20,
+      "segmentIndex": 37,
+      "startTime": 389.6,
+      "endTime": 389.78,
+      "duration": 0.17999999999999972,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 21,
+      "segmentIndex": 0,
+      "startTime": 479.54,
+      "endTime": 479.64,
+      "duration": 0.10000000000000142,
+      "likelyWord": "ՔՀՆ"
+    },
+    {
+      "pageNumber": 22,
+      "segmentIndex": 0,
+      "startTime": 480.26,
+      "endTime": 480.42,
+      "duration": 0.15999999999999998,
+      "likelyWord": "ՔՀՆ"
+    },
+    {
+      "pageNumber": 22,
+      "segmentIndex": 1,
+      "startTime": 480.52,
+      "endTime": 483.98,
+      "duration": 3.46,
+      "likelyWord": "եղէց"
+    },
+    {
+      "pageNumber": 22,
+      "segmentIndex": 2,
+      "startTime": 484.02,
+      "endTime": 484.74,
+      "duration": 0.7200000000000006,
+      "likelyWord": "օրհնութեամբ"
+    },
+    {
+      "pageNumber": 22,
+      "segmentIndex": 3,
+      "startTime": 484.92,
+      "endTime": 485.72,
+      "duration": 0.7999999999999998,
+      "likelyWord": "Աստուած"
+    },
+    {
+      "pageNumber": 22,
+      "segmentIndex": 4,
+      "startTime": 486.04,
+      "endTime": 486.62,
+      "duration": 0.5800000000000001,
+      "likelyWord": "ՍՐԿ"
+    },
+    {
+      "pageNumber": 22,
+      "segmentIndex": 5,
+      "startTime": 486.8,
+      "endTime": 487.4,
+      "duration": 0.6000000000000005,
+      "likelyWord": "ընդէ՞ր"
+    },
+    {
+      "pageNumber": 22,
+      "segmentIndex": 6,
+      "startTime": 487.74,
+      "endTime": 491.9,
+      "duration": 4.16,
+      "likelyWord": "ես"
+    },
+    {
+      "pageNumber": 22,
+      "segmentIndex": 7,
+      "startTime": 491.94,
+      "endTime": 494.3,
+      "duration": 2.360000000000001,
+      "likelyWord": "իմ"
+    },
+    {
+      "pageNumber": 22,
+      "segmentIndex": 8,
+      "startTime": 494.44,
+      "endTime": 495.46,
+      "duration": 1.0200000000000014,
+      "likelyWord": "ընդէ՞ր"
+    },
+    {
+      "pageNumber": 22,
+      "segmentIndex": 9,
+      "startTime": 501.9,
+      "endTime": 504.64,
+      "duration": 2.740000000000002,
+      "likelyWord": "զիս"
+    },
+    {
+      "pageNumber": 22,
+      "segmentIndex": 10,
+      "startTime": 504.68,
+      "endTime": 505.44,
+      "duration": 0.7600000000000016,
+      "likelyWord": "ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 23,
+      "segmentIndex": 0,
+      "startTime": 535.96,
+      "endTime": 537.52,
+      "duration": 1.5599999999999987,
+      "likelyWord": "ՍՐԿ"
+    },
+    {
+      "pageNumber": 23,
+      "segmentIndex": 1,
+      "startTime": 537.56,
+      "endTime": 540.46,
+      "duration": 2.900000000000002,
+      "likelyWord": "Աստուած"
+    },
+    {
+      "pageNumber": 23,
+      "segmentIndex": 2,
+      "startTime": 541.32,
+      "endTime": 542.48,
+      "duration": 1.1600000000000001,
+      "likelyWord": "երեսաց"
+    },
+    {
+      "pageNumber": 23,
+      "segmentIndex": 3,
+      "startTime": 542.5,
+      "endTime": 547.14,
+      "duration": 4.640000000000001,
+      "likelyWord": "ՔՀՆ"
+    },
+    {
+      "pageNumber": 23,
+      "segmentIndex": 4,
+      "startTime": 547.42,
+      "endTime": 549.42,
+      "duration": 2,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 23,
+      "segmentIndex": 5,
+      "startTime": 549.72,
+      "endTime": 549.88,
+      "duration": 0.16000000000000014,
+      "likelyWord": "Սրբոյ"
+    },
+    {
+      "pageNumber": 24,
+      "segmentIndex": 0,
+      "startTime": 566.22,
+      "endTime": 567.66,
+      "duration": 1.4400000000000004,
+      "likelyWord": "ՍՐԿ"
+    },
+    {
+      "pageNumber": 24,
+      "segmentIndex": 1,
+      "startTime": 568.06,
+      "endTime": 568.5,
+      "duration": 0.4399999999999995,
+      "likelyWord": "եւ"
+    },
+    {
+      "pageNumber": 24,
+      "segmentIndex": 2,
+      "startTime": 568.62,
+      "endTime": 569.04,
+      "duration": 0.41999999999999993,
+      "likelyWord": "Եւ"
+    },
+    {
+      "pageNumber": 24,
+      "segmentIndex": 3,
+      "startTime": 575.24,
+      "endTime": 576.22,
+      "duration": 0.9799999999999986,
+      "likelyWord": "աղաչեսցուք"
+    },
+    {
+      "pageNumber": 24,
+      "segmentIndex": 4,
+      "startTime": 576.3,
+      "endTime": 576.46,
+      "duration": 0.16000000000000014,
+      "likelyWord": "Աստուած"
+    },
+    {
+      "pageNumber": 24,
+      "segmentIndex": 5,
+      "startTime": 576.84,
+      "endTime": 578.04,
+      "duration": 1.1999999999999993,
+      "likelyWord": "Յիսուսի"
+    },
+    {
+      "pageNumber": 25,
+      "segmentIndex": 0,
+      "startTime": 580,
+      "endTime": 580.94,
+      "duration": 0.94,
+      "likelyWord": "ՍՐԿ"
+    },
+    {
+      "pageNumber": 25,
+      "segmentIndex": 1,
+      "startTime": 593.06,
+      "endTime": 593.54,
+      "duration": 0.47999999999999865,
+      "likelyWord": "կեցո"
+    }
+  ],
+  "wordAcoustics": [
+    {
+      "pageNumber": 1,
+      "segmentIndex": 0,
+      "startTime": 0,
+      "endTime": 0.12,
+      "duration": 0.12,
+      "likelyWord": "ՊԱՏՐԱՍՏՈՒԹԻՒՆ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.150296712739339,
+          0.14237740857553233,
+          0.12430228020135922,
+          0.1039234290253177,
+          0.08964297980475645,
+          0.08569697210382188,
+          0.0891887366325213,
+          0.09389819309200177,
+          0.09292661888170556,
+          0.08383167612545325,
+          0.06976152347513227,
+          0.05709244994641536,
+          0.05172686237411285
+        ],
+        "energy": 0.001134140631527596,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 1,
+      "startTime": 0.16,
+      "endTime": 0.68,
+      "duration": 0.52,
+      "likelyWord": "ՊԱՏՐԱՍՏՈՒԹԻՒՆ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.12109901817926527,
+          0.09370763462073362,
+          0.029443840864146247,
+          -0.036150226701422344,
+          -0.06753795355386356,
+          -0.049772460385684544,
+          0.0014866058527424613,
+          0.05318079717991876,
+          0.07275381513440073,
+          0.04879748593038915,
+          -0.003197339885228318,
+          -0.05162089692060392,
+          -0.06743878515360084
+        ],
+        "energy": 0.0007424705761502808,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 2,
+      "startTime": 1.2,
+      "endTime": 1.46,
+      "duration": 0.26,
+      "likelyWord": "ՊԱՏՐԱՍՏՈՒԹԻՒՆ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.09827730315473246,
+          0.07811943305721294,
+          0.0371776377214388,
+          -0.005973538461343785,
+          -0.03216776204015635,
+          -0.026845033699342956,
+          -0.003452774440858454,
+          0.022631987009516526,
+          0.030993549768005463,
+          0.01487787739405676,
+          -0.014869516661625967,
+          -0.04169545996181014,
+          -0.04702346272944358
+        ],
+        "energy": 0.000655264067123927,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 3,
+      "startTime": 8.08,
+      "endTime": 8.34,
+      "duration": 0.2599999999999998,
+      "likelyWord": "ՊԱՏՐԱՍՏՈՒԹԻՒՆ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.11060875682940718,
+          0.10109639936280179,
+          0.07645617343657378,
+          0.04251299100544121,
+          0.006401256545343114,
+          -0.025844084821334667,
+          -0.050947824169802744,
+          -0.06701826781671999,
+          -0.073744130780746,
+          -0.07158727638616982,
+          -0.06151209750998171,
+          -0.045448911294612426,
+          -0.02589107844183025
+        ],
+        "energy": 0.0006453165106145421,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 4,
+      "startTime": 8.5,
+      "endTime": 9.14,
+      "duration": 0.6400000000000006,
+      "likelyWord": "ՊԱՏՐԱՍՏՈՒԹԻՒՆ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.11781296221246577,
+          0.0866073204930118,
+          0.06750307311255772,
+          0.044484266238851086,
+          -0.005655788069077192,
+          -0.023436860322576497,
+          -0.050857843314199326,
+          -0.06951955627886072,
+          -0.06073234966497039,
+          -0.061266887052411144,
+          -0.047969649504541724,
+          -0.026864971229546165,
+          -0.0161943343230709
+        ],
+        "energy": 0.0006741948613016345,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 5,
+      "startTime": 9.64,
+      "endTime": 9.82,
+      "duration": 0.17999999999999972,
+      "likelyWord": "ՊԱՏՐԱՍՏՈՒԹԻՒՆ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.09671617899135469,
+          0.08732336469416926,
+          0.06344192845720739,
+          0.032558862422506184,
+          0.0025915623614482857,
+          -0.021518865719440124,
+          -0.038304687007165286,
+          -0.04803473132127427,
+          -0.051700320892002015,
+          -0.05013077996976627,
+          -0.04380967581984118,
+          -0.03322794102607897,
+          -0.01927199955843956
+        ],
+        "energy": 0.0006161342819966594,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 6,
+      "startTime": 10.36,
+      "endTime": 10.92,
+      "duration": 0.5600000000000005,
+      "likelyWord": "ՈՏՔԻ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.11226648743214866,
+          0.10375425813981101,
+          0.08110739664309666,
+          0.0485669449750885,
+          0.012128390618784015,
+          -0.022104775288758222,
+          -0.04966706413985835,
+          -0.06758697710362994,
+          -0.07521028330889352,
+          -0.07367293987106624,
+          -0.06483854768452484,
+          -0.05116743715949305,
+          -0.03478040955167358
+        ],
+        "energy": 0.0006454324077168579,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 7,
+      "startTime": 10.94,
+      "endTime": 11.24,
+      "duration": 0.3000000000000007,
+      "likelyWord": "ՈՏՔԻ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.10377441666580012,
+          0.09607405958423852,
+          0.07535426194343368,
+          0.045384480027149246,
+          0.011431797678086443,
+          -0.020998695113102237,
+          -0.04766920847631246,
+          -0.06555949969703087,
+          -0.07366970412827037,
+          -0.07232736950679174,
+          -0.06291167160876401,
+          -0.04752937816715874,
+          -0.028557581068694902
+        ],
+        "energy": 0.0006266707970928409,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 8,
+      "startTime": 12.54,
+      "endTime": 12.7,
+      "duration": 0.16000000000000014,
+      "likelyWord": "ՈՏՔԻ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.1429445808022848,
+          0.13403894836405555,
+          0.11230950640498531,
+          0.08480426664619685,
+          0.05870450118785603,
+          0.039250155648325756,
+          0.026466483180468608,
+          0.018113733447706237,
+          0.010817464934356834,
+          0.002993030195734165,
+          -0.004366277041067535,
+          -0.008632192701673655,
+          -0.007193269364099105
+        ],
+        "energy": 0.000802435557771771,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 9,
+      "startTime": 13.04,
+      "endTime": 14.14,
+      "duration": 1.1000000000000014,
+      "likelyWord": "ՈՏՔԻ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.0979991868240262,
+          0.08700636260486946,
+          0.06012372652390156,
+          0.02839324001235442,
+          0.0010787206791117653,
+          -0.018098073525608764,
+          -0.029973381731706307,
+          -0.036663662411728234,
+          -0.040506390892653045,
+          -0.04363652171417438,
+          -0.04694296840311328,
+          -0.048236451189339974,
+          -0.043036526970027855
+        ],
+        "energy": 0.0006018889896012563,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 10,
+      "startTime": 14.58,
+      "endTime": 14.82,
+      "duration": 0.2400000000000002,
+      "likelyWord": "ՈՏՔԻ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.1014211539643128,
+          0.09391962816313014,
+          0.07607845744365713,
+          0.052609649276034544,
+          0.02884248158194408,
+          0.009759630150662599,
+          -0.004174818708368662,
+          -0.013582558034348996,
+          -0.02004113829592421,
+          -0.024404539994687384,
+          -0.025974608471313533,
+          -0.023965752006356124,
+          -0.018167176113512644
+        ],
+        "energy": 0.0006772772097715051,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 11,
+      "startTime": 14.96,
+      "endTime": 15.12,
+      "duration": 0.15999999999999837,
+      "likelyWord": "ՈՏՔԻ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.10205612750770854,
+          0.09486409032587047,
+          0.07644500570163963,
+          0.05024634819273951,
+          0.021072387170766614,
+          -0.006183185422246726,
+          -0.028987321132843087,
+          -0.04514527470254875,
+          -0.054539192816318395,
+          -0.05782714084743947,
+          -0.05562961619075033,
+          -0.04914766702136585,
+          -0.03890748769747998
+        ],
+        "energy": 0.0006241418513809017,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 12,
+      "startTime": 15.92,
+      "endTime": 16.12,
+      "duration": 0.20000000000000107,
+      "likelyWord": "ԿԱՆԳՆԻԼ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.10821661489810594,
+          0.10224484786252926,
+          0.08769646038772397,
+          0.06713850528193704,
+          0.04381783536893463,
+          0.02177136740149166,
+          0.0028792494243514463,
+          -0.010635393068051793,
+          -0.018017321180796846,
+          -0.019592019633186013,
+          -0.016129124945780487,
+          -0.00897659550504793,
+          0.0004337985208089463
+        ],
+        "energy": 0.0007795769562684571,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 13,
+      "startTime": 17.06,
+      "endTime": 17.46,
+      "duration": 0.40000000000000213,
+      "likelyWord": "ԿԱՆԳՆԻԼ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.10855699577874134,
+          0.0954943386941696,
+          0.07117600775469195,
+          0.03774521851323539,
+          0.0004291537463873534,
+          -0.02771256769062121,
+          -0.05086296013737357,
+          -0.06338275579925999,
+          -0.06660430727528135,
+          -0.06419997810394872,
+          -0.05432851758497341,
+          -0.040386722598637584,
+          -0.023381994337859764
+        ],
+        "energy": 0.0006400444338142667,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 14,
+      "startTime": 19.16,
+      "endTime": 19.54,
+      "duration": 0.379999999999999,
+      "likelyWord": "ԿԱՆԳՆԻԼ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.09968863056082214,
+          0.08991115150079904,
+          0.06495382493744721,
+          0.03355652919713958,
+          0.004353837056167486,
+          -0.017969397786284473,
+          -0.0337491147270707,
+          -0.04531000215547074,
+          -0.054344834200754,
+          -0.059739199141020105,
+          -0.05855779571937725,
+          -0.0485730903021294,
+          -0.030668203310168906
+        ],
+        "energy": 0.0006146626522905946,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 15,
+      "startTime": 20.14,
+      "endTime": 20.46,
+      "duration": 0.3200000000000003,
+      "likelyWord": "ԿԱՆԳՆԻԼ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.12985739476764593,
+          0.12103782145046312,
+          0.09765452310102757,
+          0.06484265410089066,
+          0.027931881203051567,
+          -0.009190524121913238,
+          -0.043222271483071874,
+          -0.07048315762791257,
+          -0.08815980948478562,
+          -0.09520953995741147,
+          -0.09240566027374052,
+          -0.08108607712198204,
+          -0.06261262055045445
+        ],
+        "energy": 0.0006991611399405106,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 16,
+      "startTime": 20.62,
+      "endTime": 20.82,
+      "duration": 0.1999999999999993,
+      "likelyWord": "ԿԱՆԳՆԻԼ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.14494534156589794,
+          0.12747863837128456,
+          0.08394422844595416,
+          0.03375608522548011,
+          -0.003064548194126664,
+          -0.016852868301152017,
+          -0.012280940767953849,
+          -0.0035784075862234283,
+          -0.004899150086882995,
+          -0.020799362566204384,
+          -0.043565085808563594,
+          -0.058285458767701484,
+          -0.0525187893053091
+        ],
+        "energy": 0.0008085866395144338,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 17,
+      "startTime": 21.38,
+      "endTime": 21.48,
+      "duration": 0.10000000000000142,
+      "likelyWord": "ԿԱՆԳՆԻԼ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.08445628832070184,
+          0.0767997057708908,
+          0.05799084774709309,
+          0.036360569971607894,
+          0.02033324303381187,
+          0.014036073735007247,
+          0.015675125591680907,
+          0.019772071721652594,
+          0.020516653117776753,
+          0.015779671127392526,
+          0.008018247164135487,
+          0.002469827338016135,
+          0.003580251484339219
+        ],
+        "energy": 0.0007174824932016324,
+        "numFrames": 16
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 18,
+      "startTime": 22.3,
+      "endTime": 22.42,
+      "duration": 0.120000000000001,
+      "likelyWord": "Էջ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.10850754875384325,
+          0.0968825027579204,
+          0.06765311425155716,
+          0.03195595947205736,
+          0.00021928114887133382,
+          -0.022293757470863727,
+          -0.035908195701303755,
+          -0.043162471531755654,
+          -0.04727594338719093,
+          -0.05021532276748033,
+          -0.051461455138492054,
+          -0.04759549185568317,
+          -0.03446856221713658
+        ],
+        "energy": 0.0006494330024907017,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 19,
+      "startTime": 23.3,
+      "endTime": 23.42,
+      "duration": 0.120000000000001,
+      "likelyWord": "Էջ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.1022060043160252,
+          0.09407743130849465,
+          0.07214921098725183,
+          0.04102918678185844,
+          0.006764919079754636,
+          -0.02470507376091559,
+          -0.049074668107203304,
+          -0.06383802362589519,
+          -0.0687462831422361,
+          -0.0649053013817678,
+          -0.05424760848972763,
+          -0.0389966931042349,
+          -0.021247514095188463
+        ],
+        "energy": 0.0006193954445709953,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 20,
+      "startTime": 24.14,
+      "endTime": 24.64,
+      "duration": 0.5,
+      "likelyWord": "Էջ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.10199638577388725,
+          0.09470752736656969,
+          0.07506181037042371,
+          0.04649252511685335,
+          0.014022500181333091,
+          -0.017458710930095746,
+          -0.04376039343154916,
+          -0.06197080866623812,
+          -0.0708876907655043,
+          -0.07059584818148316,
+          -0.06228647303865922,
+          -0.047768422148358955,
+          -0.02937513963235113
+        ],
+        "energy": 0.0006224829367916699,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 21,
+      "startTime": 26.62,
+      "endTime": 26.96,
+      "duration": 0.33999999999999986,
+      "likelyWord": "Էջ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.10753549129238138,
+          0.09851858623633326,
+          0.07493948778474673,
+          0.04165835311049358,
+          0.004967756537459912,
+          -0.02800774444363009,
+          -0.05276114900041642,
+          -0.06673427841563737,
+          -0.07019965732565028,
+          -0.06488192610647966,
+          -0.05362341481141297,
+          -0.03923373450703239,
+          -0.02362474451331762
+        ],
+        "energy": 0.0006354878810997807,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 22,
+      "startTime": 28.42,
+      "endTime": 29.18,
+      "duration": 0.759999999999998,
+      "likelyWord": "Էջ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.11607611121506523,
+          0.09826468113027519,
+          0.0538728706965335,
+          0.0030339175690874856,
+          -0.03336306957587283,
+          -0.044785115704752285,
+          -0.03540709664833625,
+          -0.019634968454043965,
+          -0.012700628726351124,
+          -0.020904078232760546,
+          -0.03841972018357702,
+          -0.051544087084997046,
+          -0.04797292833112477
+        ],
+        "energy": 0.0006671971925718209,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 1,
+      "segmentIndex": 23,
+      "startTime": 29.34,
+      "endTime": 29.94,
+      "duration": 0.6000000000000014,
+      "likelyWord": "Էջ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.10889975588665664,
+          0.10112695932378482,
+          0.07997707547307467,
+          0.0494618737004723,
+          0.014923723223442403,
+          -0.018196570107313008,
+          -0.045693475283410515,
+          -0.06468543468056233,
+          -0.07421028513334711,
+          -0.07456767547284775,
+          -0.06711213490506276,
+          -0.0538977065055181,
+          -0.037183015609212035
+        ],
+        "energy": 0.0006386683218736674,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 2,
+      "segmentIndex": 0,
+      "startTime": 60,
+      "endTime": 64.86,
+      "duration": 4.86,
+      "likelyWord": "ԴՊՐ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.9842038331224927,
+          0.740311331935029,
+          0.1996882431374816,
+          -0.3504600516786775,
+          -0.6813838576576584,
+          -0.6428163404325742,
+          -0.304605726554945,
+          0.10293450370913351,
+          0.3366871669931316,
+          0.30647808250663255,
+          0.04459506324686054,
+          -0.2694736118413438,
+          -0.3850717939868812
+        ],
+        "energy": 0.0019674185249660284,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 2,
+      "segmentIndex": 1,
+      "startTime": 64.92,
+      "endTime": 69.2,
+      "duration": 4.279999999999999,
+      "likelyWord": "զարդարեցեր",
+      "acousticFeatures": {
+        "mfcc": [
+          0.4547273718778058,
+          0.36394813155046357,
+          0.1673433035659967,
+          -0.018908524211530508,
+          -0.1329789436739997,
+          -0.18148758217087516,
+          -0.21666488002819526,
+          -0.24063718573940682,
+          -0.22883289939032347,
+          -0.17894887170406112,
+          -0.09640675749606908,
+          -0.005902239729584035,
+          0.07831025054412168
+        ],
+        "energy": 0.0013170857956343164,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 2,
+      "segmentIndex": 2,
+      "startTime": 69.24,
+      "endTime": 69.38,
+      "duration": 0.14000000000000057,
+      "likelyWord": "գերապանծ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.11138053311827605,
+          0.09855849741493518,
+          0.06551086487345667,
+          0.02265115443312083,
+          -0.018454540350823837,
+          -0.04962840662474825,
+          -0.06800883555335167,
+          -0.07423170724639967,
+          -0.07017845628951955,
+          -0.057202440640273924,
+          -0.03599219046907489,
+          -0.008610140274968873,
+          0.020549241567199138
+        ],
+        "energy": 0.000660396813038387,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 3,
+      "segmentIndex": 0,
+      "startTime": 70,
+      "endTime": 72.88,
+      "duration": 2.88,
+      "likelyWord": "ԴՊՐ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.30497934273694793,
+          0.222356381345513,
+          0.07837532339154743,
+          0.021161788626509727,
+          0.033632535223529644,
+          0.0006643697189052672,
+          -0.09415336777215086,
+          -0.15999495444324688,
+          -0.15259961108162598,
+          -0.12446120166496828,
+          -0.1229612294439508,
+          -0.1285527055693938,
+          -0.1037658543504498
+        ],
+        "energy": 0.0010681411694134569,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 3,
+      "segmentIndex": 1,
+      "startTime": 89.1,
+      "endTime": 89.36,
+      "duration": 0.259999999999998,
+      "likelyWord": "զերկըրպագուս",
+      "acousticFeatures": {
+        "mfcc": [
+          0.13131024634499794,
+          0.10104929764730786,
+          0.029559558210824715,
+          -0.043504670360291015,
+          -0.08149320820395833,
+          -0.06720412866459609,
+          -0.015106194258722358,
+          0.03826513108531622,
+          0.05913358542879492,
+          0.03457694765558349,
+          -0.02045788397726011,
+          -0.07166463274368161,
+          -0.08831964919106351
+        ],
+        "energy": 0.0006955970995538177,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 5,
+      "segmentIndex": 0,
+      "startTime": 120,
+      "endTime": 124.24,
+      "duration": 4.24,
+      "likelyWord": "ՍՐԿ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.7259038821699931,
+          0.5709945595178321,
+          0.1942242381994955,
+          -0.21008567771211095,
+          -0.4657541107069883,
+          -0.48934241871896483,
+          -0.30353973843394205,
+          -0.025040810950588566,
+          0.18676426151535136,
+          0.22499796529681274,
+          0.10076462721540583,
+          -0.08295690078832622,
+          -0.2113762087060019
+        ],
+        "energy": 0.0016884639538134762,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 5,
+      "segmentIndex": 1,
+      "startTime": 124.4,
+      "endTime": 124.96,
+      "duration": 0.5599999999999996,
+      "likelyWord": "նայն",
+      "acousticFeatures": {
+        "mfcc": [
+          0.9874826593900707,
+          0.7062412099092269,
+          0.05540218990197998,
+          -0.5450410108038534,
+          -0.7568427714248651,
+          -0.5205167844883809,
+          -0.04631548600414488,
+          0.3417420063427449,
+          0.41202290212079185,
+          0.17366132249018837,
+          -0.1454089287994626,
+          -0.2921567587470068,
+          -0.18581526119171216
+        ],
+        "energy": 0.0019564928968944587,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 5,
+      "segmentIndex": 2,
+      "startTime": 125.08,
+      "endTime": 126.78,
+      "duration": 1.7000000000000002,
+      "likelyWord": "ի",
+      "acousticFeatures": {
+        "mfcc": [
+          0.7876620612110685,
+          0.4923550039014932,
+          -0.035126515478972956,
+          -0.2739120945108691,
+          -0.2231148598006134,
+          -0.14131782102865825,
+          -0.053189172468769544,
+          0.06711954977166316,
+          0.025588391724302918,
+          -0.24531880535518286,
+          -0.41337428499002266,
+          -0.2143866500795868,
+          0.12206894520113556
+        ],
+        "energy": 0.0016751873184856175,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 5,
+      "segmentIndex": 3,
+      "startTime": 126.88,
+      "endTime": 127.52,
+      "duration": 0.6399999999999997,
+      "likelyWord": "սցի",
+      "acousticFeatures": {
+        "mfcc": [
+          0.49898096300358075,
+          0.3065145917752016,
+          -0.08568176023941856,
+          -0.33421148531350064,
+          -0.26884607133476246,
+          -0.0003577888167201462,
+          0.20793161571113394,
+          0.17578526820216542,
+          -0.05888057312206256,
+          -0.2832919873325654,
+          -0.28119047588611207,
+          -0.04047465557272529,
+          0.22539343934624573
+        ],
+        "energy": 0.001336476318783879,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 5,
+      "segmentIndex": 4,
+      "startTime": 127.62,
+      "endTime": 127.86,
+      "duration": 0.2400000000000002,
+      "likelyWord": "ա",
+      "acousticFeatures": {
+        "mfcc": [
+          0.28806189533902965,
+          0.23182190474019979,
+          0.12074627891057561,
+          0.00393314585955307,
+          -0.10055943338517981,
+          -0.15500174159310048,
+          -0.16343732822479223,
+          -0.13176887672599935,
+          -0.08347452440354382,
+          -0.06190658148057985,
+          -0.05125910395016303,
+          -0.0284468402376589,
+          0.008401072055565386
+        ],
+        "energy": 0.0010352895703423387,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 5,
+      "segmentIndex": 5,
+      "startTime": 128.06,
+      "endTime": 128.26,
+      "duration": 0.1999999999999993,
+      "likelyWord": "եւ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.21913946823200944,
+          0.15539204389878708,
+          0.04111722379035275,
+          -0.01764599493192571,
+          -0.02999129028376299,
+          -0.04897051244452235,
+          -0.0628888982362908,
+          -0.05244059153184856,
+          -0.058295475592219634,
+          -0.09634147851570937,
+          -0.0984105460450978,
+          -0.023913661332223394,
+          0.05824251301633311
+        ],
+        "energy": 0.0009037687781644214,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 0,
+      "startTime": 130,
+      "endTime": 134.02,
+      "duration": 4.02,
+      "likelyWord": "ՔՀՆ",
+      "acousticFeatures": {
+        "mfcc": [
+          1.9023460280690103,
+          1.3567084903011306,
+          0.12032052558854164,
+          -0.9871914566852359,
+          -1.3570360684375078,
+          -0.9099957942384685,
+          -0.052723891561328576,
+          0.6198478086875354,
+          0.6714662334600836,
+          0.12012275304418858,
+          -0.549559800920004,
+          -0.7944718055986568,
+          -0.44955426838315604
+        ],
+        "energy": 0.0027946536199780986,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 1,
+      "startTime": 134.76,
+      "endTime": 135.36,
+      "duration": 0.6000000000000005,
+      "likelyWord": "Ընկալ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.24189517592155596,
+          0.15810085360363108,
+          0.04133563870475114,
+          0.036758418380835864,
+          0.06000914809907583,
+          -0.002553131469551951,
+          -0.09434416097797431,
+          -0.1203715866962489,
+          -0.1159827651485347,
+          -0.13369749610348097,
+          -0.1196449583592762,
+          -0.04700850634751486,
+          0.0033815245409185304
+        ],
+        "energy": 0.000941088458131919,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 2,
+      "startTime": 135.4,
+      "endTime": 136.4,
+      "duration": 1,
+      "likelyWord": "Տէր",
+      "acousticFeatures": {
+        "mfcc": [
+          1.4243712508783972,
+          0.9216941338583503,
+          -0.1181750213034261,
+          -0.8791017544931223,
+          -0.9741826029457001,
+          -0.5062033471781242,
+          0.182795136105016,
+          0.6789631443010372,
+          0.6350906511405888,
+          0.07151911682326702,
+          -0.5202484951362575,
+          -0.653050820653404,
+          -0.31358738332108194
+        ],
+        "energy": 0.002289524363786191,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 3,
+      "startTime": 136.58,
+      "endTime": 137.98,
+      "duration": 1.4000000000000004,
+      "likelyWord": "ր",
+      "acousticFeatures": {
+        "mfcc": [
+          0.47831387339905407,
+          0.26514316634576307,
+          -0.0572732742291045,
+          -0.10726261753723401,
+          -0.017163102875314758,
+          -0.040523170931076914,
+          -0.11544150841656062,
+          -0.10297432506421338,
+          -0.07792113078759558,
+          -0.1225887421840522,
+          -0.11691010852593278,
+          0.017403537472577738,
+          0.11720419824039219
+        ],
+        "energy": 0.0013002312635705458,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 4,
+      "startTime": 138.18,
+      "endTime": 139.08,
+      "duration": 0.9000000000000004,
+      "likelyWord": "բարեխօսութեամբ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.619385311251969,
+          0.4290555608065804,
+          0.12840383812683182,
+          0.035215736187951555,
+          0.052186018583849234,
+          -0.03050478848494471,
+          -0.18311381658161457,
+          -0.2684744937994309,
+          -0.3312638947004941,
+          -0.4066802329746871,
+          -0.3382703389286688,
+          -0.10794350641741728,
+          0.059238948147099735
+        ],
+        "energy": 0.0015391785761796086,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 5,
+      "startTime": 139.22,
+      "endTime": 139.64,
+      "duration": 0.41999999999999993,
+      "likelyWord": "Աստուածա",
+      "acousticFeatures": {
+        "mfcc": [
+          0.15113649002667842,
+          0.1345380716202315,
+          0.0917425834163196,
+          0.03614866737244379,
+          -0.016055872129846004,
+          -0.051096249995896105,
+          -0.06409428367796928,
+          -0.05779839643368571,
+          -0.03999557476893675,
+          -0.02028130898074667,
+          -0.004528700449383891,
+          0.005460523199773753,
+          0.010452181393956962
+        ],
+        "energy": 0.0007970242464342078,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 6,
+      "startTime": 140.2,
+      "endTime": 143.78,
+      "duration": 3.58,
+      "likelyWord": "ծնին",
+      "acousticFeatures": {
+        "mfcc": [
+          1.8357154275964518,
+          1.3596553935305655,
+          0.22054177389885762,
+          -0.9418575417064062,
+          -1.5587351587509475,
+          -1.3842034299721466,
+          -0.5485335530839984,
+          0.49038117469139414,
+          1.159645837273026,
+          1.1310904677228273,
+          0.5281933461950657,
+          -0.22738818149979823,
+          -0.7319230018635141
+        ],
+        "energy": 0.002756982597571016,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 7,
+      "startTime": 143.9,
+      "endTime": 145.14,
+      "duration": 1.2400000000000002,
+      "likelyWord": "ծնողի",
+      "acousticFeatures": {
+        "mfcc": [
+          0.593695281119804,
+          0.41905384465696266,
+          0.04985320166595818,
+          -0.2416460717291858,
+          -0.33362159500770633,
+          -0.2608379988817989,
+          -0.09899784251646324,
+          0.056929918764104206,
+          0.09576400924823199,
+          -0.008899628251370546,
+          -0.13435744157577634,
+          -0.13423121544054545,
+          -0.006060879905327501
+        ],
+        "energy": 0.0014619884587956482,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 8,
+      "startTime": 145.28,
+      "endTime": 145.58,
+      "duration": 0.3000000000000007,
+      "likelyWord": "ածնի",
+      "acousticFeatures": {
+        "mfcc": [
+          0.31332537055335763,
+          0.1923031232309097,
+          -0.044423250172745773,
+          -0.18174267996749313,
+          -0.14166308308029923,
+          -0.008667662338088772,
+          0.08645406965923932,
+          0.07552589117623962,
+          -0.027866849842226822,
+          -0.1392524787822508,
+          -0.149084758042964,
+          -0.03292911825507818,
+          0.10550097459623435
+        ],
+        "energy": 0.0010872570296153164,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 9,
+      "startTime": 145.64,
+      "endTime": 146,
+      "duration": 0.35999999999999943,
+      "likelyWord": "քո",
+      "acousticFeatures": {
+        "mfcc": [
+          0.28611510978930993,
+          0.20886663285718762,
+          0.036257695798257175,
+          -0.11599858867025425,
+          -0.17300562983123963,
+          -0.13023079274959742,
+          -0.030563640765079426,
+          0.05652748822056595,
+          0.06559179154646418,
+          -0.00889723589700897,
+          -0.09556952657290158,
+          -0.11331022344023581,
+          -0.04898797048679161
+        ],
+        "energy": 0.0010372553094032072,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 10,
+      "startTime": 146.18,
+      "endTime": 146.32,
+      "duration": 0.14000000000000057,
+      "likelyWord": "եւ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.2594298463692894,
+          0.22383614859113718,
+          0.13447188199946541,
+          0.02660239311994923,
+          -0.06858129375091913,
+          -0.13362319658748356,
+          -0.16312195766704674,
+          -0.16114601503994014,
+          -0.13819243474492887,
+          -0.10307955936249898,
+          -0.058167809876699006,
+          -0.004812415443341519,
+          0.04985706946977285
+        ],
+        "energy": 0.000992607122288569,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 11,
+      "startTime": 146.64,
+      "endTime": 146.78,
+      "duration": 0.14000000000000057,
+      "likelyWord": "աղաչանօք",
+      "acousticFeatures": {
+        "mfcc": [
+          0.22320538688700536,
+          0.18162752911444763,
+          0.07947220294926946,
+          -0.03379725254148978,
+          -0.1118958223251858,
+          -0.1325578850994275,
+          -0.10246996913363278,
+          -0.0514241890168984,
+          -0.015179478497988933,
+          -0.010868219008764633,
+          -0.026467575089185652,
+          -0.03481258592219171,
+          -0.017221123529114406
+        ],
+        "energy": 0.0009163065896417874,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 12,
+      "startTime": 147.06,
+      "endTime": 147.22,
+      "duration": 0.16000000000000014,
+      "likelyWord": "նայն",
+      "acousticFeatures": {
+        "mfcc": [
+          0.2147503168877421,
+          0.17200681486184444,
+          0.0697277664303982,
+          -0.03569431346626486,
+          -0.09455186649593891,
+          -0.09291694024457584,
+          -0.05550902076034782,
+          -0.024355368661049124,
+          -0.027798983567541995,
+          -0.0597466318677662,
+          -0.08621536310363563,
+          -0.07403647822698542,
+          -0.018511862858790716
+        ],
+        "energy": 0.0009049592597251292,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 13,
+      "startTime": 147.52,
+      "endTime": 147.92000000000002,
+      "duration": 0.40000000000000213,
+      "likelyWord": "սրբոց",
+      "acousticFeatures": {
+        "mfcc": [
+          0.15583623769084626,
+          0.12450732317168267,
+          0.047978729006270086,
+          -0.03523892833768141,
+          -0.0878928050487377,
+          -0.09382125117969184,
+          -0.06346802456000299,
+          -0.02326805556453173,
+          0.0017101822315581904,
+          0.0030559724573492627,
+          -0.00842402613975528,
+          -0.014172936812988795,
+          -0.0032302365750288297
+        ],
+        "energy": 0.0007699640534380994,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 14,
+      "startTime": 148.04,
+      "endTime": 148.24,
+      "duration": 0.1999999999999993,
+      "likelyWord": "եւ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.19986592738332548,
+          0.15254479436361063,
+          0.056417058026803454,
+          -0.0230653306828209,
+          -0.07575397953992472,
+          -0.108828443586246,
+          -0.10167998538811636,
+          -0.0497210158691054,
+          -0.0015354962344670223,
+          0.0005644969848744172,
+          -0.020313903465180066,
+          -0.021226926427461146,
+          -0.003159403624061104
+        ],
+        "energy": 0.0008698756112504394,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 15,
+      "startTime": 148.32,
+      "endTime": 148.62,
+      "duration": 0.3000000000000007,
+      "likelyWord": "աւուրս",
+      "acousticFeatures": {
+        "mfcc": [
+          0.14976502730651192,
+          0.1300296203131996,
+          0.08693284048819708,
+          0.04518084893509756,
+          0.00885980763278795,
+          -0.032881571905490126,
+          -0.07884829455948475,
+          -0.11066289864736722,
+          -0.11471256128313456,
+          -0.0960362877804351,
+          -0.06856062273203792,
+          -0.039822793533772195,
+          -0.009271201197372177
+        ],
+        "energy": 0.000749755255052789,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 16,
+      "startTime": 148.94,
+      "endTime": 149.07999999999998,
+      "duration": 0.13999999999999702,
+      "likelyWord": "ՈՏՔԻ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.198664115905342,
+          0.1653035652304734,
+          0.08100225028525095,
+          -0.017639827341123415,
+          -0.09206474519176819,
+          -0.1195408414170979,
+          -0.10157355789141369,
+          -0.05945523958990495,
+          -0.021320677909769103,
+          -0.006038450980330386,
+          -0.013751241419843952,
+          -0.02813747680533859,
+          -0.028798845480487646
+        ],
+        "energy": 0.0008747578047559072,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 6,
+      "segmentIndex": 17,
+      "startTime": 149.42000000000002,
+      "endTime": 149.57999999999998,
+      "duration": 0.1599999999999966,
+      "likelyWord": "ԿԱՆԳՆԻԼ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.12602877826921882,
+          0.10842700425457648,
+          0.06329288855073908,
+          0.008045381596125776,
+          -0.038014847356485935,
+          -0.062366388657621875,
+          -0.06423829075874685,
+          -0.05236942838326949,
+          -0.03908814055276926,
+          -0.03248159682413752,
+          -0.032422212148932095,
+          -0.0320591648237395,
+          -0.02331294782894004
+        ],
+        "energy": 0.0006831066647454478,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 0,
+      "startTime": 152.06,
+      "endTime": 152.2,
+      "duration": 0.14000000000000012,
+      "likelyWord": "ՔՀՆ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.1673560422732038,
+          0.1307777990739713,
+          0.041666532588551145,
+          -0.05354203252720868,
+          -0.10931435991906983,
+          -0.1050418834995878,
+          -0.05299565529856263,
+          0.01047871625710586,
+          0.0462370075252665,
+          0.03655717259839499,
+          -0.005039305946228928,
+          -0.04522899513982749,
+          -0.054339035860273485
+        ],
+        "energy": 0.0007958258671160118,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 1,
+      "startTime": 153.88,
+      "endTime": 154.4,
+      "duration": 0.5200000000000005,
+      "likelyWord": "ՔՀՆ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.2960016450717092,
+          0.2661091130780641,
+          0.18928942877293195,
+          0.0905688969036246,
+          -0.00652146840344571,
+          -0.08540546878135254,
+          -0.1370554207525382,
+          -0.16087980653046974,
+          -0.16593762998770445,
+          -0.1628284553467663,
+          -0.15318657886164455,
+          -0.13036790539742377,
+          -0.08940155416547138
+        ],
+        "energy": 0.001054307503082371,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 2,
+      "startTime": 154.44,
+      "endTime": 155.36,
+      "duration": 0.9199999999999999,
+      "likelyWord": "Լուր",
+      "acousticFeatures": {
+        "mfcc": [
+          0.22222292384172135,
+          0.14679025521637862,
+          0.013534027906074978,
+          -0.05322191155523278,
+          -0.050473868824914704,
+          -0.029749865714003842,
+          -0.015593920302562073,
+          -0.016756961583272348,
+          -0.053412089271631616,
+          -0.10916681998124897,
+          -0.11092393986243587,
+          -0.03127238756991542,
+          0.05870357165239841
+        ],
+        "energy": 0.000920641157830308,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 3,
+      "startTime": 155.54,
+      "endTime": 155.78,
+      "duration": 0.2400000000000002,
+      "likelyWord": "զ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.1394534904610964,
+          0.10361127590797618,
+          0.028123637142052894,
+          -0.02999471443037125,
+          -0.045016680657882224,
+          -0.033459830072743044,
+          -0.02484820255011811,
+          -0.03217523434655126,
+          -0.04725500179133722,
+          -0.052619543843395275,
+          -0.035525370998073166,
+          0.0012101894817372508,
+          0.03896733801420521
+        ],
+        "energy": 0.0007274530162316911,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 4,
+      "startTime": 155.96,
+      "endTime": 156.08,
+      "duration": 0.1200000000000001,
+      "likelyWord": "Տէր",
+      "acousticFeatures": {
+        "mfcc": [
+          0.15836451992960293,
+          0.1347600469891545,
+          0.08233049332009311,
+          0.0264849432130179,
+          -0.0235509902861199,
+          -0.06776826072533051,
+          -0.10346974666181186,
+          -0.11998956225742083,
+          -0.11247230695533597,
+          -0.08292133650496145,
+          -0.0343801196855508,
+          0.020186763494967973,
+          0.06320648955484084
+        ],
+        "energy": 0.0007930871883904047,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 5,
+      "startTime": 156.14,
+      "endTime": 156.6,
+      "duration": 0.45999999999999996,
+      "likelyWord": "եւ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.12471864987238916,
+          0.11394259185393607,
+          0.08734568191545462,
+          0.052881553802776614,
+          0.01437902518980424,
+          -0.025454082376493686,
+          -0.06128607635137214,
+          -0.08611180717929307,
+          -0.09714361624290092,
+          -0.09426512682273439,
+          -0.07789096712611475,
+          -0.05199943566627583,
+          -0.022971460019354635
+        ],
+        "energy": 0.0006885721112140752,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 6,
+      "startTime": 156.94,
+      "endTime": 157.34,
+      "duration": 0.39999999999999947,
+      "likelyWord": "ողոր",
+      "acousticFeatures": {
+        "mfcc": [
+          0.19935139961100673,
+          0.18316939119565004,
+          0.14035486594990093,
+          0.08246236173449023,
+          0.021805451998658507,
+          -0.0330779689289765,
+          -0.07675567073296169,
+          -0.10454919994239491,
+          -0.11242203433317977,
+          -0.09885543615720133,
+          -0.0670514811318543,
+          -0.024333064570785098,
+          0.020361231090131264
+        ],
+        "energy": 0.00095233693219534,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 7,
+      "startTime": 157.38,
+      "endTime": 157.54,
+      "duration": 0.16000000000000014,
+      "likelyWord": "ա",
+      "acousticFeatures": {
+        "mfcc": [
+          0.22342528766037334,
+          0.20363340692730564,
+          0.15263928324242595,
+          0.08612053126787175,
+          0.01640721683678997,
+          -0.051396202204672024,
+          -0.11316793023382585,
+          -0.15981788367825805,
+          -0.18052374298813895,
+          -0.17070401139397015,
+          -0.13605530727747756,
+          -0.08796282204003152,
+          -0.03590736829800574
+        ],
+        "energy": 0.0009094847259831205,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 8,
+      "startTime": 157.66,
+      "endTime": 157.84,
+      "duration": 0.17999999999999972,
+      "likelyWord": "ներեա",
+      "acousticFeatures": {
+        "mfcc": [
+          0.15008920459668787,
+          0.1276979692293763,
+          0.07075956021041077,
+          0.002731039275298458,
+          -0.05085101224855426,
+          -0.07451822402930551,
+          -0.06922563931313713,
+          -0.04887774902121495,
+          -0.030917294345568568,
+          -0.025557671039072128,
+          -0.030933649276916785,
+          -0.035766272669466054,
+          -0.02765693949189137
+        ],
+        "energy": 0.0007644835057668483,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 9,
+      "startTime": 158.72,
+      "endTime": 158.84,
+      "duration": 0.11999999999999922,
+      "likelyWord": "քաւեա",
+      "acousticFeatures": {
+        "mfcc": [
+          0.12281085535874184,
+          0.09924179768870865,
+          0.04175539667997945,
+          -0.020562552016325765,
+          -0.060227947177276184,
+          -0.0665050162745647,
+          -0.048426800306679424,
+          -0.025379553224774178,
+          -0.013181705438526823,
+          -0.01379012328826922,
+          -0.016594762671583094,
+          -0.009102435443273825,
+          0.011919289852820305
+        ],
+        "energy": 0.0006897509414405652,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 10,
+      "startTime": 159.18,
+      "endTime": 159.32,
+      "duration": 0.14000000000000057,
+      "likelyWord": "եւ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.2961064705464196,
+          0.252502472407221,
+          0.14155549651244878,
+          0.009962860588359896,
+          -0.09235885745196695,
+          -0.13685196898727586,
+          -0.12748495322104558,
+          -0.09359800813964578,
+          -0.06984591690455445,
+          -0.07407842698570535,
+          -0.09769814645069703,
+          -0.11329871200752721,
+          -0.09411026417147826
+        ],
+        "energy": 0.001048145221711131,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 11,
+      "startTime": 159.52,
+      "endTime": 159.74,
+      "duration": 0.22000000000000064,
+      "likelyWord": "թող",
+      "acousticFeatures": {
+        "mfcc": [
+          0.11920507570121117,
+          0.08941525935788683,
+          0.021802448954426852,
+          -0.04058037317598816,
+          -0.0662043564713922,
+          -0.05185286111281388,
+          -0.017064129328255483,
+          0.0119343151662052,
+          0.016473430649848544,
+          -0.0033276746123290595,
+          -0.027402793508066858,
+          -0.03198738772699715,
+          -0.01048648980769416
+        ],
+        "energy": 0.0006749407115939196,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 12,
+      "startTime": 160.28,
+      "endTime": 160.4,
+      "duration": 0.120000000000001,
+      "likelyWord": "զ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.15980394809095913,
+          0.12689930612940553,
+          0.04809418960833863,
+          -0.03434230805139861,
+          -0.0837863861130758,
+          -0.08738984383249562,
+          -0.0572951882631222,
+          -0.019492333301958636,
+          0.0012863486020172205,
+          -0.0027149307981482714,
+          -0.017690885067727136,
+          -0.02204992569997918,
+          -0.006079868252675984
+        ],
+        "energy": 0.0007641513041753737,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 13,
+      "startTime": 160.66,
+      "endTime": 160.84,
+      "duration": 0.17999999999999972,
+      "likelyWord": "ղս",
+      "acousticFeatures": {
+        "mfcc": [
+          0.1053611117087371,
+          0.08649790526253566,
+          0.040448943357917475,
+          -0.009991993224902369,
+          -0.04312068025160311,
+          -0.050543721637751504,
+          -0.04001420784328341,
+          -0.026938450422100656,
+          -0.02269531867049942,
+          -0.026716284329773972,
+          -0.028801460091708052,
+          -0.01864630730869227,
+          0.005188238371062704
+        ],
+        "energy": 0.0006316701453619731,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 14,
+      "startTime": 161,
+      "endTime": 161.12,
+      "duration": 0.11999999999999922,
+      "likelyWord": "ր",
+      "acousticFeatures": {
+        "mfcc": [
+          0.14277791081681243,
+          0.12603143347875986,
+          0.08312198223958392,
+          0.028860130283120296,
+          -0.022481145664144626,
+          -0.06287947634554046,
+          -0.09028644572762147,
+          -0.10472177364619202,
+          -0.10536251712077334,
+          -0.08973508633153275,
+          -0.05690388309035769,
+          -0.011783165181975787,
+          0.034550461012757466
+        ],
+        "energy": 0.0007354051657378583,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 15,
+      "startTime": 162,
+      "endTime": 162.24,
+      "duration": 0.2400000000000002,
+      "likelyWord": "Արժանաւորեա",
+      "acousticFeatures": {
+        "mfcc": [
+          0.29148568306090683,
+          0.22945582813118826,
+          0.10647177572439079,
+          0.010512899752854618,
+          -0.03998815093400465,
+          -0.06854768247397608,
+          -0.10489569969438221,
+          -0.15429638602611756,
+          -0.19501712281090575,
+          -0.1956809311239753,
+          -0.1320730144511974,
+          -0.020461605176152062,
+          0.08162273455998209
+        ],
+        "energy": 0.0010204693621794106,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 16,
+      "startTime": 162.48,
+      "endTime": 162.6,
+      "duration": 0.11999999999999922,
+      "likelyWord": "գոհութեամբ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.1761940868870795,
+          0.14360398016761808,
+          0.06230045171781773,
+          -0.030300903358738484,
+          -0.09437932105738668,
+          -0.10814804621467491,
+          -0.07739614260723926,
+          -0.028973604254436614,
+          0.005815217904327689,
+          0.009786326000066192,
+          -0.011720580508790076,
+          -0.03626974952822445,
+          -0.03976740986514764
+        ],
+        "energy": 0.0008120089512466717,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 17,
+      "startTime": 162.72,
+      "endTime": 162.88,
+      "duration": 0.16000000000000014,
+      "likelyWord": "առաւորել",
+      "acousticFeatures": {
+        "mfcc": [
+          0.14723585095161412,
+          0.13315821021140123,
+          0.09620163209979582,
+          0.04671464862101509,
+          -0.00461449845040827,
+          -0.04936868560930716,
+          -0.08199539771229912,
+          -0.10026323990417245,
+          -0.10574937765136853,
+          -0.10034318170673948,
+          -0.08382145056464131,
+          -0.055638909185693405,
+          -0.018625610304730995
+        ],
+        "energy": 0.000746866776587947,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 18,
+      "startTime": 163.42,
+      "endTime": 163.56,
+      "duration": 0.14000000000000057,
+      "likelyWord": "զքեզ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.1411538401882467,
+          0.12978006859902588,
+          0.09879177430431733,
+          0.054734119158638996,
+          0.006442881107915533,
+          -0.037519420860885014,
+          -0.07105302181561376,
+          -0.09115119681049652,
+          -0.09803132514872806,
+          -0.0936556142431004,
+          -0.0805937771481311,
+          -0.06115557549113123,
+          -0.03721452886936578
+        ],
+        "energy": 0.000740991291317426,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 19,
+      "startTime": 164.04,
+      "endTime": 164.32,
+      "duration": 0.28000000000000114,
+      "likelyWord": "զքեզ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.4402878350602947,
+          0.33224219632505037,
+          0.07542267375969965,
+          -0.18433031710510778,
+          -0.322983505844608,
+          -0.29784086860510145,
+          -0.1491955079018459,
+          0.027492758608999433,
+          0.1327852552618588,
+          0.12769360320755235,
+          0.05617640857046332,
+          -0.00407183637923481,
+          -0.01074536658154383
+        ],
+        "energy": 0.0012860061609652773,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 20,
+      "startTime": 168.82,
+      "endTime": 169.04,
+      "duration": 0.21999999999999886,
+      "likelyWord": "ընդ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.34793510140874845,
+          0.2585111870747269,
+          0.04790647856265987,
+          -0.15992831409573233,
+          -0.2573562970151926,
+          -0.2065390092157544,
+          -0.05117762056515039,
+          0.11045395804353315,
+          0.17847826336659386,
+          0.11489138834142856,
+          -0.027506807189603005,
+          -0.149246696135031,
+          -0.17760550170013895
+        ],
+        "energy": 0.0011550281099641786,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 21,
+      "startTime": 169.07999999999998,
+      "endTime": 169.3,
+      "duration": 0.22000000000000242,
+      "likelyWord": "Որդւոյ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.19052222274402766,
+          0.15623527345679117,
+          0.072158058284372,
+          -0.02073441559416003,
+          -0.08341360453054773,
+          -0.09884037882503068,
+          -0.07672375214705032,
+          -0.04324368323838748,
+          -0.02284322464710318,
+          -0.02246781364180732,
+          -0.029742486495012536,
+          -0.02590802815517303,
+          -0.0025666710394047524
+        ],
+        "energy": 0.000845705074760938,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 22,
+      "startTime": 169.48,
+      "endTime": 169.6,
+      "duration": 0.120000000000001,
+      "likelyWord": "եւ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.17645993860714954,
+          0.13969077973403168,
+          0.053858802244218365,
+          -0.03283994492084037,
+          -0.08339358835723654,
+          -0.08737873797282678,
+          -0.05938687197736895,
+          -0.027834146006981114,
+          -0.017262265603786527,
+          -0.030233181812865894,
+          -0.045644301882946714,
+          -0.03845890597243636,
+          -0.002996569075189417
+        ],
+        "energy": 0.0008083438863130975,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 23,
+      "startTime": 170.82,
+      "endTime": 170.96,
+      "duration": 0.14000000000000057,
+      "likelyWord": "ընդ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.18822354945296524,
+          0.15953404731259876,
+          0.0863345276064385,
+          -0.0019140444254782114,
+          -0.07316593276992198,
+          -0.10822283334189335,
+          -0.10710074509375382,
+          -0.08475379142910727,
+          -0.05984419488872781,
+          -0.04289836864536131,
+          -0.03178793433702362,
+          -0.016376355518044138,
+          0.011331582994679932
+        ],
+        "energy": 0.0008445930543762081,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 24,
+      "startTime": 172.22,
+      "endTime": 173,
+      "duration": 0.7800000000000011,
+      "likelyWord": "Սրբոյ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.40171050809670705,
+          0.28782875337284036,
+          0.0755193841559907,
+          -0.03955103961675174,
+          -0.042680269829542414,
+          -0.04189686344152978,
+          -0.08273578657003622,
+          -0.1393956018021442,
+          -0.20075638013800043,
+          -0.24441400413370068,
+          -0.19655097581754066,
+          -0.036208397428557124,
+          0.12091599366231254
+        ],
+        "energy": 0.001223042465872989,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 25,
+      "startTime": 173.07999999999998,
+      "endTime": 173.22,
+      "duration": 0.14000000000000057,
+      "likelyWord": "Հոգւոյդ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.1286481279101622,
+          0.09752303789588176,
+          0.027831111728857178,
+          -0.03391615660593006,
+          -0.05605144918678322,
+          -0.040619494545743,
+          -0.014424965034334922,
+          -0.005026267139031487,
+          -0.020107794187209,
+          -0.04280629392468259,
+          -0.0465257461837704,
+          -0.020288250683373296,
+          0.019618685935553312
+        ],
+        "energy": 0.0007006645994527393,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 26,
+      "startTime": 173.62,
+      "endTime": 173.8,
+      "duration": 0.17999999999999972,
+      "likelyWord": "այժմ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.26044096511476483,
+          0.20530364763117354,
+          0.0685240267372388,
+          -0.0820551836440378,
+          -0.17491915247175163,
+          -0.1726899827140371,
+          -0.09012989399735981,
+          0.017102215877493544,
+          0.0856150544782525,
+          0.08008407424834793,
+          0.011072805769468194,
+          -0.07362996367890685,
+          -0.11866313611170087
+        ],
+        "energy": 0.0009791266892080614,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 27,
+      "startTime": 174.98,
+      "endTime": 175.22,
+      "duration": 0.23999999999999844,
+      "likelyWord": "եւ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.36847201537644025,
+          0.27864896548135576,
+          0.06212615616681796,
+          -0.15839743028297196,
+          -0.2669332275483897,
+          -0.2231252447330369,
+          -0.07929407722215913,
+          0.06177883922968332,
+          0.11557237372346033,
+          0.06679898449387764,
+          -0.029536523380484146,
+          -0.09301717314374262,
+          -0.07517340915009363
+        ],
+        "energy": 0.001149348844207583,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 28,
+      "startTime": 175.78,
+      "endTime": 176.02,
+      "duration": 0.23999999999999844,
+      "likelyWord": "շտ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.4357811464703502,
+          0.3222634169486162,
+          0.05447987148274014,
+          -0.2028159663080807,
+          -0.3043577487785729,
+          -0.21700933354107024,
+          -0.030308851264011966,
+          0.11442371764334898,
+          0.12279586951332615,
+          0.007722757756308556,
+          -0.1286911511926895,
+          -0.17504665014567852,
+          -0.0919299622044921
+        ],
+        "energy": 0.001268740476734072,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 29,
+      "startTime": 176.6,
+      "endTime": 177.38,
+      "duration": 0.7799999999999976,
+      "likelyWord": "եւ",
+      "acousticFeatures": {
+        "mfcc": [
+          1.6851765647286214,
+          1.1150126861463492,
+          -0.013899185160246385,
+          -0.7603093286034712,
+          -0.8703173702547552,
+          -0.6411695641046824,
+          -0.2832964152696519,
+          0.16051339135969078,
+          0.45231792892732514,
+          0.2577522921780962,
+          -0.29463308589139436,
+          -0.6138975535253971,
+          -0.3369216400929622
+        ],
+        "energy": 0.002529351495705657,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 30,
+      "startTime": 177.6,
+      "endTime": 177.82,
+      "duration": 0.21999999999999886,
+      "likelyWord": "յաւիտեանս",
+      "acousticFeatures": {
+        "mfcc": [
+          0.34549149782280464,
+          0.26357718887119724,
+          0.09971505121289205,
+          -0.02824006260145942,
+          -0.1035961641462599,
+          -0.14828368142956536,
+          -0.14201850263809937,
+          -0.0761305761631973,
+          -0.022017207274454897,
+          -0.05037549796874926,
+          -0.11781538423558224,
+          -0.1290330330280866,
+          -0.06875330324957496
+        ],
+        "energy": 0.001098711383277441,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 31,
+      "startTime": 177.9,
+      "endTime": 178.12,
+      "duration": 0.22000000000000242,
+      "likelyWord": "յաւիտենից",
+      "acousticFeatures": {
+        "mfcc": [
+          0.20388461970078708,
+          0.17434729544795668,
+          0.09993924256371509,
+          0.012050803411542601,
+          -0.05821768661564408,
+          -0.0944170197571825,
+          -0.09886572496848835,
+          -0.08689360297994213,
+          -0.07587215003194214,
+          -0.07352656790166076,
+          -0.073659057091296,
+          -0.06216622650329863,
+          -0.029379600285890716
+        ],
+        "energy": 0.0008799892241225682,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 32,
+      "startTime": 178.16,
+      "endTime": 178.32,
+      "duration": 0.16000000000000014,
+      "likelyWord": "Ամէն",
+      "acousticFeatures": {
+        "mfcc": [
+          0.3185348213358651,
+          0.258974467245904,
+          0.12297677660811293,
+          -0.016259687139607758,
+          -0.12077923099451167,
+          -0.1808212300402816,
+          -0.18957661657983665,
+          -0.15485765184865047,
+          -0.10994918428392861,
+          -0.07858999117876984,
+          -0.043883291275117184,
+          0.019403055164828653,
+          0.09836019376954577
+        ],
+        "energy": 0.0010895309402136528,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 33,
+      "startTime": 178.62,
+      "endTime": 178.8,
+      "duration": 0.17999999999999972,
+      "likelyWord": "ՈՏՔԻ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.5204137072590015,
+          0.32092900729522766,
+          -0.0623327579098389,
+          -0.2901963219394364,
+          -0.2984389400978499,
+          -0.19824428382257905,
+          -0.020409179455752102,
+          0.19567592353832108,
+          0.26447262319259907,
+          0.0766231553402395,
+          -0.17897372378727971,
+          -0.23751330908173512,
+          -0.08990786275005899
+        ],
+        "energy": 0.0013575810139989058,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 34,
+      "startTime": 179.14,
+      "endTime": 179.3,
+      "duration": 0.16000000000000014,
+      "likelyWord": "ԿԱՆԳՆԻԼ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.5311605972643804,
+          0.38703451474350486,
+          0.07279887751554731,
+          -0.1999909004872849,
+          -0.3249890901047923,
+          -0.301722297256958,
+          -0.15262226304311297,
+          0.05116990785052701,
+          0.16369769568800516,
+          0.09617547925482595,
+          -0.06483499560571705,
+          -0.15639100056252034,
+          -0.11654138634719155
+        ],
+        "energy": 0.0013899430375383386,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 7,
+      "segmentIndex": 35,
+      "startTime": 179.38,
+      "endTime": 179.6,
+      "duration": 0.22000000000000242,
+      "likelyWord": "Էջ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.2943164665928286,
+          0.25811795119475595,
+          0.17116327654678015,
+          0.05930667453851475,
+          -0.05529781691788525,
+          -0.14599259883973148,
+          -0.19915321070969683,
+          -0.21551338047228485,
+          -0.20432493557586318,
+          -0.1666729644719721,
+          -0.11014156492069671,
+          -0.03945700211394524,
+          0.04597814313280583
+        ],
+        "energy": 0.0010459951362064477,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 0,
+      "startTime": 190.2,
+      "endTime": 191.18,
+      "duration": 0.98,
+      "likelyWord": "ՔՀՆ",
+      "acousticFeatures": {
+        "mfcc": [
+          2.081734450541967,
+          1.4988867532580243,
+          0.15462376640600622,
+          -1.1056787047210856,
+          -1.6395904923176758,
+          -1.2997398255683947,
+          -0.3761999583846902,
+          0.5632280378444476,
+          0.9708102174442906,
+          0.7045727372986528,
+          0.10910492459339238,
+          -0.33907750199445547,
+          -0.40506379078795945
+        ],
+        "energy": 0.002892422012105326,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 1,
+      "startTime": 191.24,
+      "endTime": 192.56,
+      "duration": 1.32,
+      "likelyWord": "եմ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.27701652194513715,
+          0.20061994123631935,
+          0.03394695391875165,
+          -0.11075888462290209,
+          -0.17564852691852584,
+          -0.158937644332964,
+          -0.07456332781838011,
+          0.036601593096298415,
+          0.10372857387204855,
+          0.09014821768345933,
+          0.032579022016514615,
+          -0.012327648607451601,
+          -0.02656484272643033
+        ],
+        "energy": 0.0010171541227657116,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 2,
+      "startTime": 192.6,
+      "endTime": 192.86,
+      "duration": 0.2599999999999998,
+      "likelyWord": "Խոստովանիմ",
+      "acousticFeatures": {
+        "mfcc": [
+          1.2433091640432152,
+          0.8545738890742257,
+          0.08211142125400407,
+          -0.5115075380410861,
+          -0.7887919753632457,
+          -0.7782103706521979,
+          -0.43760303520563343,
+          0.1253823858782383,
+          0.48211959764576723,
+          0.3951239260620283,
+          0.13517741957885318,
+          -0.028758741171154317,
+          -0.08676521596061879
+        ],
+        "energy": 0.0021963008253576563,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 3,
+      "startTime": 193.4,
+      "endTime": 193.52,
+      "duration": 0.1200000000000001,
+      "likelyWord": "Աստուծոյ",
+      "acousticFeatures": {
+        "mfcc": [
+          0.32104948916394704,
+          0.23728605347001258,
+          0.08118169126849205,
+          -0.00706017284897702,
+          -0.025717644087741888,
+          -0.054520046450523774,
+          -0.11259775022375847,
+          -0.16851577263067552,
+          -0.20613314356541648,
+          -0.2026840644414401,
+          -0.12430762017572858,
+          0.0005029807463147097,
+          0.08484873071877193
+        ],
+        "energy": 0.0010930449682409874,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 4,
+      "startTime": 193.54,
+      "endTime": 194.3,
+      "duration": 0.7599999999999998,
+      "likelyWord": "Աստուածածնին",
+      "acousticFeatures": {
+        "mfcc": [
+          0.23385465675446823,
+          0.1830240741873906,
+          0.0870124208383244,
+          0.024808999136819915,
+          -0.008867012884905223,
+          -0.05735937539860819,
+          -0.11344544481535382,
+          -0.14408638201714574,
+          -0.15013598757569208,
+          -0.14162225600136907,
+          -0.10286869625594715,
+          -0.03030248321473623,
+          0.04016226709087495
+        ],
+        "energy": 0.0008883687305234969,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 5,
+      "startTime": 194.72,
+      "endTime": 194.92,
+      "duration": 0.20000000000000018,
+      "likelyWord": "առաջի",
+      "acousticFeatures": {
+        "mfcc": [
+          1.0328660424720055,
+          0.7445397530984048,
+          0.08773900114663485,
+          -0.5248142063598054,
+          -0.8070270916714513,
+          -0.6864579991525828,
+          -0.2517893855369985,
+          0.25241240080248406,
+          0.5206859717211187,
+          0.4289846039320201,
+          0.13029076042332896,
+          -0.13667829463018644,
+          -0.24638987156862108
+        ],
+        "energy": 0.001919079274126315,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 6,
+      "startTime": 195.2,
+      "endTime": 195.7,
+      "duration": 0.5,
+      "likelyWord": "նայն",
+      "acousticFeatures": {
+        "mfcc": [
+          0.41796524342605607,
+          0.3076760758824594,
+          0.0953416242781273,
+          -0.03724768118251886,
+          -0.07236488569147254,
+          -0.10132342554071747,
+          -0.15057210246602487,
+          -0.1853786403251485,
+          -0.20365897906831876,
+          -0.21004154601782096,
+          -0.15991993056893464,
+          -0.02834794060777567,
+          0.11763483680082301
+        ],
+        "energy": 0.0012439800831239652,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 7,
+      "startTime": 195.78,
+      "endTime": 196.08,
+      "duration": 0.2999999999999998,
+      "likelyWord": "առաջի",
+      "acousticFeatures": {
+        "mfcc": [
+          1.188986610827382,
+          0.8261876189764585,
+          0.021549025124515876,
+          -0.647834419800658,
+          -0.8035336822573553,
+          -0.47892821122725204,
+          0.01513493140439176,
+          0.32801006241560915,
+          0.2744517092320328,
+          -0.042258637321514546,
+          -0.3061453703054405,
+          -0.2625520947499369,
+          0.05753149129359188
+        ],
+        "energy": 0.002154609082399156,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 8,
+      "startTime": 196.24,
+      "endTime": 196.56,
+      "duration": 0.3199999999999994,
+      "likelyWord": "հարք",
+      "acousticFeatures": {
+        "mfcc": [
+          1.0976780367930359,
+          0.7620711847505496,
+          0.05424952950856714,
+          -0.475916133582059,
+          -0.5725744359748265,
+          -0.3548709931902671,
+          -0.05810418289414247,
+          0.11357612803630165,
+          0.03587974619441203,
+          -0.2122940971908343,
+          -0.3486994666842949,
+          -0.16990507585715367,
+          0.20975842439570705
+        ],
+        "energy": 0.0020118777515402784,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 9,
+      "startTime": 196.7,
+      "endTime": 197,
+      "duration": 0.2999999999999998,
+      "likelyWord": "եղբարք",
+      "acousticFeatures": {
+        "mfcc": [
+          0.44211180705774494,
+          0.32748182251841407,
+          0.06603450375329463,
+          -0.16741042412556492,
+          -0.24440265866102298,
+          -0.1662599041241289,
+          -0.03767417433222624,
+          0.026793182564469574,
+          -0.012504558102923651,
+          -0.09861940940345107,
+          -0.1341318229834677,
+          -0.06872479232922282,
+          0.05803347195419378
+        ],
+        "energy": 0.0012356149334434591,
+        "numFrames": 20
+      }
+    },
+    {
+      "pageNumber": 8,
+      "segmentIndex": 10,
+      "startTime": 198.3,
+      "endTime": 198.6,
+      "duration": 0.29999999999999893,
+      "likelyWord": "ղս",
+      "acousticFeatures": {
+        "mfcc": [
+          1.771304539449838,
+          1.0040105584578123,
+          -0.42727891810737795,
+          -1.1565055748219888,
+          -0.9436561783719355,
+          -0.3321127476796631,
+          0.3335153264348696,
+          0.7816094151984958,
+          0.5826447314266614,
+          -0.17417469527727994,
+          -0.6822643756138732,
+          -0.4621722115194985,
+          0.06824974120604517
+        ],
+        "energy": 0.0026526792804705697,
+        "numFrames": 20
+      }
+    }
+  ],
+  "wordTemplates": [
+    {
+      "word": "ՊԱՏՐԱՍՏՈՒԹԻՒՆ",
+      "sampleCount": 6,
+      "avgDuration": 0.33
+    },
+    {
+      "word": "ՈՏՔԻ",
+      "sampleCount": 8,
+      "avgDuration": 0.35499999999999976
+    },
+    {
+      "word": "ԿԱՆԳՆԻԼ",
+      "sampleCount": 8,
+      "avgDuration": 0.24
+    },
+    {
+      "word": "Էջ",
+      "sampleCount": 7,
+      "avgDuration": 0.3800000000000005
+    },
+    {
+      "word": "ԴՊՐ",
+      "sampleCount": 2,
+      "avgDuration": 3.87
+    },
+    {
+      "word": "զարդարեցեր",
+      "sampleCount": 1,
+      "avgDuration": 4.279999999999999
+    },
+    {
+      "word": "գերապանծ",
+      "sampleCount": 1,
+      "avgDuration": 0.14000000000000057
+    },
+    {
+      "word": "զերկըրպագուս",
+      "sampleCount": 1,
+      "avgDuration": 0.259999999999998
+    },
+    {
+      "word": "ՍՐԿ",
+      "sampleCount": 1,
+      "avgDuration": 4.24
+    },
+    {
+      "word": "նայն",
+      "sampleCount": 3,
+      "avgDuration": 0.40666666666666657
+    },
+    {
+      "word": "ի",
+      "sampleCount": 1,
+      "avgDuration": 1.7000000000000002
+    },
+    {
+      "word": "սցի",
+      "sampleCount": 1,
+      "avgDuration": 0.6399999999999997
+    },
+    {
+      "word": "ա",
+      "sampleCount": 2,
+      "avgDuration": 0.20000000000000018
+    },
+    {
+      "word": "եւ",
+      "sampleCount": 8,
+      "avgDuration": 0.2849999999999996
+    },
+    {
+      "word": "ՔՀՆ",
+      "sampleCount": 4,
+      "avgDuration": 1.415
+    },
+    {
+      "word": "Ընկալ",
+      "sampleCount": 1,
+      "avgDuration": 0.6000000000000005
+    },
+    {
+      "word": "Տէր",
+      "sampleCount": 2,
+      "avgDuration": 0.56
+    },
+    {
+      "word": "ր",
+      "sampleCount": 2,
+      "avgDuration": 0.7599999999999998
+    },
+    {
+      "word": "բարեխօսութեամբ",
+      "sampleCount": 1,
+      "avgDuration": 0.9000000000000004
+    },
+    {
+      "word": "Աստուածա",
+      "sampleCount": 1,
+      "avgDuration": 0.41999999999999993
+    },
+    {
+      "word": "ծնին",
+      "sampleCount": 1,
+      "avgDuration": 3.58
+    },
+    {
+      "word": "ծնողի",
+      "sampleCount": 1,
+      "avgDuration": 1.2400000000000002
+    },
+    {
+      "word": "ածնի",
+      "sampleCount": 1,
+      "avgDuration": 0.3000000000000007
+    },
+    {
+      "word": "քո",
+      "sampleCount": 1,
+      "avgDuration": 0.35999999999999943
+    },
+    {
+      "word": "աղաչանօք",
+      "sampleCount": 1,
+      "avgDuration": 0.14000000000000057
+    },
+    {
+      "word": "սրբոց",
+      "sampleCount": 1,
+      "avgDuration": 0.40000000000000213
+    },
+    {
+      "word": "աւուրս",
+      "sampleCount": 1,
+      "avgDuration": 0.3000000000000007
+    },
+    {
+      "word": "Լուր",
+      "sampleCount": 1,
+      "avgDuration": 0.9199999999999999
+    },
+    {
+      "word": "զ",
+      "sampleCount": 2,
+      "avgDuration": 0.1800000000000006
+    },
+    {
+      "word": "ողոր",
+      "sampleCount": 1,
+      "avgDuration": 0.39999999999999947
+    },
+    {
+      "word": "ներեա",
+      "sampleCount": 1,
+      "avgDuration": 0.17999999999999972
+    },
+    {
+      "word": "քաւեա",
+      "sampleCount": 1,
+      "avgDuration": 0.11999999999999922
+    },
+    {
+      "word": "թող",
+      "sampleCount": 1,
+      "avgDuration": 0.22000000000000064
+    },
+    {
+      "word": "ղս",
+      "sampleCount": 2,
+      "avgDuration": 0.23999999999999932
+    },
+    {
+      "word": "Արժանաւորեա",
+      "sampleCount": 1,
+      "avgDuration": 0.2400000000000002
+    },
+    {
+      "word": "գոհութեամբ",
+      "sampleCount": 1,
+      "avgDuration": 0.11999999999999922
+    },
+    {
+      "word": "առաւորել",
+      "sampleCount": 1,
+      "avgDuration": 0.16000000000000014
+    },
+    {
+      "word": "զքեզ",
+      "sampleCount": 2,
+      "avgDuration": 0.21000000000000085
+    },
+    {
+      "word": "ընդ",
+      "sampleCount": 2,
+      "avgDuration": 0.17999999999999972
+    },
+    {
+      "word": "Որդւոյ",
+      "sampleCount": 1,
+      "avgDuration": 0.22000000000000242
+    },
+    {
+      "word": "Սրբոյ",
+      "sampleCount": 1,
+      "avgDuration": 0.7800000000000011
+    },
+    {
+      "word": "Հոգւոյդ",
+      "sampleCount": 1,
+      "avgDuration": 0.14000000000000057
+    },
+    {
+      "word": "այժմ",
+      "sampleCount": 1,
+      "avgDuration": 0.17999999999999972
+    },
+    {
+      "word": "շտ",
+      "sampleCount": 1,
+      "avgDuration": 0.23999999999999844
+    },
+    {
+      "word": "յաւիտեանս",
+      "sampleCount": 1,
+      "avgDuration": 0.21999999999999886
+    },
+    {
+      "word": "յաւիտենից",
+      "sampleCount": 1,
+      "avgDuration": 0.22000000000000242
+    },
+    {
+      "word": "Ամէն",
+      "sampleCount": 1,
+      "avgDuration": 0.16000000000000014
+    },
+    {
+      "word": "եմ",
+      "sampleCount": 1,
+      "avgDuration": 1.32
+    },
+    {
+      "word": "Խոստովանիմ",
+      "sampleCount": 1,
+      "avgDuration": 0.2599999999999998
+    },
+    {
+      "word": "Աստուծոյ",
+      "sampleCount": 1,
+      "avgDuration": 0.1200000000000001
+    },
+    {
+      "word": "Աստուածածնին",
+      "sampleCount": 1,
+      "avgDuration": 0.7599999999999998
+    },
+    {
+      "word": "առաջի",
+      "sampleCount": 2,
+      "avgDuration": 0.25
+    },
+    {
+      "word": "հարք",
+      "sampleCount": 1,
+      "avgDuration": 0.3199999999999994
+    },
+    {
+      "word": "եղբարք",
+      "sampleCount": 1,
+      "avgDuration": 0.2999999999999998
+    }
+  ],
+  "metadata": {
+    "created": "2026-02-15T00:36:51.953Z",
+    "sampleRate": 48000
+  }
+}

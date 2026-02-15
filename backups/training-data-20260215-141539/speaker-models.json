@@ -1,0 +1,554 @@
+{
+  "choir": [
+    {
+      "pageNumber": 2,
+      "features": {
+        "spectralFlux": {
+          "mean": 0.04058744889057859,
+          "variance": 0.00022365508412638128
+        },
+        "spectralCentroid": {
+          "mean": 31.56154558313337,
+          "variance": 1.8509479212825501
+        },
+        "spectralSpread": {
+          "mean": 41.118364838972894,
+          "variance": 1.6354388605033423
+        },
+        "rms": {
+          "mean": 0.0006601490787194106,
+          "variance": 1.0361166117359321e-9
+        }
+      }
+    },
+    {
+      "pageNumber": 3,
+      "features": {
+        "spectralFlux": {
+          "mean": 6.8881877124610735,
+          "variance": 65.17112825865651
+        },
+        "spectralCentroid": {
+          "mean": 67.08260907350417,
+          "variance": 25.790478157108414
+        },
+        "spectralSpread": {
+          "mean": 52.82403655231319,
+          "variance": 33.31505222217812
+        },
+        "rms": {
+          "mean": 0.0031707896670166995,
+          "variance": 0.0000013504648058888179
+        }
+      }
+    },
+    {
+      "pageNumber": 12,
+      "features": {
+        "spectralFlux": {
+          "mean": 0.5242019135156181,
+          "variance": 0.16678708369976947
+        },
+        "spectralCentroid": {
+          "mean": 99.29783648438583,
+          "variance": 113.91309512841065
+        },
+        "spectralSpread": {
+          "mean": 85.02758526867642,
+          "variance": 42.179449338088524
+        },
+        "rms": {
+          "mean": 0.0013166232637953517,
+          "variance": 2.159576484398963e-7
+        }
+      }
+    }
+  ],
+  "celebrant": [
+    {
+      "pageNumber": 4,
+      "features": {
+        "spectralFlux": {
+          "mean": 0.98009700723607,
+          "variance": 0.24586139034157672
+        },
+        "spectralCentroid": {
+          "mean": 60.580233226572865,
+          "variance": 149.11738672350157
+        },
+        "spectralSpread": {
+          "mean": 41.26910476369271,
+          "variance": 29.795471074215946
+        },
+        "rms": {
+          "mean": 0.0016979834339512028,
+          "variance": 1.7552032377191233e-7
+        }
+      }
+    },
+    {
+      "pageNumber": 6,
+      "features": {
+        "spectralFlux": {
+          "mean": 1.8800841437969733,
+          "variance": 2.9530005871634466
+        },
+        "spectralCentroid": {
+          "mean": 62.170774577680305,
+          "variance": 44.030208287828884
+        },
+        "spectralSpread": {
+          "mean": 44.90892465463197,
+          "variance": 7.399592002219557
+        },
+        "rms": {
+          "mean": 0.0022830166411081,
+          "variance": 7.754734121425103e-7
+        }
+      }
+    },
+    {
+      "pageNumber": 7,
+      "features": {
+        "spectralFlux": {
+          "mean": 0.0313482541786032,
+          "variance": 0.0009682472712479877
+        },
+        "spectralCentroid": {
+          "mean": 53.013552656681476,
+          "variance": 49.54484652019505
+        },
+        "spectralSpread": {
+          "mean": 68.23113669707799,
+          "variance": 30.865967831023713
+        },
+        "rms": {
+          "mean": 0.00018383102385034262,
+          "variance": 9.135423351749583e-9
+        }
+      }
+    },
+    {
+      "pageNumber": 8,
+      "features": {
+        "spectralFlux": {
+          "mean": 0.506025491198885,
+          "variance": 0.2401782899548854
+        },
+        "spectralCentroid": {
+          "mean": 55.11636679037102,
+          "variance": 33.80650967480606
+        },
+        "spectralSpread": {
+          "mean": 43.63665051442062,
+          "variance": 58.23681077280871
+        },
+        "rms": {
+          "mean": 0.0011188178362840436,
+          "variance": 2.9563990132178446e-7
+        }
+      }
+    },
+    {
+      "pageNumber": 9,
+      "features": {
+        "spectralFlux": {
+          "mean": 0.27772147789130175,
+          "variance": 0.042167260410829716
+        },
+        "spectralCentroid": {
+          "mean": 55.852590744352284,
+          "variance": 114.69003304332982
+        },
+        "spectralSpread": {
+          "mean": 47.6147189878582,
+          "variance": 95.28023676589031
+        },
+        "rms": {
+          "mean": 0.0007792438646893386,
+          "variance": 8.842584268159691e-8
+        }
+      }
+    },
+    {
+      "pageNumber": 11,
+      "features": {
+        "spectralFlux": {
+          "mean": 0.1392231091595799,
+          "variance": 0.009029840107328888
+        },
+        "spectralCentroid": {
+          "mean": 39.87815970672923,
+          "variance": 26.289565535766673
+        },
+        "spectralSpread": {
+          "mean": 41.789992113138,
+          "variance": 26.220546655206572
+        },
+        "rms": {
+          "mean": 0.0005768227943353889,
+          "variance": 4.6654432308704725e-8
+        }
+      }
+    },
+    {
+      "pageNumber": 13,
+      "features": {
+        "spectralFlux": {
+          "mean": 0.7354084873135454,
+          "variance": 0.15779993535122633
+        },
+        "spectralCentroid": {
+          "mean": 64.45444965179871,
+          "variance": 62.05891705756624
+        },
+        "spectralSpread": {
+          "mean": 52.146547509755656,
+          "variance": 8.175130420812721
+        },
+        "rms": {
+          "mean": 0.0013840666527933784,
+          "variance": 1.6905915732357206e-7
+        }
+      }
+    },
+    {
+      "pageNumber": 14,
+      "features": {
+        "spectralFlux": {
+          "mean": 0.48543004649453314,
+          "variance": 0.3833590374809728
+        },
+        "spectralCentroid": {
+          "mean": 62.937212041876776,
+          "variance": 153.53599466583603
+        },
+        "spectralSpread": {
+          "mean": 48.906071989301665,
+          "variance": 45.35848234850889
+        },
+        "rms": {
+          "mean": 0.001062658048589063,
+          "variance": 2.2972302898233237e-7
+        }
+      }
+    },
+    {
+      "pageNumber": 15,
+      "features": {
+        "spectralFlux": {
+          "mean": 0.44198318952956034,
+          "variance": 0.12749476472376114
+        },
+        "spectralCentroid": {
+          "mean": 74.18288624084144,
+          "variance": 90.96692701026164
+        },
+        "spectralSpread": {
+          "mean": 61.20770281450076,
+          "variance": 35.79314418349767
+        },
+        "rms": {
+          "mean": 0.0010040086664777062,
+          "variance": 1.5438278067207698e-7
+        }
+      }
+    },
+    {
+      "pageNumber": 16,
+      "features": {
+        "spectralFlux": {
+          "mean": 0.051815903913943286,
+          "variance": 0.0005515835461614858
+        },
+        "spectralCentroid": {
+          "mean": 40.79173102457098,
+          "variance": 4.364621656345681
+        },
+        "spectralSpread": {
+          "mean": 45.02820176953949,
+          "variance": 29.846897425667894
+        },
+        "rms": {
+          "mean": 0.0003749967327231344,
+          "variance": 1.098550610220234e-8
+        }
+      }
+    },
+    {
+      "pageNumber": 18,
+      "features": {
+        "spectralFlux": {
+          "mean": 0.03670568893349127,
+          "variance": 0.00018369322711669588
+        },
+        "spectralCentroid": {
+          "mean": 52.303075699928,
+          "variance": 390.29349274752184
+        },
+        "spectralSpread": {
+          "mean": 65.33163644330705,
+          "variance": 403.5423950543374
+        },
+        "rms": {
+          "mean": 0.0006672042950591126,
+          "variance": 1.6758047095261258e-9
+        }
+      }
+    },
+    {
+      "pageNumber": 19,
+      "features": {
+        "spectralFlux": {
+          "mean": 3.013106736126359,
+          "variance": 3.989654160812656
+        },
+        "spectralCentroid": {
+          "mean": 45.98573823419288,
+          "variance": 8.425825432046526
+        },
+        "spectralSpread": {
+          "mean": 37.513226024307215,
+          "variance": 8.307383797371028
+        },
+        "rms": {
+          "mean": 0.002195616466617336,
+          "variance": 4.836315138820902e-7
+        }
+      }
+    },
+    {
+      "pageNumber": 21,
+      "features": {
+        "spectralFlux": {
+          "mean": 2.604293967799077,
+          "variance": 7.675903381586203
+        },
+        "spectralCentroid": {
+          "mean": 42.211428494991445,
+          "variance": 29.299961343276962
+        },
+        "spectralSpread": {
+          "mean": 41.12693103594338,
+          "variance": 4.8355203163177585
+        },
+        "rms": {
+          "mean": 0.0016864396237226428,
+          "variance": 2.3060404949913712e-7
+        }
+      }
+    },
+    {
+      "pageNumber": 22,
+      "features": {
+        "spectralFlux": {
+          "mean": 3.3347118274273995,
+          "variance": 4.429262097080018
+        },
+        "spectralCentroid": {
+          "mean": 52.36040493801505,
+          "variance": 28.676672548501436
+        },
+        "spectralSpread": {
+          "mean": 53.00793909038927,
+          "variance": 53.901798800657815
+        },
+        "rms": {
+          "mean": 0.0023508535064385226,
+          "variance": 3.756209891156988e-7
+        }
+      }
+    },
+    {
+      "pageNumber": 26,
+      "features": {
+        "spectralFlux": {
+          "mean": 4.947041591465028,
+          "variance": 23.022142366120228
+        },
+        "spectralCentroid": {
+          "mean": 83.7313021353761,
+          "variance": 31.442098294182404
+        },
+        "spectralSpread": {
+          "mean": 64.42096819079525,
+          "variance": 19.396057152217494
+        },
+        "rms": {
+          "mean": 0.003139535729345093,
+          "variance": 0.000001310857174227194
+        }
+      }
+    },
+    {
+      "pageNumber": 27,
+      "features": {
+        "spectralFlux": {
+          "mean": 1.201418009915849,
+          "variance": 0.4160523463549576
+        },
+        "spectralCentroid": {
+          "mean": 87.83111158909678,
+          "variance": 111.88853362496413
+        },
+        "spectralSpread": {
+          "mean": 67.73623051588919,
+          "variance": 65.23446526889597
+        },
+        "rms": {
+          "mean": 0.0019578767181944482,
+          "variance": 8.839348197214174e-8
+        }
+      }
+    }
+  ],
+  "deacon": [
+    {
+      "pageNumber": 5,
+      "features": {
+        "spectralFlux": {
+          "mean": 2.344265070338313,
+          "variance": 2.7280534489261696
+        },
+        "spectralCentroid": {
+          "mean": 43.38804447945747,
+          "variance": 13.618398721886505
+        },
+        "spectralSpread": {
+          "mean": 32.96881158122537,
+          "variance": 15.08841966887774
+        },
+        "rms": {
+          "mean": 0.002089889488599192,
+          "variance": 2.0195979205612385e-7
+        }
+      }
+    },
+    {
+      "pageNumber": 10,
+      "features": {
+        "spectralFlux": {
+          "mean": 0.567818154473615,
+          "variance": 0.09289388757561959
+        },
+        "spectralCentroid": {
+          "mean": 87.8742043586686,
+          "variance": 81.1060753521838
+        },
+        "spectralSpread": {
+          "mean": 64.47403592398686,
+          "variance": 39.686956661121336
+        },
+        "rms": {
+          "mean": 0.0012652347574795223,
+          "variance": 9.335628976271607e-8
+        }
+      }
+    },
+    {
+      "pageNumber": 17,
+      "features": {
+        "spectralFlux": {
+          "mean": 1.753000145891271,
+          "variance": 1.6372022366006214
+        },
+        "spectralCentroid": {
+          "mean": 41.71287926060759,
+          "variance": 3.1446631330905266
+        },
+        "spectralSpread": {
+          "mean": 35.12011497340423,
+          "variance": 23.487755710871635
+        },
+        "rms": {
+          "mean": 0.0023435753051192576,
+          "variance": 6.315399879360061e-7
+        }
+      }
+    },
+    {
+      "pageNumber": 20,
+      "features": {
+        "spectralFlux": {
+          "mean": 2.400508016758321,
+          "variance": 3.6351549134870087
+        },
+        "spectralCentroid": {
+          "mean": 43.69602868555464,
+          "variance": 2.796154049989157
+        },
+        "spectralSpread": {
+          "mean": 32.767195665499365,
+          "variance": 12.371555207316424
+        },
+        "rms": {
+          "mean": 0.002229133586909592,
+          "variance": 6.856760381175592e-7
+        }
+      }
+    },
+    {
+      "pageNumber": 23,
+      "features": {
+        "spectralFlux": {
+          "mean": 0.7407415817165393,
+          "variance": 0.2420138592231965
+        },
+        "spectralCentroid": {
+          "mean": 43.69588554441526,
+          "variance": 25.229563792949385
+        },
+        "spectralSpread": {
+          "mean": 47.422835830799656,
+          "variance": 16.978758708528858
+        },
+        "rms": {
+          "mean": 0.0011320931432797442,
+          "variance": 7.792488739583964e-8
+        }
+      }
+    },
+    {
+      "pageNumber": 24,
+      "features": {
+        "spectralFlux": {
+          "mean": 1.0004156985238906,
+          "variance": 0.4008804645338865
+        },
+        "spectralCentroid": {
+          "mean": 44.45332019404995,
+          "variance": 7.993941514818163
+        },
+        "spectralSpread": {
+          "mean": 36.61568611262442,
+          "variance": 17.1889568141198
+        },
+        "rms": {
+          "mean": 0.0016312038695264369,
+          "variance": 1.2359096252164331e-7
+        }
+      }
+    },
+    {
+      "pageNumber": 25,
+      "features": {
+        "spectralFlux": {
+          "mean": 1.8784334921279007,
+          "variance": 1.0860554185506752
+        },
+        "spectralCentroid": {
+          "mean": 68.39020305400437,
+          "variance": 72.42308061569827
+        },
+        "spectralSpread": {
+          "mean": 65.64797618239717,
+          "variance": 70.26532778690279
+        },
+        "rms": {
+          "mean": 0.0019200416363051392,
+          "variance": 1.644409548780909e-7
+        }
+      }
+    }
+  ]
+}

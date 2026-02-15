@@ -1,0 +1,1295 @@
+{
+  "sampleRate": 48000,
+  "windowSize": 2048,
+  "hopSize": 512,
+  "features": [
+    "mfcc",
+    "spectralCentroid",
+    "spectralRolloff",
+    "rms",
+    "zcr"
+  ],
+  "pages": [
+    {
+      "pageNumber": 1,
+      "startTime": 0,
+      "endTime": 28.6,
+      "expectedWords": 4,
+      "textSignature": "ՊԱՏՐԱՍՏՈՒԹԻՒՆ|ՈՏՔԻ|ԿԱՆԳՆԻԼ|Էջ"
+    },
+    {
+      "pageNumber": 2,
+      "startTime": 28.6,
+      "endTime": 57.2,
+      "expectedWords": 20,
+      "textSignature": "ԴՊՐ|Խորհուրդ|խորին|անհաս|անսկիզբն"
+    },
+    {
+      "pageNumber": 3,
+      "startTime": 57.2,
+      "endTime": 85.80000000000001,
+      "expectedWords": 17,
+      "textSignature": "ԴՊՐ|Թագաւոր|երկնաւոր|զեկեղեցի|քո"
+    },
+    {
+      "pageNumber": 4,
+      "startTime": 85.80000000000001,
+      "endTime": 114.4,
+      "expectedWords": 17,
+      "textSignature": "ՔՀՆ|Եւ|վասն|սրբուհւոյ|Աստուածածնին"
+    },
+    {
+      "pageNumber": 5,
+      "startTime": 114.4,
+      "endTime": 143,
+      "expectedWords": 35,
+      "textSignature": "ՍՐԿ|Սուրբ|զԱստուածածինըն|եւ|զա"
+    },
+    {
+      "pageNumber": 6,
+      "startTime": 143,
+      "endTime": 171.60000000000002,
+      "expectedWords": 26,
+      "textSignature": "ՔՀՆ|Ընկալ|Տէր|զաղաչանս|ր"
+    },
+    {
+      "pageNumber": 7,
+      "startTime": 171.60000000000002,
+      "endTime": 200.20000000000002,
+      "expectedWords": 34,
+      "textSignature": "ՔՀՆ|Լուր|զ|Տէր|եւ"
+    },
+    {
+      "pageNumber": 8,
+      "startTime": 200.20000000000002,
+      "endTime": 228.8,
+      "expectedWords": 30,
+      "textSignature": "ՔՀՆ|Մեղուցեալ|եմ|Աստուծոյ|Խոստովանիմ"
+    },
+    {
+      "pageNumber": 9,
+      "startTime": 228.8,
+      "endTime": 257.40000000000003,
+      "expectedWords": 26,
+      "textSignature": "ՔՀՆ|քանզի|ղայ|խորհըրդով|բանիւ"
+    },
+    {
+      "pageNumber": 10,
+      "startTime": 257.40000000000003,
+      "endTime": 286,
+      "expectedWords": 31,
+      "textSignature": "ՍՐԿ|Արդ|եկայք|ա|նեքեան"
+    },
+    {
+      "pageNumber": 11,
+      "startTime": 286,
+      "endTime": 314.6,
+      "expectedWords": 32,
+      "textSignature": "ՔՀՆ|Ազատեսցէ|եւ|զձեզ|մարդասէրն"
+    },
+    {
+      "pageNumber": 12,
+      "startTime": 314.6,
+      "endTime": 343.20000000000005,
+      "expectedWords": 19,
+      "textSignature": "ԴՊՐ|Յիշեսջիր|եւ|ըզ|զ"
+    },
+    {
+      "pageNumber": 13,
+      "startTime": 343.20000000000005,
+      "endTime": 371.8,
+      "expectedWords": 24,
+      "textSignature": "ԴՊՐ|Աղաղակեցէք|առ|Տէր|ա"
+    },
+    {
+      "pageNumber": 14,
+      "startTime": 371.8,
+      "endTime": 400.40000000000003,
+      "expectedWords": 28,
+      "textSignature": "ԴՊՐ|Նա|արար|ըզ|զ"
+    },
+    {
+      "pageNumber": 15,
+      "startTime": 400.40000000000003,
+      "endTime": 429,
+      "expectedWords": 24,
+      "textSignature": "ԴՊՐ|Խոստովան|եղերուք|Տեառն|եւ"
+    },
+    {
+      "pageNumber": 16,
+      "startTime": 429,
+      "endTime": 457.6,
+      "expectedWords": 18,
+      "textSignature": "ԴՊՐ|Փառք|Հօր|եւ|Որդւոյ"
+    },
+    {
+      "pageNumber": 17,
+      "startTime": 457.6,
+      "endTime": 486.20000000000005,
+      "expectedWords": 29,
+      "textSignature": "ՍՐԿ|Սուրբ|եկեղեցեաւս|աղաչեսցուք|ըզՏէր"
+    },
+    {
+      "pageNumber": 18,
+      "startTime": 486.20000000000005,
+      "endTime": 514.8000000000001,
+      "expectedWords": 30,
+      "textSignature": "ՔՀՆ|Ի|մէջ|տա|արիս"
+    },
+    {
+      "pageNumber": 19,
+      "startTime": 514.8000000000001,
+      "endTime": 543.4,
+      "expectedWords": 33,
+      "textSignature": "ՔՀՆ|եւ|քեզ|մատուցանեմք|զօրհնութիւն"
+    },
+    {
+      "pageNumber": 20,
+      "startTime": 543.4,
+      "endTime": 572,
+      "expectedWords": 36,
+      "textSignature": "ՍՐԿ|Դատ|արա|ինձ|Աստուած"
+    },
+    {
+      "pageNumber": 21,
+      "startTime": 572,
+      "endTime": 600.6,
+      "expectedWords": 35,
+      "textSignature": "ՔՀՆ|Առաքեա|Տէր|զլոյս|քո"
+    },
+    {
+      "pageNumber": 22,
+      "startTime": 600.6,
+      "endTime": 629.2,
+      "expectedWords": 22,
+      "textSignature": "ՔՀՆ|Խոստովան|եղէց|քեզ|օրհնութեամբ"
+    },
+    {
+      "pageNumber": 23,
+      "startTime": 629.2,
+      "endTime": 657.8000000000001,
+      "expectedWords": 22,
+      "textSignature": "ՍՐԿ|յուսա|առ|Աստուած|խոստովանեա"
+    },
+    {
+      "pageNumber": 24,
+      "startTime": 657.8000000000001,
+      "endTime": 686.4000000000001,
+      "expectedWords": 25,
+      "textSignature": "ՍՐԿ|Այժմ|եւ|շտ|եւ"
+    },
+    {
+      "pageNumber": 25,
+      "startTime": 686.4000000000001,
+      "endTime": 715,
+      "expectedWords": 35,
+      "textSignature": "ՍՐԿ|որ|արժանի|արար|զ"
+    },
+    {
+      "pageNumber": 26,
+      "startTime": 715,
+      "endTime": 743.6,
+      "expectedWords": 28,
+      "textSignature": "ՔՀՆ|առաջի|աստուածընկալ|եւ|պայծառացեալ"
+    },
+    {
+      "pageNumber": 27,
+      "startTime": 743.6,
+      "endTime": 772.2,
+      "expectedWords": 20,
+      "textSignature": "ՔՀՆ|զօրհնուԹիւն|եւ|զփառս|ընդ"
+    },
+    {
+      "pageNumber": 28,
+      "startTime": 772.2,
+      "endTime": 800.8000000000001,
+      "expectedWords": 3,
+      "textSignature": "ՄԵՂԵԴԻ|ՆՍՏԻԼ|Էջ"
+    },
+    {
+      "pageNumber": 29,
+      "startTime": 800.8000000000001,
+      "endTime": 829.4000000000001,
+      "expectedWords": 1,
+      "textSignature": "Էջ"
+    },
+    {
+      "pageNumber": 30,
+      "startTime": 829.4000000000001,
+      "endTime": 858,
+      "expectedWords": 5,
+      "textSignature": "ՊԱՇՏՕՆ|ՃԱՇՈՒ|ՈՏՔԻ|ԿԱՆԳՆԻԼ|Էջ"
+    },
+    {
+      "pageNumber": 31,
+      "startTime": 858,
+      "endTime": 886.6,
+      "expectedWords": 2,
+      "textSignature": "Էջ|Բ"
+    },
+    {
+      "pageNumber": 32,
+      "startTime": 886.6,
+      "endTime": 915.2,
+      "expectedWords": 1,
+      "textSignature": "Էջ"
+    },
+    {
+      "pageNumber": 33,
+      "startTime": 915.2,
+      "endTime": 943.8000000000001,
+      "expectedWords": 1,
+      "textSignature": "Էջ"
+    },
+    {
+      "pageNumber": 34,
+      "startTime": 943.8000000000001,
+      "endTime": 972.4000000000001,
+      "expectedWords": 1,
+      "textSignature": "Էջ"
+    },
+    {
+      "pageNumber": 35,
+      "startTime": 972.4000000000001,
+      "endTime": 1001,
+      "expectedWords": 22,
+      "textSignature": "ՍՐԿ|Օրհնեա|տէր|ՔՀՆ|Օրհնեալ"
+    },
+    {
+      "pageNumber": 36,
+      "startTime": 1001,
+      "endTime": 1029.6000000000001,
+      "expectedWords": 32,
+      "textSignature": "ԴՊՐ|Միածին|Որդի|եւ|Բանդ"
+    },
+    {
+      "pageNumber": 37,
+      "startTime": 1029.6000000000001,
+      "endTime": 1058.2,
+      "expectedWords": 31,
+      "textSignature": "ԴՊՐ|Մինըդ|ի|Սըրբոյ|Երրորդութենէն"
+    },
+    {
+      "pageNumber": 38,
+      "startTime": 1058.2,
+      "endTime": 1086.8,
+      "expectedWords": 23,
+      "textSignature": "ՔՀՆ|Օրհնութիւն|եւ|փառք|Հօր"
+    },
+    {
+      "pageNumber": 39,
+      "startTime": 1086.8,
+      "endTime": 1115.4,
+      "expectedWords": 15,
+      "textSignature": "ԴՊՐ|Եւ|ընդ|հոգւոյդ|քում"
+    },
+    {
+      "pageNumber": 40,
+      "startTime": 1115.4,
+      "endTime": 1144,
+      "expectedWords": 32,
+      "textSignature": "ՔՀՆ|Տէր|Աստուած|ր|որոյ"
+    },
+    {
+      "pageNumber": 41,
+      "startTime": 1144,
+      "endTime": 1172.6000000000001,
+      "expectedWords": 34,
+      "textSignature": "ՔՀՆ|տաճարս|այս|սուրբ|Եւ"
+    },
+    {
+      "pageNumber": 42,
+      "startTime": 1172.6000000000001,
+      "endTime": 1201.2,
+      "expectedWords": 5,
+      "textSignature": "ՇԱՐԱԿԱՆ|ՃԱՇՈՒ|ՈՏՔԻ|ԿԱՆԳՆԻԼ|Էջ"
+    },
+    {
+      "pageNumber": 43,
+      "startTime": 1201.2,
+      "endTime": 1229.8,
+      "expectedWords": 0,
+      "textSignature": ""
+    },
+    {
+      "pageNumber": 44,
+      "startTime": 1229.8,
+      "endTime": 1258.4,
+      "expectedWords": 34,
+      "textSignature": "ՔՀՆ|Զի|քո|է|կարողութիւն"
+    },
+    {
+      "pageNumber": 45,
+      "startTime": 1258.4,
+      "endTime": 1287,
+      "expectedWords": 13,
+      "textSignature": "ՍՐԿ|Եւ|եւըս|խաղաղութեան|զՏէր"
+    },
+    {
+      "pageNumber": 46,
+      "startTime": 1287,
+      "endTime": 1315.6000000000001,
+      "expectedWords": 19,
+      "textSignature": "ՍՐԿ|Վասըն|խաղաղութեան|ա|նայն"
+    },
+    {
+      "pageNumber": 47,
+      "startTime": 1315.6000000000001,
+      "endTime": 1344.2,
+      "expectedWords": 17,
+      "textSignature": "ՍՐԿ|Վասն|ա|նայն|սուրբ"
+    },
+    {
+      "pageNumber": 48,
+      "startTime": 1344.2,
+      "endTime": 1372.8000000000002,
+      "expectedWords": 33,
+      "textSignature": "ՍՐԿ|Վասըն|հայրապետին|րոյ|տեառըն"
+    },
+    {
+      "pageNumber": 49,
+      "startTime": 1372.8000000000002,
+      "endTime": 1401.4,
+      "expectedWords": 26,
+      "textSignature": "ՔՀՆ|Զի|ողորմած|եւ|մարդասէր"
+    },
+    {
+      "pageNumber": 50,
+      "startTime": 1401.4,
+      "endTime": 1430,
+      "expectedWords": 6,
+      "textSignature": "Եւ|ընթեռնուն|զճաշու|գիրսն|ՆՍՏԻԼ"
+    },
+    {
+      "pageNumber": 51,
+      "startTime": 1430,
+      "endTime": 1458.6000000000001,
+      "expectedWords": 19,
+      "textSignature": "ԴՊՐ|Ալէլուիա|ալէլուիա|Յարեաւ|Աստուած"
+    },
+    {
+      "pageNumber": 52,
+      "startTime": 1458.6000000000001,
+      "endTime": 1487.2,
+      "expectedWords": 15,
+      "textSignature": "ՍՐԿ|Ալէլուիա|օրթի|ՔՀՆ|Խաղաղութիւն"
+    },
+    {
+      "pageNumber": 53,
+      "startTime": 1487.2,
+      "endTime": 1515.8000000000002,
+      "expectedWords": 18,
+      "textSignature": "ՍՐԿ|Երկիւղածութեամբ|լըւարուք|ՍՐԿ|Սրբոյ"
+    },
+    {
+      "pageNumber": 54,
+      "startTime": 1515.8000000000002,
+      "endTime": 1544.4,
+      "expectedWords": 14,
+      "textSignature": "ԴՊՐ|Փառք|քեզ|Տէր|Աստուած"
+    },
+    {
+      "pageNumber": 55,
+      "startTime": 1544.4,
+      "endTime": 1573,
+      "expectedWords": 8,
+      "textSignature": "ՍՐԿ|Ընթեռնու|զԱւետարանն|ըստ|տօնացուցի"
+    },
+    {
+      "pageNumber": 56,
+      "startTime": 1573,
+      "endTime": 1601.6000000000001,
+      "expectedWords": 9,
+      "textSignature": "ԴՊՐ|Փառք|քեզ|Տէր|Աստուած"
+    },
+    {
+      "pageNumber": 57,
+      "startTime": 1601.6000000000001,
+      "endTime": 1630.2,
+      "expectedWords": 19,
+      "textSignature": "ՀԱՆԳԱՆԱԿ|ՆԻԿԻԱԿԱՆ|Հաւատամք|ի|Աստուած"
+    },
+    {
+      "pageNumber": 58,
+      "startTime": 1630.2,
+      "endTime": 1658.8000000000002,
+      "expectedWords": 29,
+      "textSignature": "Եւ|ի|Տէր|Յիսուս|Քրիստոս"
+    },
+    {
+      "pageNumber": 59,
+      "startTime": 1658.8000000000002,
+      "endTime": 1687.4,
+      "expectedWords": 34,
+      "textSignature": "Նոյն|ինքն|ի|բնութենէ|Հօր"
+    },
+    {
+      "pageNumber": 60,
+      "startTime": 1687.4,
+      "endTime": 1716,
+      "expectedWords": 35,
+      "textSignature": "մարդացաւ|ծընաւ|կատարելապէս|ի|Մարիամայ"
+    },
+    {
+      "pageNumber": 61,
+      "startTime": 1716,
+      "endTime": 1744.6000000000001,
+      "expectedWords": 33,
+      "textSignature": "ելեալ|ի|յերկինըս|նովին|մար"
+    },
+    {
+      "pageNumber": 62,
+      "startTime": 1744.6000000000001,
+      "endTime": 1773.2,
+      "expectedWords": 30,
+      "textSignature": "Հաւատամք|եւ|ի|Սուրբ|Հոգին"
+    },
+    {
+      "pageNumber": 63,
+      "startTime": 1773.2,
+      "endTime": 1801.8000000000002,
+      "expectedWords": 19,
+      "textSignature": "Հաւատամք|եւ|ի|այն|ընդհանրական"
+    },
+    {
+      "pageNumber": 64,
+      "startTime": 1801.8000000000002,
+      "endTime": 1830.4,
+      "expectedWords": 21,
+      "textSignature": "Թողութիւն|ղաց|Ի|յարութիւն|ռելոց"
+    },
+    {
+      "pageNumber": 65,
+      "startTime": 1830.4,
+      "endTime": 1859,
+      "expectedWords": 38,
+      "textSignature": "ՍՐԿ|Իսկ|որք|ասենըն՝|էր"
+    },
+    {
+      "pageNumber": 66,
+      "startTime": 1859,
+      "endTime": 1887.6000000000001,
+      "expectedWords": 29,
+      "textSignature": "ՔՀՆ|Իսկ|ք|փառաւորեսցուք|որ"
+    },
+    {
+      "pageNumber": 67,
+      "startTime": 1887.6000000000001,
+      "endTime": 1916.2,
+      "expectedWords": 33,
+      "textSignature": "ՍՐԿ|Եւ|եւըս|խաղաղութեան|ըզՏէր"
+    },
+    {
+      "pageNumber": 68,
+      "startTime": 1916.2,
+      "endTime": 1944.8000000000002,
+      "expectedWords": 28,
+      "textSignature": "ԴՊՐ|Կեցո|Տէր|Շնորհեա|Տէր"
+    },
+    {
+      "pageNumber": 69,
+      "startTime": 1944.8000000000002,
+      "endTime": 1973.4,
+      "expectedWords": 25,
+      "textSignature": "ՔՀՆ|Որպէսզի|արժանաւորք|եղիցուք|գոհութեամբ"
+    },
+    {
+      "pageNumber": 70,
+      "startTime": 1973.4,
+      "endTime": 2002,
+      "expectedWords": 15,
+      "textSignature": "ԴՊՐ|Եւ|ընդ|հոգւոյդ|քում"
+    },
+    {
+      "pageNumber": 71,
+      "startTime": 2002,
+      "endTime": 2030.6000000000001,
+      "expectedWords": 38,
+      "textSignature": "ՔՀՆ|Խաղաղութեամբ|քով|Քրիստոս|փրկիչ"
+    },
+    {
+      "pageNumber": 72,
+      "startTime": 2030.6000000000001,
+      "endTime": 2059.2000000000003,
+      "expectedWords": 27,
+      "textSignature": "ՔՀՆ|Վասն|զի|ա|նասուրբ"
+    },
+    {
+      "pageNumber": 73,
+      "startTime": 2059.2000000000003,
+      "endTime": 2087.8,
+      "expectedWords": 14,
+      "textSignature": "ՍՐԿ|Օրհնեա|տէր|ՔՀՆ|Տէր"
+    },
+    {
+      "pageNumber": 74,
+      "startTime": 2087.8,
+      "endTime": 2116.4,
+      "expectedWords": 4,
+      "textSignature": "ՀԱՒԱՏԱՑԵԼՈՑ|ՊԱՏԱՐԱԳ|ՆՍՏԻԼ|Էջ"
+    },
+    {
+      "pageNumber": 75,
+      "startTime": 2116.4,
+      "endTime": 2145,
+      "expectedWords": 19,
+      "textSignature": "ՍՐԿ|Մի՝|ոք|յերախայից|՝"
+    },
+    {
+      "pageNumber": 76,
+      "startTime": 2145,
+      "endTime": 2173.6,
+      "expectedWords": 24,
+      "textSignature": "ԴՊՐ|Մար|ն|տէրունական|եւ"
+    },
+    {
+      "pageNumber": 77,
+      "startTime": 2173.6,
+      "endTime": 2202.2000000000003,
+      "expectedWords": 13,
+      "textSignature": "ՍՐԿ|Սաղմոս|ասացէք|Տեառն|Աստուծոյ"
+    },
+    {
+      "pageNumber": 78,
+      "startTime": 2202.2000000000003,
+      "endTime": 2230.8,
+      "expectedWords": 24,
+      "textSignature": "ՈՏՔԻ|ԿԱՆԳՆԻԼ|ԿԱՄ|ԾՈՒՆԿԻ|ԳԱԼ"
+    },
+    {
+      "pageNumber": 79,
+      "startTime": 2230.8,
+      "endTime": 2259.4,
+      "expectedWords": 23,
+      "textSignature": "ԴՊՐ|պաշտեն|ըզքեզ|Տէր|եւ"
+    },
+    {
+      "pageNumber": 80,
+      "startTime": 2259.4,
+      "endTime": 2288,
+      "expectedWords": 13,
+      "textSignature": "ՍՐԿ|Եւ|եւըս|խաղաղութեան|զՏէր"
+    },
+    {
+      "pageNumber": 81,
+      "startTime": 2288,
+      "endTime": 2316.6,
+      "expectedWords": 22,
+      "textSignature": "ՍՐԿ|Եւ|եւըս|հաւատով|եւ"
+    },
+    {
+      "pageNumber": 82,
+      "startTime": 2316.6,
+      "endTime": 2345.2000000000003,
+      "expectedWords": 31,
+      "textSignature": "ՔՀՆ|Շնորհօք|եւ|մարդասիրութեամբ|Տեառն"
+    },
+    {
+      "pageNumber": 83,
+      "startTime": 2345.2000000000003,
+      "endTime": 2373.8,
+      "expectedWords": 15,
+      "textSignature": "ԴՊՐ|Եւ|ընդ|հոգւոյդ|քում"
+    },
+    {
+      "pageNumber": 84,
+      "startTime": 2373.8,
+      "endTime": 2402.4,
+      "expectedWords": 23,
+      "textSignature": "ՍՐԿ|Ողջոյն|տուք|անց|ի"
+    },
+    {
+      "pageNumber": 85,
+      "startTime": 2402.4,
+      "endTime": 2431,
+      "expectedWords": 21,
+      "textSignature": "հ|ԴՊՐ|Քրիստոս|ի|մէջ"
+    },
+    {
+      "pageNumber": 86,
+      "startTime": 2431,
+      "endTime": 2459.6,
+      "expectedWords": 18,
+      "textSignature": "ԴՊՐ|Արդ|պաշտօնեայք|բարձեալ|ըզձայն"
+    },
+    {
+      "pageNumber": 87,
+      "startTime": 2459.6,
+      "endTime": 2488.2000000000003,
+      "expectedWords": 17,
+      "textSignature": "ՍՐԿ|Ահիւ|կացցուք|երկիւղիւ|կացցուք"
+    },
+    {
+      "pageNumber": 88,
+      "startTime": 2488.2000000000003,
+      "endTime": 2516.8,
+      "expectedWords": 17,
+      "textSignature": "ՍՐԿ|Պատարագ|Քրիստոս|մատչի|անարատ"
+    },
+    {
+      "pageNumber": 89,
+      "startTime": 2516.8,
+      "endTime": 2545.4,
+      "expectedWords": 22,
+      "textSignature": "ՔՀՆ|Շնորհք|սէր|եւ|աստուածային"
+    },
+    {
+      "pageNumber": 90,
+      "startTime": 2545.4,
+      "endTime": 2574,
+      "expectedWords": 31,
+      "textSignature": "ԴՊՐ|Ամէն|Եւ|ընդ|հոգւոյդ"
+    },
+    {
+      "pageNumber": 91,
+      "startTime": 2574,
+      "endTime": 2602.6,
+      "expectedWords": 30,
+      "textSignature": "ՍՐԿ|Եւ|գոհացարուք|ըզՏեառնէ|բոլորով"
+    },
+    {
+      "pageNumber": 92,
+      "startTime": 2602.6,
+      "endTime": 2631.2000000000003,
+      "expectedWords": 30,
+      "textSignature": "ԴՊՐ|Սուրբ|սուրբ|սուրբ|Տէր"
+    },
+    {
+      "pageNumber": 93,
+      "startTime": 2631.2000000000003,
+      "endTime": 2659.8,
+      "expectedWords": 25,
+      "textSignature": "ՔՀՆ|Առէք|կերէք|այս|է"
+    },
+    {
+      "pageNumber": 94,
+      "startTime": 2659.8,
+      "endTime": 2688.4,
+      "expectedWords": 27,
+      "textSignature": "ՔՀՆ|Արբէք|ի|սմանէ|ա"
+    },
+    {
+      "pageNumber": 95,
+      "startTime": 2688.4,
+      "endTime": 2717,
+      "expectedWords": 28,
+      "textSignature": "ԴՊՐ|Ամէն|Հայր|երկնաւոր|որ"
+    },
+    {
+      "pageNumber": 96,
+      "startTime": 2717,
+      "endTime": 2745.6000000000004,
+      "expectedWords": 34,
+      "textSignature": "ՔՀՆ|Եւ|զքոյս|ի|քոյոց"
+    },
+    {
+      "pageNumber": 97,
+      "startTime": 2745.6000000000004,
+      "endTime": 2774.2000000000003,
+      "expectedWords": 18,
+      "textSignature": "ՍՐԿ|Օրհնեա|տէր|ՔՀՆ|Խաղաղութիւն"
+    },
+    {
+      "pageNumber": 98,
+      "startTime": 2774.2000000000003,
+      "endTime": 2802.8,
+      "expectedWords": 31,
+      "textSignature": "ԴՊՐ|Առաջի|քո|Տէր|Որդի"
+    },
+    {
+      "pageNumber": 99,
+      "startTime": 2802.8,
+      "endTime": 2831.4,
+      "expectedWords": 19,
+      "textSignature": "ՔՀՆ|Որպէսզի|եղիցի|սա|ա"
+    },
+    {
+      "pageNumber": 100,
+      "startTime": 2831.4,
+      "endTime": 2860,
+      "expectedWords": 27,
+      "textSignature": "ԴՊՐ|Հոգի|Աստուծոյ|որ|զ"
+    },
+    {
+      "pageNumber": 101,
+      "startTime": 2860,
+      "endTime": 2888.6000000000004,
+      "expectedWords": 18,
+      "textSignature": "ՔՀՆ|Ընդ|որս|եւ|զ"
+    },
+    {
+      "pageNumber": 102,
+      "startTime": 2888.6000000000004,
+      "endTime": 2917.2000000000003,
+      "expectedWords": 28,
+      "textSignature": "ՔՀՆ|Աստուածածնին|սրբոյ|կուսին|Մարիամու"
+    },
+    {
+      "pageNumber": 103,
+      "startTime": 2917.2000000000003,
+      "endTime": 2945.8,
+      "expectedWords": 25,
+      "textSignature": "ՍՐԿ|Առաքելոց|սըրբոց|մարգարէից|վարդապետաց"
+    },
+    {
+      "pageNumber": 104,
+      "startTime": 2945.8,
+      "endTime": 2974.4,
+      "expectedWords": 18,
+      "textSignature": "ՍՐԿ|Օրհնեալ|գովեալ|եւ|փառաւորեալ"
+    },
+    {
+      "pageNumber": 105,
+      "startTime": 2974.4,
+      "endTime": 3003,
+      "expectedWords": 28,
+      "textSignature": "ՍՐԿ|Առաջնորդացըն|րոց|եւ|առաջին"
+    },
+    {
+      "pageNumber": 106,
+      "startTime": 3003,
+      "endTime": 3031.6000000000004,
+      "expectedWords": 17,
+      "textSignature": "ՍՐԿ|Միանձնացելոց|սըրբոց|եղիցի|յիշատակ"
+    },
+    {
+      "pageNumber": 107,
+      "startTime": 3031.6000000000004,
+      "endTime": 3060.2000000000003,
+      "expectedWords": 18,
+      "textSignature": "ՍՐԿ|Թագաւորաց|հաւատացելոց|սըրբոցն|եղիցի"
+    },
+    {
+      "pageNumber": 108,
+      "startTime": 3060.2000000000003,
+      "endTime": 3088.8,
+      "expectedWords": 32,
+      "textSignature": "ՍՐԿ|Ընդհանուր|ա|նայն|հաւատացելոց"
+    },
+    {
+      "pageNumber": 109,
+      "startTime": 3088.8,
+      "endTime": 3117.4,
+      "expectedWords": 31,
+      "textSignature": "ՔՀՆ|Եւս|առաւել|զեպիսկոպոսապետն|ր"
+    },
+    {
+      "pageNumber": 110,
+      "startTime": 3117.4,
+      "endTime": 3146,
+      "expectedWords": 29,
+      "textSignature": "ՍՐԿ|Գոհութիւն|եւ|փառաբանութիւն|մատուցանեմք"
+    },
+    {
+      "pageNumber": 111,
+      "startTime": 3146,
+      "endTime": 3174.6000000000004,
+      "expectedWords": 16,
+      "textSignature": "ՍՐԿ|Սովաւ|շնորհեա|ըզսէր|զհաստատութիւն"
+    },
+    {
+      "pageNumber": 112,
+      "startTime": 3174.6000000000004,
+      "endTime": 3203.2000000000003,
+      "expectedWords": 27,
+      "textSignature": "ՍՐԿ|եւ|ա|նայն|ուղղափառ"
+    },
+    {
+      "pageNumber": 113,
+      "startTime": 3203.2000000000003,
+      "endTime": 3231.8,
+      "expectedWords": 20,
+      "textSignature": "ՍՐԿ|եւ|վիճակիս|բարեջան|առ"
+    },
+    {
+      "pageNumber": 114,
+      "startTime": 3231.8,
+      "endTime": 3260.4,
+      "expectedWords": 27,
+      "textSignature": "ԴՊՐ|Ըստ|ա|նայնի|եւ"
+    },
+    {
+      "pageNumber": 115,
+      "startTime": 3260.4,
+      "endTime": 3289,
+      "expectedWords": 18,
+      "textSignature": "ԴՊՐ|Ամէն|Եւ|ընդ|հոգւոյդ"
+    },
+    {
+      "pageNumber": 116,
+      "startTime": 3289,
+      "endTime": 3317.6000000000004,
+      "expectedWords": 16,
+      "textSignature": "ՍՐԿ|Ա|նայն|սըրբովք|զորըս"
+    },
+    {
+      "pageNumber": 117,
+      "startTime": 3317.6000000000004,
+      "endTime": 3346.2000000000003,
+      "expectedWords": 21,
+      "textSignature": "ՍՐԿ|Վասըն|մատուցեալ|սուրբ|եւ"
+    },
+    {
+      "pageNumber": 118,
+      "startTime": 3346.2000000000003,
+      "endTime": 3374.8,
+      "expectedWords": 31,
+      "textSignature": "ՍՐԿ|Որպէսզի|Տէր|Աստուած|ր"
+    },
+    {
+      "pageNumber": 119,
+      "startTime": 3374.8,
+      "endTime": 3403.4,
+      "expectedWords": 35,
+      "textSignature": "ՍՐԿ|Ընկալ|կեցո|եւ|ողոր"
+    },
+    {
+      "pageNumber": 120,
+      "startTime": 3403.4,
+      "endTime": 3432,
+      "expectedWords": 24,
+      "textSignature": "ԴՊՐ|Յիշեա|Տէր|եւ|ողոր"
+    },
+    {
+      "pageNumber": 121,
+      "startTime": 3432,
+      "endTime": 3460.6000000000004,
+      "expectedWords": 2,
+      "textSignature": "ՔԱՐՈԶ|ՆՍՏԻԼ"
+    },
+    {
+      "pageNumber": 122,
+      "startTime": 3460.6000000000004,
+      "endTime": 3489.2000000000003,
+      "expectedWords": 18,
+      "textSignature": "ՔՀՆ|Եւ|տուր|զ|համարձակաձայն"
+    },
+    {
+      "pageNumber": 123,
+      "startTime": 3489.2000000000003,
+      "endTime": 3517.8,
+      "expectedWords": 36,
+      "textSignature": "ԴՊՐ|Հայր|ր|որ|յերկինս"
+    },
+    {
+      "pageNumber": 124,
+      "startTime": 3517.8,
+      "endTime": 3546.4,
+      "expectedWords": 22,
+      "textSignature": "ՔՀՆ|Զի|քո|է|արքայութիւն"
+    },
+    {
+      "pageNumber": 125,
+      "startTime": 3546.4,
+      "endTime": 3575,
+      "expectedWords": 10,
+      "textSignature": "ՍՐԿ|Աստուծոյ|երկիրպագեսցուք|ԴՊՐ|Առաջի"
+    },
+    {
+      "pageNumber": 126,
+      "startTime": 3575,
+      "endTime": 3603.6000000000004,
+      "expectedWords": 32,
+      "textSignature": "ՔՀՆ|Քրիստոսիւ|Յիսուսիւ|Տէրամբ|րով"
+    },
+    {
+      "pageNumber": 127,
+      "startTime": 3603.6000000000004,
+      "endTime": 3632.2000000000003,
+      "expectedWords": 19,
+      "textSignature": "ՔՀՆ|Ի|սրբութիւն|սրբոց|ԴՊՐ"
+    },
+    {
+      "pageNumber": 128,
+      "startTime": 3632.2000000000003,
+      "endTime": 3660.8,
+      "expectedWords": 19,
+      "textSignature": "ՔՀՆ|Օրհնեալ|Հայր|Սուրբ|Աստուած"
+    },
+    {
+      "pageNumber": 129,
+      "startTime": 3660.8,
+      "endTime": 3689.4,
+      "expectedWords": 28,
+      "textSignature": "ՔՀՆ|Օրհնեալ|Հոգիդ|Սուրբ|Աստուած"
+    },
+    {
+      "pageNumber": 130,
+      "startTime": 3689.4,
+      "endTime": 3718,
+      "expectedWords": 25,
+      "textSignature": "ԴՊՐ|Ամէն|Հայր|Սուրբ|Որդիդ"
+    },
+    {
+      "pageNumber": 131,
+      "startTime": 3718,
+      "endTime": 3746.6000000000004,
+      "expectedWords": 29,
+      "textSignature": "ՔՀՆ|Ի|սուրբ|ի|սուրբ"
+    },
+    {
+      "pageNumber": 132,
+      "startTime": 3746.6000000000004,
+      "endTime": 3775.2000000000003,
+      "expectedWords": 29,
+      "textSignature": "ՔՀՆ|Սա|է|կեանք|յոյս"
+    },
+    {
+      "pageNumber": 133,
+      "startTime": 3775.2000000000003,
+      "endTime": 3803.8,
+      "expectedWords": 35,
+      "textSignature": "ԴՊՐ|Տէր|ողոր|ա|Տէր"
+    },
+    {
+      "pageNumber": 134,
+      "startTime": 3803.8,
+      "endTime": 3832.4,
+      "expectedWords": 18,
+      "textSignature": "ՍՐԿ|Եւ|հիւանդաց|բըժըշկութիւն|նընջեցելոց"
+    },
+    {
+      "pageNumber": 135,
+      "startTime": 3832.4,
+      "endTime": 3861,
+      "expectedWords": 35,
+      "textSignature": "ՍՐԿ|Հաս|յօգնութիւն|ծառայից|քոց"
+    },
+    {
+      "pageNumber": 136,
+      "startTime": 3861,
+      "endTime": 3889.6000000000004,
+      "expectedWords": 29,
+      "textSignature": "ՍՐԿ|Սաղմոս|ասացէք|Տեառն|Աստուծոյ"
+    },
+    {
+      "pageNumber": 137,
+      "startTime": 3889.6000000000004,
+      "endTime": 3918.2000000000003,
+      "expectedWords": 36,
+      "textSignature": "ԴՊՐ|Օրհնեալ|է|Աստուած|Քրիստոս"
+    },
+    {
+      "pageNumber": 138,
+      "startTime": 3918.2000000000003,
+      "endTime": 3946.8,
+      "expectedWords": 28,
+      "textSignature": "ԴՊՐ|Օրհնեցէք|ըզՏէր|ի|յերկինս"
+    },
+    {
+      "pageNumber": 139,
+      "startTime": 3946.8,
+      "endTime": 3975.4,
+      "expectedWords": 5,
+      "textSignature": "ԽՈՍՏՈՎԱՆՈՒԹԻՒՆ|ԾՈՒՆԿԻ|ԳԱԼ|ԿԱՄ|ՆՍՏԻԼ"
+    },
+    {
+      "pageNumber": 140,
+      "startTime": 3975.4,
+      "endTime": 4004,
+      "expectedWords": 29,
+      "textSignature": "ՄԻԱՍԻՆ|Մեղանչեցի|ա|նասուրբ|Երրորդութեան"
+    },
+    {
+      "pageNumber": 141,
+      "startTime": 4004,
+      "endTime": 4032.6000000000004,
+      "expectedWords": 22,
+      "textSignature": "ՄԻԱՍԻՆ|Մեղանչեցի|այն|եօթը|յանցանքներով"
+    },
+    {
+      "pageNumber": 142,
+      "startTime": 4032.6000000000004,
+      "endTime": 4061.2000000000003,
+      "expectedWords": 27,
+      "textSignature": "ՄԻԱՍԻՆ|Եւ|դեռ|ղանչեցի|Աստուծոյ"
+    },
+    {
+      "pageNumber": 143,
+      "startTime": 4061.2000000000003,
+      "endTime": 4089.8,
+      "expectedWords": 30,
+      "textSignature": "ՄԻԱՍԻՆ|Վա՜յ|ինծի|վա՜յ|ինծի"
+    },
+    {
+      "pageNumber": 144,
+      "startTime": 4089.8,
+      "endTime": 4118.400000000001,
+      "expectedWords": 30,
+      "textSignature": "ՄԻԱՍԻՆ|Հայր|սուրբ|ինծի|համար"
+    },
+    {
+      "pageNumber": 145,
+      "startTime": 4118.400000000001,
+      "endTime": 4147,
+      "expectedWords": 32,
+      "textSignature": "ՔՀՆ|Տէր|ողոր|ա|Տէր"
+    },
+    {
+      "pageNumber": 146,
+      "startTime": 4147,
+      "endTime": 4175.6,
+      "expectedWords": 31,
+      "textSignature": "ՔՀՆ|նոյն|խօսքով|կ|արձակեմ"
+    },
+    {
+      "pageNumber": 147,
+      "startTime": 4175.6,
+      "endTime": 4204.2,
+      "expectedWords": 1,
+      "textSignature": "Էջ"
+    },
+    {
+      "pageNumber": 148,
+      "startTime": 4204.2,
+      "endTime": 4232.8,
+      "expectedWords": 1,
+      "textSignature": "Էջ"
+    },
+    {
+      "pageNumber": 149,
+      "startTime": 4232.8,
+      "endTime": 4261.400000000001,
+      "expectedWords": 1,
+      "textSignature": "Էջ"
+    },
+    {
+      "pageNumber": 150,
+      "startTime": 4261.400000000001,
+      "endTime": 4290,
+      "expectedWords": 1,
+      "textSignature": "Էջ"
+    },
+    {
+      "pageNumber": 151,
+      "startTime": 4290,
+      "endTime": 4318.6,
+      "expectedWords": 4,
+      "textSignature": "Էջ|եա|եա|եա"
+    },
+    {
+      "pageNumber": 152,
+      "startTime": 4318.6,
+      "endTime": 4347.2,
+      "expectedWords": 29,
+      "textSignature": "ՍՐԿ|Երկիւղիւ|եւ|հաւատով|յառաջ"
+    },
+    {
+      "pageNumber": 153,
+      "startTime": 4347.2,
+      "endTime": 4375.8,
+      "expectedWords": 5,
+      "textSignature": "ՀԱՂՈՐԴՈՒԹԻՒՆ|ԾՈՒՆԿԻ|ԳԱԼ|ԿԱՄ|ՆՍՏԻԼ"
+    },
+    {
+      "pageNumber": 154,
+      "startTime": 4375.8,
+      "endTime": 4404.400000000001,
+      "expectedWords": 30,
+      "textSignature": "ԴՊՐ|Աստուած|ր|եւ|Տէր"
+    },
+    {
+      "pageNumber": 155,
+      "startTime": 4404.400000000001,
+      "endTime": 4433,
+      "expectedWords": 36,
+      "textSignature": "ԴՊՐ|Լըցաք|ի|բարութեանց|քոց"
+    },
+    {
+      "pageNumber": 156,
+      "startTime": 4433,
+      "endTime": 4461.6,
+      "expectedWords": 27,
+      "textSignature": "ՍՐԿ|Եւ|եւըս|խաղաղութեան|ըզՏէր"
+    },
+    {
+      "pageNumber": 157,
+      "startTime": 4461.6,
+      "endTime": 4490.2,
+      "expectedWords": 26,
+      "textSignature": "ԴՊՐ|Գոհանամք|ըզքէն|Տէր|որ"
+    },
+    {
+      "pageNumber": 158,
+      "startTime": 4490.2,
+      "endTime": 4518.8,
+      "expectedWords": 3,
+      "textSignature": "ԱՐՁԱԿՈՒՄ|ՈՏՔԻ|ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 159,
+      "startTime": 4518.8,
+      "endTime": 4547.400000000001,
+      "expectedWords": 21,
+      "textSignature": "ՔՀՆ|Որ|օրհնես|զայնոսիկ|որք"
+    },
+    {
+      "pageNumber": 160,
+      "startTime": 4547.400000000001,
+      "endTime": 4576,
+      "expectedWords": 17,
+      "textSignature": "ՔՀՆ|Կեցո|զժողովուրդս|քո|եւ"
+    },
+    {
+      "pageNumber": 161,
+      "startTime": 4576,
+      "endTime": 4604.6,
+      "expectedWords": 26,
+      "textSignature": "ՔՀՆ|Զխաղաղութիւն|պարգեւեա|ա|նայն"
+    },
+    {
+      "pageNumber": 162,
+      "startTime": 4604.6,
+      "endTime": 4633.2,
+      "expectedWords": 39,
+      "textSignature": "ԴՊՐ|Ամէն|ՔՀՆ|Զի|ա"
+    },
+    {
+      "pageNumber": 163,
+      "startTime": 4633.2,
+      "endTime": 4661.8,
+      "expectedWords": 27,
+      "textSignature": "ԴՊՐ|Ամէն|Եղիցի|անուն|Տեառն"
+    },
+    {
+      "pageNumber": 164,
+      "startTime": 4661.8,
+      "endTime": 4690.400000000001,
+      "expectedWords": 28,
+      "textSignature": "ՔՀՆ|Կատարու|օրինաց|եւ|մարգարէից"
+    },
+    {
+      "pageNumber": 165,
+      "startTime": 4690.400000000001,
+      "endTime": 4719,
+      "expectedWords": 4,
+      "textSignature": "ՊԱՇՏՕՆ|ՀՈԳԵՀԱՆԳՍՏԵԱՆ|ՈՏՔԻ|ԿԱՆԳՆԻԼ"
+    },
+    {
+      "pageNumber": 166,
+      "startTime": 4719,
+      "endTime": 4747.6,
+      "expectedWords": 31,
+      "textSignature": "ՍՐԿ|Եւ|եւըս|խաղաղութեան|ըզՏէր"
+    },
+    {
+      "pageNumber": 167,
+      "startTime": 4747.6,
+      "endTime": 4776.2,
+      "expectedWords": 24,
+      "textSignature": "ԴՊՐ|Որ|յանէից|ստեղծող|քոյից"
+    },
+    {
+      "pageNumber": 168,
+      "startTime": 4776.2,
+      "endTime": 4804.8,
+      "expectedWords": 26,
+      "textSignature": "ԴՊՐ|Որ|պըսակիչդ|ես|քոց"
+    },
+    {
+      "pageNumber": 169,
+      "startTime": 4804.8,
+      "endTime": 4833.400000000001,
+      "expectedWords": 24,
+      "textSignature": "ԴՊՐ|Ալէլուիա|ալէլուիա|Ի|խորոց"
+    },
+    {
+      "pageNumber": 170,
+      "startTime": 4833.400000000001,
+      "endTime": 4862,
+      "expectedWords": 18,
+      "textSignature": "ՍՐԿ|Ալէլուիա|օրթի|ՔՀՆ|Խաղաղութիւն"
+    },
+    {
+      "pageNumber": 171,
+      "startTime": 4862,
+      "endTime": 4890.6,
+      "expectedWords": 22,
+      "textSignature": "ՔՀՆ|Սրբոյ|Աւետարանիս|Յիսուսի|Քրիստոսի"
+    },
+    {
+      "pageNumber": 172,
+      "startTime": 4890.6,
+      "endTime": 4919.2,
+      "expectedWords": 35,
+      "textSignature": "ՔՀՆ|Մեր|Տէրը՝|Յիսուս|Քրիստոս"
+    },
+    {
+      "pageNumber": 173,
+      "startTime": 4919.2,
+      "endTime": 4947.8,
+      "expectedWords": 39,
+      "textSignature": "Ով|որ|իր|անձը|կը"
+    },
+    {
+      "pageNumber": 174,
+      "startTime": 4947.8,
+      "endTime": 4976.400000000001,
+      "expectedWords": 30,
+      "textSignature": "ԴՊՐ|Քահանայք|եւ|ժողովուրդք|հայցեմք"
+    },
+    {
+      "pageNumber": 175,
+      "startTime": 4976.400000000001,
+      "endTime": 5005,
+      "expectedWords": 29,
+      "textSignature": "ԴՊՐ|Ի|վերին|Երուսաղէմ|ի"
+    },
+    {
+      "pageNumber": 176,
+      "startTime": 5005,
+      "endTime": 5033.6,
+      "expectedWords": 18,
+      "textSignature": "ՔՀՆ|Հոգւոցն|հանգուցելոց|Քրիստոս|Աստուած"
+    },
+    {
+      "pageNumber": 177,
+      "startTime": 5033.6,
+      "endTime": 5062.2,
+      "expectedWords": 30,
+      "textSignature": "ՍՐԿ|Եւ|եւըս|խաղաղութեան|ըզՏէր"
+    },
+    {
+      "pageNumber": 178,
+      "startTime": 5062.2,
+      "endTime": 5090.8,
+      "expectedWords": 34,
+      "textSignature": "ՔՀՆ|Տէր|ողոր|ա|Տէր"
+    },
+    {
+      "pageNumber": 179,
+      "startTime": 5090.8,
+      "endTime": 5119.400000000001,
+      "expectedWords": 35,
+      "textSignature": "ՔՀՆ|Դասաւորեալ|պայծառացո|ընդ|սուրբս"
+    },
+    {
+      "pageNumber": 180,
+      "startTime": 5119.400000000001,
+      "endTime": 5148,
+      "expectedWords": 35,
+      "textSignature": "ՔՀՆ|Օրհնեալ|Տէր|ր|Յիսուս"
+    },
+    {
+      "pageNumber": 181,
+      "startTime": 5148,
+      "endTime": 5176.6,
+      "expectedWords": 35,
+      "textSignature": "ԴՊՐ|Թող|զ|ըզպարտիս|ր"
+    },
+    {
+      "pageNumber": 182,
+      "startTime": 5176.6,
+      "endTime": 5205.2,
+      "expectedWords": 34,
+      "textSignature": "ԴՊՐ|Օրհնեցից|ըզՏէր|յա|նայն"
+    },
+    {
+      "pageNumber": 183,
+      "startTime": 5205.2,
+      "endTime": 5233.8,
+      "expectedWords": 0,
+      "textSignature": ""
+    }
+  ]
+}

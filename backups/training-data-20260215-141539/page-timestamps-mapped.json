@@ -1,0 +1,1748 @@
+{
+  "totalPages": 183,
+  "totalDetectedTransitions": 152,
+  "interpolated": 30,
+  "extrapolated": 0,
+  "avgPageDuration": 27.692307692307693,
+  "minPageDuration": 5,
+  "maxPageDuration": 570,
+  "pages": [
+    {
+      "pageNumber": 1,
+      "timestamp": 0,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "start"
+    },
+    {
+      "pageNumber": 2,
+      "timestamp": 60,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 3.1161080779728483,
+      "rms": 0.0026397671757006974,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 3,
+      "timestamp": 70,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "choir",
+      "variance": 5.0737765151353456,
+      "rms": 0.0015298179675887825,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 4,
+      "timestamp": 110,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "celebrant",
+      "variance": 1.9829577122460058,
+      "rms": 0.0023126829350226144,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 5,
+      "timestamp": 120,
+      "hasTransition": false,
+      "speaker": "celebrant",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 6,
+      "timestamp": 130,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "choir",
+      "variance": 29.643249859564047,
+      "rms": 0.002725505941433528,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 7,
+      "timestamp": 150,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.004835947868378458,
+      "rms": 0.0005067832182400335,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 8,
+      "timestamp": 190,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 5.239824138908753,
+      "rms": 0.0015936121459770632,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 9,
+      "timestamp": 200,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.5667445099293332,
+      "rms": 0.0014903214476112167,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 10,
+      "timestamp": 240,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 19.692865560697854,
+      "rms": 0.0022768488049062343,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 11,
+      "timestamp": 245,
+      "hasTransition": false,
+      "speaker": "choir",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 12,
+      "timestamp": 250,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "celebrant",
+      "variance": 4.967596920384226,
+      "rms": 0.0015672293230528497,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 13,
+      "timestamp": 260,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.9663426372133089,
+      "rms": 0.0012393634592009857,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 14,
+      "timestamp": 280,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 16.116905554511803,
+      "rms": 0.002616670532283165,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 15,
+      "timestamp": 290,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.5658479109690773,
+      "rms": 0.0014821462019927643,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 16,
+      "timestamp": 310,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 6.665206849244914,
+      "rms": 0.002095745893044202,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 17,
+      "timestamp": 315,
+      "hasTransition": false,
+      "speaker": "choir",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 18,
+      "timestamp": 320,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.01234218882513062,
+      "rms": 0.0010222615501188808,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 19,
+      "timestamp": 350,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 5.587927050183321,
+      "rms": 0.0025723071237267704,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 20,
+      "timestamp": 360,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.051245024922368355,
+      "rms": 0.0011209308483910026,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 21,
+      "timestamp": 470,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.5921316208388048,
+      "rms": 0.001571263195629738,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 22,
+      "timestamp": 480,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.007656961441488387,
+      "rms": 0.0006193152611990295,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 23,
+      "timestamp": 520,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 24,
+      "timestamp": 560,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.5736401019145272,
+      "rms": 0.001402964319818413,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 25,
+      "timestamp": 580,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.4402153192075168,
+      "rms": 0.0012043292042421716,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 26,
+      "timestamp": 720,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 8.542700562473765,
+      "rms": 0.0032521840853902335,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 27,
+      "timestamp": 730,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.039559443127969586,
+      "rms": 0.0017197164922255965,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 28,
+      "timestamp": 780,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 5.27418589298056,
+      "rms": 0.002209224470771266,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 29,
+      "timestamp": 785,
+      "hasTransition": false,
+      "speaker": "choir",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 30,
+      "timestamp": 790,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "celebrant",
+      "variance": 1.8714778557158471,
+      "rms": 0.0018086505934513386,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 31,
+      "timestamp": 820,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.052887490914826245,
+      "rms": 0.0013073808927195685,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 32,
+      "timestamp": 830,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.707061354748934,
+      "rms": 0.0018548512842075987,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 33,
+      "timestamp": 840,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.11400908528055209,
+      "rms": 0.0016484365044253393,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 34,
+      "timestamp": 870,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 4.187365851647848,
+      "rms": 0.0019662127485031915,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 35,
+      "timestamp": 875,
+      "hasTransition": false,
+      "speaker": "celebrant",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 36,
+      "timestamp": 880,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.016282341217423054,
+      "rms": 0.0007334952536172193,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 37,
+      "timestamp": 890,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 13.447695490504113,
+      "rms": 0.0031574662678708564,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 38,
+      "timestamp": 920,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.5743291992675102,
+      "rms": 0.0023309995034989776,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 39,
+      "timestamp": 930,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.3266267355484973,
+      "rms": 0.0026921924122101735,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 40,
+      "timestamp": 940,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "choir",
+      "variance": 5.0536022772055835,
+      "rms": 0.0020315566735326896,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 41,
+      "timestamp": 945,
+      "hasTransition": false,
+      "speaker": "choir",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 42,
+      "timestamp": 950,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.9424169618284592,
+      "rms": 0.0019207083506358868,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 43,
+      "timestamp": 960,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.9605728330858017,
+      "rms": 0.0010179483619001185,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 44,
+      "timestamp": 970,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.44888522824081706,
+      "rms": 0.002081790980304275,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 45,
+      "timestamp": 1040,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 19.350545337571184,
+      "rms": 0.0037824299872399997,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 46,
+      "timestamp": 1050,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.6754554579403813,
+      "rms": 0.0019467266482457433,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 47,
+      "timestamp": 1055,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 48,
+      "timestamp": 1060,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 6.549570086963907,
+      "rms": 0.00271377049769059,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 49,
+      "timestamp": 1070,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 1.2120797804594543,
+      "rms": 0.00232419634609484,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 50,
+      "timestamp": 1080,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 3.2294665881332665,
+      "rms": 0.0024713644806095697,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 51,
+      "timestamp": 1090,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.8348378049742058,
+      "rms": 0.002027011784088207,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 52,
+      "timestamp": 1110,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 3.109284284274708,
+      "rms": 0.0024699542274694212,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 53,
+      "timestamp": 1120,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.8173874720418716,
+      "rms": 0.002229160805034945,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 54,
+      "timestamp": 1125,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 55,
+      "timestamp": 1130,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 6.799830901664083,
+      "rms": 0.003121577117215121,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 56,
+      "timestamp": 1140,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.16956778599050795,
+      "rms": 0.0017160233800003683,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 57,
+      "timestamp": 1160,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 28.920825348581264,
+      "rms": 0.004369506895757637,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 58,
+      "timestamp": 1170,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.8595712875263597,
+      "rms": 0.0019970626999991016,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 59,
+      "timestamp": 1240,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 42.29974447677338,
+      "rms": 0.0022922444880791692,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 60,
+      "timestamp": 1250,
+      "hasTransition": false,
+      "speaker": "choir",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 61,
+      "timestamp": 1260,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 1.2341813917417526,
+      "rms": 0.0021816395876794927,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 62,
+      "timestamp": 1600,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 3.2946466348546717,
+      "rms": 0.0022190341344519586,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 63,
+      "timestamp": 1610,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.20288374714031243,
+      "rms": 0.0016079201928927572,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 64,
+      "timestamp": 1750,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.9841514867723102,
+      "rms": 0.001511459567501888,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 65,
+      "timestamp": 1760,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.02658452490706978,
+      "rms": 0.0005210540359667615,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 66,
+      "timestamp": 1775,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 67,
+      "timestamp": 1790,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 4.321385135604549,
+      "rms": 0.0017462236412345835,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 68,
+      "timestamp": 1800,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.02219002859576736,
+      "rms": 0.0005445074636013039,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 69,
+      "timestamp": 1810,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.157620938289582,
+      "rms": 0.0010119741398030293,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 70,
+      "timestamp": 1820,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.028843655573524366,
+      "rms": 0.0010457271448446616,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 71,
+      "timestamp": 1920,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 6.949174659721859,
+      "rms": 0.00241487785450334,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 72,
+      "timestamp": 1925,
+      "hasTransition": false,
+      "speaker": "choir",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 73,
+      "timestamp": 1930,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.732323765196599,
+      "rms": 0.0016931382752025143,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 74,
+      "timestamp": 1950,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.570783790417303,
+      "rms": 0.0015129911268784468,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 75,
+      "timestamp": 1960,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.07660885605387803,
+      "rms": 0.0009702327536167319,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 76,
+      "timestamp": 1990,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.917144953516987,
+      "rms": 0.0017922120712243082,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 77,
+      "timestamp": 2000,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.5025900798031916,
+      "rms": 0.0017059164563992943,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 78,
+      "timestamp": 2005,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 79,
+      "timestamp": 2010,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.8170774636097797,
+      "rms": 0.00186473687426599,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 80,
+      "timestamp": 2020,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "choir",
+      "variance": 6.380175208296198,
+      "rms": 0.002839146413478998,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 81,
+      "timestamp": 2040,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.7634263881723607,
+      "rms": 0.0017584393743693882,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 82,
+      "timestamp": 2050,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 7.595502384823316,
+      "rms": 0.002719589968998449,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 83,
+      "timestamp": 2060,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.3768465362256703,
+      "rms": 0.0019468905361358071,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 84,
+      "timestamp": 2065,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 85,
+      "timestamp": 2070,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 8.967314626621516,
+      "rms": 0.002756899441848141,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 86,
+      "timestamp": 2080,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "celebrant",
+      "variance": 2.210750391427263,
+      "rms": 0.002875007781338623,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 87,
+      "timestamp": 2110,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.16567633459543343,
+      "rms": 0.00110829719237673,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 88,
+      "timestamp": 2190,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 16.799354703218793,
+      "rms": 0.002952470177833128,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 89,
+      "timestamp": 2200,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.7639769102691405,
+      "rms": 0.0013598331773258623,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 90,
+      "timestamp": 2210,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 91,
+      "timestamp": 2220,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 18.507903729539798,
+      "rms": 0.0025219080981031244,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 92,
+      "timestamp": 2230,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.15472546996321157,
+      "rms": 0.0015367567966239775,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 93,
+      "timestamp": 2250,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.5400194722864526,
+      "rms": 0.0018454141386414589,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 94,
+      "timestamp": 2260,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.1787574566665596,
+      "rms": 0.0013441965861430132,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 95,
+      "timestamp": 2320,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.105689422738214,
+      "rms": 0.0025412617697720898,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 96,
+      "timestamp": 2330,
+      "hasTransition": false,
+      "speaker": "celebrant",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 97,
+      "timestamp": 2340,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.07458868115547806,
+      "rms": 0.0010827870297041558,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 98,
+      "timestamp": 2360,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 7.478177423964221,
+      "rms": 0.0026429606753528593,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 99,
+      "timestamp": 2370,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "celebrant",
+      "variance": 1.992337434167259,
+      "rms": 0.0022982234956369,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 100,
+      "timestamp": 2390,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.22867550887010898,
+      "rms": 0.0015723468641442734,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 101,
+      "timestamp": 2400,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 9.240243634719493,
+      "rms": 0.0032749948125495375,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 102,
+      "timestamp": 2405,
+      "hasTransition": false,
+      "speaker": "choir",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 103,
+      "timestamp": 2410,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.07251621518436764,
+      "rms": 0.0012335090010046198,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 104,
+      "timestamp": 2440,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 3.266673450994519,
+      "rms": 0.0027385596011498927,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 105,
+      "timestamp": 2450,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.023661759911907346,
+      "rms": 0.000948540554408401,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 106,
+      "timestamp": 2540,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 9.643938923305539,
+      "rms": 0.001761122267095812,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 107,
+      "timestamp": 2550,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.3127337220718621,
+      "rms": 0.00180394896359764,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 108,
+      "timestamp": 2570,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 109,
+      "timestamp": 2590,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.825413472657313,
+      "rms": 0.0020406596451485195,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 110,
+      "timestamp": 2620,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.0755935309646796,
+      "rms": 0.0011108836224661123,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 111,
+      "timestamp": 2690,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.5205742991888833,
+      "rms": 0.00254456177339675,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 112,
+      "timestamp": 2700,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.23865122958499563,
+      "rms": 0.002001926802065462,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 113,
+      "timestamp": 2740,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.9812982349786403,
+      "rms": 0.0024068937000080184,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 114,
+      "timestamp": 2745,
+      "hasTransition": false,
+      "speaker": "celebrant",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 115,
+      "timestamp": 2750,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.2730542461693343,
+      "rms": 0.0023408214846667463,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 116,
+      "timestamp": 2860,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.206763102975569,
+      "rms": 0.002276617840707714,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 117,
+      "timestamp": 2870,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.04650588731910167,
+      "rms": 0.0010496261547828676,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 118,
+      "timestamp": 2880,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 5.145022495508606,
+      "rms": 0.00296635229609217,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 119,
+      "timestamp": 2890,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "celebrant",
+      "variance": 3.6191134649383425,
+      "rms": 0.0025719722070697195,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 120,
+      "timestamp": 2895,
+      "hasTransition": false,
+      "speaker": "celebrant",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 121,
+      "timestamp": 2900,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.0027721989338429934,
+      "rms": 0.0006674226298068294,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 122,
+      "timestamp": 3060,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.7644617531790643,
+      "rms": 0.002378696538129449,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 123,
+      "timestamp": 3070,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.03082564966542765,
+      "rms": 0.001226551037109908,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 124,
+      "timestamp": 3090,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 4.997955423887612,
+      "rms": 0.001423306029039639,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 125,
+      "timestamp": 3100,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.033924237539562356,
+      "rms": 0.0005075475667149982,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 126,
+      "timestamp": 3135,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 127,
+      "timestamp": 3170,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.667826973260143,
+      "rms": 0.002150752414929912,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 128,
+      "timestamp": 3180,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.0996431997492375,
+      "rms": 0.0016785425080413066,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 129,
+      "timestamp": 3190,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.2083726314585426,
+      "rms": 0.0026403766947097657,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 130,
+      "timestamp": 3200,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.060324687397657804,
+      "rms": 0.001366092544420289,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 131,
+      "timestamp": 3240,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.982027887832388,
+      "rms": 0.002058775409607901,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 132,
+      "timestamp": 3250,
+      "hasTransition": false,
+      "speaker": "celebrant",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 133,
+      "timestamp": 3260,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.29418251562106695,
+      "rms": 0.0016891624274583967,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 134,
+      "timestamp": 3380,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.53839965601598,
+      "rms": 0.0021989746530005957,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 135,
+      "timestamp": 3400,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.11379423436032536,
+      "rms": 0.0016372470071142732,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 136,
+      "timestamp": 3470,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.028897467198294,
+      "rms": 0.0019071584183497877,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 137,
+      "timestamp": 3480,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.021986742162714557,
+      "rms": 0.0005945297886758184,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 138,
+      "timestamp": 3515,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 139,
+      "timestamp": 3550,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 26.721391374382645,
+      "rms": 0.0031079212289271078,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 140,
+      "timestamp": 3560,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "celebrant",
+      "variance": 2.4853476077526913,
+      "rms": 0.0019796059304112807,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 141,
+      "timestamp": 3570,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.04482259568501358,
+      "rms": 0.0009495128843138573,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 142,
+      "timestamp": 3580,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 3.3360618331574017,
+      "rms": 0.002424579785774075,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 143,
+      "timestamp": 3590,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "choir",
+      "variance": 5.515919010480973,
+      "rms": 0.001942601625665148,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 144,
+      "timestamp": 3610,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.4173076275680425,
+      "rms": 0.001874599787528307,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 145,
+      "timestamp": 3615,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 146,
+      "timestamp": 3620,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 4.395398644860782,
+      "rms": 0.00231173322790837,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 147,
+      "timestamp": 3630,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.013711815726894866,
+      "rms": 0.0008077570318787488,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 148,
+      "timestamp": 3640,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.8656918863047518,
+      "rms": 0.001353290449581932,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 149,
+      "timestamp": 3650,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.7367106984799506,
+      "rms": 0.001808881151003107,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 150,
+      "timestamp": 3660,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 3.9160087064311107,
+      "rms": 0.0013599937497860432,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 151,
+      "timestamp": 3665,
+      "hasTransition": false,
+      "speaker": "celebrant",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 152,
+      "timestamp": 3670,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.116917873107886,
+      "rms": 0.0014880711211163256,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 153,
+      "timestamp": 3680,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.72543291245025,
+      "rms": 0.0018904468801758396,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 154,
+      "timestamp": 3690,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.01710789714235346,
+      "rms": 0.000729555747062853,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 155,
+      "timestamp": 3810,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 6.5052602835566145,
+      "rms": 0.0027049982762245733,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 156,
+      "timestamp": 3820,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.06728679685445255,
+      "rms": 0.0015803099918002658,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 157,
+      "timestamp": 3825,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 158,
+      "timestamp": 3830,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 4.29361664852618,
+      "rms": 0.003044975724972213,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 159,
+      "timestamp": 3840,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.04221543341143904,
+      "rms": 0.0006485403538977505,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 160,
+      "timestamp": 3860,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 4.570077147329977,
+      "rms": 0.001796788090458043,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 161,
+      "timestamp": 3870,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.09150389643114713,
+      "rms": 0.0012318157775771752,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 162,
+      "timestamp": 3950,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 6.603325566747046,
+      "rms": 0.003359291264830202,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 163,
+      "timestamp": 3955,
+      "hasTransition": false,
+      "speaker": "choir",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 164,
+      "timestamp": 3960,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.004230124136167169,
+      "rms": 0.0006035197806649364,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 165,
+      "timestamp": 3980,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.552485776490368,
+      "rms": 0.0021365495752484987,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 166,
+      "timestamp": 4000,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.03467629203892867,
+      "rms": 0.0011606193201646377,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 167,
+      "timestamp": 4040,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 41.419523621829974,
+      "rms": 0.003276088991827077,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 168,
+      "timestamp": 4050,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.21792354986736232,
+      "rms": 0.0016987719388222699,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 169,
+      "timestamp": 4055,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 170,
+      "timestamp": 4060,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.7778566509006302,
+      "rms": 0.001987183809440795,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 171,
+      "timestamp": 4070,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.28422046722011063,
+      "rms": 0.001471949321086588,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 172,
+      "timestamp": 4080,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "choir",
+      "variance": 7.622661819056628,
+      "rms": 0.0020449747006814085,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 173,
+      "timestamp": 4090,
+      "hasTransition": true,
+      "from": "choir",
+      "to": "deacon",
+      "variance": 0.5718337012661765,
+      "rms": 0.0015319668473851816,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 174,
+      "timestamp": 4120,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 2.018700599665944,
+      "rms": 0.0015392700455525868,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 175,
+      "timestamp": 4125,
+      "hasTransition": false,
+      "speaker": "celebrant",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 176,
+      "timestamp": 4130,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.20758446778212647,
+      "rms": 0.0014484415887440652,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 177,
+      "timestamp": 4340,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.533642693815465,
+      "rms": 0.0015601863490469008,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 178,
+      "timestamp": 4370,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.061231650678052044,
+      "rms": 0.000876196233617893,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 179,
+      "timestamp": 4940,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.645600475506883,
+      "rms": 0.001147229318610383,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 180,
+      "timestamp": 4980,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.3529130158709662,
+      "rms": 0.0009533339158128899,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 181,
+      "timestamp": 4995,
+      "hasTransition": false,
+      "speaker": "deacon",
+      "source": "interpolated"
+    },
+    {
+      "pageNumber": 182,
+      "timestamp": 5010,
+      "hasTransition": true,
+      "from": "deacon",
+      "to": "celebrant",
+      "variance": 1.9678355711930922,
+      "rms": 0.0014647223480047911,
+      "source": "detected"
+    },
+    {
+      "pageNumber": 183,
+      "timestamp": 5040,
+      "hasTransition": true,
+      "from": "celebrant",
+      "to": "deacon",
+      "variance": 0.03477528532742808,
+      "rms": 0.0007832401192589771,
+      "source": "detected"
+    }
+  ]
+}

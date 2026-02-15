@@ -1,0 +1,107 @@
+[
+  {
+    "time": 30,
+    "actualPage": 2,
+    "expectedPage": 2,
+    "error": 0,
+    "confidence": 1.0093649765064197
+  },
+  {
+    "time": 60,
+    "actualPage": 3,
+    "expectedPage": 3,
+    "error": 0,
+    "confidence": 0.963001421776136
+  },
+  {
+    "time": 660,
+    "actualPage": 4,
+    "expectedPage": 24,
+    "error": 20,
+    "confidence": 0.9087692306853167
+  },
+  {
+    "time": 870,
+    "actualPage": 5,
+    "expectedPage": 31,
+    "error": 26,
+    "confidence": 0.9763886293503563
+  },
+  {
+    "time": 1020,
+    "actualPage": 6,
+    "expectedPage": 36,
+    "error": 30,
+    "confidence": 0.8773650999159583
+  },
+  {
+    "time": 1440,
+    "actualPage": 7,
+    "expectedPage": 51,
+    "error": 44,
+    "confidence": 0.8555015265138604
+  },
+  {
+    "time": 2340,
+    "actualPage": 10,
+    "expectedPage": 82,
+    "error": 72,
+    "confidence": 0.8165966648683682
+  },
+  {
+    "time": 2640,
+    "actualPage": 12,
+    "expectedPage": 93,
+    "error": 81,
+    "confidence": 0.8546663066144624
+  },
+  {
+    "time": 2670,
+    "actualPage": 13,
+    "expectedPage": 94,
+    "error": 81,
+    "confidence": 0.9117560472397856
+  },
+  {
+    "time": 2790,
+    "actualPage": 14,
+    "expectedPage": 98,
+    "error": 84,
+    "confidence": 0.9973650330261696
+  },
+  {
+    "time": 2970,
+    "actualPage": 15,
+    "expectedPage": 104,
+    "error": 89,
+    "confidence": 0.8569641598912761
+  },
+  {
+    "time": 3480,
+    "actualPage": 16,
+    "expectedPage": 122,
+    "error": 106,
+    "confidence": 0.9287118571657625
+  },
+  {
+    "time": 3990,
+    "actualPage": 17,
+    "expectedPage": 140,
+    "error": 123,
+    "confidence": 0.9699087486233984
+  },
+  {
+    "time": 4290,
+    "actualPage": 18,
+    "expectedPage": 151,
+    "error": 133,
+    "confidence": 0.8231249661053409
+  },
+  {
+    "time": 4320,
+    "actualPage": 19,
+    "expectedPage": 152,
+    "error": 133,
+    "confidence": 0.8656404328070988
+  }
+]

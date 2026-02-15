@@ -1,0 +1,4858 @@
+{
+  "pages": [
+    {
+      "pageNumber": 1,
+      "speaker": "unknown",
+      "triggerWords": [
+        "THE",
+        "LITURGY",
+        "THE",
+        "ARMENIAN",
+        "APOSTOLIC"
+      ],
+      "armenianWords": [
+        "ՍՈՒՐԲ",
+        "ՊԱՏԱՐԱԳ",
+        "ՀԱՅԱՍՏԱՆԵԱՅՑ",
+        "ԱՌԱՔԵԼԱԿԱՆ",
+        "ՍՈՒՐԲ"
+      ],
+      "preview": "THE LITURGY THE ARMENIAN APOSTOLIC HOLY CHURCH"
+    },
+    {
+      "pageNumber": 2,
+      "speaker": "choir",
+      "triggerWords": [
+        "BADRASDOOTYOON",
+        "THE",
+        "PREPARATION"
+      ],
+      "armenianWords": [
+        "ՊԱՏՐԱՍՏՈՒԹԻՒՆ",
+        "ՈՏՔԻ",
+        "ԿԱՆԳՆԻԼ"
+      ],
+      "preview": "BADRASDOOTYOON THE PREPARATION"
+    },
+    {
+      "pageNumber": 3,
+      "speaker": "choir",
+      "triggerWords": [
+        "CHR",
+        "Khorhoort",
+        "khorin",
+        "anhas",
+        "anûsgizpn"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Խորհուրդ",
+        "խորին",
+        "անհաս",
+        "անսկիզբն"
+      ],
+      "preview": "CHR. Khorhoort khorin anhas anûsgizpn, zartarétsér zvérin bédootyoont, harakasd anmadooyts loosooyn kérabandz ztasûs hréghinats. CHR. profound mystery"
+    },
+    {
+      "pageNumber": 4,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CHR",
+        "yérgnavor",
+        "zégéghétsi",
+        "ansharzh",
+        "bahya"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Թագաւոր",
+        "երկնաւոր",
+        "զեկեղեցի",
+        "քո"
+      ],
+      "preview": "CHR. yérgnavor zégéghétsi ansharzh bahya yév zérgûrbakoos anvanût koom bahya khaghaghootyan. CHR. Heavenly King, preserve Church unshaken and those wh"
+    },
+    {
+      "pageNumber": 5,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CLB",
+        "Yév",
+        "vasûn",
+        "sûrpoohvo",
+        "Asdvadzadznin"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Եւ",
+        "վասն",
+        "սրբուհւոյ",
+        "Աստուածածնին"
+      ],
+      "preview": "CLB. Yév vasûn sûrpoohvo Asdvadzadznin parékhosootyanûn, Dér, ûngal zaghachanûs mér yév gétso ûzméz. CLB. Through the intercession the holy Mother Lor"
+    },
+    {
+      "pageNumber": 6,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "DCN",
+        "Soorp",
+        "zAsdvadzadzinûn",
+        "yév",
+        "zaménayn"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Սուրբ",
+        "զԱստուածածինըն",
+        "եւ",
+        "զա"
+      ],
+      "preview": "DCN. Soorp zAsdvadzadzinûn yév zaménayn soorpûs parékhos arastsook Hayr hérgins, gamétsyal voghorméstsi yév kûtatsyal gétsoostsé zararadzûs yoor. Amén"
+    },
+    {
+      "pageNumber": 7,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "ngal",
+        "Dér",
+        "zaghachanûs",
+        "mér"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Ընկալ",
+        "Տէր",
+        "զաղաչանս",
+        "ր"
+      ],
+      "preview": "CLB. Ûngal, Dér, zaghachanûs mér paré khosootyamp sûrpoohvo Asdvadzadznin dzûnoghi miyadzni Vortvo yév aghachanok aménayn sûrpots kots yév avoorûs shn"
+    },
+    {
+      "pageNumber": 8,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "Loor",
+        "méz",
+        "Dér",
+        "yév"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Լուր",
+        "զ",
+        "Տէր",
+        "եւ"
+      ],
+      "preview": "CLB. Loor méz, Dér, yév voghormya, nérya kavya yév togh ûzméghûs mér. Arzhanavorya kohootyamp paravorél ûzkéz ûnt Vortvo yév ûnt Sûrpo Hokvooyt, ayzhm"
+    },
+    {
+      "pageNumber": 9,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "Méghootsyal",
+        "ém",
+        "Asdoodzo",
+        "Khosdovanim"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Մեղուցեալ",
+        "եմ",
+        "Աստուծոյ",
+        "Խոստովանիմ"
+      ],
+      "preview": "CLB. Méghootsyal ém Asdoodzo. Khosdovanim arachi Asdoodzo yév Sûrpoohvo Asdvadzadznin yév arachi aménayn sûrpots yév arachi tsér, hark yév yéghpark, z"
+    },
+    {
+      "pageNumber": 10,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CLB",
+        "Kanzi",
+        "mégha",
+        "khorhûrtov",
+        "yév"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "քանզի",
+        "ղայ",
+        "խորհըրդով",
+        "բանիւ"
+      ],
+      "preview": "CLB. Kanzi mégha khorhûrtov, yév kordzov yév aménayn méghok kordzén martig; mégha, mégha, aghachém ûztséz, khûntrétsék vasn hAsdoodzo ûztoghootyoon. C"
+    },
+    {
+      "pageNumber": 11,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "DCN",
+        "Art",
+        "yégayk",
+        "aménékyan",
+        "khonarhyal"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Արդ",
+        "եկայք",
+        "ա",
+        "նեքեան"
+      ],
+      "preview": "DCN. Art yégayk aménékyan khonarhyal antsampk, pégyal sûrdyook, angtsook latsook arachi Dyarûn ararchin méro, antsoostsé ménch ûztsasoomûn badoohasi h"
+    },
+    {
+      "pageNumber": 12,
+      "speaker": "choir",
+      "triggerWords": [
+        "CLB",
+        "Azadéstsé",
+        "yév",
+        "ûztséz",
+        "martasérn"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Ազատեսցէ",
+        "եւ",
+        "զձեզ",
+        "մարդասէրն"
+      ],
+      "preview": "CLB. Azadéstsé yév ûztséz martasérn Asdvadz, yév toghtsé zaménayn hantsanûs tsér. Datsé zhamanag abashkharélo yév kordzélo ûzparis. Ooghghéstsé yév za"
+    },
+    {
+      "pageNumber": 13,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CHR",
+        "Hishéschir",
+        "yév",
+        "ûzméz",
+        "arachi"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Յիշեսջիր",
+        "եւ",
+        "ըզ",
+        "զ"
+      ],
+      "preview": "CHR. Hishéschir yév ûzméz arachi anmah Karinn Asdoodzo. CLB. Hishyal lichik arachi anmah Vortvooyn Asdoodzo. CHR. Remember also the immortal Lamb CLB."
+    },
+    {
+      "pageNumber": 14,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "ACL",
+        "Aghaghagétsék",
+        "Dér",
+        "aménayn",
+        "yérgir"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Աղաղակեցէք",
+        "առ",
+        "Տէր",
+        "ա"
+      ],
+      "preview": "ACL. Aghaghagétsék Dér aménayn yérgir, dzarayétsék Dyarn oorakhootyamp. Mûdék arachi tsûndzootyamp, dzanérook é Dér Asdvadz mér. ACL. joyful the Lord,"
+    },
+    {
+      "pageNumber": 15,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "ACL",
+        "ûzméz",
+        "yév",
+        "voch",
+        "mék"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Նա",
+        "արար",
+        "ըզ",
+        "զ"
+      ],
+      "preview": "ACL. ûzméz, yév voch mék éyak, mék zhoghovoortk yév khashn Mûdék ûnt troonûs khosdovanootyamp, yév orhnootyamp hargûs ACL. that and people, and the sh"
+    },
+    {
+      "pageNumber": 16,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "ACL",
+        "Khosdovan",
+        "yéghérook",
+        "Dyarn",
+        "yév"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Խոստովան",
+        "եղերուք",
+        "Տեառն",
+        "եւ"
+      ],
+      "preview": "ACL. Khosdovan yéghérook Dyarn, yév orhnétsék zanoon Kaghtsûr é Dér, havidyan é voghormootyoon azké minchév hazk é jûshmardootyoon ACL. thanks bless t"
+    },
+    {
+      "pageNumber": 17,
+      "speaker": "deacon",
+      "triggerWords": [
+        "ACL",
+        "Park",
+        "yév",
+        "Vortvo",
+        "yév"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Փառք",
+        "Հօր",
+        "եւ",
+        "Որդւոյ"
+      ],
+      "preview": "ACL. Park yév Vortvo yév Hokvooyn Sûrpo. Ayzhm yév mishd yév havidyanûs havidénits. Amén. ACL. Glory the Father and the and the Holy Spirit. and alway"
+    },
+    {
+      "pageNumber": 18,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "DCN",
+        "Soorp",
+        "yégéghétsyavs",
+        "aghachéstsook",
+        "ûzDér"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Սուրբ",
+        "եկեղեցեաւս",
+        "աղաչեսցուք",
+        "ըզՏէր"
+      ],
+      "preview": "DCN. Soorp yégéghétsyavs aghachéstsook ûzDér, pûrgéstsé ûzméz méghats yév gétsoostsé shnorhiv voghormootyan yooro; aménagal Dér Asdvadz mér, gétso yév"
+    },
+    {
+      "pageNumber": 19,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "méch",
+        "yév",
+        "arachi",
+        "asdvadzûngal"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Ի",
+        "մէջ",
+        "տա",
+        "արիս"
+      ],
+      "preview": "CLB. méch yév arachi asdvadzûngal yév baydzaratsyal soorp nûshanatsûs yév soorp déghvooys, khonarhyal yérgyooghiv yérgirbakanémk. Ûzsoorp yév ûzhrasha"
+    },
+    {
+      "pageNumber": 20,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CLB",
+        "yév",
+        "kéz",
+        "madootsanémk",
+        "zorhnootyoon"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "եւ",
+        "քեզ",
+        "մատուցանեմք",
+        "զօրհնութիւն"
+      ],
+      "preview": "CLB. yév kéz madootsanémk zorhnootyoon yév ûzparûs ûnt yév ûnt Hokvooyt Sûrpo, ayzhm yév mishd yév havidyanûs havidénits. Amén. Mûdits arachi séghano "
+    },
+    {
+      "pageNumber": 21,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "DCN",
+        "ints",
+        "Asdvadz",
+        "yév",
+        "ints"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Դատ",
+        "արա",
+        "ինձ",
+        "Աստուած"
+      ],
+      "preview": "DCN. ints, Asdvadz, yév ints tadasdani imoom. CLB. Hazké voch é soorp marto méghavoré nénkavoré, pûrgya DCN. Too, Asdvadz, hûzorich és, ûntér moratsar"
+    },
+    {
+      "pageNumber": 22,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "Arakya",
+        "Dér",
+        "ûzlooys",
+        "yév"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Առաքեա",
+        "Տէր",
+        "զլոյս",
+        "քո"
+      ],
+      "preview": "CLB. Arakya, Dér, ûzlooys yév ûzjûshmardootyoon arachnortéstsén ints yév hantsén lyarûn soorp yév hargûs DCN. Mûdits arachi séghano Asdoodzo Asdvadz, "
+    },
+    {
+      "pageNumber": 23,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CLB",
+        "Khosdovan",
+        "yéghéts",
+        "kéz",
+        "orhnootyamp"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Խոստովան",
+        "եղէց",
+        "քեզ",
+        "օրհնութեամբ"
+      ],
+      "preview": "CLB. Khosdovan yéghéts kéz orhnootyamp, Asdvadz, Asdvadz DCN. Art, ûntér dûrdoom és antsn ûntér khûrovés CLB. And will praise with the harp, my DCN. W"
+    },
+    {
+      "pageNumber": 24,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "hoosa",
+        "Asdvadz",
+        "khosdovanya",
+        "nûma"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "յուսա",
+        "առ",
+        "Աստուած",
+        "խոստովանեա"
+      ],
+      "preview": "DCN. hoosa Asdvadz, khosdovanya nûma, pûrgich yérésats imots Asdvadz CLB. Park yév Vortvo yév Hokvooyn Sûrpo. DCN. within shall praise my help and my "
+    },
+    {
+      "pageNumber": 25,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Ayzhm",
+        "yév",
+        "mishd",
+        "yév"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Այժմ",
+        "եւ",
+        "շտ",
+        "եւ"
+      ],
+      "preview": "DCN. Ayzhm yév mishd yév havidyanûs havidénits. Amén. Yév yévûs khaghaghootyan ûzDér aghachéstsook. Orhnéstsook zaménagaln Asdvadz ûzHayr Dyarûn méro "
+    },
+    {
+      "pageNumber": 26,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "DCN",
+        "arzhani",
+        "ûzméz",
+        "déghvochûs",
+        "parapanootyan"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "որ",
+        "արժանի",
+        "արար",
+        "զ"
+      ],
+      "preview": "DCN. arzhani ûzméz déghvochûs parapanootyan yév yérkél zérkûs hokévors. Aménagal Dér Asdvadz mér, gétso yév voghormya. CLB. hargi sûrpootyan yév déghv"
+    },
+    {
+      "pageNumber": 27,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "arachi",
+        "asdvadzûngal",
+        "yév",
+        "baydzaratsyal"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "առաջի",
+        "աստուածընկալ",
+        "եւ",
+        "պայծառացեալ"
+      ],
+      "preview": "CLB. arachi asdvadzûngal yév baydzaratsyal soorp nûshanatsûs yév soorp séghanooys khonarhyal yérgyooghiv yérgirbakanémk. Ûzsoorp yév ûzhrashali yév ûz"
+    },
+    {
+      "pageNumber": 28,
+      "speaker": "unknown",
+      "triggerWords": [
+        "CLB",
+        "zorhnootyoon",
+        "yév",
+        "ûzparûs",
+        "ûnt"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "զօրհնուԹիւն",
+        "եւ",
+        "զփառս",
+        "ընդ"
+      ],
+      "preview": "CLB. zorhnootyoon yév ûzparûs ûnt yév ûnt Hokvooyt Sûrpo, ayzhm yév mishd yév havidyanûs havidénits. Amén. CLB. and glory with the Father and the Holy"
+    },
+    {
+      "pageNumber": 29,
+      "speaker": "unknown",
+      "triggerWords": [
+        "M",
+        "GH",
+        "TI",
+        "MELODY"
+      ],
+      "armenianWords": [
+        "ՄԵՂԵԴԻ",
+        "ՆՍՏԻԼ"
+      ],
+      "preview": "MÉGHÉTI: MELODY:"
+    },
+    {
+      "pageNumber": 30,
+      "speaker": "unknown",
+      "triggerWords": [
+        "Stand",
+        "kérézman",
+        "harootsélooyn",
+        "anmahin",
+        "aysor"
+      ],
+      "armenianWords": [],
+      "preview": "Î²Ü¶ÜÆÈ/Stand kérézman harootsélooyn anmahin, aysor koché hréshdagn yérgnayin, haryav Krisdos, zartyav Krisdos, gooys kérézmanén, looys kérézmanén. St"
+    },
+    {
+      "pageNumber": 31,
+      "speaker": "choir",
+      "triggerWords": [
+        "BASHDON",
+        "JASHOO",
+        "THE"
+      ],
+      "armenianWords": [
+        "ՊԱՇՏՕՆ",
+        "ՃԱՇՈՒ",
+        "ՈՏՔԻ",
+        "ԿԱՆԳՆԻԼ"
+      ],
+      "preview": "BASHDON JASHOO THE"
+    },
+    {
+      "pageNumber": 32,
+      "speaker": "choir",
+      "triggerWords": [
+        "Stand",
+        "CHR",
+        "Parékhosootyamp",
+        "yév",
+        "Goosi"
+      ],
+      "armenianWords": [],
+      "preview": "Î²Ü¶ÜÆÈ/Stand CHR. Parékhosootyamp yév Goosi, ûngal zaghachans kots bashdonéyits. kérakooyn zérginûs baydzaratsootsér soorp zégéghétsi aryamp Krisdos;"
+    },
+    {
+      "pageNumber": 33,
+      "speaker": "choir",
+      "triggerWords": [
+        "Stand",
+        "CHR",
+        "yév",
+        "ûsd",
+        "yérgnaynotsûn"
+      ],
+      "armenianWords": [],
+      "preview": "Î²Ü¶ÜÆÈ/Stand CHR. yév ûsd yérgnaynotsûn garkétsér sma ztass arakélots yév markaréyits soorp vartabédats. CHR. splendid than the heavens, and appointe"
+    },
+    {
+      "pageNumber": 34,
+      "speaker": "choir",
+      "triggerWords": [
+        "Stand",
+        "CHR",
+        "Aysor",
+        "zhoghovyal",
+        "task"
+      ],
+      "armenianWords": [],
+      "preview": "Î²Ü¶ÜÆÈ/Stand CHR. Aysor zhoghovyal task kahanayits, sargavakats, tûbrats yév gûghérigosats, khoong madootsanémk arachi Dér, ûsd hnoomûn CHR. who asse"
+    },
+    {
+      "pageNumber": 35,
+      "speaker": "deacon",
+      "triggerWords": [
+        "Stand",
+        "CHR",
+        "ngal",
+        "ménch",
+        "zkhûnganvér"
+      ],
+      "armenianWords": [],
+      "preview": "Î²Ü¶ÜÆÈ/Stand CHR. Ûngal ménch zkhûnganvér maghtans, vorbés zbadarakn Apéli, zNoyi yév zAprahamoo. Parékhosootyamp vérin zoratst, mishd ansharzh bahya"
+    },
+    {
+      "pageNumber": 36,
+      "speaker": "choir",
+      "triggerWords": [
+        "DCN",
+        "Orhnya",
+        "dér",
+        "CLB",
+        "Orhnyal"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Օրհնեա",
+        "տէր",
+        "ՔՀՆ",
+        "Օրհնեալ"
+      ],
+      "preview": "DCN. Orhnya, dér. CLB. Orhnyal takavorootyoonûn yév Vortvo yév Hokvooyn Sûrpo, ayzhm yév mishd yév havidyanûs havidénits. Amén. DCN. Bless, lord. CLB."
+    },
+    {
+      "pageNumber": 37,
+      "speaker": "choir",
+      "triggerWords": [
+        "CHR",
+        "Miyadzin",
+        "Vorti",
+        "yév",
+        "pant"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Միածին",
+        "Որդի",
+        "եւ",
+        "Բանդ"
+      ],
+      "preview": "CHR. Miyadzin Vorti yév pant Asdvadz yév anmah éyootyoon, hantsn arér marmnanal sûrpoohvo Asdvadzadznén yév mishd Goosén. Anpopokhélit mart yéghyal, k"
+    },
+    {
+      "pageNumber": 38,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CHR",
+        "Minût",
+        "Sûrpo",
+        "Yérrortooténén",
+        "paravoragits"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Մինըդ",
+        "ի",
+        "Սըրբոյ",
+        "Երրորդութենէն"
+      ],
+      "preview": "CHR. Minût Sûrpo Yérrortooténén, paravoragits ûnt yév ûnt Sûrpo Hokvooyn, gétso ûzméz. DCN. Yév yévûs khaghaghootyan ûzDér aghachéstsook, ûngal, gétso"
+    },
+    {
+      "pageNumber": 39,
+      "speaker": "choir",
+      "triggerWords": [
+        "CLB",
+        "Orhnootyoon",
+        "yév",
+        "park",
+        "yév"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Օրհնութիւն",
+        "եւ",
+        "փառք",
+        "Հօր"
+      ],
+      "preview": "CLB. Orhnootyoon yév park yév Vortvo yév Hokvooyn Sûrpo, ayzhm yév mishd yév havidyanûs havidénits. Amén. Khaghaghootyoon aménétsoon. CLB. Blessing an"
+    },
+    {
+      "pageNumber": 40,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CHR",
+        "Yév",
+        "ûnt",
+        "hokvooyt",
+        "koom"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Եւ",
+        "ընդ",
+        "հոգւոյդ",
+        "քում"
+      ],
+      "preview": "CHR. Yév ûnt hokvooyt koom. DCN. Asdoodzo yérgirbakéstsook. CHR. Arachi Dér. CHR. And with spirit. DCN. down CHR. down, Lord."
+    },
+    {
+      "pageNumber": 41,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "Dér",
+        "Asdvadz",
+        "mér",
+        "garoghootyoonût"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Տէր",
+        "Աստուած",
+        "ր",
+        "որոյ"
+      ],
+      "preview": "CLB. Dér Asdvadz mér, garoghootyoonût ankûnin é yév parkût anhasanéli, voghormootyoonût anchap é yév kûtootyoont anpav, too ûsd martasirootyanût koom,"
+    },
+    {
+      "pageNumber": 42,
+      "speaker": "unknown",
+      "triggerWords": [
+        "CLB",
+        "dajarûs",
+        "ays",
+        "soorp",
+        "Yév"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "տաճարս",
+        "այս",
+        "սուրբ",
+        "Եւ"
+      ],
+      "preview": "CLB. dajarûs ays soorp. Yév ûnt méz yév ûnt aghotagitsûs mér aradabés zoghormootyoon yév ûzkûtootyoon. kéz vayélé park, ishkhanootyoon yév ayzhm yév m"
+    },
+    {
+      "pageNumber": 43,
+      "speaker": "unknown",
+      "triggerWords": [
+        "SHARAGAN",
+        "JASHOO",
+        "MIDDAY",
+        "CHANT"
+      ],
+      "armenianWords": [
+        "ՇԱՐԱԿԱՆ",
+        "ՃԱՇՈՒ",
+        "ՈՏՔԻ",
+        "ԿԱՆԳՆԻԼ"
+      ],
+      "preview": "SHARAGAN JASHOO MIDDAY CHANT"
+    },
+    {
+      "pageNumber": 44,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "from",
+        "àô"
+      ],
+      "armenianWords": [],
+      "preview": "from Ö²Þàô-"
+    },
+    {
+      "pageNumber": 45,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CLB",
+        "yé",
+        "garoghootyoon",
+        "yév",
+        "zorootyoon"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Զի",
+        "քո",
+        "է",
+        "կարողութիւն"
+      ],
+      "preview": "CLB. yé garoghootyoon yév zorootyoon yév park havidyans. Amén. DCN. Broskhoomé. CHR. Soorp Asdvadz, soorp yév hûzor, soorp yév anmah, haryar mérélots,"
+    },
+    {
+      "pageNumber": 46,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "yévûs",
+        "khaghaghootyan",
+        "ûzDér"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Եւ",
+        "եւըս",
+        "խաղաղութեան",
+        "զՏէր"
+      ],
+      "preview": "DCN. Yév yévûs khaghaghootyan ûzDér aghachéstsook. CHR. Dér voghormya. DCN. And beseech the Lord. CHR. Lord, mercy."
+    },
+    {
+      "pageNumber": 47,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Vasûn",
+        "khaghaghootyan",
+        "aménayn",
+        "ashkharhi"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Վասըն",
+        "խաղաղութեան",
+        "ա",
+        "նայն"
+      ],
+      "preview": "DCN. Vasûn khaghaghootyan aménayn ashkharhi yév hasdadootyan sûrpo yégéghétsvo, ûzDér aghachéstsook. CHR. Dér voghormya. DCN. the the whole world and "
+    },
+    {
+      "pageNumber": 48,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Vasn",
+        "aménayn",
+        "soorp",
+        "yév"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Վասն",
+        "ա",
+        "նայն",
+        "սուրբ"
+      ],
+      "preview": "DCN. Vasn aménayn soorp yév ooghghapar yébisgobosats, ûzDér aghachéstsook. CHR. Dér voghormya. DCN. all holy and orthodox bishops, beseech the Lord. C"
+    },
+    {
+      "pageNumber": 49,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "DCN",
+        "Vasûn",
+        "hayrabédin",
+        "méro",
+        "dyarûn"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Վասըն",
+        "հայրապետին",
+        "րոյ",
+        "տեառըն"
+      ],
+      "preview": "DCN. Vasûn hayrabédin méro dyarûn, dyarûn (this sûrpaznakooyn gatoghigosi génats yév pûrgootyan hokvo ûzDér aghachéstsook. CHR. Dér voghormya. Hishya "
+    },
+    {
+      "pageNumber": 50,
+      "speaker": "unknown",
+      "triggerWords": [
+        "CLB",
+        "voghormadz",
+        "yév",
+        "martasér",
+        "és"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Զի",
+        "ողորմած",
+        "եւ",
+        "մարդասէր"
+      ],
+      "preview": "CLB. voghormadz yév martasér és Asdvadz yév kéz vayélé park, ishkhanootyoon yév ayzhm yév mishd yév havidyanûs havidénits. Amén. CLB. being merciful a"
+    },
+    {
+      "pageNumber": 51,
+      "speaker": "choir",
+      "triggerWords": [
+        "Yév",
+        "ûntérnoon",
+        "ûzjashoo",
+        "kirsûn",
+        "Reading"
+      ],
+      "armenianWords": [
+        "Եւ",
+        "ընթեռնուն",
+        "զճաշու",
+        "գիրսն",
+        "ՆՍՏԻԼ"
+      ],
+      "preview": "Yév ûntérnoon ûzjashoo kirsûn Reading the Scriptures"
+    },
+    {
+      "pageNumber": 52,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CHR",
+        "Alélooya",
+        "alélooya",
+        "Haryav",
+        "Asdvadz"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Ալէլուիա",
+        "ալէլուիա",
+        "Յարեաւ",
+        "Աստուած"
+      ],
+      "preview": "CHR. Alélooya, alélooya. Haryav Asdvadz yév tsûrvétsan aménayn tûshnamik pakhyan adélik hérésats CHR. Alleluia! Alleluia! and all scattered; those who"
+    },
+    {
+      "pageNumber": 53,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Alélooya",
+        "orti",
+        "CLB",
+        "Khaghaghootyoon"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Ալէլուիա",
+        "օրթի",
+        "ՔՀՆ",
+        "Խաղաղութիւն"
+      ],
+      "preview": "DCN. Alélooya, orti. CLB. Khaghaghootyoon aménétsoon. CHR. Yév ûnt hokvooyt koom. DCN. Alleluia! CLB. all. CHR. And with spirit."
+    },
+    {
+      "pageNumber": 54,
+      "speaker": "choir",
+      "triggerWords": [
+        "DCN",
+        "Yérgyooghadzootyamp",
+        "lûvarook",
+        "DCN",
+        "Sûrpo"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Երկիւղածութեամբ",
+        "լըւարուք",
+        "ՍՐԿ",
+        "Սրբոյ"
+      ],
+      "preview": "DCN. Yérgyooghadzootyamp lûvarook. DCN. Sûrpo Avédaranis Hisoosi Krisdosi ûsd (Madtéyosi, Margosi, Ghoogasoo Hovhannoo). DCN. Listen DCN. the holy Gos"
+    },
+    {
+      "pageNumber": 55,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CHR",
+        "Park",
+        "kéz",
+        "Dér",
+        "Asdvadz"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Փառք",
+        "քեզ",
+        "Տէր",
+        "Աստուած"
+      ],
+      "preview": "CHR. Park kéz, Dér, Asdvadz mér. DCN. Broskhoomé. CHR. Asé Asdvadz. CHR. Glory Lord, DCN. attentive. CHR. speaking."
+    },
+    {
+      "pageNumber": 56,
+      "speaker": "choir",
+      "triggerWords": [
+        "DCN",
+        "ntérnoo",
+        "zAvédaranûn",
+        "ûsd",
+        "donatsootsi"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Ընթեռնու",
+        "զԱւետարանն",
+        "ըստ",
+        "տօնացուցի"
+      ],
+      "preview": "DCN. (Ûntérnoo zAvédaranûn ûsd donatsootsi.) DCN. (The reads the holy Gospel prescribed the Directorium.)"
+    },
+    {
+      "pageNumber": 57,
+      "speaker": "unknown",
+      "triggerWords": [
+        "CHR",
+        "Park",
+        "kéz",
+        "Dér",
+        "Asdvadz"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Փառք",
+        "քեզ",
+        "Տէր",
+        "Աստուած"
+      ],
+      "preview": "CHR. Park kéz, Dér, Asdvadz mér. CHR. Glory Lord,"
+    },
+    {
+      "pageNumber": 58,
+      "speaker": "unknown",
+      "triggerWords": [
+        "HANKANAG",
+        "NIGYAGAN",
+        "Havadamk",
+        "Asdvadz",
+        "Hayrn"
+      ],
+      "armenianWords": [
+        "ՀԱՆԳԱՆԱԿ",
+        "ՆԻԿԻԱԿԱՆ",
+        "Հաւատամք",
+        "ի",
+        "Աստուած"
+      ],
+      "preview": "HANKANAG NIGYAGAN Havadamk Asdvadz, Hayrn aménagal, hararichn yérgni yév yérgri, yérévélyats yév anérévootits. THE CREED the Father almighty, the Crea"
+    },
+    {
+      "pageNumber": 59,
+      "speaker": "unknown",
+      "triggerWords": [
+        "Yév",
+        "Dér",
+        "Hisoos",
+        "Krisdos",
+        "hOrtin"
+      ],
+      "armenianWords": [
+        "Եւ",
+        "ի",
+        "Տէր",
+        "Յիսուս",
+        "Քրիստոս"
+      ],
+      "preview": "Yév Dér Hisoos Krisdos, hOrtin Asdoodzo, dzûnyaln hAsdoodzo Horé, miyadzin, aysinkn héyooténé Asdvadz hAsdoodzo, looys looso, Asdvadz jûshmarid, hAsdo"
+    },
+    {
+      "pageNumber": 60,
+      "speaker": "unknown",
+      "triggerWords": [
+        "Nooyn",
+        "inkn",
+        "pnooténé",
+        "aménayn",
+        "inch"
+      ],
+      "armenianWords": [
+        "Նոյն",
+        "ինքն",
+        "ի",
+        "բնութենէ",
+        "Հօր"
+      ],
+      "preview": "Nooyn inkn pnooténé aménayn inch yéghév hérginûs yév véra yérgri, yérévélik yév anérévooytk. haghakûs mér martgan, yév vasûn méro pûrgootyan, ichyal h"
+    },
+    {
+      "pageNumber": 61,
+      "speaker": "unknown",
+      "triggerWords": [
+        "martatsav",
+        "dzûnav",
+        "gadarélabés",
+        "Maryama",
+        "sûrpo"
+      ],
+      "armenianWords": [
+        "մարդացաւ",
+        "ծընաւ",
+        "կատարելապէս",
+        "ի",
+        "Մարիամայ"
+      ],
+      "preview": "martatsav, dzûnav gadarélabés Maryama sûrpo goosén, Hokvovûn Sûrpov. éyar marmin, yév yév zaménayn inch é mart, jûshmardabés yév voch gardzyok. Charch"
+    },
+    {
+      "pageNumber": 62,
+      "speaker": "unknown",
+      "triggerWords": [
+        "yélyal",
+        "hérginûs",
+        "marmnovn",
+        "nûsdav",
+        "ûnt"
+      ],
+      "armenianWords": [
+        "ելեալ",
+        "ի",
+        "յերկինըս",
+        "նովին",
+        "մար"
+      ],
+      "preview": "yélyal hérginûs marmnovn, nûsdav ûnt achmé Kalots é marmnovn yév tadél ûzgéntanis yév ûzméryals, takavorootyanûn voch vakhjan. and ascended into with "
+    },
+    {
+      "pageNumber": 63,
+      "speaker": "unknown",
+      "triggerWords": [
+        "Havadamk",
+        "yév",
+        "Soorp",
+        "hanéghn",
+        "yév"
+      ],
+      "armenianWords": [
+        "Հաւատամք",
+        "եւ",
+        "ի",
+        "Սուրբ",
+        "Հոգին"
+      ],
+      "preview": "Havadamk yév Soorp hanéghn yév gadaryaln, khosétsav horénûs yév markarés yév havédarans. échn Hortanan, karozyats harakyalsûn, yév pnagétsav soorpsûn."
+    },
+    {
+      "pageNumber": 64,
+      "speaker": "unknown",
+      "triggerWords": [
+        "Havadamk",
+        "yév",
+        "miyayn",
+        "ûnthanragan",
+        "yév"
+      ],
+      "armenianWords": [
+        "Հաւատամք",
+        "եւ",
+        "ի",
+        "այն",
+        "ընդհանրական"
+      ],
+      "preview": "Havadamk yév miyayn, ûnthanragan yév arakélagan soorp yégéghétsi, mûgûrdootyoon, habashkharootyoon, kavootyoon yév also only universal, and apostolic "
+    },
+    {
+      "pageNumber": 65,
+      "speaker": "deacon",
+      "triggerWords": [
+        "toghootyoon",
+        "méghats",
+        "harootyoon",
+        "mérélots",
+        "tadasdanûn"
+      ],
+      "armenianWords": [
+        "Թողութիւն",
+        "ղաց",
+        "Ի",
+        "յարութիւն",
+        "ռելոց"
+      ],
+      "preview": "toghootyoon méghats. harootyoon mérélots, tadasdanûn havidénits hokvots yév marmnots, harkayootyoonûn yérgnits yév gyansûn havidénaganûs. the resurrec"
+    },
+    {
+      "pageNumber": 66,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "DCN",
+        "Isg",
+        "vork",
+        "asénûn",
+        "ér"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Իսկ",
+        "որք",
+        "ասենըն՝",
+        "էր"
+      ],
+      "preview": "DCN. Isg vork asénûn ér yérpémûn horzham voch ér Vortin, ér yérpémûn horzham voch ér Soorp té hochéyits yéghén haylmé éyooténé asén linél zOrtin Asdoo"
+    },
+    {
+      "pageNumber": 67,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CLB",
+        "Isg",
+        "mék",
+        "paravoréstsook",
+        "vorharach"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Իսկ",
+        "ք",
+        "փառաւորեսցուք",
+        "որ"
+      ],
+      "preview": "CLB. Isg mék paravoréstsook vorharach z-havidyanûs yérgirbakanélov Sûrpo Yérrortootyanûn yév Asdvadzootyanûn yév Vortvo yév Hokvooyn Sûrpo, ayzhm yév "
+    },
+    {
+      "pageNumber": 68,
+      "speaker": "choir",
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "yévûs",
+        "khaghaghootyan",
+        "ûzDér"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Եւ",
+        "եւըս",
+        "խաղաղութեան",
+        "ըզՏէր"
+      ],
+      "preview": "DCN. Yév yévûs khaghaghootyan ûzDér aghachéstsook. CHR. Dér voghormya DCN. Yév yévûs aghachéstsook yév khûntréstsook Dyarné Asdood- yév pûrgchén mérmé"
+    },
+    {
+      "pageNumber": 69,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CHR",
+        "Gétso",
+        "Dér",
+        "Shnorhya",
+        "Dér"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Կեցո",
+        "Տէր",
+        "Շնորհեա",
+        "Տէր"
+      ],
+      "preview": "CHR. Gétso Dér. Shnorhya Dér, shnorhya Dér, shnorhya Dér. Dér voghormya. Kéz Dyarnût hantsn yéghitsook. Dér voghormya, Dér voghormya, Dér voghormya. C"
+    },
+    {
+      "pageNumber": 70,
+      "speaker": "choir",
+      "triggerWords": [
+        "CLB",
+        "Vorbészi",
+        "arzhanavork",
+        "yéghitsook",
+        "kohootyamp"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Որպէսզի",
+        "արժանաւորք",
+        "եղիցուք",
+        "գոհութեամբ"
+      ],
+      "preview": "CLB. Vorbészi arzhanavork yéghitsook kohootyamp paravorél ûzkéz ûnt yév Soorp Hokvooyt, ayzhm yév mishd yév havidyanûs havidénits. Amén. Khaghaghootyo"
+    },
+    {
+      "pageNumber": 71,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CHR",
+        "Yév",
+        "ûnt",
+        "hokvooyt",
+        "koom"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Եւ",
+        "ընդ",
+        "հոգւոյդ",
+        "քում"
+      ],
+      "preview": "CHR. Yév ûnt hokvooyt koom. DCN. Asdoodzo yérgirbakéstsook. CHR. Arachi Dér. CHR. And with spirit. DCN. down CHR. down, Lord."
+    },
+    {
+      "pageNumber": 72,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "Khaghaghootyamp",
+        "Krisdos",
+        "pûrgich",
+        "mér"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Խաղաղութեամբ",
+        "քով",
+        "Քրիստոս",
+        "փրկիչ"
+      ],
+      "preview": "CLB. Khaghaghootyamp Krisdos pûrgich mér, vér é zaménayn midûs yév ûzpans, amratso ûzméz yév anérgyoogh bahya haménayn charé. Havasarya ûzméz ûnt jûsh"
+    },
+    {
+      "pageNumber": 73,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CLB",
+        "Vasûn",
+        "aménasoorp",
+        "Yérrortootyanût",
+        "vayélé"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Վասն",
+        "զի",
+        "ա",
+        "նասուրբ"
+      ],
+      "preview": "CLB. Vasûn aménasoorp Yérrortootyanût vayélé park, ishkhanootyoon yév ayzhm yév mishd yév havidyanûs havidénits. Orhnyal Dér mér Hisoos Krisdos. Amén."
+    },
+    {
+      "pageNumber": 74,
+      "speaker": "unknown",
+      "triggerWords": [
+        "DCN",
+        "Orhnya",
+        "dér",
+        "CLB",
+        "Dér"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Օրհնեա",
+        "տէր",
+        "ՔՀՆ",
+        "Տէր"
+      ],
+      "preview": "DCN. Orhnya, dér. CLB. Dér Asdvadz orhnéstsé zaménésyant. CHR. Amén. DCN. Bless, lord. CLB. the Lord bless all. CHR."
+    },
+    {
+      "pageNumber": 75,
+      "speaker": "deacon",
+      "triggerWords": [
+        "HAVADATSELOTS",
+        "THE",
+        "HOLY",
+        "EUCHARIST"
+      ],
+      "armenianWords": [
+        "ՀԱՒԱՏԱՑԵԼՈՑ",
+        "ՊԱՏԱՐԱԳ",
+        "ՆՍՏԻԼ"
+      ],
+      "preview": "HAVADATSELOTS THE HOLY EUCHARIST"
+    },
+    {
+      "pageNumber": 76,
+      "speaker": "choir",
+      "triggerWords": [
+        "DCN",
+        "hérakhayits",
+        "térahavadits",
+        "yév",
+        "habashkharoghats"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Մի՝",
+        "ոք",
+        "յերախայից",
+        "՝"
+      ],
+      "preview": "DCN. hérakhayits, térahavadits, yév habashkharoghats yév hanmakrits mértséstsi hasdvadzayin khorhoorts. DCN. the catechumens, with little faith, and t"
+    },
+    {
+      "pageNumber": 77,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CHR",
+        "Marmin",
+        "déroonagan",
+        "yév",
+        "aryoon"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Մար",
+        "ն",
+        "տէրունական",
+        "եւ"
+      ],
+      "preview": "CHR. Marmin déroonagan yév aryoon pûrgchagan arachi, yérgnayin zorootyoonkn hanérévooyts yérkén yév asén anhankisd parparov, soorp, soorp, soorp, Dér "
+    },
+    {
+      "pageNumber": 78,
+      "speaker": "choir",
+      "triggerWords": [
+        "DCN",
+        "Saghmos",
+        "asatsék",
+        "Dyarn",
+        "Asdoodzo"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Սաղմոս",
+        "ասացէք",
+        "Տեառն",
+        "Աստուծոյ"
+      ],
+      "preview": "DCN. Saghmos asatsék Dyarn Asdoodzo méroom, tûbirk, tsayniv kaghtsrootyamp zérks hokévors. DCN. choristers, sing psalms the Lord sing spiritual songs "
+    },
+    {
+      "pageNumber": 79,
+      "speaker": "choir",
+      "triggerWords": [
+        "STAND",
+        "KNEEL",
+        "CHR",
+        "Hûréshdagayin",
+        "garkavorootyamp"
+      ],
+      "armenianWords": [
+        "ՈՏՔԻ",
+        "ԿԱՆԳՆԻԼ",
+        "ԿԱՄ",
+        "ԾՈՒՆԿԻ",
+        "ԴՊՐ"
+      ],
+      "preview": "ԳԱԼ/STAND KNEEL CHR. Hûréshdagayin garkavorootyamp lûtsér, Asdvadz, zko soorp zégéghétsi. Hazark hazarats hréshdagabédk arachi yév pyoork pyooroots hr"
+    },
+    {
+      "pageNumber": 80,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CHR",
+        "bashdén",
+        "ûzkéz",
+        "Dér",
+        "yév"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "պաշտեն",
+        "ըզքեզ",
+        "Տէր",
+        "եւ"
+      ],
+      "preview": "CHR. bashdén ûzkéz, Dér, yév martgané hajétsar ûntoonil zorhnootyoon, tsayniv khorhûrtaganav; soorp, soorp, soorp, Dér zorootyants. CHR. angels worshi"
+    },
+    {
+      "pageNumber": 81,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "yévûs",
+        "khaghaghootyan",
+        "ûzDér"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Եւ",
+        "եւըս",
+        "խաղաղութեան",
+        "զՏէր"
+      ],
+      "preview": "DCN. Yév yévûs khaghaghootyan ûzDér aghachéstsook. CHR. Dér voghormya. DCN. And beseech the Lord. CHR. Lord, mercy."
+    },
+    {
+      "pageNumber": 82,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "yévûs",
+        "yév",
+        "sûrpootyamp"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Եւ",
+        "եւըս",
+        "հաւատով",
+        "եւ"
+      ],
+      "preview": "DCN. Yév yévûs yév sûrpootyamp gatsook haghots arachi sûrpo séghanooys Asdoodzo CHR. Gétso, Dér, yév voghormya. DCN. And with faith and purity stand a"
+    },
+    {
+      "pageNumber": 83,
+      "speaker": "choir",
+      "triggerWords": [
+        "CLB",
+        "Shnorhok",
+        "yév",
+        "martasirootyamp",
+        "Dyarûn"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Շնորհօք",
+        "եւ",
+        "մարդասիրութեամբ",
+        "Տեառն"
+      ],
+      "preview": "CLB. Shnorhok yév martasirootyamp Dyarûn méro yév pûrgchin Hisoosi Kri- sdosi, ûnt voroom kéz miyankamayn yév Hokvooyt Sûrpo, vayélé park, ishkhanooty"
+    },
+    {
+      "pageNumber": 84,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CHR",
+        "Yév",
+        "ûnt",
+        "hokvooyt",
+        "koom"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Եւ",
+        "ընդ",
+        "հոգւոյդ",
+        "քում"
+      ],
+      "preview": "CHR. Yév ûnt hokvooyt koom. DCN. Asdoodzo yérgirbakéstsook. CHR. Arachi Dér. CHR. And with spirit. DCN. down CHR. down, Lord."
+    },
+    {
+      "pageNumber": 85,
+      "speaker": "choir",
+      "triggerWords": [
+        "DCN",
+        "Vogchooyn",
+        "dook",
+        "mimyants",
+        "hampooyr"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Ողջոյն",
+        "տուք",
+        "անց",
+        "ի"
+      ],
+      "preview": "DCN. Vogchooyn dook mimyants hampooyr sûrpootyan, yév vork voch ék garoghk haghortil asdvadzayin khorhûrtooys, troons yélék yév aghotétsék. DCN. Greet"
+    },
+    {
+      "pageNumber": 86,
+      "speaker": "choir",
+      "triggerWords": [
+        "CHR",
+        "Krisdos",
+        "méch",
+        "mér",
+        "haydnétsav"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Քրիստոս",
+        "ի",
+        "մէջ",
+        "ր"
+      ],
+      "preview": "CHR. Krisdos méch mér haydnétsav, Énn Asdvadz asd pazmétsav, khaghaghootyan tsayn hûnchétsav, soorp voghchooyni hraman dûvav. Yégégհ- étsis antsn yégh"
+    },
+    {
+      "pageNumber": 87,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CHR",
+        "Art",
+        "bashdonyayk",
+        "partsyal",
+        "ûztsayn"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Արդ",
+        "պաշտօնեայք",
+        "բարձեալ",
+        "ըզձայն"
+      ],
+      "preview": "CHR. Art bashdonyayk partsyal ûztsayn, dook zorhnootyoon péran, miyasnagan asdvadzootyann voroom srovpékn én sûrpapan. CHR. ministers, bless accord th"
+    },
+    {
+      "pageNumber": 88,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "gatsook",
+        "yérgyooghiv",
+        "gatsook",
+        "parvok"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Ահիւ",
+        "կացցուք",
+        "երկիւղիւ",
+        "կացցուք"
+      ],
+      "preview": "DCN. gatsook, yérgyooghiv gatsook parvok gatsook, yév nayétsarook ûzkooshootyamp. CHR. kéz Asdvadz. DCN. stand stand stand straight, and look attentiv"
+    },
+    {
+      "pageNumber": 89,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "DCN",
+        "Krisdos",
+        "madchi",
+        "Karn",
+        "Asdoodzo"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Պատարագ",
+        "Քրիստոս",
+        "մատչի",
+        "անարատ"
+      ],
+      "preview": "DCN. Krisdos madchi Karn Asdoodzo. CHR. Voghormootyoon yév khaghaghootyoon yév orhnootyan. DCN. Christ, the immaculate Lamb offered sacrifice. CHR. me"
+    },
+    {
+      "pageNumber": 90,
+      "speaker": "choir",
+      "triggerWords": [
+        "CLB",
+        "Shnorhk",
+        "sér",
+        "yév",
+        "asdvadzayin"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Շնորհք",
+        "սէր",
+        "եւ",
+        "աստուածային"
+      ],
+      "preview": "CLB. Shnorhk, sér yév asdvadzayin sûrparar zorootyoonûn yév Vortvo yév Hokvooyn Sûrpo, yéghitsi ûnt tséz ûnt aménésyan. CLB. the grace, the and the sa"
+    },
+    {
+      "pageNumber": 91,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CHR",
+        "Amén",
+        "Yév",
+        "ûnt",
+        "hokvooyt"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Ամէն",
+        "Եւ",
+        "ընդ",
+        "հոգւոյդ"
+      ],
+      "preview": "CHR. Amén. Yév ûnt hokvooyt koom. DCN. Ûztûroons, ûztûroons, aménayn imasdootyamp yév ûzkooshootyamp, vér ûndzayétsootsék ûzmidûs tsér, asdvadzayin yé"
+    },
+    {
+      "pageNumber": 92,
+      "speaker": "choir",
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "kohatsarook",
+        "ûzDyarné",
+        "sûrdiv"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Եւ",
+        "գոհացարուք",
+        "ըզՏեառնէ",
+        "բոլորով"
+      ],
+      "preview": "DCN. Yév kohatsarook ûzDyarné sûrdiv. CHR. Arzhan yév CLB. Yév ûnt sérovpésûn yév ûnt kérovpésûn, miyatsayn sûrpasatsootyamp horinél nûvaks, yév hamar"
+    },
+    {
+      "pageNumber": 93,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CHR",
+        "Soorp",
+        "soorp",
+        "soorp",
+        "Dér"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Սուրբ",
+        "սուրբ",
+        "սուրբ",
+        "Տէր"
+      ],
+      "preview": "CHR. Soorp, soorp, soorp, Dér zorootyants, yén yérgink yév yérgir Orhnootyoon partsoons. Orhnyalt yégir yév kalotst és anvamp Dyarn. Ovsanna partsoons"
+    },
+    {
+      "pageNumber": 94,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "Arék",
+        "gérék",
+        "ays",
+        "é"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Առէք",
+        "կերէք",
+        "այս",
+        "է"
+      ],
+      "preview": "CLB. Arék, gérék, ays é marmin vasûn tsér yév pazmats pashkhi, kavootyoon yév toghootyoon méghats. CHR. Amén. CLB. this my body, which distributed and"
+    },
+    {
+      "pageNumber": 95,
+      "speaker": "choir",
+      "triggerWords": [
+        "CLB",
+        "Arpék",
+        "sûmané",
+        "aménékyan",
+        "ays"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Արբէք",
+        "ի",
+        "սմանէ",
+        "ա"
+      ],
+      "preview": "CLB. Arpék sûmané aménékyan, ays é aryoon ookhdi, haghakûs tsér yév pazmats héghani, kavootyoon yév toghootyoon méghats. CLB. Drink from this all this"
+    },
+    {
+      "pageNumber": 96,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CHR",
+        "Amén",
+        "Hayr",
+        "yérgnavor",
+        "zOrtit"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Ամէն",
+        "Հայր",
+        "երկնաւոր",
+        "որ"
+      ],
+      "preview": "CHR. Amén. Hayr yérgnavor, zOrtit yédoor vasûn mér bardaban bardyats mérots, héghmamp aryan aghachémk ûzkéz, voghormya CHR. Heavenly Father, who unto "
+    },
+    {
+      "pageNumber": 97,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CLB",
+        "Yév",
+        "ûzkooys",
+        "koyots",
+        "kéz"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Եւ",
+        "զքոյս",
+        "ի",
+        "քոյոց"
+      ],
+      "preview": "CLB. Yév ûzkooys koyots kéz madootsanémk ûsd aménayni yév haghaks aménétsoon. CHR. Haménayni orhnyal és, Dér. Orhnémk ûzkéz, kovémk ûzkéz, kohanamk ûz"
+    },
+    {
+      "pageNumber": 98,
+      "speaker": "choir",
+      "triggerWords": [
+        "DCN",
+        "Orhnya",
+        "dér",
+        "CLB",
+        "Khaghaghootyoon"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Օրհնեա",
+        "տէր",
+        "ՔՀՆ",
+        "Խաղաղութիւն"
+      ],
+      "preview": "DCN. Orhnya, dér. CLB. Khaghaghootyoon aménétsoon. CHR. Yév ûnt hokvooyt koom. DCN. Asdoodzo yérgirbakéstsook. DCN. Bless, lord. CLB. all. CHR. And wi"
+    },
+    {
+      "pageNumber": 99,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CHR",
+        "Arachi",
+        "Dér",
+        "Vorti",
+        "Asdoodzo"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Առաջի",
+        "քո",
+        "Տէր",
+        "Որդի"
+      ],
+      "preview": "CHR. Arachi Dér. Vorti Asdoodzo, badarakyal hashdootyoon, hats génats pashkhis méz, héghmamp aryan soorp, aghachémk ûzkéz, voghormya aryamp pûrgyal CH"
+    },
+    {
+      "pageNumber": 100,
+      "speaker": "choir",
+      "triggerWords": [
+        "CLB",
+        "Vorbészi",
+        "yéghitsi",
+        "aménétsoon",
+        "méz"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Որպէսզի",
+        "եղիցի",
+        "սա",
+        "ա"
+      ],
+      "preview": "CLB. Vorbészi yéghitsi aménétsoon méz mértsétsélotsûs, hantadabardoot- yoon, kavootyoon, yév toghootyoon méghats. CLB. that this all who approach acqu"
+    },
+    {
+      "pageNumber": 101,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CHR",
+        "Asdoodzo",
+        "zparagtsi",
+        "zkhorhoort",
+        "ichyal"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Հոգի",
+        "Աստուծոյ",
+        "որ",
+        "զ"
+      ],
+      "preview": "CHR. Asdoodzo, zparagtsi zkhorhoort ichyal hérgnits gadarés tsérûn mér, héghmamp aryan aghachémk ûzkéz, hanko zhokis mér nûnchétsélotsn. CHR. Spirit w"
+    },
+    {
+      "pageNumber": 102,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "nt",
+        "vors",
+        "yév",
+        "méz"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Ընդ",
+        "որս",
+        "եւ",
+        "զ"
+      ],
+      "preview": "CLB. Ûnt vors yév méz ayts arastsés parérar Asdvadz aghachémk. CHR. Hishya, Dér, yév voghormya. CLB. With them also, beneficent beseech CHR. mindful, "
+    },
+    {
+      "pageNumber": 103,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CLB",
+        "Asdvadzadznin",
+        "sûrpo",
+        "goosin",
+        "Mariyamoo"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Աստուածածնին",
+        "սրբոյ",
+        "կուսին",
+        "Մարիամու"
+      ],
+      "preview": "CLB. Asdvadzadznin sûrpo goosin Mariyamoo, yév Hovhannoo Mûgûrdchin, Sdépanosi Nakhavûgayin, yév aménayn sûrpots, yéghitsi hishadag soorp badaraks, ag"
+    },
+    {
+      "pageNumber": 104,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Arakélots",
+        "sûrpots",
+        "markaréyits",
+        "vartabédats"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Առաքելոց",
+        "սըրբոց",
+        "մարգարէից",
+        "վարդապետաց"
+      ],
+      "preview": "DCN. Arakélots sûrpots, markaréyits, vartabédats, mardirosats yév aménayn hayrabédats sûrpots,… yéghitsi hishadag soorp badaraks, aghachémk. CHR. Hish"
+    },
+    {
+      "pageNumber": 105,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Orhnyal",
+        "kovyal",
+        "yév",
+        "paravoryal"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Օրհնեալ",
+        "գովեալ",
+        "եւ",
+        "փառաւորեալ"
+      ],
+      "preview": "DCN. Orhnyal, kovyal yév paravoryal, hrashali yév asdvadzazart harootyanûn Krisdosi yérgirbakanémk. CHR. Park harootyan Dér DCN. down the blessed, pra"
+    },
+    {
+      "pageNumber": 106,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Arachnortatsûn",
+        "mérots",
+        "yév",
+        "arachin"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Առաջնորդացըն",
+        "րոց",
+        "եւ",
+        "առաջին"
+      ],
+      "preview": "DCN. Arachnortatsûn mérots yév arachin loosavorchatsûn sûrpots Tatéyosi yév Partoghiméyosi arakélotsûn, yév Krikori Loosavorchin,…yéghitsi hishadag so"
+    },
+    {
+      "pageNumber": 107,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Miyantsnatsélots",
+        "sûrpots",
+        "yéghitsi",
+        "hishadag"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Միանձնացելոց",
+        "սըրբոց",
+        "եղիցի",
+        "յիշատակ"
+      ],
+      "preview": "DCN. Miyantsnatsélots sûrpots,…yéghitsi hishadag soorp badaraks, aghachémk. CHR. Hishya, Dér, yév voghormya. DCN. beseech Lord, this holy sacrifice, m"
+    },
+    {
+      "pageNumber": 108,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Takavorats",
+        "havadatsélots",
+        "sûrpotsn",
+        "yéghitsi"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Թագաւորաց",
+        "հաւատացելոց",
+        "սըրբոցն",
+        "եղիցի"
+      ],
+      "preview": "DCN. Takavorats havadatsélots sûrpotsn... yéghitsi hishadag soorp badaraks, aghachémk. CHR. Hishya, Dér, yév voghormya. DCN. beseech Lord, this holy s"
+    },
+    {
+      "pageNumber": 109,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "DCN",
+        "nthanoor",
+        "aménayn",
+        "havadatsélots",
+        "arants"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Ընդհանուր",
+        "ա",
+        "նայն",
+        "հաւատացելոց"
+      ],
+      "preview": "DCN. Ûnthanoor aménayn havadatsélots, arants yév ganants, dzérots yév dûghayots, yév aménayn chapoo yév sûrpootyamp Krisdos nûnchétsélotsn, yéghitsi h"
+    },
+    {
+      "pageNumber": 110,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CLB",
+        "Yévûs",
+        "aravél",
+        "zébisgobosabédûn",
+        "mér"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Եւս",
+        "առաւել",
+        "զեպիսկոպոսապետն",
+        "ր"
+      ],
+      "preview": "CLB Yévûs aravél zébisgobosabédûn mér yév ûzbadvagan hayrabédn aména- ynHayots Médzi Danûn Giligyo,ûzdér, dér (ays anoon) sûrpaznakooyn gatogh- yév pa"
+    },
+    {
+      "pageNumber": 111,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Kohootyoon",
+        "yév",
+        "parapanootyoon",
+        "madootsanémk"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Գոհութիւն",
+        "եւ",
+        "փառաբանութիւն",
+        "մատուցանեմք"
+      ],
+      "preview": "DCN. Kohootyoon yév parapanootyoon madootsanémk kéz, Dér Asdvadz mér, vasûn soorp yév anmah véra sûrpo séghanooys, ûzsa méz sûrpootyoon géntanootyan b"
+    },
+    {
+      "pageNumber": 112,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "shnorhya",
+        "ûzsér",
+        "zhasdadootyoon",
+        "yév"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Սովաւ",
+        "շնորհեա",
+        "ըզսէր",
+        "զհաստատութիւն"
+      ],
+      "preview": "DCN. shnorhya ûzsér zhasdadootyoon yév zûghtsali zkhaghaghootyoon aménayn ashkharhi, sûrpo yégéghétsvo DCN. Through grant stability and desirable the "
+    },
+    {
+      "pageNumber": 113,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "yév",
+        "aménayn",
+        "ooghapar",
+        "yébisgobosats"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "եւ",
+        "ա",
+        "նայն",
+        "ուղղափառ"
+      ],
+      "preview": "DCN. yév aménayn ooghapar yébisgobosats. Yév yébisgobosabédin méro yév badvagan hayrabédin aménayn Hayots Médzi Danûn dyarûn dyarûn (ays anoon) sûrpaz"
+    },
+    {
+      "pageNumber": 114,
+      "speaker": "choir",
+      "triggerWords": [
+        "DCN",
+        "yév",
+        "paréchan",
+        "arachnortin",
+        "méro"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "եւ",
+        "վիճակիս",
+        "բարեջան",
+        "առ"
+      ],
+      "preview": "DCN. yév paréchan arachnortin méro dyarûn (ays anoon) sûrpazan arkébisgobosi, yév ûzbadarakûs madootsané. DCN. and the diligent Prelate prelacy Eminen"
+    },
+    {
+      "pageNumber": 115,
+      "speaker": "choir",
+      "triggerWords": [
+        "CHR",
+        "sd",
+        "aménayni",
+        "yév",
+        "haghaks"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Ըստ",
+        "ա",
+        "նայնի",
+        "եւ"
+      ],
+      "preview": "CHR. Ûsd aménayni yév haghaks aménétsoon. CLB. Yév yéghitsi voghormootyoon médzis Asdoodzo yév pûrgchis méro Hisoosi Krisdosi, ûnt tséz ûnt aménésyan."
+    },
+    {
+      "pageNumber": 116,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CHR",
+        "Amén",
+        "Yév",
+        "ûnt",
+        "hokvooyt"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Ամէն",
+        "Եւ",
+        "ընդ",
+        "հոգւոյդ"
+      ],
+      "preview": "CHR. Amén. Yév ûnt hokvooyt koom. DCN. Yév yévûs khaghaghootyan ûzDér aghachéstsook. CHR. Dér voghormya. CHR. And with spirit. DCN. And beseech the Lo"
+    },
+    {
+      "pageNumber": 117,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Aménayn",
+        "sûrpovk",
+        "zorûs",
+        "hishadagétsak"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Ա",
+        "նայն",
+        "սըրբովք",
+        "զորըս"
+      ],
+      "preview": "DCN. Aménayn sûrpovk zorûs hishadagétsak yévûs aravélabés ûzDér aghachéstsook. CHR. Dér voghormya. DCN. Together with all the saints whom remembered, "
+    },
+    {
+      "pageNumber": 118,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Vasûn",
+        "madootsyal",
+        "soorp",
+        "yév"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Վասըն",
+        "մատուցեալ",
+        "սուրբ",
+        "եւ"
+      ],
+      "preview": "DCN. Vasûn madootsyal soorp yév Asdvadzayin anmah véra sûrpo séghanooys ûzDér aghachéstsook. CHR. Dér voghormya. DCN. By this holy, and immortal sacri"
+    },
+    {
+      "pageNumber": 119,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Vorbészi",
+        "Dér",
+        "Asdvadz",
+        "mér"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Որպէսզի",
+        "Տէր",
+        "Աստուած",
+        "ր"
+      ],
+      "preview": "DCN. Vorbészi Dér Asdvadz mér, ûngalav ûzsa soorp, hérgnayin yév yoor madootsarann, ûzpokhanagn arakéstsé méz ûzshnorhs yév ûzbarkévûs Hokvooyn Sûrpo,"
+    },
+    {
+      "pageNumber": 120,
+      "speaker": "choir",
+      "triggerWords": [
+        "DCN",
+        "ngal",
+        "gétso",
+        "yév",
+        "voghormya"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Ընկալ",
+        "կեցո",
+        "եւ",
+        "ողոր"
+      ],
+      "preview": "DCN. Ûngal, gétso yév voghormya, yév bahya ûzméz, Dér, shnorhivt. CHR. Gétso, Dér, yév voghormya. DCN. Zaménasûrpoohi zAsdvadzadzinn ûzmishd gooysûn h"
+    },
+    {
+      "pageNumber": 121,
+      "speaker": "unknown",
+      "triggerWords": [
+        "CHR",
+        "Hishya",
+        "Dér",
+        "yév",
+        "voghormya"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Յիշեա",
+        "Տէր",
+        "եւ",
+        "ողոր"
+      ],
+      "preview": "CHR. Hishya, Dér, yév voghormya. Dér voghormya. Kéz Dyarnût hantsn yéghitsook. Dér voghormya, Dér voghormya, Dér voghormya. CHR. mindful, Lord, and me"
+    },
+    {
+      "pageNumber": 122,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "SERMON"
+      ],
+      "armenianWords": [
+        "ՔԱՐՈԶ",
+        "ՆՍՏԻԼ"
+      ],
+      "preview": "SERMON"
+    },
+    {
+      "pageNumber": 123,
+      "speaker": "choir",
+      "triggerWords": [
+        "CLB",
+        "Yév",
+        "door",
+        "méz",
+        "hamartsagatsayn"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Եւ",
+        "տուր",
+        "զ",
+        "համարձակաձայն"
+      ],
+      "preview": "CLB. Yév door méz hamartsagatsayn parparov ûzpéranûs mér, gartal ûzkéz, yérgnavorût Hayr, yérkél yév asél: CLB. And grant address with bold call heave"
+    },
+    {
+      "pageNumber": 124,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CHR",
+        "Hayr",
+        "mér",
+        "hérgins",
+        "és"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Հայր",
+        "ր",
+        "որ",
+        "յերկինս"
+      ],
+      "preview": "CHR. Hayr mér hérgins és, soorp yéghitsi anoon Yégéstsé arkayooty- oon Yéghitsin gamk vorbés hérgins yév hérgri. Zhats mér hanabazort door méz aysor. "
+    },
+    {
+      "pageNumber": 125,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CLB",
+        "yé",
+        "arkayootyoon",
+        "yév",
+        "zorootyoon"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Զի",
+        "քո",
+        "է",
+        "արքայութիւն"
+      ],
+      "preview": "CLB. yé arkayootyoon yév zorootyoon yév park havidyans. Amén. Khaghaghootyoon aménétsoon. CHR. Yév ûnt hokvooyt koom. CLB. Thine the kingdom and the a"
+    },
+    {
+      "pageNumber": 126,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "DCN",
+        "Asdoodzo",
+        "yérgirbakéstsook",
+        "CHR",
+        "Arachi"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Աստուծոյ",
+        "երկիրպագեսցուք",
+        "ԴՊՐ",
+        "Առաջի"
+      ],
+      "preview": "DCN. Asdoodzo yérgirbakéstsook. CHR. Arachi Dér. DCN. down CHR. down, Lord."
+    },
+    {
+      "pageNumber": 127,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "Krisdosiv",
+        "Hisoosiv",
+        "Déramp",
+        "mérov"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Քրիստոսիւ",
+        "Յիսուսիւ",
+        "Տէրամբ",
+        "րով"
+      ],
+      "preview": "CLB. Krisdosiv, Hisoosiv Déramp mérov, ûnt voroom kéz Hokvooyt Sûrpo yév aménagali vayélé park, ishkhanootyoon yév ayzhm yév mishd yév havidyanûs havi"
+    },
+    {
+      "pageNumber": 128,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "sûrpootyoon",
+        "sûrpots",
+        "CHR",
+        "Miyayn"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Ի",
+        "սրբութիւն",
+        "սրբոց",
+        "ԴՊՐ"
+      ],
+      "preview": "CLB. sûrpootyoon sûrpots. CHR. Miyayn soorp, miyayn Dér, Hisoos Krisdos, pars Asdoodzo Amén. CLB. the holiness the holy CHR. Christ, the only holy, th"
+    },
+    {
+      "pageNumber": 129,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "Orhnyal",
+        "Hayr",
+        "Soorp",
+        "Asdvadz"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Օրհնեալ",
+        "Հայր",
+        "Սուրբ",
+        "Աստուած"
+      ],
+      "preview": "CLB. Orhnyal Hayr Soorp, Asdvadz jûshmarid. CHR. Amén. CLB. Orhnyal Vortit Soorp, Asdvadz jûshmarid. CHR. Amén. CLB. Blessed Holy Father, true CHR. CL"
+    },
+    {
+      "pageNumber": 130,
+      "speaker": "choir",
+      "triggerWords": [
+        "CLB",
+        "Orhnyal",
+        "Soorp",
+        "Asdvadz",
+        "jûshmarid"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Օրհնեալ",
+        "Հոգիդ",
+        "Սուրբ",
+        "Աստուած"
+      ],
+      "preview": "CLB. Orhnyal Soorp, Asdvadz jûshmarid. CHR. Amén. CLB. Orhnootyoon yév park yév Vortvo yév Hokvooyn Sûrpo, ayzhm yév mishd yév havidyanûs havidénits. "
+    },
+    {
+      "pageNumber": 131,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CHR",
+        "Amén",
+        "Hayr",
+        "Soorp",
+        "Vortit"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Ամէն",
+        "Հայր",
+        "Սուրբ",
+        "Որդիդ"
+      ],
+      "preview": "CHR. Amén. Hayr Soorp, Vortit Soorp, Soorp. Orhnootyoon yév Vortvo yév Sûrpo Hokvooyn. Ayzhm yév mishd yév havidyans havidénits. Amén. CHR. The Father"
+    },
+    {
+      "pageNumber": 132,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "soorp",
+        "soorp",
+        "badvagan",
+        "marmno"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Ի",
+        "սուրբ",
+        "ի",
+        "սուրբ"
+      ],
+      "preview": "CLB. soorp, soorp, badvagan marmno yév haréné Dyarûn méro yév pûrgchin Hisoosi Krisdosi, jashagéstsook sûrpootyamp, ichyal hérgnits pashkhi michi méro"
+    },
+    {
+      "pageNumber": 133,
+      "speaker": "choir",
+      "triggerWords": [
+        "CLB",
+        "é",
+        "gyank",
+        "hooys",
+        "harootyoon"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Սա",
+        "է",
+        "կեանք",
+        "յոյս"
+      ],
+      "preview": "CLB. é gyank, hooys, harootyoon, kavootyoon yév toghootyoon méghats. Saghmos asatsék Dyarn Asdoodzo méroom, saghmos asatsék yérgnavor méroom anmahi, n"
+    },
+    {
+      "pageNumber": 134,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CHR",
+        "Dér",
+        "voghormya",
+        "Dér",
+        "voghormya"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Տէր",
+        "ողոր",
+        "ա",
+        "Տէր"
+      ],
+      "preview": "CHR. Dér voghormya, Dér voghormya, Dér voghormya, Dér voghormya. DCN. Dér voghormya, Dér voghormya, Dér voghormya, Dér voghormya. CHR. Aménasoorp Yérr"
+    },
+    {
+      "pageNumber": 135,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "hivantats",
+        "pûzhûshgootyoon",
+        "nûnchétsélots"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Եւ",
+        "հիւանդաց",
+        "բըժըշկութիւն",
+        "նընջեցելոց"
+      ],
+      "preview": "DCN. Yév hivantats pûzhûshgootyoon, nûnchétsélots arkayootyoon. CHR. Asdvadz hartsûn mérots, abavént és néghélots. DCN. And healing the sick, the king"
+    },
+    {
+      "pageNumber": 136,
+      "speaker": "deacon",
+      "triggerWords": [
+        "DCN",
+        "hoknootyoon",
+        "dzarayits",
+        "kots",
+        "lér"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Հաս",
+        "յօգնութիւն",
+        "ծառայից",
+        "քոց"
+      ],
+      "preview": "DCN. hoknootyoon dzarayits kots, lér oknagan azkis Hayots. CHR. Dér voghormya, Dér voghormya,Hisoos pûrgich, méz voghormya. DCN. Michnortootyamp soorp"
+    },
+    {
+      "pageNumber": 137,
+      "speaker": "choir",
+      "triggerWords": [
+        "DCN",
+        "Saghmos",
+        "asatsék",
+        "Dyarn",
+        "Asdoodzo"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Սաղմոս",
+        "ասացէք",
+        "Տեառն",
+        "Աստուծոյ"
+      ],
+      "preview": "DCN. Saghmos asatsék Dyarn Asdoodzo méroom, tûbirk, tsayniv kaghtsrootyamp zérkûs hokévors. sûma vayél én saghmosk yév orhnootyoonk, alélook yév yérkû"
+    },
+    {
+      "pageNumber": 138,
+      "speaker": "choir",
+      "triggerWords": [
+        "CHR",
+        "Orhnyal",
+        "é",
+        "Asdvadz",
+        "Krisdos"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Օրհնեալ",
+        "է",
+        "Աստուած",
+        "Քրիստոս"
+      ],
+      "preview": "CHR. Orhnyal é Asdvadz. Krisdos badarakyal pashkhi michi méroom, alélooya. Zmarmin yoor méz géragoor, yév soorp zaryoon yoor tsoghé méz, alélooya. Dér"
+    },
+    {
+      "pageNumber": 139,
+      "speaker": "unknown",
+      "triggerWords": [
+        "CHR",
+        "Orhnétsék",
+        "ûzDér",
+        "hérgins",
+        "alélooya"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Օրհնեցէք",
+        "ըզՏէր",
+        "ի",
+        "յերկինս"
+      ],
+      "preview": "CHR. Orhnétsék ûzDér hérgins, alélooya. Orhnétsék ûzna partsoons, alélooya. Orhnétsék ûzna aménayn hréshdagk alélooya. Orhnétsék ûzna aménayn zorootyo"
+    },
+    {
+      "pageNumber": 140,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "KHOSDOVANOOTYOON",
+        "CONFESSION",
+        "CONGREGATION",
+        "KNEEL"
+      ],
+      "armenianWords": [
+        "ԽՈՍՏՈՎԱՆՈՒԹԻՒՆ",
+        "ԾՈՒՆԿԻ",
+        "ԳԱԼ",
+        "ԿԱՄ",
+        "ՆՍՏԻԼ"
+      ],
+      "preview": "KHOSDOVANOOTYOON CONFESSION CONGREGATION KNEEL"
+    },
+    {
+      "pageNumber": 141,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "TOGETHER",
+        "sinned",
+        "against",
+        "the",
+        "all"
+      ],
+      "armenianWords": [
+        "ՄԻԱՍԻՆ",
+        "Մեղանչեցի",
+        "ա",
+        "նասուրբ",
+        "Երրորդութեան"
+      ],
+      "preview": "TOGETHER. sinned against the all- Holy Trinity, the Father and the and the Holy Spirit. sinned against confess and the holy Mother and holy father, al"
+    },
+    {
+      "pageNumber": 142,
+      "speaker": "unknown",
+      "triggerWords": [
+        "TOGETHER",
+        "sinned",
+        "by",
+        "the",
+        "sevenfold"
+      ],
+      "armenianWords": [
+        "ՄԻԱՍԻՆ",
+        "Մեղանչեցի",
+        "այն",
+        "եօթը",
+        "յանցանքներով"
+      ],
+      "preview": "TOGETHER. sinned by the sevenfold transgressions the deadly sins; namely, by pride, by envy, by anger, by sloth, by covetousness, by gluttony, by lust"
+    },
+    {
+      "pageNumber": 143,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "TOGETHER",
+        "also",
+        "sinned",
+        "against",
+        "all"
+      ],
+      "armenianWords": [
+        "ՄԻԱՍԻՆ",
+        "Եւ",
+        "դեռ",
+        "ղանչեցի",
+        "Աստուծոյ"
+      ],
+      "preview": "TOGETHER. also sinned against all the commandments both and prohibitive, neither performed the commands, abstained from those things that prohibited. "
+    },
+    {
+      "pageNumber": 144,
+      "speaker": "unknown",
+      "triggerWords": [
+        "TOGETHER",
+        "which",
+        "my",
+        "misdeeds",
+        "shall"
+      ],
+      "armenianWords": [
+        "ՄԻԱՍԻՆ",
+        "Վա՜յ",
+        "ինծի",
+        "վա՜յ",
+        "ինծի"
+      ],
+      "preview": "TOGETHER. which my misdeeds shall recount? Which shall confess? my sins innumerable, my unspeakable, my afflictions intolerable, and my wounds incurab"
+    },
+    {
+      "pageNumber": 145,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "TOGETHER",
+        "Holy",
+        "father",
+        "hold",
+        "my"
+      ],
+      "armenianWords": [
+        "ՄԻԱՍԻՆ",
+        "Հայր",
+        "սուրբ",
+        "ինծի",
+        "համար"
+      ],
+      "preview": "TOGETHER. Holy father, hold my reconciler and intercessor the only-begotten that by the authority vested the bonds my sins, beseech CONGREGATION KNEEL"
+    },
+    {
+      "pageNumber": 146,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "PRS",
+        "Lord",
+        "mercy",
+        "Lord",
+        "mercy"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Տէր",
+        "ողոր",
+        "ա",
+        "Տէր"
+      ],
+      "preview": "PRS. Lord, mercy, Lord, mercy, Lord, mercy. the mankind mercy and grant forgiveness all sins, both those confessed and those forgotten. Therefore, wit"
+    },
+    {
+      "pageNumber": 147,
+      "speaker": "unknown",
+      "triggerWords": [
+        "PRS",
+        "by",
+        "very",
+        "word",
+        "absolve"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "նոյն",
+        "խօսքով",
+        "կ",
+        "արձակեմ"
+      ],
+      "preview": "PRS. by very word, absolve all sins committed by thought, by word, and by the the Father and the and the Holy Spirit; and reinstate the sacraments the"
+    },
+    {
+      "pageNumber": 148,
+      "speaker": "unknown",
+      "triggerWords": [
+        "àô",
+        "Mégha",
+        "aménasoorp",
+        "Yérrortootyanûn",
+        "yév"
+      ],
+      "armenianWords": [],
+      "preview": "ÌàôÜÎÆ Mégha aménasoorp Yérrortootyanûn yév Vortvo yév Hokvooyn Sûrpo. Méghootsyal ém Asdoodzo. Khosdovanim arachi Asdoodzo yév sûrpoohvo Asdvadzadzni"
+    },
+    {
+      "pageNumber": 149,
+      "speaker": "unknown",
+      "triggerWords": [
+        "àô",
+        "TOGETHER",
+        "sinned",
+        "by",
+        "the"
+      ],
+      "armenianWords": [],
+      "preview": "ÌàôÜÎÆ TOGETHER. sinned by the sevenfold transgressions the deadly sins; namely, by pride, by envy, by anger, by sloth, by covetousness, by gluttony, "
+    },
+    {
+      "pageNumber": 150,
+      "speaker": "unknown",
+      "triggerWords": [
+        "àô",
+        "TOGETHER",
+        "also",
+        "sinned",
+        "against"
+      ],
+      "armenianWords": [],
+      "preview": "ÌàôÜÎÆ TOGETHER. also sinned against all the commandments both and prohibitive, neither performed the commands, abstained from those things that prohi"
+    },
+    {
+      "pageNumber": 151,
+      "speaker": "unknown",
+      "triggerWords": [
+        "àô",
+        "TOGETHER",
+        "Holy",
+        "father",
+        "hold"
+      ],
+      "armenianWords": [],
+      "preview": "ÌàôÜÎÆ TOGETHER. Holy father, hold my reconciler and intercessor the only- begotten that by the authority vested the bonds my sins, beseech Ð³Ûñ μ³ñ»Ë"
+    },
+    {
+      "pageNumber": 152,
+      "speaker": "deacon",
+      "triggerWords": [
+        "àô",
+        "PRS",
+        "Lord",
+        "mercy",
+        "Lord"
+      ],
+      "armenianWords": [],
+      "preview": "ÌàôÜÎÆ PRS. Lord, mercy, Lord, mercy, Lord, mercy. the mankind mercy and grant forgiveness all sins, both those confessed and those forgotten. Therefo"
+    },
+    {
+      "pageNumber": 153,
+      "speaker": "unknown",
+      "triggerWords": [
+        "DCN",
+        "Yérgyooghiv",
+        "yév",
+        "harach",
+        "yév"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Երկիւղիւ",
+        "եւ",
+        "հաւատով",
+        "յառաջ"
+      ],
+      "preview": "DCN. Yérgyooghiv yév harach yév sûrpootyamp haghortétsarook. DCN. and faith draw and partake this communion holiness."
+    },
+    {
+      "pageNumber": 154,
+      "speaker": "choir",
+      "triggerWords": [
+        "KHOSDOVANOOTYOON",
+        "COMMUNION",
+        "CONGREGATION",
+        "KNEEL"
+      ],
+      "armenianWords": [
+        "ՀԱՂՈՐԴՈՒԹԻՒՆ",
+        "ԾՈՒՆԿԻ",
+        "ԳԱԼ",
+        "ԿԱՄ",
+        "ՆՍՏԻԼ"
+      ],
+      "preview": "KHOSDOVANOOTYOON COMMUNION CONGREGATION KNEEL"
+    },
+    {
+      "pageNumber": 155,
+      "speaker": "choir",
+      "triggerWords": [
+        "CHR",
+        "Asdvadz",
+        "mér",
+        "yév",
+        "Dér"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Աստուած",
+        "ր",
+        "եւ",
+        "Տէր"
+      ],
+      "preview": "CHR. Asdvadz mér yév Dér mér yérévétsav méz. Orhnyal yégyal anvamp Dyarn. CLB. Gétso, Dér, ûzzhoghovoortûs yév orhnya ûzzharankootyoonûs Hovya yév par"
+    },
+    {
+      "pageNumber": 156,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CHR",
+        "Lûtsak",
+        "parootyants",
+        "kots",
+        "Dér"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Լըցաք",
+        "ի",
+        "բարութեանց",
+        "քոց"
+      ],
+      "preview": "CHR. Lûtsak parootyants kots, Dér, jashagélov ûzmarmin yév zaryoon, park partsoonûs géragroghit ûzméz, yév géragrés ûzméz, arakya méz ûzhokévor zorhno"
+    },
+    {
+      "pageNumber": 157,
+      "speaker": "choir",
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "yévûs",
+        "khaghaghootyan",
+        "ûzDér"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Եւ",
+        "եւըս",
+        "խաղաղութեան",
+        "ըզՏէր"
+      ],
+      "preview": "DCN. Yév yévûs khaghaghootyan ûzDér aghachéstsook. CHR. Dér voghormya. DCN. Yév yévûs ûngalyalk hasdvadzayin, soorp, yérgnayin, anmah, yév khorhûrtooy"
+    },
+    {
+      "pageNumber": 158,
+      "speaker": "unknown",
+      "triggerWords": [
+        "CHR",
+        "Kohanamk",
+        "ûzkén",
+        "Dér",
+        "géragrétsér"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Գոհանամք",
+        "ըզքէն",
+        "Տէր",
+        "որ"
+      ],
+      "preview": "CHR. Kohanamk ûzkén, Dér, géragrétsér ûzméz hanmahagan séghano Pashkhélov ûzmarmint yév zaryoont pûrgootyoon ashkharhi, yév gyank antsants mérots. CHR"
+    },
+    {
+      "pageNumber": 159,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "KHOSDOVANOOTYOON",
+        "DISMISSAL"
+      ],
+      "armenianWords": [
+        "ԱՐՁԱԿՈՒՄ",
+        "ՈՏՔԻ",
+        "ԿԱՆԳՆԻԼ"
+      ],
+      "preview": "KHOSDOVANOOTYOON DISMISSAL"
+    },
+    {
+      "pageNumber": 160,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "orhnés",
+        "zaynosig",
+        "vork",
+        "orhnén"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Որ",
+        "օրհնես",
+        "զայնոսիկ",
+        "որք"
+      ],
+      "preview": "CLB. orhnés zaynosig, vork orhnén ûzkéz Dér, yév soorp arnés ûzhoosatsyals kéz. CHR. Orhnyal é Asdvadz. CLB. Lord, bless those who bless and sanctify "
+    },
+    {
+      "pageNumber": 161,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "Gétso",
+        "ûzzhoghovoortûs",
+        "yév",
+        "orhnya"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Կեցո",
+        "զժողովուրդս",
+        "քո",
+        "եւ"
+      ],
+      "preview": "CLB. Gétso ûzzhoghovoortûs yév orhnya ûzzharankootyoonûs ûzlûroomûn yégéghétsvo bahya. CHR. Amén. CLB. people and bless inheritance, preserve the full"
+    },
+    {
+      "pageNumber": 162,
+      "speaker": "choir",
+      "triggerWords": [
+        "CLB",
+        "zkhaghaghootyoon",
+        "barkévya",
+        "aménayn",
+        "ashkharhi"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Զխաղաղութիւն",
+        "պարգեւեա",
+        "ա",
+        "նայն"
+      ],
+      "preview": "CLB. Ûzkhaghaghootyoon barkévya aménayn ashkharhi, yégéghétsyats, kahanayits, takavorats krisdonéyits, hayrabédootyan yév hanrabédootyan azkis Hayots,"
+    },
+    {
+      "pageNumber": 163,
+      "speaker": "choir",
+      "triggerWords": [
+        "CHR",
+        "Amén",
+        "CLB",
+        "aménayn",
+        "doork"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Ամէն",
+        "ՔՀՆ",
+        "Զի",
+        "ա"
+      ],
+      "preview": "CHR. Amén. CLB. aménayn doork yév aménayn barkévk gadaryalk véroosd én ichyalk kén, és Hayr looso yév kéz vayélé park, ishkhanootyoon yév ayzhm yév mi"
+    },
+    {
+      "pageNumber": 164,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CHR",
+        "Amén",
+        "Yéghitsi",
+        "anoon",
+        "Dyarn"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Ամէն",
+        "Եղիցի",
+        "անուն",
+        "Տեառն"
+      ],
+      "preview": "CHR. Amén. Yéghitsi anoon Dyarn orhnyal haysûmhédé minchév havidyan. Yéghitsi anoon Dyarn orhnyal haysûmhédé minchév havidyan. Yév yéghitsi anoon Dyar"
+    },
+    {
+      "pageNumber": 165,
+      "speaker": "unknown",
+      "triggerWords": [
+        "CLB",
+        "Gadaroomn",
+        "orinats",
+        "yév",
+        "markaréyits"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Կատարու",
+        "օրինաց",
+        "եւ",
+        "մարգարէից"
+      ],
+      "preview": "CLB. Gadaroomn orinats yév markaréyits too yés Krisdos Asdvadz pûrgich mér, lûtsér zaménayn hayragam dûnorénootyoonûs lits yév ûzméz Hokvovût Sûrpov. "
+    },
+    {
+      "pageNumber": 166,
+      "speaker": "deacon",
+      "triggerWords": [
+        "KHOSDOVANOOTYOON",
+        "SERVICE"
+      ],
+      "armenianWords": [
+        "ՊԱՇՏՕՆ",
+        "ՀՈԳԵՀԱՆԳՍՏԵԱՆ",
+        "ՈՏՔԻ",
+        "ԿԱՆԳՆԻԼ"
+      ],
+      "preview": "KHOSDOVANOOTYOON SERVICE"
+    },
+    {
+      "pageNumber": 167,
+      "speaker": "choir",
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "yévûs",
+        "khaghaghootyan",
+        "ûzDér"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Եւ",
+        "եւըս",
+        "խաղաղութեան",
+        "ըզՏէր"
+      ],
+      "preview": "DCN. Yév yévûs khaghaghootyan ûzDér aghachéstsook, ûngal gétso yév voghormya. PRS. Orhnootyoon yév park yév Vortvo yév Hokvooyn Sûrpo, ayzhm yév mishd"
+    },
+    {
+      "pageNumber": 168,
+      "speaker": "choir",
+      "triggerWords": [
+        "CHR",
+        "hanéyits",
+        "sdéghdzogh",
+        "koyits",
+        "ararchagits"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Որ",
+        "յանէից",
+        "ստեղծող",
+        "քոյից"
+      ],
+      "preview": "CHR. hanéyits sdéghdzogh koyits ararchagits Pant Asdvadz, toghootyoon shnorhya nûnchétsélots kots dzarayits horzham tadél tsérok sdéghdzér. CHR. the W"
+    },
+    {
+      "pageNumber": 169,
+      "speaker": "choir",
+      "triggerWords": [
+        "CHR",
+        "bûsagicht",
+        "és",
+        "kots",
+        "sûrpots"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Որ",
+        "պըսակիչդ",
+        "ես",
+        "քոց"
+      ],
+      "preview": "CHR. bûsagicht és kots sûrpots, yév anvakhjan paryats pashkhogh, toghootyoon shnorhya nûnchétsélots kots dzarayits horzham tadél tsérok sdéghdzér. CHR"
+    },
+    {
+      "pageNumber": 170,
+      "speaker": "deacon",
+      "triggerWords": [
+        "CHR",
+        "Alélooya",
+        "alélooya",
+        "khorots",
+        "gartatsi"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Ալէլուիա",
+        "ալէլուիա",
+        "Ի",
+        "խորոց"
+      ],
+      "preview": "CHR. Alélooya, alélooya. khorots gartatsi kéz Dér, Dér, loor tsayni imoom. Yéghitsin aganchk lûsél ûztsayn aghotits imots. CHR. Alleluia! Alleluia! de"
+    },
+    {
+      "pageNumber": 171,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "DCN",
+        "Alélooya",
+        "orti",
+        "CLB",
+        "Khaghaghootyoon"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Ալէլուիա",
+        "օրթի",
+        "ՔՀՆ",
+        "Խաղաղութիւն"
+      ],
+      "preview": "DCN. Alélooya, orti. CLB. Khaghaghootyoon aménétsoon. CHR. Yév ûnt hokvooyt koom. DCN. Yérgyooghadzootyamp lûvarook. DCN. Alleluia! CLB. all. CHR. And"
+    },
+    {
+      "pageNumber": 172,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "Sûrpo",
+        "Avédaranis",
+        "Hisoosi",
+        "Krisdosi"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Սրբոյ",
+        "Աւետարանիս",
+        "Յիսուսի",
+        "Քրիստոսի"
+      ],
+      "preview": "CLB. Sûrpo Avédaranis Hisoosi Krisdosi ûsd Hovhannoo. CHR. Park kéz, Dér, Asdvadz mér. DCN. Broskhoomé. CHR. Asé Asdvadz. CLB. the holy Gospel Christ "
+    },
+    {
+      "pageNumber": 173,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "Lord",
+        "Christ",
+        "says",
+        "Very"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Մեր",
+        "Տէրը՝",
+        "Յիսուս",
+        "Քրիստոս"
+      ],
+      "preview": "CLB. Lord Christ says: Very truly, tell unless grain wheat falls into the earth and remains just single grain; bears much fruit."
+    },
+    {
+      "pageNumber": 174,
+      "speaker": "choir",
+      "triggerWords": [
+        "CLB",
+        "Those",
+        "who",
+        "their",
+        "and"
+      ],
+      "armenianWords": [
+        "Ով",
+        "որ",
+        "իր",
+        "անձը",
+        "կը"
+      ],
+      "preview": "CLB. Those who their and those who their this world will eternal Whoever servesme, must follow and where there will my servant also. Whoever serves th"
+    },
+    {
+      "pageNumber": 175,
+      "speaker": "choir",
+      "triggerWords": [
+        "CHR",
+        "Kahanayk",
+        "yév",
+        "zhoghovoortk",
+        "haytsémk"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Քահանայք",
+        "եւ",
+        "ժողովուրդք",
+        "հայցեմք"
+      ],
+      "preview": "CHR. Kahanayk yév zhoghovoortk haytsémk kén, Dér parékoot, ûnt nûnchétsyalsûn ûngal ûzméz hoosov, hÉroosaghém kaghak vérin horoom artarkûn zhoghovin, "
+    },
+    {
+      "pageNumber": 176,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CHR",
+        "vérin",
+        "Yéroosaghém",
+        "pnagaranûs",
+        "hréshdagats"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Ի",
+        "վերին",
+        "Երուսաղէմ",
+        "ի"
+      ],
+      "preview": "CHR. vérin Yéroosaghém pnagaranûs hréshdagats oor Yénovk yév Yéghiyas dzératsyal aghavnagérb trakhdin yétémagan baydzaratsyal arzhanabés, voghormadz D"
+    },
+    {
+      "pageNumber": 177,
+      "speaker": "deacon",
+      "triggerWords": [
+        "PRS",
+        "Hokvotsûn",
+        "hankootsélots",
+        "Krisdos",
+        "Asdvadz"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Հոգւոցն",
+        "հանգուցելոց",
+        "Քրիստոս",
+        "Աստուած"
+      ],
+      "preview": "PRS. Hokvotsûn hankootsélots Krisdos Asdvadz hankisd yév voghormootyoon, yév méz méghavoratsûs shnorhya ûztoghootyoon hantsanats. PRS. Christ grant re"
+    },
+    {
+      "pageNumber": 178,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "yévûs",
+        "khaghaghootyan",
+        "ûzDér"
+      ],
+      "armenianWords": [
+        "ՍՐԿ",
+        "Եւ",
+        "եւըս",
+        "խաղաղութեան",
+        "ըզՏէր"
+      ],
+      "preview": "DCN. Yév yévûs khaghaghootyan ûzDér aghachéstsook. Vasn hankootsyal hokvotsn aghachéstsook, ûzpûrgichûn mér Krisdos, ûznosa ûnt artarsûn taséstsé, yév"
+    },
+    {
+      "pageNumber": 179,
+      "speaker": "celebrant",
+      "triggerWords": [
+        "CLB",
+        "Dér",
+        "voghormya",
+        "Dér",
+        "voghormya"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Տէր",
+        "ողոր",
+        "ա",
+        "Տէր"
+      ],
+      "preview": "CLB. Dér voghormya, Dér voghormya, Dér voghormya. Krisdos Vorti Asdoodzo anokhagal yév parékoot, kûta ararchagan sirovût hankootsyal dzarayits kots. H"
+    },
+    {
+      "pageNumber": 180,
+      "speaker": "choir",
+      "triggerWords": [
+        "CLB",
+        "Tasavoryal",
+        "baydzaratso",
+        "ûnt",
+        "soorpûs"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Դասաւորեալ",
+        "պայծառացո",
+        "ընդ",
+        "սուրբս"
+      ],
+      "preview": "CLB. Tasavoryal baydzaratso ûnt soorpûs hachagoghmyan tasoon. too yés Dér yév ararich aménétsoon, géntanyats yév mérélots. Yév kéz vayélé park, ishkha"
+    },
+    {
+      "pageNumber": 181,
+      "speaker": "choir",
+      "triggerWords": [
+        "PRS",
+        "Orhynal",
+        "Dér",
+        "mér",
+        "Hisoos"
+      ],
+      "armenianWords": [
+        "ՔՀՆ",
+        "Օրհնեալ",
+        "Տէր",
+        "ր",
+        "Յիսուս"
+      ],
+      "preview": "PRS. Orhynal Dér mér Hisoos Krisdos. Amén. CHR. Hayr mér hérgins és, soorp yéghitsi anoon Yégéstsé arkayootyoon Yéghitsin gamk vorbés hérgins yév hérg"
+    },
+    {
+      "pageNumber": 182,
+      "speaker": "choir",
+      "triggerWords": [
+        "CHR",
+        "Togh",
+        "méz",
+        "ûzbardis",
+        "mér"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Թող",
+        "զ",
+        "ըզպարտիս",
+        "ր"
+      ],
+      "preview": "CHR. Togh méz ûzbardis mér, vorbés yév mék toghoomk mérots bardabanats. Yév zméz portsootyoon, ayl pûrgya charé. PRS. yé arkayootyoon yév zorootyoon y"
+    },
+    {
+      "pageNumber": 183,
+      "speaker": "unknown",
+      "triggerWords": [
+        "CHR",
+        "Orhnétsits",
+        "ûzDér",
+        "haménayn",
+        "zham"
+      ],
+      "armenianWords": [
+        "ԴՊՐ",
+        "Օրհնեցից",
+        "ըզՏէր",
+        "յա",
+        "նայն"
+      ],
+      "preview": "CHR. Orhnétsits ûzDér haménayn zham, haménayn zham, orhootyoon péram CLB. Orhnyalk yéghérook shnorhats Sûrpo Hokvooyn, yértayk khaghaghootyamp, yév Dé"
+    }
+  ],
+  "transitions": [
+    {
+      "currentPage": 1,
+      "nextPage": 2,
+      "triggerWords": [
+        "BADRASDOOTYOON",
+        "THE",
+        "PREPARATION"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "unknown",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 3,
+      "nextPage": 4,
+      "triggerWords": [
+        "CHR",
+        "yérgnavor",
+        "zégéghétsi",
+        "ansharzh",
+        "bahya"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 4,
+      "nextPage": 5,
+      "triggerWords": [
+        "CLB",
+        "Yév",
+        "vasûn",
+        "sûrpoohvo",
+        "Asdvadzadznin"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 5,
+      "nextPage": 6,
+      "triggerWords": [
+        "DCN",
+        "Soorp",
+        "zAsdvadzadzinûn",
+        "yév",
+        "zaménayn"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 9,
+      "nextPage": 10,
+      "triggerWords": [
+        "CLB",
+        "Kanzi",
+        "mégha",
+        "khorhûrtov",
+        "yév"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 10,
+      "nextPage": 11,
+      "triggerWords": [
+        "DCN",
+        "Art",
+        "yégayk",
+        "aménékyan",
+        "khonarhyal"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 11,
+      "nextPage": 12,
+      "triggerWords": [
+        "CLB",
+        "Azadéstsé",
+        "yév",
+        "ûztséz",
+        "martasérn"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 12,
+      "nextPage": 13,
+      "triggerWords": [
+        "CHR",
+        "Hishéschir",
+        "yév",
+        "ûzméz",
+        "arachi"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 16,
+      "nextPage": 17,
+      "triggerWords": [
+        "ACL",
+        "Park",
+        "yév",
+        "Vortvo",
+        "yév"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 17,
+      "nextPage": 18,
+      "triggerWords": [
+        "DCN",
+        "Soorp",
+        "yégéghétsyavs",
+        "aghachéstsook",
+        "ûzDér"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 19,
+      "nextPage": 20,
+      "triggerWords": [
+        "CLB",
+        "yév",
+        "kéz",
+        "madootsanémk",
+        "zorhnootyoon"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 20,
+      "nextPage": 21,
+      "triggerWords": [
+        "DCN",
+        "ints",
+        "Asdvadz",
+        "yév",
+        "ints"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 22,
+      "nextPage": 23,
+      "triggerWords": [
+        "CLB",
+        "Khosdovan",
+        "yéghéts",
+        "kéz",
+        "orhnootyamp"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 25,
+      "nextPage": 26,
+      "triggerWords": [
+        "DCN",
+        "arzhani",
+        "ûzméz",
+        "déghvochûs",
+        "parapanootyan"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 27,
+      "nextPage": 28,
+      "triggerWords": [
+        "CLB",
+        "zorhnootyoon",
+        "yév",
+        "ûzparûs",
+        "ûnt"
+      ],
+      "triggerSpeaker": "unknown",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 30,
+      "nextPage": 31,
+      "triggerWords": [
+        "BASHDON",
+        "JASHOO",
+        "THE"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "unknown",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 34,
+      "nextPage": 35,
+      "triggerWords": [
+        "Stand",
+        "CHR",
+        "ngal",
+        "ménch",
+        "zkhûnganvér"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 35,
+      "nextPage": 36,
+      "triggerWords": [
+        "DCN",
+        "Orhnya",
+        "dér",
+        "CLB",
+        "Orhnyal"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 37,
+      "nextPage": 38,
+      "triggerWords": [
+        "CHR",
+        "Minût",
+        "Sûrpo",
+        "Yérrortooténén",
+        "paravoragits"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 38,
+      "nextPage": 39,
+      "triggerWords": [
+        "CLB",
+        "Orhnootyoon",
+        "yév",
+        "park",
+        "yév"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 39,
+      "nextPage": 40,
+      "triggerWords": [
+        "CHR",
+        "Yév",
+        "ûnt",
+        "hokvooyt",
+        "koom"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 41,
+      "nextPage": 42,
+      "triggerWords": [
+        "CLB",
+        "dajarûs",
+        "ays",
+        "soorp",
+        "Yév"
+      ],
+      "triggerSpeaker": "unknown",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 43,
+      "nextPage": 44,
+      "triggerWords": [
+        "from",
+        "àô"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "unknown",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 44,
+      "nextPage": 45,
+      "triggerWords": [
+        "CLB",
+        "yé",
+        "garoghootyoon",
+        "yév",
+        "zorootyoon"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 48,
+      "nextPage": 49,
+      "triggerWords": [
+        "DCN",
+        "Vasûn",
+        "hayrabédin",
+        "méro",
+        "dyarûn"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 49,
+      "nextPage": 50,
+      "triggerWords": [
+        "CLB",
+        "voghormadz",
+        "yév",
+        "martasér",
+        "és"
+      ],
+      "triggerSpeaker": "unknown",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 50,
+      "nextPage": 51,
+      "triggerWords": [
+        "Yév",
+        "ûntérnoon",
+        "ûzjashoo",
+        "kirsûn",
+        "Reading"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "unknown",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 51,
+      "nextPage": 52,
+      "triggerWords": [
+        "CHR",
+        "Alélooya",
+        "alélooya",
+        "Haryav",
+        "Asdvadz"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 53,
+      "nextPage": 54,
+      "triggerWords": [
+        "DCN",
+        "Yérgyooghadzootyamp",
+        "lûvarook",
+        "DCN",
+        "Sûrpo"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 54,
+      "nextPage": 55,
+      "triggerWords": [
+        "CHR",
+        "Park",
+        "kéz",
+        "Dér",
+        "Asdvadz"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 55,
+      "nextPage": 56,
+      "triggerWords": [
+        "DCN",
+        "ntérnoo",
+        "zAvédaranûn",
+        "ûsd",
+        "donatsootsi"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 56,
+      "nextPage": 57,
+      "triggerWords": [
+        "CHR",
+        "Park",
+        "kéz",
+        "Dér",
+        "Asdvadz"
+      ],
+      "triggerSpeaker": "unknown",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 64,
+      "nextPage": 65,
+      "triggerWords": [
+        "toghootyoon",
+        "méghats",
+        "harootyoon",
+        "mérélots",
+        "tadasdanûn"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "unknown",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 65,
+      "nextPage": 66,
+      "triggerWords": [
+        "DCN",
+        "Isg",
+        "vork",
+        "asénûn",
+        "ér"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 66,
+      "nextPage": 67,
+      "triggerWords": [
+        "CLB",
+        "Isg",
+        "mék",
+        "paravoréstsook",
+        "vorharach"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 67,
+      "nextPage": 68,
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "yévûs",
+        "khaghaghootyan",
+        "ûzDér"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 68,
+      "nextPage": 69,
+      "triggerWords": [
+        "CHR",
+        "Gétso",
+        "Dér",
+        "Shnorhya",
+        "Dér"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 69,
+      "nextPage": 70,
+      "triggerWords": [
+        "CLB",
+        "Vorbészi",
+        "arzhanavork",
+        "yéghitsook",
+        "kohootyamp"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 70,
+      "nextPage": 71,
+      "triggerWords": [
+        "CHR",
+        "Yév",
+        "ûnt",
+        "hokvooyt",
+        "koom"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 72,
+      "nextPage": 73,
+      "triggerWords": [
+        "CLB",
+        "Vasûn",
+        "aménasoorp",
+        "Yérrortootyanût",
+        "vayélé"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 73,
+      "nextPage": 74,
+      "triggerWords": [
+        "DCN",
+        "Orhnya",
+        "dér",
+        "CLB",
+        "Dér"
+      ],
+      "triggerSpeaker": "unknown",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 74,
+      "nextPage": 75,
+      "triggerWords": [
+        "HAVADATSELOTS",
+        "THE",
+        "HOLY",
+        "EUCHARIST"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "unknown",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 75,
+      "nextPage": 76,
+      "triggerWords": [
+        "DCN",
+        "hérakhayits",
+        "térahavadits",
+        "yév",
+        "habashkharoghats"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 76,
+      "nextPage": 77,
+      "triggerWords": [
+        "CHR",
+        "Marmin",
+        "déroonagan",
+        "yév",
+        "aryoon"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 77,
+      "nextPage": 78,
+      "triggerWords": [
+        "DCN",
+        "Saghmos",
+        "asatsék",
+        "Dyarn",
+        "Asdoodzo"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 79,
+      "nextPage": 80,
+      "triggerWords": [
+        "CHR",
+        "bashdén",
+        "ûzkéz",
+        "Dér",
+        "yév"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 81,
+      "nextPage": 82,
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "yévûs",
+        "yév",
+        "sûrpootyamp"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 82,
+      "nextPage": 83,
+      "triggerWords": [
+        "CLB",
+        "Shnorhok",
+        "yév",
+        "martasirootyamp",
+        "Dyarûn"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 83,
+      "nextPage": 84,
+      "triggerWords": [
+        "CHR",
+        "Yév",
+        "ûnt",
+        "hokvooyt",
+        "koom"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 84,
+      "nextPage": 85,
+      "triggerWords": [
+        "DCN",
+        "Vogchooyn",
+        "dook",
+        "mimyants",
+        "hampooyr"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 86,
+      "nextPage": 87,
+      "triggerWords": [
+        "CHR",
+        "Art",
+        "bashdonyayk",
+        "partsyal",
+        "ûztsayn"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 88,
+      "nextPage": 89,
+      "triggerWords": [
+        "DCN",
+        "Krisdos",
+        "madchi",
+        "Karn",
+        "Asdoodzo"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 89,
+      "nextPage": 90,
+      "triggerWords": [
+        "CLB",
+        "Shnorhk",
+        "sér",
+        "yév",
+        "asdvadzayin"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 90,
+      "nextPage": 91,
+      "triggerWords": [
+        "CHR",
+        "Amén",
+        "Yév",
+        "ûnt",
+        "hokvooyt"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 91,
+      "nextPage": 92,
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "kohatsarook",
+        "ûzDyarné",
+        "sûrdiv"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 92,
+      "nextPage": 93,
+      "triggerWords": [
+        "CHR",
+        "Soorp",
+        "soorp",
+        "soorp",
+        "Dér"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 94,
+      "nextPage": 95,
+      "triggerWords": [
+        "CLB",
+        "Arpék",
+        "sûmané",
+        "aménékyan",
+        "ays"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 95,
+      "nextPage": 96,
+      "triggerWords": [
+        "CHR",
+        "Amén",
+        "Hayr",
+        "yérgnavor",
+        "zOrtit"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 96,
+      "nextPage": 97,
+      "triggerWords": [
+        "CLB",
+        "Yév",
+        "ûzkooys",
+        "koyots",
+        "kéz"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 97,
+      "nextPage": 98,
+      "triggerWords": [
+        "DCN",
+        "Orhnya",
+        "dér",
+        "CLB",
+        "Khaghaghootyoon"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 98,
+      "nextPage": 99,
+      "triggerWords": [
+        "CHR",
+        "Arachi",
+        "Dér",
+        "Vorti",
+        "Asdoodzo"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 99,
+      "nextPage": 100,
+      "triggerWords": [
+        "CLB",
+        "Vorbészi",
+        "yéghitsi",
+        "aménétsoon",
+        "méz"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 100,
+      "nextPage": 101,
+      "triggerWords": [
+        "CHR",
+        "Asdoodzo",
+        "zparagtsi",
+        "zkhorhoort",
+        "ichyal"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 102,
+      "nextPage": 103,
+      "triggerWords": [
+        "CLB",
+        "Asdvadzadznin",
+        "sûrpo",
+        "goosin",
+        "Mariyamoo"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 108,
+      "nextPage": 109,
+      "triggerWords": [
+        "DCN",
+        "nthanoor",
+        "aménayn",
+        "havadatsélots",
+        "arants"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 109,
+      "nextPage": 110,
+      "triggerWords": [
+        "CLB",
+        "Yévûs",
+        "aravél",
+        "zébisgobosabédûn",
+        "mér"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 113,
+      "nextPage": 114,
+      "triggerWords": [
+        "DCN",
+        "yév",
+        "paréchan",
+        "arachnortin",
+        "méro"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 115,
+      "nextPage": 116,
+      "triggerWords": [
+        "CHR",
+        "Amén",
+        "Yév",
+        "ûnt",
+        "hokvooyt"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 119,
+      "nextPage": 120,
+      "triggerWords": [
+        "DCN",
+        "ngal",
+        "gétso",
+        "yév",
+        "voghormya"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 120,
+      "nextPage": 121,
+      "triggerWords": [
+        "CHR",
+        "Hishya",
+        "Dér",
+        "yév",
+        "voghormya"
+      ],
+      "triggerSpeaker": "unknown",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 121,
+      "nextPage": 122,
+      "triggerWords": [
+        "SERMON"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "unknown",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 122,
+      "nextPage": 123,
+      "triggerWords": [
+        "CLB",
+        "Yév",
+        "door",
+        "méz",
+        "hamartsagatsayn"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 123,
+      "nextPage": 124,
+      "triggerWords": [
+        "CHR",
+        "Hayr",
+        "mér",
+        "hérgins",
+        "és"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 124,
+      "nextPage": 125,
+      "triggerWords": [
+        "CLB",
+        "yé",
+        "arkayootyoon",
+        "yév",
+        "zorootyoon"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 125,
+      "nextPage": 126,
+      "triggerWords": [
+        "DCN",
+        "Asdoodzo",
+        "yérgirbakéstsook",
+        "CHR",
+        "Arachi"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 129,
+      "nextPage": 130,
+      "triggerWords": [
+        "CLB",
+        "Orhnyal",
+        "Soorp",
+        "Asdvadz",
+        "jûshmarid"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 130,
+      "nextPage": 131,
+      "triggerWords": [
+        "CHR",
+        "Amén",
+        "Hayr",
+        "Soorp",
+        "Vortit"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 132,
+      "nextPage": 133,
+      "triggerWords": [
+        "CLB",
+        "é",
+        "gyank",
+        "hooys",
+        "harootyoon"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 133,
+      "nextPage": 134,
+      "triggerWords": [
+        "CHR",
+        "Dér",
+        "voghormya",
+        "Dér",
+        "voghormya"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 136,
+      "nextPage": 137,
+      "triggerWords": [
+        "DCN",
+        "Saghmos",
+        "asatsék",
+        "Dyarn",
+        "Asdoodzo"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 138,
+      "nextPage": 139,
+      "triggerWords": [
+        "CHR",
+        "Orhnétsék",
+        "ûzDér",
+        "hérgins",
+        "alélooya"
+      ],
+      "triggerSpeaker": "unknown",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 139,
+      "nextPage": 140,
+      "triggerWords": [
+        "KHOSDOVANOOTYOON",
+        "CONFESSION",
+        "CONGREGATION",
+        "KNEEL"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "unknown",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 141,
+      "nextPage": 142,
+      "triggerWords": [
+        "TOGETHER",
+        "sinned",
+        "by",
+        "the",
+        "sevenfold"
+      ],
+      "triggerSpeaker": "unknown",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 142,
+      "nextPage": 143,
+      "triggerWords": [
+        "TOGETHER",
+        "also",
+        "sinned",
+        "against",
+        "all"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "unknown",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 143,
+      "nextPage": 144,
+      "triggerWords": [
+        "TOGETHER",
+        "which",
+        "my",
+        "misdeeds",
+        "shall"
+      ],
+      "triggerSpeaker": "unknown",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 144,
+      "nextPage": 145,
+      "triggerWords": [
+        "TOGETHER",
+        "Holy",
+        "father",
+        "hold",
+        "my"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "unknown",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 146,
+      "nextPage": 147,
+      "triggerWords": [
+        "PRS",
+        "by",
+        "very",
+        "word",
+        "absolve"
+      ],
+      "triggerSpeaker": "unknown",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 151,
+      "nextPage": 152,
+      "triggerWords": [
+        "àô",
+        "PRS",
+        "Lord",
+        "mercy",
+        "Lord"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "unknown",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 152,
+      "nextPage": 153,
+      "triggerWords": [
+        "DCN",
+        "Yérgyooghiv",
+        "yév",
+        "harach",
+        "yév"
+      ],
+      "triggerSpeaker": "unknown",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 153,
+      "nextPage": 154,
+      "triggerWords": [
+        "KHOSDOVANOOTYOON",
+        "COMMUNION",
+        "CONGREGATION",
+        "KNEEL"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "unknown",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 155,
+      "nextPage": 156,
+      "triggerWords": [
+        "CHR",
+        "Lûtsak",
+        "parootyants",
+        "kots",
+        "Dér"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 156,
+      "nextPage": 157,
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "yévûs",
+        "khaghaghootyan",
+        "ûzDér"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 157,
+      "nextPage": 158,
+      "triggerWords": [
+        "CHR",
+        "Kohanamk",
+        "ûzkén",
+        "Dér",
+        "géragrétsér"
+      ],
+      "triggerSpeaker": "unknown",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 158,
+      "nextPage": 159,
+      "triggerWords": [
+        "KHOSDOVANOOTYOON",
+        "DISMISSAL"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "unknown",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 161,
+      "nextPage": 162,
+      "triggerWords": [
+        "CLB",
+        "zkhaghaghootyoon",
+        "barkévya",
+        "aménayn",
+        "ashkharhi"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 163,
+      "nextPage": 164,
+      "triggerWords": [
+        "CHR",
+        "Amén",
+        "Yéghitsi",
+        "anoon",
+        "Dyarn"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 164,
+      "nextPage": 165,
+      "triggerWords": [
+        "CLB",
+        "Gadaroomn",
+        "orinats",
+        "yév",
+        "markaréyits"
+      ],
+      "triggerSpeaker": "unknown",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 165,
+      "nextPage": 166,
+      "triggerWords": [
+        "KHOSDOVANOOTYOON",
+        "SERVICE"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "unknown",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 166,
+      "nextPage": 167,
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "yévûs",
+        "khaghaghootyan",
+        "ûzDér"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 169,
+      "nextPage": 170,
+      "triggerWords": [
+        "CHR",
+        "Alélooya",
+        "alélooya",
+        "khorots",
+        "gartatsi"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 170,
+      "nextPage": 171,
+      "triggerWords": [
+        "DCN",
+        "Alélooya",
+        "orti",
+        "CLB",
+        "Khaghaghootyoon"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 173,
+      "nextPage": 174,
+      "triggerWords": [
+        "CLB",
+        "Those",
+        "who",
+        "their",
+        "and"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 175,
+      "nextPage": 176,
+      "triggerWords": [
+        "CHR",
+        "vérin",
+        "Yéroosaghém",
+        "pnagaranûs",
+        "hréshdagats"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 176,
+      "nextPage": 177,
+      "triggerWords": [
+        "PRS",
+        "Hokvotsûn",
+        "hankootsélots",
+        "Krisdos",
+        "Asdvadz"
+      ],
+      "triggerSpeaker": "deacon",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 177,
+      "nextPage": 178,
+      "triggerWords": [
+        "DCN",
+        "Yév",
+        "yévûs",
+        "khaghaghootyan",
+        "ûzDér"
+      ],
+      "triggerSpeaker": "celebrant",
+      "currentSpeaker": "deacon",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 179,
+      "nextPage": 180,
+      "triggerWords": [
+        "CLB",
+        "Tasavoryal",
+        "baydzaratso",
+        "ûnt",
+        "soorpûs"
+      ],
+      "triggerSpeaker": "choir",
+      "currentSpeaker": "celebrant",
+      "speakerChanges": true
+    },
+    {
+      "currentPage": 182,
+      "nextPage": 183,
+      "triggerWords": [
+        "CHR",
+        "Orhnétsits",
+        "ûzDér",
+        "haménayn",
+        "zham"
+      ],
+      "triggerSpeaker": "unknown",
+      "currentSpeaker": "choir",
+      "speakerChanges": true
+    }
+  ]
+}
