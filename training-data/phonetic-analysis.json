@@ -1,0 +1,818 @@
+{
+  "totalPages": 20,
+  "pageAcoustics": [
+    {
+      "pageNumber": 1,
+      "timestamp": 0,
+      "duration": 30,
+      "armenianWords": [
+        "ՊԱՏՐԱՍՏՈՒԹԻՒՆ",
+        "ՈՏՔԻ",
+        "ԿԱՆԳՆԻԼ",
+        "Էջ"
+      ],
+      "acousticProfile": {
+        "avgFormant": 39.689709642986465,
+        "avgEnergy": 0.0008203688118612573,
+        "avgZeroCrossing": 98.2,
+        "formantVariance": 82.98440882117751,
+        "energyVariance": 4.358388720266248e-8
+      }
+    },
+    {
+      "pageNumber": 2,
+      "timestamp": 60,
+      "duration": 10,
+      "armenianWords": [
+        "ԴՊՐ",
+        "Խորհուրդ",
+        "խորին",
+        "անհաս",
+        "անսկիզբն",
+        "որ",
+        "զարդարեցեր",
+        "զվերին",
+        "պետութիւնդ",
+        "ի"
+      ],
+      "acousticProfile": {
+        "avgFormant": 80.43246872056895,
+        "avgEnergy": 0.0026397671757006974,
+        "avgZeroCrossing": 181.24,
+        "formantVariance": 630.6290697427753,
+        "energyVariance": 2.5772157395073233e-7
+      }
+    },
+    {
+      "pageNumber": 3,
+      "timestamp": 70,
+      "duration": 30,
+      "armenianWords": [
+        "ԴՊՐ",
+        "Թագաւոր",
+        "երկնաւոր",
+        "զեկեղեցի",
+        "քո",
+        "անշարժ",
+        "պահեա",
+        "եւ",
+        "զերկըրպագուս",
+        "անուանըդ"
+      ],
+      "acousticProfile": {
+        "avgFormant": 72.73723276864753,
+        "avgEnergy": 0.0015298179675887825,
+        "avgZeroCrossing": 116.64,
+        "formantVariance": 93.07913443312339,
+        "energyVariance": 6.62835148194075e-7
+      }
+    },
+    {
+      "pageNumber": 4,
+      "timestamp": 110,
+      "duration": 10,
+      "armenianWords": [
+        "ՔՀՆ",
+        "Եւ",
+        "վասն",
+        "սրբուհւոյ",
+        "Աստուածածնին",
+        "բարեխօսութեանն",
+        "Տէր",
+        "ընկալ",
+        "զաղաչանս",
+        "ր"
+      ],
+      "acousticProfile": {
+        "avgFormant": 56.20533756487115,
+        "avgEnergy": 0.0023126829350226144,
+        "avgZeroCrossing": 87.96,
+        "formantVariance": 7.399455846536679,
+        "energyVariance": 2.6570713090869116e-7
+      }
+    },
+    {
+      "pageNumber": 5,
+      "timestamp": 120,
+      "duration": 10,
+      "armenianWords": [
+        "ՍՐԿ",
+        "Սուրբ",
+        "զԱստուածածինըն",
+        "եւ",
+        "զա",
+        "նայն",
+        "սուրբըս",
+        "բարեխօս",
+        "արասցուք",
+        "առ"
+      ],
+      "acousticProfile": {
+        "avgFormant": 50.61503194390971,
+        "avgEnergy": 0.0017621988892059337,
+        "avgZeroCrossing": 78.96,
+        "formantVariance": 4.501665793055402,
+        "energyVariance": 2.15644271182399e-7
+      }
+    },
+    {
+      "pageNumber": 6,
+      "timestamp": 130,
+      "duration": 20,
+      "armenianWords": [
+        "ՔՀՆ",
+        "Ընկալ",
+        "Տէր",
+        "զաղաչանս",
+        "ր",
+        "բարեխօսութեամբ",
+        "սրբուհւոյ",
+        "Աստուածա",
+        "ծնին",
+        "անարատ"
+      ],
+      "acousticProfile": {
+        "avgFormant": 66.03313768295197,
+        "avgEnergy": 0.002725505941433528,
+        "avgZeroCrossing": 118.72,
+        "formantVariance": 55.035329364158535,
+        "energyVariance": 0.0000013420724132068353
+      }
+    },
+    {
+      "pageNumber": 7,
+      "timestamp": 150,
+      "duration": 30,
+      "armenianWords": [
+        "ՔՀՆ",
+        "Լուր",
+        "զ",
+        "Տէր",
+        "եւ",
+        "ողոր",
+        "ա",
+        "ներեա",
+        "քաւեա",
+        "եւ"
+      ],
+      "acousticProfile": {
+        "avgFormant": 42.853960333718845,
+        "avgEnergy": 0.0005067832182400335,
+        "avgZeroCrossing": 71.68,
+        "formantVariance": 25.976030251334063,
+        "energyVariance": 3.065967476490932e-8
+      }
+    },
+    {
+      "pageNumber": 8,
+      "timestamp": 190,
+      "duration": 10,
+      "armenianWords": [
+        "ՔՀՆ",
+        "Մեղուցեալ",
+        "եմ",
+        "Աստուծոյ",
+        "Խոստովանիմ",
+        "առաջի",
+        "Աստուծոյ",
+        "եւ",
+        "սրբուհւոյ",
+        "Աստուածածնին"
+      ],
+      "acousticProfile": {
+        "avgFormant": 52.5254879303566,
+        "avgEnergy": 0.0015936121459770632,
+        "avgZeroCrossing": 94.2,
+        "formantVariance": 241.98944804042935,
+        "energyVariance": 0.0000015606705036999867
+      }
+    },
+    {
+      "pageNumber": 9,
+      "timestamp": 200,
+      "duration": 30,
+      "armenianWords": [
+        "ՔՀՆ",
+        "քանզի",
+        "ղայ",
+        "խորհըրդով",
+        "բանիւ",
+        "եւ",
+        "գործով",
+        "եւ",
+        "ա",
+        "նայն"
+      ],
+      "acousticProfile": {
+        "avgFormant": 60.10367309510448,
+        "avgEnergy": 0.0014903214476112167,
+        "avgZeroCrossing": 108.96,
+        "formantVariance": 52.889793629017625,
+        "energyVariance": 6.26173976826126e-7
+      }
+    },
+    {
+      "pageNumber": 10,
+      "timestamp": 240,
+      "duration": 5,
+      "armenianWords": [
+        "ՍՐԿ",
+        "Արդ",
+        "եկայք",
+        "ա",
+        "նեքեան",
+        "խոնարհեալ",
+        "անձամբք",
+        "բեկեալ",
+        "սրտիւք",
+        "անկցուք"
+      ],
+      "acousticProfile": {
+        "avgFormant": 72.67935667143972,
+        "avgEnergy": 0.0022768488049062343,
+        "avgZeroCrossing": 116.24,
+        "formantVariance": 22.151205594191495,
+        "energyVariance": 0.0000019026953518545982
+      }
+    },
+    {
+      "pageNumber": 11,
+      "timestamp": 245,
+      "duration": 5,
+      "armenianWords": [
+        "ՔՀՆ",
+        "Ազատեսցէ",
+        "եւ",
+        "զձեզ",
+        "մարդասէրն",
+        "Աստուած",
+        "եւ",
+        "թողցէ",
+        "զա",
+        "նայն"
+      ],
+      "acousticProfile": {
+        "avgFormant": 62.924066727143675,
+        "avgEnergy": 0.002156031592188511,
+        "avgZeroCrossing": 105.16,
+        "formantVariance": 27.45039007742048,
+        "energyVariance": 0.0000013462856148685883
+      }
+    },
+    {
+      "pageNumber": 12,
+      "timestamp": 250,
+      "duration": 10,
+      "armenianWords": [
+        "ԴՊՐ",
+        "Յիշեսջիր",
+        "եւ",
+        "ըզ",
+        "զ",
+        "առաջի",
+        "անմահ",
+        "Գառինն",
+        "Աստուծոյ",
+        "ՔՀՆ"
+      ],
+      "acousticProfile": {
+        "avgFormant": 67.86938828751275,
+        "avgEnergy": 0.0015672293230528497,
+        "avgZeroCrossing": 109.12,
+        "formantVariance": 44.62492294925593,
+        "energyVariance": 9.60253126123997e-7
+      }
+    },
+    {
+      "pageNumber": 13,
+      "timestamp": 260,
+      "duration": 20,
+      "armenianWords": [
+        "ԴՊՐ",
+        "Աղաղակեցէք",
+        "առ",
+        "Տէր",
+        "ա",
+        "նայն",
+        "երկիր",
+        "ծառայեցէք",
+        "Տեառն",
+        "ուրախութեամբ"
+      ],
+      "acousticProfile": {
+        "avgFormant": 77.10982967465237,
+        "avgEnergy": 0.0012393634592009857,
+        "avgZeroCrossing": 145.2,
+        "formantVariance": 45.609187086271724,
+        "energyVariance": 5.907404729101886e-7
+      }
+    },
+    {
+      "pageNumber": 14,
+      "timestamp": 280,
+      "duration": 10,
+      "armenianWords": [
+        "ԴՊՐ",
+        "Նա",
+        "արար",
+        "ըզ",
+        "զ",
+        "եւ",
+        "ոչ",
+        "ք",
+        "էաք",
+        "ք"
+      ],
+      "acousticProfile": {
+        "avgFormant": 54.39307134371377,
+        "avgEnergy": 0.002616670532283165,
+        "avgZeroCrossing": 96.04,
+        "formantVariance": 100.00732348567442,
+        "energyVariance": 8.751648339005939e-7
+      }
+    },
+    {
+      "pageNumber": 15,
+      "timestamp": 290,
+      "duration": 20,
+      "armenianWords": [
+        "ԴՊՐ",
+        "Խոստովան",
+        "եղերուք",
+        "Տեառն",
+        "եւ",
+        "օրհնեցէք",
+        "զանուն",
+        "նորա",
+        "Քաղցըր",
+        "է"
+      ],
+      "acousticProfile": {
+        "avgFormant": 97.6956377456033,
+        "avgEnergy": 0.0014821462019927643,
+        "avgZeroCrossing": 287.28,
+        "formantVariance": 858.0201411337553,
+        "energyVariance": 4.999769926992032e-7
+      }
+    },
+    {
+      "pageNumber": 16,
+      "timestamp": 310,
+      "duration": 5,
+      "armenianWords": [
+        "ԴՊՐ",
+        "Փառք",
+        "Հօր",
+        "եւ",
+        "Որդւոյ",
+        "եւ",
+        "Հոգւոյն",
+        "Սրբոյ",
+        "Այժմ",
+        "եւ"
+      ],
+      "acousticProfile": {
+        "avgFormant": 63.88071580277797,
+        "avgEnergy": 0.002095745893044202,
+        "avgZeroCrossing": 129.4,
+        "formantVariance": 69.79094748277868,
+        "energyVariance": 0.0000015151758465539578
+      }
+    },
+    {
+      "pageNumber": 17,
+      "timestamp": 315,
+      "duration": 5,
+      "armenianWords": [
+        "ՍՐԿ",
+        "Սուրբ",
+        "եկեղեցեաւս",
+        "աղաչեսցուք",
+        "ըզՏէր",
+        "զի",
+        "սովաւ",
+        "փըրկեսցէ",
+        "ըզ",
+        "զ"
+      ],
+      "acousticProfile": {
+        "avgFormant": 117.90468271546706,
+        "avgEnergy": 0.0010961624820472176,
+        "avgZeroCrossing": 471.04,
+        "formantVariance": 226.66793997114587,
+        "energyVariance": 9.871822442720414e-8
+      }
+    },
+    {
+      "pageNumber": 18,
+      "timestamp": 320,
+      "duration": 30,
+      "armenianWords": [
+        "ՔՀՆ",
+        "Ի",
+        "մէջ",
+        "տա",
+        "արիս",
+        "եւ",
+        "առաջի",
+        "աստուածընկալ",
+        "եւ",
+        "պայծառացեալ"
+      ],
+      "acousticProfile": {
+        "avgFormant": 138.0896926633469,
+        "avgEnergy": 0.0010222615501188808,
+        "avgZeroCrossing": 433.52,
+        "formantVariance": 518.8082588491127,
+        "energyVariance": 2.282769271905854e-8
+      }
+    },
+    {
+      "pageNumber": 19,
+      "timestamp": 350,
+      "duration": 10,
+      "armenianWords": [
+        "ՔՀՆ",
+        "եւ",
+        "քեզ",
+        "մատուցանեմք",
+        "զօրհնութիւն",
+        "եւ",
+        "զփառս",
+        "ընդ",
+        "Հօր",
+        "եւ"
+      ],
+      "acousticProfile": {
+        "avgFormant": 59.50841955425829,
+        "avgEnergy": 0.0025723071237267704,
+        "avgZeroCrossing": 87.12,
+        "formantVariance": 22.863483441390127,
+        "energyVariance": 6.434281846479436e-7
+      }
+    },
+    {
+      "pageNumber": 20,
+      "timestamp": 360,
+      "duration": 30,
+      "armenianWords": [
+        "ՍՐԿ",
+        "Դատ",
+        "արա",
+        "ինձ",
+        "Աստուած",
+        "եւ",
+        "իրաւ",
+        "արա",
+        "ինձ",
+        "ի"
+      ],
+      "acousticProfile": {
+        "avgFormant": 57.88405351263412,
+        "avgEnergy": 0.0011209308483910026,
+        "avgZeroCrossing": 90.8,
+        "formantVariance": 74.17195152727044,
+        "energyVariance": 6.695822367234643e-8
+      }
+    }
+  ],
+  "letterFrequency": [
+    {
+      "letter": "Պ",
+      "count": 107
+    },
+    {
+      "letter": "Ա",
+      "count": 367
+    },
+    {
+      "letter": "Տ",
+      "count": 328
+    },
+    {
+      "letter": "Ր",
+      "count": 174
+    },
+    {
+      "letter": "Ս",
+      "count": 166
+    },
+    {
+      "letter": "Ո",
+      "count": 197
+    },
+    {
+      "letter": "Ւ",
+      "count": 25
+    },
+    {
+      "letter": "Թ",
+      "count": 14
+    },
+    {
+      "letter": "Ի",
+      "count": 338
+    },
+    {
+      "letter": "Ն",
+      "count": 407
+    },
+    {
+      "letter": "Ք",
+      "count": 235
+    },
+    {
+      "letter": "Կ",
+      "count": 241
+    },
+    {
+      "letter": "Գ",
+      "count": 154
+    },
+    {
+      "letter": "Լ",
+      "count": 186
+    },
+    {
+      "letter": "Է",
+      "count": 170
+    },
+    {
+      "letter": "ջ",
+      "count": 236
+    },
+    {
+      "letter": "Դ",
+      "count": 102
+    },
+    {
+      "letter": "Խ",
+      "count": 13
+    },
+    {
+      "letter": "ո",
+      "count": 1617
+    },
+    {
+      "letter": "ր",
+      "count": 1406
+    },
+    {
+      "letter": "հ",
+      "count": 258
+    },
+    {
+      "letter": "ւ",
+      "count": 1419
+    },
+    {
+      "letter": "դ",
+      "count": 223
+    },
+    {
+      "letter": "խ",
+      "count": 92
+    },
+    {
+      "letter": "ի",
+      "count": 930
+    },
+    {
+      "letter": "ն",
+      "count": 1316
+    },
+    {
+      "letter": "ա",
+      "count": 2371
+    },
+    {
+      "letter": "ս",
+      "count": 781
+    },
+    {
+      "letter": "կ",
+      "count": 319
+    },
+    {
+      "letter": "զ",
+      "count": 313
+    },
+    {
+      "letter": "բ",
+      "count": 262
+    },
+    {
+      "letter": "ե",
+      "count": 1293
+    },
+    {
+      "letter": "ց",
+      "count": 416
+    },
+    {
+      "letter": "վ",
+      "count": 126
+    },
+    {
+      "letter": "պ",
+      "count": 125
+    },
+    {
+      "letter": "տ",
+      "count": 465
+    },
+    {
+      "letter": "թ",
+      "count": 254
+    },
+    {
+      "letter": "յ",
+      "count": 546
+    },
+    {
+      "letter": "ռ",
+      "count": 178
+    },
+    {
+      "letter": "գ",
+      "count": 173
+    },
+    {
+      "letter": "մ",
+      "count": 371
+    },
+    {
+      "letter": "լ",
+      "count": 243
+    },
+    {
+      "letter": "ծ",
+      "count": 189
+    },
+    {
+      "letter": "փ",
+      "count": 60
+    },
+    {
+      "letter": "օ",
+      "count": 112
+    },
+    {
+      "letter": "ք",
+      "count": 408
+    },
+    {
+      "letter": "ը",
+      "count": 337
+    },
+    {
+      "letter": "ղ",
+      "count": 362
+    },
+    {
+      "letter": "շ",
+      "count": 128
+    },
+    {
+      "letter": "ժ",
+      "count": 48
+    },
+    {
+      "letter": "Հ",
+      "count": 159
+    },
+    {
+      "letter": "Ե",
+      "count": 68
+    },
+    {
+      "letter": "է",
+      "count": 406
+    },
+    {
+      "letter": "չ",
+      "count": 94
+    },
+    {
+      "letter": "Ը",
+      "count": 8
+    },
+    {
+      "letter": "Մ",
+      "count": 47
+    },
+    {
+      "letter": "ձ",
+      "count": 65
+    },
+    {
+      "letter": "Յ",
+      "count": 33
+    },
+    {
+      "letter": "ճ",
+      "count": 17
+    },
+    {
+      "letter": "Փ",
+      "count": 7
+    },
+    {
+      "letter": "Զ",
+      "count": 15
+    },
+    {
+      "letter": "՞",
+      "count": 4
+    },
+    {
+      "letter": "Օ",
+      "count": 28
+    },
+    {
+      "letter": "Ղ",
+      "count": 3
+    },
+    {
+      "letter": "Շ",
+      "count": 9
+    },
+    {
+      "letter": "Ճ",
+      "count": 3
+    },
+    {
+      "letter": "Բ",
+      "count": 5
+    },
+    {
+      "letter": "Վ",
+      "count": 10
+    },
+    {
+      "letter": "՝",
+      "count": 28
+    },
+    {
+      "letter": "Չ",
+      "count": 2
+    },
+    {
+      "letter": "Ց",
+      "count": 2
+    },
+    {
+      "letter": "Ծ",
+      "count": 11
+    },
+    {
+      "letter": "՜",
+      "count": 4
+    },
+    {
+      "letter": "Ձ",
+      "count": 1
+    }
+  ],
+  "classicalAlphabet": [
+    "Ա",
+    "Բ",
+    "Գ",
+    "Դ",
+    "Ե",
+    "Զ",
+    "Է",
+    "Ը",
+    "Թ",
+    "Ժ",
+    "Ի",
+    "Լ",
+    "Խ",
+    "Ծ",
+    "Կ",
+    "Հ",
+    "Ձ",
+    "Ղ",
+    "Ճ",
+    "Մ",
+    "Յ",
+    "Ն",
+    "Շ",
+    "Ո",
+    "Չ",
+    "Պ",
+    "Ջ",
+    "Ռ",
+    "Ս",
+    "Վ",
+    "Տ",
+    "Ր",
+    "Ց",
+    "ՈՒ",
+    "Փ",
+    "Ք",
+    "Օ",
+    "Ֆ"
+  ],
+  "analysisDate": "2026-02-14T17:33:32.091Z"
+}

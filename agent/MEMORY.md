@@ -96,11 +96,46 @@ Live audio (5s window)
 - Commit at major milestones
 - Update memory files as work progresses
 
+### 2026-02-14: Pivot to Language Understanding 🧠
+
+**User Reality Check:**
+- 59% accuracy = disaster for paid SAAS
+- Can't embarrass churches with wrong pages
+- Need 99.99% for commercial viability
+
+**Key Insight:** Audio fingerprinting alone will NEVER reach 99% because it doesn't understand WHAT is being said.
+
+**Solution:** Text-based matching with speech recognition
+- Transcribe spoken Armenian → text
+- Match words to indexed liturgy pages
+- Validate with audio + timing
+- Manual override always available
+
+**Built:**
+- Text matcher with 1,348 Armenian words indexed
+- Research on Armenian STT (Whisper recommended)
+- Comprehensive plan: `PATH_TO_99_PERCENT.md`
+- Multi-model ensemble design
+- Progressive learning system for SAAS
+
+**Path Forward:**
+1. Phase 1: Whisper integration (2-3 days) → 85-90%
+2. Phase 2: Text matching (1-2 days) → 90-95%
+3. Phase 3: Multi-model ensemble (2 days) → 95-97%
+4. Phase 4: Training mode (1-2 days) → 98-99% after 3-4 services
+5. Phase 5: Production (1-2 days) → 99%+ with fine-tuning
+
+Timeline: 10-15 days to production-ready 99% system
+
+**Status:** Awaiting user approval to proceed
+
 ## Next Actions
-- [ ] User pulls changes from GitHub
-- [ ] Test live in Replit
-- [ ] Tune if needed for real church environment
-- [ ] Deploy for actual liturgy service
+- [ ] Get user approval for Whisper approach
+- [ ] Phase 1: Install Whisper in Docker
+- [ ] Phase 2: Build text-matching integration
+- [ ] Phase 3: Multi-model ensemble
+- [ ] Phase 4: Training/learning system
+- [ ] Phase 5: Production deployment
 
 ---
 
