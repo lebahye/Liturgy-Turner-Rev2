@@ -2,7 +2,7 @@ import { db } from "./db";
 import { eq, and, desc } from "drizzle-orm";
 import { 
   users, uploadedFiles, trainingSessions, pageMarkers, aggregatedFingerprints, pageTranscripts,
-  learningAttempts, learningAttemptPages,
+  learningAttempts, learningAttemptPages, conversations, messages,
   type User, type InsertUser, 
   type UploadedFile, type InsertFile,
   type TrainingSession, type InsertTrainingSession,
@@ -10,7 +10,9 @@ import {
   type AggregatedFingerprint, type InsertAggregatedFingerprint,
   type PageTranscript, type InsertPageTranscript,
   type LearningAttempt, type InsertLearningAttempt,
-  type LearningAttemptPage, type InsertLearningAttemptPage
+  type LearningAttemptPage, type InsertLearningAttemptPage,
+  type Conversation, type InsertConversation,
+  type Message, type InsertMessage
 } from "@shared/schema";
 
 export interface IStorage {
@@ -57,6 +59,15 @@ export interface IStorage {
   
   getLearningAttemptPages(attemptId: string): Promise<LearningAttemptPage[]>;
   createLearningAttemptPage(page: InsertLearningAttemptPage): Promise<LearningAttemptPage>;
+
+  // Chat conversations and messages
+  getAllConversations(): Promise<Conversation[]>;
+  getConversation(id: string): Promise<Conversation | undefined>;
+  createConversation(conversation: InsertConversation): Promise<Conversation>;
+  deleteConversation(id: string): Promise<boolean>;
+
+  getConversationMessages(conversationId: string): Promise<Message[]>;
+  createMessage(message: InsertMessage): Promise<Message>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -295,6 +306,38 @@ export class DatabaseStorage implements IStorage {
 
   async createLearningAttemptPage(page: InsertLearningAttemptPage): Promise<LearningAttemptPage> {
     const [created] = await db.insert(learningAttemptPages).values(page).returning();
+    return created;
+  }
+
+  // Chat implementation
+  async getAllConversations(): Promise<Conversation[]> {
+    return db.select().from(conversations).orderBy(desc(conversations.createdAt));
+  }
+
+  async getConversation(id: string): Promise<Conversation | undefined> {
+    const [conversation] = await db.select().from(conversations).where(eq(conversations.id, id));
+    return conversation;
+  }
+
+  async createConversation(conversation: InsertConversation): Promise<Conversation> {
+    const [created] = await db.insert(conversations).values(conversation).returning();
+    return created;
+  }
+
+  async deleteConversation(id: string): Promise<boolean> {
+    await db.delete(messages).where(eq(messages.conversationId, id));
+    await db.delete(conversations).where(eq(conversations.id, id));
+    return true;
+  }
+
+  async getConversationMessages(conversationId: string): Promise<Message[]> {
+    return db.select().from(messages)
+      .where(eq(messages.conversationId, conversationId))
+      .orderBy(messages.createdAt);
+  }
+
+  async createMessage(message: InsertMessage): Promise<Message> {
+    const [created] = await db.insert(messages).values(message).returning();
     return created;
   }
 }

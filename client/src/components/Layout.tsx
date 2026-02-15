@@ -30,6 +30,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
              <Link href="/training">
                <span className={cn("cursor-pointer font-medium hover:text-primary", location === '/training' && "text-primary")}>Training</span>
              </Link>
+             <Link href="/chat">
+               <span className={cn("cursor-pointer font-medium hover:text-primary", location === '/chat' && "text-primary")}>Chat</span>
+             </Link>
              <Link href="/display" target="_blank">
                <span className="cursor-pointer font-medium hover:text-primary">Display</span>
              </Link>

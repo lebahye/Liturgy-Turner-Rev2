@@ -10,6 +10,7 @@ import Training from "@/pages/Training";
 import Display from "@/pages/Display";
 import Playback from "@/pages/Playback";
 import Bot from "@/pages/Bot";
+import Chat from "@/pages/Chat";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/display" component={Display} />
       <Route path="/playback" component={Playback} />
       <Route path="/bot" component={Bot} />
+      <Route path="/chat" component={Chat} />
       <Route component={NotFound} />
     </Switch>
   );
