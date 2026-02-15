@@ -13,7 +13,7 @@ This guide helps you install and set up the Armenian Liturgy Turner at your chur
    - Windows 10/11, macOS 10.15+, or Linux (Ubuntu 20.04+)
    - 8GB RAM minimum (16GB recommended)
    - 50GB free disk space
-   - WiFi or Ethernet connection
+   - WiFi or Ethernet connection (optional - for remote display)
 
 2. **TV/Projector for Display**
    - Any TV with HDMI input
@@ -53,6 +53,8 @@ docker compose up
 ```
 
 **First time:** Takes 2-5 minutes to download and start
+
+**Note:** No external accounts needed! System works completely offline.
 
 ---
 
