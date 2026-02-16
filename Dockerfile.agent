@@ -29,5 +29,5 @@ EXPOSE 29789
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
     CMD curl -f http://localhost:29789/status || exit 1
 
-# Start gateway (no --foreground flag in this version)
-CMD ["openclaw", "gateway"]
+# Start gateway with bind to LAN (all interfaces)
+CMD ["openclaw", "gateway", "--bind", "lan"]

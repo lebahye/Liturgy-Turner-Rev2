@@ -57,6 +57,7 @@ services:
     environment:
       CLAWDBOT_STATE_DIR: /app/agent/.clawdbot-state
       CLAWDBOT_CONFIG_PATH: /app/agent/clawdbot.json5
+      OPENCLAW_GATEWAY_TOKEN: "dev-token-insecure"
       # Agent can talk to app's HTTP API
       APP_BASE_URL: http://app:5000
     volumes:
