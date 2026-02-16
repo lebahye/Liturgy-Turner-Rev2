@@ -1503,7 +1503,7 @@ const file = await storage.createUploadedFile({
       if (role === 'user') {
         try {
           // Send message to Clawdbot agent session
-          const agentResponse = await fetch('http://127.0.0.1:29790/api/v1/sessions/agent:liturgy:main/send', {
+          const agentResponse = await fetch('http://127.0.0.1:29789/api/v1/sessions/agent:liturgy:main/send', {
             method: 'POST',
             headers: { 
               'Content-Type': 'application/json',
