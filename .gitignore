@@ -18,6 +18,9 @@ vite.config.ts.*
 .env
 client/src/env.d.ts
 
+# Secrets folder
+secrets/
+
 # Local runtime state (do not commit)
 /data/
 agent/.clawdbot-state/
