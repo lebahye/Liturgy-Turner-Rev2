@@ -12,6 +12,9 @@ WORKDIR /app/agent
 # Copy agent configuration
 COPY agent/ .
 
+# Fix permissions on config file (might be root-owned)
+RUN chmod 644 clawdbot.json5 || true
+
 # Create state directory
 RUN mkdir -p .clawdbot-state
 
