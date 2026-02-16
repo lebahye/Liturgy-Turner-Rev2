@@ -2,7 +2,7 @@ FROM node:20-slim
 
 # Install system dependencies + clawdbot
 RUN apt-get update && apt-get install -y \
-    bash \
+    bash git \
     curl \
     && npm install -g clawdbot \
     && rm -rf /var/lib/apt/lists/*
