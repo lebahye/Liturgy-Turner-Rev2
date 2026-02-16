@@ -1,10 +1,10 @@
 FROM node:22-slim
 
-# Install system dependencies + clawdbot
+# Install system dependencies + openclaw (latest)
 RUN apt-get update && apt-get install -y \
     bash git \
     curl \
-    && npm install -g clawdbot \
+    && npm install -g openclaw@latest \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app/agent
@@ -30,4 +30,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
     CMD curl -f http://localhost:29789/status || exit 1
 
 # Start gateway (no --foreground flag in this version)
-CMD ["clawdbot", "gateway"]
+CMD ["openclaw", "gateway"]
