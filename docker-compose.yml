@@ -63,7 +63,7 @@ services:
       APP_BASE_URL: http://app:5000
     volumes:
       - agent-state:/app/agent/.clawdbot-state
-      - ./agent/clawdbot.json5:/app/agent/clawdbot.json5:ro
+      - ./agent/clawdbot.json5:/app/agent/clawdbot.json5
       - ./agent/skills:/app/agent/skills:ro
     depends_on:
       - app

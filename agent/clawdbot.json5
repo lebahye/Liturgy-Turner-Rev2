@@ -1,6 +1,6 @@
 {
   "env": {
-    "LITURGY_BASE_URL": "http://localhost:5000"
+    "LITURGY_BASE_URL": "http://app:5000"
   },
   "agents": {
     "defaults": {
@@ -33,7 +33,15 @@
   "cron": {
     "enabled": true
   },
-  "channels": {},
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "botToken": "8207834735:AAHpcDd4g93ZrNiCjCBIH9ZlOXEGPZO_FRM",
+      "dmPolicy": "allowlist",
+      "allowFrom": ["tg:456593162"],
+      "groupPolicy": "disabled"
+    }
+  },
   "gateway": {
     "port": 29789,
     "mode": "local",
@@ -57,7 +65,7 @@
       "liturgy-audio-controller": {
         "enabled": true,
         "config": {
-          "apiEndpoint": "http://localhost:5000",
+          "apiEndpoint": "http://app:5000",
           "confidenceThreshold": 0.85,
           "language": "armenian",
           "sampleRate": 16000,
