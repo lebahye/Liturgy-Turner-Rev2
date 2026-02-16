@@ -5,7 +5,7 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "openai-codex/gpt-5.2"
+        "primary": "anthropic/claude-sonnet-4-5"
       },
       "workspace": "./",
       "maxConcurrent": 4,
@@ -37,7 +37,6 @@
   "gateway": {
     "port": 29789,
     "mode": "local",
-    "bind": "loopback",
     "controlUi": {
       "basePath": "/",
       "allowInsecureAuth": true
