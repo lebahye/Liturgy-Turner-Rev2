@@ -36,7 +36,7 @@
   "channels": {
     "telegram": {
       "enabled": true,
-      "botToken": "8207834735:AAHpcDd4g93ZrNiCjCBIH9ZlOXEGPZO_FRM",
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
       "dmPolicy": "allowlist",
       "allowFrom": ["tg:456593162"],
       "groupPolicy": "disabled"
@@ -72,6 +72,9 @@
           "bufferDuration": 3000,
           "trainingMode": false
         }
+      },
+      "armenian-learner": {
+        "enabled": true
       }
     }
   },

@@ -59,6 +59,7 @@ services:
       CLAWDBOT_CONFIG_PATH: /app/agent/clawdbot.json5
       OPENCLAW_GATEWAY_TOKEN: ${GATEWAY_TOKEN:-liturgy-secure-token}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
       # Agent can access app's database and files
       APP_BASE_URL: http://app:5000
       DB_PATH: /app/data/liturgy-turner.db
