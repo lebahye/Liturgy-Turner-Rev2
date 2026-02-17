@@ -57,21 +57,36 @@ services:
     environment:
       CLAWDBOT_STATE_DIR: /app/agent/.clawdbot-state
       CLAWDBOT_CONFIG_PATH: /app/agent/clawdbot.json5
-      OPENCLAW_GATEWAY_TOKEN: "dev-token-insecure"
+      OPENCLAW_GATEWAY_TOKEN: ${GATEWAY_TOKEN:-liturgy-secure-token}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
-      # Agent can talk to app's HTTP API
+      # Agent can access app's database and files
       APP_BASE_URL: http://app:5000
+      DB_PATH: /app/data/liturgy-turner.db
     volumes:
+      # Agent's own state
       - agent-state:/app/agent/.clawdbot-state
-      - ./agent/clawdbot.json5:/app/agent/clawdbot.json5
-      - ./agent/skills:/app/agent/skills:ro
+      - agent-memory:/app/agent/memory
+      - ./agent:/app/agent  # NOT read-only - agent needs to write
+      
+      # SHARED ACCESS to app's data (READ/WRITE)
+      - ./data:/app/data
+      - ./uploads:/app/uploads
+      - ./training-data:/app/training-data
     depends_on:
-      - app
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:29789/status"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
     restart: unless-stopped
 
 volumes:
   postgres-data:
   agent-state:
+  agent-memory:
 
 networks:
   default:

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 
 export default function Bot() {
   // This route is served by the main app (port 5000) and reverse-proxies the
-  // Clawdbot Control UI (port 29790) under /clawdbot.
+  // Clawdbot Control UI (port 29789) under /clawdbot.
   //
   // IMPORTANT: Force the Control UI to use the *proxied* WebSocket URL AND
   // pre-inject the gateway token.
@@ -33,7 +33,7 @@ export default function Bot() {
     // Reliability > purity: connect the embedded Control UI directly to the
     // gateway UI origin. This avoids proxy WebSocket edge-cases that can cause
     // 1006 handshake timeouts.
-    const base = `http://127.0.0.1:29790/chat?session=agent%3Aliturgy%3Amain&gatewayUrl=${encodeURIComponent("ws://127.0.0.1:29790")}`;
+    const base = `http://127.0.0.1:29789/chat?session=agent%3Aliturgy%3Amain&gatewayUrl=${encodeURIComponent("ws://127.0.0.1:29789")}`;
     return token ? `${base}&token=${encodeURIComponent(token)}` : base;
   }, [token]);
 
@@ -57,7 +57,7 @@ export default function Bot() {
         >
           <img src="/agent/assets/armenian-cross.svg" alt="" className="h-6 w-6" />
           <span className="text-sm font-semibold text-foreground">
-            Liturgy Turner Bot Dashboard
+            System Monitor
           </span>
         </div>
 

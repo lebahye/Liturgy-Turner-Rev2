@@ -257,6 +257,7 @@ export const messages = sqliteTable("messages", {
     .references(() => conversations.id, { onDelete: "cascade" }),
   role: text("role").notNull(), // "user" or "assistant"
   content: text("content").notNull(),
+  status: text("status").notNull().default("delivered"), // "pending" | "processing" | "delivered"
   createdAt: integer("created_at", { mode: "timestamp" }).default(sql`(unixepoch())`).notNull(),
 });
 

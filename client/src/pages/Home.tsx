@@ -184,12 +184,6 @@ export default function Home() {
                 Projection
               </Button>
             </Link>
-            <Link href="/bot">
-              <Button className="h-24 w-full flex-col gap-2 bg-slate-700 hover:bg-slate-800" variant="default">
-                <Bot className="h-8 w-8" />
-                Bot Control
-              </Button>
-            </Link>
           </CardContent>
         </Card>
 

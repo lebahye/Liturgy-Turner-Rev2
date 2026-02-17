@@ -1449,107 +1449,12 @@ const file = await storage.createUploadedFile({
     }
   });
 
-  // ============ Local Chat API ============
-
-  // Get all conversations
-  app.get('/api/chat/conversations', async (_req, res) => {
-    try {
-      const conversations = await storage.getAllConversations();
-      res.json(conversations);
-    } catch (error: any) {
-      console.error('Get conversations error:', error);
-      res.status(500).json({ error: error.message });
-    }
-  });
-
-  // Create new conversation
-  app.post('/api/chat/conversations', async (req, res) => {
-    try {
-      const { title } = req.body;
-      const conversation = await storage.createConversation({ title: title || 'New Chat' });
-      res.json(conversation);
-    } catch (error: any) {
-      console.error('Create conversation error:', error);
-      res.status(500).json({ error: error.message });
-    }
-  });
-
-  // Get messages for a conversation
-  app.get('/api/chat/conversations/:id/messages', async (req, res) => {
-    try {
-      const { id } = req.params;
-      const messages = await storage.getConversationMessages(id);
-      res.json(messages);
-    } catch (error: any) {
-      console.error('Get messages error:', error);
-      res.status(500).json({ error: error.message });
-    }
-  });
-
-  // Send message (user) and get bot response
-  app.post('/api/chat/conversations/:id/messages', async (req, res) => {
-    try {
-      const { id } = req.params;
-      const { role, content } = req.body;
-
-      // Save user message
-      await storage.createMessage({
-        conversationId: id,
-        role,
-        content,
-      });
-
-      // If user message, generate bot response via Clawdbot
-      if (role === 'user') {
-        try {
-          // Send message to Clawdbot agent session
-          const agentResponse = await fetch('http://127.0.0.1:29789/api/v1/sessions/agent:liturgy:main/send', {
-            method: 'POST',
-            headers: { 
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${process.env.GATEWAY_TOKEN || ''}`,
-            },
-            body: JSON.stringify({ 
-              message: content,
-              timeoutSeconds: 30,
-            }),
-          });
-
-          if (agentResponse.ok) {
-            const { reply } = await agentResponse.json();
-            
-            // Save assistant response
-            if (reply) {
-              await storage.createMessage({
-                conversationId: id,
-                role: 'assistant',
-                content: reply,
-              });
-            }
-          } else {
-            console.error('Clawdbot API error:', await agentResponse.text());
-            await storage.createMessage({
-              conversationId: id,
-              role: 'assistant',
-              content: 'Sorry, I encountered an error processing your message.',
-            });
-          }
-        } catch (error: any) {
-          console.error('Clawdbot connection error:', error);
-          await storage.createMessage({
-            conversationId: id,
-            role: 'assistant',
-            content: 'Sorry, I am currently unavailable. Please try again later.',
-          });
-        }
-      }
-
-      res.json({ success: true });
-    } catch (error: any) {
-      console.error('Send message error:', error);
-      res.status(500).json({ error: error.message });
-    }
-  });
+  // ============ Local Chat API (REMOVED - Use Telegram/WhatsApp/:29789 instead) ============
+  
+  // Chat API endpoints removed - bot communication via:
+  // - Telegram (messaging)
+  // - WhatsApp (optional messaging)
+  // - Port :29789 (Clawdbot Control UI)
 
   return httpServer;
 }
