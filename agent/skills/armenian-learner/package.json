@@ -1,0 +1,20 @@
+{
+  "name": "armenian-learner",
+  "version": "1.0.0",
+  "description": "Learn to read and listen to old Western Armenian liturgical language",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/test-all.mjs"
+  },
+  "dependencies": {
+    "meyda": "^5.6.0",
+    "wav": "^1.0.2"
+  },
+  "keywords": [
+    "armenian",
+    "liturgy",
+    "audio",
+    "learning"
+  ]
+}

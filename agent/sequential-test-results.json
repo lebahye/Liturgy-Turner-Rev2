@@ -1,0 +1,566 @@
+{
+  "timestamp": "2026-02-20T00:55:42.576Z",
+  "withSequential": "49.2",
+  "withoutSequential": "92.9",
+  "improvement": "-43.7",
+  "errors": [
+    {
+      "page": 3,
+      "detected": 1,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 7,
+      "detected": 5,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 8,
+      "detected": 6,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 9,
+      "detected": 7,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 20,
+      "detected": 18,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 21,
+      "detected": 19,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 22,
+      "detected": 20,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 23,
+      "detected": 21,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 24,
+      "detected": 22,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 25,
+      "detected": 23,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 26,
+      "detected": 24,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 27,
+      "detected": 25,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 31,
+      "detected": 29,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 32,
+      "detected": 30,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 33,
+      "detected": 31,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 34,
+      "detected": 32,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 35,
+      "detected": 33,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 36,
+      "detected": 34,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 37,
+      "detected": 35,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 38,
+      "detected": 36,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 39,
+      "detected": 37,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 40,
+      "detected": 38,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 41,
+      "detected": 39,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 42,
+      "detected": 40,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 43,
+      "detected": 41,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 44,
+      "detected": 42,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 58,
+      "detected": 56,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 59,
+      "detected": 57,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 60,
+      "detected": 58,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 61,
+      "detected": 59,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 63,
+      "detected": 61,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 64,
+      "detected": 62,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 65,
+      "detected": 63,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 66,
+      "detected": 64,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 67,
+      "detected": 65,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 68,
+      "detected": 66,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 69,
+      "detected": 67,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 70,
+      "detected": 68,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 71,
+      "detected": 69,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 72,
+      "detected": 70,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 73,
+      "detected": 71,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 74,
+      "detected": 72,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 75,
+      "detected": 73,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 76,
+      "detected": 74,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 77,
+      "detected": 75,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 78,
+      "detected": 76,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 79,
+      "detected": 77,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 80,
+      "detected": 78,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 81,
+      "detected": 79,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 82,
+      "detected": 80,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 83,
+      "detected": 81,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 84,
+      "detected": 82,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 85,
+      "detected": 83,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 86,
+      "detected": 84,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 87,
+      "detected": 85,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 88,
+      "detected": 86,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 89,
+      "detected": 87,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 90,
+      "detected": 88,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 91,
+      "detected": 89,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 92,
+      "detected": 90,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 99,
+      "detected": 97,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 100,
+      "detected": 98,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 101,
+      "detected": 99,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 102,
+      "detected": 100,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 127,
+      "detected": 125,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 136,
+      "detected": 134,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 137,
+      "detected": 135,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 138,
+      "detected": 136,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 170,
+      "detected": 168,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 171,
+      "detected": 169,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 172,
+      "detected": 170,
+      "error": 2,
+      "searched": 13
+    },
+    {
+      "page": 173,
+      "detected": 171,
+      "error": 2,
+      "searched": 12
+    },
+    {
+      "page": 174,
+      "detected": 172,
+      "error": 2,
+      "searched": 11
+    },
+    {
+      "page": 175,
+      "detected": 173,
+      "error": 2,
+      "searched": 10
+    },
+    {
+      "page": 176,
+      "detected": 174,
+      "error": 2,
+      "searched": 9
+    },
+    {
+      "page": 177,
+      "detected": 175,
+      "error": 2,
+      "searched": 8
+    },
+    {
+      "page": 178,
+      "detected": 176,
+      "error": 2,
+      "searched": 7
+    },
+    {
+      "page": 179,
+      "detected": 177,
+      "error": 2,
+      "searched": 6
+    },
+    {
+      "page": 181,
+      "detected": 179,
+      "error": 2,
+      "searched": 4
+    },
+    {
+      "page": 182,
+      "detected": 180,
+      "error": 2,
+      "searched": 3
+    },
+    {
+      "page": 183,
+      "detected": 181,
+      "error": 2,
+      "searched": 2
+    },
+    {
+      "page": 2,
+      "detected": 1,
+      "error": 1,
+      "searched": 12
+    },
+    {
+      "page": 6,
+      "detected": 5,
+      "error": 1,
+      "searched": 13
+    },
+    {
+      "page": 19,
+      "detected": 18,
+      "error": 1,
+      "searched": 13
+    },
+    {
+      "page": 30,
+      "detected": 29,
+      "error": 1,
+      "searched": 13
+    },
+    {
+      "page": 57,
+      "detected": 56,
+      "error": 1,
+      "searched": 13
+    },
+    {
+      "page": 62,
+      "detected": 61,
+      "error": 1,
+      "searched": 13
+    },
+    {
+      "page": 98,
+      "detected": 97,
+      "error": 1,
+      "searched": 13
+    },
+    {
+      "page": 110,
+      "detected": 109,
+      "error": 1,
+      "searched": 13
+    },
+    {
+      "page": 126,
+      "detected": 125,
+      "error": 1,
+      "searched": 13
+    },
+    {
+      "page": 135,
+      "detected": 134,
+      "error": 1,
+      "searched": 13
+    },
+    {
+      "page": 169,
+      "detected": 168,
+      "error": 1,
+      "searched": 13
+    },
+    {
+      "page": 180,
+      "detected": 179,
+      "error": 1,
+      "searched": 5
+    }
+  ]
+}

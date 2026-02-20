@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-02-19T20:48:36.192Z",
+  "results": {
+    "exact": 19,
+    "within2": 19,
+    "within5": 20,
+    "tested": 21,
+    "errorSum": 79
+  },
+  "exactAccuracy": "90.5"
+}

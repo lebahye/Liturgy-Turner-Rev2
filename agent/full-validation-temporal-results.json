@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-02-20T05:55:24.601Z",
+  "totalPages": 183,
+  "exactAccuracy": "99.5",
+  "within2Accuracy": "99.5",
+  "within5Accuracy": "99.5",
+  "avgError": "0.99",
+  "errors": [
+    {
+      "page": 183,
+      "detected": 1,
+      "error": 182,
+      "confidence": 0,
+      "top5": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "confusionPairs": {
+    "183→1": 1
+  }
+}
