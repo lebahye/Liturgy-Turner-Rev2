@@ -1,8 +1,13 @@
 /**
- * Liturgy Audio Controller Skill
+ * Liturgy Audio Controller Skill - Enhanced Version
  *
  * Real-time audio processing for automatic liturgy page turning.
  * Listens to church audio, transcribes, matches to liturgy text, and controls pages.
+ * 
+ * New Features:
+ * - Audio quality validation
+ * - Enhanced confidence scoring with sequential logic
+ * - Impossible jump detection
  */
 
 const mic = require('mic');
@@ -11,6 +16,7 @@ const path = require('path');
 const os = require('os');
 const axios = require('axios');
 const Fuse = require('fuse.js');
+const ffmpeg = require('fluent-ffmpeg');
 
 class LiturgyAudioController {
   constructor(config = {}) {
@@ -21,6 +27,8 @@ class LiturgyAudioController {
       sampleRate: config.sampleRate || 16000,
       bufferDuration: config.bufferDuration || 3000,
       trainingMode: config.trainingMode || false,
+      sequentialBoost: config.sequentialBoost !== undefined ? config.sequentialBoost : 0.10,
+      maxPageJump: config.maxPageJump || 5,
       ...config,
     };
 
@@ -72,6 +80,204 @@ class LiturgyAudioController {
       this.liturgyDatabase = { entries: [] };
       this.fuzzyMatcher = new Fuse([], { keys: ['text'] });
     }
+  }
+
+  /**
+   * Validate audio file quality
+   * NEW FEATURE: Audio Quality Validator
+   */
+  async validateAudioQuality(audioFilePath) {
+    return new Promise((resolve) => {
+      if (!fs.existsSync(audioFilePath)) {
+        resolve({
+          success: false,
+          error: 'Audio file not found',
+          quality: 'UNUSABLE',
+          recommendation: 'File does not exist'
+        });
+        return;
+      }
+
+      const results = {
+        success: true,
+        quality: 'EXCELLENT',
+        issues: [],
+        recommendation: 'Proceed with training',
+        filePath: audioFilePath,
+        fileSize: fs.statSync(audioFilePath).size,
+      };
+
+      ffmpeg.ffprobe(audioFilePath, (err, metadata) => {
+        if (err) {
+          results.success = false;
+          results.error = err.message;
+          results.quality = 'UNUSABLE';
+          results.recommendation = 'Cannot analyze audio file';
+          resolve(results);
+          return;
+        }
+
+        try {
+          const audioStream = metadata.streams.find(s => s.codec_type === 'audio');
+          if (!audioStream) {
+            results.success = false;
+            results.quality = 'UNUSABLE';
+            results.error = 'No audio stream found';
+            results.recommendation = 'File contains no audio';
+            resolve(results);
+            return;
+          }
+
+          // Extract audio properties
+          results.sampleRate = parseInt(audioStream.sample_rate) || 0;
+          results.channels = audioStream.channels || 0;
+          results.bitDepth = audioStream.bits_per_sample || audioStream.bits_per_raw_sample || 16;
+          results.duration = parseFloat(metadata.format.duration) || 0;
+          results.durationMinutes = (results.duration / 60).toFixed(2);
+          results.bitrate = parseInt(metadata.format.bit_rate) || 0;
+          results.codec = audioStream.codec_name || 'unknown';
+
+          // Quality checks
+          const checks = [];
+
+          // Check 1: Sample rate
+          if (results.sampleRate < 16000) {
+            checks.push({
+              check: 'Sample Rate',
+              status: 'POOR',
+              value: results.sampleRate,
+              message: 'Sample rate too low (< 16kHz), may affect transcription accuracy'
+            });
+            results.issues.push(`Low sample rate: ${results.sampleRate} Hz`);
+          } else if (results.sampleRate >= 44100) {
+            checks.push({
+              check: 'Sample Rate',
+              status: 'EXCELLENT',
+              value: results.sampleRate,
+              message: 'High quality sample rate'
+            });
+          } else {
+            checks.push({
+              check: 'Sample Rate',
+              status: 'GOOD',
+              value: results.sampleRate,
+              message: 'Adequate sample rate for speech'
+            });
+          }
+
+          // Check 2: Duration
+          const durationMin = results.duration / 60;
+          if (durationMin < 30) {
+            checks.push({
+              check: 'Duration',
+              status: 'WARNING',
+              value: durationMin.toFixed(2) + ' min',
+              message: 'Recording seems short for a full liturgy (< 30 min)'
+            });
+            results.issues.push(`Short duration: ${durationMin.toFixed(1)} minutes`);
+          } else if (durationMin > 120) {
+            checks.push({
+              check: 'Duration',
+              status: 'WARNING',
+              value: durationMin.toFixed(2) + ' min',
+              message: 'Recording seems long for typical liturgy (> 2 hours)'
+            });
+            results.issues.push(`Unusually long: ${durationMin.toFixed(1)} minutes`);
+          } else {
+            checks.push({
+              check: 'Duration',
+              status: 'GOOD',
+              value: durationMin.toFixed(2) + ' min',
+              message: 'Duration within expected range (30-120 min)'
+            });
+          }
+
+          // Check 3: Channels
+          if (results.channels === 1) {
+            checks.push({
+              check: 'Channels',
+              status: 'GOOD',
+              value: 'Mono',
+              message: 'Mono is ideal for speech recognition'
+            });
+          } else if (results.channels === 2) {
+            checks.push({
+              check: 'Channels',
+              status: 'GOOD',
+              value: 'Stereo',
+              message: 'Stereo is acceptable, will be converted to mono if needed'
+            });
+          } else {
+            checks.push({
+              check: 'Channels',
+              status: 'WARNING',
+              value: results.channels,
+              message: 'Unusual channel configuration'
+            });
+          }
+
+          // Check 4: Bitrate
+          const bitrateKbps = results.bitrate / 1000;
+          if (bitrateKbps < 64) {
+            checks.push({
+              check: 'Bitrate',
+              status: 'POOR',
+              value: bitrateKbps.toFixed(0) + ' kbps',
+              message: 'Very low bitrate, quality may suffer'
+            });
+            results.issues.push(`Low bitrate: ${bitrateKbps.toFixed(0)} kbps`);
+          } else if (bitrateKbps >= 128) {
+            checks.push({
+              check: 'Bitrate',
+              status: 'EXCELLENT',
+              value: bitrateKbps.toFixed(0) + ' kbps',
+              message: 'High quality bitrate'
+            });
+          } else {
+            checks.push({
+              check: 'Bitrate',
+              status: 'GOOD',
+              value: bitrateKbps.toFixed(0) + ' kbps',
+              message: 'Adequate bitrate for speech'
+            });
+          }
+
+          results.checks = checks;
+
+          // Determine overall quality
+          const poorChecks = checks.filter(c => c.status === 'POOR').length;
+          const warningChecks = checks.filter(c => c.status === 'WARNING').length;
+
+          if (poorChecks > 0 || results.issues.length > 2) {
+            results.quality = 'POOR';
+            results.recommendation = 'Consider re-recording with better quality settings';
+          } else if (warningChecks > 1) {
+            results.quality = 'GOOD';
+            results.recommendation = 'Acceptable for training, but could be improved';
+          } else {
+            results.quality = 'EXCELLENT';
+            results.recommendation = 'Proceed with training';
+          }
+
+          // File size check
+          const fileSizeMB = results.fileSize / (1024 * 1024);
+          results.fileSizeMB = fileSizeMB.toFixed(2);
+          
+          if (fileSizeMB < 10 && durationMin > 30) {
+            results.issues.push('File size seems small for duration - possibly heavily compressed');
+            results.quality = Math.min(results.quality, 'GOOD');
+          }
+
+          resolve(results);
+        } catch (parseError) {
+          results.success = false;
+          results.error = parseError.message;
+          results.quality = 'UNUSABLE';
+          results.recommendation = 'Error parsing audio metadata';
+          resolve(results);
+        }
+      });
+    });
   }
 
   /**
@@ -173,6 +379,7 @@ class LiturgyAudioController {
 
   /**
    * Process a single PCM chunk
+   * ENHANCED with confidence scoring
    */
   async processAudioChunk(rawAudio) {
     if (!rawAudio || rawAudio.length === 0) {
@@ -189,26 +396,36 @@ class LiturgyAudioController {
       console.log('[liturgy-audio] Transcribed:', transcription);
 
       // Match transcription to liturgy database
-      const match = this.matchLiturgyText(transcription);
+      const fuzzyMatch = this.matchLiturgyText(transcription);
 
-      if (match && match.confidence >= this.config.confidenceThreshold) {
-        console.log(
-          `[liturgy-audio] Matched to page ${match.page} (confidence: ${match.confidence})`,
-        );
+      if (!fuzzyMatch) {
+        console.log('[liturgy-audio] No match found');
+        return;
+      }
 
-        // Send page turn command
-        await this.setPage(match.page, transcription, match.confidence);
-      } else if (match) {
-        console.log(
-          `[liturgy-audio] Low confidence match: page ${match.page} (${match.confidence})`,
-        );
+      // ENHANCED: Evaluate confidence with sequential logic
+      const enhancedMatch = this.evaluateConfidence(
+        fuzzyMatch.page,
+        fuzzyMatch.confidence,
+        transcription
+      );
+
+      console.log(
+        `[liturgy-audio] Page ${enhancedMatch.page}: ${enhancedMatch.confidence.toFixed(2)} confidence - ${enhancedMatch.reason}`
+      );
+
+      if (enhancedMatch.confidence >= this.config.confidenceThreshold) {
+        console.log(`[liturgy-audio] Turning to page ${enhancedMatch.page}`);
+        await this.setPage(enhancedMatch.page, transcription, enhancedMatch.confidence);
+      } else {
+        console.log(`[liturgy-audio] Confidence too low: ${enhancedMatch.confidence.toFixed(2)}`);
       }
 
       this.lastObservation = {
         transcription,
         rawAudio,
         timestamp: Date.now(),
-        match: match || null,
+        match: enhancedMatch,
       };
 
       if (this.config.trainingMode) {
@@ -216,12 +433,65 @@ class LiturgyAudioController {
           audio: rawAudio.toString('base64'),
           transcription,
           timestamp: Date.now(),
-          match: match || null,
+          match: enhancedMatch,
         });
       }
     } catch (error) {
       console.error('[liturgy-audio] Error processing audio chunk:', error.message);
     }
+  }
+
+  /**
+   * NEW FEATURE: Enhanced confidence evaluation with sequential logic
+   */
+  evaluateConfidence(detectedPage, fuzzyScore, transcription) {
+    let confidence = fuzzyScore;
+    let reason = `Base match: ${fuzzyScore.toFixed(2)}`;
+    const adjustments = [];
+
+    // Sequential boost
+    if (this.currentPage !== null) {
+      const pageGap = detectedPage - this.currentPage;
+
+      if (pageGap === 1) {
+        // Next page - strong boost
+        const boost = this.config.sequentialBoost;
+        confidence = Math.min(1.0, confidence + boost);
+        adjustments.push(`+${(boost * 100).toFixed(0)}% sequential (next page)`);
+      } else if (pageGap === 2) {
+        // Page after next - small boost
+        const boost = this.config.sequentialBoost * 0.5;
+        confidence = Math.min(1.0, confidence + boost);
+        adjustments.push(`+${(boost * 100).toFixed(0)}% sequential (page +2)`);
+      } else if (pageGap < 0) {
+        // Backwards - major penalty
+        confidence = confidence * 0.1;
+        adjustments.push('-90% (backwards jump)');
+      } else if (pageGap > this.config.maxPageJump) {
+        // Impossible jump - major penalty
+        confidence = confidence * 0.3;
+        adjustments.push(`-70% (jump too large: ${pageGap} pages)`);
+      } else if (pageGap > 2) {
+        // Large but possible jump - moderate penalty
+        const penalty = 1 - (pageGap * 0.1);
+        confidence = confidence * Math.max(0.3, penalty);
+        adjustments.push(`-${((1 - penalty) * 100).toFixed(0)}% (gap: ${pageGap})`);
+      }
+    }
+
+    // Build reason string
+    if (adjustments.length > 0) {
+      reason = `${fuzzyScore.toFixed(2)} base ${adjustments.join(', ')} = ${confidence.toFixed(2)} final`;
+    }
+
+    return {
+      page: detectedPage,
+      confidence: Math.max(0, Math.min(1, confidence)),
+      reason,
+      baseScore: fuzzyScore,
+      currentPage: this.currentPage,
+      transcription
+    };
   }
 
   /**
@@ -468,8 +738,28 @@ function existingSectionForPage(entries, page) {
 // Export skill definition for Clawdbot
 module.exports = {
   name: 'liturgy-audio-controller',
-  description: 'Real-time audio processing for automatic liturgy page turning',
+  description: 'Real-time audio processing for automatic liturgy page turning with audio quality validation',
   tools: [
+    {
+      name: 'validate_audio_quality',
+      description: 'Validate audio file quality before training (checks sample rate, duration, bitrate, etc.)',
+      parameters: {
+        type: 'object',
+        properties: {
+          audioFile: {
+            type: 'string',
+            description: 'Path to audio file to validate (relative or absolute)',
+          },
+        },
+        required: ['audioFile'],
+      },
+      handler: async (args, context) => {
+        if (!context.liturgyController) {
+          context.liturgyController = new LiturgyAudioController(context.skillConfig);
+        }
+        return await context.liturgyController.validateAudioQuality(args.audioFile);
+      },
+    },
     {
       name: 'start_liturgy_listening',
       description: 'Start listening to microphone for liturgy audio',
