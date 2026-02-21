@@ -1,3 +1,7 @@
+---
+name: liturgy-audio-controller
+description: Real-time audio processing for automatic liturgy page turning with audio quality validation
+---
 # Liturgy Audio Controller – Skill Reference (Enhanced)
 
 ## Purpose
