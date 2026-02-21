@@ -18,9 +18,6 @@ const axios = require('axios');
 const Fuse = require('fuse.js');
 const ffmpeg = require('fluent-ffmpeg');
 
-// ENHANCED: Import 100% accurate multi-language matcher (172 pages, 100% accuracy)
-const MultiLanguageMatcher = require('./multi-language-matcher-cjs.js');
-
 class LiturgyAudioController {
   constructor(config = {}) {
     this.config = {
@@ -58,55 +55,30 @@ class LiturgyAudioController {
 
   /**
    * Load liturgy text database with page mappings
-   * ENHANCED: Now uses 172-page dictionary with 100% accuracy
    */
   loadLiturgyDatabase() {
-    // Load NEW comprehensive PDF dictionary (172 pages)
-    const pdfDictPath = path.join(__dirname, 'data', 'pdf-pages-dictionary.json');
-    const oldDbPath = path.join(__dirname, 'data', 'liturgy-database.json');
-    this.dbPath = oldDbPath; // Keep for compatibility
+    const dbPath = path.join(__dirname, 'data', 'liturgy-database.json');
+    this.dbPath = dbPath;
 
     try {
-      // Load comprehensive dictionary
-      const pdfDict = JSON.parse(fs.readFileSync(pdfDictPath, 'utf8'));
-      
-      // Initialize NEW 100% accurate matcher
-      this.textMatcher = new MultiLanguageMatcher(pdfDict);
-      
-      // Keep old fuzzy matcher as fallback (for training mode compatibility)
-      try {
-        this.liturgyDatabase = JSON.parse(fs.readFileSync(oldDbPath, 'utf8'));
-        this.fuzzyMatcher = new Fuse(this.liturgyDatabase.entries, {
-          keys: ['text', 'armenian', 'transliteration'],
-          threshold: 0.3,
-          includeScore: true,
-        });
-      } catch (e) {
-        this.liturgyDatabase = { entries: [] };
-        this.fuzzyMatcher = null;
-      }
+      this.liturgyDatabase = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+
+      // Initialize fuzzy search with Armenian liturgy phrases
+      this.fuzzyMatcher = new Fuse(this.liturgyDatabase.entries, {
+        keys: ['text', 'armenian', 'transliteration'],
+        threshold: 0.3,
+        includeScore: true,
+      });
 
       console.log(
-        `[liturgy-audio] ✅ ENHANCED MATCHER LOADED: ${pdfDict.pagesWithText.grapar}/183 pages, ${Object.keys(pdfDict.wordIndex).length} words`,
+        `[liturgy-audio] Loaded ${this.liturgyDatabase.entries.length} liturgy entries`,
       );
-      console.log('[liturgy-audio] Accuracy: 100% (validated on 47 test pages)');
     } catch (error) {
-      console.error('[liturgy-audio] Failed to load PDF dictionary:', error.message);
-      console.log('[liturgy-audio] Falling back to old fuzzy matcher');
-      
-      // Fallback to old system
-      try {
-        this.liturgyDatabase = JSON.parse(fs.readFileSync(oldDbPath, 'utf8'));
-        this.fuzzyMatcher = new Fuse(this.liturgyDatabase.entries, {
-          keys: ['text', 'armenian', 'transliteration'],
-          threshold: 0.3,
-          includeScore: true,
-        });
-        console.log(`[liturgy-audio] Loaded ${this.liturgyDatabase.entries.length} legacy entries`);
-      } catch (e2) {
-        this.liturgyDatabase = { entries: [] };
-        this.fuzzyMatcher = new Fuse([], { keys: ['text'] });
-      }
+      console.error('[liturgy-audio] Failed to load liturgy database:', error.message);
+
+      // Create empty database
+      this.liturgyDatabase = { entries: [] };
+      this.fuzzyMatcher = new Fuse([], { keys: ['text'] });
     }
   }
 
@@ -582,47 +554,23 @@ class LiturgyAudioController {
    * Match transcribed text to liturgy database
    */
   matchLiturgyText(text) {
-    if (!text) return null;
+    if (!this.fuzzyMatcher || !text) return null;
 
-    // ENHANCED: Use 100% accurate text matcher first
-    if (this.textMatcher) {
-      const result = this.textMatcher.matchPage(text, 'auto', true);
-      
-      if (result) {
-        // Normalize confidence to 0-1 range (my matcher returns ratio)
-        const normalizedConfidence = Math.min(1.0, result.confidence / 10.0);
-        
-        return {
-          page: result.page,
-          matchedText: `Matched via ${result.language} (score: ${result.score})`,
-          confidence: normalizedConfidence,
-          section: `Multi-language match`,
-          method: 'text-matcher-100%',
-        };
-      }
-    }
-    
-    // FALLBACK: Use old fuzzy matcher if text matcher fails
-    if (this.fuzzyMatcher) {
-      const results = this.fuzzyMatcher.search(text);
-      if (results.length > 0) {
-        const bestMatch = results[0];
-        return {
-          page: bestMatch.item.page,
-          matchedText: bestMatch.item.text,
-          confidence: 1 - bestMatch.score,
-          section: bestMatch.item.section,
-          method: 'fuzzy-fallback',
-        };
-      }
-    }
+    const results = this.fuzzyMatcher.search(text);
+    if (results.length === 0) return null;
 
-    return null;
+    const bestMatch = results[0];
+
+    return {
+      page: bestMatch.item.page,
+      matchedText: bestMatch.item.text,
+      confidence: 1 - bestMatch.score, // Convert Fuse.js score to confidence
+      section: bestMatch.item.section,
+    };
   }
 
   /**
    * Send page turn command to Liturgy Turner API
-   * ENHANCED: Also updates text matcher's current page for sequential context
    */
   async setPage(page, reason, confidence) {
     try {
@@ -641,13 +589,7 @@ class LiturgyAudioController {
 
       if (response.data.success) {
         this.currentPage = page;
-        
-        // ENHANCED: Update text matcher for sequential context
-        if (this.textMatcher) {
-          this.textMatcher.turnToPage(page, confidence);
-        }
-        
-        console.log(`[liturgy-audio] ✅ Successfully set page to ${page}`);
+        console.log(`[liturgy-audio] Successfully set page to ${page}`);
         return { success: true, page };
       }
 
