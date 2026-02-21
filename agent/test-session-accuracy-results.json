@@ -1,0 +1,163 @@
+{
+  "session": "Page 22 of 183 2-20-26",
+  "timestamp": "2026-02-21T00:23:55.185Z",
+  "markers": 19,
+  "exactAccuracy": 0,
+  "within2Accuracy": 0,
+  "within5Accuracy": 0,
+  "avgError": 125.42,
+  "results": [
+    {
+      "actual": 3,
+      "predicted": 112,
+      "error": 109,
+      "confidence": 0.5008097304657085,
+      "timestamp": 39.26,
+      "testDuration": 0
+    },
+    {
+      "actual": 4,
+      "predicted": 181,
+      "error": 177,
+      "confidence": 0.5700263233074686,
+      "timestamp": 41.373,
+      "testDuration": 2.113
+    },
+    {
+      "actual": 5,
+      "predicted": 147,
+      "error": 142,
+      "confidence": 0.5269287571186559,
+      "timestamp": 48.426,
+      "testDuration": 7.053
+    },
+    {
+      "actual": 6,
+      "predicted": 179,
+      "error": 173,
+      "confidence": 0.575845270462805,
+      "timestamp": 62.751,
+      "testDuration": 14.325
+    },
+    {
+      "actual": 7,
+      "predicted": 130,
+      "error": 123,
+      "confidence": 0.48000391012006216,
+      "timestamp": 73.018,
+      "testDuration": 10.267
+    },
+    {
+      "actual": 8,
+      "predicted": 179,
+      "error": 171,
+      "confidence": 0.5888341655100644,
+      "timestamp": 86.9,
+      "testDuration": 13.882
+    },
+    {
+      "actual": 9,
+      "predicted": 179,
+      "error": 170,
+      "confidence": 0.5826698241187732,
+      "timestamp": 99.079,
+      "testDuration": 12.179
+    },
+    {
+      "actual": 10,
+      "predicted": 147,
+      "error": 137,
+      "confidence": 0.6192258629967786,
+      "timestamp": 108.178,
+      "testDuration": 9.099
+    },
+    {
+      "actual": 11,
+      "predicted": 91,
+      "error": 80,
+      "confidence": 0.5915172291558665,
+      "timestamp": 127.846,
+      "testDuration": 19.668
+    },
+    {
+      "actual": 12,
+      "predicted": 50,
+      "error": 38,
+      "confidence": 0.5035854782781239,
+      "timestamp": 145.455,
+      "testDuration": 17.609
+    },
+    {
+      "actual": 13,
+      "predicted": 162,
+      "error": 149,
+      "confidence": 0.5583443323463833,
+      "timestamp": 151.418,
+      "testDuration": 5.963
+    },
+    {
+      "actual": 14,
+      "predicted": 179,
+      "error": 165,
+      "confidence": 0.5810723759325607,
+      "timestamp": 163.433,
+      "testDuration": 12.015
+    },
+    {
+      "actual": 15,
+      "predicted": 48,
+      "error": 33,
+      "confidence": 0.5968852264142777,
+      "timestamp": 174.299,
+      "testDuration": 10.866
+    },
+    {
+      "actual": 16,
+      "predicted": 48,
+      "error": 32,
+      "confidence": 0.5710375250640678,
+      "timestamp": 184.764,
+      "testDuration": 10.465
+    },
+    {
+      "actual": 17,
+      "predicted": 112,
+      "error": 95,
+      "confidence": 0.5546482369974756,
+      "timestamp": 191.348,
+      "testDuration": 6.584
+    },
+    {
+      "actual": 18,
+      "predicted": 179,
+      "error": 161,
+      "confidence": 0.5656979196839365,
+      "timestamp": 205.079,
+      "testDuration": 13.731
+    },
+    {
+      "actual": 19,
+      "predicted": 179,
+      "error": 160,
+      "confidence": 0.5818215560944953,
+      "timestamp": 220.107,
+      "testDuration": 15.028
+    },
+    {
+      "actual": 20,
+      "predicted": 130,
+      "error": 110,
+      "confidence": 0.39255415721124054,
+      "timestamp": 234.052,
+      "testDuration": 13.945
+    },
+    {
+      "actual": 21,
+      "predicted": 179,
+      "error": 158,
+      "confidence": 0.5828531873129364,
+      "timestamp": 248.969,
+      "testDuration": 14.917
+    }
+  ]
+}

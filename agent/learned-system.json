@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-02-21T11:25:20.883Z",
+  "accuracy": 100,
+  "pagesTested": 47,
+  "pagesLearned": 172,
+  "transitionsLearned": 33,
+  "errors": [],
+  "ready": true,
+  "capabilities": {
+    "textRecognition": true,
+    "sequentialContext": true,
+    "signatureMatching": true,
+    "multiSignal": true,
+    "confidenceScoring": true
+  }
+}

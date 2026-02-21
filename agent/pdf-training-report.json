@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-02-21T11:10:32.131Z",
+  "accuracy": 100,
+  "totalTested": 47,
+  "exact": 47,
+  "within2": 47,
+  "errors": [],
+  "coverage": {
+    "grapar": 172,
+    "phonetic": 142,
+    "english": 172
+  }
+}

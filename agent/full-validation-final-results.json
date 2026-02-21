@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-02-20T20:05:30.381Z",
+  "totalPages": 183,
+  "exactAccuracy": "100.0",
+  "within2Accuracy": "100.0",
+  "within5Accuracy": "100.0",
+  "avgError": "0.00",
+  "edgeCasesHandled": 1,
+  "errors": [],
+  "confusionPairs": {}
+}

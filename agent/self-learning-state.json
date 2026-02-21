@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-21T11:24:23.917Z",
+  "stats": {
+    "totalPredictions": 0,
+    "correctPredictions": 0,
+    "accuracy": 0,
+    "averageError": 0,
+    "patterns": 1366,
+    "indexedWords": 1291
+  },
+  "learningHistory": [],
+  "currentPage": 36,
+  "ready": false
+}

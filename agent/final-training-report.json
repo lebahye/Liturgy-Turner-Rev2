@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-21T11:11:35.500Z",
+  "accuracy": 100,
+  "totalTested": 52,
+  "exact": 52,
+  "within2": 52,
+  "skipped": 0,
+  "errors": [],
+  "coverage": {
+    "grapar": 172,
+    "phonetic": 142,
+    "english": 172
+  }
+}

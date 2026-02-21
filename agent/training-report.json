@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-02-21T11:04:35.637Z",
+  "sessions": [
+    {
+      "id": "0ca8738de07b8819342d3faeb9a7b33a",
+      "index": 1,
+      "created": 1771624643
+    },
+    {
+      "id": "bd9cf1d63abab1514aabe00c0fa1fb8c",
+      "index": 2,
+      "created": 1771669613
+    }
+  ],
+  "results": {
+    "session1": {
+      "tested": 19,
+      "exact": 17,
+      "within2": 18,
+      "accuracy": 89.47368421052632,
+      "errors": [
+        {
+          "actual": 9,
+          "predicted": 7,
+          "error": 2,
+          "correct": false,
+          "within2": true
+        },
+        {
+          "actual": 15,
+          "predicted": 7,
+          "error": 8,
+          "correct": false,
+          "within2": false
+        }
+      ]
+    },
+    "coverage": {
+      "totalPages": 33,
+      "haveText": 30,
+      "missing": [
+        27,
+        31,
+        32
+      ]
+    }
+  },
+  "readiness": {
+    "textCoverage": 90.9090909090909,
+    "matchAccuracy": 89.47368421052632,
+    "within2Accuracy": 94.73684210526315
+  }
+}
