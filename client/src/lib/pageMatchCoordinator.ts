@@ -34,12 +34,12 @@ export type CoordinatorConfig = {
 };
 
 const DEFAULT_CONFIG: CoordinatorConfig = {
-  fingerprintThreshold: 60,
-  ngramThreshold: 2,
-  triggerMatchThreshold: 3,
+  fingerprintThreshold: 30,  // Lowered from 60 for testing - TUNE THIS
+  ngramThreshold: 1,         // Lowered from 2 for testing
+  triggerMatchThreshold: 2,  // Lowered from 3 for testing
   agreementBonus: 20,
   disagreementPenalty: 30,
-  requiredConsecutiveAgreements: 2,
+  requiredConsecutiveAgreements: 1,  // Lowered from 2 for easier triggering
 };
 
 export class PageMatchCoordinator {
