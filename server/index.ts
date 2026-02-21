@@ -84,8 +84,8 @@ app.use((req, res, next) => {
 (async () => {
   await registerRoutes(httpServer, app);
 
-  // Initialize WS display sync bus (Smart TV viewer)
-  initDisplayBus(httpServer);
+  // Initialize WS display sync bus (Smart TV viewer) and load saved state
+  await initDisplayBus(httpServer);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;

@@ -1,5 +1,7 @@
 import type { Server } from 'http';
 import { WebSocketServer } from 'ws';
+import { promises as fs } from 'fs';
+import path from 'path';
 
 export type DisplayMode = 'live' | 'training' | 'display';
 
@@ -14,6 +16,9 @@ export type DisplayState = {
   lastConfidence?: number;
 };
 
+const STATE_FILE = process.env.STATE_FILE || '/app/data/display-state.json';
+
+// Initialize with defaults
 const state: DisplayState = {
   pdfPath: null,
   pdfId: null,
@@ -24,6 +29,41 @@ const state: DisplayState = {
 };
 
 let wss: WebSocketServer | null = null;
+let saveTimer: NodeJS.Timeout | null = null;
+
+// Load state from disk on startup
+async function loadState() {
+  try {
+    const data = await fs.readFile(STATE_FILE, 'utf-8');
+    const loaded = JSON.parse(data);
+    // Merge loaded state with current state
+    Object.assign(state, loaded);
+    console.log('[displayBus] State loaded from disk:', state);
+  } catch (err: any) {
+    if (err.code === 'ENOENT') {
+      console.log('[displayBus] No saved state found, using defaults');
+    } else {
+      console.error('[displayBus] Error loading state:', err);
+    }
+  }
+}
+
+// Save state to disk (debounced)
+async function saveState() {
+  // Clear any pending save
+  if (saveTimer) clearTimeout(saveTimer);
+  
+  // Debounce: save 500ms after last change
+  saveTimer = setTimeout(async () => {
+    try {
+      await fs.mkdir(path.dirname(STATE_FILE), { recursive: true });
+      await fs.writeFile(STATE_FILE, JSON.stringify(state, null, 2), 'utf-8');
+      console.log('[displayBus] State saved to disk');
+    } catch (err) {
+      console.error('[displayBus] Error saving state:', err);
+    }
+  }, 500);
+}
 
 function clampPage(page: number) {
   const max = Math.max(1, state.totalPages || 1);
@@ -38,8 +78,11 @@ function broadcast(type: 'state' | 'page_changed') {
   }
 }
 
-export function initDisplayBus(httpServer: Server) {
+export async function initDisplayBus(httpServer: Server) {
   if (wss) return;
+
+  // Load saved state first
+  await loadState();
 
   wss = new WebSocketServer({ server: httpServer, path: '/ws' });
 
@@ -61,6 +104,7 @@ export function setPdfState(input: { pdfPath: string; pdfId?: string | null; tot
   }
   state.updatedAt = Date.now();
   broadcast('state');
+  saveState(); // Persist to disk
 }
 
 export function setPageState(input: { page: number; reason?: string; confidence?: number }) {
@@ -69,6 +113,7 @@ export function setPageState(input: { page: number; reason?: string; confidence?
   state.lastReason = input.reason;
   state.lastConfidence = input.confidence;
   broadcast('page_changed');
+  saveState(); // Persist to disk
 }
 
 export function nextPage(reason?: string, confidence?: number) {
@@ -77,4 +122,11 @@ export function nextPage(reason?: string, confidence?: number) {
 
 export function prevPage(reason?: string, confidence?: number) {
   setPageState({ page: state.page - 1, reason, confidence });
+}
+
+export function setDisplayMode(mode: DisplayMode) {
+  state.mode = mode;
+  state.updatedAt = Date.now();
+  broadcast('state');
+  saveState(); // Persist to disk
 }
