@@ -22,7 +22,7 @@ client/src/env.d.ts
 secrets/
 
 # Local runtime state (do not commit)
-/data/
+# /data/  # Commented out - we need the dictionary database on GitHub for Replit
 agent/.clawdbot-state/
 agent/memory/
 clawdbot.json
