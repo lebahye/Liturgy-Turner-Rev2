@@ -107,7 +107,7 @@ export default function Live() {
   const meydaAnalyzerRef = useRef<MeydaAnalyzer | null>(null);
   const featureBufferRef = useRef<{ features: AudioFeatures; timestamp: number }[]>([]);
   const [fingerprintScore, setFingerprintScore] = useState<number>(0);
-  const [matchingMode, setMatchingMode] = useState<"fingerprint" | "whisper">("fingerprint");
+  const [matchingMode, setMatchingMode] = useState<"fingerprint">("fingerprint");
   const [processingMode, setProcessingMode] = useState<"local" | "agent">("local");
   const matchCooldownRef = useRef<number>(0);
   
@@ -472,15 +472,26 @@ export default function Live() {
       form.append("context", context);
     }
 
-    // Choose endpoint based on processing mode
-    const endpoint = processingMode === "agent" 
-      ? "/api/agent/feed-audio" 
-      : "/api/transcribe";
+    // Only Agent mode uses audio API (custom pattern matching)
+    // Local mode uses fingerprint-only (no transcription)
+    if (processingMode === "agent") {
+      const res = await fetch("/api/agent/feed-audio", {
+        method: "POST",
+        body: form,
+      });
 
-    const res = await fetch(endpoint, {
-      method: "POST",
-      body: form,
-    });
+      const data = await safeJson(res);
+      if (!res.ok) {
+        throw new Error(data?.error || data?.message || "Agent recognition failed");
+      }
+
+      const text = data?.text || data?.transcript || "";
+      return String(text);
+    }
+
+    // Local mode: no transcription, just return empty
+    // (fingerprint matching happens separately)
+    return "";
 
     const data = await safeJson(res);
     if (!res.ok) {
@@ -1043,7 +1054,7 @@ export default function Live() {
                   onClick={() => setProcessingMode("local")}
                   disabled={status === "running"}
                 >
-                  Local (Meyda + Whisper)
+                  Local (Fingerprint Only)
                 </button>
                 <button
                   className={`rounded-lg px-3 py-2 text-sm ${

@@ -558,54 +558,9 @@ const file = await storage.createUploadedFile({
     return new OpenAI({ apiKey });
   }
 
-  // Transcribe audio chunk (for live mode) using OpenAI Whisper
-  app.post('/api/transcribe', async (req, res) => {
-    try {
-      const { audioBase64, mimeType = 'audio/webm' } = req.body;
-      
-      if (!audioBase64) {
-        return res.status(400).json({ error: 'audioBase64 is required' });
-      }
-
-      // Convert base64 to buffer and create a File object for Whisper
-      const audioBuffer = Buffer.from(audioBase64, 'base64');
-      
-      // Determine file extension from mime type
-      const extMap: Record<string, string> = {
-        'audio/webm': 'webm',
-        'audio/mp3': 'mp3',
-        'audio/mpeg': 'mp3',
-        'audio/wav': 'wav',
-        'audio/ogg': 'ogg',
-        'audio/m4a': 'm4a',
-      };
-      const ext = extMap[mimeType] || 'webm';
-      
-      // Create a File object from the buffer
-      const audioFile = new File([audioBuffer], `audio.${ext}`, { type: mimeType });
-
-      const openai = getOpenAIClient();
-      if (!openai) {
-        return res.status(501).json({
-          error: "Transcription is not configured (missing OPENAI_API_KEY)",
-          transcript: "[no-api-key]",
-        });
-      }
-
-      const transcription = await openai.audio.transcriptions.create({
-        file: audioFile,
-        model: "whisper-1",
-        language: "hy", // Armenian language code
-        response_format: "text",
-      });
-
-      const transcript = transcription?.trim() || "[silence]";
-      res.json({ transcript: transcript.length > 0 ? transcript : "[silence]" });
-    } catch (error) {
-      console.error('Transcription error:', error);
-      res.status(500).json({ error: 'Failed to transcribe audio', transcript: "[error]" });
-    }
-  });
+  // ⛔ REMOVED: Whisper transcription endpoint (see NO_WHISPER_POLICY.md)
+  // This project uses custom pattern matching (armenian-learner skill), NOT Whisper
+  // Endpoint removed 2026-02-21 - Use Agent mode instead
 
   // Get page transcripts for a PDF
   app.get('/api/page-transcripts', async (req, res) => {
