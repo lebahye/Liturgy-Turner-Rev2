@@ -108,6 +108,7 @@ export default function Live() {
   const featureBufferRef = useRef<{ features: AudioFeatures; timestamp: number }[]>([]);
   const [fingerprintScore, setFingerprintScore] = useState<number>(0);
   const [matchingMode, setMatchingMode] = useState<"fingerprint" | "whisper">("fingerprint");
+  const [processingMode, setProcessingMode] = useState<"local" | "agent">("local");
   const matchCooldownRef = useRef<number>(0);
   
   // Coordinator for combining fingerprint and n-gram matching
@@ -471,7 +472,12 @@ export default function Live() {
       form.append("context", context);
     }
 
-    const res = await fetch("/api/transcribe", {
+    // Choose endpoint based on processing mode
+    const endpoint = processingMode === "agent" 
+      ? "/api/agent/feed-audio" 
+      : "/api/transcribe";
+
+    const res = await fetch(endpoint, {
       method: "POST",
       body: form,
     });
@@ -1023,6 +1029,35 @@ export default function Live() {
                       </div>
                     </div>
                   )}
+                </div>
+              )}
+            </div>
+
+            <div className="rounded-xl bg-white p-4 shadow">
+              <div className="mb-2 font-semibold">Processing Mode</div>
+              <div className="flex gap-2">
+                <button
+                  className={`rounded-lg px-3 py-2 text-sm ${
+                    processingMode === "local" ? "bg-blue-600 text-white" : "bg-gray-100"
+                  }`}
+                  onClick={() => setProcessingMode("local")}
+                  disabled={status === "running"}
+                >
+                  Local (Meyda + Whisper)
+                </button>
+                <button
+                  className={`rounded-lg px-3 py-2 text-sm ${
+                    processingMode === "agent" ? "bg-blue-600 text-white" : "bg-gray-100"
+                  }`}
+                  onClick={() => setProcessingMode("agent")}
+                  disabled={status === "running"}
+                >
+                  Agent (1,366 patterns)
+                </button>
+              </div>
+              {processingMode === "agent" && (
+                <div className="mt-2 text-xs text-gray-600">
+                  Uses pre-trained Armenian pattern matcher from agent container
                 </div>
               )}
             </div>

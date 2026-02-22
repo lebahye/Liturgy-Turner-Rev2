@@ -8,6 +8,7 @@ import crypto from "crypto";
 import OpenAI from "openai";
 import { getDisplayState, nextPage, prevPage, setPageState, setPdfState } from "./displayBus";
 import { clawdbotTokenHandler } from "./routes/clawdbotToken";
+import { agentAudioRouter } from "./routes/agentAudio";
 import { LiturgyPageTracker } from "./liturgy-tracker";
 
 // Configure multer for file uploads
@@ -94,6 +95,9 @@ export async function registerRoutes(
   // Clawdbot helper (local-only): allow the embedded /bot page to fetch the
   // gateway token so the Control UI can authenticate and avoid 1006 timeouts.
   app.get('/api/clawdbot/token', clawdbotTokenHandler);
+
+  // Agent audio processing routes - forwards audio to armenian-learner skill
+  app.use('/api', agentAudioRouter);
 
   app.get('/api/control/state', async (_req, res) => {
     res.json({ state: getDisplayState() });
