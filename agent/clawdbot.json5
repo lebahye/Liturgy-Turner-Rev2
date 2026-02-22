@@ -65,7 +65,7 @@
       "liturgy-audio-controller": {
         "enabled": true,
         "config": {
-          "apiEndpoint": "http://app:5000",
+          "apiEndpoint": "http://host.docker.internal:5000",
           "confidenceThreshold": 0.85,
           "language": "armenian",
           "sampleRate": 16000,

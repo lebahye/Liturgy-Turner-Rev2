@@ -1,5 +1,6 @@
 # Node
 node_modules/
+**/node_modules/
 npm-debug.log
 yarn-error.log
 
@@ -15,14 +16,26 @@ out/
 
 # Agent state (managed by volume)
 agent/.clawdbot-state/
+agent/memory/
 
 # Data (managed by volume)
 data/
 uploads/
+training-data/
 
-# Git
+# Audio files (large)
+**/*.wav
+**/*.mp3
+**/*.m4a
+**/*.flac
+
+# Git repositories
 .git/
+**/.git/
 .gitignore
+
+# Vendor dependencies (agent uses its own)
+vendor/
 
 # IDE
 .vscode/
@@ -33,6 +46,11 @@ uploads/
 # OS
 .DS_Store
 Thumbs.db
+
+# Backups
+*.backup
+*.backup.*
+backups/
 
 # Other
 *.log
