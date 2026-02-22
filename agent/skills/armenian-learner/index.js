@@ -479,3 +479,13 @@ export default {
     }
   }
 };
+
+// Export functions for direct API access
+export {
+  feedAudio,
+  startRecognition,
+  stopRecognition,
+  getStatus,
+  setCurrentPage,
+  getDiagnostics
+};
