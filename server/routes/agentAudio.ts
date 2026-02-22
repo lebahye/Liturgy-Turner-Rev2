@@ -1,6 +1,5 @@
 import express from "express";
 import multer from "multer";
-import axios from "axios";
 
 export const agentAudioRouter = express.Router();
 
@@ -33,9 +32,10 @@ agentAudioRouter.post("/agent/feed-audio", upload.single("audio"), async (req, r
 
     // Call agent skill directly - it will handle the audio processing
     // The armenian-learner skill exports feedAudio() which can be called via tool
-    const response = await axios.post(
-      `${agentUrl}/api/call`,
-      {
+    const response = await fetch(`${agentUrl}/api/call`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
         agent: "agent:liturgy:main",
         tool: "feed_audio_chunk",
         args: {
@@ -43,16 +43,19 @@ agentAudioRouter.post("/agent/feed-audio", upload.single("audio"), async (req, r
           format: req.file?.mimetype || 'audio/webm',
           sampleRate: 16000
         }
-      },
-      { 
-        timeout: 10000,
-        headers: { 'Content-Type': 'application/json' }
-      }
-    );
+      }),
+      signal: AbortSignal.timeout(10000)
+    });
+
+    if (!response.ok) {
+      throw new Error(`Agent call failed: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
 
     return res.json({
       success: true,
-      result: response.data
+      result: data
     });
     
   } catch (err: any) {
@@ -77,26 +80,30 @@ agentAudioRouter.post("/agent/start-recognition", async (req, res) => {
     
     console.log(`[agentAudio] Starting recognition: pdfId=${pdfId}, page=${startPage}`);
 
-    const response = await axios.post(
-      `${agentUrl}/api/call`,
-      {
+    const response = await fetch(`${agentUrl}/api/call`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
         agent: "agent:liturgy:main",
         tool: "start_armenian_recognition",
         args: {
           pdfId: pdfId || null,
           startPage: startPage || 1
         }
-      },
-      { 
-        timeout: 10000,
-        headers: { 'Content-Type': 'application/json' }
-      }
-    );
+      }),
+      signal: AbortSignal.timeout(10000)
+    });
+
+    if (!response.ok) {
+      throw new Error(`Agent call failed: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
 
     return res.json({
       success: true,
       status: "recognition-started",
-      result: response.data
+      result: data
     });
     
   } catch (err: any) {
@@ -117,23 +124,27 @@ agentAudioRouter.post("/agent/stop-recognition", async (req, res) => {
     
     console.log(`[agentAudio] Stopping recognition`);
 
-    const response = await axios.post(
-      `${agentUrl}/api/call`,
-      {
+    const response = await fetch(`${agentUrl}/api/call`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
         agent: "agent:liturgy:main",
         tool: "stop_armenian",
         args: {}
-      },
-      { 
-        timeout: 5000,
-        headers: { 'Content-Type': 'application/json' }
-      }
-    );
+      }),
+      signal: AbortSignal.timeout(5000)
+    });
+
+    if (!response.ok) {
+      throw new Error(`Agent call failed: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
 
     return res.json({
       success: true,
       status: "recognition-stopped",
-      result: response.data
+      result: data
     });
     
   } catch (err: any) {
@@ -151,22 +162,26 @@ agentAudioRouter.get("/agent/status", async (req, res) => {
   try {
     const agentUrl = process.env.CLAWDBOT_GATEWAY_URL || "http://agent:29789";
 
-    const response = await axios.post(
-      `${agentUrl}/api/call`,
-      {
+    const response = await fetch(`${agentUrl}/api/call`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
         agent: "agent:liturgy:main",
         tool: "get_armenian_status",
         args: {}
-      },
-      { 
-        timeout: 5000,
-        headers: { 'Content-Type': 'application/json' }
-      }
-    );
+      }),
+      signal: AbortSignal.timeout(5000)
+    });
+
+    if (!response.ok) {
+      throw new Error(`Agent call failed: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
 
     return res.json({
       success: true,
-      status: response.data
+      status: data
     });
     
   } catch (err: any) {
