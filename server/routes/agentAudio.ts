@@ -11,7 +11,8 @@ const upload = multer({ limits: { fileSize: 20 * 1024 * 1024 } });
  */
 agentAudioRouter.post("/agent/feed-audio", upload.single("audio"), async (req, res) => {
   try {
-    const agentUrl = process.env.CLAWDBOT_GATEWAY_URL || "http://agent:29789";
+    // Use direct audio API (port 29788) instead of LLM gateway (29789)
+    const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://agent:29788";
     
     // Accept audio from multipart upload or JSON base64
     let audioBuffer: Buffer | null = null;
@@ -28,21 +29,16 @@ agentAudioRouter.post("/agent/feed-audio", upload.single("audio"), async (req, r
       return res.status(400).json({ error: "audio required (file or audioBase64)" });
     }
 
-    console.log(`[agentAudio] Forwarding ${audioBuffer.length} bytes to agent`);
+    console.log(`[agentAudio] Forwarding ${audioBuffer.length} bytes to agent audio API`);
 
-    // Call agent skill directly - it will handle the audio processing
-    // The armenian-learner skill exports feedAudio() which can be called via tool
-    const response = await fetch(`${agentUrl}/api/call`, {
+    // Call agent's audio API directly (bypasses LLM gateway)
+    const response = await fetch(`${audioApiUrl}/feed-audio`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        agent: "agent:liturgy:main",
-        tool: "feed_audio_chunk",
-        args: {
-          audioData: audioBuffer.toString('base64'),
-          format: req.file?.mimetype || 'audio/webm',
-          sampleRate: 16000
-        }
+        audioData: audioBuffer.toString('base64'),
+        format: req.file?.mimetype || 'audio/webm',
+        sampleRate: 16000
       }),
       signal: AbortSignal.timeout(10000)
     });
@@ -75,21 +71,17 @@ agentAudioRouter.post("/agent/feed-audio", upload.single("audio"), async (req, r
  */
 agentAudioRouter.post("/agent/start-recognition", async (req, res) => {
   try {
-    const agentUrl = process.env.CLAWDBOT_GATEWAY_URL || "http://agent:29789";
+    const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://agent:29788";
     const { pdfId, startPage } = req.body;
     
     console.log(`[agentAudio] Starting recognition: pdfId=${pdfId}, page=${startPage}`);
 
-    const response = await fetch(`${agentUrl}/api/call`, {
+    const response = await fetch(`${audioApiUrl}/start-recognition`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        agent: "agent:liturgy:main",
-        tool: "start_armenian_recognition",
-        args: {
-          pdfId: pdfId || null,
-          startPage: startPage || 1
-        }
+        pdfId: pdfId || null,
+        startPage: startPage || 1
       }),
       signal: AbortSignal.timeout(10000)
     });
@@ -120,18 +112,13 @@ agentAudioRouter.post("/agent/start-recognition", async (req, res) => {
  */
 agentAudioRouter.post("/agent/stop-recognition", async (req, res) => {
   try {
-    const agentUrl = process.env.CLAWDBOT_GATEWAY_URL || "http://agent:29789";
+    const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://agent:29788";
     
     console.log(`[agentAudio] Stopping recognition`);
 
-    const response = await fetch(`${agentUrl}/api/call`, {
+    const response = await fetch(`${audioApiUrl}/stop-recognition`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        agent: "agent:liturgy:main",
-        tool: "stop_armenian",
-        args: {}
-      }),
       signal: AbortSignal.timeout(5000)
     });
 
@@ -160,16 +147,10 @@ agentAudioRouter.post("/agent/stop-recognition", async (req, res) => {
  */
 agentAudioRouter.get("/agent/status", async (req, res) => {
   try {
-    const agentUrl = process.env.CLAWDBOT_GATEWAY_URL || "http://agent:29789";
+    const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://agent:29788";
 
-    const response = await fetch(`${agentUrl}/api/call`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        agent: "agent:liturgy:main",
-        tool: "get_armenian_status",
-        args: {}
-      }),
+    const response = await fetch(`${audioApiUrl}/status`, {
+      method: 'GET',
       signal: AbortSignal.timeout(5000)
     });
 

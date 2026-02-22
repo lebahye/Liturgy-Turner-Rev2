@@ -54,6 +54,7 @@ services:
     container_name: liturgy-agent
     ports:
       - "29789:29789"
+      - "29788:29788"
     environment:
       CLAWDBOT_STATE_DIR: /app/agent/.clawdbot-state
       CLAWDBOT_CONFIG_PATH: /app/agent/clawdbot.json5

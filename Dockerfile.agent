@@ -24,12 +24,15 @@ RUN npm init -y && npm install better-sqlite3
 ENV CLAWDBOT_STATE_DIR=/app/agent/.clawdbot-state
 ENV CLAWDBOT_CONFIG_PATH=/app/agent/clawdbot.json5
 
-# Expose Clawdbot gateway port
-EXPOSE 29789
+# Expose Clawdbot gateway port and audio API port
+EXPOSE 29789 29788
+
+# Make start script executable
+RUN chmod +x /app/agent/start-agent.sh
 
 # Health check (check if gateway is running)
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
     CMD curl -f http://localhost:29789/status || exit 1
 
-# Start gateway with bind to LAN (all interfaces)
-CMD ["openclaw", "gateway", "--bind", "lan"]
+# Start both audio API and gateway
+CMD ["/app/agent/start-agent.sh"]
