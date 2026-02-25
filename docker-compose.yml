@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # PostgreSQL Database
   postgres:
@@ -27,13 +25,19 @@ services:
       dockerfile: Dockerfile
     container_name: liturgy-app
     ports:
-      - "${PORT:-5000}:5000"
+      - "${APP_HOST_PORT:-5000}:5000"
     environment:
       NODE_ENV: production
       DATABASE_URL: postgresql://liturgy_user:${POSTGRES_PASSWORD:-changeme}@postgres:5432/liturgy_turner
       PORT: 5000
       HOST: 0.0.0.0
-      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:5000}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:${APP_HOST_PORT:-5000}}
+      TRACKER_MODE: ${TRACKER_MODE:-prod}
+      TRACKER_LOOKAHEAD: ${TRACKER_LOOKAHEAD:-}
+      TRACKER_CONFIDENCE: ${TRACKER_CONFIDENCE:-}
+      TRACKER_COOLDOWN_MS: ${TRACKER_COOLDOWN_MS:-}
+      TRACKER_EVALUATE_ALWAYS: ${TRACKER_EVALUATE_ALWAYS:-}
+      TRACKER_ALLOW_JUMPS: ${TRACKER_ALLOW_JUMPS:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       GEMINI_API_KEY: ${GEMINI_API_KEY:-}
       # Connect to agent gateway
@@ -41,6 +45,7 @@ services:
     volumes:
       - ./uploads:/app/uploads
       - ./data:/app/data
+      - ./training-data:/app/training-data:ro
     depends_on:
       postgres:
         condition: service_healthy
