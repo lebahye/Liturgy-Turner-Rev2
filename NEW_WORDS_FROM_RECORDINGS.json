@@ -1,0 +1,1385 @@
+{
+  "generatedAt": "2026-02-26T01:21:35.743Z",
+  "method": "timestamp-aligned text inference from recordings",
+  "existingDictionarySize": 213,
+  "recordings": [
+    {
+      "name": "youtube-liturgy.wav",
+      "durationSec": 4980,
+      "pagesCovered": 180,
+      "missingWordCount": 1007,
+      "topMissingWords": [
+        {
+          "word": "յաւիտենից",
+          "count": 20
+        },
+        {
+          "word": "հոգւոյն",
+          "count": 12
+        },
+        {
+          "word": "որդւոյ",
+          "count": 11
+        },
+        {
+          "word": "թողութիւն",
+          "count": 11
+        },
+        {
+          "word": "ծունկի",
+          "count": 11
+        },
+        {
+          "word": "գալ",
+          "count": 11
+        },
+        {
+          "word": "մար",
+          "count": 9
+        },
+        {
+          "word": "մէջ",
+          "count": 8
+        },
+        {
+          "word": "ըզքեզ",
+          "count": 8
+        },
+        {
+          "word": "ինծի",
+          "count": 8
+        },
+        {
+          "word": "յերկինս",
+          "count": 7
+        },
+        {
+          "word": "նակալ",
+          "count": 7
+        },
+        {
+          "word": "ղայ",
+          "count": 7
+        },
+        {
+          "word": "ղաց",
+          "count": 7
+        },
+        {
+          "word": "քրիստոսի",
+          "count": 7
+        },
+        {
+          "word": "իշխանութիւն",
+          "count": 7
+        },
+        {
+          "word": "պատիւ",
+          "count": 7
+        },
+        {
+          "word": "ձեր",
+          "count": 6
+        },
+        {
+          "word": "օրհնեցէք",
+          "count": 6
+        },
+        {
+          "word": "յիսուսի",
+          "count": 6
+        },
+        {
+          "word": "վասըն",
+          "count": 6
+        },
+        {
+          "word": "հաւատամք",
+          "count": 6
+        },
+        {
+          "word": "յիշատակ",
+          "count": 6
+        },
+        {
+          "word": "պատարագս",
+          "count": 6
+        },
+        {
+          "word": "բոլոր",
+          "count": 6
+        },
+        {
+          "word": "յաւիտեան",
+          "count": 5
+        },
+        {
+          "word": "նչեւ",
+          "count": 5
+        },
+        {
+          "word": "աշխարհի",
+          "count": 5
+        },
+        {
+          "word": "քաւութիւն",
+          "count": 5
+        },
+        {
+          "word": "իսկ",
+          "count": 5
+        },
+        {
+          "word": "աստուածային",
+          "count": 5
+        },
+        {
+          "word": "սըրբոց",
+          "count": 5
+        },
+        {
+          "word": "միասին",
+          "count": 5
+        },
+        {
+          "word": "իւր",
+          "count": 4
+        },
+        {
+          "word": "յաստուծոյ",
+          "count": 4
+        },
+        {
+          "word": "դու",
+          "count": 4
+        },
+        {
+          "word": "սեղանոյս",
+          "count": 4
+        },
+        {
+          "word": "եկեղեցւոյ",
+          "count": 4
+        },
+        {
+          "word": "եղիցուք",
+          "count": 4
+        },
+        {
+          "word": "ճշմարիտ",
+          "count": 4
+        },
+        {
+          "word": "ինչ",
+          "count": 4
+        },
+        {
+          "word": "յորժամ",
+          "count": 4
+        },
+        {
+          "word": "քով",
+          "count": 4
+        },
+        {
+          "word": "կացցուք",
+          "count": 4
+        },
+        {
+          "word": "արքայութիւն",
+          "count": 4
+        },
+        {
+          "word": "նստւլ",
+          "count": 4
+        },
+        {
+          "word": "նընջեցելոց",
+          "count": 4
+        },
+        {
+          "word": "շնորհէ",
+          "count": 4
+        },
+        {
+          "word": "քեզի",
+          "count": 4
+        },
+        {
+          "word": "կեցուսցէ",
+          "count": 3
+        },
+        {
+          "word": "շնորհիւ",
+          "count": 3
+        },
+        {
+          "word": "զքեզ",
+          "count": 3
+        },
+        {
+          "word": "խոստովանիմ",
+          "count": 3
+        },
+        {
+          "word": "զոր",
+          "count": 3
+        },
+        {
+          "word": "խոնարհեալ",
+          "count": 3
+        },
+        {
+          "word": "ողորմութեան",
+          "count": 3
+        },
+        {
+          "word": "պայծառացեալ",
+          "count": 3
+        },
+        {
+          "word": "երկիրպագանեմք",
+          "count": 3
+        },
+        {
+          "word": "օրհնեմք",
+          "count": 3
+        },
+        {
+          "word": "սեղանոյ",
+          "count": 3
+        },
+        {
+          "word": "հոգեւորս",
+          "count": 3
+        },
+        {
+          "word": "երկնային",
+          "count": 3
+        },
+        {
+          "word": "որդի",
+          "count": 3
+        },
+        {
+          "word": "որոյ",
+          "count": 3
+        },
+        {
+          "word": "ռելոց",
+          "count": 3
+        },
+        {
+          "word": "յովհաննու",
+          "count": 3
+        },
+        {
+          "word": "երկրի",
+          "count": 3
+        },
+        {
+          "word": "վերայ",
+          "count": 3
+        },
+        {
+          "word": "իջեալ",
+          "count": 3
+        },
+        {
+          "word": "յերկնից",
+          "count": 3
+        },
+        {
+          "word": "նովին",
+          "count": 3
+        },
+        {
+          "word": "դատել",
+          "count": 3
+        },
+        {
+          "word": "հոգին",
+          "count": 3
+        },
+        {
+          "word": "այն",
+          "count": 3
+        },
+        {
+          "word": "թէ՝",
+          "count": 3
+        },
+        {
+          "word": "հաւատացելոց",
+          "count": 3
+        },
+        {
+          "word": "զօրութեանց",
+          "count": 3
+        },
+        {
+          "word": "որում",
+          "count": 3
+        },
+        {
+          "word": "բարձունս",
+          "count": 3
+        },
+        {
+          "word": "բաշխի",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "youtube-liturgy-2.wav",
+      "durationSec": 4080,
+      "pagesCovered": 172,
+      "missingWordCount": 932,
+      "topMissingWords": [
+        {
+          "word": "յաւիտենից",
+          "count": 19
+        },
+        {
+          "word": "հոգւոյն",
+          "count": 12
+        },
+        {
+          "word": "որդւոյ",
+          "count": 11
+        },
+        {
+          "word": "թողութիւն",
+          "count": 11
+        },
+        {
+          "word": "ծունկի",
+          "count": 11
+        },
+        {
+          "word": "գալ",
+          "count": 11
+        },
+        {
+          "word": "մար",
+          "count": 9
+        },
+        {
+          "word": "մէջ",
+          "count": 8
+        },
+        {
+          "word": "ըզքեզ",
+          "count": 8
+        },
+        {
+          "word": "ղայ",
+          "count": 7
+        },
+        {
+          "word": "քրիստոսի",
+          "count": 7
+        },
+        {
+          "word": "նակալ",
+          "count": 6
+        },
+        {
+          "word": "ձեր",
+          "count": 6
+        },
+        {
+          "word": "օրհնեցէք",
+          "count": 6
+        },
+        {
+          "word": "ղաց",
+          "count": 6
+        },
+        {
+          "word": "յիսուսի",
+          "count": 6
+        },
+        {
+          "word": "իշխանութիւն",
+          "count": 6
+        },
+        {
+          "word": "պատիւ",
+          "count": 6
+        },
+        {
+          "word": "վասըն",
+          "count": 6
+        },
+        {
+          "word": "հաւատամք",
+          "count": 6
+        },
+        {
+          "word": "յիշատակ",
+          "count": 6
+        },
+        {
+          "word": "պատարագս",
+          "count": 6
+        },
+        {
+          "word": "բոլոր",
+          "count": 6
+        },
+        {
+          "word": "յերկինս",
+          "count": 5
+        },
+        {
+          "word": "յաւիտեան",
+          "count": 5
+        },
+        {
+          "word": "նչեւ",
+          "count": 5
+        },
+        {
+          "word": "քաւութիւն",
+          "count": 5
+        },
+        {
+          "word": "աստուածային",
+          "count": 5
+        },
+        {
+          "word": "սըրբոց",
+          "count": 5
+        },
+        {
+          "word": "միասին",
+          "count": 5
+        },
+        {
+          "word": "իւր",
+          "count": 4
+        },
+        {
+          "word": "յաստուծոյ",
+          "count": 4
+        },
+        {
+          "word": "սեղանոյս",
+          "count": 4
+        },
+        {
+          "word": "աշխարհի",
+          "count": 4
+        },
+        {
+          "word": "եկեղեցւոյ",
+          "count": 4
+        },
+        {
+          "word": "եղիցուք",
+          "count": 4
+        },
+        {
+          "word": "ճշմարիտ",
+          "count": 4
+        },
+        {
+          "word": "ինչ",
+          "count": 4
+        },
+        {
+          "word": "իսկ",
+          "count": 4
+        },
+        {
+          "word": "յորժամ",
+          "count": 4
+        },
+        {
+          "word": "քով",
+          "count": 4
+        },
+        {
+          "word": "կացցուք",
+          "count": 4
+        },
+        {
+          "word": "նստւլ",
+          "count": 4
+        },
+        {
+          "word": "շնորհէ",
+          "count": 4
+        },
+        {
+          "word": "ինծի",
+          "count": 4
+        },
+        {
+          "word": "քեզի",
+          "count": 4
+        },
+        {
+          "word": "զքեզ",
+          "count": 3
+        },
+        {
+          "word": "խոստովանիմ",
+          "count": 3
+        },
+        {
+          "word": "զոր",
+          "count": 3
+        },
+        {
+          "word": "խոնարհեալ",
+          "count": 3
+        },
+        {
+          "word": "երկիրպագանեմք",
+          "count": 3
+        },
+        {
+          "word": "օրհնեմք",
+          "count": 3
+        },
+        {
+          "word": "սեղանոյ",
+          "count": 3
+        },
+        {
+          "word": "դու",
+          "count": 3
+        },
+        {
+          "word": "հոգեւորս",
+          "count": 3
+        },
+        {
+          "word": "երկնային",
+          "count": 3
+        },
+        {
+          "word": "որոյ",
+          "count": 3
+        },
+        {
+          "word": "յովհաննու",
+          "count": 3
+        },
+        {
+          "word": "երկրի",
+          "count": 3
+        },
+        {
+          "word": "վերայ",
+          "count": 3
+        },
+        {
+          "word": "իջեալ",
+          "count": 3
+        },
+        {
+          "word": "յերկնից",
+          "count": 3
+        },
+        {
+          "word": "դատել",
+          "count": 3
+        },
+        {
+          "word": "հոգին",
+          "count": 3
+        },
+        {
+          "word": "այն",
+          "count": 3
+        },
+        {
+          "word": "թէ՝",
+          "count": 3
+        },
+        {
+          "word": "հաւատացելոց",
+          "count": 3
+        },
+        {
+          "word": "զօրութեանց",
+          "count": 3
+        },
+        {
+          "word": "որում",
+          "count": 3
+        },
+        {
+          "word": "բարձունս",
+          "count": 3
+        },
+        {
+          "word": "բաշխի",
+          "count": 3
+        },
+        {
+          "word": "հեղմամբ",
+          "count": 3
+        },
+        {
+          "word": "արեան",
+          "count": 3
+        },
+        {
+          "word": "պատարագիս",
+          "count": 3
+        },
+        {
+          "word": "արքայութիւն",
+          "count": 3
+        },
+        {
+          "word": "նընջեցելոց",
+          "count": 3
+        },
+        {
+          "word": "ըզնա",
+          "count": 3
+        },
+        {
+          "word": "որդիին",
+          "count": 3
+        },
+        {
+          "word": "առջեւ",
+          "count": 3
+        },
+        {
+          "word": "վա՜յ",
+          "count": 3
+        }
+      ]
+    }
+  ],
+  "overlapTopMissingWords": [
+    {
+      "word": "յաւիտենից",
+      "total": 39,
+      "rec1Count": 20,
+      "rec2Count": 19
+    },
+    {
+      "word": "հոգւոյն",
+      "total": 24,
+      "rec1Count": 12,
+      "rec2Count": 12
+    },
+    {
+      "word": "որդւոյ",
+      "total": 22,
+      "rec1Count": 11,
+      "rec2Count": 11
+    },
+    {
+      "word": "թողութիւն",
+      "total": 22,
+      "rec1Count": 11,
+      "rec2Count": 11
+    },
+    {
+      "word": "ծունկի",
+      "total": 22,
+      "rec1Count": 11,
+      "rec2Count": 11
+    },
+    {
+      "word": "գալ",
+      "total": 22,
+      "rec1Count": 11,
+      "rec2Count": 11
+    },
+    {
+      "word": "մար",
+      "total": 18,
+      "rec1Count": 9,
+      "rec2Count": 9
+    },
+    {
+      "word": "մէջ",
+      "total": 16,
+      "rec1Count": 8,
+      "rec2Count": 8
+    },
+    {
+      "word": "ըզքեզ",
+      "total": 16,
+      "rec1Count": 8,
+      "rec2Count": 8
+    },
+    {
+      "word": "ղայ",
+      "total": 14,
+      "rec1Count": 7,
+      "rec2Count": 7
+    },
+    {
+      "word": "քրիստոսի",
+      "total": 14,
+      "rec1Count": 7,
+      "rec2Count": 7
+    },
+    {
+      "word": "նակալ",
+      "total": 13,
+      "rec1Count": 7,
+      "rec2Count": 6
+    },
+    {
+      "word": "ղաց",
+      "total": 13,
+      "rec1Count": 7,
+      "rec2Count": 6
+    },
+    {
+      "word": "իշխանութիւն",
+      "total": 13,
+      "rec1Count": 7,
+      "rec2Count": 6
+    },
+    {
+      "word": "պատիւ",
+      "total": 13,
+      "rec1Count": 7,
+      "rec2Count": 6
+    },
+    {
+      "word": "ինծի",
+      "total": 12,
+      "rec1Count": 8,
+      "rec2Count": 4
+    },
+    {
+      "word": "յերկինս",
+      "total": 12,
+      "rec1Count": 7,
+      "rec2Count": 5
+    },
+    {
+      "word": "ձեր",
+      "total": 12,
+      "rec1Count": 6,
+      "rec2Count": 6
+    },
+    {
+      "word": "օրհնեցէք",
+      "total": 12,
+      "rec1Count": 6,
+      "rec2Count": 6
+    },
+    {
+      "word": "յիսուսի",
+      "total": 12,
+      "rec1Count": 6,
+      "rec2Count": 6
+    },
+    {
+      "word": "վասըն",
+      "total": 12,
+      "rec1Count": 6,
+      "rec2Count": 6
+    },
+    {
+      "word": "հաւատամք",
+      "total": 12,
+      "rec1Count": 6,
+      "rec2Count": 6
+    },
+    {
+      "word": "յիշատակ",
+      "total": 12,
+      "rec1Count": 6,
+      "rec2Count": 6
+    },
+    {
+      "word": "պատարագս",
+      "total": 12,
+      "rec1Count": 6,
+      "rec2Count": 6
+    },
+    {
+      "word": "բոլոր",
+      "total": 12,
+      "rec1Count": 6,
+      "rec2Count": 6
+    },
+    {
+      "word": "յաւիտեան",
+      "total": 10,
+      "rec1Count": 5,
+      "rec2Count": 5
+    },
+    {
+      "word": "նչեւ",
+      "total": 10,
+      "rec1Count": 5,
+      "rec2Count": 5
+    },
+    {
+      "word": "քաւութիւն",
+      "total": 10,
+      "rec1Count": 5,
+      "rec2Count": 5
+    },
+    {
+      "word": "աստուածային",
+      "total": 10,
+      "rec1Count": 5,
+      "rec2Count": 5
+    },
+    {
+      "word": "սըրբոց",
+      "total": 10,
+      "rec1Count": 5,
+      "rec2Count": 5
+    },
+    {
+      "word": "միասին",
+      "total": 10,
+      "rec1Count": 5,
+      "rec2Count": 5
+    },
+    {
+      "word": "աշխարհի",
+      "total": 9,
+      "rec1Count": 5,
+      "rec2Count": 4
+    },
+    {
+      "word": "իսկ",
+      "total": 9,
+      "rec1Count": 5,
+      "rec2Count": 4
+    },
+    {
+      "word": "իւր",
+      "total": 8,
+      "rec1Count": 4,
+      "rec2Count": 4
+    },
+    {
+      "word": "յաստուծոյ",
+      "total": 8,
+      "rec1Count": 4,
+      "rec2Count": 4
+    },
+    {
+      "word": "սեղանոյս",
+      "total": 8,
+      "rec1Count": 4,
+      "rec2Count": 4
+    },
+    {
+      "word": "եկեղեցւոյ",
+      "total": 8,
+      "rec1Count": 4,
+      "rec2Count": 4
+    },
+    {
+      "word": "եղիցուք",
+      "total": 8,
+      "rec1Count": 4,
+      "rec2Count": 4
+    },
+    {
+      "word": "ճշմարիտ",
+      "total": 8,
+      "rec1Count": 4,
+      "rec2Count": 4
+    },
+    {
+      "word": "ինչ",
+      "total": 8,
+      "rec1Count": 4,
+      "rec2Count": 4
+    },
+    {
+      "word": "յորժամ",
+      "total": 8,
+      "rec1Count": 4,
+      "rec2Count": 4
+    },
+    {
+      "word": "քով",
+      "total": 8,
+      "rec1Count": 4,
+      "rec2Count": 4
+    },
+    {
+      "word": "կացցուք",
+      "total": 8,
+      "rec1Count": 4,
+      "rec2Count": 4
+    },
+    {
+      "word": "նստւլ",
+      "total": 8,
+      "rec1Count": 4,
+      "rec2Count": 4
+    },
+    {
+      "word": "շնորհէ",
+      "total": 8,
+      "rec1Count": 4,
+      "rec2Count": 4
+    },
+    {
+      "word": "քեզի",
+      "total": 8,
+      "rec1Count": 4,
+      "rec2Count": 4
+    },
+    {
+      "word": "դու",
+      "total": 7,
+      "rec1Count": 4,
+      "rec2Count": 3
+    },
+    {
+      "word": "արքայութիւն",
+      "total": 7,
+      "rec1Count": 4,
+      "rec2Count": 3
+    },
+    {
+      "word": "նընջեցելոց",
+      "total": 7,
+      "rec1Count": 4,
+      "rec2Count": 3
+    },
+    {
+      "word": "զքեզ",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "խոստովանիմ",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "զոր",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "խոնարհեալ",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "երկիրպագանեմք",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "օրհնեմք",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "սեղանոյ",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "հոգեւորս",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "երկնային",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "որոյ",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "յովհաննու",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "երկրի",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "վերայ",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "իջեալ",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "յերկնից",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "դատել",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "հոգին",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "այն",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "թէ՝",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "հաւատացելոց",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "զօրութեանց",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "որում",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "բարձունս",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "բաշխի",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "հեղմամբ",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "արեան",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "պատարագիս",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "ըզնա",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "որդիին",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "առջեւ",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "վա՜յ",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "յայսըմհետէ",
+      "total": 6,
+      "rec1Count": 3,
+      "rec2Count": 3
+    },
+    {
+      "word": "կեցուսցէ",
+      "total": 5,
+      "rec1Count": 3,
+      "rec2Count": 2
+    },
+    {
+      "word": "շնորհիւ",
+      "total": 5,
+      "rec1Count": 3,
+      "rec2Count": 2
+    },
+    {
+      "word": "պայծառացեալ",
+      "total": 5,
+      "rec1Count": 3,
+      "rec2Count": 2
+    },
+    {
+      "word": "որդի",
+      "total": 5,
+      "rec1Count": 3,
+      "rec2Count": 2
+    },
+    {
+      "word": "ռելոց",
+      "total": 5,
+      "rec1Count": 3,
+      "rec2Count": 2
+    },
+    {
+      "word": "նովին",
+      "total": 5,
+      "rec1Count": 3,
+      "rec2Count": 2
+    },
+    {
+      "word": "եղիցին",
+      "total": 5,
+      "rec1Count": 3,
+      "rec2Count": 2
+    },
+    {
+      "word": "համար",
+      "total": 5,
+      "rec1Count": 3,
+      "rec2Count": 2
+    },
+    {
+      "word": "ողորմութեան",
+      "total": 4,
+      "rec1Count": 3,
+      "rec2Count": 1
+    },
+    {
+      "word": "փառօք",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "զաղաչանս",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "բարեխօս",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "աւուրս",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "լուր",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "գոհութեամբ",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "գործով",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "աղաչեմ",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "զձեզ",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "մարդասէրն",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "շնորհօք",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "երկիր",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "դրունս",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "յաւիտեանըս",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "աստուածընկալ",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "նշանացս",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "զսուրբ",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "զհրաշալի",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "զյաղթող",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "զյարութիւնդ",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "փառաւորեմք",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "ուրախ",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "առնէ",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "առաքեա",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "իմոց",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "զերգս",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "մարդկան",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "պաշտօն",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "ճաշու",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    },
+    {
+      "word": "միածին",
+      "total": 4,
+      "rec1Count": 2,
+      "rec2Count": 2
+    }
+  ]
+}

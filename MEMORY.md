@@ -41,3 +41,12 @@ Liturgical Armenian requires specialized acoustic matching, not general AI trans
 3. `environment-doctor`
 4. `project-executor`
 5. `memory-curator`
+
+
+## 2026-02-25 System Review Findings
+- Core tracker API is healthy; agent path remains optional but currently causes live-path fragility when unhealthy.
+- Windows Docker host proxy can return empty responses while container-internal API is healthy.
+- Critical UI/API contract mismatch found: Home upload uses `/api/upload-pdf` but server exposes `/api/upload/pdf`; response shape mismatch too.
+- Added architecture visualization doc and systematic review report.
+- Added offline script `discover-new-words-from-recordings.mjs` to infer missing Armenian words from two recordings using timestamp-aligned page text.
+- Generated `NEW_WORDS_FROM_RECORDINGS.{md,json}` for dictionary expansion priorities.
