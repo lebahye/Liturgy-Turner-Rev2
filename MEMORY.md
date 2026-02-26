@@ -50,3 +50,6 @@ Liturgical Armenian requires specialized acoustic matching, not general AI trans
 - Added architecture visualization doc and systematic review report.
 - Added offline script `discover-new-words-from-recordings.mjs` to infer missing Armenian words from two recordings using timestamp-aligned page text.
 - Generated `NEW_WORDS_FROM_RECORDINGS.{md,json}` for dictionary expansion priorities.
+
+- Added Live-mode agent fallback path: if `/api/agent/feed-audio` fails, client decodes chunk and calls local `/api/liturgy/process` so service can continue.
+- Added release gate script `verify-release-gate.ps1` for end-to-end startup checks including UI root, liturgy APIs, and control state.

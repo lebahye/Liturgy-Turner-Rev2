@@ -108,7 +108,8 @@ export default function Live() {
   const featureBufferRef = useRef<{ features: AudioFeatures; timestamp: number }[]>([]);
   const [fingerprintScore, setFingerprintScore] = useState<number>(0);
   const [matchingMode, setMatchingMode] = useState<"fingerprint">("fingerprint");
-  const [processingMode, setProcessingMode] = useState<"local" | "agent">("local");
+  // Always use agent mode (custom Armenian pattern matcher - 1,366 patterns)
+  const processingMode = "agent" as const;
   const matchCooldownRef = useRef<number>(0);
   
   // Coordinator for combining fingerprint and n-gram matching
@@ -462,19 +463,54 @@ export default function Live() {
     return contextTexts.join(" ");
   }
 
+  async function blobToMonoFloat32(blob: Blob): Promise<Float32Array> {
+    const ab = await blob.arrayBuffer();
+    const ctx = new AudioContext();
+    try {
+      const decoded = await ctx.decodeAudioData(ab.slice(0));
+      if (decoded.numberOfChannels === 1) {
+        return decoded.getChannelData(0);
+      }
+      const left = decoded.getChannelData(0);
+      const right = decoded.getChannelData(1);
+      const mono = new Float32Array(decoded.length);
+      for (let i = 0; i < decoded.length; i++) {
+        mono[i] = (left[i] + right[i]) / 2;
+      }
+      return mono;
+    } finally {
+      await ctx.close().catch(() => {});
+    }
+  }
+
+  async function postToLiturgyFallback(blob: Blob) {
+    const mono = await blobToMonoFloat32(blob);
+    const samples = Array.from(mono);
+
+    const res = await fetch("/api/liturgy/process", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ audioData: samples, timestamp: Date.now() }),
+    });
+    const data = await safeJson(res);
+    if (!res.ok) {
+      throw new Error(data?.error || data?.message || "Local liturgy processing failed");
+    }
+
+    if (data?.changed && typeof data?.page === 'number') {
+      store.setPage(data.page);
+      currentPageRef.current = data.page;
+      publishPageToBus(data.page, data.reason || 'liturgy_fallback', data.confidence || 0.6);
+      console.log(`[Live] Fallback page advance -> ${data.page}`);
+    }
+  }
+
   async function postToTranscribe(blob: Blob) {
     const form = new FormData();
     form.append("audio", blob, "chunk.webm");
-    
-    // Send page context to guide Whisper recognition
-    const context = getPageContext();
-    if (context) {
-      form.append("context", context);
-    }
 
-    // Only Agent mode uses audio API (custom pattern matching)
-    // Local mode uses fingerprint-only (no transcription)
-    if (processingMode === "agent") {
+    // Primary path: custom Armenian agent matcher
+    try {
       const res = await fetch("/api/agent/feed-audio", {
         method: "POST",
         body: form,
@@ -487,19 +523,12 @@ export default function Live() {
 
       const text = data?.text || data?.transcript || "";
       return String(text);
+    } catch (err) {
+      // Fallback path: keep live mode working even when agent is down
+      console.warn('[Live] Agent feed failed, using local liturgy fallback:', (err as any)?.message || err);
+      await postToLiturgyFallback(blob);
+      return "";
     }
-
-    // Local mode: no transcription, just return empty
-    // (fingerprint matching happens separately)
-    return "";
-
-    const data = await safeJson(res);
-    if (!res.ok) {
-      throw new Error(data?.error || data?.message || "Transcribe failed");
-    }
-
-    const text = data?.text || data?.transcript || "";
-    return String(text);
   }
 
   // Detect if text is a hallucination (same word/phrase repeated many times)
@@ -672,6 +701,11 @@ export default function Live() {
       audioCtxRef.current.close().catch(() => {});
       audioCtxRef.current = null;
     }
+    
+    // Stop agent recognition (custom Armenian pattern matcher)
+    fetch("/api/agent/stop-recognition", { method: "POST" })
+      .then(() => console.log("[Live] Agent recognition stopped"))
+      .catch((err) => console.warn("[Live] Failed to stop agent:", err));
 
     setStatus("stopped");
   }
@@ -889,6 +923,11 @@ export default function Live() {
           
           setFingerprintScore(bestNextScore);
           
+          // Debug: log the actual scores being compared
+          if (bestNextScore > 40 || bestCurrentScore > 40) {
+            console.log(`[Fingerprint] Scores - Current page ${currentPage}: ${bestCurrentScore.toFixed(1)}%, Next page ${nextPage}: ${bestNextScore.toFixed(1)}%, Diff: ${(bestNextScore - bestCurrentScore).toFixed(1)}%`);
+          }
+          
           // Report to coordinator instead of turning pages directly
           const decision = coordinatorRef.current.reportFingerprintMatch(bestCurrentScore, bestNextScore);
           setCoordinatorDecision(decision);
@@ -953,6 +992,25 @@ export default function Live() {
 
     try {
       stopAll();
+      
+      // Start agent recognition session (custom Armenian pattern matcher - 1,366 patterns)
+      console.log("[Live] Starting agent recognition session...");
+      const agentRes = await fetch("/api/agent/start-recognition", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          pdfId: store.pdfId || null,
+          startPage: store.currentPage
+        })
+      });
+      
+      if (!agentRes.ok) {
+        const errData = await agentRes.json();
+        throw new Error(errData?.error || "Failed to start agent recognition");
+      }
+      
+      console.log("[Live] Agent recognition started");
+      
       if (audioSource === "mic") {
         await startMicRecorder();
       } else {
@@ -1040,35 +1098,6 @@ export default function Live() {
                       </div>
                     </div>
                   )}
-                </div>
-              )}
-            </div>
-
-            <div className="rounded-xl bg-white p-4 shadow">
-              <div className="mb-2 font-semibold">Processing Mode</div>
-              <div className="flex gap-2">
-                <button
-                  className={`rounded-lg px-3 py-2 text-sm ${
-                    processingMode === "local" ? "bg-blue-600 text-white" : "bg-gray-100"
-                  }`}
-                  onClick={() => setProcessingMode("local")}
-                  disabled={status === "running"}
-                >
-                  Local (Fingerprint Only)
-                </button>
-                <button
-                  className={`rounded-lg px-3 py-2 text-sm ${
-                    processingMode === "agent" ? "bg-blue-600 text-white" : "bg-gray-100"
-                  }`}
-                  onClick={() => setProcessingMode("agent")}
-                  disabled={status === "running"}
-                >
-                  Agent (1,366 patterns)
-                </button>
-              </div>
-              {processingMode === "agent" && (
-                <div className="mt-2 text-xs text-gray-600">
-                  Uses pre-trained Armenian pattern matcher from agent container
                 </div>
               )}
             </div>
