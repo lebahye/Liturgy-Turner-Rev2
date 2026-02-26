@@ -22,7 +22,7 @@ async function uploadPdf(file: File) {
   const form = new FormData();
   form.append("pdf", file); // IMPORTANT: must match backend field name
 
-  const res = await fetch("/api/upload-pdf", {
+  const res = await fetch("/api/upload/pdf", {
     method: "POST",
     body: form,
   });
@@ -39,12 +39,15 @@ async function uploadPdf(file: File) {
     throw new Error(msg);
   }
 
-  // expected shape: { ok: true, pdf: { pdfId, path, originalName, numPages? } }
-  if (!data?.ok || !data?.pdf?.path) {
+  // supported shapes:
+  // 1) { ok: true, pdf: { pdfId, path, originalName, numPages? } }
+  // 2) { success: true, file: { pdfId, path, originalName } }
+  const pdf = data?.pdf || data?.file;
+  if (!(data?.ok || data?.success) || !pdf?.path) {
     throw new Error("Upload succeeded but response shape was unexpected.");
   }
 
-  return data.pdf;
+  return pdf;
 }
 
 async function fetchPdfPages(pdfPath: string) {
