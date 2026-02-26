@@ -25,3 +25,19 @@
 **Read NO_WHISPER_POLICY.md first. This is non-negotiable.**
 
 Liturgical Armenian requires specialized acoustic matching, not general AI transcription.
+
+
+## 🎯 Planned Next Skills (Captured 2026-02-25)
+
+### Liturgy project follow-up skills (high priority)
+1. `liturgy-debugger` — one command: start → stream sample audio → report page progression + confidence stats
+2. `deploy-verify` — cross-environment checks (Windows dev + Docker prod) with pass/fail output
+3. `tracker-tuner` — sweep threshold/lookahead/cooldown and output recommended prod settings
+4. `agent-bootstrap-check` — validate gateway/auth/API key/profile so agent chat-assist is always ready
+
+### Global bot skills to develop (active roadmap)
+1. `incident-commander`
+2. `release-manager`
+3. `environment-doctor`
+4. `project-executor`
+5. `memory-curator`
