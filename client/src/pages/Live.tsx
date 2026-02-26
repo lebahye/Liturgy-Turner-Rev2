@@ -338,14 +338,14 @@ export default function Live() {
     return false;
   }
 
-  async function triggerExtraction(): Promise<string | null> {
+  async function triggerExtraction(pdfPath: string): Promise<string | null> {
     setDictionaryStatus("extracting");
     setDictionaryMessage("Extracting text from PDF...");
     try {
       const extractRes = await fetch("/api/extract-dictionary", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ pdfPath: store.pdfFile }),
+        body: JSON.stringify({ pdfPath }),
       });
       const extractData = await extractRes.json();
       if (extractRes.ok && extractData.ok && extractData.pdfId) {
@@ -365,7 +365,7 @@ export default function Live() {
     if (!store.pdfFile) return;
     setDictionaryStatus("extracting");
     setDictionaryMessage("Rebuilding dictionary...");
-    const pdfId = await triggerExtraction();
+    const pdfId = await triggerExtraction(store.pdfFile);
     if (pdfId) {
       await loadPagesFromSections(pdfId);
     }
@@ -377,23 +377,52 @@ export default function Live() {
         setErrorMsg("");
         setDictionaryStatus("checking");
         setDictionaryMessage("Checking for cached data...");
-        console.log("[Live] store.pdfFile =", store.pdfFile);
-        if (!store.pdfFile) {
-          console.log("[Live] No PDF file set");
-          setDictionaryStatus("error");
-          setDictionaryMessage("No PDF loaded");
-          return;
+
+        let effectivePdfPath = store.pdfFile || null;
+
+        // Recover from stale local state by checking control state first
+        if (!effectivePdfPath || !effectivePdfPath.startsWith('/uploads/')) {
+          try {
+            const stateRes = await fetch('/api/control/state');
+            const stateData = await stateRes.json();
+            const controlPdf = stateData?.state?.pdfPath;
+            if (typeof controlPdf === 'string' && controlPdf.startsWith('/uploads/')) {
+              effectivePdfPath = controlPdf;
+              useStore.getState().setPdfFromServer(controlPdf, stateData?.state?.pdfId ?? null);
+              setDictionaryMessage('Recovered PDF from control state');
+            }
+          } catch {}
         }
-        if (!store.pdfFile.startsWith("/uploads/")) {
-          console.log("[Live] PDF path doesn't start with /uploads/, skipping text extraction");
-          setDictionaryStatus("error");
-          setDictionaryMessage("Invalid PDF path");
+
+        // Last fallback: pick latest uploaded PDF
+        if (!effectivePdfPath || !effectivePdfPath.startsWith('/uploads/')) {
+          try {
+            const filesRes = await fetch('/api/files?type=pdf');
+            const filesData = await filesRes.json();
+            const files = Array.isArray(filesData?.files) ? filesData.files : [];
+            if (files.length > 0) {
+              const latest = files[0];
+              const path = latest.filePath || latest.path;
+              if (path) {
+                effectivePdfPath = path;
+                useStore.getState().setPdfFromServer(path, latest.pdfId ?? null);
+                await publishPdfToBus(path, latest.pdfId ?? null);
+                setDictionaryMessage('Recovered PDF from uploaded files');
+              }
+            }
+          } catch {}
+        }
+
+        console.log('[Live] effectivePdfPath =', effectivePdfPath);
+        if (!effectivePdfPath || !effectivePdfPath.startsWith('/uploads/')) {
+          setDictionaryStatus('error');
+          setDictionaryMessage('No valid PDF loaded. Upload/select a PDF on Dashboard.');
           return;
         }
 
         console.log("[Live] Checking for existing page sections...");
-        
-        const checkRes = await fetch(`/api/check-pdf-sections?path=${encodeURIComponent(store.pdfFile)}`);
+
+        const checkRes = await fetch(`/api/check-pdf-sections?path=${encodeURIComponent(effectivePdfPath)}`);
         const checkData = await checkRes.json();
         
         if (checkRes.ok && checkData.ok && checkData.pdfId && checkData.pageCount > 0) {
@@ -406,14 +435,14 @@ export default function Live() {
         }
         
         console.log("[Live] No cached sections, triggering extraction...");
-        const pdfId = await triggerExtraction();
+        const pdfId = await triggerExtraction(effectivePdfPath);
         if (pdfId && await loadPagesFromSections(pdfId)) {
           return;
         }
 
         console.log("[Live] Falling back to pdf-text endpoint");
         setDictionaryMessage("Using fallback text extraction...");
-        const res = await fetch(`/api/pdf-text?path=${encodeURIComponent(store.pdfFile)}`);
+        const res = await fetch(`/api/pdf-text?path=${encodeURIComponent(effectivePdfPath)}`);
         const data = await res.json();
 
         if (!res.ok || !data.ok || !Array.isArray(data.pages)) {

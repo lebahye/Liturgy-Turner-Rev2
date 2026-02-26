@@ -6,7 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Slider } from "@/components/ui/slider";
 import { useToast } from "@/hooks/use-toast";
 import { Bot, Music, Mic, Monitor, Play, Upload } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 async function safeJson(res: Response) {
   const text = await res.text();
@@ -61,10 +61,13 @@ async function fetchPdfPages(pdfPath: string) {
   };
 }
 
+type UploadedPdf = { id: string; filePath: string; filename: string; originalName: string; pdfId?: string | null };
+
 export default function Home() {
   const store = useStore();
   const { toast } = useToast();
   const [uploading, setUploading] = useState(false);
+  const [uploadedPdfs, setUploadedPdfs] = useState<UploadedPdf[]>([]);
 
   const handleSaveDisplayConfig = () => {
     toast({
@@ -72,6 +75,33 @@ export default function Home() {
       description: "Display settings have been updated.",
     });
   };
+
+  async function loadUploadedPdfs() {
+    try {
+      const res = await fetch('/api/files?type=pdf');
+      const data = await res.json();
+      const files = Array.isArray(data?.files) ? data.files : [];
+      setUploadedPdfs(files);
+    } catch {
+      setUploadedPdfs([]);
+    }
+  }
+
+  useEffect(() => {
+    loadUploadedPdfs();
+  }, []);
+
+  async function selectExistingPdf(pdf: UploadedPdf) {
+    useStore.getState().setPdfFromServer(pdf.filePath, pdf.pdfId ?? null);
+    try {
+      await fetch('/api/control/pdf/set', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pdfPath: pdf.filePath, pdfId: pdf.pdfId ?? null }),
+      });
+    } catch {}
+    toast({ title: 'PDF selected', description: pdf.originalName || pdf.filename });
+  }
 
   const handlePdfUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -91,6 +121,7 @@ export default function Home() {
         });
       } catch {}
       toast({ title: "Upload complete", description: pdf.originalName });
+      await loadUploadedPdfs();
     } catch (e: any) {
       toast({ variant: "destructive", title: "Upload Failed", description: e.message || "Unknown error" });
     } finally {
@@ -146,11 +177,28 @@ export default function Home() {
             </div>
 
             <div className="space-y-2">
+              <label className="text-sm font-medium">Use Existing Uploaded PDF</label>
+              <Select onValueChange={(id) => {
+                const pdf = uploadedPdfs.find((f) => f.id === id);
+                if (pdf) selectExistingPdf(pdf);
+              }}>
+                <SelectTrigger>
+                  <SelectValue placeholder={uploadedPdfs.length ? 'Select existing PDF' : 'No uploaded PDFs found'} />
+                </SelectTrigger>
+                <SelectContent>
+                  {uploadedPdfs.map((pdf) => (
+                    <SelectItem key={pdf.id} value={pdf.id}>{pdf.originalName || pdf.filename}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-2">
               <label className="text-sm font-medium">Active PDF File</label>
               <div className="rounded-md border bg-gray-50 p-2 text-sm dark:bg-gray-800">
-                {store.pdfFile?.startsWith('/uploads/') 
-                  ? store.pdfFile.split('/').pop() 
-                  : 'liturgy.pdf (default)'}
+                {store.pdfFile?.startsWith('/uploads/')
+                  ? store.pdfFile.split('/').pop()
+                  : 'No PDF selected'}
               </div>
             </div>
           </CardContent>
