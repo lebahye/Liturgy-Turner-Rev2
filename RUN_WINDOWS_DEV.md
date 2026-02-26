@@ -30,9 +30,14 @@ If using local SQLite path from project defaults, just run:
 npx drizzle-kit push
 ```
 
-If using Docker Postgres, start only DB:
+If using Docker Postgres, start only DB (core profile):
 ```powershell
-docker compose up -d postgres
+docker compose --profile core up -d postgres
+```
+
+If you want Docker app too, start core profile:
+```powershell
+docker compose --profile core up -d --build
 ```
 
 ## 3) Start app locally

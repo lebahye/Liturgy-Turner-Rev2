@@ -1,6 +1,7 @@
 services:
   # PostgreSQL Database
   postgres:
+    profiles: ["core"]
     image: postgres:15-alpine
     container_name: liturgy-postgres
     environment:
@@ -20,6 +21,7 @@ services:
 
   # Liturgy Turner App
   app:
+    profiles: ["core"]
     build:
       context: .
       dockerfile: Dockerfile
@@ -49,10 +51,23 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:5000/api/liturgy/status').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 8
+      start_period: 20s
     restart: unless-stopped
 
   # Clawdbot Agent (Project-Specific)
   agent:
+    profiles: ["agent"]
     build:
       context: .
       dockerfile: Dockerfile.agent
@@ -83,6 +98,8 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+      app:
+        condition: service_started
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:29789/status"]
       interval: 15s

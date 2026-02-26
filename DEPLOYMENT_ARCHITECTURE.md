@@ -5,6 +5,10 @@ Liturgy page turning must work immediately after install, with predictable start
 
 ## Runtime Layers
 
+Compose profiles are used to enforce separation:
+- `core` profile: postgres + app (required)
+- `agent` profile: optional augmentation layer
+
 1. **Core Runtime (required)**
    - Express API + React UI
    - `LiturgyPageTracker`

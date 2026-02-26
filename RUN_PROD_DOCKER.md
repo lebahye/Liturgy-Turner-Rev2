@@ -23,8 +23,15 @@ Minimum env values to review:
 ---
 
 ## 2) Start stack
+
+### Core product runtime (recommended default)
 ```bash
-docker compose up -d --build
+docker compose --profile core up -d --build
+```
+
+### Core + agent augmentation
+```bash
+docker compose --profile core --profile agent up -d --build
 ```
 
 Check status:
@@ -64,6 +71,7 @@ Supported env knobs:
 
 ## 5) Agent policy
 - Agent is **optional/non-blocking** for core page-turn runtime.
+- In Compose, this is enforced by profile separation: `core` works independently from `agent`.
 - If agent is unhealthy, app should still serve and process liturgy endpoints.
 
 Check agent logs:
