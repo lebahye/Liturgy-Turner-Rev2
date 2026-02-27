@@ -7,7 +7,8 @@ Liturgy page turning must work immediately after install, with predictable start
 
 Compose profiles are used to enforce separation:
 - `core` profile: postgres + app (required)
-- `agent` profile: optional augmentation layer
+- `agent-container-legacy` profile: optional legacy embedded agent (disabled by default)
+- Preferred augmentation: external OpenClaw multi-agent runtime
 
 1. **Core Runtime (required)**
    - Express API + React UI

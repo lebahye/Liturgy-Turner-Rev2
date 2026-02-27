@@ -29,10 +29,12 @@ Minimum env values to review:
 docker compose --profile core up -d --build
 ```
 
-### Core + agent augmentation
+### Core + legacy embedded agent (not recommended)
 ```bash
-docker compose --profile core --profile agent up -d --build
+docker compose --profile core --profile agent-container-legacy up -d --build
 ```
+
+Preferred: external OpenClaw multi-agent runtime (see `MULTI_AGENT_MIGRATION.md`).
 
 Check status:
 ```bash

@@ -42,8 +42,8 @@ services:
       TRACKER_ALLOW_JUMPS: ${TRACKER_ALLOW_JUMPS:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       GEMINI_API_KEY: ${GEMINI_API_KEY:-}
-      # Optional agent audio API integration
-      AGENT_AUDIO_API_URL: http://agent:29788
+      # External OpenClaw multi-agent integration (host runtime)
+      AGENT_AUDIO_API_URL: ${AGENT_AUDIO_API_URL:-http://host.docker.internal:29788}
     volumes:
       - ./uploads:/app/uploads
       - ./data:/app/data
@@ -65,9 +65,10 @@ services:
       start_period: 20s
     restart: unless-stopped
 
-  # Clawdbot Agent (Project-Specific)
+  # Legacy embedded agent container (disabled by default)
+  # Preferred architecture: external OpenClaw multi-agent runtime.
   agent:
-    profiles: ["agent"]
+    profiles: ["agent-container-legacy"]
     build:
       context: .
       dockerfile: Dockerfile.agent
