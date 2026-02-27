@@ -1,38 +1,31 @@
 FROM node:22-slim
 
-# Install system dependencies + openclaw + sqlite3 (for database access)
 RUN apt-get update && apt-get install -y \
-    bash git curl sqlite3 python3 make g++ \
-    && npm install -g openclaw@latest \
+    bash curl sqlite3 python3 make g++ \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app/agent
 
-# Copy agent configuration
-COPY agent/ .
+# Install deps first for better layer caching
+COPY agent/package*.json ./
+RUN npm ci
 
-# Fix permissions on config file (might be root-owned)
-RUN chmod 644 clawdbot.json5 || true
+# Copy agent runtime files
+COPY agent/ ./
 
-# Create state and data directories
-RUN mkdir -p .clawdbot-state /app/data /app/uploads /app/training-data
-
-# Install dependencies for agent and audio API
-RUN npm init -y && npm install better-sqlite3 express multer node-fetch
-
-# Environment variables for agent
-ENV CLAWDBOT_STATE_DIR=/app/agent/.clawdbot-state
-ENV CLAWDBOT_CONFIG_PATH=/app/agent/clawdbot.json5
-
-# Expose Clawdbot gateway port and audio API port
-EXPOSE 29789 29788
-
-# Make start script executable
+# Ensure startup script is executable
 RUN chmod +x /app/agent/start-agent.sh
 
-# Health check (check if gateway is running)
-HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
-    CMD curl -f http://localhost:29789/status || exit 1
+# Runtime dirs
+RUN mkdir -p /app/agent/.clawdbot-state /app/agent/memory /app/data /app/uploads /app/training-data
 
-# Start both audio API and gateway
-CMD ["/bin/bash", "/app/agent/start-agent.sh"]
+ENV NODE_ENV=production
+ENV AUDIO_API_PORT=29788
+ENV APP_BASE_URL=http://app:5000
+
+EXPOSE 29788
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+  CMD curl -f http://localhost:29788/health || exit 1
+
+CMD ["bash", "/app/agent/start-agent.sh"]

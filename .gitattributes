@@ -1,0 +1,2 @@
+*.sh text eol=lf
+agent/*.sh text eol=lf
