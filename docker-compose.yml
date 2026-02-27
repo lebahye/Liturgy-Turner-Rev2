@@ -65,50 +65,8 @@ services:
       start_period: 20s
     restart: unless-stopped
 
-  # Legacy embedded agent container (disabled by default)
-  # Preferred architecture: external OpenClaw multi-agent runtime.
-  agent:
-    profiles: ["agent-container-legacy"]
-    build:
-      context: .
-      dockerfile: Dockerfile.agent
-    container_name: liturgy-agent
-    ports:
-      - "29788:29788"
-    environment:
-      # Agent can access app's HTTP API and shared data
-      APP_BASE_URL: http://app:5000
-      DB_PATH: /app/data/liturgy-turner.db
-    volumes:
-      # Agent state
-      - agent-state:/app/agent/.clawdbot-state
-      - agent-memory:/app/agent/memory
-
-      # Mount only runtime-configurable files (avoid overriding built runtime)
-      - ./agent/skills:/app/agent/skills
-      - ./agent/clawdbot.json5:/app/agent/clawdbot.json5:ro
-
-      # Shared app data
-      - ./data:/app/data
-      - ./uploads:/app/uploads
-      - ./training-data:/app/training-data
-    depends_on:
-      postgres:
-        condition: service_healthy
-      app:
-        condition: service_started
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:29788/health"]
-      interval: 15s
-      timeout: 10s
-      retries: 5
-      start_period: 30s
-    restart: unless-stopped
-
 volumes:
   postgres-data:
-  agent-state:
-  agent-memory:
 
 networks:
   default:

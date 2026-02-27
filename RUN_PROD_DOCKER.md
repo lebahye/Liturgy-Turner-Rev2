@@ -31,7 +31,8 @@ docker compose --profile core up -d --build
 
 ### Core + legacy embedded agent (not recommended)
 ```bash
-docker compose --profile core --profile agent-container-legacy up -d --build
+docker compose -f docker-compose.yml -f docker-compose.agent-legacy.yml \
+  --profile core --profile agent-container-legacy up -d --build
 ```
 
 Preferred: external OpenClaw multi-agent runtime (see `MULTI_AGENT_MIGRATION.md`).
@@ -73,12 +74,12 @@ Supported env knobs:
 
 ## 5) Agent policy
 - Agent is **optional/non-blocking** for core page-turn runtime.
-- In Compose, this is enforced by profile separation: `core` works independently from `agent`.
+- In Compose, this is enforced by file/profile separation: `docker-compose.yml` (core) is independent; legacy embedded agent lives in `docker-compose.agent-legacy.yml`.
 - If agent is unhealthy, app should still serve and process liturgy endpoints.
 
-Check agent logs:
+Check agent logs (legacy embedded mode only):
 ```bash
-docker compose logs --tail=200 agent
+docker compose -f docker-compose.yml -f docker-compose.agent-legacy.yml logs --tail=200 agent
 ```
 
 ---
