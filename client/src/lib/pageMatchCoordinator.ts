@@ -34,12 +34,14 @@ export type CoordinatorConfig = {
 };
 
 const DEFAULT_CONFIG: CoordinatorConfig = {
-  fingerprintThreshold: 30,  // Lowered from 60 for testing - TUNE THIS
-  ngramThreshold: 1,         // Lowered from 2 for testing
-  triggerMatchThreshold: 2,  // Lowered from 3 for testing
+  // Production-biased defaults: prefer missed turns over false turns.
+  // Live mode already has manual override; accidental page jumps are harder to recover from.
+  fingerprintThreshold: 65,
+  ngramThreshold: 2,
+  triggerMatchThreshold: 3,
   agreementBonus: 20,
   disagreementPenalty: 30,
-  requiredConsecutiveAgreements: 1,  // Lowered from 2 for easier triggering
+  requiredConsecutiveAgreements: 2,
 };
 
 export class PageMatchCoordinator {

@@ -170,7 +170,7 @@ export class LiturgyPageTracker {
       if (frameData.length < windowSize) break;
       
       try {
-        const extracted = Meyda.extract([
+        const extracted = (Meyda as any).extract([
           'mfcc',
           'spectralCentroid',
           'spectralRolloff',
@@ -201,7 +201,7 @@ export class LiturgyPageTracker {
           }
           
           if (extracted.powerSpectrum) {
-            lastSpectrum = extracted.powerSpectrum;
+            lastSpectrum = Array.from(extracted.powerSpectrum as ArrayLike<number>);
           }
         }
       } catch (err) {
