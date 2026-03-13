@@ -7,8 +7,10 @@
 import fs from 'fs';
 import path from 'path';
 
+const TRAINING_DATA_DIR = process.env.TRAINING_DATA_DIR || '/app/training-data';
+
 export class PageMatcher {
-  constructor(fingerprintsPath = '/app/training-data/fingerprints-v2.json') {
+  constructor(fingerprintsPath = `${TRAINING_DATA_DIR}/fingerprints-v2.json`) {
     this.fingerprints = JSON.parse(fs.readFileSync(fingerprintsPath, 'utf8'));
     this.sensitivity = 0.5;
     this.lastMatches = [];

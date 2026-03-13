@@ -18,6 +18,8 @@ import { AudioDiagnostics } from './lib/audio-diagnostics.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const TRAINING_DATA_DIR = process.env.TRAINING_DATA_DIR || '/app/training-data';
+const AGENT_DIR = process.env.AGENT_DIR || '/app/agent';
 
 // Singleton instances
 let patternDb = null;
@@ -73,9 +75,9 @@ async function startTraining(params) {
   initialize();
   
   const {
-    audioFile = '/app/agent/full_service.wav',
-    textDbFile = '/app/training-data/text-matcher-db.json',
-    timestampsFile = '/app/training-data/page-timestamps-mapped.json',
+    audioFile = `${AGENT_DIR}/full_service.wav`,
+    textDbFile = `${TRAINING_DATA_DIR}/text-matcher-db.json`,
+    timestampsFile = `${TRAINING_DATA_DIR}/page-timestamps-mapped.json`,
     testMode = false
   } = params || {};
   
@@ -112,7 +114,7 @@ async function startTraining(params) {
     // That requires WAV parsing which is complex
     
     trainingState.currentActivity = 'Loading audio fingerprints...';
-    const fingerprintsFile = '/app/training-data/fingerprints-v2.json';
+    const fingerprintsFile = `${TRAINING_DATA_DIR}/fingerprints-v2.json`;
     const fingerprints = JSON.parse(fs.readFileSync(fingerprintsFile, 'utf8'));
     
     console.log(`[armenian-learner] Loaded ${fingerprints.length} audio fingerprints`);
