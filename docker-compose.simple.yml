@@ -36,6 +36,8 @@ services:
       PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:5000}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      # Wire audio capture to native audio-api process on host
+      AGENT_AUDIO_API_URL: ${AGENT_AUDIO_API_URL:-http://host.docker.internal:29788}
     volumes:
       - ./uploads:/app/uploads
       - ./data:/app/data
