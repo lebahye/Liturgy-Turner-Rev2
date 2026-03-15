@@ -28,6 +28,10 @@ interface Fingerprint {
   pageNumber: number;
   startTime: number;
   endTime: number;
+  duration?: number;
+  hasTransition?: boolean;
+  source?: string;
+  rawFeatureCount?: number;
   features: {
     mfcc: number[];
     spectralCentroid: number;
@@ -69,15 +73,54 @@ export class LiturgyPageTracker {
       fs.readFileSync(path.join(dataDir, 'live-tracker-data.json'), 'utf8')
     );
     
-    this.fingerprints = JSON.parse(
-      fs.readFileSync(path.join(dataDir, 'fingerprints.json'), 'utf8')
-    );
+    // Load and merge fingerprints from all sources; v1 (local) is canonical.
+    // YouTube fingerprints supplement coverage for pages missing local data.
+    this.fingerprints = this.loadMergedFingerprints(dataDir);
     
     this.speakerModels = JSON.parse(
       fs.readFileSync(path.join(dataDir, 'speaker-models.json'), 'utf8')
     );
   }
   
+  /**
+   * Load fingerprints from all sources and merge.
+   * Local (v1) takes priority; YouTube supplements any missing pages.
+   */
+  private loadMergedFingerprints(dataDir: string): Fingerprint[] {
+    const load = (name: string): Fingerprint[] => {
+      const fp = path.join(dataDir, name);
+      try {
+        return JSON.parse(fs.readFileSync(fp, 'utf8'));
+      } catch {
+        return [];
+      }
+    };
+
+    const local = load('fingerprints.json');        // 183 pages, has MFCC features — canonical
+    const yt1   = load('fingerprints-youtube.json'); // 182 pages, no features (avg=0) — time data only
+    const yt2   = load('fingerprints-youtube-2.json');// 173 pages, no features
+
+    // Index local by page
+    const merged = new Map<number, Fingerprint>(local.map(f => [f.pageNumber, f]));
+
+    // Supplement with youtube timing data for any pages missing local coverage
+    for (const ytFp of [...yt1, ...yt2]) {
+      if (!merged.has(ytFp.pageNumber)) {
+        merged.set(ytFp.pageNumber, ytFp);
+      } else {
+        // If local entry has no duration data, borrow from youtube
+        const existing = merged.get(ytFp.pageNumber)!;
+        if (!existing.duration && ytFp.duration) {
+          merged.set(ytFp.pageNumber, { ...existing, duration: ytFp.duration });
+        }
+      }
+    }
+
+    const result = Array.from(merged.values()).sort((a, b) => a.pageNumber - b.pageNumber);
+    console.log(`[LiturgyTracker] Loaded ${result.length} merged fingerprints (local=${local.length}, yt1=${yt1.length}, yt2=${yt2.length})`);
+    return result;
+  }
+
   /**
    * Process live audio and determine if page should advance
    */
