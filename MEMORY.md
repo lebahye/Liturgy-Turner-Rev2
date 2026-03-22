@@ -1,4 +1,18 @@
 
+## 🖥️ Platform Migration (2026-03-14)
+
+**MIGRATED FROM WINDOWS → MAC MINI**
+
+- **Hardware:** Apple Mac mini, 16GB RAM, 215GB SSD
+- **OS:** macOS (Darwin arm64)
+- **Impact:** All code, scripts, and deployment assumptions should be macOS-native (not Windows/Docker-first)
+- Key changes already applied:
+  - Power management fixed: sleep disabled on AC (`pmset -c sleep 0 displaysleep 0 disksleep 0 standby 0 powernap 0 autorestart 1`)
+  - No more Windows-specific PowerShell scripts (e.g., `verify-release-gate.ps1` is now legacy)
+  - Docker is optional, not required — native macOS process management preferred
+
+---
+
 ## ⛔ CRITICAL: NO WHISPER POLICY (2026-02-21)
 
 **PERMANENT DECISION:** This project does NOT use OpenAI Whisper or any general-purpose STT API.

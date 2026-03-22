@@ -76,7 +76,7 @@ run = ["npm", "run", "start"]
 deploymentTarget = "cloudrun"
 
 [[ports]]
-localPort = 5000
+localPort = 5001
 externalPort = 80
 ```
 
@@ -100,7 +100,7 @@ externalPort = 80
 Create `.env` file:
 ```bash
 NODE_ENV=production
-PORT=5000
+PORT=5001
 SQLITE_DB_PATH=./data/liturgy-turner.db
 
 # Optional: If you have Clawdbot on external server

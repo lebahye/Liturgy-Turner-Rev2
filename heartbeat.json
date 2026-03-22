@@ -1,0 +1,8 @@
+{
+  "agentId": "liturgy",
+  "updatedAt": "2026-03-22T22:30:31.856493Z",
+  "status": "blocked",
+  "currentTask": "blocked: SSH connection to Mac mini refused",
+  "model": "xai/grok-3",
+  "workspace": "/Users/lebahye/clawd/projects/Liturgy-Turner-Rev2"
+}

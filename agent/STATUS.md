@@ -1,198 +1,43 @@
 # STATUS.md - Current State
 
-**Last Updated:** 2026-02-13 22:00 UTC
+**Last Updated:** 2026-03-14 06:07 UTC
 
-## 🎯 Current Status
+## 🎯 Current Status: AUDIO PIPELINE CONNECTED ✅
 
-**🧠 PIVOTING TO TEXT-BASED MATCHING (Language Understanding)**
+### What Was Fixed (2026-03-14 nightly)
+- **Root blocker identified:** `docker-compose.simple.yml` was missing `AGENT_AUDIO_API_URL`
+- App was falling back to `http://agent:29788` (dead Docker container)
+- **Fix:** Added `AGENT_AUDIO_API_URL=http://host.docker.internal:29788` 
+- Container recreated — end-to-end pipeline verified:
+  - `GET http://localhost:5000/api/agent/status` → returns live audio API data ✅
+  - Audio API has 1366 patterns, 183 page fingerprints, 2984 words loaded ✅
+  - App → audio API path: `liturgy-app container → host.docker.internal:29788` ✅
 
-User feedback: 59% accuracy not good enough for paid SAAS  
-Reality check: Need 99.99% for commercial viability
+### System State
+| Component | Status |
+|-----------|--------|
+| liturgy-app (Docker :5000) | ✅ healthy, 183 pages loaded |
+| liturgy-postgres (Docker :5432) | ✅ healthy |
+| audio-api (native :29788) | ✅ running, 1366 patterns, 183 fingerprints |
+| Browser → App → Audio API | ✅ connected end-to-end |
 
-**Completed (2026-02-14):**
-1. ✅ Built text matcher: 1,348 Armenian words indexed
-2. ✅ Each page has unique text signature
-3. ✅ Researched Armenian STT options (Whisper recommended)
-4. ✅ Created comprehensive path to 99.99% accuracy
-5. ✅ Designed multi-model ensemble system
-6. ✅ Planned progressive learning for SAAS
-7. ✅ Committed all work to Git
+## 📋 Remaining Work
 
-**Next:** AUTONOMOUS OVERNIGHT BUILD - Working until 100% ready
+### Immediate Next Step
+**Test live audio recognition end-to-end:**
+1. Open http://localhost:5000 in browser
+2. Enable microphone capture in the app
+3. Play the Badarak recording (or speak/play audio near mic)
+4. Observe if page turns trigger
 
-User directive: "Continue building overnight don't stop until you're ready 100%"
+### Known Gaps
+1. **Confidence too low (avg 0.143)** — threshold for page turn is 0.8
+   - Pattern confidence will stay low until real-time audio is processed through the system
+   - Need actual audio fed through `/feed-audio` to see if recognition fires
+2. **Audio format:** Browser sends WebM/Opus; audio-api converts assuming 16-bit PCM
+   - May need format conversion (ffmpeg) in the feed-audio handler
+3. **No manual training session done yet** — George needs to run `manual-training-mode.mjs`
+   while playing the recording to build timestamp-aligned fingerprints
 
-**Overnight Tasks:**
-1. ✅ Phase 1A: Phonetic extraction
-2. ✅ Phase 1B: Word segmentation (650 words indexed)
-3. ✅ Phase 2: Recognition engine
-4. ✅ Phase 3: Live integration
-5. ✅ Phase 4: Comprehensive testing
-6. ✅ Phase 5: Multiple iterations
-7. ✅ Morning report: COMPLETE
-
-**Results:**
-- Built 4 different recognition systems
-- Tested extensively on full 87-min recording
-- **Best system: Speaker + Timing (95% within 2 pages)**
-- Pure acoustic: 0% (too similar)
-- Word recognition: 20% (needs STT)
-
-**Status:** READY - See MORNING_STATUS.md for full report
-
-## 📊 Active Project: Liturgy Auto-Page-Turner
-
-**Status:** Backend Integration Complete ✅ → Testing Phase ⏳
-
-**What Just Happened:**
-- Built complete `LiturgyPageTracker` production class
-- Integrated into Express backend with 5 API endpoints
-- Created `test-live-tracker.mjs` for automated testing
-- Created `manual-training-mode.mjs` for user-driven training
-- Documented everything in `INTEGRATION_COMPLETE.md`
-- Pushed to GitHub (commits: 3a73277, 4a49d3f)
-- User's PC shutdown, now back online
-
-**Current State of Code:**
-- ✅ Backend tracker fully functional
-- ✅ API endpoints live in server
-- ✅ Test scripts ready to run
-- ✅ Manual training mode ready
-- ✅ All pushed to GitHub
-- ⏳ Frontend microphone integration (pending test results)
-- ⏳ Actual testing with recording (user needs to run)
-- ⏳ Manual training session (user will record first 30+ pages)
-
-## 🔄 Next Actions
-
-**Immediate (User's Turn):**
-1. Pull from GitHub: `git pull origin main`
-2. Run automated test: `node test-live-tracker.mjs`
-3. Share accuracy numbers
-4. Run manual training: `node manual-training-mode.mjs`
-5. Play audio on phone, press ENTER for each page turn
-
-**My Next Tasks (After User Tests):**
-- Analyze test results
-- Identify failure patterns
-- Tune confidence thresholds if needed
-- Build script to rebuild fingerprints from manual timestamps
-- Add frontend microphone integration if backend validates
-- Iterate based on accuracy numbers
-
-## 🚧 Current Work
-
-**Autonomous Training in Progress:**
-- ✅ Initial test completed - found fingerprints have wrong timestamps
-- ✅ Analyzed variance distribution - found correct speaker thresholds
-- 🔄 Running improved transition detection (V3)
-- ⏳ Will map detected transitions to 183 pages
-- ⏳ Rebuild fingerprints from actual audio
-- ⏳ Test iteratively until >80% accuracy
-
-**No blockers** - Working autonomously as requested
-
-## 📁 Recent File Changes
-
-**Created Today (2026-02-13):**
-- `server/liturgy-tracker.ts` - Production tracker class (11KB)
-- `test-live-tracker.mjs` - Automated test script (12KB)
-- `manual-training-mode.mjs` - Interactive training (4KB)
-- `INTEGRATION_COMPLETE.md` - Testing guide (6KB)
-- Updated `server/routes.ts` with API endpoints
-
-**Git Status:**
-- Branch: main
-- Last commit: 4a49d3f ("docs: Add integration complete guide")
-- Pushed to GitHub: https://github.com/lebahye/Liturgy-Turner-Rev2
-- All changes synced
-
-## 💡 Current Understanding
-
-**Technical State:**
-- Fingerprints exist but use estimated timestamps (28.6s/page average)
-- Pages aren't evenly timed in reality (some 5s, others 2min)
-- Manual training will capture actual timing
-- System needs YOUR rhythm to be accurate
-
-**Multi-Signal Detection:**
-- Speaker detection (30% weight) - Spectral flux variance
-- Audio fingerprint (70% weight) - MFCC cosine similarity
-- Combined threshold: 75% to advance page
-- 3-page look-ahead window
-- 3-second cooldown between advances
-
-**Key Insight:**
-Sequential constraint + multi-signal = high accuracy even with imperfect timestamps
-
-## 🎓 What I'm Learning
-
-**From User Feedback:**
-- GitHub → Replit workflow is critical
-- Everything must work in Replit environment
-- Product mindset: out-of-box ready for churches
-- Trust-based collaboration: make decisions, keep moving
-- Iterate repeatedly on real data
-
-**Technical Insights:**
-- Speaker transitions are more reliable than audio matching alone
-- Sequential constraint is the real breakthrough
-- Manual training with user's timing beats automated detection
-- Need to "read the pages" not just match audio
-
-## 📝 Session Notes
-
-**Morning (Feb 13, ~14:00 UTC):**
-- User asked for integration + test scripts
-- Built complete backend system
-- Created automated and manual test modes
-- Pushed everything to GitHub
-- User emphasized GitHub → Replit workflow
-
-**Afternoon (Feb 13, 16:10 UTC):**
-- User's PC shutdown
-- User back online at 16:15
-- User requested memory system setup
-- Created MEMORY.md (this session)
-- Creating STATUS.md (this file)
-
-## 🔮 Expected Next Session
-
-**User will:**
-1. Pull from GitHub
-2. Run tests in Replit
-3. Share accuracy results
-4. Report any issues
-
-**I will:**
-1. Read MEMORY.md, SOUL.md, STATUS.md, today's memory
-2. Analyze test results
-3. Build refinements based on data
-4. Continue iteration
-
-## ⚙️ System State
-
-**Memory System:**
-- ✅ MEMORY.md created (long-term facts)
-- ✅ SOUL.md exists (personality/principles)
-- ✅ STATUS.md created (this file - current state)
-- ✅ memory/2026-02-12.md (yesterday's log)
-- ✅ memory/2026-02-13.md (today's log)
-
-**Training Data:**
-- ✅ `full_service.wav` (480MB) - accessible at /app/agent/
-- ✅ `liturgy.pdf` (1.8MB) - accessible at /app/agent/
-- ✅ `training-data/` folder - all models, fingerprints, dictionaries
-- ✅ Database - 3,525 word dictionary, 183 page sections
-
-**Workspace:**
-- Working directory: /app/agent
-- Project directory: /app/project
-- All scripts executable
-- Git configured and working
-- Pushing to GitHub successful
-
----
-
-**Update this file before ending every conversation!**
-**Read this at the start of every new session!**
+### Git
+- Latest commit: `0c15a90` - fix: wire AGENT_AUDIO_API_URL

@@ -1,0 +1,4 @@
+services:
+  agent:
+    environment:
+      TELEGRAM_BOT_TOKEN: "8207834735:AAGhOKKmVZqiFYZTkhtIvXBvyzLbkRdS5rs"

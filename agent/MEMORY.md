@@ -69,3 +69,38 @@ I'm containerized (Docker) so churches can install me without cloud dependencies
 ---
 
 **Remember:** I'm not an API wrapper. I'm a custom-trained liturgical assistant built from the ground up for this specific ancient language and religious context.
+
+---
+
+## Session 2026-03-15 02:05 AM — Root Cause Found & Fixed
+
+### What Was Found
+Two bugs in the live page-turning pipeline that prevented any page turns from ever firing:
+
+**Bug 1 (Root): Recognition never auto-starts after LaunchAgent restart**
+- The LaunchAgent `com.liturgy.audio-api` (`KeepAlive: true`) restarts the process automatically on every crash or kill
+- After restart, the audio-api would listen for audio but had no active recognizer
+- Every audio feed returned: `⚠️ feedAudio called but no recognizer is running!`
+- This was invisible because the REAL logs go to `/agent/logs/audio-api.log`, not to the console
+
+**Bug 2: onPageDetected callback not wired in `/start-recognition` endpoint**
+- The audio-api's `/start-recognition` route called `skill.startRecognition({pdfId, startPage})` without passing an `onPageDetected` callback
+- Even if recognition was started manually, detected page turns were only logged to console — never sent to the app
+
+### Fixes Applied (audio-api.mjs)
+1. Added `autoStartRecognition()` function with wired `onPageDetected` callback → posts page turns to `http://localhost:5000/api/control/page/set`
+2. Called `autoStartRecognition()` in the express `listen()` callback → V3 Hybrid starts fresh on every process start
+3. Updated `/start-recognition` route to also pass the `onPageDetected` callback (for manual invocations)
+
+### Current State
+- Audio API: ✅ Running (LaunchAgent managed, PID auto-managed)
+- V3 Hybrid recognizer: ✅ Auto-starts on boot with `onPageDetected` callback
+- App (liturgy-app Docker): ✅ Healthy, page control endpoint responsive
+- 183 page fingerprints: ✅ Loaded at runtime
+- Page-turn loop: ✅ Complete — audio → V3 → onPageDetected → POST /api/control/page/set
+
+### What Remains
+- **Untested end-to-end**: Real microphone audio → feed-audio → actual page detection has not been validated. V3 MFCC matching accuracy on church audio is unknown.
+- **V3 buffer performance**: When large chunks (>80k samples) are sent at once, Node.js event loop may block. Real-time mic streaming sends small chunks continuously — should be fine.
+- **Mic capture integration**: Need to verify what sends audio to /feed-audio (browser MediaRecorder, native app, etc.)
+- **getStatus() not reporting V3**: The `getStatus()` function doesn't check V3.isRunning, so status shows "idle" even when V3 is active. Low priority cosmetic fix.

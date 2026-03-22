@@ -1,10 +1,10 @@
 {
-  "pdfPath": "/uploads/pdfs/943e74792a5e274c136d5b3cae901820.pdf",
-  "pdfId": "317c7c972fbf84a6",
-  "page": 10,
+  "pdfPath": "/uploads/pdfs/7ad0d220e9292f359b6cb0949e923a03.pdf",
+  "pdfId": null,
+  "page": 1,
   "totalPages": 183,
   "mode": "display",
-  "updatedAt": 1771720244686,
-  "lastReason": "audio_recognition",
-  "lastConfidence": 0.5724250153757535
+  "updatedAt": 1774216730305,
+  "lastReason": "training_start",
+  "lastConfidence": 1
 }

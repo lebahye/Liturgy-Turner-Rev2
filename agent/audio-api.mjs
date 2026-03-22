@@ -110,7 +110,29 @@ app.post('/start-recognition', async (req, res) => {
     const { pdfId, startPage } = req.body;
     console.log(`[audio-api] Starting recognition: pdfId=${pdfId}, page=${startPage}`);
 
-    const result = await skill.startRecognition({ pdfId, startPage });
+    const appUrl = process.env.APP_BASE_URL || 'http://localhost:5000';
+
+    const result = await skill.startRecognition({
+      pdfId,
+      startPage,
+      onPageDetected: async (page, confidence) => {
+        console.log(`[audio-api] 🎯 Page detected (callback): ${page} (${(confidence * 100).toFixed(1)}%)`);
+        try {
+          const turnResponse = await fetch(`${appUrl}/api/control/page/set`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ page, reason: 'agent_recognition', confidence })
+          });
+          if (turnResponse.ok) {
+            console.log(`[audio-api] ✅ Page turn sent: ${page}`);
+          } else {
+            console.error(`[audio-api] ⚠️  Page turn failed: ${turnResponse.status}`);
+          }
+        } catch (err) {
+          console.error(`[audio-api] ⚠️  Failed to send page turn:`, err.message);
+        }
+      }
+    });
 
     res.json({
       success: true,
@@ -162,8 +184,41 @@ app.get('/status', async (req, res) => {
 
 const PORT = process.env.AUDIO_API_PORT || 29788;
 
-app.listen(PORT, '0.0.0.0', () => {
+// Auto-start recognition helper (called at startup and on demand)
+async function autoStartRecognition() {
+  if (!skill.startRecognition) return;
+  const appUrl = process.env.APP_BASE_URL || 'http://localhost:5000';
+  try {
+    const result = skill.startRecognition({
+      startPage: 1,
+      onPageDetected: async (page, confidence) => {
+        console.log(`[audio-api] 🎯 Page detected (callback): ${page} (${(confidence * 100).toFixed(1)}%)`);
+        try {
+          const turnResponse = await fetch(`${appUrl}/api/control/page/set`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ page, reason: 'agent_recognition', confidence })
+          });
+          if (turnResponse.ok) {
+            console.log(`[audio-api] ✅ Page turn sent: ${page}`);
+          } else {
+            console.error(`[audio-api] ⚠️  Page turn failed: ${turnResponse.status}`);
+          }
+        } catch (err) {
+          console.error(`[audio-api] ⚠️  Failed to send page turn:`, err.message);
+        }
+      }
+    });
+    console.log(`[audio-api] 🚀 Auto-started recognition:`, result?.message || 'ok');
+  } catch (err) {
+    console.error(`[audio-api] ❌ Auto-start recognition failed:`, err.message);
+  }
+}
+
+app.listen(PORT, '0.0.0.0', async () => {
   console.log(`[audio-api] 🎵 Audio API listening on port ${PORT}`);
   console.log(`[audio-api] Skill path: ${skillPath}`);
   console.log(`[audio-api] App URL: ${process.env.APP_BASE_URL || 'http://app:5000'}`);
+  // Auto-start recognition so page-turning is active immediately after any restart
+  await autoStartRecognition();
 });
