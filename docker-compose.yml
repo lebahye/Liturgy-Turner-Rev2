@@ -27,20 +27,20 @@ services:
       dockerfile: Dockerfile
     container_name: liturgy-app
     ports:
-      - "${APP_HOST_PORT:-5000}:5000"
+      - "${APP_HOST_PORT:-5001}:5001"
     environment:
       NODE_ENV: production
       DATABASE_URL: postgresql://liturgy_user:${POSTGRES_PASSWORD:-changeme}@postgres:5432/liturgy_turner
-      PORT: 5000
+      PORT: 5001
       HOST: 0.0.0.0
-      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:${APP_HOST_PORT:-5000}}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:${APP_HOST_PORT:-5001}}
       TRACKER_MODE: ${TRACKER_MODE:-prod}
       TRACKER_LOOKAHEAD: ${TRACKER_LOOKAHEAD:-}
       TRACKER_CONFIDENCE: ${TRACKER_CONFIDENCE:-}
       TRACKER_COOLDOWN_MS: ${TRACKER_COOLDOWN_MS:-}
       TRACKER_EVALUATE_ALWAYS: ${TRACKER_EVALUATE_ALWAYS:-}
       TRACKER_ALLOW_JUMPS: ${TRACKER_ALLOW_JUMPS:-}
-      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      XAI_API_KEY: ${XAI_API_KEY:-}
       GEMINI_API_KEY: ${GEMINI_API_KEY:-}
       # External OpenClaw multi-agent integration (host runtime)
       AGENT_AUDIO_API_URL: ${AGENT_AUDIO_API_URL:-http://host.docker.internal:29788}
@@ -57,12 +57,23 @@ services:
           "CMD",
           "node",
           "-e",
-          "fetch('http://127.0.0.1:5000/api/liturgy/status').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))",
+          "fetch('http://127.0.0.1:5001/api/liturgy/status').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))",
         ]
       interval: 15s
       timeout: 5s
       retries: 8
       start_period: 20s
+    restart: unless-stopped
+
+  # Agent Service
+  agent:
+    profiles: ["core"]
+    image: node:20-slim
+    container_name: liturgy-agent
+    command: ["sleep", "infinity"]
+    depends_on:
+      app:
+        condition: service_healthy
     restart: unless-stopped
 
 volumes:
