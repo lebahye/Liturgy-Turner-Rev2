@@ -1,0 +1,19 @@
+{
+  "sessionId": "session-2026-03-29-1774788905862",
+  "startTime": 1774788905862,
+  "totalChunks": 0,
+  "triggeredTurns": 0,
+  "entries": [],
+  "endTime": 1774788905917,
+  "summary": {
+    "avgConfidenceAll": 0,
+    "avgConfidenceTriggered": 0,
+    "avgConfidenceNotTriggered": 0,
+    "maxScore": 0,
+    "minScore": 0,
+    "threshold": 0.85,
+    "pagesNeverMatched": [],
+    "pagesOverconfident": [],
+    "recommendation": "No data collected"
+  }
+}

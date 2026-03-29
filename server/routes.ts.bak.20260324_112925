@@ -1,0 +1,48 @@
+$(cat /Users/lebahye/clawd/projects/Liturgy-Turner-Rev2/server/routes.ts | sed '/\/api\/liturgy\/status/,/res\.json({/ {
+    /res\.json({/ i\
+// Slides Status Endpoint
+router.get("/api/slides/status", async (req: Request, res: Response) => {
+  try {
+    const status = {
+      active: true,
+      message: "Slides system operational",
+      lastUpdated: new Date().toISOString(),
+      slideCount: 0 // Replace with actual count if available
+    };
+    res.json({
+      success: true,
+      data: status
+    });
+  } catch (error) {
+    logger.error("Error fetching slides status:", error);
+    res.status(500).json({
+      success: false,
+      error: "Internal server error"
+    });
+  }
+});
+
+// Training Status Endpoint
+router.get("/api/training/status", async (req: Request, res: Response) => {
+  try {
+    const status = {
+      active: true,
+      message: "Training system operational",
+      lastUpdated: new Date().toISOString(),
+      trainingSessions: 0 // Replace with actual count if available
+    };
+    res.json({
+      success: true,
+      data: status
+    });
+  } catch (error) {
+    logger.error("Error fetching training status:", error);
+    res.status(500).json({
+      success: false,
+      error: "Internal server error"
+    });
+  }
+});
+
+    }
+}')

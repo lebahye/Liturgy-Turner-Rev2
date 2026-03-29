@@ -1,0 +1,13 @@
+services:
+  agent:
+    build:
+      context: .
+      dockerfile: Dockerfile.agent
+    environment:
+      TELEGRAM_BOT_TOKEN: "8207834735:AAGhOKKmVZqiFYZTkhtIvXBvyzLbkRdS5rs"
+    volumes:
+      - ./agent:/app/agent
+    ports:
+      - "29788:29788"
+      - "29789:29789"
+    restart: unless-stopped
