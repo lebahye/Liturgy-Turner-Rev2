@@ -8,7 +8,7 @@ description: Control the Liturgy-Turner app (set/next/prev page, read state) via
 Use this skill when the user wants **Clawdbot to control page turns** in the Armenian Liturgy Page Turner app.
 
 ## Assumptions
-- The Liturgy app server is running (default): `http://localhost:5000`
+- The Liturgy app server is running (default): `http://localhost:5001`
 - Control API endpoints exist:
   - `GET /api/control/state`
   - `POST /api/control/page/set` body `{ page, reason?, confidence? }`
@@ -16,7 +16,7 @@ Use this skill when the user wants **Clawdbot to control page turns** in the Arm
   - `POST /api/control/page/prev` body `{ reason?, confidence? }`
 
 ## Configuration
-- Read base URL from env var `LITURGY_BASE_URL` if set, else use `http://localhost:5000`.
+- Read base URL from env var `LITURGY_BASE_URL` if set, else use `http://localhost:5001`.
 
 ## What to do
 When asked to turn pages or query state:
@@ -45,3 +45,4 @@ Use the **bash/exec tool** to call the API with `curl`.
 - Always report back the resulting page and any reason/confidence.
 - If server is unreachable, instruct the user to start it:
   - `npm run dev:lan`
+
