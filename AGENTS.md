@@ -82,7 +82,7 @@ Output: [exact output]
 cat liturgy_pages.sql | head -5
 
 # Database verification  
-docker exec liturgy-postgres psql -U liturgy_user -d liturgy_turner -c "SELECT COUNT(*) FROM pages WHERE trained = true;"
+docker exec liturgy-postgres psql -U liturgy_user -d liturgy_turner -c "SELECT COUNT(*) FROM fingerprints WHERE confirmed = true;"
 
 # Service verification
 curl -s -o /dev/null -w "%{http_code}" http://localhost:5001
@@ -179,14 +179,17 @@ You are free to edit `HEARTBEAT.md` with a short checklist or reminders. Keep it
 **MANDATORY**: Every 6 hours, verify fingerprint coverage and training status:
 
 ```bash
-# Check total pages with fingerprints
-docker exec liturgy-postgres psql -U liturgy_user -d liturgy_turner -c "SELECT COUNT(*) FROM pages WHERE trained = true;"
+# Check total pages that exist
+docker exec liturgy-postgres psql -U liturgy_user -d liturgy_turner -c "SELECT COUNT(*) FROM pages;"
 
-# Check pages still needing training (109-183)
-docker exec liturgy-postgres psql -U liturgy_user -d liturgy_turner -c "SELECT page_number FROM pages WHERE page_number BETWEEN 109 AND 183 AND trained = false ORDER BY page_number;"
+# Check pages with confirmed fingerprints (109-183)
+docker exec liturgy-postgres psql -U liturgy_user -d liturgy_turner -c "SELECT page_number FROM pages p LEFT JOIN fingerprints f ON p.page_number = f.page_number WHERE p.page_number BETWEEN 109 AND 183 AND (f.confirmed = true OR f.confirmed IS NULL) ORDER BY p.page_number;"
+
+# Check pages still needing fingerprints (109-183)
+docker exec liturgy-postgres psql -U liturgy_user -d liturgy_turner -c "SELECT p.page_number FROM pages p LEFT JOIN fingerprints f ON p.page_number = f.page_number WHERE p.page_number BETWEEN 109 AND 183 AND f.confirmed IS NOT true ORDER BY p.page_number;"
 ```
 
-**Report format**: "Pages 109-183: X still need training" or "All pages 109-183 complete"
+**Report format**: "Pages 109-183: X still need fingerprints" or "All pages 109-183 have confirmed fingerprints"
 
 ### Heartbeat vs Cron: When to Use Each
 
