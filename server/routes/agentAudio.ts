@@ -1,5 +1,6 @@
 import express from "express";
 import multer from "multer";
+import { getScoreLogger } from "../score-logger.js";
 
 export const agentAudioRouter = express.Router();
 
@@ -49,11 +50,33 @@ agentAudioRouter.post("/agent/feed-audio", upload.single("audio"), async (req, r
 
     const data = await response.json();
 
+    // Log to score logger if active (bridges primary agent path → score logger)
+    const scoreLogger = getScoreLogger();
+    if (scoreLogger && data) {
+      try {
+        scoreLogger.logScore({
+          timestamp: Date.now(),
+          currentPage: data.currentPage || 0,
+          candidatePage: data.detectedPage || data.candidatePage || 0,
+          confidenceScore: data.confidence || data.finalScore || 0,
+          mfccSimilarity: data.mfccScore || data.mfccSimilarity || 0,
+          rmsSimilarity: data.rmsScore || data.rmsSimilarity || 0,
+          centroidSimilarity: data.centroidScore || data.centroidSimilarity || 0,
+          continuityBonus: data.continuityBonus || data.sequentialBoost || 0,
+          detectedSpeaker: data.detectedSpeaker || data.speaker || 'unknown',
+          expectedSpeaker: data.expectedSpeaker || 'unknown',
+          triggered: data.triggered || data.pageTurned || false,
+        });
+      } catch (logErr: any) {
+        console.error("[agentAudio] Score log error:", logErr.message);
+      }
+    }
+
     return res.json({
       success: true,
       result: data
     });
-    
+
   } catch (err: any) {
     console.error("[agentAudio] Feed error:", err.message);
     

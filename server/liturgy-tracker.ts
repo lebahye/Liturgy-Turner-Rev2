@@ -6,7 +6,8 @@
 import Meyda from 'meyda';
 import fs from 'fs';
 import path from 'path';
-
+import { getScoreLogger } from './score-logger';
+import { getAudioNormalizer } from './audio-normalizer';
 interface LiveFeatures {
   mfcc: number[];
   spectralCentroid: number;
@@ -151,15 +152,37 @@ export class LiturgyPageTracker {
       const candidates = this.getCandidatePages();
       
       // Score each candidate
-      const scores = candidates.map(pageNum => ({
-        pageNumber: pageNum,
-        score: this.scorePage(pageNum, features, detectedSpeaker)
-      }));
-      
+      const scores = candidates.map(pageNum => {
+        const detail = this.matchFingerprintDetailed(features, pageNum);
+        const pageData = this.liveTrackerData.pages.find(p => p.pageNumber === pageNum);
+        const speakerScore = detectedSpeaker === (pageData?.speaker || '') ? this.speakerWeight : 0;
+        return {
+          pageNumber: pageNum,
+          score: speakerScore + (detail.score * this.fingerprintWeight),
+          detail
+        };
+      });      
       // Sort by score
       scores.sort((a, b) => b.score - a.score);
       const best = scores[0];
-      
+
+      // Score logger — captures every decision for analysis
+      const logger = getScoreLogger();
+      if (logger && best) {
+        logger.logScore({
+          timestamp,
+          currentPage: this.currentPage,
+          candidatePage: best.pageNumber,
+          confidenceScore: best.score,
+          mfccSimilarity: best.detail?.mfccSim || 0,
+          rmsSimilarity: best.detail?.rmsSim || 0,
+          centroidSimilarity: best.detail?.centroidSim || 0,
+          continuityBonus: best.detail?.continuityBonus || 0,
+          detectedSpeaker,
+          expectedSpeaker,
+          triggered: !!(best.score > this.confidenceThreshold && best.pageNumber > this.currentPage)
+        });
+      }      
       // Advance if confident and moving forward
       if (best && best.score > this.confidenceThreshold && best.pageNumber > this.currentPage) {
         const previousPage = this.currentPage;
@@ -252,15 +275,19 @@ export class LiturgyPageTracker {
       }
     }
     
+    const normalizer = getAudioNormalizer();
+    const rawMFCC = this.averageArray2D(features.mfcc);
+    const rawRMS = this.average(features.rms);
+    const rawCentroid = this.average(features.spectralCentroid);
+
     return {
-      mfcc: this.averageArray2D(features.mfcc),
-      spectralCentroid: this.average(features.spectralCentroid),
+      mfcc: normalizer.hasProfile() ? normalizer.correctMFCC(rawMFCC) : rawMFCC,
+      spectralCentroid: normalizer.hasProfile() ? normalizer.correctCentroid(rawCentroid) : rawCentroid,
       spectralFlux: features.spectralFlux,
       spectralRolloff: this.average(features.spectralRolloff),
-      rms: this.average(features.rms),
+      rms: normalizer.hasProfile() ? normalizer.correctRMS(rawRMS) : rawRMS,
       zcr: this.average(features.zcr)
-    };
-  }
+    };  }
   
   /**
    * Classify speaker based on spectral flux variance
@@ -331,7 +358,39 @@ export class LiturgyPageTracker {
     // Combined score
     return (mfccSim * 0.6) + (rmsScore * 0.2) + (centroidScore * 0.2);
   }
-  
+
+  private matchFingerprintDetailed(liveFeatures: LiveFeatures, pageNumber: number): {
+    score: number;
+    mfccSim: number;
+    rmsSim: number;
+    centroidSim: number;
+    continuityBonus: number;
+  } {
+    const stored = this.fingerprints.find(f => f.pageNumber === pageNumber);
+    if (!stored) return { score: 0, mfccSim: 0, rmsSim: 0, centroidSim: 0, continuityBonus: 0 };
+
+    const mfccSim = this.cosineSimilarity(liveFeatures.mfcc, stored.features.mfcc);
+
+    if (mfccSim < 0.3) {
+      return { score: 0, mfccSim, rmsSim: 0, centroidSim: 0, continuityBonus: 0 };
+    }
+
+    const rmsDiff = Math.abs(liveFeatures.rms - stored.features.rms);
+    const rmsSim = Math.exp(-rmsDiff * 50);
+
+    const centroidDiff = Math.abs(liveFeatures.spectralCentroid - stored.features.spectralCentroid);
+    const centroidSim = Math.exp(-centroidDiff / 100);
+
+    let continuityBonus = 0;
+    const pageDistance = Math.abs(pageNumber - this.currentPage);
+    if (pageDistance <= 1) continuityBonus = 0.15;
+    else if (pageDistance <= 3) continuityBonus = 0.05;
+
+    const baseScore = (mfccSim * 0.7) + (rmsSim * 0.15) + (centroidSim * 0.15);
+    const score = Math.min(1.0, baseScore + continuityBonus);
+
+    return { score, mfccSim, rmsSim, centroidSim, continuityBonus };
+  }  
   /**
    * Check if we should look for next pages even without speaker change
    */

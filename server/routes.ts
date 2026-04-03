@@ -10,6 +10,7 @@ import { getDisplayState, nextPage, prevPage, setPageState, setPdfState } from "
 import { clawdbotTokenHandler } from "./routes/clawdbotToken";
 import { agentAudioRouter } from "./routes/agentAudio";
 import { LiturgyPageTracker } from "./liturgy-tracker";
+import { rawDb } from "./db";
 
 // Configure multer for file uploads
 const pdfStorage = multer.diskStorage({
@@ -99,6 +100,27 @@ export async function registerRoutes(
   // Agent audio processing routes - forwards audio to armenian-learner skill
   app.use('/api', agentAudioRouter);
 
+  // Score logger endpoints
+  app.post('/api/liturgy/log/start', (_req, res) => {
+    const { startScoreLogger } = require('./score-logger');
+    startScoreLogger(0.85);
+    res.json({ success: true, message: 'Score logging started' });
+  });
+
+  app.post('/api/liturgy/log/stop', (_req, res) => {
+    const { stopScoreLogger } = require('./score-logger');
+    const summary = stopScoreLogger();
+    res.json({ success: true, summary });
+  });
+
+  app.post('/api/liturgy/log/status', (_req, res) => {
+    const { getScoreLogger } = require('./score-logger');
+    const logger = getScoreLogger();
+    res.json({ 
+      active: logger !== null,
+      entriesCount: (logger as any)?._session?.entries?.length || 0
+    });
+  });
   app.get('/api/control/state', async (_req, res) => {
     res.json({ state: getDisplayState() });
   });
@@ -1408,12 +1430,94 @@ const file = await storage.createUploadedFile({
     }
   });
 
-  // ============ Local Chat API (REMOVED - Use Telegram/WhatsApp/:29789 instead) ============
-  
-  // Chat API endpoints removed - bot communication via:
-  // - Telegram (messaging)
-  // - WhatsApp (optional messaging)
-  // - Port :29789 (Clawdbot Control UI)
+  // ============ Dictionary Browser API ============
+
+  app.get("/api/word-browser", async (req, res) => {
+    try {
+      const rdb = rawDb;
+      const sort = (req.query.sort as string) || 'alphabetical';
+      const filter = (req.query.filter as string) || 'all';
+      const page = parseInt(req.query.page as string) || 1;
+      const limit = Math.min(parseInt(req.query.limit as string) || 100, 500);
+      const offset = (page - 1) * limit;
+
+      const orderMap: Record<string, string> = {
+        alphabetical: 'armenian ASC', frequency: 'occurrences DESC',
+        confidence: 'confidence DESC', page: 'page_number ASC', reverse: 'armenian DESC'
+      };
+      const filterMap: Record<string, string> = {
+        all: '1=1', common: 'occurrences > 3', rare: 'occurrences = 1',
+        high_confidence: 'confidence >= 0.9', low_confidence: 'confidence < 0.5'
+      };
+
+      const orderClause = orderMap[sort] || orderMap.alphabetical;
+      const whereClause = filterMap[filter] || filterMap.all;
+
+      const totalRow = rdb.prepare(`SELECT COUNT(*) as count FROM word_dictionary WHERE ${whereClause}`).get() as any;
+      const words = rdb.prepare(`SELECT armenian, phonetic, page_number, occurrences, confidence FROM word_dictionary WHERE ${whereClause} ORDER BY ${orderClause} LIMIT ? OFFSET ?`).all(limit, offset);
+
+      res.json({ words, total: totalRow?.count || 0, page, limit, totalPages: Math.ceil((totalRow?.count || 0) / limit), sort, filter });
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  app.get("/api/word-browser/stats", async (req, res) => {
+    try {
+      const rdb = rawDb;
+      const q = (sql: string) => (rdb.prepare(sql).get() as any)?.c || 0;
+      res.json({
+        total: q('SELECT COUNT(*) as c FROM word_dictionary'),
+        unique_armenian: q('SELECT COUNT(DISTINCT armenian) as c FROM word_dictionary'),
+        avg_occurrences: q('SELECT AVG(occurrences) as c FROM word_dictionary'),
+        avg_confidence: q('SELECT AVG(confidence) as c FROM word_dictionary'),
+        common_words: q('SELECT COUNT(*) as c FROM word_dictionary WHERE occurrences > 3'),
+        rare_words: q('SELECT COUNT(*) as c FROM word_dictionary WHERE occurrences = 1'),
+        pages_covered: q('SELECT COUNT(DISTINCT page_number) as c FROM word_dictionary WHERE page_number IS NOT NULL'),
+        // Also include the legacy dictionary table
+        legacy_dictionary: q('SELECT COUNT(*) as c FROM dictionary'),
+      });
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  // ============ Database Viewer API ============
+
+  app.get("/api/db/tables", async (req, res) => {
+    try {
+      const tables = rawDb.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' ORDER BY name").all() as any[];
+      const result = tables.map(t => {
+        const countRow = rawDb.prepare(`SELECT COUNT(*) as c FROM "${t.name}"`).get() as any;
+        const schema = rawDb.prepare(`PRAGMA table_info("${t.name}")`).all() as any[];
+        return {
+          name: t.name,
+          rowCount: countRow?.c || 0,
+          columns: schema.map(col => ({ name: col.name, type: col.type, notNull: col.notnull === 1, defaultValue: col.dflt_value })),
+        };
+      });
+      res.json(result);
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  app.get("/api/db/query/:table", async (req, res) => {
+    try {
+      const rdb = rawDb;
+      const table = req.params.table.replace(/[^a-zA-Z0-9_]/g, '');
+      const page = parseInt(req.query.page as string) || 1;
+      const limit = Math.min(parseInt(req.query.limit as string) || 50, 200);
+      const offset = (page - 1) * limit;
+
+      const totalRow = rdb.prepare(`SELECT COUNT(*) as c FROM "${table}"`).get() as any;
+      const rows = rdb.prepare(`SELECT * FROM "${table}" LIMIT ? OFFSET ?`).all(limit, offset);
+
+      res.json({ table, rows, total: totalRow?.c || 0, page, limit, totalPages: Math.ceil((totalRow?.c || 0) / limit) });
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
+    }
+  });
 
   return httpServer;
 }

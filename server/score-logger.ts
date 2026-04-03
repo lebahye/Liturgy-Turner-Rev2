@@ -20,6 +20,29 @@ interface ScoreEntry {
   expectedSpeaker: string;
   triggered: boolean;
   manualCorrect?: boolean; // filled in post-session
+  // Enhanced data capture (v2)
+  speakerConfidence?: number;
+  snr?: number;
+  noiseLevel?: number;
+  detectionLatencyMs?: number;
+  recognizedWords?: Array<{ word: string; confidence: number }>;
+  audioFeatures?: {
+    spectralCentroid?: number;
+    spectralRolloff?: number;
+    rms?: number;
+    zcr?: number;
+    spectralFlatness?: number;
+  };
+  failureMode?: 'no_match' | 'low_confidence' | 'wrong_page' | 'threshold_not_met' | 'cooldown' | 'ok';
+  source?: 'agent' | 'fallback' | 'manual';
+}
+
+interface SessionContext {
+  priestName?: string;
+  churchName?: string;
+  serviceType?: string; // 'regular' | 'feast_day' | 'special'
+  micDevice?: string;
+  notes?: string;
 }
 
 interface SessionReport {
@@ -30,6 +53,7 @@ interface SessionReport {
   triggeredTurns: number;
   entries: ScoreEntry[];
   summary?: SessionSummary;
+  context?: SessionContext;
 }
 
 interface SessionSummary {
@@ -64,6 +88,11 @@ export class ScoreLogger {
     };
     this.sessionFile = path.join(this.dataDir, `score-log-${date}-${time}.json`);
     console.log(`[ScoreLogger] Session started: ${this.session.sessionId}`);
+  }
+
+  setContext(ctx: SessionContext): void {
+    this.session.context = ctx;
+    console.log(`[ScoreLogger] Context set: ${JSON.stringify(ctx)}`);
   }
 
   logScore(entry: ScoreEntry): void {
