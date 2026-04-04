@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useStore } from "@/lib/store";
 import { Document, Page, pdfjs } from "react-pdf";
 import { createPageMatcher, PdfPageText, DictEntry, MatcherConfig } from "@/lib/pageMatching";
-import { createAudioAnalyzer, AudioFeatures, compareFeatures, MeydaAnalyzer } from "@/lib/audio-features";
+import { createAudioAnalyzer, AudioFeatures, compareFeatures, compareFeaturesCosineSimilarity, MeydaAnalyzer } from "@/lib/audio-features";
 import { PageMatchCoordinator, CoordinatorDecision, TriggerData } from "@/lib/pageMatchCoordinator";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
@@ -963,7 +963,7 @@ export default function Live() {
           let bestNextScore = 0;
           for (const marker of nextMarkers) {
             if (!marker.audioFeatures) continue;
-            const score = compareFeatures(avgFeatures, marker.audioFeatures as AudioFeatures);
+            const score = compareFeaturesCosineSimilarity(avgFeatures, marker.audioFeatures as AudioFeatures);
             if (score > bestNextScore) bestNextScore = score;
           }
           
@@ -971,7 +971,7 @@ export default function Live() {
           let bestCurrentScore = 0;
           for (const marker of currentMarkers) {
             if (!marker.audioFeatures) continue;
-            const score = compareFeatures(avgFeatures, marker.audioFeatures as AudioFeatures);
+            const score = compareFeaturesCosineSimilarity(avgFeatures, marker.audioFeatures as AudioFeatures);
             if (score > bestCurrentScore) bestCurrentScore = score;
           }
           
