@@ -38,7 +38,7 @@ function convertWebmToWav(buffer: Buffer): Buffer {
 
 agentAudioRouter.post("/agent/feed-audio", upload.single("audio"), async (req, res) => {
   try {
-    const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://agent:29788";
+    const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://localhost:29788";
 
     let audioBuffer: Buffer | null = null;
     let inputFormat = "audio/webm";
@@ -124,7 +124,7 @@ agentAudioRouter.post("/agent/feed-audio", upload.single("audio"), async (req, r
 
 agentAudioRouter.post("/agent/start-recognition", async (req, res) => {
   try {
-    const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://agent:29788";
+    const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://localhost:29788";
     const { pdfId, startPage } = req.body;
 
     console.log(`[agentAudio] Starting recognition: pdfId=${pdfId}, page=${startPage}`);
@@ -160,7 +160,7 @@ agentAudioRouter.post("/agent/start-recognition", async (req, res) => {
 
 agentAudioRouter.post("/agent/stop-recognition", async (_req, res) => {
   try {
-    const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://agent:29788";
+    const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://localhost:29788";
     const response = await fetch(`${audioApiUrl}/stop-recognition`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -177,7 +177,7 @@ agentAudioRouter.post("/agent/stop-recognition", async (_req, res) => {
 
 agentAudioRouter.get("/agent/status", async (_req, res) => {
   try {
-    const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://agent:29788";
+    const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://localhost:29788";
     const response = await fetch(`${audioApiUrl}/status`, {
       method: "GET",
       signal: AbortSignal.timeout(5000),

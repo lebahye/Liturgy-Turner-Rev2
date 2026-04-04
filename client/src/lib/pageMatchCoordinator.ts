@@ -36,7 +36,7 @@ export type CoordinatorConfig = {
 const DEFAULT_CONFIG: CoordinatorConfig = {
   // Production-biased defaults: prefer missed turns over false turns.
   // Live mode already has manual override; accidental page jumps are harder to recover from.
-  fingerprintThreshold: 65,
+  fingerprintThreshold: 50,
   ngramThreshold: 2,
   triggerMatchThreshold: 3,
   agreementBonus: 20,

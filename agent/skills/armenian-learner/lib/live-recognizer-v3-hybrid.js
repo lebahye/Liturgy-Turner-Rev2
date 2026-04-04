@@ -85,7 +85,14 @@ export class LiveRecognizerV3Hybrid {
     
     try {
       // Add to buffer
-      this.audioBuffer.push(...audioChunk);
+      // Fix: Avoid spread operator stack overflow with large chunks
+      if (audioChunk.length > 10000) {
+        // For large chunks, use concat instead of spread
+        this.audioBuffer = this.audioBuffer.concat(Array.from(audioChunk));
+      } else {
+        // Small chunks can still use push
+        this.audioBuffer.push(...audioChunk);
+      }
       
       // Trim if too long
       if (this.audioBuffer.length > this.maxBufferSamples) {

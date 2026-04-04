@@ -57,6 +57,31 @@ async function publishPageToBus(page: number, reason?: string, confidence?: numb
 }
 
 export default function Live() {
+
+  // Determine the best audio format for the agent compatibility
+  function getBestAudioFormat() {
+    // Check what formats are supported by the browser, prefer WAV for agent compatibility
+    const formats = [
+      "audio/wav",
+      "audio/wav; codecs=pcm",
+      "audio/wave", 
+      "audio/x-wav",
+      "audio/webm; codecs=opus",
+      "audio/webm"
+    ];
+    
+    for (const format of formats) {
+      if (MediaRecorder.isTypeSupported(format)) {
+        console.log(`[Audio] Using format: ${format}`);
+        return format;
+      }
+    }
+    
+    // Fallback to WebM (will need server-side conversion)
+    console.log("[Audio] Falling back to WebM (needs conversion)");
+    return "audio/webm";
+  }
+
   const store = useStore();
 
   const [audioSource, setAudioSource] = useState<AudioSource>("mic");
@@ -744,7 +769,7 @@ export default function Live() {
 
   function createRecorderForStream(stream: MediaStream, checkVAD: boolean = true) {
     chunksRef.current = [];
-    const rec = new MediaRecorder(stream, { mimeType: "audio/webm" });
+    const rec = new MediaRecorder(stream, { mimeType: getBestAudioFormat() });
     
     rec.ondataavailable = (e) => {
       if (e.data && e.data.size > 0) {
@@ -811,7 +836,7 @@ export default function Live() {
         mediaRecorderRef.current.stop();
       }
       startNewRecording();
-    }, 500); // 500ms chunks for sub-second transcription
+    }, 2000); // 2 second chunks for reliable audio capture
   }
 
   async function startMicRecorder() {
@@ -981,7 +1006,7 @@ export default function Live() {
     }
     
     // Use the filtered stream (with high-pass filter applied) for recording
-    startRecordingCycle(filteredStream);
+    startRecordingCycle(filteredStream, false); // DISABLE VAD FOR TESTING
     setStatus("running");
   }
 

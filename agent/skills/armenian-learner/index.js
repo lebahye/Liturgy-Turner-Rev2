@@ -204,16 +204,27 @@ function getStatus() {
     return {
       mode: trainingState.status,
       ...trainingState,
-      ...dbStats
+      ...patternDb.getStats()
     };
   }
   
+  if (liveRecognizerV3 && liveRecognizerV3.isRunning) {
+    const diagnostics = audioDiagnostics ? audioDiagnostics.getReport() : {};
+    return {
+      mode: "recognizing",
+      ...liveRecognizerV3.getStatus(),
+      ...patternDb.getStats(),
+      ...diagnostics,
+      version: "v3-hybrid"
+    };
+  }
+
   if (liveRecognizerV2 && liveRecognizerV2.isRunning) {
     const diagnostics = audioDiagnostics ? audioDiagnostics.getReport() : {};
     return {
       mode: 'recognizing',
       ...liveRecognizerV2.getStatus(),
-      ...dbStats,
+      ...patternDb.getStats(),
       ...diagnostics,
       version: 'v2-page-matcher'
     };
@@ -224,7 +235,7 @@ function getStatus() {
     return {
       mode: 'recognizing',
       ...liveRecognizer.getStatus(),
-      ...dbStats,
+      ...patternDb.getStats(),
       ...diagnostics,
       version: 'v1-pattern-matcher'
     };
@@ -232,7 +243,7 @@ function getStatus() {
   
   return {
     mode: 'idle',
-    ...dbStats,
+    ...patternDb.getStats(),
     ready: dbStats.totalPatterns > 0
   };
 }
@@ -302,6 +313,17 @@ function feedAudio(audioChunk) {
   // Use V3 hybrid if available, fallback to V2
   if (liveRecognizerV3 && liveRecognizerV3.isRunning) {
     liveRecognizerV3.feedAudio(audioChunk);
+  if (liveRecognizerV3 && liveRecognizerV3.isRunning) {
+    const diagnostics = audioDiagnostics ? audioDiagnostics.getReport() : {};
+    return {
+      mode: "recognizing",
+      ...liveRecognizerV3.getStatus(),
+      ...patternDb.getStats(),
+      ...diagnostics,
+      version: "v3-hybrid"
+    };
+  }
+
   } else if (liveRecognizerV2 && liveRecognizerV2.isRunning) {
     liveRecognizerV2.feedAudio(audioChunk);
   } else if (liveRecognizer && liveRecognizer.isRunning) {

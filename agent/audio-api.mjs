@@ -6,6 +6,7 @@
  * 1. Direct microphone input (laptop/external mic) — PRIMARY for shipping
  * 2. Browser audio chunks (WebM) — SECONDARY for admin/remote use
  * 
+
  * NO WHISPER. NO STT APIs.
  * Pure MFCC acoustic fingerprinting + pattern matching.
  * 
@@ -13,6 +14,7 @@
  *   Mic/Browser → PCM → armenian-learner V3 (MFCC + patterns) → page turn
  */
 
+import { spawn } from 'child_process';
 import express from 'express';
 import multer from 'multer';
 import { createRequire } from 'module';
@@ -392,29 +394,38 @@ app.get('/mic/devices', (_req, res) => {
   res.json(listMicDevices());
 });
 
-// Browser audio (WebM/Opus from Live.tsx — secondary path)
+// Browser audio (WebM/Opus from Live.tsx — IMPROVED LOGGING)
 app.post('/feed-audio', upload.single('audio'), async (req, res) => {
   try {
     let audioBuffer;
     if (req.file) {
       audioBuffer = req.file.buffer;
+      console.log(`[audio-api] Received ${audioBuffer.length} bytes via multipart (${req.file.mimetype})`);
     } else if (req.body?.audioData) {
       const b64 = String(req.body.audioData);
       const comma = b64.indexOf(',');
       audioBuffer = Buffer.from(comma !== -1 ? b64.slice(comma + 1) : b64, 'base64');
+      console.log(`[audio-api] Received ${audioBuffer.length} bytes via JSON base64`);
     } else {
       return res.status(400).json({ error: 'audio required' });
     }
 
-    // Decode WebM/Opus → Float32 via AudioContext (Node doesn't have this natively)
-    // For now: attempt raw PCM conversion, fallback to feeding raw bytes
-    // TODO: add ffmpeg decode for proper WebM support
-    const samples = new Float32Array(audioBuffer.length / 2);
-    for (let i = 0; i < samples.length; i++) {
-      const b1 = audioBuffer[i * 2] || 0;
-      const b2 = audioBuffer[i * 2 + 1] || 0;
-      const int16 = (b2 << 8) | b1;
-      samples[i] = (int16 > 32767 ? int16 - 65536 : int16) / 32768.0;
+    // Check if this is raw PCM data
+    let samples;
+    const isRawPCM = req.body?.audioData && req.body.audioData.startsWith('data:audio/raw;base64,');
+    
+    if (isRawPCM) {
+      // Handle raw 16-bit PCM directly
+      console.log(`[audio-api] Processing raw PCM: ${audioBuffer.length} bytes`);
+      samples = new Float32Array(audioBuffer.length / 2);
+      for (let i = 0; i < samples.length; i++) {
+        samples[i] = audioBuffer.readInt16LE(i * 2) / 32768.0;
+      }
+      console.log(`[audio-api] ✅ Converted ${samples.length} PCM samples directly`);
+    } else {
+      // Decode WebM/Opus using sox
+      samples = await decodeAudioBuffer(audioBuffer, req.file?.mimetype || 'audio/webm');
+      console.log(`[audio-api] ✅ Decoded ${samples.length} samples from ${audioBuffer.length} bytes`);
     }
 
     const result = await processAudioSamples(samples, 'browser');
@@ -425,6 +436,66 @@ app.post('/feed-audio', upload.single('audio'), async (req, res) => {
   }
 });
 
+
+/**
+ * Decode audio buffer to Float32Array using sox
+ * Supports WebM, Opus, MP3, WAV, etc.
+ */
+async function decodeAudioBuffer(buffer, mimeType = 'audio/webm') {
+  return new Promise((resolve, reject) => {
+    const tempInput = path.join(os.tmpdir(), `audio-${Date.now()}.webm`);
+    const tempOutput = path.join(os.tmpdir(), `audio-${Date.now()}.raw`);
+    
+    try {
+      // Write buffer to temporary file
+      fs.writeFileSync(tempInput, buffer);
+      
+      // Use sox to convert to 16-bit PCM at 16kHz mono
+      // Use ffmpeg for WebM files (sox does not support WebM), sox for others
+      const isWebm = tempInput.includes(".webm");
+      const decoder = isWebm ?
+        spawn("ffmpeg", ["-y", "-i", tempInput, "-ar", "16000", "-ac", "1", "-f", "s16le", tempOutput]) :
+        spawn("sox", [tempInput, "-t", "raw", "-r", "16000", "-e", "signed-integer", "-b", "16", "-c", "1", tempOutput]);
+      const sox = decoder; // Keep same variable name for compatibility
+      
+      sox.stderr.on('data', (data) => {
+        console.log(`[audio-api] decoder:`, data.toString().trim());
+      });
+      
+      sox.on('close', (code) => {
+        try {
+          if (code !== 0) {
+            throw new Error(`Audio decoder failed with code ${code}`);
+          }
+          
+          // Read the decoded PCM data
+          const pcmBuffer = fs.readFileSync(tempOutput);
+          const samples = new Float32Array(pcmBuffer.length / 2);
+          
+          // Convert 16-bit PCM to Float32
+          for (let i = 0; i < samples.length; i++) {
+            const int16 = pcmBuffer.readInt16LE(i * 2);
+            samples[i] = int16 / 32768.0;
+          }
+          
+          // Cleanup
+          fs.unlinkSync(tempInput);
+          fs.unlinkSync(tempOutput);
+          
+          resolve(samples);
+        } catch (err) {
+          reject(err);
+        }
+      });
+      
+      sox.on('error', reject);
+      
+    } catch (err) {
+      reject(err);
+    }
+  });
+}
+
 // Recognition session control
 app.post('/start-recognition', async (req, res) => {
   const { startPage } = req.body || {};
@@ -433,6 +504,14 @@ app.post('/start-recognition', async (req, res) => {
     await skill.setCurrentPage?.(currentPage);
   }
   startScoreLog();
+
+  // START THE RECOGNITION ENGINE (this was missing!)
+  try {
+    const recognitionResult = await skill.startRecognition?.({ startPage: currentPage });
+    console.log(`[audio-api] ✅ Recognition engine started:`, recognitionResult);
+  } catch (err) {
+    console.error(`[audio-api] ❌ Failed to start recognition:`, err.message);
+  }
   const micResult = await startMic(MIC_DEVICE);
   res.json({ success: true, currentPage, micStarted: micResult.success, micError: micResult.error });
 });

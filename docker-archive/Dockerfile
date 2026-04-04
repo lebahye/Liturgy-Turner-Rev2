@@ -1,9 +1,10 @@
 FROM node:20-slim
 
-# Install system dependencies
+# Install system dependencies including ffmpeg for audio conversion
 RUN apt-get update && apt-get install -y \
     bash \
     curl \
+    ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app

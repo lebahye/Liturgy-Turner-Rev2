@@ -275,7 +275,7 @@ export class SpeechMatcher {
 
         // Require stronger evidence for bigger jumps
         const requiredStreak = candidatePage === this.currentPage + 1 ? 2 : 3;
-        const requiredConfidence = candidatePage === this.currentPage + 1 ? 55 : 65;
+        const requiredConfidence = candidatePage === this.currentPage + 1 ? 45 : 50;
 
         if (
           matchResult.confidence >= requiredConfidence &&

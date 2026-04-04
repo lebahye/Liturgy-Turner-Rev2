@@ -103,7 +103,7 @@ export async function registerRoutes(
   // Audio system status endpoint
   app.get('/api/audio/status', async (_req, res) => {
     try {
-      const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://agent:29788";
+      const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://localhost:29788";
       
       // Check agent audio service status
       let agentStatus = { available: false, error: null };

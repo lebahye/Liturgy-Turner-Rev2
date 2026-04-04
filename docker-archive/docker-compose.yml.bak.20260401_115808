@@ -1,0 +1,110 @@
+services:
+  # PostgreSQL Database
+  postgres:
+    profiles: ["core"]
+    image: postgres:15-alpine
+    container_name: liturgy-postgres
+    environment:
+      POSTGRES_DB: liturgy_turner
+      POSTGRES_USER: liturgy_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U liturgy_user -d liturgy_turner"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # Liturgy Turner App
+  app:
+    profiles: ["core"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: liturgy-app
+    ports:
+      - "${APP_HOST_PORT:-5001}:5001"
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://liturgy_user:${POSTGRES_PASSWORD:-changeme}@postgres:5432/liturgy_turner
+      PORT: 5001
+      HOST: 0.0.0.0
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:${APP_HOST_PORT:-5001}}
+      TRACKER_MODE: ${TRACKER_MODE:-prod}
+      TRACKER_LOOKAHEAD: ${TRACKER_LOOKAHEAD:-}
+      TRACKER_CONFIDENCE: ${TRACKER_CONFIDENCE:-}
+      TRACKER_COOLDOWN_MS: ${TRACKER_COOLDOWN_MS:-}
+      TRACKER_EVALUATE_ALWAYS: ${TRACKER_EVALUATE_ALWAYS:-}
+      TRACKER_ALLOW_JUMPS: ${TRACKER_ALLOW_JUMPS:-}
+      # Agent audio API (runs on host via OpenClaw, or in agent container)
+      AGENT_AUDIO_API_URL: ${AGENT_AUDIO_API_URL:-http://host.docker.internal:29788}
+    volumes:
+      - ./uploads:/app/uploads
+      - ./data:/app/data
+      - ./training-data:/app/training-data
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:5001/api/liturgy/status').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 8
+      start_period: 20s
+    restart: unless-stopped
+
+  # Agent Service — armenian-learner V3 + mic input
+  agent:
+    profiles: ["core"]
+    build:
+      context: .
+      dockerfile: Dockerfile.agent
+    container_name: liturgy-agent
+    ports:
+      - "29788:29788"
+      - "29789:29789"
+    environment:
+      # Fixed: was 'http://app:5000', app runs on 5001
+      APP_BASE_URL: http://app:5001
+      AUDIO_API_PORT: 29788
+      TRAINING_DATA_DIR: /app/training-data
+      # Mic config — override to select external mic
+      MIC_DEVICE: ${MIC_DEVICE:-}
+      MIC_SAMPLE_RATE: ${MIC_SAMPLE_RATE:-16000}
+      # Recognition tuning
+      CONFIDENCE_THRESHOLD: ${CONFIDENCE_THRESHOLD:-0.5}
+      SEQUENTIAL_BOOST: ${SEQUENTIAL_BOOST:-0.10}
+      MAX_PAGE_JUMP: ${MAX_PAGE_JUMP:-5}
+    volumes:
+      - ./training-data:/app/training-data
+      - ./agent/skills:/app/agent/skills
+      - ./agent/memory:/app/agent/memory
+      - /dev/snd:/dev/snd
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:29788/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+
+networks:
+  default:
+    name: liturgy-network

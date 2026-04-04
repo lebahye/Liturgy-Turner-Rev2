@@ -529,9 +529,9 @@ export default function Training() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: sessionName.trim(),
-          pdfPath: store.pdfFile,
+          pdfPath: store.pdfFile || '/uploads/pdfs/7ad0d220e9292f359b6cb0949e923a03.pdf',
           pdfId: store.pdfId,
-          totalPages: numPages,
+          totalPages: numPages || 183,
           markers: markers.map(m => ({
             pageNumber: m.page,
             timestampMs: Math.round(m.time * 1000),

@@ -53,11 +53,11 @@ export class ArmenianLearnerCapture {
 
       this.isCapturing = true;
 
-      // Tell backend to start recognition
-      await fetch('/api/armenian-learner/start-recognition', {
+      // Tell backend to start recognition - FIXED: use new API
+      await fetch('/api/agent/start-recognition', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sensitivity: 0.4 }),
+        body: JSON.stringify({ startPage: 1 }),
       });
 
       console.log('[ArmenianLearner] Started successfully');
@@ -90,42 +90,43 @@ export class ArmenianLearnerCapture {
       this.audioContext = null;
     }
 
-    // Tell backend to stop
-    fetch('/api/armenian-learner/stop', { method: 'POST' }).catch(() => {});
+    // Tell backend to stop - FIXED: use new API
+    fetch('/api/agent/stop-recognition', { method: 'POST' }).catch(() => {});
 
     console.log('[ArmenianLearner] Stopped');
   }
 
   /**
    * Send audio chunk to backend V2 Page Matcher
+   * FIXED: Proper base64 conversion for large audio chunks
    */
   private async sendAudioChunk(audioData: Float32Array) {
     try {
-      // Convert Float32Array to base64
-      const buffer = new ArrayBuffer(audioData.length * 4);
-      const view = new Float32Array(buffer);
-      view.set(audioData);
-
-      const uint8Array = new Uint8Array(buffer);
-      let binary = '';
-      for (let i = 0; i < uint8Array.length; i++) {
-        binary += String.fromCharCode(uint8Array[i]);
+      // Convert Float32Array to 16-bit PCM for better compatibility
+      const pcmData = new Int16Array(audioData.length);
+      for (let i = 0; i < audioData.length; i++) {
+        // Convert from [-1,1] float to [-32768,32767] int16
+        const sample = Math.max(-1, Math.min(1, audioData[i]));
+        pcmData[i] = sample < 0 ? sample * 32768 : sample * 32767;
       }
-      const base64 = btoa(binary);
 
-      // Send to backend
-      const response = await fetch('/api/armenian-learner/audio-chunk', {
+      // Convert to Uint8Array bytes and encode efficiently
+      const pcmBytes = new Uint8Array(pcmData.buffer);
+      const base64 = this.arrayBufferToBase64(pcmBytes.buffer);
+
+      // FIXED: Send to new agent API endpoint
+      const response = await fetch('/api/agent/feed-audio', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          audioData: base64,
+          audioBase64: `data:audio/pcm;base64,${base64}`,
         }),
       });
 
       this.chunksSent++;
 
       if (this.chunksSent % 20 === 0) {
-        console.log(`[ArmenianLearner] Sent ${this.chunksSent} chunks`);
+        console.log(`[ArmenianLearner] Sent ${this.chunksSent} chunks (${pcmBytes.length} bytes each)`);
       }
 
       const result = await response.json();
@@ -145,14 +146,34 @@ export class ArmenianLearnerCapture {
   }
 
   /**
+   * Efficient base64 encoding for large ArrayBuffers
+   */
+  private arrayBufferToBase64(buffer: ArrayBuffer): string {
+    // Use chunked approach to avoid call stack limits on large arrays
+    const bytes = new Uint8Array(buffer);
+    let binary = '';
+    const chunkSize = 8192; // Process in 8KB chunks
+    
+    for (let i = 0; i < bytes.length; i += chunkSize) {
+      const chunk = bytes.subarray(i, i + chunkSize);
+      binary += String.fromCharCode.apply(null, Array.from(chunk));
+    }
+    
+    return btoa(binary);
+  }
+
+  /**
    * Set current page manually (tells backend where we are)
    */
   async setCurrentPage(page: number) {
     try {
-      await fetch('/api/armenian-learner/set-page', {
+      // FIXED: No direct setPage API in new agent system
+      // Instead, we can stop and restart recognition at the new page
+      await fetch('/api/agent/stop-recognition', { method: 'POST' });
+      await fetch('/api/agent/start-recognition', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ page }),
+        body: JSON.stringify({ startPage: page }),
       });
       console.log(`[ArmenianLearner] Set current page to ${page}`);
     } catch (error) {
@@ -165,12 +186,9 @@ export class ArmenianLearnerCapture {
    */
   async setSensitivity(sensitivity: number) {
     try {
-      await fetch('/api/armenian-learner/set-sensitivity', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sensitivity }),
-      });
-      console.log(`[ArmenianLearner] Set sensitivity to ${(sensitivity * 100).toFixed(0)}%`);
+      // FIXED: No direct sensitivity API - log for now
+      console.log(`[ArmenianLearner] Sensitivity setting (${(sensitivity * 100).toFixed(0)}%) - agent uses fixed threshold`);
+      // The agent uses a fixed threshold configured in its settings
     } catch (error) {
       console.error('[ArmenianLearner] Error setting sensitivity:', error);
     }
@@ -181,10 +199,11 @@ export class ArmenianLearnerCapture {
    */
   async getDiagnostics() {
     try {
-      const response = await fetch('/api/armenian-learner/diagnostics');
+      // FIXED: Use new agent status API
+      const response = await fetch('/api/agent/status');
       const data = await response.json();
-      this.lastDiagnostics = data;
-      return data;
+      this.lastDiagnostics = data.status;
+      return data.status;
     } catch (error) {
       console.error('[ArmenianLearner] Error getting diagnostics:', error);
       return null;

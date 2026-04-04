@@ -31,7 +31,7 @@ export class AudioMatcher {
   private debugMode: boolean = true;
   private lastDebugTime: number = 0;
   
-  private absoluteThreshold: number = 65;
+  private absoluteThreshold: number = 50;
   private discriminativeMargin: number = 8;
   private consecutiveHitsRequired: number = 5;
   private hitCounts: Map<number, number> = new Map();
