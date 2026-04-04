@@ -165,7 +165,7 @@ export async function registerRoutes(
     res.json({ success: true, summary });
   });
 
-  app.post('/api/liturgy/log/status', (_req, res) => {
+  app.get('/api/liturgy/log/status', (_req, res) => {
     const { getScoreLogger } = require('./score-logger');
     const logger = getScoreLogger();
     res.json({ 

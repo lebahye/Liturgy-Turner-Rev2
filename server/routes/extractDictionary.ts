@@ -372,11 +372,17 @@ extractDictionaryRouter.post("/import-dictionary", upload.single("file"), async 
 extractDictionaryRouter.get("/dictionary-words", async (req, res) => {
   try {
     const pdfId = (req.query.pdfId as string) || "manual_dictionary";
-    
-    const words = await db.select()
-      .from(wordDictionary)
-      .where(eq(wordDictionary.pdfId, pdfId));
-    
+
+    // "global_dictionary" or "all" returns ALL words regardless of pdfId
+    let words;
+    if (pdfId === "global_dictionary" || pdfId === "all") {
+      words = await db.select().from(wordDictionary);
+    } else {
+      words = await db.select()
+        .from(wordDictionary)
+        .where(eq(wordDictionary.pdfId, pdfId));
+    }
+
     return res.json({
       ok: true,
       pdfId,
