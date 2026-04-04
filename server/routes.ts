@@ -152,6 +152,13 @@ export async function registerRoutes(
     }
   });
 
+  // Transcribe endpoint — stub for trigger word extraction
+  // Real transcription would use Gemini/Whisper but we use fingerprinting instead
+  app.post('/api/transcribe', async (req, res) => {
+    // Return empty result — trigger words are not used in fingerprint-based matching
+    res.json({ ok: true, text: '', words: [], note: 'Transcription not available — using fingerprint matching' });
+  });
+
   // Score logger endpoints
   app.post('/api/liturgy/log/start', (_req, res) => {
     const { startScoreLogger } = require('./score-logger');
