@@ -337,17 +337,25 @@ export default function Training() {
       mediaStreamRef.current = stream;
       
       audioContextRef.current = new AudioContext();
+      // Ensure AudioContext is running (Chrome/Safari suspend by default)
+      if (audioContextRef.current.state === 'suspended') {
+        await audioContextRef.current.resume();
+        console.log("[Training] AudioContext resumed from suspended state");
+      }
       sourceNodeRef.current = audioContextRef.current.createMediaStreamSource(stream);
-      
+
       const analyserNode = audioContextRef.current.createAnalyser();
       analyserNode.fftSize = 2048;
       sourceNodeRef.current.connect(analyserNode);
-      
+
       recentFeaturesRef.current = [];
+      let featureCount = 0;
       meydaAnalyzerRef.current = createAudioAnalyzer(
         audioContextRef.current,
         sourceNodeRef.current,
         (features) => {
+          featureCount++;
+          if (featureCount === 1) console.log("[Training] First Meyda features:", features.rms > 0 ? "REAL DATA" : "ZEROS — check mic");
           recentFeaturesRef.current.push(features);
           if (recentFeaturesRef.current.length > 20) {
             recentFeaturesRef.current.shift();
@@ -355,6 +363,7 @@ export default function Training() {
         }
       );
       meydaAnalyzerRef.current.start();
+      console.log(`[Training] Meyda started, AudioContext: ${audioContextRef.current.state}`);
       
       // Set up MediaRecorder for capturing audio chunks (for trigger word extraction)
       audioChunksRef.current = [];
