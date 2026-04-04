@@ -61,8 +61,8 @@ class LiturgyAudioController {
    * ENHANCED: Now uses 172-page dictionary with 100% accuracy
    */
   loadLiturgyDatabase() {
-    // Load NEW comprehensive PDF dictionary (172 pages)
-    const pdfDictPath = path.join(__dirname, 'data', 'pdf-pages-dictionary.json');
+    // Load the unified text-matcher-db.json (single source of truth for all dictionary data)
+    const pdfDictPath = path.join(__dirname, '..', '..', '..', 'training-data', 'text-matcher-db.json');
     const oldDbPath = path.join(__dirname, 'data', 'liturgy-database.json');
     this.dbPath = oldDbPath; // Keep for compatibility
 
@@ -86,10 +86,10 @@ class LiturgyAudioController {
         this.fuzzyMatcher = null;
       }
 
+      const meta = pdfDict.metadata || {};
       console.log(
-        `[liturgy-audio] ✅ ENHANCED MATCHER LOADED: ${pdfDict.pagesWithText.grapar}/183 pages, ${Object.keys(pdfDict.wordIndex).length} words`,
+        `[liturgy-audio] ✅ MATCHER LOADED: ${meta.armenianWords || Object.keys(pdfDict.wordIndex).length} Armenian words, ${meta.phoneticWords || Object.keys(pdfDict.phoneticIndex || {}).length} phonetic`,
       );
-      console.log('[liturgy-audio] Accuracy: 100% (validated on 47 test pages)');
     } catch (error) {
       console.error('[liturgy-audio] Failed to load PDF dictionary:', error.message);
       console.log('[liturgy-audio] Falling back to old fuzzy matcher');

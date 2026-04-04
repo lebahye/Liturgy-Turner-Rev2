@@ -100,6 +100,58 @@ export async function registerRoutes(
   // Agent audio processing routes - forwards audio to armenian-learner skill
   app.use('/api', agentAudioRouter);
 
+  // Audio system status endpoint
+  app.get('/api/audio/status', async (_req, res) => {
+    try {
+      const audioApiUrl = process.env.AGENT_AUDIO_API_URL || "http://agent:29788";
+      
+      // Check agent audio service status
+      let agentStatus = { available: false, error: null };
+      try {
+        const agentResponse = await fetch(`${audioApiUrl}/status`, {
+          method: "GET",
+          signal: AbortSignal.timeout(3000),
+        });
+        if (agentResponse.ok) {
+          agentStatus = { available: true, error: null };
+        } else {
+          agentStatus = { available: false, error: `Agent returned ${agentResponse.status}` };
+        }
+      } catch (err: any) {
+        agentStatus = { available: false, error: err.message };
+      }
+      
+      // Check liturgy tracker status
+      let liturgyTrackerStatus = { initialized: false, currentPage: 1, totalPages: 183 };
+      if (liturgyTracker) {
+        liturgyTrackerStatus = {
+          initialized: true,
+          currentPage: liturgyTracker.getCurrentPage(),
+          totalPages: 183
+        };
+      }
+      
+      // Check score logger status
+      const { getScoreLogger } = require('./score-logger');
+      const scoreLogger = getScoreLogger();
+      const scoreLoggerStatus = {
+        active: scoreLogger !== null,
+        entriesCount: (scoreLogger as any)?._session?.entries?.length || 0
+      };
+      
+      res.json({
+        success: true,
+        agent: agentStatus,
+        liturgyTracker: liturgyTrackerStatus,
+        scoreLogger: scoreLoggerStatus,
+        timestamp: Date.now()
+      });
+    } catch (error: any) {
+      console.error('Audio status error:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+
   // Score logger endpoints
   app.post('/api/liturgy/log/start', (_req, res) => {
     const { startScoreLogger } = require('./score-logger');

@@ -31,7 +31,7 @@ services:
       - "${APP_HOST_PORT:-5001}:5001"
     environment:
       NODE_ENV: production
-      DATABASE_URL: postgresql://liturgy_user:${POSTGRES_PASSWORD:-changeme}@postgres:5432/liturgy_turner
+      SQLITE_DB_PATH: /app/data/liturgy-turner.db
       PORT: 5001
       HOST: 0.0.0.0
       PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:${APP_HOST_PORT:-5001}}
@@ -47,9 +47,6 @@ services:
       - ./uploads:/app/uploads
       - ./data:/app/data
       - ./training-data:/app/training-data
-    depends_on:
-      postgres:
-        condition: service_healthy
     healthcheck:
       test:
         [
