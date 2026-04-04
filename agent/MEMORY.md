@@ -23,16 +23,20 @@ Whisper doesn't understand:
 2. **liturgy-audio-controller skill** - My real-time system:
    - Captures church audio via microphone
    - Uses MY learned dictionary (not Whisper)
-   - Matches audio to 172-page custom-built dictionary
-   - 100% accuracy on liturgical text matching
+   - Loads `training-data/text-matcher-db.json` for page matching
    - Controls page turning automatically
+   - Score logger captures every confidence decision
 
-3. **Custom 172-page dictionary** - Built from scratch:
-   - Extracted from actual liturgy PDFs
-   - Phonetic matching for Armenian/English/transliteration
-   - Trained on real church recordings
-   - Multi-language word index
-   - Sequential page logic with confidence scoring
+3. **Unified Dictionary** — Single source of truth:
+   - File: `training-data/text-matcher-db.json` (ALL tools and skills read from this)
+   - 1,253 Armenian words (Grabar) with page mappings
+   - 2,638 phonetic transliterations (Western Armenian pronunciation)
+   - 244 English words with page mappings
+   - Built from 366 page_sections in SQLite covering 172 pages
+   - SQLite `word_dictionary` table has 1,340 entries (synced)
+   - Rebuild script: `scripts/rebuild-text-matcher-db.py`
+   - Format: `{wordIndex: {word: [pages]}, phoneticIndex: {...}, englishIndex: {...}}`
+   - DO NOT use pdf-pages-dictionary.json, db-phonetic-dict.json, or armenian-phonetic-dict.json — these are legacy
 
 ## Why This Matters
 
