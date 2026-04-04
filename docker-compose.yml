@@ -1,7 +1,8 @@
 services:
-  # PostgreSQL Database
+  # PostgreSQL Database (DEV ONLY — production uses SQLite)
+  # Not needed for native app: npm run local:up
   postgres:
-    profiles: ["core"]
+    profiles: ["dev"]
     image: postgres:15-alpine
     container_name: liturgy-postgres
     environment:
@@ -41,7 +42,7 @@ services:
       TRACKER_EVALUATE_ALWAYS: ${TRACKER_EVALUATE_ALWAYS:-}
       TRACKER_ALLOW_JUMPS: ${TRACKER_ALLOW_JUMPS:-}
       # Agent audio API (runs on host via OpenClaw, or in agent container)
-      AGENT_AUDIO_API_URL: ${AGENT_AUDIO_API_URL:-http://host.docker.internal:29788}
+      AGENT_AUDIO_API_URL: ${AGENT_AUDIO_API_URL:-http://agent:29788}
     volumes:
       - ./uploads:/app/uploads
       - ./data:/app/data
@@ -89,10 +90,6 @@ services:
       - ./training-data:/app/training-data
       - ./agent/skills:/app/agent/skills
       - ./agent/memory:/app/agent/memory
-    devices:
-      # Pass through audio devices for mic access
-      # Linux: /dev/snd
-      # macOS/Windows: handled by Docker Desktop audio passthrough
       - /dev/snd:/dev/snd
     depends_on:
       app:
