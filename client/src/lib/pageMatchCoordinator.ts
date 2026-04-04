@@ -34,14 +34,14 @@ export type CoordinatorConfig = {
 };
 
 const DEFAULT_CONFIG: CoordinatorConfig = {
-  // Production-biased defaults: prefer missed turns over false turns.
-  // Live mode already has manual override; accidental page jumps are harder to recover from.
-  fingerprintThreshold: 50,
+  // Tuned for real-world Badarak usage:
+  // Fingerprint is the primary signal; N-gram is supplementary
+  fingerprintThreshold: 45,      // lowered from 50 — 45% fingerprint match triggers
   ngramThreshold: 2,
   triggerMatchThreshold: 3,
   agreementBonus: 20,
   disagreementPenalty: 30,
-  requiredConsecutiveAgreements: 2,
+  requiredConsecutiveAgreements: 1, // lowered from 2 — single agreement sufficient
 };
 
 export class PageMatchCoordinator {
@@ -128,7 +128,9 @@ export class PageMatchCoordinator {
 
   reportFingerprintMatch(currentScore: number, nextScore: number) {
     const nextPage = this.currentPage + 1;
-    const suggestedPage = nextScore > currentScore + 10 ? nextPage : null;
+    // Suggest next page if score is higher than current (even by small margin)
+    // Old threshold of +10 was too strict — adjacent pages sound similar
+    const suggestedPage = nextScore > currentScore + 3 && nextScore >= 40 ? nextPage : null;
     
     this.latestFingerprint = {
       source: "fingerprint",
